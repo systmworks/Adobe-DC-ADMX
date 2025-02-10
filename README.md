@@ -11,6 +11,7 @@ than Reader settings (havent tested).
 
 NOTE: Adobe has implemented some new features/regkeys that are not yet present in this ADMX profile (but its still a lot better 
 than the sample ADMX Adobe provide). 
+
 Community assistance to make this ADMX template better for us all to use is greatly appreciated :)  Feel free to fork it. 
 
 
