@@ -10,7 +10,8 @@ Adobe Reader DC (x64) is actually a feature limited version of Acrobat DC - and 
 than Reader settings (havent tested).
 
 NOTE: Adobe has implemented some new features/regkeys that are not yet present in this ADMX profile (but its still a lot better 
-than the sample ADMX Adobe provide).  Community assistance to make this ADMX template better will be appreciated. 
+than the sample ADMX Adobe provide). 
+Community assistance to make this ADMX template better for us all to use is greatly appreciated :)  Feel free to fork it. 
 
 
 # INTUNE SPECIFIC:
