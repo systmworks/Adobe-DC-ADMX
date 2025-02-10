@@ -20,12 +20,14 @@ on any Windows 10/11 PC.
 You can configure both Reader and Acrobat settings in same Intune profile - or split them into separate profiles.
 
 If you wish to upgrade the Adobe ADMX version in Intune, you must first delete any profiles that use this ADMX (take note of 
-all the settings first!), delete the ADMX, import new ADMX, and then re-create the profile(s) again.
+all the settings first!), delete the ADMX, import new ADMX, and then re-create the profile(s) again.   Sorry ADMX support
+in Intune is still a bit clunky but will hopefully improve over time. 
 
-Example screenshot from Intune:
-
+Example screenshots from Intune:
 ![image](https://github.com/user-attachments/assets/54ac98e3-da2c-4d19-8f78-f49c689227e3)
 
+Some Reader settings:
 ![image](https://github.com/user-attachments/assets/afa9d595-6d6b-40e7-a950-15cbb67b2766)
 
+Some Acrobat settings:
 ![image](https://github.com/user-attachments/assets/5fb715c5-6ccb-460b-a888-6ec73ad55337)
