@@ -9,7 +9,7 @@ Recommend configuring settings for both products, unless you are 100% sure your 
 Adobe Reader DC (x64) is actually a feature limited version of Acrobat DC - and may use the Acrobat settings rather 
 than Reader settings (havent tested).
 
-# INTUNE SPECIFIC:
+# Intune:
 If importing to Intune you first need to import "Windows.admx" (and Windows.adml) - found in "C:\Windows\PolicyDefinitions\" 
 on any Windows 10/11 PC.
 
