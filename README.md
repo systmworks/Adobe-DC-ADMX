@@ -30,10 +30,18 @@ Example screenshots from Intune:
 
 ![image](https://github.com/user-attachments/assets/54ac98e3-da2c-4d19-8f78-f49c689227e3)
 
-Some Reader settings:
+![image](https://github.com/user-attachments/assets/a1438060-d7b5-40df-acad-89beba0b60b0)
 
-![image](https://github.com/user-attachments/assets/afa9d595-6d6b-40e7-a950-15cbb67b2766)
+![image](https://github.com/user-attachments/assets/619e347f-98cf-4e4b-9cb2-d0e6e75e4c2d)
 
-Some Acrobat settings:
+![image](https://github.com/user-attachments/assets/e056c2e6-c7cb-4c1a-9742-996df740252a)
 
-![image](https://github.com/user-attachments/assets/5fb715c5-6ccb-460b-a888-6ec73ad55337)
+![image](https://github.com/user-attachments/assets/efb50605-a773-4f82-b28a-39a75d8316a2)
+
+![image](https://github.com/user-attachments/assets/9349b830-7f45-47f3-8444-c015b3341ec5)
+
+![image](https://github.com/user-attachments/assets/e035c781-a191-4205-b6ae-bfeea5796865)
+
+![image](https://github.com/user-attachments/assets/57555224-a664-456c-abf0-83425827896b)
+
+![image](https://github.com/user-attachments/assets/4dd918f9-c0ca-425b-a152-28348cc5c087)
