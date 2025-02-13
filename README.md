@@ -1,5 +1,5 @@
 # Adobe-DC-ADMX
-A combined Adobe Reader and Acrobat DC ADMX template for both Group Policy and importing into Intune.
+A combined Adobe Reader DC and Adobe Acrobat DC ADMX template for both Group Policy and importing into Intune.
 
 Based off the files linked below, which was for Adobe Reader v7-DC only (not Acrobat), and has not been updated for 7+ years.
 https://github.com/nsacyber/Windows-Secure-Host-Baseline/tree/master/Adobe%20Reader/Group%20Policy%20Templates
@@ -10,14 +10,14 @@ Adobe Reader DC (x64) is actually a feature limited version of Acrobat DC - and 
 than Reader settings (havent tested).
 
 # Intune:
-If importing to Intune you first need to import "Windows.admx" (and Windows.adml) - found in "C:\Windows\PolicyDefinitions\" 
-on any Windows 10/11 PC.
+To import this ADMX into Intune (see Devices\Configuration\Import ADMX) you first need to import "Windows.admx" 
+(and Windows.adml) - found in "C:\Windows\PolicyDefinitions\" on any Windows 10/11 PC.
 
 You can configure both Reader and Acrobat settings in same Intune profile - or split them into separate profiles.
 
-If you wish to upgrade the Adobe ADMX version in Intune, you must first delete any profiles that use this ADMX (take note of 
-all the settings first!), delete the ADMX, import new ADMX, and then re-create the profile(s) again. 
-ADMX support in Intune is still a bit clunky but will hopefully improve over time. 
+To upgrade this ADMX template to a newer version later, you must first delete any profiles that use this ADMX (take note 
+of all the settings first!), delete the Adobe ADMX, import new Adobe ADMX, and then re-create the profile(s) again. 
+Bit of a pain.  ADMX support in Intune is still a bit clunky but will hopefully improve over time. 
 
 # Help
 Adobe has implemented some later features/regkeys that are not yet present in this ADMX profile.
