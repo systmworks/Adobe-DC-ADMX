@@ -2,13 +2,19 @@
 
 # Reduce Nags, Upsells & Unwanted Notifications
 
-Settings to suppress unwanted messages, popups, promotional content, and notifications in the v2.5 ADMX templates.
+Settings to suppress unwanted messages, popups, promotional content, and notifications in the v2.6 ADMX templates.
 
 ## Reader DC
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![Recommended Setting](https://img.shields.io/badge/Recommended%20Setting-316dca?style=flat-square) |
 |---|---|---|
+| Cloud & Connectors | Box Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Cloud & Connectors | Dropbox Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Cloud & Connectors | Google Drive Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Cloud & Connectors | Services & Web-Plugin Updates | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Cloud & Connectors | Third-Party Cloud Connectors | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Context, Tools & Search | Contextual Help Tips | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Context, Tools & Search | Modern Viewer | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Context, Tools & Search | Online Actions Library Link | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Context, Tools & Search | Online Tool Set Exchange Link | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Startup & Experience | Adobe Messages at Launch | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
@@ -24,6 +30,8 @@ Settings to suppress unwanted messages, popups, promotional content, and notific
 | Startup & Experience | Show To Do Cards in Recent Tab | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Startup & Experience | What's New Experience | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Updates & Desktop Integration | Disable Major Version Upgrade Prompt | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
+| Updates & Desktop Integration | Disable Repair for All Users | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
+| Updates & Desktop Integration | Disable Repair for Standard Users | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Updates & Desktop Integration | Prompt to Use Acrobat from Reader | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Upsell | Limit Informational Prompts | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Upsell | Prompt Reader Users to Download Acrobat | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
@@ -35,7 +43,13 @@ Settings to suppress unwanted messages, popups, promotional content, and notific
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![Recommended Setting](https://img.shields.io/badge/Recommended%20Setting-316dca?style=flat-square) |
 |---|---|---|
+| Cloud & Connectors | Box Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Cloud & Connectors | Dropbox Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Cloud & Connectors | Google Drive Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Cloud & Connectors | Services & Web-Plugin Updates | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Cloud & Connectors | Third-Party Cloud Connectors | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Context, Tools & Search | Contextual Help Tips | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Context, Tools & Search | Modern Viewer | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Context, Tools & Search | Online Actions Library Link | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Context, Tools & Search | Online Tool Set Exchange Link | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Sharing & Features | Share and Review Reminder Tip | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
@@ -52,6 +66,8 @@ Settings to suppress unwanted messages, popups, promotional content, and notific
 | Startup & Experience | What's New Experience | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Updates & Desktop Integration | Crash Reporter Dialog | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Updates & Desktop Integration | Disable Major Version Upgrade Prompt | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
+| Updates & Desktop Integration | Disable Repair for All Users | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
+| Updates & Desktop Integration | Disable Repair for Standard Users | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Upsell | Disable Billing Issue Call to Action | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Upsell | Disable Promotional Campaign Messages | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Upsell | Express Templates in Create PDF | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
