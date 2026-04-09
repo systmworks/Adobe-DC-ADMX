@@ -1,45 +1,37 @@
-# Adobe-DC-ADMX
-A combined Adobe Reader DC and Adobe Acrobat DC ADMX template for both Group Policy and importing into Intune.
+# Adobe DC ADMX/ADML Documentation
 
-Based off the files linked below, which was for Adobe Reader v7-DC only (not Acrobat), and has not been updated for 7+ years.
-https://github.com/nsacyber/Windows-Secure-Host-Baseline/tree/master/Adobe%20Reader/Group%20Policy%20Templates
+These ADMX/ADML templates (v2.5) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. They define machine-level (`HKLM`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, and upsell controls.
 
-Recommend configuring settings for both products, unless you are 100% sure your environment only has 1 product.
+The templates ship in two namespaces:
 
-Adobe Reader DC (x64) is actually a feature limited version of Acrobat DC - and may use the Acrobat settings rather 
-than Reader settings (havent tested).
+| ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
+|------|-------|----------|
+| `AdobeDC_x64.admx` + ADML | Acrobat DC (x64) + Reader DC (x64) | 248 (136 Acrobat + 112 Reader) |
+| `AdobeDC_x86.admx` + ADML | Acrobat DC (x86) + Reader DC (x86) | 248 (136 Acrobat + 112 Reader) |
 
-# Intune:
-To import this ADMX into Intune (see Devices\Configuration\Import ADMX) you first need to import "Windows.admx" 
-(and Windows.adml) - found in "C:\Windows\PolicyDefinitions\" on any Windows 10/11 PC.
+> **Note:** Several ``bToggle*`` policies use inverted registry values (DWORD 0 = feature ON, DWORD 1 = feature OFF). The ADMX templates handle this so that the Group Policy **Enabled**/**Disabled** states match the FriendlyName intent, but raw registry checks may look counterintuitive.
 
-You can configure both Reader and Acrobat settings in same Intune profile - or split them into separate profiles.
+> **x86 templates:** The ``AdobeDC_x86`` template targets 32-bit Adobe applications on 64-bit Windows. Both Acrobat and Reader x86 registry paths are derived programmatically by inserting ``WOW6432Node`` into the native paths stored in the CSV.
 
-To upgrade this ADMX template to a newer version later, you must first delete any profiles that use this ADMX (take note 
-of all the settings first!), delete the Adobe ADMX, import new Adobe ADMX, and then re-create the profile(s) again. 
-Bit of a pain.  ADMX support in Intune is still a bit clunky but will hopefully improve over time. 
+## Quick Links
 
-# Help
-Adobe has implemented some later features/regkeys that are not yet present in this ADMX profile.
-I'd like to add them but not sure if/when I will get a chance.   Community assistance to continue to develop this ADMX template
-will be greatly appreciated. 
+| ![Page](https://img.shields.io/badge/Page-316dca?style=flat-square) | ![Description](https://img.shields.io/badge/Description-316dca?style=flat-square) |
+|------|-------------|
+| [Reader DC Settings](reader-settings.md) | Complete list of all Reader DC policies |
+| [Acrobat DC Settings](acrobat-settings.md) | Complete list of all Acrobat DC policies |
+| [Security Hardening](security-hardening.md) | Recommended and optional security configurations |
+| [Reduce Nags & Upsells](reduce-nags.md) | Settings to suppress unwanted messages, popups, and promotions |
 
-# Screenshots from Intune:
+## Category Overview
 
-![image](https://github.com/user-attachments/assets/54ac98e3-da2c-4d19-8f78-f49c689227e3)
-
-![image](https://github.com/user-attachments/assets/a1438060-d7b5-40df-acad-89beba0b60b0)
-
-![image](https://github.com/user-attachments/assets/619e347f-98cf-4e4b-9cb2-d0e6e75e4c2d)
-
-![image](https://github.com/user-attachments/assets/e056c2e6-c7cb-4c1a-9742-996df740252a)
-
-![image](https://github.com/user-attachments/assets/efb50605-a773-4f82-b28a-39a75d8316a2)
-
-![image](https://github.com/user-attachments/assets/9349b830-7f45-47f3-8444-c015b3341ec5)
-
-![image](https://github.com/user-attachments/assets/e035c781-a191-4205-b6ae-bfeea5796865)
-
-![image](https://github.com/user-attachments/assets/57555224-a664-456c-abf0-83425827896b)
-
-![image](https://github.com/user-attachments/assets/4dd918f9-c0ca-425b-a152-28348cc5c087)
+| ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![Overview](https://img.shields.io/badge/Overview-316dca?style=flat-square) | ![Reader](https://img.shields.io/badge/Reader-316dca?style=flat-square) | ![Acrobat](https://img.shields.io/badge/Acrobat-316dca?style=flat-square) |
+|----------|----------|:------:|:-------:|
+| Cloud & Connectors | Cloud storage connectors (Box, Dropbox, Google Drive, OneDrive), Document Cloud services, preferences sync, generative AI, and sign-in controls. | 13 | 13 |
+| Context, Tools & Search | UI toolbars, context menus, search features, Modern Viewer, tool shortcuts, and editing mode settings. | 12 | 22 |
+| Documents, Editing & Accessibility | PDF creation, editing, form handling, accessibility tagging, and document conversion controls. | 3 | 12 |
+| Security: Execution & Protection | Sandbox modes (Protected Mode, AppContainer, Protected View), enhanced security, Flash content, and dangerous action blocking. | 10 | 9 |
+| Security: Trust & Permissions | Digital signatures, trusted locations, certificate trust, security handlers, and URL access policies. | 19 | 20 |
+| Sharing & Features | Adobe Sign, Send & Track, shared reviews, SharePoint/Office 365 integration, WebMail configuration, and cloud signature storage. | 20 | 22 |
+| Startup & Experience | Launch messages, notifications, First Time Experience, What's New, Home screen widgets, and feedback prompts. | 13 | 12 |
+| Updates & Desktop Integration | Product updater, Chrome extension, Explorer thumbnails, repair options, desktop UI, and deployment settings. | 17 | 19 |
+| Upsell | Upgrade prompts, trial purchase dialogs, promotional campaigns, App Center, and purchasable tool visibility. | 5 | 7 |
