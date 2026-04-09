@@ -1,6 +1,9 @@
 # Adobe DC ADMX/ADML Documentation
 
-These ADMX/ADML templates (v2.5) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. They define machine-level (`HKLM`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, and upsell controls.
+> I have spent many, many, many hours creating and testing this ADMX. If it helps you please consider buying me a Coffee :)
+> **https://buymeacoffee.com/systmworks**
+
+These ADMX/ADML templates (v2.6) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. They define machine-level (`HKLM`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, and upsell controls.
 
 The templates ship in two namespaces:
 
@@ -11,7 +14,6 @@ The templates ship in two namespaces:
 
 > **Note:** Several ``bToggle*`` policies use inverted registry values (DWORD 0 = feature ON, DWORD 1 = feature OFF). The ADMX templates handle this so that the Group Policy **Enabled**/**Disabled** states match the FriendlyName intent, but raw registry checks may look counterintuitive.
 
-> **x86 templates:** The ``AdobeDC_x86`` template targets 32-bit Adobe applications on 64-bit Windows. Both Acrobat and Reader x86 registry paths are derived programmatically by inserting ``WOW6432Node`` into the native paths stored in the CSV.
 
 ## Quick Links
 
@@ -21,6 +23,7 @@ The templates ship in two namespaces:
 | [Acrobat DC Settings](acrobat-settings.md) | Complete list of all Acrobat DC policies |
 | [Security Hardening](security-hardening.md) | Recommended and optional security configurations |
 | [Reduce Nags & Upsells](reduce-nags.md) | Settings to suppress unwanted messages, popups, and promotions |
+| [Screenshots](screenshots.md) | GPMC and Intune screenshots showing policy configuration |
 
 ## Category Overview
 
@@ -35,9 +38,3 @@ The templates ship in two namespaces:
 | Startup & Experience | Launch messages, notifications, First Time Experience, What's New, Home screen widgets, and feedback prompts. | 13 | 12 |
 | Updates & Desktop Integration | Product updater, Chrome extension, Explorer thumbnails, repair options, desktop UI, and deployment settings. | 17 | 19 |
 | Upsell | Upgrade prompts, trial purchase dialogs, promotional campaigns, App Center, and purchasable tool visibility. | 5 | 7 |
-
-## Screenshots
-
-<img width="692" height="491" alt="image" src="https://github.com/user-attachments/assets/82e2e2d0-e44e-45df-b4a7-ea13dec4b779" />
-
-<img width="1128" height="679" alt="image" src="https://github.com/user-attachments/assets/442c2806-d016-480e-ad6e-d7a18ea69db5" />
