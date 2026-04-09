@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ================================================================= -->
+<!--    ADML templates by Darren Milne                                 -->
+<!--    License: CC BY-SA 4.0                                          -->
+<!--    https://creativecommons.org/licenses/by-sa/4.0/                -->
+<!--    Free to use and redistribute, including commercially, with     -->
+<!--    attribution; ShareAlike applies to adaptations you distribute. -->
+<!--    Source: https://github.com/systmworks/Adobe-DC-ADMX/           -->
+<!-- ================================================================= -->
+
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"
+  revision="2.6" schemaVersion="1.0">
+  <displayName>Adobe Acrobat DC / Reader DC (x64)</displayName>
+  <description>ADMX v2.6 generated from 2026-4-8-Adobe_Lockable_PrefRef_v1.csv for x64 products only.</description>
+  <resources>
+    <stringTable>
+      <string id="SupportedAcrobatDC_x64">Adobe Acrobat DC (x64)</string>
+      <string id="SupportedReaderDC_x64">Adobe Reader DC (x64)</string>
+
+      <string id="AdobeCategory_x64">Adobe (x64)</string>
+      <string id="AcrobatDCCategory_x64">Acrobat DC (x64)</string>
+      <string id="ReaderDCCategory_x64">Reader DC (x64)</string>
+
+      <string id="Cat_CloudConnectors_x64">Cloud &amp; Connectors</string>
+      <string id="Cat_ContextToolsSearch_x64">Context, Tools &amp; Search</string>
+      <string id="Cat_DocsEditAccess_x64">Documents, Editing &amp; Accessibility</string>
+      <string id="Cat_SecurityExec_x64">Security: Execution &amp; Protection</string>
+      <string id="Cat_SecurityTrust_x64">Security: Trust &amp; Permissions</string>
+      <string id="Cat_SharingFeatures_x64">Sharing &amp; Features</string>
+      <string id="Cat_StartupExperience_x64">Startup &amp; Experience</string>
+      <string id="Cat_UpdatesDesktop_x64">Updates &amp; Desktop Integration</string>
+      <string id="Cat_Upsell_x64">Upsell</string>
+
+      <!-- ======================================== -->
+      <!--                                          -->
+      <!-- Adobe Acrobat DC (x64) - policy strings  -->
+      <!--                                          -->
+      <!-- ======================================== -->
+
+      <!-- ======================================== -->
+      <!--           Cloud and Connectors           -->
+      <!-- ======================================== -->
+
+      <string id="bToggleFillSignDC_x64">Adobe Fill &amp; Sign</string>
+      <string id="bToggleFillSignDC_x64_Explain">Disables Adobe Fill and Sign.&#10;&#10;Possible values include: 0: Enable Adobe Fill and Sign. 1: Disable Adobe Fill and Sign.</string>
+      <string id="bBoxConnectorEnabledDC_x64">Box Cloud Connector</string>
+      <string id="bBoxConnectorEnabledDC_x64_Explain">Specifies whether to enable connection to the Box cloud when bToggleWebConnectors is set to 1.&#10;&#10;Overrides a bToggleWebConnectors value of 1. Only supported on the Continuous track. Possible values include: 0: Disable connection to Box 1: Enable connection to Box</string>
+      <string id="bToggleAdobeDocumentServicesDC_x64">Document Cloud Services</string>
+      <string id="bToggleAdobeDocumentServicesDC_x64_Explain">Disables Document Cloud service access except those features controlled by the other preferences.&#10;&#10;This setting does not affect Adobe Send for Signature (Acrobat Sign), preference synchronization, or third party connectors. For the base release, it also did not disable Send and Track (Share); however, it does control Send and Track with the July, 2015 release. For Acrobat Reader, this preference removes Create PDF, Export PDF, Organize, and Combine even if the ID has a subscription to those services. To disable all services, use bUpdater . Possible values include: 0: Enable Document Cloud services. 1: Disable Document Cloud services.</string>
+      <string id="bToggleDocumentCloudDC_x64">Document Cloud Storage</string>
+      <string id="bToggleDocumentCloudDC_x64_Explain">Specifies whether to enable Document Cloud storage.&#10;&#10;DC storage is enabled by default. Possible values include: 0: Enable Document Cloud storage. 1: Disable Document Cloud storage.</string>
+      <string id="bDropboxConnectorEnabledDC_x64">Dropbox Cloud Connector</string>
+      <string id="bDropboxConnectorEnabledDC_x64_Explain">Specifies whether to enable connection to the Dropbox cloud when bToggleWebConnectors is set to 1.&#10;&#10;Overrides a bToggleWebConnectors value of 1. Only supported on the Continuous track. Possible values include: 0: Disable connection to Dropbox 1: Enable connection to Dropbox</string>
+      <string id="bEnableGentechDC_x64">Enable Generative AI</string>
+      <string id="bEnableGentechDC_x64_Explain">Specifies whether to enable generative AI features in Acrobat and Reader.&#10;&#10;Possible values include: 0: Disable generative AI features. 1: Enable generative AI features. Generative AI capabilities may rely on cloud services; verify organizational policies and Adobe documentation for data handling.</string>
+      <string id="bGoogleDriveConnectorEnabledDC_x64">Google Drive Connector</string>
+      <string id="bGoogleDriveConnectorEnabledDC_x64_Explain">Specifies whether to enable connection to the Google Drive cloud when bToggleWebConnectors is set to 1.&#10;&#10;Overrides a bToggleWebConnectors value of 1. Only supported on the Continuous track. Possible values include: 0: Disable connection to Google Drive 1: Enable connection to Google Drive</string>
+      <string id="bToggleSendACopyDC_x64">Hide Fill &amp; Sign Send a Copy Button</string>
+      <string id="bToggleSendACopyDC_x64_Explain">Specifies whether to hide the Send a Copy button from the Fill &amp; Sign tool in Acrobat and Reader.&#10;&#10;Possible values include: 0: Hide the button. 1: Show the button.</string>
+      <string id="bSuppressSignOutDC_x64">Hide Sign Out Menu Item</string>
+      <string id="bSuppressSignOutDC_x64_Explain">Specifies whether the sign-in and sign-out Help menu item should be enabled.&#10;&#10;Possible values include: 0 or null: Don't disable the menu item. 1: Disable the Help menu item.</string>
+      <string id="bOneDriveConnectorEnabledDC_x64">OneDrive Connector</string>
+      <string id="bOneDriveConnectorEnabledDC_x64_Explain">Specifies whether to enable connection to the OneDrive cloud when bToggleWebConnectors is set to 1.&#10;&#10;Overrides a bToggleWebConnectors value of 1. Only supported on the Continuous track. Possible values include: 0: Disable connection to OneDrive 1: Enable connection to OneDrive</string>
+      <string id="bTogglePrefsSyncDC_x64">Preferences Synchronization</string>
+      <string id="bTogglePrefsSyncDC_x64_Explain">Disables preferences synchronization.&#10;&#10;This preference disables and locks a new feature which synchronizes desktop preferences across devices on which the user is signed in with an Adobe ID. For more details about what preferences sync, see the Admin Guide . Possible values include: 0: Enable preferences synchronization. 1: Disable preferences synchronization.</string>
+      <string id="bUpdater_UpdatesDC_x64">Services &amp; Web-Plugin Updates</string>
+      <string id="bUpdater_UpdatesDC_x64_Explain">Disables both updates to the product's web-plugin components as well as all services.&#10;&#10;It disables both updates to the product's web-plugin components as well as all services without exception, including any sign-in screen. The setting is not the same as bUpdater which resides directly under FeatureLockDown and disables product updates. Possible values include: 0: Disable services and service component updates. 1: Enable services.</string>
+      <string id="bToggleWebConnectorsDC_x64">Third-Party Cloud Connectors</string>
+      <string id="bToggleWebConnectorsDC_x64_Explain">Specifies whether to enable cloud storage connectors.&#10;&#10;Only supported on the Continuous track. Allows controlling in-product access to third party services for file storage. Dropbox support began with the Oct. 13, 2015 release. May 9, 2016: The preference now controls all the third-party connectors, including Box, OneDrive, and Dropbox (not SharePoint). When disabled, Possible values include: Possible values include: 0: Enable 3rd party connectors. 1: Disable 3rd party connectors. This preference disables 3rd party web connectors and their entry points from the product's UI, including in the Home view's left hand pane and under Add Account as well as custom Open/Save dialogs. If Document Cloud is also disabled, Open and Save dialogs revert to platform dialogs.</string>
+
+      <!-- ======================================== -->
+      <!--        Context, Tools and Search         -->
+      <!-- ======================================== -->
+
+      <string id="bUIDensityAutoDetectionEnabledDC_x64">Auto UI Density Detection</string>
+      <string id="bUIDensityAutoDetectionEnabledDC_x64_Explain">Specifies whether to disable the auto detection logic and bezel for changing Acrobat's display size.&#10;&#10;By default, the UI is enabled so that a user may change the display size based on device screen size, resolution, and monitor scaling. 0: Disable the UI. 1: Show the UI.</string>
+      <string id="ADC4275035_ClickEditDC_x64">Click-to-Edit Mode</string>
+      <string id="ADC4275035_ClickEditDC_x64_Explain">Specifies whether to automatically enter edit mode when a user clicks a PDF object.&#10;&#10;When enabled, clicking on an image or text results in edit tools appearing in the right-hand pane and edit mode is enabled in the Forms tool. Clicking on any form field enables the form authoring mode. Possible values include: 0 or null: Do not dynamically switch into edit mode. 1: Automatically enter edit mode on user click.</string>
+      <string id="bEnableCloudPoweredSearchTokenCachingDC_x64">Cloud Search Token Caching</string>
+      <string id="bEnableCloudPoweredSearchTokenCachingDC_x64_Explain">Specifies whether to cache locally cloud-based search service suggestions.&#10;&#10;Possible values include: 0 or null: Don't cache cloud search service suggestions 1: Cache suggestions</string>
+      <string id="bEnableCloudPoweredSearchDC_x64">Cloud-Powered Search</string>
+      <string id="bEnableCloudPoweredSearchDC_x64_Explain">Specifies whether to enable the cloud-based search service in the Find Tool.&#10;&#10;Interacts with bEnableCloudPoweredSearchTokenCaching . Data sent to the cloud is not stored and is encrypted. Possible values include: 0 or null: Don't enable the cloud search service 1: Enable the cloud search service</string>
+      <string id="bEnableContextualTipsDC_x64">Contextual Help Tips</string>
+      <string id="bEnableContextualTipsDC_x64_Explain">Controls whether to automatically display help tips based on the current context.&#10;&#10;Possible values include: 0: Disable contextual tips. 1: Enable tips.</string>
+      <string id="bEnableContextualToolbarDC_x64">Contextual Toolbar</string>
+      <string id="bEnableContextualToolbarDC_x64_Explain">Specifies whether to show the context toolbar (popup) when selecting a PDF object.&#10;&#10;When enabled, a popup, floating toolbar appears when a user interacts with a PDF. For example, selecting text displays text markup tools. Selecting an image displays sticky note and editing tools. Possible values include: 0: Don't show context toolbars. 1: Show toolbars.</string>
+      <string id="bEnableExtractPageRangeDC_x64">Extract Page Range UI</string>
+      <string id="bEnableExtractPageRangeDC_x64_Explain">Specifies whether to show the page range UI in the Extract Page dialog.&#10;&#10;0: Don't show the page range UI. 1: Show the page range UI.</string>
+      <string id="ADC4275034DC_x64">Fill &amp; Sign Color Picker</string>
+      <string id="ADC4275034DC_x64_Explain">Specifies whether to disable the color picker in the Fill and Sign tool.&#10;&#10;The color picker is only supported on the Continuous track. Possible values include: 0: Disable the color picker 1: Enable the color picker</string>
+      <string id="ProtectOldExperienceDC_x64">Legacy Protect Tool Menu</string>
+      <string id="ProtectOldExperienceDC_x64_Explain">Specifies whether to use the disable the new Protect tool and revert to the old menu&#10;&#10;The Protect tool provides options for encrypting and password protecting documents. The new UI provides some streamlined options, but this preference supports using the old menus. Possible values include: 0 or null: Use the new protect app experience. 1: Revert to the existing (pre October, 2019) protect app experience.</string>
+      <string id="bDisableAcrobatShortcutCustomizationDC_x64">Lock Tool Shortcut Customization</string>
+      <string id="bDisableAcrobatShortcutCustomizationDC_x64_Explain">Prevents end users from modifying the tool shortcuts in the right hand pane.&#10;&#10;Possible values include: 0: Don't disable shortcuts. 1: Disable shortcuts.</string>
+      <string id="bEnableAV2EnterpriseDC_x64">Modern Viewer</string>
+      <string id="bEnableAV2EnterpriseDC_x64_Explain">Specifies whether to enable the Modern Viewer.&#10;&#10;The new app UI is rolling out in phases over 2023. As of June, 25% of users will see the updated user interface. This preference may interact with bShownViewerOnboarding and bEnableAV2 . Possible values include: 0: Don't show the Modern Viewer 1: Show the Modern Viewer</string>
+      <string id="bEnableRCMNewPOPUpDC_x64">New Right-Click Context Menu</string>
+      <string id="bEnableRCMNewPOPUpDC_x64_Explain">Specifies whether to disable the new context menu and use the legacy version.&#10;&#10;A new right-click context menu displays icons and additional menu options. 0: Disable the new context menu. 1: Enable the new menu.</string>
+      <string id="bFindMoreWorkflowsOnlineDC_x64">Online Actions Library Link</string>
+      <string id="bFindMoreWorkflowsOnlineDC_x64_Explain">Specifies whether to show the menu item that opens the online Actions file library.&#10;&#10;Possible values include: 0: Disable the menu item. 1 or null: Don't disable the menu item.</string>
+      <string id="bFindMoreCustomizationsOnlineDC_x64">Online Tool Set Exchange Link</string>
+      <string id="bFindMoreCustomizationsOnlineDC_x64_Explain">Specifies whether to show the menu item that opens the online Acrobat Tool Set Exchange.&#10;&#10;Possible values include: 0: Disable the menu item. 1 or null: Don't disable the menu item.</string>
+      <string id="bOrganizePagesFromThumbnailsDC_x64">Organize Pages Thumbnail Shortcut</string>
+      <string id="bOrganizePagesFromThumbnailsDC_x64_Explain">Specifies whether to show shortcut UI for the Organize tool from thumbnails.&#10;&#10;Possible values include: 0: Don't show Organize Pages tool shortcut from thumbnails 1: Show the Organize Pages tool shortcut</string>
+      <string id="ADC4302862DC_x64">Paste in Place</string>
+      <string id="ADC4302862DC_x64_Explain">Specifies whether to past copied elements to the exact location as the copied element.&#10;&#10;Some copy/paste operations are more efficient when copied elements are pasted to an identical location in the target document. This feature applies to form fields, annotations, and links. Possible values include: 0: Disable the paste-in-place feature. 1: Enable the paste-in-place feature.</string>
+      <string id="ADC4275035DC_x64">Remove Form Editing Tools (2019)</string>
+      <string id="ADC4275035DC_x64_Explain">Specifies whether to remove the forms tools delivered with the October, 2019 release.&#10;&#10;Editing features are now part of the Form tools. For example, there are AddText and EditText tools in the Prepare Form top toolbar. Systems that encounter issues with these tools (or simply want them removed from the UI) can disable these new features. Possible values include: 0 or null: Do nothing. 1: Remove the AddText and EditText tools.</string>
+      <string id="bRCMCombineFeatureKeyDC_x64">Show Combine Files Context Menu</string>
+      <string id="bRCMCombineFeatureKeyDC_x64_Explain">Specifies whether to display the Combine Files item in a document's right-click context menu.&#10;&#10;This preference only applies to machines that display the Modern Viewer (a phased rollout over 2023). When the Modern Viewer is disabled, admins can toggle the Combine Files UI off/on. Possible values include: 0: Don't show the Combine Files UI. 1: Do show the Combine Files UI.</string>
+      <string id="bEnableAutoCompleteExactMatchLoaderDC_x64">Show Search Loading Message</string>
+      <string id="bEnableAutoCompleteExactMatchLoaderDC_x64_Explain">Specifies whether to show a &quot;Working on it&quot; message when using the cloud-based search service.&#10;&#10;The message appears in the Suggestions section of the Find tool's autocomplete list. Possible values include: 0 or null: Don't show the message 1: Show the message</string>
+      <string id="bEnableAutoCompleteNoInternetConnectionHeaderDC_x64">Show Search No Internet Message</string>
+      <string id="bEnableAutoCompleteNoInternetConnectionHeaderDC_x64_Explain">Specifies whether to show a &quot;Requires internet connection&quot; message when using the cloud-based search service.&#10;&#10;The message appears in the Suggestions section of the Find tool's autocomplete list. Possible values include: 0 or null: Don't show the message 1: Show the message</string>
+      <string id="bEnableAutoCompleteNoExactMatchHeaderDC_x64">Show Search No Match Message</string>
+      <string id="bEnableAutoCompleteNoExactMatchHeaderDC_x64_Explain">Specifies whether to show a &quot;No exact match&quot; message when using the cloud-based search service.&#10;&#10;The message appears in the Suggestions section of the Find tool's autocomplete list. Possible values include: 0 or null: Don't show the message 1: Show the message</string>
+      <string id="bShowInsertionBarDC_x64">Thumbnail Insertion Bar</string>
+      <string id="bShowInsertionBarDC_x64_Explain">Specifies whether to enable the thumbnail insertion bar when hovering between thumbnails.&#10;&#10;This bar is available both in the left-hand pane and the Pages app. Possible values include: 0 or null: Disable the insertion bar. Enable the bar.</string>
+
+      <!-- ======================================== -->
+      <!--   Documents, Editing and Accessibility   -->
+      <!-- ======================================== -->
+
+      <string id="bCloudATFeatureEnableDC_x64">Accessibility Auto Tagging</string>
+      <string id="bCloudATFeatureEnableDC_x64_Explain">Specifies whether to show the new auto tagging experience or revert to the old experience.&#10;&#10;Possible values include: 0: Disable the new auto tagging feature in the accessility UI. 1: Enable the new auto tagging feature in the accessility UI.</string>
+      <string id="bBatesLogOriginalFileNameDC_x64">Bates Log Original File Name</string>
+      <string id="bBatesLogOriginalFileNameDC_x64_Explain">Specifies whether to use the original filename in the log file when the user selects Bates number-based output filenames.&#10;&#10;Users have a UI option to &quot;Replace file names with the starting and ending Bates number.&quot; This setting allows users to see the original file name in the log file. Possible values include: 0: Use the starting and ending Bates number as the filename in the log. 1: Retain the original file name.</string>
+      <string id="BlockEMFParsingDC_x64">Block EMF to PDF Conversion</string>
+      <string id="BlockEMFParsingDC_x64_Explain">Specifies whether to disable EMF file conversion to PDF.&#10;&#10;When set to 1, Acrobat will display an &quot;unsupported&quot; dialog and block conversion of EMF files to PDF. 0: Enable EMF conversion to PDF. 1: Disable EMF conversion to PDF.</string>
+      <string id="BlockXPSParsingDC_x64">Block XPS to PDF Conversion</string>
+      <string id="BlockXPSParsingDC_x64_Explain">Specifies whether to disable XPS file conversion to PDF.&#10;&#10;When set to 1, Acrobat will display an &quot;unsupported&quot; dialog and block conversion of XPS files to PDF. 0: Enable XPS conversion to PDF. 1: Disable XPS conversion to PDF.</string>
+      <string id="bGlobalBarMenuFeatureKeyDC_x64">Create PDF Split Menu</string>
+      <string id="bGlobalBarMenuFeatureKeyDC_x64_Explain">Specifies whether to show the Create Split Menu under Create a PDF menu item.&#10;&#10;Possible values include: 0: Don't show the Create Split menu. 1: Show the Create Split menu.</string>
+      <string id="DisableScannedDocumentEditingDC_x64">Disable Scanned PDF Text Recognition</string>
+      <string id="DisableScannedDocumentEditingDC_x64_Explain">Specifies whether to disable text recognition while editing scanned PDFs.&#10;&#10;Possible values include: 0: Text recognition will be performed when invoking editing on scanned PDFs. 1: Text recognition will not be performed when invoking editing on scanned PDFs.</string>
+      <string id="ExportEntireTableContentDC_x64">Export Entire Table Content</string>
+      <string id="ExportEntireTableContentDC_x64_Explain">TBD&#10;&#10;0: TBD 1: TBD</string>
+      <string id="EnablePDFMakerGroupImagesTagCorrectionFeatureDC_x64">PDFMaker Grouped Image Tag Fix</string>
+      <string id="EnablePDFMakerGroupImagesTagCorrectionFeatureDC_x64_Explain">Specifies whether to disable accessibility fixes for tagging grouped images.&#10;&#10;0: Disable. 1: Enable.</string>
+      <string id="EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeatureDC_x64">PDFMaker Table Header Tag Fix</string>
+      <string id="EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeatureDC_x64_Explain">Specifies whether to disable accessibility fixes for tagging table headers.&#10;&#10;0: Disable. 1: Enable.</string>
+      <string id="EnablePDFMakerSplitTextPathElemsFeatureDC_x64">PDFMaker Text Path Tag Fix</string>
+      <string id="EnablePDFMakerSplitTextPathElemsFeatureDC_x64_Explain">Specifies whether to enable the &quot;SplitTextPathElemsFeature&quot; tags correction feature when creating a PDF with Acrobat.&#10;&#10;This preference addresses a bug introduced in 2020 which resulted in certain document elements such as element borders and alt text incorrectly rendering as the strings &quot;PathPath&quot;. This feature is enabled and mitigates the bug default. 0: Disable tag correction. 1: Enable the SplitTextPathElemsFeature tags correction feature.</string>
+      <string id="bEnableReflowEditingDC_x64">Reflow Editing</string>
+      <string id="bEnableReflowEditingDC_x64_Explain">Specifies whether to lock ReflowEditing and the reflow feature.&#10;&#10;See ReflowEditing for feature details. Possible values include: 0: Disable and lock the feature. 1: Don't lock the feature and allow the user to toggle it off an on from the Preferences UI.</string>
+      <string id="bIgnoreDataSchemaDC_x64">Restrict Form Data to Schema</string>
+      <string id="bIgnoreDataSchemaDC_x64_Explain">Specifies whether all data in a form is saved rather than only data related to the form's schema.&#10;&#10;Possible values include: null: Save form data even when it's not part of a schema. 1: Save only form data that's part of the schema.</string>
+
+      <!-- ======================================== -->
+      <!--    Security: Execution and Protection    -->
+      <!-- ======================================== -->
+
+      <string id="bEnableBlacklistForOpenSaveDC_x64">Attachment Extension Blocklist in Dialogs</string>
+      <string id="bEnableBlacklistForOpenSaveDC_x64_Explain">Reverts the tBuiltInPermList behavior to that of the pre 21.011.20029 build.&#10;&#10;Beginning with build 21.011.20029, extensions added in the tBuiltInPermList with restriction level 3 will be missing from the menu items in all the save and open dialogs. This feature is enabled by default. Users can revert to the old behavior by setting FeatureLockDown/bEnableBlacklistForOpenSave to 0. Possible values include: 0: Revert to the legacy behavior. 1: Do nothing. Retain the new behavior.</string>
+      <string id="bDisablePDFRedirectionActionsDC_x64">Block PDF Link Actions</string>
+      <string id="bDisablePDFRedirectionActionsDC_x64_Explain">Specifies whether to block specific PDF actions (listed below) which result in opening a link.&#10;&#10;This preference does not block regular web links. Enabling this feature blocks a PDF actions that open links, including GoToE, GoToR, Launch, Thread, Import Data, Export Form Data, Submit Form, and Reset Form. Possible values include: 0 or null: Don't block these opening links. 1: Block links.</string>
+      <string id="bEnablePVCertificateBasedTrustDC_x64">Certification Status in Protected View</string>
+      <string id="bEnablePVCertificateBasedTrustDC_x64_Explain">Specifies whether a document's certification status should appear in the Protected View document message bar.&#10;&#10;Possible values include: 0: Don't show the document's certification status. 1: Do show the document's certification status.</string>
+      <string id="bEnhancedSecurityInBrowserDC_x64">Enhanced Security in Browser</string>
+      <string id="bEnhancedSecurityInBrowserDC_x64_Explain">Toggles enhanced security when the application is running in the browser.&#10;&#10;The GUI checkbox sets this key in tandem with bEnhancedSecurityStandalone. Note that for 8.x product versions bEnhancedSecurityInBrowser is not available. Both browser and standalone behavior are managed via bEnhancedSecurityStandalone. This feature can be locked on or off as follows: 0: Disable enhanced security in the browser. 1: Enable enhanced security in the browser. For additional security-related details, refer to the Application Security Guide .</string>
+      <string id="bEnhancedSecurityStandaloneDC_x64">Enhanced Security Standalone</string>
+      <string id="bEnhancedSecurityStandaloneDC_x64_Explain">Toggles enhanced security for the standalone application.&#10;&#10;The GUI checkbox sets this key in tandem with bEnhancedSecurityInBrowser. Note that for 8.x product versions, bEnhancedSecurityInBrowser is not available. Both browser and standalone behavior are managed via bEnhancedSecurityStandalone. This feature can be locked on or off as follows: 0: Disable enhanced security in the standalone application. 1: Enable enhanced security in the standalone application. For additional security-related details, refer to the Application Security Guide .</string>
+      <string id="bEnableFlashDC_x64">Flash Content in PDFs</string>
+      <string id="bEnableFlashDC_x64_Explain">Specifies whether Flash content should be rendered in a PDF.&#10;&#10;Setting a privileged location does not override this preference. Possible values include: 0: Flash content is rendered as an empty, white box and does not play. A yellow message bar also appears at the top of the document stating that &quot;Some features are disabled to avoid potential security risks.&quot; 1: Flash plays if there is a system player present. If a player is not found, then the user is prompted to download the latest version.</string>
+      <string id="EnableFlashEditingDC_x64">Flash Editing Tools</string>
+      <string id="EnableFlashEditingDC_x64_Explain">Specifies whether to enable the Flash tools for adding annotations or Flash in the Rich Media app.&#10;&#10;Possible values include: 0 or null: Remove &quot;Disable Flash &gt; Add SWF menu item.&quot; 1: Show the menu item.</string>
+      <string id="bEnablePVSwitchoutShortcutDC_x64">Protected View Exit Shortcut Key</string>
+      <string id="bEnablePVSwitchoutShortcutDC_x64_Explain">Enables a shortcut key that allows users to exit Protected View for a specific document.&#10;&#10;This feature allows admins and users to keep Protected View enabled, but also exit that mode on-the-fly when necessary. Possible values include: 0: Disable the shortcut key. 1: Enable the shortcut key that exits Protected View.</string>
+      <string id="iProtectedViewDC_x64">Protected View Mode</string>
+      <string id="iProtectedViewDC_x64_Explain">Specifies whether to use Protected View never (default), for files from an untrusted location (recommended), or always.&#10;&#10;The PV preferences were implemented in Acrobat 10.1 and are supported in Reader with 11.0. Possible values include: 0: (default) Disable Protected View. 1: (recommended) Enable Protected View for unsafe locations only. 2: Enable Protected View for all files. Note that the Customization Wizard 11 created the preference in an incorrect location at HKLM\SOFTWARE\WOW6432Node\Policies\Adobe\(product name)\(version)\TrustManager . This bug is fixed in the Wizard DC.</string>
+      <string id="iProtectedViewDC_x64_opt0">Disable Protected View</string>
+      <string id="iProtectedViewDC_x64_opt1">Enable Protected View for unsafe locations only</string>
+      <string id="iProtectedViewDC_x64_opt2">Enable Protected View for all files</string>
+
+      <!-- ======================================== -->
+      <!--     Security: Trust and Permissions      -->
+      <!-- ======================================== -->
+
+      <string id="bMSStoreTrustedDC_x64">Allow Changes to Windows Certificate Store Trust</string>
+      <string id="bMSStoreTrustedDC_x64_Explain">Locks the UI so that end users cannot change the value set by iMSStoreTrusted&#10;&#10;Set iMSStoreTrusted first, then use this preference to lock it. Allowable values include: 0: Lock the UI. 1: Same as null. Don't lock the UI.</string>
+      <string id="bAllowInvisibleSigDC_x64">Allow Invisible Signatures</string>
+      <string id="bAllowInvisibleSigDC_x64_Explain">Specifies whether to allow invisible certification signatures.&#10;&#10;False disables the menu option, prevents signing and certifying with invisible signatures, and limits JavaScript support by signature fields.</string>
+      <string id="bAllowPasswordSavingDC_x64">Allow Password Caching</string>
+      <string id="bAllowPasswordSavingDC_x64_Explain">Controls whether certain passwords can be cached to disk; for example, passwords for digital IDs.&#10;&#10;If false, users are prompted to enter a password every time one is required. Not all passwords are affected by this setting.</string>
+      <string id="bEnableSignatureClearDC_x64">Allow Signature Clearing</string>
+      <string id="bEnableSignatureClearDC_x64_Explain">Specifies whether to disable and lock the ability for a signer to clear their own signature.&#10;&#10;Possible values include: 0: Disable signature clearing. 1: Enable signature clearing.</string>
+      <string id="bVerifyUseAlwaysDC_x64">Always Use Specified Verify Handler</string>
+      <string id="bVerifyUseAlwaysDC_x64_Explain">Qualifies the use of aVerify.&#10;&#10;If true and aVerify is set to a handler name, then this handler is used to verify all signatures. If false, then the aVerify handler is used only to verify signatures when the handler specified by the signature dictionary Filter attribute is not present.</string>
+      <string id="bDisableExpandEnvironmentVariablesDC_x64">Block User Library Trust in Protected View</string>
+      <string id="bDisableExpandEnvironmentVariablesDC_x64_Explain">Provides a method for admins to whitelist user libraries as trusted locations when Protected View is enabled.&#10;&#10;Protected View restricts features for all documents that do not reside in a trusted location. This new preference provides a way for admins to specify user-specific locations as trusted; in other words, documents with the path C:\Users\%username%\Desktop will open outside Protected View. For example, the user libraries Documents, Downloads, Desktop, and so on. When this preference is off, admins can only specify trusted locations which are static/identical for all users across their organization. Possible values include: 0: Trust user-specific locations. 1: Don't trust user-specific locations.</string>
+      <string id="bWinCacheSessionHandlesDC_x64">Cache Digital ID Session Handles</string>
+      <string id="bWinCacheSessionHandlesDC_x64_Explain">Specifies whether to retain cryptographic service provider (CSP) handles when a user authenticates to a digital ID.&#10;&#10;If true, a user does not have to re-authenticate to use the ID unless they log out or the session ends. The impact of this preference will vary based on the CSP in use; however, the setting does not affect the Windows CSPs.</string>
+      <string id="bDisableOSTrustedSitesDC_x64">Disable IE Trusted Sites as Privileged Locations</string>
+      <string id="bDisableOSTrustedSitesDC_x64_Explain">Locks the ability to treat IE trusted sites as privileged locations either on or off so the users can't change the bTrustOSTrustedSites value via the user interface.&#10;&#10;If set, bTrustOSTrustedSites is simply ignored. Possible values include: 0 or null: Enables and locks trusting sites from IE. 1: Disables and locks trusting sites from IE.</string>
+      <string id="bAllowAPSConfigDC_x64">LiveCycle RMS Server Config</string>
+      <string id="bAllowAPSConfigDC_x64_Explain">Prevents a LiveCycle Right Management Server from being configured by disabling the menu option in the Security Settings Console.&#10;&#10;By default, configuration is allowed.</string>
+      <string id="bReqRevCheckDC_x64">Lock Revocation Check Setting</string>
+      <string id="bReqRevCheckDC_x64_Explain">Locks Security\cASPKI\cASPKI\cVerify\iReqRevCheck and disables the user interface item.</string>
+      <string id="bReasonsDC_x64">Lock Signing Reasons Settings</string>
+      <string id="bReasonsDC_x64_Explain">Prevents users from modifying reason's settings.&#10;&#10;v8.1: If locked and cReasons if empty, bAllowSigningReasons is 0 and read only. If locked and cReasons has values, then bAllowSigningReasons is true and read only.</string>
+      <string id="bDisableTrustedFoldersDC_x64">Lock Trusted Folders and Files</string>
+      <string id="bDisableTrustedFoldersDC_x64_Explain">Disables trusted folders AND files and prevents users from specifying a privileged location for directories.&#10;&#10;For versions 9.2 and earlier, the user interface does not appear as disabled even though it is non-functional once this key is set to true. For versions prior to 9.5 and 10.1.2, the Options button on the Yellow Message Bar continued to offer end users the option to trust the file. 0 or null: Files and folders can be trusted. 1: Disables and locks file and folder-based privileged locations.</string>
+      <string id="bDisableTrustedSitesDC_x64">Lock Trusted Host Sites</string>
+      <string id="bDisableTrustedSitesDC_x64_Explain">Disables and locks the ability to specify host-based privileged locations.&#10;&#10;For versions 9.2 and earlier, the user interface does not appear as disabled even though it is non-functional once this key is set to true. null 0: Enables and locks host-based privileged locations. 1: Disables and locks host-based privileged locations.</string>
+      <string id="bEnableCEFBasedUIDC_x64">Modern Digital Signature UI</string>
+      <string id="bEnableCEFBasedUIDC_x64_Explain">Specifies whether to enable the CEF-based, modern UI for digital signature workflows.&#10;&#10;The newer UI streamlines the user interface. All values also disable the UI option to change the preference. Note that for products released after June 2016, disabling a user's ability to create a self-signed digital ID requires setting both bSelfSignCertGen and bEnableCEFBasedUI to 0. Possible values include: 0: Disable the modern UI and shows the legacy UI. 1: Enable the Modern UI.</string>
+      <string id="bUseTSAsSigningTimeDC_x64">Show Timestamp in Signature</string>
+      <string id="bUseTSAsSigningTimeDC_x64_Explain">Specifies whether the timestamp time should be displayed in the signature appearance.&#10;&#10;By default, the signature appearance displays the signing time from the signer's computer clock. To display the timestamp server time in a signature appearance: Go to HKLM\SOFTWARE\WOW6432Node\Policies\Adobe\(product)\(version)\FeatureLockDown\cSecurity\cPubSec\ Create the new DWORD bUseTSAsSigningTime and set it to 1. Go to HKCU\Software\Adobe\(product)\(version)\Security\cASPKI\cASPKI\cSign. Set bReqSigPropRetrieval to 1. Create the preference if it does not exist. Verify the computer time does not vary from the signature validation revocation check response time specified by HKCU\Software\Adobe\(product)\(version)\Security\cPubSec\ iMaxClockSkew . The default is 65 minutes. iMaxClockSkew allows admins to account for a network delay, time synchronization issues, and so on without invalidation signatures. Possible values include: 0: Don't show the timestamp time. 1: Do show the timestamp time.</string>
+      <string id="bShowSignMenuDC_x64">Sign Menu in Menu Bar</string>
+      <string id="bShowSignMenuDC_x64_Explain">Specifies whether to show the Sign menu in Acrobat's top level menu bar.&#10;&#10;Possible values include: 0 or null: Disable the Sign menu item. 1: Enable the menu item.</string>
+      <string id="bAllowReasonWhenSigningDC_x64">Signing Reason UI</string>
+      <string id="bAllowReasonWhenSigningDC_x64_Explain">Specifies whether the reason UI will appear during signing.&#10;&#10;The preference can be overridden by a document seed value set on a field. For 8.1 and later, if cReasons is locked and is empty, bAllowSigningReasons is 0 and read only (The UI is turned off). If cReasons is locked and has values, then bAllowSigningReasons is true and read only.</string>
+      <string id="bEnableCertificateBasedTrustDC_x64">Trust Certified Documents</string>
+      <string id="bEnableCertificateBasedTrustDC_x64_Explain">Elevates (trusts) certified documents as a privileged location.&#10;&#10;This lockable counterpart to bTrustCertifiedDocuments allows certified documents to bypass all the security restrictions that may be bypassed by other privileged locations. The exception is that this level of trust does not apply when the PDF is viewed in Protected View. Possible values include: 0 or null: Don't make certified documents equivalent to privileged locations. 1: Do make certified documents equivalent to privileged locations (trusted).</string>
+      <string id="iUnknownURLPermsDC_x64">Unknown URL Access Policy</string>
+      <string id="iUnknownURLPermsDC_x64_Explain">Specifies whether to ask for, allow, or block access to web sites that are not in the user specified list.&#10;&#10;Overrides trusted host settings in Privileged Locations, but see the application security documentation for version details. Possible values include: 1: Always ask 2: Always allow 3: Always block For additional security-related details, refer to the Application Security Guide .</string>
+      <string id="iUnknownURLPermsDC_x64_opt0">Always ask</string>
+      <string id="iUnknownURLPermsDC_x64_opt1">Always allow</string>
+      <string id="iUnknownURLPermsDC_x64_opt2">Always block</string>
+      <string id="bValidateOnOpenDC_x64">Validate Signatures on Open</string>
+      <string id="bValidateOnOpenDC_x64_Explain">Specifies whether to automatically validate all signatures on document open.&#10;&#10;Note that the lockable setting does not configure the feature; instead, it locks what is set in HKCU and the user interface. 0: Don't validate signatures on document open. 1: Validate signatures on document open.</string>
+
+      <!-- ======================================== -->
+      <!--           Sharing and Features           -->
+      <!-- ======================================== -->
+
+      <string id="bToggleAdobeSignDC_x64">Adobe Acrobat Sign</string>
+      <string id="bToggleAdobeSignDC_x64_Explain">Disables Adobe Send for Signature (Acrobat Sign).&#10;&#10;Note that the Oct. 2018 Continuous track release renames &quot;Send for Signature&quot; as &quot;Acrobat Sign&quot;. Continuous track installs should also set bToggleManageSign . Preference behavior has not changed, but the UI to which it applies varies across product versions. Possible values include: 0: Enable Adobe Send for Signature (Acrobat Sign). 1: Disable Adobe Send for Signature (Acrobat Sign).</string>
+      <string id="bToggleSendAndTrackDC_x64">Adobe Send &amp; Track</string>
+      <string id="bToggleSendAndTrackDC_x64_Explain">Disables Adobe Send and Track (some UI is renamed to &quot;Share&quot; since October, 2018)&#10;&#10;Possible values include: 0: Enable Adobe Send and Track. 1: Disable Adobe Send and Track.</string>
+      <string id="bEnableRecipientMentionDC_x64">Allow @Mention Non-Reviewers</string>
+      <string id="bEnableRecipientMentionDC_x64_Explain">Specifies whether to allow participants in a shared review to @mention people who are not review collaborators.&#10;&#10;Prior to this release, reviewers could only @mention other reviewers in the review comments. Possible values include: 0: Don't allow mentioning non-reviewers. 1: Allow mentioning non-reviewers.</string>
+      <string id="bToggleAdobeReviewDC_x64">Document Cloud Review Service</string>
+      <string id="bToggleAdobeReviewDC_x64_Explain">Specifies whether to remove all UI related to the Document Cloud Review service.&#10;&#10;When set to 0, this preference removes all cloud-based review UI, including the Review tab on the Home screen. Review tools such as the Send for Review tool in the tool's pane invoke legacy review types rather than DC reviews. The Share button also does not lead users to review workflows. Possible values include: 0 (or null): Enable the Document Cloud Review service. 1: Disable the Document Cloud Review service.</string>
+      <string id="bSendMailShareRedirectionDC_x64">Email Icon Attach to Email Behavior</string>
+      <string id="bSendMailShareRedirectionDC_x64_Explain">Change the email icon behavior so that it attaches the document to an email.&#10;&#10;With the new unified sharing experience, UI for sharing such as the Send, Attach to Email, and the email icon in the top bar, invokes the new unified share pane. However, when users frequently use &quot;Send documents as Attachment&quot;, set this preference to 1 to change the behavior of the Email icon so that one-click attaches the file to an email. Possible values include: 0 or null: The email icon opens the share pane. 1: Change the email icon behavior to automatically attach the file to an email.</string>
+      <string id="bMixRecentFilesFeatureLockDownDC_x64">Hide Shared Files from Recent List</string>
+      <string id="bMixRecentFilesFeatureLockDownDC_x64_Explain">Specifies whether to show shared files in the Recent file list.&#10;&#10;When enabled, shared files appear in the Recent list when a user successfully shares a file as well as when a recipient accepts an invite to the shared file workflow. This feature makes it easier to track files in live workflows (reviews, shares, signing workflows, and files shared via Send and Track). Possible values include: 0: Add shared files to Recent list. 1: Don't add shared files to Recent list.</string>
+      <string id="bToggleFSSSignatureSavingDC_x64">Save Signature to Cloud</string>
+      <string id="bToggleFSSSignatureSavingDC_x64_Explain">Specifies whether to save a newly created signature in the cloud.&#10;&#10;When a user creates a new signature, the dialog offers the option to store the signature in the cloud for later use. This preference also controls saving user initials. Possible values include: 0: Show the Save Signature UI 1: Hide the Save Signature UI</string>
+      <string id="bAdobeSendPluginToggleDC_x64">Send &amp; Track Outlook Plugin</string>
+      <string id="bAdobeSendPluginToggleDC_x64_Explain">Toggles the Adobe Send and Track plugin for Outlook&#10;&#10;When enabled, an Adobe Send and Track button appears in Outlook when composing an email. It enables sending large files as public links through Outlook. The attached files are uploaded to Adobe Document Cloud and public links to the files are inserted in the email body. Recipients can click the link to preview the file in a browser window and can download the file if needed. Possible values include: 0: Enable Adobe Send and Track. 1: Disable Adobe Send and Track.</string>
+      <string id="bEnableReviewPromoteDC_x64">Share and Review Reminder Tip</string>
+      <string id="bEnableReviewPromoteDC_x64_Explain">Specifies whether to display a Share/Review feature reminder message when users have used those features in the past.&#10;&#10;If the user has not used the review service for 30 days AND has previously opened a PDF with review comments, Acrobat displays a tip reminding the user the review/share service is available. Possible values include: 0: Don't show a tip. 1: Show tip.</string>
+      <string id="bDisableSharePointFeaturesDC_x64">SharePoint &amp; Office 365 Integration</string>
+      <string id="bDisableSharePointFeaturesDC_x64_Explain">Disables the SharePoint and Office 365 integration features.&#10;&#10;Controls the application's ability to detect that a file came from a Sharepoint server, disables the check-out prompt, and removes the SharePoint specific menu items. Possible values include: 0: Same as &quot;null.&quot; Don't disable SharePoint and Office 365 integration. 1: Disable SharePoint and Office 365 integration.</string>
+      <string id="bPreviouslyEnabledSharePointInChromeExtnDC_x64">SharePoint Chrome Extension Previous State</string>
+      <string id="bPreviouslyEnabledSharePointInChromeExtnDC_x64_Explain">Stores the previous state of the Sharepoint FeatureLockDown settings.&#10;&#10;Possible values include: Same as bEnableSharePointInChromeExtn in FeatureLockDown.</string>
+      <string id="bEnableSharePointInChromeExtnDC_x64">SharePoint in Chrome Extension</string>
+      <string id="bEnableSharePointInChromeExtnDC_x64_Explain">Specifies whether to integrate Sharepoint into the Acrobat's Chrome extension.&#10;&#10;Possible values include: 0: Don't enable Sharepoint integration. 1: Enable.</string>
+      <string id="bToggleManageSignDC_x64">Show Acrobat Sign Tracking Tab</string>
+      <string id="bToggleManageSignDC_x64_Explain">Specifies whether to remove the Signature tab from the Home page's left-hand pane, notifications, and sign tracking cards.&#10;&#10;When set to 0, the signature tab is hidden, the user will not see any agreements received or sent for signature, and all Acrobat Sign notifications are disabled on the desktop. It also removes signature-related cards under the To Do list. Possible values include: 0: Show the Signature tab. 1: Hide the Signature tab.</string>
+      <string id="bDisableOnBehalfOfTextDC_x64">Show Comment Author in Shared Review</string>
+      <string id="bDisableOnBehalfOfTextDC_x64_Explain">If false, the string &quot;On behalf of&quot; does not append the author's name in the comment when another person opens the document in a shared-review workflow.&#10;&#10;This preference is only used in shared review workflows. Possible values include: 0: Don't display the comment author's name. 1: Do display the comment author's name.</string>
+      <string id="iClientType_GmailDC_x64">WebMail Client Type (Gmail)</string>
+      <string id="iClientType_GmailDC_x64_Explain">Identifies the Gmail Mail client type for WebMail.&#10;&#10;The value can only be: 1</string>
+      <string id="iClientType_GmailDC_x64_opt0">Locked value: 1 (per Adobe PrefRef)</string>
+      <string id="iClientType_YahooDC_x64">WebMail Client Type (Yahoo)</string>
+      <string id="iClientType_YahooDC_x64_Explain">Identifies the Yahoo Mail client type for WebMail.&#10;&#10;The value can only be: 2</string>
+      <string id="iClientType_YahooDC_x64_opt0">Locked value: 2 (per Adobe PrefRef)</string>
+      <string id="tIMAPDraftsFolderDC_x64">WebMail IMAP Drafts Folder</string>
+      <string id="tIMAPDraftsFolderDC_x64_Explain">Identifies the My Profile Mail draft folder for WebMail.&#10;&#10;The value can be: Any draft folder name.</string>
+      <string id="iIMAPPortDC_x64">WebMail IMAP Port</string>
+      <string id="iIMAPPortDC_x64_Explain">Identifies the My Profile Mail IMAP server port number for WebMail.&#10;&#10;The value can be: Any valid port number.</string>
+      <string id="iIMAPPortDC_x64_opt0">143 (Standard IMAP)</string>
+      <string id="iIMAPPortDC_x64_opt1">993 (IMAP over SSL/TLS)</string>
+      <string id="iIMAPSecurityDC_x64">WebMail IMAP Security</string>
+      <string id="iIMAPSecurityDC_x64_Explain">Specifies whether to enable the My Profile Mail IMAP security for WebMail.&#10;&#10;The value can be: 0: Don't enabled security. 1: Enable security.</string>
+      <string id="bDisableWebmailDC_x64">WebMail Integration</string>
+      <string id="bDisableWebmailDC_x64_Explain">Specifies whether to disable WebMail.&#10;&#10;If this preference is not present and and the FeatureLockDown preference bSendMailShareRedirection is set to 1, the email icon opens the classic dialogue so the user can select an Outlook or webmail profile. If both bSendMailShareRedirection and bDisableWebmail=1 are present, then the app opoens new mail items with a PDF attached. Possible values include: 0: Change the default email icon behavior to automatically attach the file to an email as described above. 1: The email icon opens the Share pane.</string>
+      <string id="iSMTPPortDC_x64">WebMail SMTP Port</string>
+      <string id="iSMTPPortDC_x64_Explain">Identifies the My Profile Mail SMTP server port number for WebMail.&#10;&#10;The value can be: Any valid server port number.</string>
+      <string id="iSMTPPortDC_x64_opt0">25 (Standard SMTP)</string>
+      <string id="iSMTPPortDC_x64_opt1">465 (SMTP over SSL)</string>
+      <string id="iSMTPPortDC_x64_opt2">587 (SMTP Submission / TLS)</string>
+      <string id="iSMTPSecurityDC_x64">WebMail SMTP Security</string>
+      <string id="iSMTPSecurityDC_x64_Explain">Specifies whether to enable the My Profile Mail SMTP security for WebMail.&#10;&#10;The value can be: 0: Don't enabled security. 1: Enable security.</string>
+
+      <!-- ======================================== -->
+      <!--          Startup and Experience          -->
+      <!-- ======================================== -->
+
+      <string id="bShowMsgAtLaunchDC_x64">Adobe Messages at Launch</string>
+      <string id="bShowMsgAtLaunchDC_x64_Explain">Specifies whether to show messages from Adobe when the product launches.&#10;&#10;This preference also hides the Share Feedback icon, removes messages such as the 11.x &quot;end-of-life&quot; warning, and disables the dialog prompt that urges users to complete their profile. In later product versions, this preference removes the Home banner (top message area) from the Home view. Possible values include: 0: Don't show messages from Adobe when the product launches. 1: Show messages from Adobe when the product launches.</string>
+      <string id="bAllowUserToChangeMsgPrefsDC_x64">Allow Users to Change Message Preferences</string>
+      <string id="bAllowUserToChangeMsgPrefsDC_x64_Explain">Locks the features associated with bShowMsgAtLaunch and bDontShowMsgWhenViewingDoc so that ends users can't change the settings.&#10;&#10;Possible values include: 0: Locks the feature so end users can't change the settings. 1: Allows users to change the settings. A value of 1 has the same affect as this key not existing at all.</string>
+      <string id="bToggleNotificationsDC_x64">Desktop Notifications</string>
+      <string id="bToggleNotificationsDC_x64_Explain">Specifies whether to disable all in-product and desktop notifications.&#10;&#10;When 0 (or null), feature-specific notifications are managed via the related service preference. When set to 1, this preference disables all notifications irrespective of the values of all other keys. Possible values include: 0: Enable desktop notifications. 1: Disable all desktop notifications.</string>
+      <string id="bToggleFTEDC_x64">First Time Experience</string>
+      <string id="bToggleFTEDC_x64_Explain">Specifies whether to enable the First Time Experience (FTE) feature (Welcome tour/page).&#10;&#10;The first time experience (FTE) feature displays help content and tips when the application starts and also controls access to the Welcome Tour and Welcome page. FTE is also disabled if any of these preferences under FeatureLockDown\cServices are set: bUpdater , bToggleAdobeDocumentServices , bToggleAdobeSign , bTogglePrefsSync , bToggleWebConnectors . Possible values include: 0 or null: Enable FTE features. 1: Disable FTE features.</string>
+      <string id="bEnableBellButtonDC_x64">Hide In-Product Notifications Bell</string>
+      <string id="bEnableBellButtonDC_x64_Explain">Specifies whether to hide in-product messages.&#10;&#10;A value of 1 hides notifications, but the product still fetches and caches them. Possible values include: 0: Show in-product notifications. 1: Hide in-product notifications.</string>
+      <string id="bToggleShareFeedbackDC_x64">Hide Send Feedback Icon</string>
+      <string id="bToggleShareFeedbackDC_x64_Explain">Specifies whether to show the Send Feedback icon.&#10;&#10;By default, the UI displays a feedback icon so that users can easily send feedback to Adobe with one click. This preference replaces bUsageMeasurement for 12.x and later products. Setting bShowMsgAtLaunch to 0 also hides the icon. Possible values include: 0: Hide the icon. 1: Show the icon.</string>
+      <string id="bToggleToDoListDC_x64">Home Screen To Do List</string>
+      <string id="bToggleToDoListDC_x64_Explain">Specifies whether to show a &quot;to do&quot; list on the Home screen.&#10;&#10;By default, the Home screen displays a list of action items such as Take a Tour, Export PDF, and so on. For details, see the What's New . Possible values include: 0: Enable the feature. 1: Disable the feature.</string>
+      <string id="bShowScanTabInHomeViewDC_x64">Scan Tab in Home View</string>
+      <string id="bShowScanTabInHomeViewDC_x64_Explain">Specifies whether to disable the Scan tab in Home view.&#10;&#10;When enabled, links to scans appear under the Scan tab in the Home view. Possible values include: 0: Hide the scan tab. 1: Show the Scan tab.</string>
+      <string id="bToggleNotificationToastsDC_x64">Show Desktop Notification Toasts</string>
+      <string id="bToggleNotificationToastsDC_x64_Explain">Specifies whether to hide desktop notifications.&#10;&#10;A value of 1 hides notifications, but the product still fetches and caches them. Possible values include: 0: Show desktop notifications. 1: Hide desktop notifications.</string>
+      <string id="bTogglePDFOwnershipToastsDC_x64">Show PDF Ownership Notification</string>
+      <string id="bTogglePDFOwnershipToastsDC_x64_Explain">Specifies whether to show a notification on machine startup that allows the user to make Acrobat the default PDF viewer.&#10;&#10;When enabled and both Acrobat and Reader are installed, the user can click on the notification to change the default PDF viewer. Possible values include: 0: Show PDF ownership notification on application startup. 1: Don't ownership notification.</string>
+      <string id="bToggleToDoTilesDC_x64">Show To Do Cards in Recent Tab</string>
+      <string id="bToggleToDoTilesDC_x64_Explain">Specifies whether to show To Do Cards in the Recent Tab view&#10;&#10;To Do cards list potential action items for members of certain workflows (for example, collaborative reviews). When set to 1, To Do cards do not appear in the Recent tab. Possible values include: 0 or null: Show cards for unaccepted workflows (reviews, views and sign). 1: Hide cards for unaccepted workflows (reviews, views and sign).</string>
+      <string id="bWhatsNewExpDC_x64">What's New Experience</string>
+      <string id="bWhatsNewExpDC_x64_Explain">Specifies whether to disable the What's New experience.&#10;&#10;This feature was phased in incrementally over 2022. When enabled, the default user on first launch will see a What's New screen as well as a See new features notication. These UI items appear once. Possible values include: 0: Enable the What's New experience. 1: Disable.</string>
+
+      <!-- ======================================== -->
+      <!--     Updates and Desktop Integration      -->
+      <!-- ======================================== -->
+
+      <string id="bDisableThirdPartyPluginNotifDC_x64">32-Bit Plugin Upgrade Notification</string>
+      <string id="bDisableThirdPartyPluginNotifDC_x64_Explain">Specifies whether to notify users with 32 bit plugins that the app will soon update to 64 bit.&#10;&#10;32 bit plugins will not work in the 64 bit app. The notification provides a &quot;Learn more&quot; link that provides additional details about how to upgrade their plugin. Possible values include: 0: Do not warn the user about 32 bit plugins. 1: Do warn the user.</string>
+      <string id="bEnableAutoDockUndockHUDDC_x64">Auto Dock HUD Bar</string>
+      <string id="bEnableAutoDockUndockHUDDC_x64_Explain">Specifies whether to automatically doc and undock the HUD bar based on the window size.&#10;&#10;Possible values include: 0: Disable automatic behavior. 1: Enable auto docking and undocking.</string>
+      <string id="bHasAcrobatConsentDC_x64">Auto Open Acrobat from Reader</string>
+      <string id="bHasAcrobatConsentDC_x64_Explain">Specifies whether the Reader process should automatically open Acrobat for the current file.&#10;&#10;PDF ownership does not change. Reader will continue as the default PDF viewer on this machine. Possible values include: 0: Don't automatically use Acrobat. 1: Use Acrobat</string>
+      <string id="bCrashReporterEnabledDC_x64">Crash Reporter Dialog</string>
+      <string id="bCrashReporterEnabledDC_x64_Explain">Specifies whether to show the crash reporter dialog on application crash (Windows only).&#10;&#10;This feature is part of the CrashReporter integration on Windows. The dialog allows users to send crash logs to the CrashReporter team. Possible values include: 0: Don't show the dialog. 1: Show the dialog</string>
+      <string id="bAcroSuppressOpenInReaderDC_x64">Disable Chrome PDF Extension</string>
+      <string id="bAcroSuppressOpenInReaderDC_x64_Explain">Specifies whether to disable and lock the PDF viewer Chrome extension.&#10;&#10;See also ENABLE_CHROMEEXT . Possible values include: 0 or null: Extension is enabled; users can open PDFs in a browser with Acrobat Reader 1: Disable the browser-based PDF viewer. A tooltip says &quot;The Acrobat Reader extension is currently disabled. Please contact your IT admin.&quot;</string>
+      <string id="iDisablePromptForUpgradeDC_x64">Disable Major Version Upgrade Prompt</string>
+      <string id="iDisablePromptForUpgradeDC_x64_Explain">Specifies whether the application should show a prompt suggesting the user upgrade to the next major version (for example, 10.0 to 11.0).&#10;&#10;If updates have been disabled (bUpdater = 0), then upgrades are also disabled. The feature also requires that the update settings are set to &quot;automatic.&quot; 0 or null: No effect. 1: Disable the prompt asking users if they would like to upgrade to a higher major version.</string>
+      <string id="DisableMaintenanceDC_x64">Disable Repair for All Users</string>
+      <string id="DisableMaintenanceDC_x64_Explain">Specifies whether to disable the Help &gt; Repair Installation menu for all users on virtual and and regular installs.&#10;&#10;To disable the Help &gt; Repair Installation menu item for all users/installs, create this preference and set the value to 1. See also Disable_Repair . The path is as follows: 32 bit machines: HKLM\SOFTWARE\Adobe\(product)\(version)\Installer 64 bit machines: HKLM\SOFTWARE\Wow6432Node\Adobe\(product)\(version)\Installer</string>
+      <string id="Disable_RepairDC_x64">Disable Repair for Standard Users</string>
+      <string id="Disable_RepairDC_x64_Explain">Specifies whether to disable the Help &gt; Repair Installation menu for standard users on virtualized installations.&#10;&#10;When working with virtualized installations, users should not be able to run repair from the help menu. Only an administrator should be able to invoke actions that may require a reboot of a Citrix server, WT server, and so on. To disable the menu item, create this preference and set the value to 1. See also DisableMaintenance . The path is as follows: 32 bit machines: HKLM\SOFTWARE\Adobe\(product)\(version)\Installer 64 bit machines: HKLM\SOFTWARE\Wow6432Node\Adobe\(product)\(version)\Installer</string>
+      <string id="IsAMTEnforcedDC_x64">Enforce AMT for AppV Deployment</string>
+      <string id="IsAMTEnforcedDC_x64_Explain">Allows deployment of Acrobat on AppV for December, 2018 and later products.&#10;&#10;0: Do not use. 1: Required after December 2018 for Acrobat on AppV.</string>
+      <string id="bSuppressMessageBarDC_x64">Hide Document Message Bar</string>
+      <string id="bSuppressMessageBarDC_x64_Explain">Prevents the appearance of the document message bar.&#10;&#10;Adversely affects signing when preview mode is used.</string>
+      <string id="bDisablePDFHandlerSwitchingDC_x64">Lock Default PDF Viewer</string>
+      <string id="bDisablePDFHandlerSwitchingDC_x64_Explain">Disables the ability to change the specified default handler (PDF viewer).&#10;&#10;When Reader and Acrobat are installed on the same machine or earlier versions of Acrobat already exist, you can choose which viewer is the default for PDF files. While Acrobat is the more capable, feature rich application, Reader X has a built in Protected Mode which is more secure (For security details, see the Application Security Guide). This feature is a Adobe PDF handler-only feature: It does not enable switching to and from non-Adobe products and may or may not change the handling of other Acrobat supported formats; for example, it changes FDF and XDP, but not XFA or PDX. Administrators interested in security may want to make Reader the default PDF viewer. Version X products will be able to switch between any product type and version back to 9.x. For more information, see the PDF Ownership knowledge base article . Note that UI configuration does not set any key in HKCU. Instead, changing the setting via the UI invokes the installer which sets the key in HKLM. The default application behavior varies depending on what is installed. A value of 1 disables the user's ability to change the default handler. Possible values include: 0 (or null): Allow the user to change the default viewer. 1: Don't allow the user to change the default viewer.</string>
+      <string id="bDisableThumbnailPreviewHandlerDC_x64">Lock PDF Thumbnails in Explorer</string>
+      <string id="bDisableThumbnailPreviewHandlerDC_x64_Explain">Specifies whether to disable and lock the user interface option that controls Acrobat-generated PDF thumbnail previews in Windows Explorer.&#10;&#10;Oct 13, 2015: 32-bit Windows systems only. 64-bit support was enabled on May 9, 2016. This setting disables the user interface checkbox in the UI. Possible values include: 0: Enable the UI checkbox so users can invoke the installer and enable the thumbnail preview handler. 1: Disable and lock the setting.</string>
+      <string id="bMergeMenuBarDC_x64">Merge Title and Menu Bar</string>
+      <string id="bMergeMenuBarDC_x64_Explain">Specifies whether to merge the application's title bar and menu bar into a single bar.&#10;&#10;Note that &quot;Policies&quot; does not appear in the HKLM path. Possible values include: 0: Don't merge the title and menu bars 1: Merge the bars</string>
+      <string id="bUpdater_UpdaterDC_x64">Product Updater</string>
+      <string id="bUpdater_UpdaterDC_x64_Explain">Disables the Updater and removes associated user interface items.&#10;&#10;Manually this preference to disable updates. For 11.x products and earlier, this preference overrides any bDeclined value. For 12.x and later products, this setting overrides Mode . 0: Disables and locks the Updater. 1: No effect.</string>
+      <string id="bShouldUseScalableCursorDC_x64">Scalable Cursor</string>
+      <string id="bShouldUseScalableCursorDC_x64_Explain">Specifies whether to disable the scalable cursor.&#10;&#10;Because Citrix does not provide support for scalable cursors (32-bit cursors with an alpha channel) in legacy graphics mode, scalable cursor performance may be impaired on Citrix. Use this setting to improve performance on Citrix by using a non-scalable cursor. Possible values include: 0: Don't use a scalable cursor. 1: Use a scalable cursor.</string>
+      <string id="dSplitBySizeMaxSizeDC_x64">Split by Size Maximum (MB)</string>
+      <string id="dSplitBySizeMaxSizeDC_x64_Explain">Specifies the file size in MB into which a file may be split.&#10;&#10;Users or admins can specify any value between 50 and 1024 megabytes. When values outside of that range are used, the default of 50 is enforced. Possible values include: Any value between 50 and 1024. On Mac, the key is an Array which should have two items: A Key named &quot;Item 0&quot; where Type=&quot;Number&quot; with a value of 3, and a key named &quot;Item 1&quot; where Type=&quot;Number&quot; with any Value = &lt;User value&gt;</string>
+      <string id="dSplitBySizeMaxSizeDC_x64_opt0">50 MB (minimum)</string>
+      <string id="dSplitBySizeMaxSizeDC_x64_opt1">100 MB</string>
+      <string id="dSplitBySizeMaxSizeDC_x64_opt2">250 MB</string>
+      <string id="dSplitBySizeMaxSizeDC_x64_opt3">500 MB</string>
+      <string id="dSplitBySizeMaxSizeDC_x64_opt4">1024 MB (maximum)</string>
+      <string id="bFavoritesFeaturesLockDownDC_x64">Starred Files Feature</string>
+      <string id="bFavoritesFeaturesLockDownDC_x64_Explain">Specifies whether to disable and lock the starred file feature.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. This preference overrides bFavoritesStripInRFL . Possible values include: 0: Disable and lock starred files in the recent files list. 1: Use bFavoritesStripInRFL to control this feature.</string>
+      <string id="iIntervalDC_x64">Update Watchdog Interval (Days)</string>
+      <string id="iIntervalDC_x64_Explain">Sets the time that can elapse without a successful update before the Watchdog dialog appears suggesting the user manually update.&#10;&#10;This is an internal key that is not visible unless the admin creates it manually. When the Updater successfully obtains a manifest it records the download date. iInterval specifies the time interval that is allowed to pass from that download date to a a successful update. The default is 135 days. If the time has elapsed, a dialog appears suggesting the user might want to manually get an update from adobe.com. Possible values include: 135 days User specified.</string>
+      <string id="iIntervalDC_x64_opt0">90 days</string>
+      <string id="iIntervalDC_x64_opt1">135 days (default)</string>
+      <string id="iIntervalDC_x64_opt2">180 days</string>
+      <string id="iIntervalDC_x64_opt3">365 days</string>
+      <string id="iLogLevelDC_x64">Updater Log Level</string>
+      <string id="iLogLevelDC_x64_Explain">Sets the log level to either brief (0) or verbose (1).&#10;&#10;Log file size is not limited during an update. However, since log files are appended to each time the Updater runs, there is a 1MB limit on old logs. Size limit behavior is as follows: If an existing log size is bigger than 1 MB, the Updater truncates the log. Old log files are backed up once as AdobeARM-backup. Logs reside at: Vista-Windows 7 (64 bit systems) %USERPROFILE%\AppData\Local\Temp\AdobeARM.log XP (32bit systems) %USERPROFILE%\Local Settings\Temp\AdobeARM.log Set the log level as follows: 0: Brief 1: Verbose</string>
+
+      <!-- ======================================== -->
+      <!--                  Upsell                  -->
+      <!-- ======================================== -->
+
+      <string id="bToggleBillingIssueDC_x64">Disable Billing Issue Call to Action</string>
+      <string id="bToggleBillingIssueDC_x64_Explain">Specifies whether to show a Call to Action UI item in the top bar if a billing issue is detected.&#10;&#10;Possible values include: 0 or null: Disable the CTA UI. 1: Show the CTA UI.</string>
+      <string id="bToggleSophiaWebInfraDC_x64">Disable Promotional Campaign Messages</string>
+      <string id="bToggleSophiaWebInfraDC_x64_Explain">Summary: Specifies whether to show users messages which promote (Trials, Acrobat, PDF Pack etc.)&#10;&#10;Subscription users may be prompted to download Acrobat. Theoretically, this preference does not interact with any other upsell preferences. Possible values include: 0 or null: Disable campaigns in Reader's right-hand pane bottom banner 1: Enable campaigns</string>
+      <string id="bMerchandizingEnabledDC_x64">Express Templates in Create PDF</string>
+      <string id="bMerchandizingEnabledDC_x64_Explain">Specifies whether to show the Express Templates options in Acrobat's Create PDF UI.&#10;&#10;This feature is an experiment not shown to all users. Possible values include: 0: Do not show the templates 1: Show the templates</string>
+      <string id="bLimitPromptsFeatureKeyDC_x64">Limit Informational Prompts</string>
+      <string id="bLimitPromptsFeatureKeyDC_x64_Explain">Specifies whether to limit the number of prompts a user will see in a 24 hour period.&#10;&#10;Prompts include items like tips, calls-to-action, and feature walk throughs. These are not necessarily upsell items. Possible values include: 0: Don't restrict informational prompts. 1: Limit prompts to 1 per day and 3 per week.</string>
+      <string id="bToggleDCAppCenterDC_x64">Show App Center UI</string>
+      <string id="bToggleDCAppCenterDC_x64_Explain">Specifies whether to show the UI that helps users find and download additional apps.&#10;&#10;By default, the Home view displays a provides a &quot;get apps&quot; banner and/or a link to the App Center where users can find and download additional apps (such as mobile apps). This preference removes both the banner and the App Center. Possible values include: 0 (or null): Show the App Center UI. 1: Don't show the App Center UI.</string>
+      <string id="bAcroSuppressUpsellDC_x64">Show Upgrade Prompts</string>
+      <string id="bAcroSuppressUpsellDC_x64_Explain">For 12.x and later products, disables messages which encourage the user to upgrade the product.&#10;&#10;Products that don't provide the full set of features by default provide the user the opportunity to upgrade. For example, Reader users can purchase additional tools and features, and Acrobat Standard users can upgrade to Acrobat Professional. Possible values include: 0 or null: Don't disable upsell. 1: Disable upsell. For 12.x and later products, Upsell could not be disabled for users with a volume license. This bug was fixed in the July 2015 update.</string>
+      <string id="bEnableTrialistLaunchCardDC_x64">Trial Purchase Prompt</string>
+      <string id="bEnableTrialistLaunchCardDC_x64_Explain">Specifies whether to prompt Acrobat trial users to complete the purchase.&#10;&#10;Possible values include: 0: Disable the purchase Acrobat prompt. 1: Don't disable the prompt.</string>
+
+      <!-- ======================================== -->
+      <!--                                          -->
+      <!--  Adobe Reader DC (x64) - policy strings  -->
+      <!--                                          -->
+      <!-- ======================================== -->
+
+      <!-- ======================================== -->
+      <!--           Cloud and Connectors           -->
+      <!-- ======================================== -->
+
+      <string id="bToggleFillSign_x64">Adobe Fill &amp; Sign</string>
+      <string id="bToggleFillSign_x64_Explain">Disables Adobe Fill and Sign.&#10;&#10;Possible values include: 0: Enable Adobe Fill and Sign. 1: Disable Adobe Fill and Sign.</string>
+      <string id="bBoxConnectorEnabled_x64">Box Cloud Connector</string>
+      <string id="bBoxConnectorEnabled_x64_Explain">Specifies whether to enable connection to the Box cloud when bToggleWebConnectors is set to 1.&#10;&#10;Overrides a bToggleWebConnectors value of 1. Only supported on the Continuous track. Possible values include: 0: Disable connection to Box 1: Enable connection to Box</string>
+      <string id="bToggleAdobeDocumentServices_x64">Document Cloud Services</string>
+      <string id="bToggleAdobeDocumentServices_x64_Explain">Disables Document Cloud service access except those features controlled by the other preferences.&#10;&#10;This setting does not affect Adobe Send for Signature (Acrobat Sign), preference synchronization, or third party connectors. For the base release, it also did not disable Send and Track (Share); however, it does control Send and Track with the July, 2015 release. For Acrobat Reader, this preference removes Create PDF, Export PDF, Organize, and Combine even if the ID has a subscription to those services. To disable all services, use bUpdater . Possible values include: 0: Enable Document Cloud services. 1: Disable Document Cloud services.</string>
+      <string id="bToggleDocumentCloud_x64">Document Cloud Storage</string>
+      <string id="bToggleDocumentCloud_x64_Explain">Specifies whether to enable Document Cloud storage.&#10;&#10;DC storage is enabled by default. Possible values include: 0: Enable Document Cloud storage. 1: Disable Document Cloud storage.</string>
+      <string id="bDropboxConnectorEnabled_x64">Dropbox Cloud Connector</string>
+      <string id="bDropboxConnectorEnabled_x64_Explain">Specifies whether to enable connection to the Dropbox cloud when bToggleWebConnectors is set to 1.&#10;&#10;Overrides a bToggleWebConnectors value of 1. Only supported on the Continuous track. Possible values include: 0: Disable connection to Dropbox 1: Enable connection to Dropbox</string>
+      <string id="bEnableGentech_x64">Enable Generative AI</string>
+      <string id="bEnableGentech_x64_Explain">Specifies whether to enable generative AI features in Acrobat and Reader.&#10;&#10;Possible values include: 0: Disable generative AI features. 1: Enable generative AI features. Generative AI capabilities may rely on cloud services; verify organizational policies and Adobe documentation for data handling.</string>
+      <string id="bGoogleDriveConnectorEnabled_x64">Google Drive Connector</string>
+      <string id="bGoogleDriveConnectorEnabled_x64_Explain">Specifies whether to enable connection to the Google Drive cloud when bToggleWebConnectors is set to 1.&#10;&#10;Overrides a bToggleWebConnectors value of 1. Only supported on the Continuous track. Possible values include: 0: Disable connection to Google Drive 1: Enable connection to Google Drive</string>
+      <string id="bToggleSendACopy_x64">Hide Fill &amp; Sign Send a Copy Button</string>
+      <string id="bToggleSendACopy_x64_Explain">Specifies whether to hide the Send a Copy button from the Fill &amp; Sign tool in Acrobat and Reader.&#10;&#10;Possible values include: 0: Hide the button. 1: Show the button.</string>
+      <string id="bSuppressSignOut_x64">Hide Sign Out Menu Item</string>
+      <string id="bSuppressSignOut_x64_Explain">Specifies whether the sign-in and sign-out Help menu item should be enabled.&#10;&#10;Possible values include: 0 or null: Don't disable the menu item. 1: Disable the Help menu item.</string>
+      <string id="bOneDriveConnectorEnabled_x64">OneDrive Connector</string>
+      <string id="bOneDriveConnectorEnabled_x64_Explain">Specifies whether to enable connection to the OneDrive cloud when bToggleWebConnectors is set to 1.&#10;&#10;Overrides a bToggleWebConnectors value of 1. Only supported on the Continuous track. Possible values include: 0: Disable connection to OneDrive 1: Enable connection to OneDrive</string>
+      <string id="bTogglePrefsSync_x64">Preferences Synchronization</string>
+      <string id="bTogglePrefsSync_x64_Explain">Disables preferences synchronization.&#10;&#10;This preference disables and locks a new feature which synchronizes desktop preferences across devices on which the user is signed in with an Adobe ID. For more details about what preferences sync, see the Admin Guide . Possible values include: 0: Enable preferences synchronization. 1: Disable preferences synchronization.</string>
+      <string id="bUpdater_Updates_x64">Services &amp; Web-Plugin Updates</string>
+      <string id="bUpdater_Updates_x64_Explain">Disables both updates to the product's web-plugin components as well as all services.&#10;&#10;It disables both updates to the product's web-plugin components as well as all services without exception, including any sign-in screen. The setting is not the same as bUpdater which resides directly under FeatureLockDown and disables product updates. Possible values include: 0: Disable services and service component updates. 1: Enable services.</string>
+      <string id="bToggleWebConnectors_x64">Third-Party Cloud Connectors</string>
+      <string id="bToggleWebConnectors_x64_Explain">Specifies whether to enable cloud storage connectors.&#10;&#10;Only supported on the Continuous track. Allows controlling in-product access to third party services for file storage. Dropbox support began with the Oct. 13, 2015 release. May 9, 2016: The preference now controls all the third-party connectors, including Box, OneDrive, and Dropbox (not SharePoint). When disabled, Possible values include: Possible values include: 0: Enable 3rd party connectors. 1: Disable 3rd party connectors. This preference disables 3rd party web connectors and their entry points from the product's UI, including in the Home view's left hand pane and under Add Account as well as custom Open/Save dialogs. If Document Cloud is also disabled, Open and Save dialogs revert to platform dialogs.</string>
+
+      <!-- ======================================== -->
+      <!--        Context, Tools and Search         -->
+      <!-- ======================================== -->
+
+      <string id="bUIDensityAutoDetectionEnabled_x64">Auto UI Density Detection</string>
+      <string id="bUIDensityAutoDetectionEnabled_x64_Explain">Specifies whether to disable the auto detection logic and bezel for changing Acrobat's display size.&#10;&#10;By default, the UI is enabled so that a user may change the display size based on device screen size, resolution, and monitor scaling. 0: Disable the UI. 1: Show the UI.</string>
+      <string id="bEnableContextualTips_x64">Contextual Help Tips</string>
+      <string id="bEnableContextualTips_x64_Explain">Controls whether to automatically display help tips based on the current context.&#10;&#10;Possible values include: 0: Disable contextual tips. 1: Enable tips.</string>
+      <string id="bEnableContextualToolbar_x64">Contextual Toolbar</string>
+      <string id="bEnableContextualToolbar_x64_Explain">Specifies whether to show the context toolbar (popup) when selecting a PDF object.&#10;&#10;When enabled, a popup, floating toolbar appears when a user interacts with a PDF. For example, selecting text displays text markup tools. Selecting an image displays sticky note and editing tools. Possible values include: 0: Don't show context toolbars. 1: Show toolbars.</string>
+      <string id="bEnableExtractPageRange_x64">Extract Page Range UI</string>
+      <string id="bEnableExtractPageRange_x64_Explain">Specifies whether to show the page range UI in the Extract Page dialog.&#10;&#10;0: Don't show the page range UI. 1: Show the page range UI.</string>
+      <string id="ProtectOldExperience_x64">Legacy Protect Tool Menu</string>
+      <string id="ProtectOldExperience_x64_Explain">Specifies whether to use the disable the new Protect tool and revert to the old menu&#10;&#10;The Protect tool provides options for encrypting and password protecting documents. The new UI provides some streamlined options, but this preference supports using the old menus. Possible values include: 0 or null: Use the new protect app experience. 1: Revert to the existing (pre October, 2019) protect app experience.</string>
+      <string id="bDisableAcrobatShortcutCustomization_x64">Lock Tool Shortcut Customization</string>
+      <string id="bDisableAcrobatShortcutCustomization_x64_Explain">Prevents end users from modifying the tool shortcuts in the right hand pane.&#10;&#10;Possible values include: 0: Don't disable shortcuts. 1: Disable shortcuts.</string>
+      <string id="bEnableAV2Enterprise_x64">Modern Viewer</string>
+      <string id="bEnableAV2Enterprise_x64_Explain">Specifies whether to enable the Modern Viewer.&#10;&#10;The new app UI is rolling out in phases over 2023. As of June, 25% of users will see the updated user interface. This preference may interact with bShownViewerOnboarding and bEnableAV2 . Possible values include: 0: Don't show the Modern Viewer 1: Show the Modern Viewer</string>
+      <string id="bEnableRCMNewPOPUp_x64">New Right-Click Context Menu</string>
+      <string id="bEnableRCMNewPOPUp_x64_Explain">Specifies whether to disable the new context menu and use the legacy version.&#10;&#10;A new right-click context menu displays icons and additional menu options. 0: Disable the new context menu. 1: Enable the new menu.</string>
+      <string id="bFindMoreWorkflowsOnline_x64">Online Actions Library Link</string>
+      <string id="bFindMoreWorkflowsOnline_x64_Explain">Specifies whether to show the menu item that opens the online Actions file library.&#10;&#10;Possible values include: 0: Disable the menu item. 1 or null: Don't disable the menu item.</string>
+      <string id="bFindMoreCustomizationsOnline_x64">Online Tool Set Exchange Link</string>
+      <string id="bFindMoreCustomizationsOnline_x64_Explain">Specifies whether to show the menu item that opens the online Acrobat Tool Set Exchange.&#10;&#10;Possible values include: 0: Disable the menu item. 1 or null: Don't disable the menu item.</string>
+      <string id="ADC4302862_x64">Paste in Place</string>
+      <string id="ADC4302862_x64_Explain">Specifies whether to past copied elements to the exact location as the copied element.&#10;&#10;Some copy/paste operations are more efficient when copied elements are pasted to an identical location in the target document. This feature applies to form fields, annotations, and links. Possible values include: 0: Disable the paste-in-place feature. 1: Enable the paste-in-place feature.</string>
+      <string id="bRCMCombineFeatureKey_x64">Show Combine Files Context Menu</string>
+      <string id="bRCMCombineFeatureKey_x64_Explain">Specifies whether to display the Combine Files item in a document's right-click context menu.&#10;&#10;This preference only applies to machines that display the Modern Viewer (a phased rollout over 2023). When the Modern Viewer is disabled, admins can toggle the Combine Files UI off/on. Possible values include: 0: Don't show the Combine Files UI. 1: Do show the Combine Files UI.</string>
+
+      <!-- ======================================== -->
+      <!--   Documents, Editing and Accessibility   -->
+      <!-- ======================================== -->
+
+      <string id="bGlobalBarMenuFeatureKey_x64">Create PDF Split Menu</string>
+      <string id="bGlobalBarMenuFeatureKey_x64_Explain">Specifies whether to show the Create Split Menu under Create a PDF menu item.&#10;&#10;Possible values include: 0: Don't show the Create Split menu. 1: Show the Create Split menu.</string>
+      <string id="bEnableFrictionlessInChromeExtn_x64">Online Create PDF in Reader</string>
+      <string id="bEnableFrictionlessInChromeExtn_x64_Explain">Specifies whether to show Reader users the online Create PDF service option.&#10;&#10;Possible values include: 0 or null: Don't show the Create PDF UI 1: Show the convert web content to PDF UI</string>
+      <string id="bIgnoreDataSchema_x64">Restrict Form Data to Schema</string>
+      <string id="bIgnoreDataSchema_x64_Explain">Specifies whether all data in a form is saved rather than only data related to the form's schema.&#10;&#10;Possible values include: null: Save form data even when it's not part of a schema. 1: Save only form data that's part of the schema.</string>
+
+      <!-- ======================================== -->
+      <!--    Security: Execution and Protection    -->
+      <!-- ======================================== -->
+
+      <string id="bEnableProtectedModeAppContainer_x64">AppContainer Sandbox</string>
+      <string id="bEnableProtectedModeAppContainer_x64_Explain">Specifies whether to enable the AppContainer sandbox.&#10;&#10;Possible values include: 0: Disable Microsoft's AppContainer sandbox 1: Enable Microsoft's AppContainer sandbox</string>
+      <string id="bEnableBlacklistForOpenSave_x64">Attachment Extension Blocklist in Dialogs</string>
+      <string id="bEnableBlacklistForOpenSave_x64_Explain">Reverts the tBuiltInPermList behavior to that of the pre 21.011.20029 build.&#10;&#10;Beginning with build 21.011.20029, extensions added in the tBuiltInPermList with restriction level 3 will be missing from the menu items in all the save and open dialogs. This feature is enabled by default. Users can revert to the old behavior by setting FeatureLockDown/bEnableBlacklistForOpenSave to 0. Possible values include: 0: Revert to the legacy behavior. 1: Do nothing. Retain the new behavior.</string>
+      <string id="bDisablePDFRedirectionActions_x64">Block PDF Link Actions</string>
+      <string id="bDisablePDFRedirectionActions_x64_Explain">Specifies whether to block specific PDF actions (listed below) which result in opening a link.&#10;&#10;This preference does not block regular web links. Enabling this feature blocks a PDF actions that open links, including GoToE, GoToR, Launch, Thread, Import Data, Export Form Data, Submit Form, and Reset Form. Possible values include: 0 or null: Don't block these opening links. 1: Block links.</string>
+      <string id="bEnablePVCertificateBasedTrust_x64">Certification Status in Protected View</string>
+      <string id="bEnablePVCertificateBasedTrust_x64_Explain">Specifies whether a document's certification status should appear in the Protected View document message bar.&#10;&#10;Possible values include: 0: Don't show the document's certification status. 1: Do show the document's certification status.</string>
+      <string id="bEnhancedSecurityInBrowser_x64">Enhanced Security in Browser</string>
+      <string id="bEnhancedSecurityInBrowser_x64_Explain">Toggles enhanced security when the application is running in the browser.&#10;&#10;The GUI checkbox sets this key in tandem with bEnhancedSecurityStandalone. Note that for 8.x product versions bEnhancedSecurityInBrowser is not available. Both browser and standalone behavior are managed via bEnhancedSecurityStandalone. This feature can be locked on or off as follows: 0: Disable enhanced security in the browser. 1: Enable enhanced security in the browser. For additional security-related details, refer to the Application Security Guide .</string>
+      <string id="bEnhancedSecurityStandalone_x64">Enhanced Security Standalone</string>
+      <string id="bEnhancedSecurityStandalone_x64_Explain">Toggles enhanced security for the standalone application.&#10;&#10;The GUI checkbox sets this key in tandem with bEnhancedSecurityInBrowser. Note that for 8.x product versions, bEnhancedSecurityInBrowser is not available. Both browser and standalone behavior are managed via bEnhancedSecurityStandalone. This feature can be locked on or off as follows: 0: Disable enhanced security in the standalone application. 1: Enable enhanced security in the standalone application. For additional security-related details, refer to the Application Security Guide .</string>
+      <string id="bEnableFlash_x64">Flash Content in PDFs</string>
+      <string id="bEnableFlash_x64_Explain">Specifies whether Flash content should be rendered in a PDF.&#10;&#10;Setting a privileged location does not override this preference. Possible values include: 0: Flash content is rendered as an empty, white box and does not play. A yellow message bar also appears at the top of the document stating that &quot;Some features are disabled to avoid potential security risks.&quot; 1: Flash plays if there is a system player present. If a player is not found, then the user is prompted to download the latest version.</string>
+      <string id="bProtectedMode_x64">Protected Mode Sandbox</string>
+      <string id="bProtectedMode_x64_Explain">Enables Protected Mode which sandboxes Acrobat and Reader processes.&#10;&#10;Protected Mode should be enabled to protect user systems and data. Possible values include: 0: Don't enable protected mode. 1: Do enable protected mode.</string>
+      <string id="bUseWhitelistConfigFile_x64">Protected Mode Whitelist Config</string>
+      <string id="bUseWhitelistConfigFile_x64_Explain">Allows the use of the policy whitelist to allow behavior that Protected Mode would otherwise prevent.&#10;&#10;This preference just toggles the ability of the application to read policy files. For additional security-related details, refer to the Application Security Guide .</string>
+      <string id="bEnablePVSwitchoutShortcut_x64">Protected View Exit Shortcut Key</string>
+      <string id="bEnablePVSwitchoutShortcut_x64_Explain">Enables a shortcut key that allows users to exit Protected View for a specific document.&#10;&#10;This feature allows admins and users to keep Protected View enabled, but also exit that mode on-the-fly when necessary. Possible values include: 0: Disable the shortcut key. 1: Enable the shortcut key that exits Protected View.</string>
+
+      <!-- ======================================== -->
+      <!--     Security: Trust and Permissions      -->
+      <!-- ======================================== -->
+
+      <string id="bMSStoreTrusted_x64">Allow Changes to Windows Certificate Store Trust</string>
+      <string id="bMSStoreTrusted_x64_Explain">Locks the UI so that end users cannot change the value set by iMSStoreTrusted&#10;&#10;Set iMSStoreTrusted first, then use this preference to lock it. Allowable values include: 0: Lock the UI. 1: Same as null. Don't lock the UI.</string>
+      <string id="bAllowInvisibleSig_x64">Allow Invisible Signatures</string>
+      <string id="bAllowInvisibleSig_x64_Explain">Specifies whether to allow invisible certification signatures.&#10;&#10;False disables the menu option, prevents signing and certifying with invisible signatures, and limits JavaScript support by signature fields.</string>
+      <string id="bAllowPasswordSaving_x64">Allow Password Caching</string>
+      <string id="bAllowPasswordSaving_x64_Explain">Controls whether certain passwords can be cached to disk; for example, passwords for digital IDs.&#10;&#10;If false, users are prompted to enter a password every time one is required. Not all passwords are affected by this setting.</string>
+      <string id="bEnableSignatureClear_x64">Allow Signature Clearing</string>
+      <string id="bEnableSignatureClear_x64_Explain">Specifies whether to disable and lock the ability for a signer to clear their own signature.&#10;&#10;Possible values include: 0: Disable signature clearing. 1: Enable signature clearing.</string>
+      <string id="bVerifyUseAlways_x64">Always Use Specified Verify Handler</string>
+      <string id="bVerifyUseAlways_x64_Explain">Qualifies the use of aVerify.&#10;&#10;If true and aVerify is set to a handler name, then this handler is used to verify all signatures. If false, then the aVerify handler is used only to verify signatures when the handler specified by the signature dictionary Filter attribute is not present.</string>
+      <string id="bDisableExpandEnvironmentVariables_x64">Block User Library Trust in Protected View</string>
+      <string id="bDisableExpandEnvironmentVariables_x64_Explain">Provides a method for admins to whitelist user libraries as trusted locations when Protected View is enabled.&#10;&#10;Protected View restricts features for all documents that do not reside in a trusted location. This new preference provides a way for admins to specify user-specific locations as trusted; in other words, documents with the path C:\Users\%username%\Desktop will open outside Protected View. For example, the user libraries Documents, Downloads, Desktop, and so on. When this preference is off, admins can only specify trusted locations which are static/identical for all users across their organization. Possible values include: 0: Trust user-specific locations. 1: Don't trust user-specific locations.</string>
+      <string id="bWinCacheSessionHandles_x64">Cache Digital ID Session Handles</string>
+      <string id="bWinCacheSessionHandles_x64_Explain">Specifies whether to retain cryptographic service provider (CSP) handles when a user authenticates to a digital ID.&#10;&#10;If true, a user does not have to re-authenticate to use the ID unless they log out or the session ends. The impact of this preference will vary based on the CSP in use; however, the setting does not affect the Windows CSPs.</string>
+      <string id="bDisableOSTrustedSites_x64">Disable IE Trusted Sites as Privileged Locations</string>
+      <string id="bDisableOSTrustedSites_x64_Explain">Locks the ability to treat IE trusted sites as privileged locations either on or off so the users can't change the bTrustOSTrustedSites value via the user interface.&#10;&#10;If set, bTrustOSTrustedSites is simply ignored. Possible values include: 0 or null: Enables and locks trusting sites from IE. 1: Disables and locks trusting sites from IE.</string>
+      <string id="bAllowAPSConfig_x64">LiveCycle RMS Server Config</string>
+      <string id="bAllowAPSConfig_x64_Explain">Prevents a LiveCycle Right Management Server from being configured by disabling the menu option in the Security Settings Console.&#10;&#10;By default, configuration is allowed.</string>
+      <string id="bReqRevCheck_x64">Lock Revocation Check Setting</string>
+      <string id="bReqRevCheck_x64_Explain">Locks Security\cASPKI\cASPKI\cVerify\iReqRevCheck and disables the user interface item.</string>
+      <string id="bReasons_x64">Lock Signing Reasons Settings</string>
+      <string id="bReasons_x64_Explain">Prevents users from modifying reason's settings.&#10;&#10;v8.1: If locked and cReasons if empty, bAllowSigningReasons is 0 and read only. If locked and cReasons has values, then bAllowSigningReasons is true and read only.</string>
+      <string id="bDisableTrustedFolders_x64">Lock Trusted Folders and Files</string>
+      <string id="bDisableTrustedFolders_x64_Explain">Disables trusted folders AND files and prevents users from specifying a privileged location for directories.&#10;&#10;For versions 9.2 and earlier, the user interface does not appear as disabled even though it is non-functional once this key is set to true. For versions prior to 9.5 and 10.1.2, the Options button on the Yellow Message Bar continued to offer end users the option to trust the file. 0 or null: Files and folders can be trusted. 1: Disables and locks file and folder-based privileged locations.</string>
+      <string id="bDisableTrustedSites_x64">Lock Trusted Host Sites</string>
+      <string id="bDisableTrustedSites_x64_Explain">Disables and locks the ability to specify host-based privileged locations.&#10;&#10;For versions 9.2 and earlier, the user interface does not appear as disabled even though it is non-functional once this key is set to true. null 0: Enables and locks host-based privileged locations. 1: Disables and locks host-based privileged locations.</string>
+      <string id="bEnableCEFBasedUI_x64">Modern Digital Signature UI</string>
+      <string id="bEnableCEFBasedUI_x64_Explain">Specifies whether to enable the CEF-based, modern UI for digital signature workflows.&#10;&#10;The newer UI streamlines the user interface. All values also disable the UI option to change the preference. Note that for products released after June 2016, disabling a user's ability to create a self-signed digital ID requires setting both bSelfSignCertGen and bEnableCEFBasedUI to 0. Possible values include: 0: Disable the modern UI and shows the legacy UI. 1: Enable the Modern UI.</string>
+      <string id="bUseTSAsSigningTime_x64">Show Timestamp in Signature</string>
+      <string id="bUseTSAsSigningTime_x64_Explain">Specifies whether the timestamp time should be displayed in the signature appearance.&#10;&#10;By default, the signature appearance displays the signing time from the signer's computer clock. To display the timestamp server time in a signature appearance: Go to HKLM\SOFTWARE\WOW6432Node\Policies\Adobe\(product)\(version)\FeatureLockDown\cSecurity\cPubSec\ Create the new DWORD bUseTSAsSigningTime and set it to 1. Go to HKCU\Software\Adobe\(product)\(version)\Security\cASPKI\cASPKI\cSign. Set bReqSigPropRetrieval to 1. Create the preference if it does not exist. Verify the computer time does not vary from the signature validation revocation check response time specified by HKCU\Software\Adobe\(product)\(version)\Security\cPubSec\ iMaxClockSkew . The default is 65 minutes. iMaxClockSkew allows admins to account for a network delay, time synchronization issues, and so on without invalidation signatures. Possible values include: 0: Don't show the timestamp time. 1: Do show the timestamp time.</string>
+      <string id="bAllowReasonWhenSigning_x64">Signing Reason UI</string>
+      <string id="bAllowReasonWhenSigning_x64_Explain">Specifies whether the reason UI will appear during signing.&#10;&#10;The preference can be overridden by a document seed value set on a field. For 8.1 and later, if cReasons is locked and is empty, bAllowSigningReasons is 0 and read only (The UI is turned off). If cReasons is locked and has values, then bAllowSigningReasons is true and read only.</string>
+      <string id="bEnableCertificateBasedTrust_x64">Trust Certified Documents</string>
+      <string id="bEnableCertificateBasedTrust_x64_Explain">Elevates (trusts) certified documents as a privileged location.&#10;&#10;This lockable counterpart to bTrustCertifiedDocuments allows certified documents to bypass all the security restrictions that may be bypassed by other privileged locations. The exception is that this level of trust does not apply when the PDF is viewed in Protected View. Possible values include: 0 or null: Don't make certified documents equivalent to privileged locations. 1: Do make certified documents equivalent to privileged locations (trusted).</string>
+      <string id="iUnknownURLPerms_x64">Unknown URL Access Policy</string>
+      <string id="iUnknownURLPerms_x64_Explain">Specifies whether to ask for, allow, or block access to web sites that are not in the user specified list.&#10;&#10;Overrides trusted host settings in Privileged Locations, but see the application security documentation for version details. Possible values include: 1: Always ask 2: Always allow 3: Always block For additional security-related details, refer to the Application Security Guide .</string>
+      <string id="iUnknownURLPerms_x64_opt0">Always ask</string>
+      <string id="iUnknownURLPerms_x64_opt1">Always allow</string>
+      <string id="iUnknownURLPerms_x64_opt2">Always block</string>
+      <string id="bValidateOnOpen_x64">Validate Signatures on Open</string>
+      <string id="bValidateOnOpen_x64_Explain">Specifies whether to automatically validate all signatures on document open.&#10;&#10;Note that the lockable setting does not configure the feature; instead, it locks what is set in HKCU and the user interface. 0: Don't validate signatures on document open. 1: Validate signatures on document open.</string>
+
+      <!-- ======================================== -->
+      <!--           Sharing and Features           -->
+      <!-- ======================================== -->
+
+      <string id="bToggleAdobeSign_x64">Adobe Acrobat Sign</string>
+      <string id="bToggleAdobeSign_x64_Explain">Disables Adobe Send for Signature (Acrobat Sign).&#10;&#10;Note that the Oct. 2018 Continuous track release renames &quot;Send for Signature&quot; as &quot;Acrobat Sign&quot;. Continuous track installs should also set bToggleManageSign . Preference behavior has not changed, but the UI to which it applies varies across product versions. Possible values include: 0: Enable Adobe Send for Signature (Acrobat Sign). 1: Disable Adobe Send for Signature (Acrobat Sign).</string>
+      <string id="bToggleSendAndTrack_x64">Adobe Send &amp; Track</string>
+      <string id="bToggleSendAndTrack_x64_Explain">Disables Adobe Send and Track (some UI is renamed to &quot;Share&quot; since October, 2018)&#10;&#10;Possible values include: 0: Enable Adobe Send and Track. 1: Disable Adobe Send and Track.</string>
+      <string id="bToggleAdobeReview_x64">Document Cloud Review Service</string>
+      <string id="bToggleAdobeReview_x64_Explain">Specifies whether to remove all UI related to the Document Cloud Review service.&#10;&#10;When set to 0, this preference removes all cloud-based review UI, including the Review tab on the Home screen. Review tools such as the Send for Review tool in the tool's pane invoke legacy review types rather than DC reviews. The Share button also does not lead users to review workflows. Possible values include: 0 (or null): Enable the Document Cloud Review service. 1: Disable the Document Cloud Review service.</string>
+      <string id="bSendMailShareRedirection_x64">Email Icon Attach to Email Behavior</string>
+      <string id="bSendMailShareRedirection_x64_Explain">Change the email icon behavior so that it attaches the document to an email.&#10;&#10;With the new unified sharing experience, UI for sharing such as the Send, Attach to Email, and the email icon in the top bar, invokes the new unified share pane. However, when users frequently use &quot;Send documents as Attachment&quot;, set this preference to 1 to change the behavior of the Email icon so that one-click attaches the file to an email. Possible values include: 0 or null: The email icon opens the share pane. 1: Change the email icon behavior to automatically attach the file to an email.</string>
+      <string id="bMixRecentFilesFeatureLockDown_x64">Hide Shared Files from Recent List</string>
+      <string id="bMixRecentFilesFeatureLockDown_x64_Explain">Specifies whether to show shared files in the Recent file list.&#10;&#10;When enabled, shared files appear in the Recent list when a user successfully shares a file as well as when a recipient accepts an invite to the shared file workflow. This feature makes it easier to track files in live workflows (reviews, shares, signing workflows, and files shared via Send and Track). Possible values include: 0: Add shared files to Recent list. 1: Don't add shared files to Recent list.</string>
+      <string id="bToggleFSSSignatureSaving_x64">Save Signature to Cloud</string>
+      <string id="bToggleFSSSignatureSaving_x64_Explain">Specifies whether to save a newly created signature in the cloud.&#10;&#10;When a user creates a new signature, the dialog offers the option to store the signature in the cloud for later use. This preference also controls saving user initials. Possible values include: 0: Show the Save Signature UI 1: Hide the Save Signature UI</string>
+      <string id="bAdobeSendPluginToggle_x64">Send &amp; Track Outlook Plugin</string>
+      <string id="bAdobeSendPluginToggle_x64_Explain">Toggles the Adobe Send and Track plugin for Outlook&#10;&#10;When enabled, an Adobe Send and Track button appears in Outlook when composing an email. It enables sending large files as public links through Outlook. The attached files are uploaded to Adobe Document Cloud and public links to the files are inserted in the email body. Recipients can click the link to preview the file in a browser window and can download the file if needed. Possible values include: 0: Enable Adobe Send and Track. 1: Disable Adobe Send and Track.</string>
+      <string id="bDisableSharePointFeatures_x64">SharePoint &amp; Office 365 Integration</string>
+      <string id="bDisableSharePointFeatures_x64_Explain">Disables the SharePoint and Office 365 integration features.&#10;&#10;Controls the application's ability to detect that a file came from a Sharepoint server, disables the check-out prompt, and removes the SharePoint specific menu items. Possible values include: 0: Same as &quot;null.&quot; Don't disable SharePoint and Office 365 integration. 1: Disable SharePoint and Office 365 integration.</string>
+      <string id="bPreviouslyEnabledSharePointInChromeExtn_x64">SharePoint Chrome Extension Previous State</string>
+      <string id="bPreviouslyEnabledSharePointInChromeExtn_x64_Explain">Stores the previous state of the Sharepoint FeatureLockDown settings.&#10;&#10;Possible values include: Same as bEnableSharePointInChromeExtn in FeatureLockDown.</string>
+      <string id="bEnableSharePointInChromeExtn_x64">SharePoint in Chrome Extension</string>
+      <string id="bEnableSharePointInChromeExtn_x64_Explain">Specifies whether to integrate Sharepoint into the Acrobat's Chrome extension.&#10;&#10;Possible values include: 0: Don't enable Sharepoint integration. 1: Enable.</string>
+      <string id="bToggleManageSign_x64">Show Acrobat Sign Tracking Tab</string>
+      <string id="bToggleManageSign_x64_Explain">Specifies whether to remove the Signature tab from the Home page's left-hand pane, notifications, and sign tracking cards.&#10;&#10;When set to 0, the signature tab is hidden, the user will not see any agreements received or sent for signature, and all Acrobat Sign notifications are disabled on the desktop. It also removes signature-related cards under the To Do list. Possible values include: 0: Show the Signature tab. 1: Hide the Signature tab.</string>
+      <string id="bDisableOnBehalfOfText_x64">Show Comment Author in Shared Review</string>
+      <string id="bDisableOnBehalfOfText_x64_Explain">If false, the string &quot;On behalf of&quot; does not append the author's name in the comment when another person opens the document in a shared-review workflow.&#10;&#10;This preference is only used in shared review workflows. Possible values include: 0: Don't display the comment author's name. 1: Do display the comment author's name.</string>
+      <string id="iClientType_Gmail_x64">WebMail Client Type (Gmail)</string>
+      <string id="iClientType_Gmail_x64_Explain">Identifies the Gmail Mail client type for WebMail.&#10;&#10;The value can only be: 1</string>
+      <string id="iClientType_Gmail_x64_opt0">Locked value: 1 (per Adobe PrefRef)</string>
+      <string id="iClientType_Yahoo_x64">WebMail Client Type (Yahoo)</string>
+      <string id="iClientType_Yahoo_x64_Explain">Identifies the Yahoo Mail client type for WebMail.&#10;&#10;The value can only be: 2</string>
+      <string id="iClientType_Yahoo_x64_opt0">Locked value: 2 (per Adobe PrefRef)</string>
+      <string id="tIMAPDraftsFolder_x64">WebMail IMAP Drafts Folder</string>
+      <string id="tIMAPDraftsFolder_x64_Explain">Identifies the My Profile Mail draft folder for WebMail.&#10;&#10;The value can be: Any draft folder name.</string>
+      <string id="iIMAPPort_x64">WebMail IMAP Port</string>
+      <string id="iIMAPPort_x64_Explain">Identifies the My Profile Mail IMAP server port number for WebMail.&#10;&#10;The value can be: Any valid port number.</string>
+      <string id="iIMAPPort_x64_opt0">143 (Standard IMAP)</string>
+      <string id="iIMAPPort_x64_opt1">993 (IMAP over SSL/TLS)</string>
+      <string id="iIMAPSecurity_x64">WebMail IMAP Security</string>
+      <string id="iIMAPSecurity_x64_Explain">Specifies whether to enable the My Profile Mail IMAP security for WebMail.&#10;&#10;The value can be: 0: Don't enabled security. 1: Enable security.</string>
+      <string id="bDisableWebmail_x64">WebMail Integration</string>
+      <string id="bDisableWebmail_x64_Explain">Specifies whether to disable WebMail.&#10;&#10;If this preference is not present and and the FeatureLockDown preference bSendMailShareRedirection is set to 1, the email icon opens the classic dialogue so the user can select an Outlook or webmail profile. If both bSendMailShareRedirection and bDisableWebmail=1 are present, then the app opoens new mail items with a PDF attached. Possible values include: 0: Change the default email icon behavior to automatically attach the file to an email as described above. 1: The email icon opens the Share pane.</string>
+      <string id="iSMTPPort_x64">WebMail SMTP Port</string>
+      <string id="iSMTPPort_x64_Explain">Identifies the My Profile Mail SMTP server port number for WebMail.&#10;&#10;The value can be: Any valid server port number.</string>
+      <string id="iSMTPPort_x64_opt0">25 (Standard SMTP)</string>
+      <string id="iSMTPPort_x64_opt1">465 (SMTP over SSL)</string>
+      <string id="iSMTPPort_x64_opt2">587 (SMTP Submission / TLS)</string>
+      <string id="iSMTPSecurity_x64">WebMail SMTP Security</string>
+      <string id="iSMTPSecurity_x64_Explain">Specifies whether to enable the My Profile Mail SMTP security for WebMail.&#10;&#10;The value can be: 0: Don't enabled security. 1: Enable security.</string>
+
+      <!-- ======================================== -->
+      <!--          Startup and Experience          -->
+      <!-- ======================================== -->
+
+      <string id="bShowMsgAtLaunch_x64">Adobe Messages at Launch</string>
+      <string id="bShowMsgAtLaunch_x64_Explain">Specifies whether to show messages from Adobe when the product launches.&#10;&#10;This preference also hides the Share Feedback icon, removes messages such as the 11.x &quot;end-of-life&quot; warning, and disables the dialog prompt that urges users to complete their profile. In later product versions, this preference removes the Home banner (top message area) from the Home view. Possible values include: 0: Don't show messages from Adobe when the product launches. 1: Show messages from Adobe when the product launches.</string>
+      <string id="bAllowUserToChangeMsgPrefs_x64">Allow Users to Change Message Preferences</string>
+      <string id="bAllowUserToChangeMsgPrefs_x64_Explain">Locks the features associated with bShowMsgAtLaunch and bDontShowMsgWhenViewingDoc so that ends users can't change the settings.&#10;&#10;Possible values include: 0: Locks the feature so end users can't change the settings. 1: Allows users to change the settings. A value of 1 has the same affect as this key not existing at all.</string>
+      <string id="bToggleNotifications_x64">Desktop Notifications</string>
+      <string id="bToggleNotifications_x64_Explain">Specifies whether to disable all in-product and desktop notifications.&#10;&#10;When 0 (or null), feature-specific notifications are managed via the related service preference. When set to 1, this preference disables all notifications irrespective of the values of all other keys. Possible values include: 0: Enable desktop notifications. 1: Disable all desktop notifications.</string>
+      <string id="bToggleFTE_x64">First Time Experience</string>
+      <string id="bToggleFTE_x64_Explain">Specifies whether to enable the First Time Experience (FTE) feature (Welcome tour/page).&#10;&#10;The first time experience (FTE) feature displays help content and tips when the application starts and also controls access to the Welcome Tour and Welcome page. FTE is also disabled if any of these preferences under FeatureLockDown\cServices are set: bUpdater , bToggleAdobeDocumentServices , bToggleAdobeSign , bTogglePrefsSync , bToggleWebConnectors . Possible values include: 0 or null: Enable FTE features. 1: Disable FTE features.</string>
+      <string id="bDontShowMsgWhenViewingDoc_x64">Hide Adobe Messages on Document Open</string>
+      <string id="bDontShowMsgWhenViewingDoc_x64_Explain">Specifies whether to show messages from Adobe when a document opens.&#10;&#10;This preference also controls messages in the right-hand pane for 12.x and later products as well as the &quot;Learn More&quot; link, including the &quot;Start Free Trial&quot; message promoting Acrobat. Possible values include: 0: Don't show messages from Adobe when a document opens. 1: Show messages from Adobe when a document opens.</string>
+      <string id="bEnableBellButton_x64">Hide In-Product Notifications Bell</string>
+      <string id="bEnableBellButton_x64_Explain">Specifies whether to hide in-product messages.&#10;&#10;A value of 1 hides notifications, but the product still fetches and caches them. Possible values include: 0: Show in-product notifications. 1: Hide in-product notifications.</string>
+      <string id="bToggleShareFeedback_x64">Hide Send Feedback Icon</string>
+      <string id="bToggleShareFeedback_x64_Explain">Specifies whether to show the Send Feedback icon.&#10;&#10;By default, the UI displays a feedback icon so that users can easily send feedback to Adobe with one click. This preference replaces bUsageMeasurement for 12.x and later products. Setting bShowMsgAtLaunch to 0 also hides the icon. Possible values include: 0: Hide the icon. 1: Show the icon.</string>
+      <string id="bToggleToDoList_x64">Home Screen To Do List</string>
+      <string id="bToggleToDoList_x64_Explain">Specifies whether to show a &quot;to do&quot; list on the Home screen.&#10;&#10;By default, the Home screen displays a list of action items such as Take a Tour, Export PDF, and so on. For details, see the What's New . Possible values include: 0: Enable the feature. 1: Disable the feature.</string>
+      <string id="bShowScanTabInHomeView_x64">Scan Tab in Home View</string>
+      <string id="bShowScanTabInHomeView_x64_Explain">Specifies whether to disable the Scan tab in Home view.&#10;&#10;When enabled, links to scans appear under the Scan tab in the Home view. Possible values include: 0: Hide the scan tab. 1: Show the Scan tab.</string>
+      <string id="bToggleNotificationToasts_x64">Show Desktop Notification Toasts</string>
+      <string id="bToggleNotificationToasts_x64_Explain">Specifies whether to hide desktop notifications.&#10;&#10;A value of 1 hides notifications, but the product still fetches and caches them. Possible values include: 0: Show desktop notifications. 1: Hide desktop notifications.</string>
+      <string id="bTogglePDFOwnershipToasts_x64">Show PDF Ownership Notification</string>
+      <string id="bTogglePDFOwnershipToasts_x64_Explain">Specifies whether to show a notification on machine startup that allows the user to make Acrobat the default PDF viewer.&#10;&#10;When enabled and both Acrobat and Reader are installed, the user can click on the notification to change the default PDF viewer. Possible values include: 0: Show PDF ownership notification on application startup. 1: Don't ownership notification.</string>
+      <string id="bToggleToDoTiles_x64">Show To Do Cards in Recent Tab</string>
+      <string id="bToggleToDoTiles_x64_Explain">Specifies whether to show To Do Cards in the Recent Tab view&#10;&#10;To Do cards list potential action items for members of certain workflows (for example, collaborative reviews). When set to 1, To Do cards do not appear in the Recent tab. Possible values include: 0 or null: Show cards for unaccepted workflows (reviews, views and sign). 1: Hide cards for unaccepted workflows (reviews, views and sign).</string>
+      <string id="bWhatsNewExp_x64">What's New Experience</string>
+      <string id="bWhatsNewExp_x64_Explain">Specifies whether to disable the What's New experience.&#10;&#10;This feature was phased in incrementally over 2022. When enabled, the default user on first launch will see a What's New screen as well as a See new features notication. These UI items appear once. Possible values include: 0: Enable the What's New experience. 1: Disable.</string>
+
+      <!-- ======================================== -->
+      <!--     Updates and Desktop Integration      -->
+      <!-- ======================================== -->
+
+      <string id="bDisableThirdPartyPluginNotif_x64">32-Bit Plugin Upgrade Notification</string>
+      <string id="bDisableThirdPartyPluginNotif_x64_Explain">Specifies whether to notify users with 32 bit plugins that the app will soon update to 64 bit.&#10;&#10;32 bit plugins will not work in the 64 bit app. The notification provides a &quot;Learn more&quot; link that provides additional details about how to upgrade their plugin. Possible values include: 0: Do not warn the user about 32 bit plugins. 1: Do warn the user.</string>
+      <string id="bEnableAutoDockUndockHUD_x64">Auto Dock HUD Bar</string>
+      <string id="bEnableAutoDockUndockHUD_x64_Explain">Specifies whether to automatically doc and undock the HUD bar based on the window size.&#10;&#10;Possible values include: 0: Disable automatic behavior. 1: Enable auto docking and undocking.</string>
+      <string id="bHasAcrobatConsent_x64">Auto Open Acrobat from Reader</string>
+      <string id="bHasAcrobatConsent_x64_Explain">Specifies whether the Reader process should automatically open Acrobat for the current file.&#10;&#10;PDF ownership does not change. Reader will continue as the default PDF viewer on this machine. Possible values include: 0: Don't automatically use Acrobat. 1: Use Acrobat</string>
+      <string id="bAcroSuppressOpenInReader_x64">Disable Chrome PDF Extension</string>
+      <string id="bAcroSuppressOpenInReader_x64_Explain">Specifies whether to disable and lock the PDF viewer Chrome extension.&#10;&#10;See also ENABLE_CHROMEEXT . Possible values include: 0 or null: Extension is enabled; users can open PDFs in a browser with Acrobat Reader 1: Disable the browser-based PDF viewer. A tooltip says &quot;The Acrobat Reader extension is currently disabled. Please contact your IT admin.&quot;</string>
+      <string id="iDisablePromptForUpgrade_x64">Disable Major Version Upgrade Prompt</string>
+      <string id="iDisablePromptForUpgrade_x64_Explain">Specifies whether the application should show a prompt suggesting the user upgrade to the next major version (for example, 10.0 to 11.0).&#10;&#10;If updates have been disabled (bUpdater = 0), then upgrades are also disabled. The feature also requires that the update settings are set to &quot;automatic.&quot; 0 or null: No effect. 1: Disable the prompt asking users if they would like to upgrade to a higher major version.</string>
+      <string id="DisableMaintenance_x64">Disable Repair for All Users</string>
+      <string id="DisableMaintenance_x64_Explain">Specifies whether to disable the Help &gt; Repair Installation menu for all users on virtual and and regular installs.&#10;&#10;To disable the Help &gt; Repair Installation menu item for all users/installs, create this preference and set the value to 1. See also Disable_Repair . The path is as follows: 32 bit machines: HKLM\SOFTWARE\Adobe\(product)\(version)\Installer 64 bit machines: HKLM\SOFTWARE\Wow6432Node\Adobe\(product)\(version)\Installer</string>
+      <string id="Disable_Repair_x64">Disable Repair for Standard Users</string>
+      <string id="Disable_Repair_x64_Explain">Specifies whether to disable the Help &gt; Repair Installation menu for standard users on virtualized installations.&#10;&#10;When working with virtualized installations, users should not be able to run repair from the help menu. Only an administrator should be able to invoke actions that may require a reboot of a Citrix server, WT server, and so on. To disable the menu item, create this preference and set the value to 1. See also DisableMaintenance . The path is as follows: 32 bit machines: HKLM\SOFTWARE\Adobe\(product)\(version)\Installer 64 bit machines: HKLM\SOFTWARE\Wow6432Node\Adobe\(product)\(version)\Installer</string>
+      <string id="bSuppressMessageBar_x64">Hide Document Message Bar</string>
+      <string id="bSuppressMessageBar_x64_Explain">Prevents the appearance of the document message bar.&#10;&#10;Adversely affects signing when preview mode is used.</string>
+      <string id="bDisablePDFHandlerSwitching_x64">Lock Default PDF Viewer</string>
+      <string id="bDisablePDFHandlerSwitching_x64_Explain">Disables the ability to change the specified default handler (PDF viewer).&#10;&#10;When Reader and Acrobat are installed on the same machine or earlier versions of Acrobat already exist, you can choose which viewer is the default for PDF files. While Acrobat is the more capable, feature rich application, Reader X has a built in Protected Mode which is more secure (For security details, see the Application Security Guide). This feature is a Adobe PDF handler-only feature: It does not enable switching to and from non-Adobe products and may or may not change the handling of other Acrobat supported formats; for example, it changes FDF and XDP, but not XFA or PDX. Administrators interested in security may want to make Reader the default PDF viewer. Version X products will be able to switch between any product type and version back to 9.x. For more information, see the PDF Ownership knowledge base article . Note that UI configuration does not set any key in HKCU. Instead, changing the setting via the UI invokes the installer which sets the key in HKLM. The default application behavior varies depending on what is installed. A value of 1 disables the user's ability to change the default handler. Possible values include: 0 (or null): Allow the user to change the default viewer. 1: Don't allow the user to change the default viewer.</string>
+      <string id="bDisableThumbnailPreviewHandler_x64">Lock PDF Thumbnails in Explorer</string>
+      <string id="bDisableThumbnailPreviewHandler_x64_Explain">Specifies whether to disable and lock the user interface option that controls Acrobat-generated PDF thumbnail previews in Windows Explorer.&#10;&#10;Oct 13, 2015: 32-bit Windows systems only. 64-bit support was enabled on May 9, 2016. This setting disables the user interface checkbox in the UI. Possible values include: 0: Enable the UI checkbox so users can invoke the installer and enable the thumbnail preview handler. 1: Disable and lock the setting.</string>
+      <string id="bMergeMenuBar_x64">Merge Title and Menu Bar</string>
+      <string id="bMergeMenuBar_x64_Explain">Specifies whether to merge the application's title bar and menu bar into a single bar.&#10;&#10;Note that &quot;Policies&quot; does not appear in the HKLM path. Possible values include: 0: Don't merge the title and menu bars 1: Merge the bars</string>
+      <string id="bUpdater_Updater_x64">Product Updater</string>
+      <string id="bUpdater_Updater_x64_Explain">Disables the Updater and removes associated user interface items.&#10;&#10;Manually this preference to disable updates. For 11.x products and earlier, this preference overrides any bDeclined value. For 12.x and later products, this setting overrides Mode . 0: Disables and locks the Updater. 1: No effect.</string>
+      <string id="bEnableAcrobatPromptForDocOpen_x64">Prompt to Use Acrobat from Reader</string>
+      <string id="bEnableAcrobatPromptForDocOpen_x64_Explain">Specifies whether to prompt users to use Acrobat when both Reader and Acrobat are installed.&#10;&#10;When Acrobat and Reader are both present, opening a file in Reader prompts the user to switch to Acrobat as well as make Acrobat the default PDF viewer. Possible values include: 0: Don't prompt to use Acrobat. 1: Prompt to use Acrobat.</string>
+      <string id="bShouldUseScalableCursor_x64">Scalable Cursor</string>
+      <string id="bShouldUseScalableCursor_x64_Explain">Specifies whether to disable the scalable cursor.&#10;&#10;Because Citrix does not provide support for scalable cursors (32-bit cursors with an alpha channel) in legacy graphics mode, scalable cursor performance may be impaired on Citrix. Use this setting to improve performance on Citrix by using a non-scalable cursor. Possible values include: 0: Don't use a scalable cursor. 1: Use a scalable cursor.</string>
+      <string id="bFavoritesFeaturesLockDown_x64">Starred Files Feature</string>
+      <string id="bFavoritesFeaturesLockDown_x64_Explain">Specifies whether to disable and lock the starred file feature.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. This preference overrides bFavoritesStripInRFL . Possible values include: 0: Disable and lock starred files in the recent files list. 1: Use bFavoritesStripInRFL to control this feature.</string>
+      <string id="iInterval_x64">Update Watchdog Interval (Days)</string>
+      <string id="iInterval_x64_Explain">Sets the time that can elapse without a successful update before the Watchdog dialog appears suggesting the user manually update.&#10;&#10;This is an internal key that is not visible unless the admin creates it manually. When the Updater successfully obtains a manifest it records the download date. iInterval specifies the time interval that is allowed to pass from that download date to a a successful update. The default is 135 days. If the time has elapsed, a dialog appears suggesting the user might want to manually get an update from adobe.com. Possible values include: 135 days User specified.</string>
+      <string id="iInterval_x64_opt0">90 days</string>
+      <string id="iInterval_x64_opt1">135 days (default)</string>
+      <string id="iInterval_x64_opt2">180 days</string>
+      <string id="iInterval_x64_opt3">365 days</string>
+      <string id="iLogLevel_x64">Updater Log Level</string>
+      <string id="iLogLevel_x64_Explain">Sets the log level to either brief (0) or verbose (1).&#10;&#10;Log file size is not limited during an update. However, since log files are appended to each time the Updater runs, there is a 1MB limit on old logs. Size limit behavior is as follows: If an existing log size is bigger than 1 MB, the Updater truncates the log. Old log files are backed up once as AdobeARM-backup. Logs reside at: Vista-Windows 7 (64 bit systems) %USERPROFILE%\AppData\Local\Temp\AdobeARM.log XP (32bit systems) %USERPROFILE%\Local Settings\Temp\AdobeARM.log Set the log level as follows: 0: Brief 1: Verbose</string>
+
+      <!-- ======================================== -->
+      <!--                  Upsell                  -->
+      <!-- ======================================== -->
+
+      <string id="bLimitPromptsFeatureKey_x64">Limit Informational Prompts</string>
+      <string id="bLimitPromptsFeatureKey_x64_Explain">Specifies whether to limit the number of prompts a user will see in a 24 hour period.&#10;&#10;Prompts include items like tips, calls-to-action, and feature walk throughs. These are not necessarily upsell items. Possible values include: 0: Don't restrict informational prompts. 1: Limit prompts to 1 per day and 3 per week.</string>
+      <string id="bReaderRetentionExperiment_x64">Prompt Reader Users to Download Acrobat</string>
+      <string id="bReaderRetentionExperiment_x64_Explain">Specifies whether to prompt Acrobat subscribers using Reader to download Acrobat.&#10;&#10;When enabled, download Acrobat prompts appear in Reader workflows where the user might benefit from Acrobat (purchased but not yet downloaded). Possible values include: 0: Disable &quot;download Acrobat&quot; prompts in Reader. 1: Enable download prompts.</string>
+      <string id="bToggleDCAppCenter_x64">Show App Center UI</string>
+      <string id="bToggleDCAppCenter_x64_Explain">Specifies whether to show the UI that helps users find and download additional apps.&#10;&#10;By default, the Home view displays a provides a &quot;get apps&quot; banner and/or a link to the App Center where users can find and download additional apps (such as mobile apps). This preference removes both the banner and the App Center. Possible values include: 0 (or null): Show the App Center UI. 1: Don't show the App Center UI.</string>
+      <string id="bShowRhpToolSearch_x64">Show Purchasable Tools in Search</string>
+      <string id="bShowRhpToolSearch_x64_Explain">Specifies whether to show &quot;for purchase&quot; tools when searching for tools in Reader.&#10;&#10;When enabled, searching for tools in Reader shows all possible tool subscriptions. Possible values include: 0: Don't show tool subscriptions. 1: Show tools which can be purchased.</string>
+      <string id="bAcroSuppressUpsell_x64">Show Upgrade Prompts</string>
+      <string id="bAcroSuppressUpsell_x64_Explain">For 12.x and later products, disables messages which encourage the user to upgrade the product.&#10;&#10;Products that don't provide the full set of features by default provide the user the opportunity to upgrade. For example, Reader users can purchase additional tools and features, and Acrobat Standard users can upgrade to Acrobat Professional. Possible values include: 0 or null: Don't disable upsell. 1: Disable upsell. For 12.x and later products, Upsell could not be disabled for users with a volume license. This bug was fixed in the July 2015 update.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="iProtectedViewDC_x64_enum">
+        <dropdownList defaultItem="0" refId="iProtectedViewDC_x64_enum">Protected View Mode:</dropdownList>
+      </presentation>
+      <presentation id="iUnknownURLPermsDC_x64_enum">
+        <dropdownList defaultItem="0" refId="iUnknownURLPermsDC_x64_enum">Unknown URL Access Policy:</dropdownList>
+      </presentation>
+      <presentation id="iClientType_GmailDC_x64_enum">
+        <dropdownList defaultItem="0" refId="iClientType_GmailDC_x64_enum">WebMail Client Type (Gmail):</dropdownList>
+      </presentation>
+      <presentation id="iClientType_YahooDC_x64_enum">
+        <dropdownList defaultItem="0" refId="iClientType_YahooDC_x64_enum">WebMail Client Type (Yahoo):</dropdownList>
+      </presentation>
+      <presentation id="iIMAPPortDC_x64_enum">
+        <dropdownList defaultItem="0" refId="iIMAPPortDC_x64_enum">WebMail IMAP Port:</dropdownList>
+      </presentation>
+      <presentation id="iSMTPPortDC_x64_enum">
+        <dropdownList defaultItem="0" refId="iSMTPPortDC_x64_enum">WebMail SMTP Port:</dropdownList>
+      </presentation>
+      <presentation id="dSplitBySizeMaxSizeDC_x64_enum">
+        <dropdownList defaultItem="0" refId="dSplitBySizeMaxSizeDC_x64_enum">Split by Size Maximum (MB):</dropdownList>
+      </presentation>
+      <presentation id="iIntervalDC_x64_enum">
+        <dropdownList defaultItem="0" refId="iIntervalDC_x64_enum">Update Watchdog Interval (Days):</dropdownList>
+      </presentation>
+      <presentation id="iUnknownURLPerms_x64_enum">
+        <dropdownList defaultItem="0" refId="iUnknownURLPerms_x64_enum">Unknown URL Access Policy:</dropdownList>
+      </presentation>
+      <presentation id="iClientType_Gmail_x64_enum">
+        <dropdownList defaultItem="0" refId="iClientType_Gmail_x64_enum">WebMail Client Type (Gmail):</dropdownList>
+      </presentation>
+      <presentation id="iClientType_Yahoo_x64_enum">
+        <dropdownList defaultItem="0" refId="iClientType_Yahoo_x64_enum">WebMail Client Type (Yahoo):</dropdownList>
+      </presentation>
+      <presentation id="iIMAPPort_x64_enum">
+        <dropdownList defaultItem="0" refId="iIMAPPort_x64_enum">WebMail IMAP Port:</dropdownList>
+      </presentation>
+      <presentation id="iSMTPPort_x64_enum">
+        <dropdownList defaultItem="0" refId="iSMTPPort_x64_enum">WebMail SMTP Port:</dropdownList>
+      </presentation>
+      <presentation id="iInterval_x64_enum">
+        <dropdownList defaultItem="0" refId="iInterval_x64_enum">Update Watchdog Interval (Days):</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>
