@@ -1,5 +1,9 @@
 [<- Back to Documentation](README.md)
 
+<p align="center"><a href="https://buymeacoffee.com/systmworks"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="45" alt="Buy me a coffee"></a></p>
+
+> I have spent many, many hours creating and testing this ADMX. If it helps you please consider buying me a Coffee :)
+
 # Security Hardening Guide
 
 Recommended and optional security settings for the v2.6 ADMX templates. These complement (but do not replace) Adobe's own [Application Security Guide](https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/index.html).
@@ -11,7 +15,12 @@ Recommended and optional security settings for the v2.6 ADMX templates. These co
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![Hardened Value](https://img.shields.io/badge/Hardened%20Value-316dca?style=flat-square) | ![Recommendation](https://img.shields.io/badge/Recommendation-316dca?style=flat-square) |
 |---|---|---|---|
+| Cloud & Connectors | Box Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Cloud & Connectors | Dropbox Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Cloud & Connectors | Enable Generative AI | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Cloud & Connectors | Google Drive Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Cloud & Connectors | OneDrive Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Cloud & Connectors | Third-Party Cloud Connectors | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | AppContainer Sandbox | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Block PDF Link Actions | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Enhanced Security in Browser | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
@@ -27,7 +36,12 @@ Recommended and optional security settings for the v2.6 ADMX templates. These co
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![Hardened Value](https://img.shields.io/badge/Hardened%20Value-316dca?style=flat-square) | ![Recommendation](https://img.shields.io/badge/Recommendation-316dca?style=flat-square) |
 |---|---|---|---|
+| Cloud & Connectors | Box Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Cloud & Connectors | Dropbox Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Cloud & Connectors | Enable Generative AI | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Cloud & Connectors | Google Drive Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Cloud & Connectors | OneDrive Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Cloud & Connectors | Third-Party Cloud Connectors | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Context, Tools & Search | Cloud Search Token Caching | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Context, Tools & Search | Cloud-Powered Search | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Documents, Editing & Accessibility | Block EMF to PDF Conversion | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |

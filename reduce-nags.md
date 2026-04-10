@@ -1,5 +1,9 @@
 [<- Back to Documentation](README.md)
 
+<p align="center"><a href="https://buymeacoffee.com/systmworks"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="45" alt="Buy me a coffee"></a></p>
+
+> I have spent many, many hours creating and testing this ADMX. If it helps you please consider buying me a Coffee :)
+
 # Reduce Nags, Upsells & Unwanted Notifications
 
 Settings to suppress unwanted messages, popups, promotional content, and notifications in the v2.6 ADMX templates.
@@ -8,11 +12,7 @@ Settings to suppress unwanted messages, popups, promotional content, and notific
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![Recommended Setting](https://img.shields.io/badge/Recommended%20Setting-316dca?style=flat-square) |
 |---|---|---|
-| Cloud & Connectors | Box Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
-| Cloud & Connectors | Dropbox Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
-| Cloud & Connectors | Google Drive Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Cloud & Connectors | Services & Web-Plugin Updates | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
-| Cloud & Connectors | Third-Party Cloud Connectors | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Context, Tools & Search | Contextual Help Tips | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Context, Tools & Search | Modern Viewer | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Context, Tools & Search | Online Actions Library Link | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
@@ -43,11 +43,7 @@ Settings to suppress unwanted messages, popups, promotional content, and notific
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![Recommended Setting](https://img.shields.io/badge/Recommended%20Setting-316dca?style=flat-square) |
 |---|---|---|
-| Cloud & Connectors | Box Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
-| Cloud & Connectors | Dropbox Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
-| Cloud & Connectors | Google Drive Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Cloud & Connectors | Services & Web-Plugin Updates | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
-| Cloud & Connectors | Third-Party Cloud Connectors | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Context, Tools & Search | Contextual Help Tips | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Context, Tools & Search | Modern Viewer | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Context, Tools & Search | Online Actions Library Link | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |

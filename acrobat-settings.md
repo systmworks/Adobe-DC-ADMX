@@ -1,5 +1,9 @@
 [<- Back to Documentation](README.md)
 
+<p align="center"><a href="https://buymeacoffee.com/systmworks"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="45" alt="Buy me a coffee"></a></p>
+
+> I have spent many, many hours creating and testing this ADMX. If it helps you please consider buying me a Coffee :)
+
 # Acrobat DC Settings
 
 Complete list of 136 Acrobat DC policies in the v2.6 ADMX templates, sorted by category.
