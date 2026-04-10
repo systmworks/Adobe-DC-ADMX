@@ -14,7 +14,7 @@
 | [Reduce Nags & Upsells](reduce-nags.md) | Settings to suppress unwanted messages, popups, and promotions |
 | [Screenshots](screenshots.md) | GPMC and Intune screenshots showing policy configuration |
 
-These ADMX/ADML templates (v2.6) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. They define machine-level (`HKLM`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, and upsell controls.
+These ADMX/ADML templates (v2.7) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. They define machine-level (`HKLM`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, and upsell controls.
 
 The templates ship in two namespaces:
 
