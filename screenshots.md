@@ -8,6 +8,10 @@
 
 Here are some example screenshots from Intune.   There are many more settings available.
 
+<img width="790" height="362" alt="image" src="https://github.com/user-attachments/assets/9bd53017-0ebf-482d-a004-3100ff05c7e1" />
+
+<img width="546" height="277" alt="image" src="https://github.com/user-attachments/assets/674cc5d1-7c45-4976-bacc-1a2f97e1bfde" />
+
 <img width="692" height="491" alt="image" src="https://github.com/user-attachments/assets/56d51110-6b81-4fbb-b2e0-7feded18692c" />
 
 <img width="1128" height="679" alt="image" src="https://github.com/user-attachments/assets/6f6884c9-3750-45c2-9831-bd97d20e0b08" />
