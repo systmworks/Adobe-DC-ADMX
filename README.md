@@ -28,7 +28,6 @@ The templates ship in two namespaces:
 
 | ![Note](https://img.shields.io/badge/Note-316dca?style=flat-square) |
 |------|
-| The Microsoft ``Windows.admx`` / ``Windows.adml`` files are a dependency and **must be uploaded to Intune before** uploading the Adobe ADMX files. |
 | Acrobat Reader (x64) using the new **Unified Installer** runs ``Acrobat.exe``, so it requires configuration of the **Acrobat** settings rather than the Reader settings. To be safe, configure both. |
 | Several ``bToggle*`` policies use inverted registry values (DWORD 0 = feature ON, DWORD 1 = feature OFF). The ADMX templates handle this so that the Group Policy **Enabled**/**Disabled** states match the FriendlyName intent, but raw registry checks may look counterintuitive. |
 
