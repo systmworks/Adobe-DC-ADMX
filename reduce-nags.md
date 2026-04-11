@@ -6,7 +6,7 @@
 
 # Reduce Nags, Upsells & Unwanted Notifications
 
-Settings to suppress unwanted messages, popups, promotional content, and notifications in the v2.8 ADMX templates.
+Settings to suppress unwanted messages, popups, promotional content, and notifications in the v2.9 ADMX templates.
 
 ## Reader DC
 

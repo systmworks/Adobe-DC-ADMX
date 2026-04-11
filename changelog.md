@@ -10,6 +10,19 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v2.9 — 11 April 2026
+
+One new Acrobat-only setting added and one FriendlyName renamed, bringing the total to **255 policies** (140 Acrobat + 115 Reader).
+
+| Setting | ValueName | Change |
+|---|---|---|
+| Reader mode on Acrobat (Unified x64) | `bIsSCReducedModeEnforcedEx` | New — Acrobat DC only; sourced from [Adobe enterprise KB](https://helpx.adobe.com/enterprise/kb/acrobat-64-bit-for-enterprises.html) |
+| Generative AI Technology | `bEnableGentech` | FriendlyName renamed from "Enable Generative AI" |
+
+Unused `<using namespace="Microsoft.Policies.Windows" prefix="windows"/>` line removed from generated ADMX `policyNamespaces`.
+
+---
+
 ## v2.8 — 10 April 2026
 
 Three new settings added from Adobe's Application Security Guide, bringing the total to **254 policies** (139 Acrobat + 115 Reader).

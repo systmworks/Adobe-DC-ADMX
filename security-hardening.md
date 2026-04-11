@@ -6,7 +6,7 @@
 
 # Security Hardening Guide
 
-Recommended and optional security settings for the v2.8 ADMX templates. These complement (but do not replace) Adobe's own [Application Security Guide](https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/index.html).
+Recommended and optional security settings for the v2.9 ADMX templates. These complement (but do not replace) Adobe's own [Application Security Guide](https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/index.html).
 
 - ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) settings most organisations should apply; minimal workflow impact.
 - ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) stronger hardening that may break specific features or workflows.
@@ -19,7 +19,7 @@ Recommended and optional security settings for the v2.8 ADMX templates. These co
 | Cloud & Connectors | Document Cloud Services | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Cloud & Connectors | Document Cloud Storage | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Cloud & Connectors | Dropbox Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
-| Cloud & Connectors | Enable Generative AI | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Cloud & Connectors | Generative AI Technology | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Cloud & Connectors | Google Drive Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Cloud & Connectors | OneDrive Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Cloud & Connectors | Third-Party Cloud Connectors | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
@@ -45,7 +45,7 @@ Recommended and optional security settings for the v2.8 ADMX templates. These co
 | Cloud & Connectors | Document Cloud Services | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Cloud & Connectors | Document Cloud Storage | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Cloud & Connectors | Dropbox Cloud Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
-| Cloud & Connectors | Enable Generative AI | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Cloud & Connectors | Generative AI Technology | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Cloud & Connectors | Google Drive Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Cloud & Connectors | OneDrive Connector | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Cloud & Connectors | Third-Party Cloud Connectors | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |

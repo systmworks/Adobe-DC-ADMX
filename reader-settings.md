@@ -6,7 +6,7 @@
 
 # Reader DC Settings
 
-Complete list of 115 Reader DC policies in the v2.8 ADMX templates, sorted by category.
+Complete list of 115 Reader DC policies in the v2.9 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -17,7 +17,7 @@ Complete list of 115 Reader DC policies in the v2.8 ADMX templates, sorted by ca
 | Document Cloud Services | ``bToggleAdobeDocumentServices`` | Disables Document Cloud service access except those features controlled by the other preferences. |
 | Document Cloud Storage | ``bToggleDocumentCloud`` | Enable Document Cloud storage. |
 | Dropbox Cloud Connector | ``bDropboxConnectorEnabled`` | Enable connection to the Dropbox cloud when bToggleWebConnectors is set to 1. |
-| Enable Generative AI | ``bEnableGentech`` | Enable generative AI features in Acrobat and Reader. |
+| Generative AI Technology | ``bEnableGentech`` | Enable generative AI features in Acrobat and Reader. |
 | Google Drive Connector | ``bGoogleDriveConnectorEnabled`` | Enable connection to the Google Drive cloud when bToggleWebConnectors is set to 1. |
 | Hide Fill & Sign Send a Copy Button | ``bToggleSendACopy`` | Hide the Send a Copy button from the Fill & Sign tool in Acrobat and Reader. |
 | Hide Sign Out Menu Item | ``bSuppressSignOut`` | Specifies whether the sign-in and sign-out Help menu item should be enabled. |

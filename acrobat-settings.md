@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings
 
-Complete list of 139 Acrobat DC policies in the v2.8 ADMX templates, sorted by category.
+Complete list of 140 Acrobat DC policies in the v2.9 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -17,7 +17,7 @@ Complete list of 139 Acrobat DC policies in the v2.8 ADMX templates, sorted by c
 | Document Cloud Services | ``bToggleAdobeDocumentServices`` | Disables Document Cloud service access except those features controlled by the other preferences. |
 | Document Cloud Storage | ``bToggleDocumentCloud`` | Enable Document Cloud storage. |
 | Dropbox Cloud Connector | ``bDropboxConnectorEnabled`` | Enable connection to the Dropbox cloud when bToggleWebConnectors is set to 1. |
-| Enable Generative AI | ``bEnableGentech`` | Enable generative AI features in Acrobat and Reader. |
+| Generative AI Technology | ``bEnableGentech`` | Enable generative AI features in Acrobat and Reader. |
 | Google Drive Connector | ``bGoogleDriveConnectorEnabled`` | Enable connection to the Google Drive cloud when bToggleWebConnectors is set to 1. |
 | Hide Fill & Sign Send a Copy Button | ``bToggleSendACopy`` | Hide the Send a Copy button from the Fill & Sign tool in Acrobat and Reader. |
 | Hide Sign Out Menu Item | ``bSuppressSignOut`` | Specifies whether the sign-in and sign-out Help menu item should be enabled. |
@@ -150,6 +150,7 @@ Complete list of 139 Acrobat DC policies in the v2.8 ADMX templates, sorted by c
 | Hide In-Product Notifications Bell | ``bEnableBellButton`` | Hide in-product messages. |
 | Hide Send Feedback Icon | ``bToggleShareFeedback`` | Show the Send Feedback icon. |
 | Home Screen To Do List | ``bToggleToDoList`` | Show a "to do" list on the Home screen. |
+| Reader mode on Acrobat (Unified x64) | ``bIsSCReducedModeEnforcedEx`` | Enforces reduced (Reader-like) mode for Unified Acrobat so users can open PDFs without signing in with an Adobe ID. |
 | Scan Tab in Home View | ``bShowScanTabInHomeView`` | Disable the Scan tab in Home view. |
 | Show Desktop Notification Toasts | ``bToggleNotificationToasts`` | Hide desktop notifications. |
 | Show PDF Ownership Notification | ``bTogglePDFOwnershipToasts`` | Show a notification on machine startup that allows the user to make Acrobat the default PDF viewer. |
