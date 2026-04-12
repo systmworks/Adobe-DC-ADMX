@@ -19,7 +19,7 @@ One new Acrobat-only setting added and one FriendlyName renamed, bringing the to
 | Reader mode on Acrobat (Unified x64) | `bIsSCReducedModeEnforcedEx` | New — Acrobat DC only; sourced from [Adobe enterprise KB](https://helpx.adobe.com/enterprise/kb/acrobat-64-bit-for-enterprises.html) |
 | Generative AI Technology | `bEnableGentech` | FriendlyName renamed from "Enable Generative AI" |
 
-Unused `<using namespace="Microsoft.Policies.Windows" prefix="windows"/>` line removed from generated ADMX `policyNamespaces`.
+[**MHimken**](https://www.reddit.com/user/MHimken/) flagged that the Windows ADMX is not required; the unused `<using namespace="Microsoft.Policies.Windows" prefix="windows"/>` line was removed from generated ADMX `policyNamespaces`.
 
 ---
 
