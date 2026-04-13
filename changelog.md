@@ -10,6 +10,18 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v2.10 — 13 April 2026
+
+One new setting added for both products, bringing the total to **257 policies** (141 Acrobat + 116 Reader).
+
+| Setting | ValueName | Change |
+|---|---|---|
+| Patch Cache Cleanup | `PatchCleanFlag` | New — Both products; sourced from [Adobe Employee response on Adobe Community (Feb 2026)](https://community.adobe.com/questions-9/we-have-a-few-computers-wtih-literally-hundreds-of-1gb-update-msi-files-downloading-constantly-1302886). Not listed on lockable.html or PrefRef. |
+
+Also added to the **Reduce Nags** documentation page as a Recommended setting (Enabled).
+
+---
+
 ## v2.9 — 11 April 2026
 
 One new Acrobat-only setting added and one FriendlyName renamed, bringing the total to **255 policies** (140 Acrobat + 115 Reader).

@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings
 
-Complete list of 140 Acrobat DC policies in the v2.9 ADMX templates, sorted by category.
+Complete list of 141 Acrobat DC policies in the v2.10 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -174,6 +174,7 @@ Complete list of 140 Acrobat DC policies in the v2.9 ADMX templates, sorted by c
 | Lock Default PDF Viewer | ``bDisablePDFHandlerSwitching`` | Disables the ability to change the specified default handler (PDF viewer). |
 | Lock PDF Thumbnails in Explorer | ``bDisableThumbnailPreviewHandler`` | Disable and lock the user interface option that controls Acrobat-generated PDF thumbnail previews in Windows Explorer. |
 | Merge Title and Menu Bar | ``bMergeMenuBar`` | Merge the application's title bar and menu bar into a single bar. |
+| Patch Cache Cleanup | ``PatchCleanFlag`` | Triggers cleanup of old cached update patch files (MSI/MSP) on the next update cycle. |
 | Product Updater | ``bUpdater`` | Disables the Updater and removes associated user interface items. |
 | Scalable Cursor | ``bShouldUseScalableCursor`` | Disable the scalable cursor. |
 | Split by Size Maximum (MB) | ``dSplitBySizeMaxSize`` | Specifies the file size in MB into which a file may be split. |
