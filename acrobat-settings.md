@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings
 
-Complete list of 141 Acrobat DC policies in the v2.10 ADMX templates, sorted by category.
+Complete list of 142 Acrobat DC policies in the v2.11 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -147,6 +147,7 @@ Complete list of 141 Acrobat DC policies in the v2.10 ADMX templates, sorted by 
 | Allow Users to Change Message Preferences | ``bAllowUserToChangeMsgPrefs`` | Locks the features associated with bShowMsgAtLaunch and bDontShowMsgWhenViewingDoc so that ends users can't change the settings. |
 | Desktop Notifications | ``bToggleNotifications`` | Disable all in-product and desktop notifications. |
 | First Time Experience | ``bToggleFTE`` | Enable the First Time Experience (FTE) feature (Welcome tour/page). |
+| Hide Adobe Messages on Document Open | ``bDontShowMsgWhenViewingDoc`` | Show messages from Adobe when a document opens. |
 | Hide In-Product Notifications Bell | ``bEnableBellButton`` | Hide in-product messages. |
 | Hide Send Feedback Icon | ``bToggleShareFeedback`` | Show the Send Feedback icon. |
 | Home Screen To Do List | ``bToggleToDoList`` | Show a "to do" list on the Home screen. |

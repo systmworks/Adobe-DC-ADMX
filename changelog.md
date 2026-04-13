@@ -10,6 +10,20 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v2.11 — 13 April 2026
+
+Existing setting expanded to Acrobat DC, bringing the total to **258 policies** (142 Acrobat + 116 Reader).
+
+| Setting | ValueName | Change |
+|---|---|---|
+| Hide Adobe Messages on Document Open | `bDontShowMsgWhenViewingDoc` | Expanded from Reader DC only to Both (Reader + Acrobat). The Unified x64 installer runs in Reader mode under Acrobat registry keys, so this setting must be configurable under the Acrobat DC path for Unified deployments. |
+
+Also updated the **Reduce Nags** documentation page scope from Reader to Both.
+
+Resolved **Known Issue** from v2.10: "`cIPM\bDontShowMsgWhenViewingDoc` evaluate adding an Acrobat DC entry" — now included.
+
+---
+
 ## v2.10 — 13 April 2026
 
 One new setting added for both products, bringing the total to **257 policies** (141 Acrobat + 116 Reader).

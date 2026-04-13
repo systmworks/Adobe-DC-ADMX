@@ -10,7 +10,7 @@
     Values are aligned to:
       - Documentation\data\security-hardening.json  (Recommended entries only, Reader scope)
       - Documentation\data\reduce-nags.json          (all Reader-scoped entries)
-      - v2.9 ADMX registry key paths (current production templates)
+      - v2.11 ADMX registry key paths (current production templates)
 
     Run this script ALONE (without the x64 Reader or Acrobat scripts) to test
     whether 64-bit Reader picks up keys from the WOW6432Node branch.
@@ -79,6 +79,7 @@ $Entries = @(
     # ── Reduce Nags: Updates (bUpdater in two ADMX locations) ────────────────
     @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bUpdater';                         Value = 0 }   # Disable Services & Web-Plugin Updates
     @{ Subkey = 'FeatureLockDown';                          Name = 'bUpdater';                         Value = 0 }   # Disable Product Updater
+    @{ Subkey = 'FeatureLockDown';                          Name = 'PatchCleanFlag';                   Value = 1 }   # Patch Cache Cleanup
 )
 
 $InstallerEntries = @(

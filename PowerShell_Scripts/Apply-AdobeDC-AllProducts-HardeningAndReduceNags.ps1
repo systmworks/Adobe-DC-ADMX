@@ -10,7 +10,7 @@
     Values are aligned to:
       - Documentation\data\security-hardening.json  (Recommended entries only)
       - Documentation\data\reduce-nags.json          (all entries)
-      - v2.9 ADMX registry key paths (current production templates)
+      - v2.11 ADMX registry key paths (current production templates)
 
     IT admins: edit the arrays below to adjust individual settings.
     Do NOT modify the apply loops at the bottom unless changing the script structure.
@@ -63,6 +63,7 @@ $CommonPolicyEntries = @(
     # ── Reduce Nags: Startup & Experience ────────────────────────────────────
     @{ Subkey = 'FeatureLockDown\cIPM';                     Name = 'bShowMsgAtLaunch';                 Value = 0 }   # Suppress Adobe Messages at Launch
     @{ Subkey = 'FeatureLockDown\cIPM';                     Name = 'bAllowUserToChangeMsgPrefs';       Value = 0 }   # Lock Message Preferences
+    @{ Subkey = 'FeatureLockDown\cIPM';                     Name = 'bDontShowMsgWhenViewingDoc';        Value = 0 }   # Hide Messages on Document Open
     @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleNotifications';             Value = 1 }   # Disable Desktop Notifications (inverted: 1=off)
     @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleFTE';                       Value = 1 }   # Disable First Time Experience (inverted: 1=off)
     @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bEnableBellButton';                Value = 1 }   # Hide Notifications Bell (1=hidden)
@@ -87,6 +88,7 @@ $CommonPolicyEntries = @(
     # bUpdater appears in two ADMX keys; set both to ensure full coverage
     @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bUpdater';                         Value = 0 }   # Disable Services & Web-Plugin Updates
     @{ Subkey = 'FeatureLockDown';                          Name = 'bUpdater';                         Value = 0 }   # Disable Product Updater
+    @{ Subkey = 'FeatureLockDown';                          Name = 'PatchCleanFlag';                   Value = 1 }   # Patch Cache Cleanup
 )
 
 # ╔════════════════════════════════════════════════════════════════════════════╗
@@ -98,7 +100,6 @@ $ReaderOnlyPolicyEntries = @(
     @{ Subkey = 'FeatureLockDown';      Name = 'bEnableProtectedModeAppContainer';  Value = 1 }   # AppContainer Sandbox
 
     # ── Reduce Nags ──────────────────────────────────────────────────────────
-    @{ Subkey = 'FeatureLockDown\cIPM'; Name = 'bDontShowMsgWhenViewingDoc';        Value = 0 }   # Hide Messages on Document Open
     @{ Subkey = 'FeatureLockDown';      Name = 'bAcroSuppressUpsell';               Value = 1 }   # Suppress Upgrade Prompts
     @{ Subkey = 'FeatureLockDown';      Name = 'bReaderRetentionExperiment';        Value = 0 }   # Disable Acrobat Download Prompt
     @{ Subkey = 'FeatureLockDown';      Name = 'bShowRhpToolSearch';                Value = 0 }   # Hide Purchasable Tools in Search

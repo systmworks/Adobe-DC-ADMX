@@ -6,7 +6,7 @@
 
 # Reduce Nags, Upsells & Unwanted Notifications
 
-Settings to suppress unwanted messages, popups, promotional content, and notifications in the v2.10 ADMX templates.
+Settings to suppress unwanted messages, popups, promotional content, and notifications in the v2.11 ADMX templates.
 
 ## Reader DC
 
@@ -54,6 +54,7 @@ Settings to suppress unwanted messages, popups, promotional content, and notific
 | Startup & Experience | Allow Users to Change Message Preferences | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Startup & Experience | Desktop Notifications | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Startup & Experience | First Time Experience | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Startup & Experience | Hide Adobe Messages on Document Open | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Startup & Experience | Hide In-Product Notifications Bell | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Startup & Experience | Hide Send Feedback Icon | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Startup & Experience | Home Screen To Do List | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |

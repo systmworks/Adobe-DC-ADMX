@@ -10,7 +10,7 @@
     Values are aligned to:
       - Documentation\data\security-hardening.json  (Recommended entries only, Acrobat scope)
       - Documentation\data\reduce-nags.json          (all Acrobat-scoped entries)
-      - v2.9 ADMX registry key paths (current production templates)
+      - v2.11 ADMX registry key paths (current production templates)
 
     Run this script ALONE (without the Reader scripts) to test whether
     64-bit Reader also picks up keys from the Acrobat product branch.
@@ -50,6 +50,7 @@ $Entries = @(
     # ── Reduce Nags: Startup & Experience ────────────────────────────────────
     @{ Subkey = 'FeatureLockDown\cIPM';                     Name = 'bShowMsgAtLaunch';                 Value = 0 }   # Suppress Adobe Messages at Launch
     @{ Subkey = 'FeatureLockDown\cIPM';                     Name = 'bAllowUserToChangeMsgPrefs';       Value = 0 }   # Lock Message Preferences
+    @{ Subkey = 'FeatureLockDown\cIPM';                     Name = 'bDontShowMsgWhenViewingDoc';        Value = 0 }   # Hide Messages on Document Open
     @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleNotifications';             Value = 1 }   # Disable Desktop Notifications (inverted: 1=off)
     @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleFTE';                       Value = 1 }   # Disable First Time Experience (inverted: 1=off)
     @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bEnableBellButton';                Value = 1 }   # Hide Notifications Bell (1=hidden)
@@ -83,6 +84,7 @@ $Entries = @(
     # ── Reduce Nags: Updates (bUpdater in two ADMX locations) ────────────────
     @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bUpdater';                         Value = 0 }   # Disable Services & Web-Plugin Updates
     @{ Subkey = 'FeatureLockDown';                          Name = 'bUpdater';                         Value = 0 }   # Disable Product Updater
+    @{ Subkey = 'FeatureLockDown';                          Name = 'PatchCleanFlag';                   Value = 1 }   # Patch Cache Cleanup
 )
 
 $InstallerEntries = @(
