@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings
 
-Complete list of 142 Acrobat DC policies in the v2.11 ADMX templates, sorted by category.
+Complete list of 142 Acrobat DC policies in the v2.12 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 

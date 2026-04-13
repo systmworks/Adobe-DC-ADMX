@@ -6,7 +6,7 @@
 
 # Reduce Nags, Upsells & Unwanted Notifications
 
-Settings to suppress unwanted messages, popups, promotional content, and notifications in the v2.11 ADMX templates.
+Settings to suppress unwanted messages, popups, promotional content, and notifications in the v2.12 ADMX templates.
 
 ## Reader DC
 
@@ -58,6 +58,7 @@ Settings to suppress unwanted messages, popups, promotional content, and notific
 | Startup & Experience | Hide In-Product Notifications Bell | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Startup & Experience | Hide Send Feedback Icon | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Startup & Experience | Home Screen To Do List | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Startup & Experience | Reader mode on Acrobat (Unified x64) | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Startup & Experience | Show Desktop Notification Toasts | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Startup & Experience | Show PDF Ownership Notification | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Startup & Experience | Show To Do Cards in Recent Tab | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
@@ -72,4 +73,5 @@ Settings to suppress unwanted messages, popups, promotional content, and notific
 | Upsell | Express Templates in Create PDF | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Upsell | Limit Informational Prompts | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Upsell | Show App Center UI | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Upsell | Show Upgrade Prompts | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Upsell | Trial Purchase Prompt | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |

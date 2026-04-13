@@ -10,6 +10,25 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v2.12 — 13 April 2026
+
+**Breaking change:** Corrected the GPO Enabled/Disabled toggle mapping for two Acrobat DC policies.
+
+| Setting | ValueName | v2.11 (old) | v2.12 (new) |
+|---|---|---|---|
+| Block EMF to PDF Conversion | `BlockEMFParsing` | Enabled → DWORD 0 (allow) | Enabled → DWORD 1 (block) |
+| Block XPS to PDF Conversion | `BlockXPSParsing` | Enabled → DWORD 0 (allow) | Enabled → DWORD 1 (block) |
+
+In v2.11, setting these policies to **Enabled** wrote DWORD 0 (allow conversion), contradicting the "Block..." friendly name. v2.12 aligns the toggle so **Enabled = block** and **Disabled = allow**, matching both the policy name and Adobe's documented registry semantics.
+
+**If you previously deployed these policies, verify and re-apply the intended state after upgrading.**
+
+Also updated the ADML Explain text to include a GPO-oriented clarification for both policies.
+
+Documentation: `bAcroSuppressUpsell` (Show Upgrade Prompts) scope corrected from Reader to Both on the **Reduce Nags** page — the Unified x64 installer reads Acrobat registry keys, so this setting must be configurable under Acrobat DC.
+
+---
+
 ## v2.11 — 13 April 2026
 
 Existing setting expanded to Acrobat DC, bringing the total to **258 policies** (142 Acrobat + 116 Reader).
