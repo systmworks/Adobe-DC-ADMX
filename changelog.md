@@ -10,6 +10,19 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v2.13 — 14 April 2026
+
+Two settings added for both products, bringing the total to **262 policies** (144 Acrobat + 118 Reader).
+
+| Setting | ValueName | Change |
+|---|---|---|
+| Disable and Lock JavaScript | `bDisableJavaScript` | New — Both products. Globally disables and locks JavaScript execution; prevents users from bypassing via privileged locations. Added to **Security Hardening** page as Recommended (Disabled). |
+| Accept EULA for Updater | `EULA` | New — Both products. Accepts the EULA on behalf of the user so the built-in updater can download product updates. |
+
+`bDisableJavaScript` was present in all v1.x ADMX versions but was inadvertently omitted when the v2.x series was generated from the lockable PrefRef CSV. The build scripts already contained inverted-logic handling for this value. `EULA` is a non-policy HKLM key under `AdobeViewer` that was present in v1.3 but dropped in v2.x; it has been re-added as an enterprise convenience for deployments that did not set `EULA_ACCEPT=YES` at install time.
+
+---
+
 ## v2.12 — 13 April 2026
 
 **Breaking change:** Corrected the GPO Enabled/Disabled toggle mapping for two Acrobat DC policies.

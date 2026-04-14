@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings
 
-Complete list of 142 Acrobat DC policies in the v2.12 ADMX templates, sorted by category.
+Complete list of 144 Acrobat DC policies in the v2.13 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -79,6 +79,7 @@ Complete list of 142 Acrobat DC policies in the v2.12 ADMX templates, sorted by 
 | Block PDF Link Actions | ``bDisablePDFRedirectionActions`` | Block specific PDF actions (listed below) which result in opening a link. |
 | Built-in Attachment Permissions List | ``tBuiltInPermList`` | Defines the white and black list of file types that can be saved and opened from a document. |
 | Certification Status in Protected View | ``bEnablePVCertificateBasedTrust`` | Specifies whether a document's certification status should appear in the Protected View document message bar. |
+| Disable and Lock JavaScript | ``bDisableJavaScript`` | Globally disables and locks JavaScript execution, preventing users from bypassing via privileged locations. |
 | Enhanced Security in Browser | ``bEnhancedSecurityInBrowser`` | Toggles enhanced security when the application is running in the browser. |
 | Enhanced Security Standalone | ``bEnhancedSecurityStandalone`` | Toggles enhanced security for the standalone application. |
 | Flash Content in PDFs | ``bEnableFlash`` | Specifies whether Flash content should be rendered in a PDF. |
@@ -163,6 +164,7 @@ Complete list of 142 Acrobat DC policies in the v2.12 ADMX templates, sorted by 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | 32-Bit Plugin Upgrade Notification | ``bDisableThirdPartyPluginNotif`` | Notify users with 32 bit plugins that the app will soon update to 64 bit. |
+| Accept EULA for Updater | ``EULA`` | Accepts the EULA on behalf of the user so the built-in updater can download product updates. |
 | Auto Dock HUD Bar | ``bEnableAutoDockUndockHUD`` | Automatically doc and undock the HUD bar based on the window size. |
 | Auto Open Acrobat from Reader | ``bHasAcrobatConsent`` | Specifies whether the Reader process should automatically open Acrobat for the current file. |
 | Crash Reporter Dialog | ``bCrashReporterEnabled`` | Show the crash reporter dialog on application crash (Windows only). |
