@@ -61,7 +61,7 @@ Complete list of 118 Reader DC policies in the v2.13 ADMX templates, sorted by c
 | Block PDF Link Actions | ``bDisablePDFRedirectionActions`` | Block specific PDF actions (listed below) which result in opening a link. |
 | Built-in Attachment Permissions List | ``tBuiltInPermList`` | Defines the white and black list of file types that can be saved and opened from a document. |
 | Certification Status in Protected View | ``bEnablePVCertificateBasedTrust`` | Specifies whether a document's certification status should appear in the Protected View document message bar. |
-| Disable and Lock JavaScript | ``bDisableJavaScript`` | Globally disables and locks JavaScript execution, preventing users from bypassing via privileged locations. |
+| Block JavaScript Execution | ``bDisableJavaScript`` | Blocks and locks JavaScript execution in PDF documents, preventing users from bypassing via privileged locations. |
 | Enhanced Security in Browser | ``bEnhancedSecurityInBrowser`` | Toggles enhanced security when the application is running in the browser. |
 | Enhanced Security Standalone | ``bEnhancedSecurityStandalone`` | Toggles enhanced security for the standalone application. |
 | Flash Content in PDFs | ``bEnableFlash`` | Specifies whether Flash content should be rendered in a PDF. |
