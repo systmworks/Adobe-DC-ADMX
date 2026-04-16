@@ -8,9 +8,9 @@
     Policy root: HKLM:\SOFTWARE\Policies\Adobe\Adobe Acrobat\DC
 
     Values are aligned to:
-      - Documentation\data\security-hardening.json  (Recommended entries only, Acrobat scope)
-      - Documentation\data\reduce-nags.json          (all Acrobat-scoped entries)
-      - v2.11 ADMX registry key paths (current production templates)
+      - Documentation\security-hardening.md  (all Recommended + Optional entries, Acrobat scope)
+      - Documentation\reduce-nags.md          (all Acrobat-scoped entries)
+      - v2.15 ADMX registry key paths
 
     Run this script ALONE (without the Reader scripts) to test whether
     64-bit Reader also picks up keys from the Acrobat product branch.
@@ -35,31 +35,49 @@ $Entries = @(
     @{ Subkey = 'FeatureLockDown';                          Name = 'bEnable3D';                        Value = 0 }   # Disable 3D Content in PDFs
     @{ Subkey = 'FeatureLockDown';                          Name = 'bDisablePDFRedirectionActions';    Value = 1 }   # Block PDF Link Actions
     @{ Subkey = 'FeatureLockDown';                          Name = 'bEnableGentech';                   Value = 0 }   # Disable Generative AI
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bDisableJavaScript';               Value = 1 }   # Block JavaScript Execution
     @{ Subkey = 'FeatureLockDown\cDefaultLaunchURLPerms';   Name = 'iUnknownURLPerms';                 Value = 1 }   # Unknown URL Access: always ask
     @{ Subkey = 'FeatureLockDown\cDefaultLaunchAttachmentPerms'; Name = 'iUnlistedAttachmentTypePerm'; Value = 0 }   # Unlisted attachments: prompt without ability to allow
-    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleWebConnectors';             Value = 1 }   # Disable Third-Party Cloud Connectors (inverted: 1=off)
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleWebConnectors';             Value = 1 }   # Disable Third-Party Cloud Connectors
     @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bBoxConnectorEnabled';             Value = 0 }   # Disable Box Connector
     @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bDropboxConnectorEnabled';         Value = 0 }   # Disable Dropbox Connector
     @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bGoogleDriveConnectorEnabled';     Value = 0 }   # Disable Google Drive Connector
     @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bOneDriveConnectorEnabled';        Value = 0 }   # Disable OneDrive Connector
     @{ Subkey = 'FeatureLockDown\cSecurity\cPPKLite';       Name = 'bAllowPasswordSaving';             Value = 0 }   # Disable Password Caching
-    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleDocumentCloud';             Value = 1 }   # Disable Document Cloud Storage (inverted: 1=off)
-    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleAdobeDocumentServices';     Value = 1 }   # Disable Document Cloud Services (inverted: 1=off)
-    @{ Subkey = 'FeatureLockDown';                          Name = 'iProtectedView';                    Value = 1 }   # Protected View: unsafe locations
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleDocumentCloud';             Value = 1 }   # Disable Document Cloud Storage
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleAdobeDocumentServices';     Value = 1 }   # Disable Document Cloud Services
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bTogglePrefsSync';                 Value = 1 }   # Disable Preferences Synchronization
+    @{ Subkey = 'FeatureLockDown\cCloud';                   Name = 'bAdobeSendPluginToggle';           Value = 1 }   # Disable Send & Track Outlook Plugin
+    @{ Subkey = 'FeatureLockDown\cSharePoint';              Name = 'bDisableSharePointFeatures';       Value = 1 }   # Disable SharePoint & Office 365 Integration
+    @{ Subkey = 'FeatureLockDown\cWebmailProfiles';         Name = 'bDisableWebmail';                  Value = 1 }   # Disable WebMail Integration
+    @{ Subkey = 'FeatureLockDown';                          Name = 'iProtectedView';                   Value = 1 }   # Protected View: unsafe locations
+
+    # ── Security Hardening (Optional) ────────────────────────────────────────
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleFillSign';                  Value = 1 }   # Disable Adobe Fill & Sign
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bDisableOSTrustedSites';           Value = 1 }   # Disable IE Trusted Sites as Privileged Locations
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bDisableTrustedFolders';           Value = 1 }   # Lock Trusted Folders and Files
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bDisableTrustedSites';             Value = 1 }   # Lock Trusted Host Sites
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleAdobeSign';                 Value = 1 }   # Disable Adobe Acrobat Sign
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleSendAndTrack';              Value = 1 }   # Disable Adobe Send & Track
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleAdobeReview';               Value = 1 }   # Disable Document Cloud Review Service
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleFSSSignatureSaving';        Value = 1 }   # Disable Save Signature to Cloud
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bEnableCloudPoweredSearch';        Value = 0 }   # Disable Cloud-Powered Search
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bEnableCloudPoweredSearchTokenCaching'; Value = 0 }   # Disable Cloud Search Token Caching
 
     # ── Reduce Nags: Startup & Experience ────────────────────────────────────
     @{ Subkey = 'FeatureLockDown\cIPM';                     Name = 'bShowMsgAtLaunch';                 Value = 0 }   # Suppress Adobe Messages at Launch
     @{ Subkey = 'FeatureLockDown\cIPM';                     Name = 'bAllowUserToChangeMsgPrefs';       Value = 0 }   # Lock Message Preferences
-    @{ Subkey = 'FeatureLockDown\cIPM';                     Name = 'bDontShowMsgWhenViewingDoc';        Value = 0 }   # Hide Messages on Document Open
-    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleNotifications';             Value = 1 }   # Disable Desktop Notifications (inverted: 1=off)
-    @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleFTE';                       Value = 1 }   # Disable First Time Experience (inverted: 1=off)
-    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bEnableBellButton';                Value = 1 }   # Hide Notifications Bell (1=hidden)
+    @{ Subkey = 'FeatureLockDown\cIPM';                     Name = 'bDontShowMsgWhenViewingDoc';       Value = 0 }   # Hide Messages on Document Open
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleNotifications';             Value = 1 }   # Disable Desktop Notifications
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleFTE';                       Value = 1 }   # Disable First Time Experience
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bEnableBellButton';                Value = 1 }   # Hide Notifications Bell
     @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleShareFeedback';             Value = 0 }   # Hide Send Feedback Icon
-    @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleToDoList';                  Value = 1 }   # Disable Home Screen To Do List (inverted: 1=off)
-    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleNotificationToasts';        Value = 1 }   # Disable Desktop Notification Toasts (inverted: 1=off)
-    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bTogglePDFOwnershipToasts';        Value = 1 }   # Disable PDF Ownership Notifications (inverted: 1=off)
-    @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleToDoTiles';                 Value = 1 }   # Disable To Do Cards in Recent Tab (inverted: 1=off)
-    @{ Subkey = 'FeatureLockDown';                          Name = 'bWhatsNewExp';                     Value = 1 }   # Disable What's New Experience (inverted: 1=off)
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleToDoList';                  Value = 1 }   # Disable Home Screen To Do List
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleNotificationToasts';        Value = 1 }   # Disable Desktop Notification Toasts
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bTogglePDFOwnershipToasts';        Value = 1 }   # Disable PDF Ownership Notifications
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleToDoTiles';                 Value = 1 }   # Disable To Do Cards in Recent Tab
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bWhatsNewExp';                     Value = 1 }   # Disable What's New Experience
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bShowScanTabInHomeView';           Value = 0 }   # Hide Scan Tab in Home View
 
     # ── Reduce Nags: Context, Tools & Search ─────────────────────────────────
     @{ Subkey = 'FeatureLockDown';                          Name = 'bEnableContextualTips';            Value = 0 }   # Disable Contextual Help Tips
@@ -67,29 +85,40 @@ $Entries = @(
     @{ Subkey = 'FeatureLockDown';                          Name = 'bFindMoreCustomizationsOnline';    Value = 0 }   # Hide Online Tool Set Exchange Link
     @{ Subkey = 'FeatureLockDown';                          Name = 'bEnableAV2Enterprise';             Value = 1 }   # Modern Viewer (enterprise mode)
 
-    # ── Reduce Nags: Sharing & Features ────────────────────────────────────────
+    # ── Reduce Nags: Acrobat-only ────────────────────────────────────────────
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bIsSCReducedModeEnforcedEx';       Value = 1 }   # Reader mode on Acrobat (reduced mode)
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleBillingIssue';              Value = 0 }   # Disable Billing Issue Call to Action
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleSophiaWebInfra';            Value = 0 }   # Disable Promotional Campaign Messages
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bMerchandizingEnabled';            Value = 0 }   # Disable Express Templates in Create PDF
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bEnableTrialistLaunchCard';        Value = 0 }   # Disable Trial Purchase Prompt
     @{ Subkey = 'FeatureLockDown';                          Name = 'bEnableReviewPromote';             Value = 0 }   # Disable Share and Review Reminder
-
-    # ── Reduce Nags: Updates & Desktop Integration ───────────────────────────
     @{ Subkey = 'FeatureLockDown';                          Name = 'bCrashReporterEnabled';            Value = 0 }   # Disable Crash Reporter Dialog
+
+    # ── Reduce Nags: Sharing & Features ──────────────────────────────────────
+    @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bToggleManageSign';                Value = 1 }   # Hide Acrobat Sign Tracking Tab
 
     # ── Reduce Nags: Upsell ──────────────────────────────────────────────────
     @{ Subkey = 'FeatureLockDown';                          Name = 'bLimitPromptsFeatureKey';          Value = 1 }   # Limit Informational Prompts
-    @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleDCAppCenter';               Value = 1 }   # Disable App Center UI (inverted: 1=off)
-    @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleBillingIssue';               Value = 0 }   # Disable Billing Issue Call to Action
-    @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleSophiaWebInfra';             Value = 0 }   # Disable Promotional Campaign Messages
-    @{ Subkey = 'FeatureLockDown';                          Name = 'bMerchandizingEnabled';             Value = 0 }   # Disable Express Templates in Create PDF
-    @{ Subkey = 'FeatureLockDown';                          Name = 'bEnableTrialistLaunchCard';         Value = 0 }   # Disable Trial Purchase Prompt
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bToggleDCAppCenter';               Value = 1 }   # Disable App Center UI
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bAcroSuppressUpsell';              Value = 1 }   # Suppress Upgrade Prompts
 
-    # ── Reduce Nags: Updates (bUpdater in two ADMX locations) ────────────────
+    # ── Reduce Nags: Updates ─────────────────────────────────────────────────
     @{ Subkey = 'FeatureLockDown\cServices';                Name = 'bUpdater';                         Value = 0 }   # Disable Services & Web-Plugin Updates
     @{ Subkey = 'FeatureLockDown';                          Name = 'bUpdater';                         Value = 0 }   # Disable Product Updater
     @{ Subkey = 'FeatureLockDown';                          Name = 'PatchCleanFlag';                   Value = 1 }   # Patch Cache Cleanup
+    @{ Subkey = 'FeatureLockDown';                          Name = 'bDisablePDFHandlerSwitching';      Value = 1 }   # Lock Default PDF Viewer
 )
 
 $InstallerEntries = @(
-    @{ Subkey = 'Installer'; Name = 'Disable_Repair';     Value = 1 }   # Disable Repair for Standard Users
-    @{ Subkey = 'Installer'; Name = 'DisableMaintenance';  Value = 1 }   # Disable Repair for All Users
+    @{ Subkey = 'Installer';     Name = 'Disable_Repair';     Value = 1 }   # Disable Repair for Standard Users
+    @{ Subkey = 'Installer';     Name = 'DisableMaintenance';  Value = 1 }   # Disable Repair for All Users
+    @{ Subkey = 'AdobeViewer';   Name = 'EULA';                Value = 1 }   # Accept EULA for Updater
+)
+
+# FeatureState entries (non-Policies paths under InstallerRoot)
+$FeatureStateEntries = @(
+    @{ Subkey = 'FeatureState';  Name = 'BlockEMFParsing';     Value = 1 }   # Block EMF to PDF Conversion
+    @{ Subkey = 'FeatureState';  Name = 'BlockXPSParsing';     Value = 1 }   # Block XPS to PDF Conversion
 )
 
 $ExtraEntries = @(
@@ -113,6 +142,20 @@ foreach ($e in $Entries) {
 }
 
 foreach ($e in $InstallerEntries) {
+    $keyPath = Join-Path $InstallerRoot $e.Subkey
+    if (-not (Test-Path $keyPath)) {
+        if ($PSCmdlet.ShouldProcess($keyPath, 'Create registry key')) {
+            New-Item -Path $keyPath -Force | Out-Null
+        }
+    }
+    if ($PSCmdlet.ShouldProcess("$keyPath  ->  $($e.Name) = $($e.Value)", 'Set DWORD')) {
+        New-ItemProperty -Path $keyPath -Name $e.Name -Value $e.Value -PropertyType DWord -Force | Out-Null
+        Write-Host "  [OK]  $keyPath\$($e.Name) = $($e.Value)"
+        $totalCount++
+    }
+}
+
+foreach ($e in $FeatureStateEntries) {
     $keyPath = Join-Path $InstallerRoot $e.Subkey
     if (-not (Test-Path $keyPath)) {
         if ($PSCmdlet.ShouldProcess($keyPath, 'Create registry key')) {

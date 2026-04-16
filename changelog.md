@@ -10,6 +10,61 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v2.15 — 16 April 2026
+
+**Breaking change:** Corrected Enabled/Disabled toggle mapping for three policies where "Enabled" in Group Policy wrote the wrong DWORD value.
+
+| Setting | ValueName | v2.14 (old) | v2.15 (new) |
+|---|---|---|---|
+| Block JavaScript Execution | `bDisableJavaScript` | Enabled → DWORD 0 (allow) | Enabled → DWORD 1 (block) |
+| Disable SharePoint & Office 365 Integration | `bDisableSharePointFeatures` | Enabled → DWORD 0 (enable) | Enabled → DWORD 1 (disable) |
+| Disable WebMail Integration | `bDisableWebmail` | Enabled → DWORD 0 (enable) | Enabled → DWORD 1 (disable) |
+
+**If you previously deployed these policies, verify and re-apply the intended state after upgrading.**
+
+### FriendlyName corrections
+
+| ValueName | Old FriendlyName | New FriendlyName |
+|---|---|---|
+| `bDisableSharePointFeatures` | SharePoint & Office 365 Integration | Disable SharePoint & Office 365 Integration |
+| `bDisableWebmail` | WebMail Integration | Disable WebMail Integration |
+
+The old names were misleading because selecting "Enabled" in Group Policy actually disabled the feature. The new names make the admin intent clear.
+
+### Summary text improvements
+
+Four policies reworded from "Disables X" to "Controls whether X is enabled" for neutral, descriptive text:
+
+| ValueName | FriendlyName |
+|---|---|
+| `bToggleAdobeDocumentServices` | Document Cloud Services |
+| `bTogglePrefsSync` | Preferences Synchronization |
+| `bUpdater` (cServices) | Services & Web-Plugin Updates |
+| `bToggleAdobeSign` | Adobe Acrobat Sign |
+
+### DISA STIG cross-references
+
+Policy description text now includes DISA STIG rule references where applicable (20 registry settings; 26 Reader rules, 23 Pro rules).
+
+### Documentation updates
+
+- **Security Hardening page:** 10 new entries added (5 Recommended, 5 Optional) for settings that had GoodSetting recommendations but were not previously listed.
+- **Reduce Nags page:** 2 new entries added; existing Product Updater entry corrected to reference the FeatureLockDown path.
+
+### Combined ADMX file
+
+A new combined ADMX file (`AdobeDC.admx`) is now provided alongside the existing per-architecture files.
+
+| ADMX File | Products & Architectures | Policies |
+|---|---|---:|
+| `AdobeDC.admx` | Reader DC (x86 + x64) and Acrobat DC (x86 + x64) | 520 |
+| `AdobeDC_x64.admx` | Reader DC (x64) and Acrobat DC (x64) | 260 |
+| `AdobeDC_x86.admx` | Reader DC (x86) and Acrobat DC (x86) | 260 |
+
+Policy count unchanged from v2.14.
+
+---
+
 ## v2.13 — 14 April 2026
 
 Two settings added for both products, bringing the total to **262 policies** (144 Acrobat + 118 Reader).
@@ -167,3 +222,7 @@ Initial release. **247 policies** (135 Acrobat + 112 Reader) generated from 146 
 - Startup & Experience
 - Updates & Desktop Integration
 - Upsell
+
+---
+
+**Sharing & Responsibility** — Built for the community, shared with good intentions. Use at your own risk. The author accepts no responsibility for any outcomes resulting from the use of these files. Always verify registry paths and values, and test in a safe environment first. If you find an issue or have a suggestion, contributions are welcome.
