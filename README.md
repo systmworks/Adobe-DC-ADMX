@@ -17,15 +17,13 @@
 
 These ADMX/ADML templates (v2.15) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. They define machine-level (`HKLM`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, and upsell controls.
 
-The templates ship as three ADMX files — pick the one that suits your environment:
+A new combined ADMX file (`AdobeDC.admx`) is now provided alongside the existing per-architecture files. Deploy the combined file if you manage both 32-bit and 64-bit installations, or use the individual x64/x86 files to target one or both architectures. The x86 and x64 files can be deployed together, but **do not deploy them alongside the combined file** — this will create duplicate policy entries in Group Policy.
 
-| ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Registry Hives](https://img.shields.io/badge/Registry_Hives-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) | ![Best For](https://img.shields.io/badge/Best_For-316dca?style=flat-square) |
-|------|-------|----------------|----------|----------|
-| `AdobeDC.admx` + ADML | Acrobat DC + Reader DC (x64 **and** x86) | Native + WOW6432Node | 520 (141 + 119 per arch) | Most environments — covers both architectures in a single file |
-| `AdobeDC_x64.admx` + ADML | Acrobat DC (x64) + Reader DC (x64) | Native only | 260 (141 Acrobat + 119 Reader) | 64-bit-only deployments |
-| `AdobeDC_x86.admx` + ADML | Acrobat DC (x86) + Reader DC (x86) | WOW6432Node only | 260 (141 Acrobat + 119 Reader) | Legacy 32-bit deployments on 64-bit Windows |
-
-> **Tip:** Import only **one** of the three files into your Central Store or Intune. `AdobeDC.admx` (unified) is recommended unless you have a specific reason to target a single architecture.
+| ![ADMX File](https://img.shields.io/badge/ADMX_File-316dca?style=flat-square) | ![Products & Architectures](https://img.shields.io/badge/Products_&_Architectures-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
+|------|-------|----------|
+| `AdobeDC.admx` | Reader DC (x86 + x64) and Acrobat DC (x86 + x64) | 520 |
+| `AdobeDC_x64.admx` | Reader DC (x64) and Acrobat DC (x64) | 260 |
+| `AdobeDC_x86.admx` | Reader DC (x86) and Acrobat DC (x86) | 260 |
 
 ## Important Notes
 
