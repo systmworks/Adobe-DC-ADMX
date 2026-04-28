@@ -6,7 +6,7 @@
 
 # Reduce Nags, Upsells & Unwanted Notifications
 
-Settings to suppress unwanted messages, popups, promotional content, and notifications in the v2.15 ADMX templates.
+Settings to suppress unwanted messages, popups, promotional content, and notifications in the v2.16 ADMX templates.
 
 ## Reader DC
 
@@ -81,7 +81,3 @@ Settings to suppress unwanted messages, popups, promotional content, and notific
 | Upsell | Show App Center UI | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Upsell | Show Upgrade Prompts | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Upsell | Trial Purchase Prompt | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
-
----
-
-**Sharing & Responsibility** — Built for the community, shared with good intentions. Use at your own risk. The author accepts no responsibility for any outcomes resulting from the use of these files. Always verify registry paths and values, and test in a safe environment first. If you find an issue or have a suggestion, contributions are welcome.

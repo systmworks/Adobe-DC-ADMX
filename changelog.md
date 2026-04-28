@@ -10,6 +10,12 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v2.16 — 28 April 2026
+
+**No settings changes:** Policy definitions are unchanged from **v2.15** below; this drop updates ADMX/ADML-only metadata (`revision`/`minRequiredRevision` alignment and three-line localization root element layout for Group Policy interoperability). Omitted per the rule above; see [readme in v2.16](../v2.16/readme.md).
+
+---
+
 ## v2.15 — 16 April 2026
 
 **Breaking change:** Corrected Enabled/Disabled toggle mapping for three policies where "Enabled" in Group Policy wrote the wrong DWORD value.

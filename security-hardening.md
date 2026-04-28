@@ -6,7 +6,7 @@
 
 # Security Hardening Guide
 
-Recommended and optional security settings for the v2.15 ADMX templates. These complement (but do not replace) Adobe's own [Application Security Guide](https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/index.html).
+Recommended and optional security settings for the v2.16 ADMX templates. These complement (but do not replace) Adobe's own [Application Security Guide](https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/index.html).
 
 - ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) settings most organisations should apply; minimal workflow impact.
 - ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) stronger hardening that may break specific features or workflows.
@@ -87,7 +87,3 @@ Recommended and optional security settings for the v2.15 ADMX templates. These c
 | Sharing & Features | Document Cloud Review Service | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Sharing & Features | Save Signature to Cloud | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Sharing & Features | Send & Track Outlook Plugin | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
-
----
-
-**Sharing & Responsibility** — Built for the community, shared with good intentions. Use at your own risk. The author accepts no responsibility for any outcomes resulting from the use of these files. Always verify registry paths and values, and test in a safe environment first. If you find an issue or have a suggestion, contributions are welcome.
