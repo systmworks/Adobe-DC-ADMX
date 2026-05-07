@@ -1,8 +1,8 @@
-[<- Back to Documentation](README.md)
-
 <p align="center"><a href="https://buymeacoffee.com/systmworks"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="45" alt="Buy me a coffee"></a></p>
 
 > I have spent many, many hours creating and testing this ADMX. If it helps you please consider buying me a Coffee :)
+
+[<- Back to Documentation](README.md)
 
 # Acrobat DC Settings
 
@@ -193,3 +193,5 @@ Complete list of 141 Acrobat DC policies in the v2.16 ADMX templates, sorted by 
 | Show App Center UI | ``bToggleDCAppCenter`` | Show the UI that helps users find and download additional apps. |
 | Show Upgrade Prompts | ``bAcroSuppressUpsell`` | For 12.x and later products, disables messages which encourage the user to upgrade the product. |
 | Trial Purchase Prompt | ``bEnableTrialistLaunchCard`` | Prompt Acrobat trial users to complete the purchase. |
+
+**Sharing & responsibility** — Built for the community, shared with good intentions. Use at your own risk. The author accepts no responsibility for any outcomes resulting from the use of these files. Always verify registry paths and values, and test in a safe environment first. If you find an issue or have a suggestion, contributions are welcome.
