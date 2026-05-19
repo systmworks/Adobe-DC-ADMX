@@ -10,6 +10,19 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v2.17 — 19 May 2026
+
+**New Acrobat DC policies (machine):** **Protected Mode Sandbox** (`bProtectedMode`) and **AppContainer Sandbox** (`bEnableProtectedModeAppContainer`) under `FeatureLockDown`, aligned with Adobe's [Privileged (Protected Mode)](https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/Privileged.html) reference and DISA STIG Acrobat Pro DC **V-213127** (AADC-CN-001010). They were previously available in the templates under **Reader DC** only; they now appear under **Acrobat DC** as well so administrators can enforce sandbox settings on full Acrobat through Group Policy or Intune.
+
+| ADMX File | Policies |
+|---|---:|
+| `AdobeDC.admx` | 524 |
+| `AdobeDC_x64.admx` / `AdobeDC_x86.admx` | 262 each |
+
+See [readme in v2.17](../v2.17/readme.md) (includes **v2.16** release notes in the same file; version readmes do not link across folders).
+
+---
+
 ## v2.16 — 28 April 2026
 
 **No settings changes:** Policy definitions are unchanged from **v2.15** below; this drop updates ADMX/ADML-only metadata (`revision`/`minRequiredRevision` alignment and three-line localization root element layout for Group Policy interoperability). Omitted per the rule above; see [readme in v2.16](../v2.16/readme.md).

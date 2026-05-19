@@ -6,7 +6,7 @@
 
 # Security Hardening Guide
 
-Recommended and optional security settings for the v2.16 ADMX templates. These complement (but do not replace) Adobe's own [Application Security Guide](https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/index.html).
+Recommended and optional security settings for the v2.17 ADMX templates. These complement (but do not replace) Adobe's own [Application Security Guide](https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/index.html).
 
 - ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) settings most organisations should apply; minimal workflow impact.
 - ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) stronger hardening that may break specific features or workflows.
@@ -68,11 +68,13 @@ Recommended and optional security settings for the v2.16 ADMX templates. These c
 | Documents, Editing & Accessibility | Block EMF to PDF Conversion | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Documents, Editing & Accessibility | Block XPS to PDF Conversion | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Security: Execution & Protection | 3D Content in PDFs | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Security: Execution & Protection | AppContainer Sandbox | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Block JavaScript Execution | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Block PDF Link Actions | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Enhanced Security in Browser | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Enhanced Security Standalone | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Flash Content in PDFs | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Security: Execution & Protection | Protected Mode Sandbox | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Protected View Mode | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Enable for unsafe locations only | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Unlisted Attachment Type Permissions | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Prompt without ability to allow | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Trust & Permissions | Allow Password Caching | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |

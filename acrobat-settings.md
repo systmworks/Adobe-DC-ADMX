@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings
 
-Complete list of 141 Acrobat DC policies in the v2.16 ADMX templates, sorted by category.
+Complete list of 143 Acrobat DC policies in the v2.17 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -73,6 +73,7 @@ Complete list of 141 Acrobat DC policies in the v2.16 ADMX templates, sorted by 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | 3D Content in PDFs | ``bEnable3D`` | Trust and render 3D content in PDFs. |
+| AppContainer Sandbox | ``bEnableProtectedModeAppContainer`` | Enable the AppContainer sandbox. |
 | Attachment Extension Blocklist in Dialogs | ``bEnableBlacklistForOpenSave`` | Reverts the tBuiltInPermList behavior to that of the pre 21.011.20029 build. |
 | Block JavaScript Execution | ``bDisableJavaScript`` | Blocks and locks JavaScript execution in PDF documents, preventing users from bypassing via privileged locations. |
 | Block PDF Link Actions | ``bDisablePDFRedirectionActions`` | Block specific PDF actions (listed below) which result in opening a link. |
@@ -82,6 +83,7 @@ Complete list of 141 Acrobat DC policies in the v2.16 ADMX templates, sorted by 
 | Enhanced Security Standalone | ``bEnhancedSecurityStandalone`` | Toggles enhanced security for the standalone application. |
 | Flash Content in PDFs | ``bEnableFlash`` | Specifies whether Flash content should be rendered in a PDF. |
 | Flash Editing Tools | ``EnableFlashEditing`` | Enable the Flash tools for adding annotations or Flash in the Rich Media app. |
+| Protected Mode Sandbox | ``bProtectedMode`` | Enables Protected Mode which sandboxes Acrobat and Reader processes. |
 | Protected View Exit Shortcut Key | ``bEnablePVSwitchoutShortcut`` | Enables a shortcut key that allows users to exit Protected View for a specific document. |
 | Protected View Mode | ``iProtectedView`` | Use Protected View never (default), for files from an untrusted location (recommended), or always. |
 | Unlisted Attachment Type Permissions | ``iUnlistedAttachmentTypePerm`` | Specifies the default permissions for file types that aren't listed in the default or user-specified lists. |

@@ -6,7 +6,7 @@
 
 # Reader DC Settings
 
-Complete list of 119 Reader DC policies in the v2.16 ADMX templates, sorted by category.
+Complete list of 119 Reader DC policies in the v2.17 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
