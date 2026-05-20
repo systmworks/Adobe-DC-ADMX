@@ -10,9 +10,26 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v2.18 — 20 May 2026
+
+**New machine policy (Reader + Acrobat):** **Block non-PDF file attachments** (`iFileAttachmentPerms`, DWORD **1** under `FeatureLockDown`), per DISA STIG Reader **V-213174** (ARDC-CN-000035) and Acrobat Pro **V-213119** (AADC-CN-000275), and consistent with NSA hardening guidance for Adobe Acrobat.
+
+*Thanks to **CyberChelonian** for flagging this setting.*
+
+| ADMX File | Policies |
+|---|---:|
+| `AdobeDC.admx` | 528 |
+| `AdobeDC_x64.admx` / `AdobeDC_x86.admx` | 264 each |
+
+See [readme in v2.18](../v2.18/readme.md) (includes **v2.17** release notes in the same file; version readmes do not link across folders).
+
+---
+
 ## v2.17 — 19 May 2026
 
 **New Acrobat DC policies (machine):** **Protected Mode Sandbox** (`bProtectedMode`) and **AppContainer Sandbox** (`bEnableProtectedModeAppContainer`) under `FeatureLockDown`, aligned with Adobe's [Privileged (Protected Mode)](https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/Privileged.html) reference and DISA STIG Acrobat Pro DC **V-213127** (AADC-CN-001010). They were previously available in the templates under **Reader DC** only; they now appear under **Acrobat DC** as well so administrators can enforce sandbox settings on full Acrobat through Group Policy or Intune.
+
+*Thanks to **CyberChelonian** for flagging the need for Acrobat DC coverage of these sandbox settings.*
 
 | ADMX File | Policies |
 |---|---:|

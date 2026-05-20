@@ -6,7 +6,7 @@
 
 # Reader DC Settings
 
-Complete list of 119 Reader DC policies in the v2.17 ADMX templates, sorted by category.
+Complete list of 120 Reader DC policies in the v2.18 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -60,6 +60,7 @@ Complete list of 119 Reader DC policies in the v2.17 ADMX templates, sorted by c
 | AppContainer Sandbox | ``bEnableProtectedModeAppContainer`` | Enable the AppContainer sandbox. |
 | Attachment Extension Blocklist in Dialogs | ``bEnableBlacklistForOpenSave`` | Reverts the tBuiltInPermList behavior to that of the pre 21.011.20029 build. |
 | Block JavaScript Execution | ``bDisableJavaScript`` | Blocks and locks JavaScript execution in PDF documents, preventing users from bypassing via privileged locations. |
+| Block non-PDF file attachments | ``iFileAttachmentPerms`` | Prevents users from opening or launching file types other than PDF or FDF from PDF file attachments and restricts the related Trust Manager behavior. |
 | Block PDF Link Actions | ``bDisablePDFRedirectionActions`` | Block specific PDF actions (listed below) which result in opening a link. |
 | Built-in Attachment Permissions List | ``tBuiltInPermList`` | Defines the white and black list of file types that can be saved and opened from a document. |
 | Certification Status in Protected View | ``bEnablePVCertificateBasedTrust`` | Specifies whether a document's certification status should appear in the Protected View document message bar. |
