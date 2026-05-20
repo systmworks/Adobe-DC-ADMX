@@ -16,12 +16,16 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 *Thanks to **CyberChelonian** for flagging this setting.*
 
+| Setting | ValueName | Old version | New version |
+|---|---|---|---|
+| Block non-PDF file attachments | `iFileAttachmentPerms` | N/A | Enabled → DWORD **1** (Not configured = product default; Disabled → DWORD **0**) |
+
+See [readme in v2.18](../v2.18/readme.md) (includes **v2.17** release notes in the same file; version readmes do not link across folders).
+
 | ADMX File | Policies |
 |---|---:|
 | `AdobeDC.admx` | 528 |
 | `AdobeDC_x64.admx` / `AdobeDC_x86.admx` | 264 each |
-
-See [readme in v2.18](../v2.18/readme.md) (includes **v2.17** release notes in the same file; version readmes do not link across folders).
 
 ---
 
@@ -31,12 +35,17 @@ See [readme in v2.18](../v2.18/readme.md) (includes **v2.17** release notes in t
 
 *Thanks to **CyberChelonian** for flagging the need for Acrobat DC coverage of these sandbox settings.*
 
+| Setting | ValueName | Old version | New version |
+|---|---|---|---|
+| Protected Mode Sandbox | `bProtectedMode` | N/A | New for **Acrobat DC**; Enabled → DWORD **1** |
+| AppContainer Sandbox | `bEnableProtectedModeAppContainer` | N/A | New for **Acrobat DC**; Enabled → DWORD **1** |
+
+See [readme in v2.17](../v2.17/readme.md) (includes **v2.16** release notes in the same file; version readmes do not link across folders).
+
 | ADMX File | Policies |
 |---|---:|
 | `AdobeDC.admx` | 524 |
 | `AdobeDC_x64.admx` / `AdobeDC_x86.admx` | 262 each |
-
-See [readme in v2.17](../v2.17/readme.md) (includes **v2.16** release notes in the same file; version readmes do not link across folders).
 
 ---
 
