@@ -10,7 +10,7 @@
     Values are aligned to:
       - Documentation\security-hardening.md  (all Recommended + Optional entries)
       - Documentation\reduce-nags.md         (all entries)
-      - v2.15 ADMX registry key paths
+      - v2.18 ADMX registry key paths
 
     IT admins: edit the arrays below to adjust individual settings.
     Do NOT modify the apply loops at the bottom unless changing the script structure.
@@ -44,11 +44,14 @@ $CommonPolicyEntries = @(
     # ── Security Hardening (Recommended) ─────────────────────────────────────
     @{ Subkey = 'FeatureLockDown';                                     Name = 'bEnhancedSecurityInBrowser';       Value = 1 }   # Enhanced Security in Browser
     @{ Subkey = 'FeatureLockDown';                                     Name = 'bEnhancedSecurityStandalone';      Value = 1 }   # Enhanced Security Standalone
+    @{ Subkey = 'FeatureLockDown';                                     Name = 'bProtectedMode';                   Value = 1 }   # Protected Mode Sandbox
+    @{ Subkey = 'FeatureLockDown';                                     Name = 'bEnableProtectedModeAppContainer'; Value = 1 }   # AppContainer Sandbox
     @{ Subkey = 'FeatureLockDown';                                     Name = 'bEnableFlash';                     Value = 0 }   # Disable Flash Content
     @{ Subkey = 'FeatureLockDown';                                     Name = 'bEnable3D';                        Value = 0 }   # Disable 3D Content in PDFs
     @{ Subkey = 'FeatureLockDown';                                     Name = 'bDisablePDFRedirectionActions';    Value = 1 }   # Block PDF Link Actions
     @{ Subkey = 'FeatureLockDown';                                     Name = 'bEnableGentech';                   Value = 0 }   # Disable Generative AI
     @{ Subkey = 'FeatureLockDown';                                     Name = 'bDisableJavaScript';               Value = 1 }   # Block JavaScript Execution
+    @{ Subkey = 'FeatureLockDown';                                     Name = 'iFileAttachmentPerms';            Value = 1 }   # Block non-PDF file attachments (STIG)
     @{ Subkey = 'FeatureLockDown\cDefaultLaunchURLPerms';              Name = 'iUnknownURLPerms';                 Value = 1 }   # Unknown URL Access: always ask
     @{ Subkey = 'FeatureLockDown\cDefaultLaunchAttachmentPerms';       Name = 'iUnlistedAttachmentTypePerm';      Value = 0 }   # Unlisted attachments: prompt without ability to allow
     @{ Subkey = 'FeatureLockDown\cServices';                           Name = 'bToggleWebConnectors';             Value = 1 }   # Disable Third-Party Cloud Connectors
@@ -114,10 +117,6 @@ $CommonPolicyEntries = @(
 # ║  READER-ONLY POLICY ENTRIES — applied to Reader x64 + Reader x86 only      ║
 # ╚════════════════════════════════════════════════════════════════════════════╝
 $ReaderOnlyPolicyEntries = @(
-    # ── Security Hardening ───────────────────────────────────────────────────
-    @{ Subkey = 'FeatureLockDown';      Name = 'bProtectedMode';                    Value = 1 }   # Protected Mode Sandbox
-    @{ Subkey = 'FeatureLockDown';      Name = 'bEnableProtectedModeAppContainer';  Value = 1 }   # AppContainer Sandbox
-
     # ── Reduce Nags ──────────────────────────────────────────────────────────
     @{ Subkey = 'FeatureLockDown';      Name = 'bReaderRetentionExperiment';        Value = 0 }   # Disable Acrobat Download Prompt
     @{ Subkey = 'FeatureLockDown';      Name = 'bShowRhpToolSearch';                Value = 0 }   # Hide Purchasable Tools in Search
