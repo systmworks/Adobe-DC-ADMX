@@ -15,24 +15,24 @@
 | [Screenshots](screenshots.md) | GPMC and Intune screenshots showing policy configuration |
 | [Changelog](changelog.md) | Settings changes across ADMX versions |
 
-These ADMX/ADML templates (v2.19) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. They define machine-level (`HKLM`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, and upsell controls.
+These ADMX/ADML templates (v3.0) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. They define both machine-level (`HKLM`) and user-level (`HKCU`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, and upsell controls.
 
-The machine policy set ships as a **combined** ``AdobeDC.admx``/ADML pair **plus** separate **x64** and **x86** pairs:
+The full policy set now ships as a single **combined** ``AdobeDC.admx``/ADML pair, covering Reader DC and Acrobat DC across both x86 and x64, plus all user-level policies:
 
 | ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
 |------|-------|----------|
-| `AdobeDC.admx` + ADML | Reader DC (x86 + x64) and Acrobat DC (x86 + x64) | 552 (300 Acrobat + 252 Reader) |
-| `AdobeDC_x64.admx` + ADML | Acrobat DC (x64) + Reader DC (x64) | 276 (150 Acrobat + 126 Reader) |
-| `AdobeDC_x86.admx` + ADML | Acrobat DC (x86) + Reader DC (x86) | 276 (150 Acrobat + 126 Reader) |
+| `AdobeDC.admx` + ADML | Reader DC (x86 + x64) and Acrobat DC (x86 + x64), Computer and User scope | 552 Machine + 495 User = 1,047 |
 
-A combined ADMX file (`AdobeDC.admx`) is provided alongside per-architecture files. Deploy the combined file if you manage both 32-bit and 64-bit installations, or use the individual x64/x86 files to target one or both architectures. The x86 and x64 files can be deployed together, but **do not** deploy them alongside the combined file — that duplicates policy entries in Group Policy.
+Deploy the one combined file — it covers every architecture, both products, and both Computer and User Configuration.
 
 ## Important Notes
 
 | ![Note](https://img.shields.io/badge/Note-316dca?style=flat-square) |
 |------|
-| Acrobat Reader (x64) using the new **Unified Installer** runs ``Acrobat.exe``, so it requires configuration of the **Acrobat** settings rather than the Reader settings. To be safe, configure both. |
+| Acrobat Reader (x64) using the new **Unified Installer** runs ``Acrobat.exe``, so it requires configuration of the **Acrobat** settings rather than the Reader settings. To be safe, configure both. 32-bit Reader still uses its own legacy registry hive. |
 | Several ``bToggle*`` policies use inverted registry values (DWORD 0 = feature ON, DWORD 1 = feature OFF). The ADMX templates handle this so that the Group Policy **Enabled**/**Disabled** states match the FriendlyName intent, but raw registry checks may look counterintuitive. |
+| Adobe ARM (the background update service) is always a 32-bit process and writes to `SOFTWARE\WOW6432Node\Adobe\Adobe ARM\...`, even on x64 deployments. |
+| User-scope policies are marked `class="User"` so they appear only under *User Configuration*, not *Computer Configuration*. |
 
 ## Category Overview
 
@@ -48,5 +48,29 @@ A combined ADMX file (`AdobeDC.admx`) is provided alongside per-architecture fil
 | Startup & Experience | Launch messages, notifications, First Time Experience, What's New, Home screen widgets, and feedback prompts. | 13 | 14 |
 | Updates & Desktop Integration | Product updater, Chrome extension, Explorer thumbnails, repair options, desktop UI, and deployment settings. | 19 | 21 |
 | Upsell | Upgrade prompts, trial purchase dialogs, promotional campaigns, App Center, and purchasable tool visibility. | 5 | 7 |
+
+Counts above are machine-scope only — see [Reader DC Settings](reader-settings.md) and [Acrobat DC Settings](acrobat-settings.md) for the full per-policy lists. User-scope policies (495 total) ship in the same file but are not broken out by category here.
+
+## Deployment
+
+### Intune
+
+1. *Devices → Configuration → + Create → Import ADMX* — upload `AdobeDC.admx`, then `AdobeDC.adml` for `en-US`.
+2. Create configuration profiles using *Administrative Templates*:
+   - Computer Configuration policies → *Devices → Configuration → + Create → Templates → Administrative Templates*
+   - User Configuration policies → *Users → Configuration → + Create → Templates → Administrative Templates*
+
+### Group Policy (GPMC / gpedit.msc)
+
+Copy `AdobeDC.admx` and `en-US/AdobeDC.adml` to your Central Store or local policy folder:
+
+```
+C:\Windows\SYSVOL\domain\Policies\PolicyDefinitions\AdobeDC.admx
+C:\Windows\SYSVOL\domain\Policies\PolicyDefinitions\en-US\AdobeDC.adml
+```
+
+Policies appear under:
+- *Computer Configuration → Administrative Templates → Adobe → Adobe Acrobat DC*
+- *User Configuration → Administrative Templates → Adobe → Adobe Acrobat DC (User)*
 
 **Sharing & responsibility** — Built for the community, shared with good intentions. Use at your own risk. The author accepts no responsibility for any outcomes resulting from the use of these files. Always verify registry paths and values, and test in a safe environment first. If you find an issue or have a suggestion, contributions are welcome.
