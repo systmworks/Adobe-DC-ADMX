@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings
 
-Complete list of 144 Acrobat DC policies in the v2.18 ADMX templates, sorted by category.
+Complete list of 150 Acrobat DC policies in the v2.19 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -67,6 +67,17 @@ Complete list of 144 Acrobat DC policies in the v2.18 ADMX templates, sorted by 
 | PDFMaker Text Path Tag Fix | ``EnablePDFMakerSplitTextPathElemsFeature`` | Enable the "SplitTextPathElemsFeature" tags correction feature when creating a PDF with Acrobat. |
 | Reflow Editing | ``bEnableReflowEditing`` | Lock ReflowEditing and the reflow feature. |
 | Restrict Form Data to Schema | ``bIgnoreDataSchema`` | Specifies whether all data in a form is saved rather than only data related to the form's schema. |
+
+## Microsoft Purview (MIP)
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Check MIP Policy on Save | ``bMIPCheckPolicyOnDocSave`` | Locks enforcement of default or mandatory Microsoft Purview Information Protection labeling checks when saving documents. |
+| Enable MIP Labelling | ``bMIPLabelling`` | Locks the Enable Microsoft Purview Information Protection option in Preferences > Security. |
+| MIP Double Key Encryption | ``bEnableDKEAdmin`` | Locks double key encryption (DKE) label support for Microsoft Purview Information Protection. |
+| MIP External Browser Auth | ``bMIPExternalAuthAdmin`` | Locks browser-based authentication for Microsoft Purview Information Protection operations. |
+| MIP Sovereign Cloud | ``iMIPCloud`` | Locks which Microsoft cloud instance Acrobat and Reader use for MIP SDK operations. |
+| Suppress OS Auth Prompts (MIP) | ``bSilentAuth`` | Locks whether operating-system authentication prompts are suppressed during MIP operations. |
 
 ## Security: Execution & Protection
 

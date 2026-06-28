@@ -10,6 +10,34 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v2.19 — 28 June 2026
+
+**New machine policies (Reader + Acrobat):** Six **Microsoft Purview (MIP)** lockdown policies under `FeatureLockDown`, completing the HKLM portion of [issue #8](https://github.com/systmworks/Adobe-DC-ADMX/issues/8). These are admin lockdown policies (they gray out or lock Preferences UI); they complement the per-user `MicrosoftAIP` preferences in [User ADMX v1.6](https://github.com/systmworks/Adobe-DC-User-ADMX).
+
+Registry values are sourced from [Adobe enterprise MIP guidance](https://helpx.adobe.com/enterprise/kb/mpip-support-acrobat.html) (community-verified; not in the official PrefRef lockable table).
+
+*Thanks to **[@virtitnerd](https://github.com/virtitnerd)** for the original feature request.*
+
+| Setting | ValueName | Old version | New version |
+|---|---|---|---|
+| Enable MIP Labelling | `bMIPLabelling` | N/A | Enabled → DWORD **1** |
+| Check MIP Policy on Save | `bMIPCheckPolicyOnDocSave` | N/A | Enabled → DWORD **1** |
+| MIP Sovereign Cloud | `iMIPCloud` | N/A | Dropdown (0–10; Commercial = **3**) |
+| MIP External Browser Auth | `bMIPExternalAuthAdmin` | N/A | Enabled → DWORD **1** |
+| MIP Double Key Encryption | `bEnableDKEAdmin` | N/A | Enabled → DWORD **1** |
+| Suppress OS Auth Prompts (MIP) | `bSilentAuth` | N/A | Enabled → DWORD **1** (Disabled → **0** for auth troubleshooting) |
+
+Per-user HKCU policies (`bShowDMB`, `bEnablePolicyAuthentication`, `bEnableLogging`) ship in **User ADMX v1.6** only. Computer and User templates use separate namespaces (`Adobe.Policies.AdobeDC` vs `Adobe.Policies.Adobe_User`) and can be deployed together.
+
+See [readme in v2.19](../v2.19/readme.md) (includes **v2.18** release notes in the same file).
+
+| ADMX File | Policies |
+|---|---:|
+| `AdobeDC.admx` | 552 |
+| `AdobeDC_x64.admx` / `AdobeDC_x86.admx` | 276 each |
+
+---
+
 ## v2.18 — 20 May 2026
 
 **New machine policy (Reader + Acrobat):** **Block non-PDF file attachments** (`iFileAttachmentPerms`, DWORD **1** under `FeatureLockDown`), per DISA STIG Reader **V-213174** (ARDC-CN-000035) and Acrobat Pro **V-213119** (AADC-CN-000275), and consistent with NSA hardening guidance for Adobe Acrobat.
