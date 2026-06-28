@@ -1,0 +1,60 @@
+name: Bug Report
+description: Report an incorrect registry path, wrong policy value, or broken ADMX behaviour
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing, please check that:
+        - You are using the latest release from [Releases](https://github.com/virtitnerd/Adobe-DC-ADMX/releases)
+        - The issue is not already tracked
+
+  - type: input
+    id: version
+    attributes:
+      label: ADMX Version
+      description: Which release are you using?
+      placeholder: "e.g. v3.1.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: Deployment target
+      options:
+        - Intune (custom ADMX)
+        - Group Policy (GPMC)
+        - Both
+    validations:
+      required: true
+
+  - type: input
+    id: policy
+    attributes:
+      label: Affected policy name or registry path
+      placeholder: "e.g. bEnableFlash  /  SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What is wrong?
+      description: Describe the incorrect behaviour — wrong registry path, bad value, UI issue, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      description: What should the correct path/value/behaviour be?
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source / reference (optional)
+      description: Link to Adobe PrefRef documentation or other authoritative source confirming the expected value.

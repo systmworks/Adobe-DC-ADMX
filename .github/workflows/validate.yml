@@ -1,0 +1,45 @@
+name: Validate
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions: {}
+
+jobs:
+  validate:
+    name: Validate merged ADMX
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate merged ADMX
+        run: python scripts/merge.py
+
+      - name: Validate ADMX structure
+        run: python scripts/validate.py
+
+      - name: Check build/ is up to date
+        run: |
+          if ! git diff --exit-code build/; then
+            echo ""
+            echo "ERROR: build/ is out of date."
+            echo "Run 'python scripts/merge.py' locally and commit the result."
+            exit 1
+          fi
