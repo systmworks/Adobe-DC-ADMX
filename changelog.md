@@ -10,6 +10,104 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v3.4 — 29 June 2026
+
+**New category: Browser Extension.** Adds 12 policies for the Adobe Acrobat browser extension (Chrome and Edge), configured through each browser's own managed-storage policy mechanism rather than Adobe's `FeatureLockDown` namespace. These control the extension itself, not whether it's installed — installation remains controlled by the browser's own `ExtensionInstallForcelist`/`ExtensionInstallBlocklist` policies.
+
+| Setting | ValueName | Old version | New version |
+|---|---|---|---|
+| Open Help Tab on Install (Chrome / Edge) | `OpenHelpx` | N/A | String `"true"`/`"false"` |
+| Usage Analytics (Chrome / Edge) | `UsageMeasurement` | N/A | String `"true"`/`"false"` |
+| Uninstall Popup for Free Users (Chrome / Edge) | `UninstallPopup` | N/A | String `"true"`/`"false"` |
+| Disable GenAI Features (Chrome / Edge) | `DisableGenAI` | N/A | String `"true"`/`"false"` |
+| Disable What's New Auto-Open (Chrome / Edge) | `DisableWhatsNewAutoOpen` | N/A | String `"true"`/`"false"` |
+| Disable Express Features (Chrome / Edge) | `DisableExpress` | N/A | String `"true"`/`"false"` |
+
+Sourced from the extension's own `schema.json` (package ID `efaidnbmnnnibpcajpcglclefindmkaj` on Chrome,
+mirrored on Edge as `elhekieabhbkpmcefcoobjddigjcaadp`). New documentation page:
+[Browser Extension Settings](browser-extension.md).
+
+| ADMX File | Policies |
+|---|---:|
+| `AdobeDC.admx` | 576 Machine + 501 User = 1,077 |
+
+---
+
+## v3.3 — 29 June 2026
+
+**New machine policy (Reader + Acrobat):** A legacy usage-data master switch, retained for environments that still rely on it even though Adobe has superseded it for most purposes.
+
+| Setting | ValueName | Old version | New version |
+|---|---|---|---|
+| Send Usage Data to Adobe | `bUsageMeasurement` | N/A | Disabled → DWORD **0** |
+
+**New user policy:** A free-text companion to the existing **URL Access Permissions** policy.
+
+| Setting | ValueName | Old version | New version |
+|---|---|---|---|
+| Trusted/Blocked URL List | `tHostPerms` | N/A | Text value, only effective when iURLPerms = Custom Setting (0) |
+
+| ADMX File | Policies |
+|---|---:|
+| `AdobeDC.admx` | 564 Machine + 501 User = 1,065 |
+
+---
+
+## v3.2 — 28 June 2026
+
+**New user policies:** Two **Security: Trust & Permissions** policies covering certificate auto-download, previously only configurable via direct registry write. Both target the same non-Policy `HKCU` paths used by Adobe's own ADM template.
+
+| Setting | ValueName | Old version | New version |
+|---|---|---|---|
+| Load Security Settings from Server (Adobe Certificates) | `bLoadSettingsFromURL` | N/A | Disabled → DWORD **0** |
+| Load Security Settings from Server (European Certificates) | `bLoadSettingsFromURL` | N/A | Disabled → DWORD **0** |
+
+**Scope correction:** `iURLPerms` (default website access policy) is a User-scope preference under `TrustManager\cDefaultLaunchURLPerms`, not a Computer-scope `FeatureLockDown` control. Some DISA STIG documents list it incorrectly as Computer-scope; the existing **URL Access Permissions** policy under *User Configuration* is the correct ADMX mapping.
+
+| ADMX File | Policies |
+|---|---:|
+| `AdobeDC.admx` | 560 Machine + 499 User = 1,059 |
+
+---
+
+## v3.1 — 28 June 2026
+
+**New machine policies (Reader + Acrobat):** Two settings required by DISA STIG that were missing from the template. Both are deprecated in DC 12.x and later in favor of their Document Cloud replacements, but Acrobat still honors the underlying registry values.
+
+| Setting | ValueName | Old version | New version |
+|---|---|---|---|
+| Disable Acrobat.com File Storage | `bDisableADCFileStore` | N/A | Enabled → DWORD **1** |
+| Welcome Screen on Startup | `bShowWelcomeScreen` | N/A | Disabled → DWORD **0** |
+
+Also rewrote the `_Explain` text for all DISA STIG-relevant policies for clarity, matching Adobe's own ADML prose style, and added two new documentation pages mapping every DISA STIG control to its ADMX policy name and registry path: [STIG: Acrobat Pro DC Continuous](stig-acrobat-pro-dc.md) and [STIG: Acrobat Reader DC Continuous](stig-acrobat-reader-dc.md).
+
+| ADMX File | Policies |
+|---|---:|
+| `AdobeDC.admx` | 560 Machine + 495 User = 1,055 |
+
+---
+
+## v3.0 — 28 June 2026
+
+Major version bump (v2.x → v3.0): merging the Machine and User templates into one file is a structural break from every prior version, which shipped them as separate ADMX pairs.
+
+**Unified Machine + User template:** `AdobeDC.admx` and `AdobeDC.adml` now contain both the machine-scope policies and the user-scope policies (previously shipped separately as **User ADMX v1.6**) in a single ADMX+ADML pair. This drops the number of custom ADMX uploads required in Intune from 2 to 1. The per-architecture `AdobeDC_x64.admx`/`AdobeDC_x86.admx` files have been retired in favor of one combined file covering every architecture and both Computer and User scope.
+
+**Breaking change:** User-scope policies were previously marked `class="Both"`, causing all 495 of them to appear incorrectly under *Computer Configuration* as well as *User Configuration*. They are now correctly marked `class="User"` and appear only under *User Configuration*.
+
+**Registry path corrections:**
+
+| Setting scope | Old path | New path | Reason |
+|---|---|---|---|
+| Reader DC x64 (123 machine policies) | `SOFTWARE\...\Acrobat Reader\DC\...` | `SOFTWARE\...\Adobe Acrobat\DC\...` | The Unified Installer's 64-bit Reader shares Acrobat's registry hive; the legacy Reader hive is only used by 32-bit Reader. |
+| Adobe ARM (6 machine policies) | `SOFTWARE\Adobe\Adobe ARM\...` | `SOFTWARE\WOW6432Node\Adobe\Adobe ARM\...` | Adobe ARM is always a 32-bit process, even on x64 deployments. |
+
+| ADMX File | Policies |
+|---|---:|
+| `AdobeDC.admx` | 552 Machine + 495 User = 1,047 |
+
+---
+
 ## v2.19 — 28 June 2026
 
 **New machine policies (Reader + Acrobat):** Six **Microsoft Purview (MIP)** lockdown policies under `FeatureLockDown`, completing the HKLM portion of [issue #8](https://github.com/systmworks/Adobe-DC-ADMX/issues/8). These are admin lockdown policies (they gray out or lock Preferences UI); they complement the per-user `MicrosoftAIP` preferences in [User ADMX v1.6](https://github.com/systmworks/Adobe-DC-User-ADMX).

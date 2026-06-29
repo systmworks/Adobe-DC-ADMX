@@ -1,0 +1,25 @@
+name: Policy / Feature Request
+description: Request a new policy setting or an improvement to an existing one
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: policy
+    attributes:
+      label: Policy name or registry path
+      description: What registry key/value should be added or changed?
+      placeholder: "e.g. HKLM:\\Software\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\bNewSetting"
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why is this useful?
+      description: Enterprise use case, security rationale, or link to Adobe documentation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Adobe documentation or PrefRef link (optional)

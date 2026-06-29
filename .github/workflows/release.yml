@@ -1,0 +1,69 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Package and publish release artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Get version from tag
+        id: version
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: "3.12"
+
+      - name: Install xmllint
+        run: sudo apt-get install -y --no-install-recommends libxml2-utils
+
+      - name: Patch revision from tag
+        run: |
+          # xs:decimal only allows one decimal point; convert vX.Y.Z → X.Y
+          REVISION=$(echo "${{ steps.version.outputs.version }}" | grep -oP '^\d+\.\d+')
+          sed -i "s/revision=\"[^\"]*\"/revision=\"$REVISION\"/g" build/AdobeDC.admx build/en-US/AdobeDC.adml
+          sed -i "s/minRequiredRevision=\"[^\"]*\"/minRequiredRevision=\"$REVISION\"/g" build/AdobeDC.admx
+          echo "Patched revision to $REVISION"
+
+      - name: Validate XML well-formedness
+        run: |
+          xmllint --noout build/AdobeDC.admx
+          xmllint --noout build/en-US/AdobeDC.adml
+
+      - name: Validate ADMX structure
+        run: python scripts/validate.py
+
+      - name: Package release zip
+        id: package
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          STAGING="dist/AdobeDC"
+          mkdir -p "$STAGING/en-US"
+          cp build/AdobeDC.admx       "$STAGING/AdobeDC.admx"
+          cp build/en-US/AdobeDC.adml "$STAGING/en-US/AdobeDC.adml"
+          cd dist
+          zip -r "AdobeDC-v${VERSION}.zip" AdobeDC/
+
+      - name: Upload zip to release
+        uses: svenstaro/upload-release-action@29e53e917877a24fad85510ded594ab3c9ca12de # v2.11.5
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: dist/AdobeDC-v${{ steps.version.outputs.version }}.zip
+          asset_name: AdobeDC-v${{ steps.version.outputs.version }}.zip
+          tag: ${{ github.ref }}
+          overwrite: true

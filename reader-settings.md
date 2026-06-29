@@ -6,7 +6,7 @@
 
 # Reader DC Settings
 
-Complete list of 126 Reader DC policies in the v2.19 ADMX templates, sorted by category.
+Complete list of 131 Reader DC policies in the ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -105,6 +105,8 @@ Complete list of 126 Reader DC policies in the v2.19 ADMX templates, sorted by c
 | Show Timestamp in Signature | ``bUseTSAsSigningTime`` | Specifies whether the timestamp time should be displayed in the signature appearance. |
 | Signing Reason UI | ``bAllowReasonWhenSigning`` | Specifies whether the reason UI will appear during signing. |
 | Trust Certified Documents | ``bEnableCertificateBasedTrust`` | Elevates (trusts) certified documents as a privileged location. |
+| Load Security Settings from Server (Adobe Certificates) | ``bLoadSettingsFromURL`` | Controls whether trust anchors are periodically downloaded from Adobe's certificate server (cAdobeDownload). |
+| Load Security Settings from Server (European Certificates) | ``bLoadSettingsFromURL`` | Controls whether trust anchors are periodically downloaded from the EUTL certificate server (cEUTLDownload). |
 | Unknown URL Access Policy | ``iUnknownURLPerms`` | Ask for, allow, or block access to web sites that are not in the user specified list. |
 | Validate Signatures on Open | ``bValidateOnOpen`` | Automatically validate all signatures on document open. |
 
@@ -114,6 +116,7 @@ Complete list of 126 Reader DC policies in the v2.19 ADMX templates, sorted by c
 |---|---|---|
 | Adobe Acrobat Sign | ``bToggleAdobeSign`` | Controls whether Adobe Acrobat Sign (Send for Signature) is enabled. |
 | Adobe Send & Track | ``bToggleSendAndTrack`` | Disables Adobe Send and Track (some UI is renamed to "Share" since October, 2018) |
+| Disable Acrobat.com File Storage | ``bDisableADCFileStore`` | Disables storing files on Acrobat.com. Deprecated in DC 12.x and later; use bToggleDocumentCloud for DC deployments. |
 | Disable SharePoint & Office 365 Integration | ``bDisableSharePointFeatures`` | Disables the SharePoint and Office 365 integration features. |
 | Disable WebMail Integration | ``bDisableWebmail`` | Disable WebMail. |
 | Document Cloud Review Service | ``bToggleAdobeReview`` | Remove all UI related to the Document Cloud Review service. |
@@ -145,9 +148,11 @@ Complete list of 126 Reader DC policies in the v2.19 ADMX templates, sorted by c
 | Hide Send Feedback Icon | ``bToggleShareFeedback`` | Show the Send Feedback icon. |
 | Home Screen To Do List | ``bToggleToDoList`` | Show a "to do" list on the Home screen. |
 | Scan Tab in Home View | ``bShowScanTabInHomeView`` | Disable the Scan tab in Home view. |
+| Send Usage Data to Adobe | ``bUsageMeasurement`` | Legacy master switch for usage data collection. Superseded by bToggleShareFeedback and bEnableADMAnalytics; retained for environments that still set it. |
 | Show Desktop Notification Toasts | ``bToggleNotificationToasts`` | Hide desktop notifications. |
 | Show PDF Ownership Notification | ``bTogglePDFOwnershipToasts`` | Show a notification on machine startup that allows the user to make Acrobat the default PDF viewer. |
 | Show To Do Cards in Recent Tab | ``bToggleToDoTiles`` | Show To Do Cards in the Recent Tab view |
+| Welcome Screen on Startup | ``bShowWelcomeScreen`` | Controls whether the Welcome screen is shown when the application starts. Deprecated in DC 12.x and later; use bToggleFTE for DC deployments. |
 | What's New Experience | ``bWhatsNewExp`` | Disable the What's New experience. |
 
 ## Updates & Desktop Integration
