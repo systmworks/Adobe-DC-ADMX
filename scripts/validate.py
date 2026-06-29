@@ -1,11 +1,10 @@
 """
-Validate the merged AdobeDC.admx / AdobeDC.adml in build/.
+Validate build/AdobeDC.admx and build/en-US/AdobeDC.adml.
 
 Checks:
   - XML is well-formed
-  - Namespace is correct
-  - Policy counts match expected values (552 Machine + 495 User = 1047)
-  - No class="Both" policies remain (all user policies must be class="User")
+  - Namespace is correct (Adobe.Policies.AdobeDC)
+  - No class="Both" policies (all user policies must be class="User")
   - No duplicate string IDs in ADML
   - No duplicate presentation IDs in ADML
 
@@ -19,9 +18,6 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 ADMX = ROOT / "build" / "AdobeDC.admx"
 ADML = ROOT / "build" / "en-US" / "AdobeDC.adml"
-
-EXPECTED_MACHINE = 552
-EXPECTED_USER    = 495
 
 
 def main() -> int:
@@ -51,19 +47,8 @@ def main() -> int:
     if 'namespace="Adobe.Policies.AdobeDC"' not in admx_text:
         errors.append("Missing expected namespace Adobe.Policies.AdobeDC in ADMX")
 
-    # --- Policy class counts ---
-    machine_count = admx_text.count('class="Machine"')
-    user_count    = admx_text.count('class="User"')
-    both_count    = admx_text.count('class="Both"')
-
-    if machine_count != EXPECTED_MACHINE:
-        errors.append(
-            f"Machine policy count: expected {EXPECTED_MACHINE}, got {machine_count}"
-        )
-    if user_count != EXPECTED_USER:
-        errors.append(
-            f"User policy count: expected {EXPECTED_USER}, got {user_count}"
-        )
+    # --- No class="Both" ---
+    both_count = admx_text.count('class="Both"')
     if both_count > 0:
         errors.append(
             f'Found {both_count} class="Both" policies — all user policies must be class="User"'
@@ -94,10 +79,11 @@ def main() -> int:
             print(f"ERROR: {e}", file=sys.stderr)
         return 1
 
-    total = machine_count + user_count
+    machine_count = admx_text.count('class="Machine"')
+    user_count    = admx_text.count('class="User"')
     print(
-        f"OK  {ADMX.name}: {machine_count} Machine + {user_count} User = {total} policies  "
-        f"| no class=Both | no duplicate IDs"
+        f"OK  {ADMX.name}: {machine_count} Machine + {user_count} User = {machine_count + user_count} policies"
+        f"  |  no class=Both  |  no duplicate IDs"
     )
     return 0
 

@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   release:
-    name: Build and publish release artifact
+    name: Package and publish release artifact
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
@@ -29,23 +29,27 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Build merged ADMX at release version
-        run: python scripts/merge.py ${{ steps.version.outputs.version }}
+      - name: Install xmllint
+        run: sudo apt-get install -y --no-install-recommends libxml2-utils
 
-      - name: Validate ADMX
+      - name: Validate XML well-formedness
+        run: |
+          xmllint --noout build/AdobeDC.admx
+          xmllint --noout build/en-US/AdobeDC.adml
+
+      - name: Validate ADMX structure
         run: python scripts/validate.py
 
       - name: Package release zip
+        id: package
         run: |
           VERSION="${{ steps.version.outputs.version }}"
           STAGING="dist/AdobeDC"
           mkdir -p "$STAGING/en-US"
-          cp build/AdobeDC.admx        "$STAGING/AdobeDC.admx"
-          cp build/en-US/AdobeDC.adml  "$STAGING/en-US/AdobeDC.adml"
+          cp build/AdobeDC.admx       "$STAGING/AdobeDC.admx"
+          cp build/en-US/AdobeDC.adml "$STAGING/en-US/AdobeDC.adml"
           cd dist
           zip -r "AdobeDC-v${VERSION}.zip" AdobeDC/
-          echo "zip=dist/AdobeDC-v${VERSION}.zip" >> "$GITHUB_OUTPUT"
-        id: package
 
       - name: Upload zip to release
         uses: svenstaro/upload-release-action@29e53e917877a24fad85510ded594ab3c9ca12de # v2.11.5

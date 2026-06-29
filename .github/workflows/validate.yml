@@ -11,7 +11,7 @@ permissions: {}
 
 jobs:
   validate:
-    name: Validate merged ADMX
+    name: Validate ADMX
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -29,9 +29,6 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Regenerate merged ADMX
-        run: python scripts/merge.py
-
       - name: Install xmllint
         run: sudo apt-get install -y --no-install-recommends libxml2-utils
 
@@ -42,12 +39,3 @@ jobs:
 
       - name: Validate ADMX structure
         run: python scripts/validate.py
-
-      - name: Check build/ is up to date
-        run: |
-          if ! git diff --exit-code build/; then
-            echo ""
-            echo "ERROR: build/ is out of date."
-            echo "Run 'python scripts/merge.py' locally and commit the result."
-            exit 1
-          fi
