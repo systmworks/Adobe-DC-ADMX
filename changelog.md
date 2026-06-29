@@ -10,6 +10,29 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v3.4 — 29 June 2026
+
+**New category: Browser Extension.** Adds 12 policies for the Adobe Acrobat browser extension (Chrome and Edge), configured through each browser's own managed-storage policy mechanism rather than Adobe's `FeatureLockDown` namespace. These control the extension itself, not whether it's installed — installation remains controlled by the browser's own `ExtensionInstallForcelist`/`ExtensionInstallBlocklist` policies.
+
+| Setting | ValueName | Old version | New version |
+|---|---|---|---|
+| Open Help Tab on Install (Chrome / Edge) | `OpenHelpx` | N/A | String `"true"`/`"false"` |
+| Usage Analytics (Chrome / Edge) | `UsageMeasurement` | N/A | String `"true"`/`"false"` |
+| Uninstall Popup for Free Users (Chrome / Edge) | `UninstallPopup` | N/A | String `"true"`/`"false"` |
+| Disable GenAI Features (Chrome / Edge) | `DisableGenAI` | N/A | String `"true"`/`"false"` |
+| Disable What's New Auto-Open (Chrome / Edge) | `DisableWhatsNewAutoOpen` | N/A | String `"true"`/`"false"` |
+| Disable Express Features (Chrome / Edge) | `DisableExpress` | N/A | String `"true"`/`"false"` |
+
+Sourced from the extension's own `schema.json` (package ID `efaidnbmnnnibpcajpcglclefindmkaj` on Chrome,
+mirrored on Edge as `elhekieabhbkpmcefcoobjddigjcaadp`). New documentation page:
+[Browser Extension Settings](browser-extension.md).
+
+| ADMX File | Policies |
+|---|---:|
+| `AdobeDC.admx` | 576 Machine + 501 User = 1,077 |
+
+---
+
 ## v3.3 — 29 June 2026
 
 **New machine policy (Reader + Acrobat):** A legacy usage-data master switch, retained for environments that still rely on it even though Adobe has superseded it for most purposes.

@@ -12,6 +12,7 @@
             <string id="SupportedReaderDC_x86">Adobe Reader DC (x86)</string>
             <string id="SupportedAcrobatDC_x64">Adobe Acrobat DC (x64)</string>
             <string id="SupportedReaderDC_x64">Adobe Reader DC (x64)</string>
+            <string id="SupportedBrowserExtension">Adobe Acrobat browser extension (Chrome/Edge)</string>
 
             <string id="AdobeCategory">Adobe</string>
             <string id="AcrobatDCCategory">Acrobat DC</string>
@@ -20,6 +21,9 @@
             <string id="ReaderDCCategory">Reader DC</string>
             <string id="ReaderDC_Arch_x86">x86</string>
             <string id="ReaderDC_Arch_x64">x64</string>
+            <string id="BrowserExtensionCategory">Browser Extension</string>
+            <string id="ChromeExtensionCategory">Google Chrome</string>
+            <string id="EdgeExtensionCategory">Microsoft Edge</string>
 
             <string id="Cat_CloudConnectors">Cloud &amp; Connectors</string>
             <string id="Cat_ContextToolsSearch">Context, Tools &amp; Search</string>
@@ -4248,6 +4252,112 @@ When suppressed, in-product prompts encouraging users to upgrade to Acrobat Pro 
 Possible values include:
 0: Show upgrade and upsell prompts.
 1: Suppress upgrade and upsell prompts.</string>
+
+            <!-- ======================================== -->
+            <!--           Browser Extension              -->
+            <!-- ======================================== -->
+
+            <string id="OpenHelpxChrome">Open Help Tab on Install</string>
+            <string id="OpenHelpxChrome_Explain">Controls whether the Acrobat browser extension opens its help/onboarding tab automatically.
+
+This configures the extension itself via Chrome's managed-storage policy mechanism (a 3rdparty extension policy), not Adobe's own FeatureLockDown registry namespace. It does not control whether the extension is installed -- use Chrome's own ExtensionInstallForcelist/ExtensionInstallBlocklist policies for that.
+
+Possible values include:
+true: Open the help tab automatically on install.
+false: Do not open the help tab.</string>
+            <string id="OpenHelpxEdge">Open Help Tab on Install</string>
+            <string id="OpenHelpxEdge_Explain">Controls whether the Acrobat browser extension opens its help/onboarding tab automatically.
+
+This configures the extension itself via Edge's managed-storage policy mechanism (a 3rdparty extension policy), not Adobe's own FeatureLockDown registry namespace. It does not control whether the extension is installed -- use Edge's own ExtensionInstallForcelist/ExtensionInstallBlocklist policies for that.
+
+Possible values include:
+true: Open the help tab automatically on install.
+false: Do not open the help tab.</string>
+
+            <string id="UsageMeasurementChrome">Usage Analytics</string>
+            <string id="UsageMeasurementChrome_Explain">Controls whether the Acrobat browser extension collects and sends usage analytics.
+
+This is separate from the desktop application's own bUsageMeasurement preference -- it applies only to the Chrome extension. Configured via Chrome's managed-storage policy mechanism (a 3rdparty extension policy), not Adobe's own FeatureLockDown registry namespace.
+
+Possible values include:
+true: Enable usage analytics in the extension.
+false: Disable usage analytics in the extension.</string>
+            <string id="UsageMeasurementEdge">Usage Analytics</string>
+            <string id="UsageMeasurementEdge_Explain">Controls whether the Acrobat browser extension collects and sends usage analytics.
+
+This is separate from the desktop application's own bUsageMeasurement preference -- it applies only to the Edge extension. Configured via Edge's managed-storage policy mechanism (a 3rdparty extension policy), not Adobe's own FeatureLockDown registry namespace.
+
+Possible values include:
+true: Enable usage analytics in the extension.
+false: Disable usage analytics in the extension.</string>
+
+            <string id="UninstallPopupChrome">Uninstall Popup for Free Users</string>
+            <string id="UninstallPopupChrome_Explain">Controls whether the Acrobat browser extension shows a popup prompting users who have moved to the free plan to uninstall.
+
+Configured via Chrome's managed-storage policy mechanism (a 3rdparty extension policy), not Adobe's own FeatureLockDown registry namespace.
+
+Possible values include:
+true: Show the uninstall popup for free-plan users.
+false: Hide the uninstall popup.</string>
+            <string id="UninstallPopupEdge">Uninstall Popup for Free Users</string>
+            <string id="UninstallPopupEdge_Explain">Controls whether the Acrobat browser extension shows a popup prompting users who have moved to the free plan to uninstall.
+
+Configured via Edge's managed-storage policy mechanism (a 3rdparty extension policy), not Adobe's own FeatureLockDown registry namespace.
+
+Possible values include:
+true: Show the uninstall popup for free-plan users.
+false: Hide the uninstall popup.</string>
+
+            <string id="DisableGenAIChrome">Disable GenAI Features</string>
+            <string id="DisableGenAIChrome_Explain">Disables generative AI features in the Acrobat browser extension.
+
+Configured via Chrome's managed-storage policy mechanism (a 3rdparty extension policy), not Adobe's own FeatureLockDown registry namespace. This is independent of the desktop application's generative AI controls.
+
+Possible values include:
+true: Disable generative AI features in the extension.
+false: Allow generative AI features in the extension.</string>
+            <string id="DisableGenAIEdge">Disable GenAI Features</string>
+            <string id="DisableGenAIEdge_Explain">Disables generative AI features in the Acrobat browser extension.
+
+Configured via Edge's managed-storage policy mechanism (a 3rdparty extension policy), not Adobe's own FeatureLockDown registry namespace. This is independent of the desktop application's generative AI controls.
+
+Possible values include:
+true: Disable generative AI features in the extension.
+false: Allow generative AI features in the extension.</string>
+
+            <string id="DisableWhatsNewAutoOpenChrome">Disable What's New Auto-Open</string>
+            <string id="DisableWhatsNewAutoOpenChrome_Explain">Stops the What's New page from automatically opening in the browser when the Acrobat extension updates.
+
+Configured via Chrome's managed-storage policy mechanism (a 3rdparty extension policy), not Adobe's own FeatureLockDown registry namespace.
+
+Possible values include:
+true: Suppress the What's New auto-open.
+false: Allow the What's New page to open automatically after updates.</string>
+            <string id="DisableWhatsNewAutoOpenEdge">Disable What's New Auto-Open</string>
+            <string id="DisableWhatsNewAutoOpenEdge_Explain">Stops the What's New page from automatically opening in the browser when the Acrobat extension updates.
+
+Configured via Edge's managed-storage policy mechanism (a 3rdparty extension policy), not Adobe's own FeatureLockDown registry namespace.
+
+Possible values include:
+true: Suppress the What's New auto-open.
+false: Allow the What's New page to open automatically after updates.</string>
+
+            <string id="DisableExpressChrome">Disable Express Features</string>
+            <string id="DisableExpressChrome_Explain">Disables Adobe Express features (such as Edit Image) in the Acrobat browser extension.
+
+Configured via Chrome's managed-storage policy mechanism (a 3rdparty extension policy), not Adobe's own FeatureLockDown registry namespace.
+
+Possible values include:
+true: Disable Express features in the extension.
+false: Allow Express features in the extension.</string>
+            <string id="DisableExpressEdge">Disable Express Features</string>
+            <string id="DisableExpressEdge_Explain">Disables Adobe Express features (such as Edit Image) in the Acrobat browser extension.
+
+Configured via Edge's managed-storage policy mechanism (a 3rdparty extension policy), not Adobe's own FeatureLockDown registry namespace.
+
+Possible values include:
+true: Disable Express features in the extension.
+false: Allow Express features in the extension.</string>
 
       <!-- User-scope strings -->
       <string id="SupportedAcrobatDC_User">Adobe Acrobat DC</string>

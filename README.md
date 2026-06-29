@@ -13,17 +13,18 @@
 | [Security Hardening](security-hardening.md) | Recommended and optional security configurations |
 | [STIG: Acrobat Pro DC Continuous](stig-acrobat-pro-dc.md) | All 23 DISA STIG controls for Acrobat Pro DC (also applies to 64-bit Reader via the Unified Installer) |
 | [STIG: Acrobat Reader DC Continuous](stig-acrobat-reader-dc.md) | All 26 DISA STIG controls for Reader DC (pre-Unified Installer, 32-bit Reader only) |
+| [Browser Extension Settings](browser-extension.md) | Policies for the Adobe Acrobat browser extension (Chrome and Edge) |
 | [Reduce Nags & Upsells](reduce-nags.md) | Settings to suppress unwanted messages, popups, and promotions |
 | [Screenshots](screenshots.md) | GPMC and Intune screenshots showing policy configuration |
 | [Changelog](changelog.md) | Settings changes across ADMX versions |
 
-These ADMX/ADML templates (v3.3) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. They define both machine-level (`HKLM`) and user-level (`HKCU`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, and upsell controls.
+These ADMX/ADML templates (v3.4) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows, plus the Adobe Acrobat browser extension for Chrome and Edge. They define both machine-level (`HKLM`) and user-level (`HKCU`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, upsell controls, and browser extension behavior.
 
 The full policy set now ships as a single **combined** ``AdobeDC.admx``/ADML pair, covering Reader DC and Acrobat DC across both x86 and x64, plus all user-level policies:
 
 | ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
 |------|-------|----------|
-| `AdobeDC.admx` + ADML | Reader DC (x86 + x64) and Acrobat DC (x86 + x64), Computer and User scope | 564 Machine + 501 User = 1,065 |
+| `AdobeDC.admx` + ADML | Reader DC (x86 + x64), Acrobat DC (x86 + x64), and the Chrome/Edge browser extension, Computer and User scope | 576 Machine + 501 User = 1,077 |
 
 Deploy the one combined file — it covers every architecture, both products, and both Computer and User Configuration.
 
@@ -52,6 +53,8 @@ Deploy the one combined file — it covers every architecture, both products, an
 | Upsell | Upgrade prompts, trial purchase dialogs, promotional campaigns, App Center, and purchasable tool visibility. | 5 | 7 |
 
 Counts above are machine-scope only — see [Reader DC Settings](reader-settings.md) and [Acrobat DC Settings](acrobat-settings.md) for the full per-policy lists. User-scope policies (501 total) ship in the same file but are not broken out by category here.
+
+The **Browser Extension** category (12 policies for the Chrome/Edge Acrobat extension) isn't split by Reader/Acrobat — the extension is the same regardless of which desktop product is installed. See [Browser Extension Settings](browser-extension.md) for the full list.
 
 ## Deployment
 
