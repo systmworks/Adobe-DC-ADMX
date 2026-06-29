@@ -32,6 +32,9 @@ jobs:
       - name: Regenerate merged ADMX
         run: python scripts/merge.py
 
+      - name: Install xmllint
+        run: sudo apt-get install -y --no-install-recommends libxml2-utils
+
       - name: Validate XML well-formedness
         run: |
           xmllint --noout build/AdobeDC.admx
