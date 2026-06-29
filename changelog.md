@@ -19,7 +19,7 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 | Disable Acrobat.com File Storage | `bDisableADCFileStore` | N/A | Enabled → DWORD **1** |
 | Welcome Screen on Startup | `bShowWelcomeScreen` | N/A | Disabled → DWORD **0** |
 
-Also rewrote the `_Explain` text for all DISA STIG-relevant policies for clarity, matching Adobe's own ADML prose style.
+Also rewrote the `_Explain` text for all DISA STIG-relevant policies for clarity, matching Adobe's own ADML prose style, and added two new documentation pages mapping every DISA STIG control to its ADMX policy name and registry path: [STIG: Acrobat Pro DC Continuous](stig-acrobat-pro-dc.md) and [STIG: Acrobat Reader DC Continuous](stig-acrobat-reader-dc.md).
 
 | ADMX File | Policies |
 |---|---:|

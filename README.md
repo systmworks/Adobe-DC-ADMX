@@ -11,6 +11,8 @@
 | [Reader DC Settings](reader-settings.md) | Complete list of all Reader DC policies |
 | [Acrobat DC Settings](acrobat-settings.md) | Complete list of all Acrobat DC policies |
 | [Security Hardening](security-hardening.md) | Recommended and optional security configurations |
+| [STIG: Acrobat Pro DC Continuous](stig-acrobat-pro-dc.md) | All 23 DISA STIG controls for Acrobat Pro DC (also applies to 64-bit Reader via the Unified Installer) |
+| [STIG: Acrobat Reader DC Continuous](stig-acrobat-reader-dc.md) | All 26 DISA STIG controls for Reader DC (pre-Unified Installer, 32-bit Reader only) |
 | [Reduce Nags & Upsells](reduce-nags.md) | Settings to suppress unwanted messages, popups, and promotions |
 | [Screenshots](screenshots.md) | GPMC and Intune screenshots showing policy configuration |
 | [Changelog](changelog.md) | Settings changes across ADMX versions |
