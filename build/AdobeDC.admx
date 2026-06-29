@@ -11699,6 +11699,34 @@
           </disabledValue>
         </policy>
 
+        <!-- Security: Trust and Permissions > Load Security Settings from Server (Adobe Certificates) -->
+        <!-- bLoadSettingsFromURL   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/Security.html -->
+        <policy class="User" displayName="$(string.bLoadSettingsFromURLAdobeDC_User)" explainText="$(string.bLoadSettingsFromURLAdobeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cDigSig\cAdobeDownload"
+          name="bLoadSettingsFromURLAdobeDC_User" valueName="bLoadSettingsFromURL">
+          <parentCategory ref="SecurityTrustCategoryDC_User"/>
+          <supportedOn ref="SupportedAcrobatDC_User"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+        </policy>
+
+        <!-- Security: Trust and Permissions > Load Security Settings from Server (European Certificates) -->
+        <!-- bLoadSettingsFromURL   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/Security.html -->
+        <policy class="User" displayName="$(string.bLoadSettingsFromURLEUTLDC_User)" explainText="$(string.bLoadSettingsFromURLEUTLDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cDigSig\cEUTLDownload"
+          name="bLoadSettingsFromURLEUTLDC_User" valueName="bLoadSettingsFromURL">
+          <parentCategory ref="SecurityTrustCategoryDC_User"/>
+          <supportedOn ref="SupportedAcrobatDC_User"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+        </policy>
+
         <!-- ======================================== -->
         <!--           Sharing and Features           -->
         <!-- ======================================== -->
@@ -15133,6 +15161,34 @@
         <!-- iMSStoreTrusted   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/Security.html#idkeyname_1_21633 -->
         <policy class="User" displayName="$(string.iMSStoreTrusted_User)" explainText="$(string.iMSStoreTrusted_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cMSCAPI_DirectoryProvider"
           name="iMSStoreTrusted_User" valueName="iMSStoreTrusted">
+          <parentCategory ref="SecurityTrustCategory_User"/>
+          <supportedOn ref="SupportedReaderDC_User"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+        </policy>
+
+        <!-- Security: Trust and Permissions > Load Security Settings from Server (Adobe Certificates) -->
+        <!-- bLoadSettingsFromURL   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/Security.html -->
+        <policy class="User" displayName="$(string.bLoadSettingsFromURLAdobe_User)" explainText="$(string.bLoadSettingsFromURLAdobe_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cDigSig\cAdobeDownload"
+          name="bLoadSettingsFromURLAdobe_User" valueName="bLoadSettingsFromURL">
+          <parentCategory ref="SecurityTrustCategory_User"/>
+          <supportedOn ref="SupportedReaderDC_User"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+        </policy>
+
+        <!-- Security: Trust and Permissions > Load Security Settings from Server (European Certificates) -->
+        <!-- bLoadSettingsFromURL   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/Security.html -->
+        <policy class="User" displayName="$(string.bLoadSettingsFromURLEUTL_User)" explainText="$(string.bLoadSettingsFromURLEUTL_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cDigSig\cEUTLDownload"
+          name="bLoadSettingsFromURLEUTL_User" valueName="bLoadSettingsFromURL">
           <parentCategory ref="SecurityTrustCategory_User"/>
           <supportedOn ref="SupportedReaderDC_User"/>
           <enabledValue>

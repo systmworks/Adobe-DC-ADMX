@@ -17,13 +17,13 @@
 | [Screenshots](screenshots.md) | GPMC and Intune screenshots showing policy configuration |
 | [Changelog](changelog.md) | Settings changes across ADMX versions |
 
-These ADMX/ADML templates (v3.1) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. They define both machine-level (`HKLM`) and user-level (`HKCU`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, and upsell controls.
+These ADMX/ADML templates (v3.2) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. They define both machine-level (`HKLM`) and user-level (`HKCU`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, and upsell controls.
 
 The full policy set now ships as a single **combined** ``AdobeDC.admx``/ADML pair, covering Reader DC and Acrobat DC across both x86 and x64, plus all user-level policies:
 
 | ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
 |------|-------|----------|
-| `AdobeDC.admx` + ADML | Reader DC (x86 + x64) and Acrobat DC (x86 + x64), Computer and User scope | 560 Machine + 495 User = 1,055 |
+| `AdobeDC.admx` + ADML | Reader DC (x86 + x64) and Acrobat DC (x86 + x64), Computer and User scope | 560 Machine + 499 User = 1,059 |
 
 Deploy the one combined file — it covers every architecture, both products, and both Computer and User Configuration.
 
@@ -51,7 +51,7 @@ Deploy the one combined file — it covers every architecture, both products, an
 | Updates & Desktop Integration | Product updater, Chrome extension, Explorer thumbnails, repair options, desktop UI, and deployment settings. | 19 | 21 |
 | Upsell | Upgrade prompts, trial purchase dialogs, promotional campaigns, App Center, and purchasable tool visibility. | 5 | 7 |
 
-Counts above are machine-scope only — see [Reader DC Settings](reader-settings.md) and [Acrobat DC Settings](acrobat-settings.md) for the full per-policy lists. User-scope policies (495 total) ship in the same file but are not broken out by category here.
+Counts above are machine-scope only — see [Reader DC Settings](reader-settings.md) and [Acrobat DC Settings](acrobat-settings.md) for the full per-policy lists. User-scope policies (499 total) ship in the same file but are not broken out by category here.
 
 ## Deployment
 

@@ -5417,6 +5417,23 @@ The application uses shell validation by default, but chain validation may be us
 
 To lock this setting, use bMSStoreTrusted. Allowable values include: 0x00: No checkbox selected. 0x60: Validating Signatures. 0x62: Validating Certified Documents and Signatures. Note that this setting disables the Validating Signatures checkbox because it also controls non-certified signatures and users should not be able to uncheck that checkbox.</string>
 
+            <string id="bLoadSettingsFromURLAdobeDC_User">Load Security Settings from Server (Adobe Certificates)</string>
+            <string id="bLoadSettingsFromURLAdobeDC_User_Explain">Controls whether trust anchors are periodically downloaded from Adobe's certificate server.
+
+When enabled, Acrobat contacts Adobe's server to download updated root certificates and trust anchors used for signature validation. Disabling this prevents the application from making outbound connections to Adobe's certificate infrastructure, which is required in air-gapped or restricted network environments.
+
+Possible values include:
+0: Do not load security settings from Adobe's certificate server.
+1: Periodically download security settings from Adobe's certificate server.</string>
+            <string id="bLoadSettingsFromURLEUTLDC_User">Load Security Settings from Server (European Certificates)</string>
+            <string id="bLoadSettingsFromURLEUTLDC_User_Explain">Controls whether trust anchors are periodically downloaded from the European Union Trusted Lists (EUTL) server.
+
+When enabled, Acrobat contacts the EUTL server to download updated European root certificates used for signature validation of EU-issued qualified electronic signatures. Disabling this prevents outbound connections to EUTL infrastructure.
+
+Possible values include:
+0: Do not load security settings from the EUTL server.
+1: Periodically download security settings from the EUTL server.</string>
+
             <!-- ======================================== -->
             <!--           Sharing and Features           -->
             <!-- ======================================== -->
@@ -6888,6 +6905,23 @@ The application uses shell validation by default, but chain validation may be us
             <string id="iMSStoreTrusted_User_Explain">Controls whether or not certificates in the Windows Certificate Store are trusted for signing and certifying.
 
 To lock this setting, use bMSStoreTrusted. Allowable values include: 0x00: No checkbox selected. 0x60: Validating Signatures. 0x62: Validating Certified Documents and Signatures. Note that this setting disables the Validating Signatures checkbox because it also controls non-certified signatures and users should not be able to uncheck that checkbox.</string>
+
+            <string id="bLoadSettingsFromURLAdobe_User">Load Security Settings from Server (Adobe Certificates)</string>
+            <string id="bLoadSettingsFromURLAdobe_User_Explain">Controls whether trust anchors are periodically downloaded from Adobe's certificate server.
+
+When enabled, Acrobat Reader contacts Adobe's server to download updated root certificates and trust anchors used for signature validation. Disabling this prevents the application from making outbound connections to Adobe's certificate infrastructure, which is required in air-gapped or restricted network environments.
+
+Possible values include:
+0: Do not load security settings from Adobe's certificate server.
+1: Periodically download security settings from Adobe's certificate server.</string>
+            <string id="bLoadSettingsFromURLEUTL_User">Load Security Settings from Server (European Certificates)</string>
+            <string id="bLoadSettingsFromURLEUTL_User_Explain">Controls whether trust anchors are periodically downloaded from the European Union Trusted Lists (EUTL) server.
+
+When enabled, Acrobat Reader contacts the EUTL server to download updated European root certificates used for signature validation of EU-issued qualified electronic signatures. Disabling this prevents outbound connections to EUTL infrastructure.
+
+Possible values include:
+0: Do not load security settings from the EUTL server.
+1: Periodically download security settings from the EUTL server.</string>
 
             <!-- ======================================== -->
             <!--           Sharing and Features           -->

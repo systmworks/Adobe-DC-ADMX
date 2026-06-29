@@ -53,8 +53,8 @@ direct registry write (LGPO, Intune remediation script, or custom OMA-URI).
 | V-213183 | ARDC-CN-000085 | CAT III | Adobe Send for Signature must be disabled | Adobe Acrobat Sign | `FeatureLockDown\cServices\bToggleAdobeSign` | `1` | Computer |
 | V-213186 | ARDC-CN-000115 | CAT III | Welcome Screen must be disabled | Welcome Screen on Startup | `FeatureLockDown\cWelcomeScreen\bShowWelcomeScreen` | `0` | Computer |
 | V-213187 | ARDC-CN-000120 | CAT III | Service upgrades must be disabled | Services & Web-Plugin Updates | `FeatureLockDown\cServices\bUpdater` | `0` | Computer |
-| V-213190 | ARDC-CN-000330 | CAT III | Periodic uploading of European certificates must be disabled | — (direct registry) | `Security\cDigSig\cEUTLDownload\bLoadSettingsFromURL` | `0` | User |
-| V-213191 | ARDC-CN-000335 | CAT III | Periodic uploading of Adobe certificates must be disabled | — (direct registry) | `Security\cDigSig\cAdobeDownload\bLoadSettingsFromURL` | `0` | User |
+| V-213190 | ARDC-CN-000330 | CAT III | Periodic uploading of European certificates must be disabled | Load Security Settings from Server (European Certificates) | `Security\cDigSig\cEUTLDownload\bLoadSettingsFromURL` | `0` | User |
+| V-213191 | ARDC-CN-000335 | CAT III | Periodic uploading of Adobe certificates must be disabled | Load Security Settings from Server (Adobe Certificates) | `Security\cDigSig\cAdobeDownload\bLoadSettingsFromURL` | `0` | User |
 
 ---
 

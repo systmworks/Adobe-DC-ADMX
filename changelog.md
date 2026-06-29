@@ -10,6 +10,21 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v3.2 — 28 June 2026
+
+**New user policies:** Two **Security: Trust & Permissions** policies covering certificate auto-download, previously only configurable via direct registry write. Both target the same non-Policy `HKCU` paths used by Adobe's own ADM template.
+
+| Setting | ValueName | Old version | New version |
+|---|---|---|---|
+| Load Security Settings from Server (Adobe Certificates) | `bLoadSettingsFromURL` | N/A | Disabled → DWORD **0** |
+| Load Security Settings from Server (European Certificates) | `bLoadSettingsFromURL` | N/A | Disabled → DWORD **0** |
+
+| ADMX File | Policies |
+|---|---:|
+| `AdobeDC.admx` | 560 Machine + 499 User = 1,059 |
+
+---
+
 ## v3.1 — 28 June 2026
 
 **New machine policies (Reader + Acrobat):** Two settings required by DISA STIG that were missing from the template. Both are deprecated in DC 12.x and later in favor of their Document Cloud replacements, but Acrobat still honors the underlying registry values.

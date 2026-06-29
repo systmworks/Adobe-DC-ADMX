@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings
 
-Complete list of 152 Acrobat DC policies in the ADMX templates, sorted by category.
+Complete list of 154 Acrobat DC policies in the ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -122,6 +122,8 @@ Complete list of 152 Acrobat DC policies in the ADMX templates, sorted by catego
 | Sign Menu in Menu Bar | ``bShowSignMenu`` | Show the Sign menu in Acrobat's top level menu bar. |
 | Signing Reason UI | ``bAllowReasonWhenSigning`` | Specifies whether the reason UI will appear during signing. |
 | Trust Certified Documents | ``bEnableCertificateBasedTrust`` | Elevates (trusts) certified documents as a privileged location. |
+| Load Security Settings from Server (Adobe Certificates) | ``bLoadSettingsFromURL`` | Controls whether trust anchors are periodically downloaded from Adobe's certificate server (cAdobeDownload). |
+| Load Security Settings from Server (European Certificates) | ``bLoadSettingsFromURL`` | Controls whether trust anchors are periodically downloaded from the EUTL certificate server (cEUTLDownload). |
 | Unknown URL Access Policy | ``iUnknownURLPerms`` | Ask for, allow, or block access to web sites that are not in the user specified list. |
 | Validate Signatures on Open | ``bValidateOnOpen`` | Automatically validate all signatures on document open. |
 

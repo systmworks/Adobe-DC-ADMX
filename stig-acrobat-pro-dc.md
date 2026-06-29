@@ -39,14 +39,14 @@ direct registry write (LGPO, Intune remediation script, or custom OMA-URI).
 | V-245874 | AADC-CN-000955 | CAT II | FIPS mode must be enabled | FIPS Mode | `AVGeneral\bFIPSMode` | `1` | User |
 | V-213120 | AADC-CN-000280 | CAT III | Access to unknown websites must be restricted | Unknown URL Access Policy | `FeatureLockDown\cDefaultLaunchURLPerms\iUnknownURLPerms` | `3` (Block) | Computer |
 | V-213121 | AADC-CN-000285 | CAT III | Access to websites must be blocked | — (not lockable; deploy via direct registry) | `FeatureLockDown\cDefaultLaunchURLPerms\iURLPerms` | `1` | Computer |
-| V-213126 | AADC-CN-000990 | CAT III | Periodic downloading of Adobe European certificates must be disabled | — (direct registry) | `Security\cDigSig\cEUTLDownload\bLoadSettingsFromURL` | `0` | User |
+| V-213126 | AADC-CN-000990 | CAT III | Periodic downloading of Adobe European certificates must be disabled | Load Security Settings from Server (European Certificates) | `Security\cDigSig\cEUTLDownload\bLoadSettingsFromURL` | `0` | User |
 | V-213130 | AADC-CN-001280 | CAT III | Default Handler changes must be disabled | Lock Default PDF Viewer | `FeatureLockDown\bDisablePDFHandlerSwitching` | `1` | Computer |
 | V-213133 | AADC-CN-001295 | CAT III | Repair Installation must be disabled | Disable Repair for All Users | `Adobe Acrobat\DC\Installer\DisableMaintenance` | `1` | Computer |
 | V-213134 | AADC-CN-001300 | CAT III | Third-party web connectors must be disabled | Third-Party Cloud Connectors | `FeatureLockDown\cServices\bToggleWebConnectors` | `1` | Computer |
 | V-213135 | AADC-CN-001305 | CAT III | Webmail must be disabled | Disable WebMail Integration | `FeatureLockDown\cWebmailProfiles\bDisableWebmail` | `1` | Computer |
 | V-213136 | AADC-CN-001310 | CAT III | Welcome Screen must be disabled | Welcome Screen on Startup | `FeatureLockDown\cWelcomeScreen\bShowWelcomeScreen` | `0` | Computer |
 | V-213137 | AADC-CN-001315 | CAT III | SharePoint and Office 365 access must be disabled | Disable SharePoint & Office 365 Integration | `FeatureLockDown\cSharePoint\bDisableSharePointFeatures` | `1` | Computer |
-| V-213138 | AADC-CN-001320 | CAT III | Periodic downloading of Adobe certificates must be disabled | — (direct registry) | `Security\cDigSig\cAdobeDownload\bLoadSettingsFromURL` | `0` | User |
+| V-213138 | AADC-CN-001320 | CAT III | Periodic downloading of Adobe certificates must be disabled | Load Security Settings from Server (Adobe Certificates) | `Security\cDigSig\cAdobeDownload\bLoadSettingsFromURL` | `0` | User |
 | V-213139 | AADC-CN-001325 | CAT III | Privileged host locations must be disabled | Lock Trusted Host Sites | `FeatureLockDown\bDisableTrustedSites` | `1` | Computer |
 
 ---
