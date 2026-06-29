@@ -20,7 +20,7 @@
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="3.1.0" />
+  <resources minRequiredRevision="3.0" />
   <supportedOn>
     <definitions>
       <!-- Machine-scope supported-on definitions (Acrobat DC / Reader DC x86 + x64) -->
