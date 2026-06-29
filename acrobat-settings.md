@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings
 
-Complete list of 150 Acrobat DC policies in the v2.19 ADMX templates, sorted by category.
+Complete list of 152 Acrobat DC policies in the ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -132,6 +132,7 @@ Complete list of 150 Acrobat DC policies in the v2.19 ADMX templates, sorted by 
 | Adobe Acrobat Sign | ``bToggleAdobeSign`` | Controls whether Adobe Acrobat Sign (Send for Signature) is enabled. |
 | Adobe Send & Track | ``bToggleSendAndTrack`` | Disables Adobe Send and Track (some UI is renamed to "Share" since October, 2018) |
 | Allow @Mention Non-Reviewers | ``bEnableRecipientMention`` | Allow participants in a shared review to @mention people who are not review collaborators. |
+| Disable Acrobat.com File Storage | ``bDisableADCFileStore`` | Disables storing files on Acrobat.com. Deprecated in DC 12.x and later; use bToggleDocumentCloud for DC deployments. |
 | Disable SharePoint & Office 365 Integration | ``bDisableSharePointFeatures`` | Disables the SharePoint and Office 365 integration features. |
 | Disable WebMail Integration | ``bDisableWebmail`` | Disable WebMail. |
 | Document Cloud Review Service | ``bToggleAdobeReview`` | Remove all UI related to the Document Cloud Review service. |
@@ -168,6 +169,7 @@ Complete list of 150 Acrobat DC policies in the v2.19 ADMX templates, sorted by 
 | Show Desktop Notification Toasts | ``bToggleNotificationToasts`` | Hide desktop notifications. |
 | Show PDF Ownership Notification | ``bTogglePDFOwnershipToasts`` | Show a notification on machine startup that allows the user to make Acrobat the default PDF viewer. |
 | Show To Do Cards in Recent Tab | ``bToggleToDoTiles`` | Show To Do Cards in the Recent Tab view |
+| Welcome Screen on Startup | ``bShowWelcomeScreen`` | Controls whether the Welcome screen is shown when the application starts. Deprecated in DC 12.x and later; use bToggleFTE for DC deployments. |
 | What's New Experience | ``bWhatsNewExp`` | Disable the What's New experience. |
 
 ## Updates & Desktop Integration
