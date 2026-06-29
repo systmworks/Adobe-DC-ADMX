@@ -19,6 +19,8 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 | Load Security Settings from Server (Adobe Certificates) | `bLoadSettingsFromURL` | N/A | Disabled → DWORD **0** |
 | Load Security Settings from Server (European Certificates) | `bLoadSettingsFromURL` | N/A | Disabled → DWORD **0** |
 
+**Scope correction:** `iURLPerms` (default website access policy) is a User-scope preference under `TrustManager\cDefaultLaunchURLPerms`, not a Computer-scope `FeatureLockDown` control. Some DISA STIG documents list it incorrectly as Computer-scope; the existing **URL Access Permissions** policy under *User Configuration* is the correct ADMX mapping.
+
 | ADMX File | Policies |
 |---|---:|
 | `AdobeDC.admx` | 560 Machine + 499 User = 1,059 |

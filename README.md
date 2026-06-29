@@ -35,6 +35,7 @@ Deploy the one combined file — it covers every architecture, both products, an
 | Several ``bToggle*`` policies use inverted registry values (DWORD 0 = feature ON, DWORD 1 = feature OFF). The ADMX templates handle this so that the Group Policy **Enabled**/**Disabled** states match the FriendlyName intent, but raw registry checks may look counterintuitive. |
 | Adobe ARM (the background update service) is always a 32-bit process and writes to `SOFTWARE\WOW6432Node\Adobe\Adobe ARM\...`, even on x64 deployments. |
 | User-scope policies are marked `class="User"` so they appear only under *User Configuration*, not *Computer Configuration*. |
+| ``iURLPerms`` (default website access policy) cannot be locked via `HKLM` `FeatureLockDown` — Adobe's preference reference marks it not lockable at machine scope. It is only configurable as a User-scope policy under `TrustManager\cDefaultLaunchURLPerms`. Some DISA STIG documents incorrectly list it as a Computer-scope control — see the STIG pages above for the corrected mapping. |
 
 ## Category Overview
 
