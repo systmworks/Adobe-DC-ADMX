@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings
 
-Complete list of 154 Acrobat DC policies in the ADMX templates, sorted by category.
+Complete list of 155 Acrobat DC policies in the ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -168,6 +168,7 @@ Complete list of 154 Acrobat DC policies in the ADMX templates, sorted by catego
 | Home Screen To Do List | ``bToggleToDoList`` | Show a "to do" list on the Home screen. |
 | Reader mode on Acrobat (Unified x64) | ``bIsSCReducedModeEnforcedEx`` | Enforces reduced (Reader-like) mode for Unified Acrobat so users can open PDFs without signing in with an Adobe ID. |
 | Scan Tab in Home View | ``bShowScanTabInHomeView`` | Disable the Scan tab in Home view. |
+| Send Usage Data to Adobe | ``bUsageMeasurement`` | Legacy master switch for usage data collection. Superseded by bToggleShareFeedback and bEnableADMAnalytics; retained for environments that still set it. |
 | Show Desktop Notification Toasts | ``bToggleNotificationToasts`` | Hide desktop notifications. |
 | Show PDF Ownership Notification | ``bTogglePDFOwnershipToasts`` | Show a notification on machine startup that allows the user to make Acrobat the default PDF viewer. |
 | Show To Do Cards in Recent Tab | ``bToggleToDoTiles`` | Show To Do Cards in the Recent Tab view |

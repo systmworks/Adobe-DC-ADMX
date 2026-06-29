@@ -6,7 +6,7 @@
 
 # Reader DC Settings
 
-Complete list of 130 Reader DC policies in the ADMX templates, sorted by category.
+Complete list of 131 Reader DC policies in the ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -148,6 +148,7 @@ Complete list of 130 Reader DC policies in the ADMX templates, sorted by categor
 | Hide Send Feedback Icon | ``bToggleShareFeedback`` | Show the Send Feedback icon. |
 | Home Screen To Do List | ``bToggleToDoList`` | Show a "to do" list on the Home screen. |
 | Scan Tab in Home View | ``bShowScanTabInHomeView`` | Disable the Scan tab in Home view. |
+| Send Usage Data to Adobe | ``bUsageMeasurement`` | Legacy master switch for usage data collection. Superseded by bToggleShareFeedback and bEnableADMAnalytics; retained for environments that still set it. |
 | Show Desktop Notification Toasts | ``bToggleNotificationToasts`` | Hide desktop notifications. |
 | Show PDF Ownership Notification | ``bTogglePDFOwnershipToasts`` | Show a notification on machine startup that allows the user to make Acrobat the default PDF viewer. |
 | Show To Do Cards in Recent Tab | ``bToggleToDoTiles`` | Show To Do Cards in the Recent Tab view |

@@ -2024,6 +2024,20 @@
           </disabledValue>
         </policy>
 
+        <!-- Startup and Experience > Send Usage Data to Adobe (legacy master switch, x64) -->
+        <!-- bUsageMeasurement   legacy pre-12.x master key; superseded by bToggleShareFeedback / bEnableADMAnalytics but still honored -->
+        <policy class="Machine" displayName="$(string.bUsageMeasurementDC_x64)" explainText="$(string.bUsageMeasurementDC_x64_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
+          name="bUsageMeasurementDC_x64" valueName="bUsageMeasurement">
+          <parentCategory ref="StartupExperienceCategoryDC_x64"/>
+          <supportedOn ref="SupportedAcrobatDC_x64"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+        </policy>
+
         <!-- Startup and Experience > Home Screen To Do List (x64) -->
         <!-- bToggleToDoList   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/FeatureLockDown.html#idkeyname_1_10618 -->
         <policy class="Machine" displayName="$(string.bToggleToDoListDC_x64)" explainText="$(string.bToggleToDoListDC_x64_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
@@ -4332,6 +4346,20 @@
           </disabledValue>
         </policy>
 
+        <!-- Startup and Experience > Send Usage Data to Adobe (legacy master switch, x86) -->
+        <!-- bUsageMeasurement   legacy pre-12.x master key; superseded by bToggleShareFeedback / bEnableADMAnalytics but still honored -->
+        <policy class="Machine" displayName="$(string.bUsageMeasurementDC_x86)" explainText="$(string.bUsageMeasurementDC_x86_Explain)" key="SOFTWARE\WOW6432Node\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
+          name="bUsageMeasurementDC_x86" valueName="bUsageMeasurement">
+          <parentCategory ref="StartupExperienceCategoryDC_x86"/>
+          <supportedOn ref="SupportedAcrobatDC_x86"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+        </policy>
+
         <!-- Startup and Experience > Home Screen To Do List (x86) -->
         <!-- bToggleToDoList   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/FeatureLockDown.html#idkeyname_1_10618 -->
         <policy class="Machine" displayName="$(string.bToggleToDoListDC_x86)" explainText="$(string.bToggleToDoListDC_x86_Explain)" key="SOFTWARE\WOW6432Node\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
@@ -6358,6 +6386,20 @@
           </enabledValue>
           <disabledValue>
             <decimal value="1" />
+          </disabledValue>
+        </policy>
+
+        <!-- Startup and Experience > Send Usage Data to Adobe (legacy master switch, x64) -->
+        <!-- bUsageMeasurement   legacy pre-12.x master key; superseded by bToggleShareFeedback / bEnableADMAnalytics but still honored -->
+        <policy class="Machine" displayName="$(string.bUsageMeasurement_x64)" explainText="$(string.bUsageMeasurement_x64_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
+          name="bUsageMeasurement_x64" valueName="bUsageMeasurement">
+          <parentCategory ref="StartupExperienceCategory_x64"/>
+          <supportedOn ref="SupportedReaderDC_x64"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
           </disabledValue>
         </policy>
 
@@ -8406,6 +8448,20 @@
           </enabledValue>
           <disabledValue>
             <decimal value="1" />
+          </disabledValue>
+        </policy>
+
+        <!-- Startup and Experience > Send Usage Data to Adobe (legacy master switch, x86) -->
+        <!-- bUsageMeasurement   legacy pre-12.x master key; superseded by bToggleShareFeedback / bEnableADMAnalytics but still honored -->
+        <policy class="Machine" displayName="$(string.bUsageMeasurement_x86)" explainText="$(string.bUsageMeasurement_x86_Explain)" key="SOFTWARE\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
+          name="bUsageMeasurement_x86" valueName="bUsageMeasurement">
+          <parentCategory ref="StartupExperienceCategory_x86"/>
+          <supportedOn ref="SupportedReaderDC_x86"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
           </disabledValue>
         </policy>
 
@@ -11655,6 +11711,17 @@
           <disabledValue>
             <decimal value="0" />
           </disabledValue>
+        </policy>
+
+        <!-- Security: Trust and Permissions > Trusted/Blocked URL List (companion to URL Access Permissions) -->
+        <!-- tHostPerms   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/TrustManager.html -->
+        <policy class="User" displayName="$(string.tHostPermsDC_User)" explainText="$(string.tHostPermsDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\TrustManager\cDefaultLaunchURLPerms"
+          name="tHostPermsDC_User" presentation="$(presentation.tHostPermsDC_User_text)">
+          <parentCategory ref="SecurityTrustCategoryDC_User"/>
+          <supportedOn ref="SupportedAcrobatDC_User"/>
+          <elements>
+            <text id="tHostPermsDC_User_text" valueName="tHostPerms" maxLength="16384" />
+          </elements>
         </policy>
 
         <!-- Security: Trust and Permissions > Use Archived Rev Info -->
@@ -15127,6 +15194,17 @@
           <disabledValue>
             <decimal value="0" />
           </disabledValue>
+        </policy>
+
+        <!-- Security: Trust and Permissions > Trusted/Blocked URL List (companion to URL Access Permissions) -->
+        <!-- tHostPerms   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/TrustManager.html -->
+        <policy class="User" displayName="$(string.tHostPerms_User)" explainText="$(string.tHostPerms_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\TrustManager\cDefaultLaunchURLPerms"
+          name="tHostPerms_User" presentation="$(presentation.tHostPerms_User_text)">
+          <parentCategory ref="SecurityTrustCategory_User"/>
+          <supportedOn ref="SupportedReaderDC_User"/>
+          <elements>
+            <text id="tHostPerms_User_text" valueName="tHostPerms" maxLength="16384" />
+          </elements>
         </policy>
 
         <!-- Security: Trust and Permissions > Use Archived Rev Info -->

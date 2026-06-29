@@ -878,6 +878,14 @@ By default, the UI displays a feedback icon so that users can easily send feedba
 Possible values include:
 0: Hide the icon.
 1: Show the icon.</string>
+            <string id="bUsageMeasurementDC_x64">Send Usage Data to Adobe</string>
+            <string id="bUsageMeasurementDC_x64_Explain">Legacy master switch controlling whether usage data is collected and sent to Adobe.
+
+Predates DC; superseded for most purposes by bToggleShareFeedback (12.x and later) and bEnableADMAnalytics, but Adobe documentation still references this key as the master switch that disables all data collection, including ADM analytics, when other related preferences are not lockable via HKLM. Retained here for environments that still rely on it.
+
+Possible values include:
+0: Disable usage data collection.
+1: Enable usage data collection.</string>
             <string id="bToggleToDoListDC_x64">Home Screen To Do List</string>
             <string id="bToggleToDoListDC_x64_Explain">Specifies whether to show a &quot;to do&quot; list on the Home screen.
 
@@ -1995,6 +2003,14 @@ By default, the UI displays a feedback icon so that users can easily send feedba
 Possible values include:
 0: Hide the icon.
 1: Show the icon.</string>
+            <string id="bUsageMeasurementDC_x86">Send Usage Data to Adobe</string>
+            <string id="bUsageMeasurementDC_x86_Explain">Legacy master switch controlling whether usage data is collected and sent to Adobe.
+
+Predates DC; superseded for most purposes by bToggleShareFeedback (12.x and later) and bEnableADMAnalytics, but Adobe documentation still references this key as the master switch that disables all data collection, including ADM analytics, when other related preferences are not lockable via HKLM. Retained here for environments that still rely on it.
+
+Possible values include:
+0: Disable usage data collection.
+1: Enable usage data collection.</string>
             <string id="bToggleToDoListDC_x86">Home Screen To Do List</string>
             <string id="bToggleToDoListDC_x86_Explain">Specifies whether to show a &quot;to do&quot; list on the Home screen.
 
@@ -2974,6 +2990,14 @@ By default, the UI displays a feedback icon so that users can easily send feedba
 Possible values include:
 0: Hide the icon.
 1: Show the icon.</string>
+            <string id="bUsageMeasurement_x64">Send Usage Data to Adobe</string>
+            <string id="bUsageMeasurement_x64_Explain">Legacy master switch controlling whether usage data is collected and sent to Adobe.
+
+Predates DC; superseded for most purposes by bToggleShareFeedback (12.x and later) and bEnableADMAnalytics, but Adobe documentation still references this key as the master switch that disables all data collection, including ADM analytics, when other related preferences are not lockable via HKLM. Retained here for environments that still rely on it.
+
+Possible values include:
+0: Disable usage data collection.
+1: Enable usage data collection.</string>
             <string id="bToggleToDoList_x64">Home Screen To Do List</string>
             <string id="bToggleToDoList_x64_Explain">Specifies whether to show a &quot;to do&quot; list on the Home screen.
 
@@ -3981,6 +4005,14 @@ By default, the UI displays a feedback icon so that users can easily send feedba
 Possible values include:
 0: Hide the icon.
 1: Show the icon.</string>
+            <string id="bUsageMeasurement_x86">Send Usage Data to Adobe</string>
+            <string id="bUsageMeasurement_x86_Explain">Legacy master switch controlling whether usage data is collected and sent to Adobe.
+
+Predates DC; superseded for most purposes by bToggleShareFeedback (12.x and later) and bEnableADMAnalytics, but Adobe documentation still references this key as the master switch that disables all data collection, including ADM analytics, when other related preferences are not lockable via HKLM. Retained here for environments that still rely on it.
+
+Possible values include:
+0: Disable usage data collection.
+1: Enable usage data collection.</string>
             <string id="bToggleToDoList_x86">Home Screen To Do List</string>
             <string id="bToggleToDoList_x86_Explain">Specifies whether to show a &quot;to do&quot; list on the Home screen.
 
@@ -5404,6 +5436,12 @@ Possible values include:
 0: Custom Setting
 1: Block all websites
 2: Allow all websites</string>
+            <string id="tHostPermsDC_User">Trusted/Blocked URL List</string>
+            <string id="tHostPermsDC_User_Explain">Stores the list of trusted and blocked URLs used when URL Access Permissions (iURLPerms) is set to Custom Setting.
+
+This is a free-text companion to iURLPerms. It only has effect when iURLPerms is 0 (Custom Setting); selecting Allow or Block instead overrides this list and resets it to null. Not lockable via HKLM -- this preference only exists at User scope.
+
+Format follows Adobe's TrustManager host permission list syntax.</string>
             <string id="iUseArchivedRevInfoDC_User">Use Archived Rev Info</string>
             <string id="iUseArchivedRevInfoDC_User_Explain">Indicates whether the revocation information archived with the signature is used for revocation checking.
 
@@ -6893,6 +6931,12 @@ Possible values include:
 0: Custom Setting
 1: Block all websites
 2: Allow all websites</string>
+            <string id="tHostPerms_User">Trusted/Blocked URL List</string>
+            <string id="tHostPerms_User_Explain">Stores the list of trusted and blocked URLs used when URL Access Permissions (iURLPerms) is set to Custom Setting.
+
+This is a free-text companion to iURLPerms. It only has effect when iURLPerms is 0 (Custom Setting); selecting Allow or Block instead overrides this list and resets it to null. Not lockable via HKLM -- this preference only exists at User scope.
+
+Format follows Adobe's TrustManager host permission list syntax.</string>
             <string id="iUseArchivedRevInfo_User">Use Archived Rev Info</string>
             <string id="iUseArchivedRevInfo_User_Explain">Indicates whether the revocation information archived with the signature is used for revocation checking.
 
@@ -7383,6 +7427,17 @@ Possible values include:
             </presentation>
 
       <!-- User-scope presentations -->
+
+            <presentation id="tHostPermsDC_User_text">
+              <textBox refId="tHostPermsDC_User_text">
+                <label>Trusted/blocked URL list:</label>
+              </textBox>
+            </presentation>
+            <presentation id="tHostPerms_User_text">
+              <textBox refId="tHostPerms_User_text">
+                <label>Trusted/blocked URL list:</label>
+              </textBox>
+            </presentation>
 
     </presentationTable>
   </resources>

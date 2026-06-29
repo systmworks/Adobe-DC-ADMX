@@ -10,6 +10,26 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v3.3 — 29 June 2026
+
+**New machine policy (Reader + Acrobat):** A legacy usage-data master switch, retained for environments that still rely on it even though Adobe has superseded it for most purposes.
+
+| Setting | ValueName | Old version | New version |
+|---|---|---|---|
+| Send Usage Data to Adobe | `bUsageMeasurement` | N/A | Disabled → DWORD **0** |
+
+**New user policy:** A free-text companion to the existing **URL Access Permissions** policy.
+
+| Setting | ValueName | Old version | New version |
+|---|---|---|---|
+| Trusted/Blocked URL List | `tHostPerms` | N/A | Text value, only effective when iURLPerms = Custom Setting (0) |
+
+| ADMX File | Policies |
+|---|---:|
+| `AdobeDC.admx` | 564 Machine + 501 User = 1,065 |
+
+---
+
 ## v3.2 — 28 June 2026
 
 **New user policies:** Two **Security: Trust & Permissions** policies covering certificate auto-download, previously only configurable via direct registry write. Both target the same non-Policy `HKCU` paths used by Adobe's own ADM template.
