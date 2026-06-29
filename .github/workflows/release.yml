@@ -32,6 +32,14 @@ jobs:
       - name: Install xmllint
         run: sudo apt-get install -y --no-install-recommends libxml2-utils
 
+      - name: Patch revision from tag
+        run: |
+          # xs:decimal only allows one decimal point; convert vX.Y.Z → X.Y
+          REVISION=$(echo "${{ steps.version.outputs.version }}" | grep -oP '^\d+\.\d+')
+          sed -i "s/revision=\"[^\"]*\"/revision=\"$REVISION\"/g" build/AdobeDC.admx build/en-US/AdobeDC.adml
+          sed -i "s/minRequiredRevision=\"[^\"]*\"/minRequiredRevision=\"$REVISION\"/g" build/AdobeDC.admx
+          echo "Patched revision to $REVISION"
+
       - name: Validate XML well-formedness
         run: |
           xmllint --noout build/AdobeDC.admx
