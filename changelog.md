@@ -10,6 +10,23 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 
 ---
 
+## v3.1 — 28 June 2026
+
+**New machine policies (Reader + Acrobat):** Two settings required by DISA STIG that were missing from the template. Both are deprecated in DC 12.x and later in favor of their Document Cloud replacements, but Acrobat still honors the underlying registry values.
+
+| Setting | ValueName | Old version | New version |
+|---|---|---|---|
+| Disable Acrobat.com File Storage | `bDisableADCFileStore` | N/A | Enabled → DWORD **1** |
+| Welcome Screen on Startup | `bShowWelcomeScreen` | N/A | Disabled → DWORD **0** |
+
+Also rewrote the `_Explain` text for all DISA STIG-relevant policies for clarity, matching Adobe's own ADML prose style.
+
+| ADMX File | Policies |
+|---|---:|
+| `AdobeDC.admx` | 560 Machine + 495 User = 1,055 |
+
+---
+
 ## v3.0 — 28 June 2026
 
 Major version bump (v2.x → v3.0): merging the Machine and User templates into one file is a structural break from every prior version, which shipped them as separate ADMX pairs.

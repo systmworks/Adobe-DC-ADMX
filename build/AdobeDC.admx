@@ -8028,6 +8028,62 @@
           </disabledValue>
         </policy>
 
+        <!-- Sharing and Features > Disable Acrobat.com File Storage (DC x64) -->
+        <!-- bDisableADCFileStore   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/Workflows.html -->
+        <policy class="Machine" displayName="$(string.bDisableADCFileStoreDC_x64)" explainText="$(string.bDisableADCFileStoreDC_x64_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cCloud"
+          name="bDisableADCFileStoreDC_x64" valueName="bDisableADCFileStore">
+          <parentCategory ref="SharingFeaturesCategoryDC_x64"/>
+          <supportedOn ref="SupportedAcrobatDC_x64"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+        </policy>
+
+        <!-- Sharing and Features > Disable Acrobat.com File Storage (DC x86) -->
+        <!-- bDisableADCFileStore   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/Workflows.html -->
+        <policy class="Machine" displayName="$(string.bDisableADCFileStoreDC_x86)" explainText="$(string.bDisableADCFileStoreDC_x86_Explain)" key="SOFTWARE\WOW6432Node\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cCloud"
+          name="bDisableADCFileStoreDC_x86" valueName="bDisableADCFileStore">
+          <parentCategory ref="SharingFeaturesCategoryDC_x86"/>
+          <supportedOn ref="SupportedAcrobatDC_x86"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+        </policy>
+
+        <!-- Sharing and Features > Disable Acrobat.com File Storage (Reader x64) -->
+        <!-- bDisableADCFileStore   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/Workflows.html -->
+        <policy class="Machine" displayName="$(string.bDisableADCFileStore_x64)" explainText="$(string.bDisableADCFileStore_x64_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cCloud"
+          name="bDisableADCFileStore_x64" valueName="bDisableADCFileStore">
+          <parentCategory ref="SharingFeaturesCategory_x64"/>
+          <supportedOn ref="SupportedReaderDC_x64"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+        </policy>
+
+        <!-- Sharing and Features > Disable Acrobat.com File Storage (Reader x86) -->
+        <!-- bDisableADCFileStore   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/Workflows.html -->
+        <policy class="Machine" displayName="$(string.bDisableADCFileStore_x86)" explainText="$(string.bDisableADCFileStore_x86_Explain)" key="SOFTWARE\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cCloud"
+          name="bDisableADCFileStore_x86" valueName="bDisableADCFileStore">
+          <parentCategory ref="SharingFeaturesCategory_x86"/>
+          <supportedOn ref="SupportedReaderDC_x86"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+        </policy>
+
         <!-- Sharing and Features > SharePoint Chrome Extension Previous State (x86) -->
         <!-- bPreviouslyEnabledSharePointInChromeExtn   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/AVGeneral.html#idkeyname_1_5126 -->
         <policy class="Machine" displayName="$(string.bPreviouslyEnabledSharePointInChromeExtn_x86)" explainText="$(string.bPreviouslyEnabledSharePointInChromeExtn_x86_Explain)" key="SOFTWARE\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
@@ -8252,6 +8308,62 @@
           </enabledValue>
           <disabledValue>
             <decimal value="1" />
+          </disabledValue>
+        </policy>
+
+        <!-- Startup and Experience > Welcome Screen on Startup (DC x64) -->
+        <!-- bShowWelcomeScreen   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/AVGeneral.html -->
+        <policy class="Machine" displayName="$(string.bShowWelcomeScreenDC_x64)" explainText="$(string.bShowWelcomeScreenDC_x64_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cWelcomeScreen"
+          name="bShowWelcomeScreenDC_x64" valueName="bShowWelcomeScreen">
+          <parentCategory ref="StartupExperienceCategoryDC_x64"/>
+          <supportedOn ref="SupportedAcrobatDC_x64"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+        </policy>
+
+        <!-- Startup and Experience > Welcome Screen on Startup (DC x86) -->
+        <!-- bShowWelcomeScreen   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/AVGeneral.html -->
+        <policy class="Machine" displayName="$(string.bShowWelcomeScreenDC_x86)" explainText="$(string.bShowWelcomeScreenDC_x86_Explain)" key="SOFTWARE\WOW6432Node\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cWelcomeScreen"
+          name="bShowWelcomeScreenDC_x86" valueName="bShowWelcomeScreen">
+          <parentCategory ref="StartupExperienceCategoryDC_x86"/>
+          <supportedOn ref="SupportedAcrobatDC_x86"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+        </policy>
+
+        <!-- Startup and Experience > Welcome Screen on Startup (Reader x64) -->
+        <!-- bShowWelcomeScreen   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/AVGeneral.html -->
+        <policy class="Machine" displayName="$(string.bShowWelcomeScreen_x64)" explainText="$(string.bShowWelcomeScreen_x64_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cWelcomeScreen"
+          name="bShowWelcomeScreen_x64" valueName="bShowWelcomeScreen">
+          <parentCategory ref="StartupExperienceCategory_x64"/>
+          <supportedOn ref="SupportedReaderDC_x64"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+        </policy>
+
+        <!-- Startup and Experience > Welcome Screen on Startup (Reader x86) -->
+        <!-- bShowWelcomeScreen   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/AVGeneral.html -->
+        <policy class="Machine" displayName="$(string.bShowWelcomeScreen_x86)" explainText="$(string.bShowWelcomeScreen_x86_Explain)" key="SOFTWARE\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cWelcomeScreen"
+          name="bShowWelcomeScreen_x86" valueName="bShowWelcomeScreen">
+          <parentCategory ref="StartupExperienceCategory_x86"/>
+          <supportedOn ref="SupportedReaderDC_x86"/>
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
           </disabledValue>
         </policy>
 

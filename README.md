@@ -15,13 +15,13 @@
 | [Screenshots](screenshots.md) | GPMC and Intune screenshots showing policy configuration |
 | [Changelog](changelog.md) | Settings changes across ADMX versions |
 
-These ADMX/ADML templates (v3.0) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. They define both machine-level (`HKLM`) and user-level (`HKCU`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, and upsell controls.
+These ADMX/ADML templates (v3.1) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. They define both machine-level (`HKLM`) and user-level (`HKCU`) policies covering cloud connectors, security hardening, trust and permissions, UI experience, updates, and upsell controls.
 
 The full policy set now ships as a single **combined** ``AdobeDC.admx``/ADML pair, covering Reader DC and Acrobat DC across both x86 and x64, plus all user-level policies:
 
 | ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
 |------|-------|----------|
-| `AdobeDC.admx` + ADML | Reader DC (x86 + x64) and Acrobat DC (x86 + x64), Computer and User scope | 552 Machine + 495 User = 1,047 |
+| `AdobeDC.admx` + ADML | Reader DC (x86 + x64) and Acrobat DC (x86 + x64), Computer and User scope | 560 Machine + 495 User = 1,055 |
 
 Deploy the one combined file — it covers every architecture, both products, and both Computer and User Configuration.
 
@@ -44,8 +44,8 @@ Deploy the one combined file — it covers every architecture, both products, an
 | Microsoft Purview (MIP) | Machine-level FeatureLockDown policies for Microsoft Purview Information Protection: MIP labelling lockdown, save-time policy checks, sovereign cloud selection, browser auth, double key encryption, and OS auth prompt control. | 6 | 6 |
 | Security: Execution & Protection | Sandbox modes (Protected Mode, AppContainer, Protected View), enhanced security, Flash content, and dangerous action blocking. | 16 | 16 |
 | Security: Trust & Permissions | Digital signatures, trusted locations, certificate trust, security handlers, and URL access policies. | 19 | 20 |
-| Sharing & Features | Adobe Sign, Send & Track, shared reviews, SharePoint/Office 365 integration, WebMail configuration, and cloud signature storage. | 19 | 21 |
-| Startup & Experience | Launch messages, notifications, First Time Experience, What's New, Home screen widgets, and feedback prompts. | 13 | 14 |
+| Sharing & Features | Adobe Sign, Send & Track, shared reviews, SharePoint/Office 365 integration, WebMail configuration, Acrobat.com file storage, and cloud signature storage. | 20 | 22 |
+| Startup & Experience | Launch messages, notifications, First Time Experience, Welcome screen, What's New, Home screen widgets, and feedback prompts. | 14 | 15 |
 | Updates & Desktop Integration | Product updater, Chrome extension, Explorer thumbnails, repair options, desktop UI, and deployment settings. | 19 | 21 |
 | Upsell | Upgrade prompts, trial purchase dialogs, promotional campaigns, App Center, and purchasable tool visibility. | 5 | 7 |
 
