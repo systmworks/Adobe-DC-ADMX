@@ -6,7 +6,7 @@ body:
     attributes:
       value: |
         Before filing, please check that:
-        - You are using the latest release from [Releases](https://github.com/virtitnerd/Adobe-DC-ADMX/releases)
+        - You are using the latest release from [Releases](https://github.com/systmworks/Adobe-DC-ADMX/releases)
         - The issue is not already tracked
 
   - type: input

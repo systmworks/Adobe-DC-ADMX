@@ -98,6 +98,6 @@ version-resolver:
   default: patch
 
 template: |
-  [![Downloads for this release](https://img.shields.io/github/downloads/virtitnerd/Adobe-DC-ADMX/$RESOLVED_VERSION/total.svg)](https://github.com/virtitnerd/Adobe-DC-ADMX/releases/$RESOLVED_VERSION)
+  [![Downloads for this release](https://img.shields.io/github/downloads/systmworks/Adobe-DC-ADMX/$RESOLVED_VERSION/total.svg)](https://github.com/systmworks/Adobe-DC-ADMX/releases/$RESOLVED_VERSION)
 
   $CHANGES
