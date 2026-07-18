@@ -2,13 +2,16 @@
 
 > I have spent many, many hours creating and testing this ADMX. If it helps you please consider buying me a Coffee :)
 
-# AdobeDC ADMX v1.0 — Combined Machine + User
+# AdobeDC ADMX v3.0 — Combined Machine + User
 
 18 July 2026
 
 **Current production release.** Supersedes the separate machine template (v2.21) and user template ([Adobe-DC-User-ADMX v1.10](https://github.com/systmworks/Adobe-DC-User-ADMX)) for new Group Policy and Intune deployments.
 
-## What is new in v1.0
+> [!WARNING]
+> **Breaking change.** v3.0 uses a new combined namespace (`Adobe.Policies.AdobeDC`) and a re-organised policy tree. **Intune ADMX policy backups / exports taken against v2.x (or the separate User ADMX v1.x) will not import into v3.0** — the `definitionId` GUIDs and category paths no longer match. To migrate an existing v2.x export, run [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1`](../Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1) to convert it to the v3.0 layout before re-importing. See [Migrating from v2.21 + User v1.10](#migrating-from-v221--user-v110).
+
+## What is new in v3.0
 
 | Area | Change |
 |------|--------|
@@ -20,20 +23,24 @@
 | **De-duplication** | `HKLM\SOFTWARE\Policies` settings emit once per product hive (no redundant `WOW6432Node\Policies` copies) |
 | **Sources** | Device v2.21 + User v1.10 |
 
-### Why combine?
+### Why v3.0?
 
-Previously, machine policies (`AdobeDC.admx`) and user preferences (`AdobeDC_User.admx`) lived in separate ADMX files and GitHub repos. v1.0 merges both into a single template so admins import one file, assign one Intune administrative template, and manage Computer Configuration and User Configuration from the same policy namespace.
+This release continues the machine ADMX version line (v2.21 → **v3.0**) and merges in the user preference policies that previously shipped as a separate template. The version number avoids confusion with the retired v2.x machine-only templates and the separate User ADMX repo line (v1.x).
+
+Previously, machine policies (`AdobeDC.admx`) and user preferences (`AdobeDC_User.admx`) lived in separate ADMX files and GitHub repos. v3.0 merges both into a single template so admins import one file, assign one Intune administrative template, and manage Computer Configuration and User Configuration from the same policy namespace.
 
 User policies still use `class="User"` and appear under User Configuration only. Machine policies use `class="Machine"`. The `(User)` suffix on user-scope display names is unchanged — it helps distinguish scope when both appear in the same Intune profile.
 
 ### Migrating from v2.21 + User v1.10
 
+Because v3.0 is a breaking change (see the warning above), existing Intune ADMX policy exports/backups cannot be re-imported as-is. Convert them first:
+
 | Step | Action |
 |------|--------|
-| 1 | Remove existing `Adobe.Policies.AdobeDC` **and** `Adobe.Policies.Adobe_User` ADMX imports from Intune (wait 2–5 minutes after deletion) |
-| 2 | Upload `AdobeDC.admx` and `en-US/AdobeDC.adml` from this folder |
-| 3 | Re-bind policy settings — `definitionId` GUIDs from old exports will not match the combined template |
-| 4 | For Intune export migration, see converted JSON examples in the repo wiki or use the migration tooling described in [Changelog (Device)](../Documentation/changelog-device.md) |
+| 1 | Convert any v2.x Intune export/backup JSON with [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1`](../Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1) — it remaps category paths, de-duplicates redundant Policies-branch entries, and clears stale `definitionId` GUIDs (outputs `*_combined-v3.0.json`) |
+| 2 | Remove existing `Adobe.Policies.AdobeDC` **and** `Adobe.Policies.Adobe_User` ADMX imports from Intune (wait 2–5 minutes after deletion) |
+| 3 | Upload `AdobeDC.admx` and `en-US/AdobeDC.adml` from this folder |
+| 4 | Import the converted `*_combined-v3.0.json` and re-bind / re-assign the policy settings |
 
 If you migrated Intune exports from v2.19, Reader-only x64 upsell settings already map to Unified x64 — they will bind after uploading this ADMX.
 
@@ -51,8 +58,8 @@ Published policy reference tables: [Documentation](../README.md).
 |-----------|-------|
 | Prefix | `AdobeDC` |
 | Namespace URI | `Adobe.Policies.AdobeDC` |
-| ADMX / ADML `revision` | 1.0 |
-| `minRequiredRevision` (`resources`) | 1.0 |
+| ADMX / ADML `revision` | 3.0 |
+| `minRequiredRevision` (`resources`) | 3.0 |
 
 ## Intune upload
 

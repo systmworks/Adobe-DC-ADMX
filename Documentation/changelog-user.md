@@ -9,7 +9,7 @@
 Settings changes across User ADMX versions. Only new, renamed, or reclassified settings are listed - internal script and formatting changes are omitted.
 
 ---
-## Combined v1.0 - 18 July 2026
+## Combined v3.0 - 18 July 2026
 
 Merged into the combined `AdobeDC.admx`/ADML bundle (see [Changelog (Device)](changelog-device.md)). User namespace `Adobe.Policies.Adobe_User` dropped; policies retain `(User)` suffix and `class="User"`.
 

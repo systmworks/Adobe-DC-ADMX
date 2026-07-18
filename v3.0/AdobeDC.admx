@@ -11,12 +11,12 @@
 <!-- ================================================================= -->
 
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="1.0" schemaVersion="1.0"
+  revision="3.0" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="1.0" />
+  <resources minRequiredRevision="3.0" />
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SupportedAcrobatReaderPolicies)" name="SupportedAcrobatReaderPolicies"/>

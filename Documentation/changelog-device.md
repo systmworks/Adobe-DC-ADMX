@@ -9,7 +9,7 @@
 Settings changes across ADMX versions. Only new, renamed, or reclassified settings are listed - internal script and formatting changes are omitted.
 
 ---
-## Combined v1.0 - 18 July 2026
+## Combined v3.0 - 18 July 2026
 
 **797 policies** (296 machine + 501 user) in a single `AdobeDC.admx`/ADML pair.
 

@@ -6,7 +6,7 @@
 
 # Reader DC Settings (User)
 
-Complete list of 243 Reader DC policies in the combined v1.0 ADMX templates, sorted by category.
+Complete list of 243 Reader DC policies in the combined v3.0 ADMX templates, sorted by category.
 
 ## Context, Tools & Search
 

@@ -6,7 +6,7 @@
 
 # Security Hardening (User)
 
-Recommended and optional security settings for the combined v1.0 ADMX templates (User scope).
+Recommended and optional security settings for the combined v3.0 ADMX templates (User scope).
 
 - ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) settings most organisations should apply.
 - ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) stronger hardening that may affect workflows.

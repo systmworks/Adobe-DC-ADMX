@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings (Device)
 
-Complete list of 153 Acrobat DC policies in the combined v1.0 ADMX templates, sorted by category.
+Complete list of 153 Acrobat DC policies in the combined v3.0 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
