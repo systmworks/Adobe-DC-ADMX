@@ -16,12 +16,14 @@
 | Area | Change |
 |------|--------|
 | **Packaging** | Single `AdobeDC.admx`/ADML pair for **Computer + User** configuration under one namespace |
-| **Policy inventory** | **797** policies — **296** machine + **501** user |
+| **Policy inventory** | **797** policies — **296** machine + **501** user (ADMX `<policy>` entries; see note below) |
 | **Namespace** | `Adobe.Policies.AdobeDC` (replaces separate `Adobe.Policies.Adobe_User` user namespace) |
 | **Computer tree** | **Adobe DC** → **Acrobat & Reader DC** / **Reader DC (32-bit)** / **Non-Policy Settings** |
 | **User tree** | **Adobe DC** → **Acrobat DC** / **Reader DC** — leaf display names retain ` (User)` suffix |
 | **De-duplication** | `HKLM\SOFTWARE\Policies` settings emit once per product hive (no redundant `WOW6432Node\Policies` copies) |
 | **Sources** | Device v2.21 + User v1.10 |
+
+**Policy count note:** **797** is the number of configurable policy entries in the ADMX (what Intune and GPMC show). **296** machine includes architecture-specific non-policy settings emitted separately for x64 and x86. There are **158** unique machine settings in the source reference (123 apply to both Reader and Acrobat). Product-scoped tables in [Documentation](../README.md) list **128** Reader + **153** Acrobat machine settings because shared settings appear under each product.
 
 ### Why v3.0?
 
@@ -49,6 +51,8 @@ If you migrated Intune exports from v2.19, Reader-only x64 upsell settings alrea
 | File | Scope | Policies |
 |------|-------|----------|
 | `AdobeDC.admx` + `en-US/AdobeDC.adml` | Machine + User | 797 (296 machine + 501 user) |
+
+*296 machine = ADMX policy entries; 158 unique machine settings; product-scoped reference tables total 128 Reader + 153 Acrobat.*
 
 Published policy reference tables: [Documentation](../README.md).
 
