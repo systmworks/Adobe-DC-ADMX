@@ -23,7 +23,7 @@ Registry paths follow [Adobe enterprise MIP guidance](https://helpx.adobe.com/en
 
 **Thanks** to community member **virtitnerd** for [issue #8](https://github.com/systmworks/Adobe-DC-ADMX/issues/8) (MIP/Purview support).
 
-Earlier release history: [Documentation/changelog.md](../Documentation/changelog.md).
+Earlier release history: [Documentation/changelog-device.md](../Documentation/changelog-device.md).
 
 ## Changes in v2.18 (relative to v2.17)
 

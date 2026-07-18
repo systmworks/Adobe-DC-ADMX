@@ -2,7 +2,7 @@
 
 > I have spent many, many hours creating and testing this ADMX. If it helps you please consider buying me a Coffee :)
 
-[<- Back to Documentation](README.md)
+[<- Back to Documentation](../README.md)
 
 # Changelog (User)
 
@@ -25,7 +25,7 @@ Every policy ADML display string gains ` (User)` (e.g. `Show Splash Screen` → 
 
 Same namespace, files, registry keys, and ADMX `name` attributes as v1.9. Validated Intune import after delete-and-reupload workflow.
 
-See [readme in v1.10 (User)](README.md)/readme.md).
+See [readme in v1.10 (User)](https://github.com/systmworks/Adobe-DC-User-ADMX/blob/main/v1.10%20(User)/readme.md).
 
 | ADMX File | Policies |
 |---|---:|
@@ -43,7 +43,7 @@ Category folders restructured to **`Adobe (User)`** → **`Acrobat DC`** / **`Re
 
 ADML strings are sanitized for Intune (no bare `http://` literals in policy text; empty explain strings get a fallback). Leaf display names have no scope suffix (use v1.10 for `(User)` on all settings).
 
-See [readme in v1.9 (User)](README.md)/readme.md).
+See [readme in v1.9 (User)](https://github.com/systmworks/Adobe-DC-User-ADMX/blob/main/v1.9%20(User)/readme.md).
 
 | ADMX File | Policies |
 |---|---:|
@@ -72,7 +72,7 @@ See [readme in v1.9 (User)](README.md)/readme.md).
 
 *Thanks to **[@virtitnerd](https://github.com/virtitnerd)** for [PR #9](https://github.com/systmworks/Adobe-DC-ADMX/pull/9) on the Computer ADMX repo.*
 
-See [readme in v1.8 (User)](README.md)/readme.md).
+See [readme in v1.8 (User)](https://github.com/systmworks/Adobe-DC-User-ADMX/blob/main/v1.8%20(User)/readme.md).
 
 | ADMX File | Policies |
 |---|---:|
@@ -90,7 +90,7 @@ All user-scope policies now use `class="User"` instead of `class="Both"`. Earlie
 
 *Thanks to **[@virtitnerd](https://github.com/virtitnerd)** for identifying this during review of [PR #9](https://github.com/systmworks/Adobe-DC-ADMX/pull/9) on the Computer ADMX repo.*
 
-See [readme in v1.7 (User)](README.md)/readme.md).
+See [readme in v1.7 (User)](https://github.com/systmworks/Adobe-DC-User-ADMX/blob/main/v1.7%20(User)/readme.md).
 
 | ADMX File | Policies |
 |---|---:|
@@ -137,7 +137,7 @@ Adobe PrefRef labels these as version 10.x; community verification on current DC
 
 *Thanks to **[@virtitnerd](https://github.com/virtitnerd)** for [issue #8](https://github.com/systmworks/Adobe-DC-ADMX/issues/8). This release covers the **HKCU `MicrosoftAIP`** slice of that request only. HKLM `FeatureLockDown` MIP lockdown policies (`bMIPLabelling`, `bMIPCheckPolicyOnDocSave`, `iMIPCloud`, `bMIPExternalAuthAdmin`, `bEnableDKEAdmin`, `bSilentAuth`) remain in scope for the **Computer ADMX** repo.*
 
-See [readme in v1.6 (User)](README.md)/readme.md).
+See [readme in v1.6 (User)](https://github.com/systmworks/Adobe-DC-User-ADMX/blob/main/v1.6%20(User)/readme.md).
 
 | ADMX File | Policies |
 |---|---:|
@@ -151,7 +151,7 @@ See [readme in v1.6 (User)](README.md)/readme.md).
 
 *Thanks to **[@raschle](https://github.com/raschle)** for [PR #1](https://github.com/systmworks/Adobe-DC-User-ADMX/pull/1) identifying the WS2019 GPMC load failure.*
 
-See [readme in v1.5 (User)](README.md)/readme.md).
+See [readme in v1.5 (User)](https://github.com/systmworks/Adobe-DC-User-ADMX/blob/main/v1.5%20(User)/readme.md).
 
 ---
 
@@ -159,6 +159,6 @@ See [readme in v1.5 (User)](README.md)/readme.md).
 
 **No policy inventory change** (484 policies). Revision metadata aligned to **1.4** across ADMX, ADML, and `minRequiredRevision` for Group Policy and Intune consistency.
 
-See [readme in v1.4 (User)](README.md)/readme.md).
+See [readme in v1.4 (User)](https://github.com/systmworks/Adobe-DC-User-ADMX/blob/main/v1.4%20(User)/readme.md).
 
 **Sharing & responsibility** - Built for the community, shared with good intentions. Use at your own risk. The author accepts no responsibility for any outcomes resulting from the use of these files. Always verify registry paths and values, and test in a safe environment first. If you find an issue or have a suggestion, contributions are welcome.

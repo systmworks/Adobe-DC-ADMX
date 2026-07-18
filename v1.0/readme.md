@@ -43,7 +43,7 @@ If you migrated Intune exports from v2.19, Reader-only x64 upsell settings alrea
 |------|-------|----------|
 | `AdobeDC.admx` + `en-US/AdobeDC.adml` | Machine + User | 797 (296 machine + 501 user) |
 
-Published policy reference tables: [Documentation](../Documentation/README.md).
+Published policy reference tables: [Documentation](../README.md).
 
 ## Namespace
 

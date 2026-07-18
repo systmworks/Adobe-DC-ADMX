@@ -2,7 +2,7 @@
 
 > I have spent many, many hours creating and testing this ADMX. If it helps you please consider buying me a Coffee :)
 
-[<- Back to Documentation](README.md)
+[<- Back to Documentation](../README.md)
 
 # Reduce Nags & Upsells (Device)
 
