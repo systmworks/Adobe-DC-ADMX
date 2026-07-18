@@ -1,0 +1,187 @@
+[
+  {
+    "valueName": "bShowMsgAtLaunch",
+    "scope": "Both",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bAllowUserToChangeMsgPrefs",
+    "scope": "Both",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bToggleNotifications",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bToggleFTE",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bEnableBellButton",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bToggleShareFeedback",
+    "scope": "Both",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bToggleToDoList",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bToggleNotificationToasts",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bTogglePDFOwnershipToasts",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bToggleToDoTiles",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bWhatsNewExp",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bToggleDCAppCenter",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bLimitPromptsFeatureKey",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bFindMoreWorkflowsOnline",
+    "scope": "Both",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bFindMoreCustomizationsOnline",
+    "scope": "Both",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bEnableContextualTips",
+    "scope": "Both",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "iDisablePromptForUpgrade",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bDontShowMsgWhenViewingDoc",
+    "scope": "Both",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bAcroSuppressUpsell",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bReaderRetentionExperiment",
+    "scope": "Reader",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bShowRhpToolSearch",
+    "scope": "Reader",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bEnableAcrobatPromptForDocOpen",
+    "scope": "Reader",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bIsSCReducedModeEnforcedEx",
+    "scope": "Acrobat",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bToggleBillingIssue",
+    "scope": "Acrobat",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bToggleSophiaWebInfra",
+    "scope": "Acrobat",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bMerchandizingEnabled",
+    "scope": "Acrobat",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bEnableTrialistLaunchCard",
+    "scope": "Acrobat",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bEnableReviewPromote",
+    "scope": "Acrobat",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bCrashReporterEnabled",
+    "scope": "Acrobat",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bUpdater_FeatureLockDown",
+    "scope": "Both",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "Disable_Repair",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "DisableMaintenance",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bEnableAV2Enterprise",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "PatchCleanFlag",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bToggleManageSign",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bDisablePDFHandlerSwitching",
+    "scope": "Both",
+    "recommendedDword": 1
+  },
+  {
+    "valueName": "bShowScanTabInHomeView",
+    "scope": "Both",
+    "recommendedDword": 0
+  }
+]

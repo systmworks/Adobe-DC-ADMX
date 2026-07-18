@@ -1,0 +1,248 @@
+[
+  {
+    "valueName": "bEnhancedSecurityInBrowser",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bEnhancedSecurityStandalone",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bEnable3D",
+    "scope": "Both",
+    "hardenedDword": 0,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bDisableJavaScript",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bEnableFlash",
+    "scope": "Both",
+    "hardenedDword": 0,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "iUnlistedAttachmentTypePerm",
+    "scope": "Both",
+    "hardenedDword": 0,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "iFileAttachmentPerms",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bDisablePDFRedirectionActions",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "iUnknownURLPerms",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bEnableGentech",
+    "scope": "Both",
+    "hardenedDword": 0,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bProtectedMode",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bEnableProtectedModeAppContainer",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "iProtectedView",
+    "scope": "Acrobat",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bDisableOSTrustedSites",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Optional"
+  },
+  {
+    "valueName": "bDisableTrustedFolders",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Optional"
+  },
+  {
+    "valueName": "bDisableTrustedSites",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Optional"
+  },
+  {
+    "valueName": "BlockEMFParsing",
+    "scope": "Acrobat",
+    "hardenedDword": 1,
+    "recommendation": "Optional"
+  },
+  {
+    "valueName": "BlockXPSParsing",
+    "scope": "Acrobat",
+    "hardenedDword": 1,
+    "recommendation": "Optional"
+  },
+  {
+    "valueName": "bEnableCloudPoweredSearch",
+    "scope": "Acrobat",
+    "hardenedDword": 0,
+    "recommendation": "Optional"
+  },
+  {
+    "valueName": "bEnableCloudPoweredSearchTokenCaching",
+    "scope": "Acrobat",
+    "hardenedDword": 0,
+    "recommendation": "Optional"
+  },
+  {
+    "valueName": "bToggleWebConnectors",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bBoxConnectorEnabled",
+    "scope": "Both",
+    "hardenedDword": 0,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bDropboxConnectorEnabled",
+    "scope": "Both",
+    "hardenedDword": 0,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bGoogleDriveConnectorEnabled",
+    "scope": "Both",
+    "hardenedDword": 0,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bOneDriveConnectorEnabled",
+    "scope": "Both",
+    "hardenedDword": 0,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bAllowPasswordSaving",
+    "scope": "Both",
+    "hardenedDword": 0,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bToggleDocumentCloud",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bToggleAdobeDocumentServices",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bTogglePrefsSync",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bUpdater",
+    "scope": "Both",
+    "hardenedDword": 0,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bAdobeSendPluginToggle",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bDisableSharePointFeatures",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bDisableWebmail",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bToggleAdobeSign",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Optional"
+  },
+  {
+    "valueName": "bToggleFillSign",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Optional"
+  },
+  {
+    "valueName": "bToggleSendAndTrack",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Optional"
+  },
+  {
+    "valueName": "bToggleAdobeReview",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Optional"
+  },
+  {
+    "valueName": "bToggleFSSSignatureSaving",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Optional"
+  },
+  {
+    "valueName": "bDisableADCFileStore",
+    "scope": "Acrobat",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bShowWelcomeScreen",
+    "scope": "Both",
+    "hardenedDword": 0,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bUsageMeasurement",
+    "scope": "Both",
+    "hardenedDword": 0,
+    "recommendation": "Optional"
+  }
+]

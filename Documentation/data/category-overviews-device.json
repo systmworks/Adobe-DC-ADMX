@@ -1,0 +1,12 @@
+{
+  "Cloud & Connectors": "Cloud storage connectors (Box, Dropbox, Google Drive, OneDrive), Document Cloud services, preferences sync, generative AI, and sign-in controls.",
+  "Context, Tools & Search": "UI toolbars, context menus, search features, Modern Viewer, tool shortcuts, and editing mode settings.",
+  "Documents, Editing & Accessibility": "PDF creation, editing, form handling, accessibility tagging, and document conversion controls.",
+  "Microsoft Purview (MIP)": "Machine-level FeatureLockDown policies for Microsoft Purview Information Protection: MIP labelling lockdown, save-time policy checks, sovereign cloud selection, browser auth, double key encryption, and OS auth prompt control.",
+  "Security: Execution & Protection": "Sandbox modes (Protected Mode, AppContainer, Protected View), enhanced security, Flash content, and dangerous action blocking.",
+  "Security: Trust & Permissions": "Digital signatures, trusted locations, certificate trust, security handlers, and URL access policies.",
+  "Sharing & Features": "Adobe Sign, Send & Track, shared reviews, SharePoint/Office 365 integration, WebMail configuration, and cloud signature storage.",
+  "Startup & Experience": "Launch messages, notifications, First Time Experience, What's New, Home screen widgets, and feedback prompts.",
+  "Updates & Desktop Integration": "Product updater, Chrome extension, Explorer thumbnails, repair options, desktop UI, and deployment settings.",
+  "Upsell": "Upgrade prompts, trial purchase dialogs, promotional campaigns, App Center, and purchasable tool visibility."
+}

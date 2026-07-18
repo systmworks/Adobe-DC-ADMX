@@ -1,0 +1,11 @@
+{
+  "Context, Tools & Search": "Cursor and selection tools, hand-tool behavior, filename-as-title, recent files, Modern Viewer/HUD, search, and workflow UI preferences under HKCU.",
+  "Documents, Editing & Accessibility": "Page display, zoom and layout defaults, rendering and fonts, commenting, forms, measurement, accessibility color replacement, and editing-related user preferences.",
+  "Microsoft Purview (MIP)": "Per-user Microsoft Purview Information Protection (MIP) preferences under HKCU MicrosoftAIP, including document message bar visibility, policy authentication, and debug logging.",
+  "Security: Execution & Protection": "User-level execution controls such as 3D/multimedia trust, JavaScript debugger and menu behavior, FIPS mode, and related HKCU security execution settings.",
+  "Security: Trust & Permissions": "Digital signatures, certificate and timestamp validation, OCSP/CRL behavior, trust-manager URL permissions, and other HKCU signing and trust preferences.",
+  "Sharing & Features": "Collaboration, Send & Track, shared reviews, cloud sharing hooks, and related feature toggles stored as per-user preferences.",
+  "Startup & Experience": "Splash screen, launch alerts, onboarding and What's New dialogs, home-screen widgets, notifications, and first-run experience controls.",
+  "Updates & Desktop Integration": "Product updater behavior, browser and Fast Web View integration, background download, thumbnails/shell integration, and desktop UI preferences.",
+  "Upsell": "Upgrade prompts, trial purchase dialogs, promotional surfaces, App Center visibility, and purchasable-tool upsell controls."
+}
