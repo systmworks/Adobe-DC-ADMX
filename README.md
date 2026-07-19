@@ -6,6 +6,13 @@
 
 Detailed policy reference pages, changelogs, and curated guides live under [Documentation/](Documentation/).
 
+> [!WARNING]
+> **v3.0 is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from v2.x (or User ADMX v1.x) will not import into v3.0**.
+>
+> Convert them first with [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1`](Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1), then re-import.
+>
+> See the [v3.0 readme](v3.0/readme.md) for migration steps.
+
 ## Quick Links
 
 | ![Page](https://img.shields.io/badge/Page-316dca?style=flat-square) | ![Description](https://img.shields.io/badge/Description-316dca?style=flat-square) |
@@ -24,9 +31,6 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 | [License](LICENSE.md) | CC BY-SA 4.0 license |
 
 These ADMX/ADML templates (v3.0) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
-
-> [!WARNING]
-> **v3.0 is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from v2.x (or User ADMX v1.x) will not import into v3.0**. Convert them first with [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1`](Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1), then re-import. See the [v3.0 readme](v3.0/readme.md) for migration steps.
 
 | ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
 |------|-------|----------|
