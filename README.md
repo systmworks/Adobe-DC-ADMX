@@ -9,7 +9,7 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 > [!WARNING]
 > **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.4**.
 >
-> Convert them first with [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV3.ps1), then re-import.
+> Convert them first with [`Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1), then re-import.
 >
 > See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1/v3.2/v3.3 to v3.4 keeps the same namespace and policy names for existing settings; v3.4 is the final classification pass (re-select affected User settings once). **v3.4+ releases are additive-only** - re-upload preserves existing Intune/GPO bindings.
 
@@ -25,7 +25,7 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 | [Security Hardening (User)](Documentation/security-hardening-user.md) | Recommended user security configurations |
 | [Reduce Nags & Upsells (Device)](Documentation/reduce-nags-device.md) | Device-scope nag and upsell controls |
 | [Reduce Nags & Upsells (User)](Documentation/reduce-nags-user.md) | User-scope nag and upsell controls |
-| [Built-in Attachment Permissions helper](PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1) | REG_BINARY deployment for `tBuiltInPermList` (not in ADMX) |
+| [Built-in Attachment Permissions helper](Helper_Scripts/Set-AdobeBuiltInPermList.ps1) | REG_BINARY deployment for `tBuiltInPermList` (not in ADMX) |
 | [Changelog (Combined)](Documentation/changelog.md) | Combined device + user version history |
 | [Changelog (Device, Retired)](Documentation/changelog-device-retired.md) | Legacy device-side ADMX version history |
 | [Changelog (User, Retired)](Documentation/changelog-user-retired.md) | Legacy user-side ADMX version history |

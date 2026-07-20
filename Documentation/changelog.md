@@ -17,7 +17,7 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 | Change | Detail |
 |---|---|
 | **Classification freeze** | Last breaking control-type pass. **2** user toggles reclassified to enum: `iAccessColorPolicy`, `iPageLayout`. **17** admin-deployable user REG_SZ prefs adopted as new **Text** policies (30 new ADMX entries across Acrobat+Reader): `tNoteFontName`, `tEditorFontName`, `tEditorPath`, `tEditorFontSize`, `tSignHash`, `aRSAPSSHashAlgorithm`, `tSAML_Name_Format`, `tSAML_Name_Qualifier`, `tDictionaryName`, `tBrokerLogfilePath`, `tLoadSettingsNAME`, `cReasons`, `tContactInfo`, `aDefDirectory`, `tFileFormat`, `tBaseFolderName`, `tLockboxId`. **23** REG_SZ runtime/app-internal prefs remain Skip. |
-| **Additive-only guardrail** | New `Documentation/data/policy-baseline.json` and `tools/Test-AdmxBackCompat.ps1` - fails the build if any published policy is removed or has a changed `class`, `valueName`, `key`, or `controlType`. Future releases may only add new policy names. |
+| **Additive-only guardrail** | New `Documentation/data/policy-baseline.json` records each published policy (`name`, `class`, `valueName`, `key`, `controlType`). From v3.4 onward, releases are additive-only - existing policy names and definitions are frozen; future releases may only add new policy names. |
 | **Import impact** | Same namespace and policy `name` attributes as v3.3 for all existing settings. **Partially binding-breaking for User scope:** `iAccessColorPolicy` and `iPageLayout` change from toggle to enum; **30** new text policies require initial selection. Re-select only affected settings after re-upload. **v3.4+ upgrades are additive-only** - existing bindings preserved. |
 
 ---
@@ -28,11 +28,11 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 
 | Change | Detail |
 |---|---|
-| **tBuiltInPermList helper** | New [`PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1`](../PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1) reads/writes the attachment permissions list as **REG_BINARY**. ADMX has no binary element type; v3.1 wrote unusable REG_SZ; v3.2 removed the policy. Script documents why; **`-ImportHex`** (bytes captured via `-ExportHex`) is the trusted deployment path; `-PermList` is best-effort UTF-8 only. |
+| **tBuiltInPermList helper** | New [`Helper_Scripts/Set-AdobeBuiltInPermList.ps1`](../Helper_Scripts/Set-AdobeBuiltInPermList.ps1) reads/writes the attachment permissions list as **REG_BINARY**. ADMX has no binary element type; v3.1 wrote unusable REG_SZ; v3.2 removed the policy. Script documents why; **`-ImportHex`** (bytes captured via `-ExportHex`) is the trusted deployment path; `-PermList` is best-effort UTF-8 only. |
 | **User text policies** | **5** curated REG_SZ prefs adopted from Skip: `tServerURL`, `xDefEnrollmentURL`, `tServer`, `tURL`, `tSAML_Assertion_Source`. |
 | **User control fixes** | `iMSStoreTrusted` enum -> **numeric bitmask** (0-255; documented 0/96/98). **8** app-internal toggles demoted to **Skip** (`iSens`, `iType`, `iAPIndex`, `iSHS`, `iSVS`, `iSendForReviewConfirm`, `iEULAAcceptanceTime`, **`iAccessBackgroundColor`** - RGB container keys, not a DWORD enum). |
 | **iNumSessionAV2** | Kept as **Toggle** (GoodSetting hardening manifest maps cleanly; numeric UX not worth manifest special-case). |
-| **Source CSV schema** | New optional `EnumValues`, `NumericSpec`, `TextSpec` JSON columns; existing enum/numeric maps migrated from `tools/AdobeDcPolicySpecs.ps1` with code fallback retained. Stale `RegValEnabled`/`RegValDisabled` cleared on Enum/Numeric rows and demoted Skip rows. Policy counts emitted to `Documentation/data/policy-counts.json`. |
+| **Control specs and counts** | Enum, numeric, and text control metadata refined; stale toggle value columns cleared on non-toggle rows. Live policy counts in `Documentation/data/policy-counts.json`. |
 | **Import impact** | Same namespace and policy `name` attributes as v3.2. **Partially binding-breaking for User scope:** new text policies, numeric control change for `iMSStoreTrusted`, and removed app-internal toggles - re-select affected settings in Intune/GPO after re-upload. |
 
 Historical ADMX/ADML files for this release: [GitHub Release v3.3](https://github.com/systmworks/Adobe-DC-ADMX/releases/tag/v3.3) (when published).
@@ -47,7 +47,6 @@ Historical ADMX/ADML files for this release: [GitHub Release v3.3](https://githu
 |---|---|
 | **User scope (control types)** | **29** user HKCU prefs reclassified from fake Enabled/Disabled toggles to **enum dropdowns**; **11** to **numeric spinners**. Examples: `irightPaneState`, `iURLPerms`, `iRXOPolicy` -> enum; `iMaxMRUCntToBeStored`, `iAutoSaveDocsInterval` -> numeric. Same policy `name` attributes; Intune/GPO presentation and `presentationValues` change - **re-select** affected settings after ADMX re-upload. |
 | **Removed (Device)** | **Built-in Attachment Permissions List** (`tBuiltInPermList`) - Adobe stores this as **REG_BINARY** (opaque app-serialized blob). ADMX cannot author `REG_BINARY`; the v3.1 text box wrote unusable `REG_SZ`. Deploy via GPP registry item / script / Intune custom OMA-URI using bytes captured from Acrobat Trust Manager. Not tied to any GitHub issue. |
-| **Source CSV** | New `ControlType` column (`Toggle` / `Enum` / `Numeric` / `Text` / `Skip`) in both machine and user PrefRef CSVs; enum/numeric value maps live in shared `tools/AdobeDcPolicySpecs.ps1`. |
 | **Docs** | Device reference pages now describe all machine enum choices (fixes pre-existing docs drift). README quick links: removed **ADMX + ADML** row; **Changelog (Combined)** moved below Reduce Nags. |
 | **Import impact** | Same namespace and policy `name` attributes as v3.1. **Partially binding-breaking for User scope:** toggle -> enum/numeric changes UI control type; migrated Intune exports may need `presentationValues` re-selected. Machine scope: only `tBuiltInPermList` removed (2 policies). |
 

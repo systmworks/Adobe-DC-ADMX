@@ -9,10 +9,10 @@
 **Current production release.** Supersedes the separate machine template (v2.21) and user template ([Adobe-DC-User-ADMX v1.10](https://github.com/systmworks/Adobe-DC-User-ADMX)) for new Group Policy and Intune deployments.
 
 > [!IMPORTANT]
-> **Stable upgrade path (v3.4+).** From v3.4 onward, releases are **additive-only**: existing policy `name` attributes, registry keys, value names, and control types are frozen. Re-uploading `AdobeDC.admx` + ADML preserves existing Intune/GPO bindings - only **new** settings need selection. Deleting the imported ADMX in Intune before re-upload is still required (platform limitation for custom ADMX); the template no longer forces re-selection of configured settings on upgrade. Enforced by `Test-AdmxBackCompat.ps1` against `Documentation/data/policy-baseline.json`.
+> **Stable upgrade path (v3.4+).** From v3.4 onward, releases are **additive-only**: existing policy `name` attributes, registry keys, value names, and control types are frozen. Re-uploading `AdobeDC.admx` + ADML preserves existing Intune/GPO bindings - only **new** settings need selection. Deleting the imported ADMX in Intune before re-upload is still required (platform limitation for custom ADMX); the template no longer forces re-selection of configured settings on upgrade. The frozen policy set is recorded in `Documentation/data/policy-baseline.json`.
 
 > [!WARNING]
-> **Breaking change when migrating from v2.x or User ADMX v1.x.** Combined v3.0+ uses namespace `Adobe.Policies.AdobeDC` and a re-organised policy tree. **Intune ADMX policy backups / exports taken against v2.x (or the separate User ADMX v1.x) will not import** - the `definitionId` GUIDs and category paths no longer match. To migrate an existing v2.x export, run [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](../Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV3.ps1) to convert it to the combined layout before re-importing. See [Migrating from v2.21 + User v1.10](#migrating-from-v221--user-v110).
+> **Breaking change when migrating from v2.x or User ADMX v1.x.** Combined v3.0+ uses namespace `Adobe.Policies.AdobeDC` and a re-organised policy tree. **Intune ADMX policy backups / exports taken against v2.x (or the separate User ADMX v1.x) will not import** - the `definitionId` GUIDs and category paths no longer match. To migrate an existing v2.x export, run [`Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](../Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1) to convert it to the combined layout before re-importing. See [Migrating from v2.21 + User v1.10](#migrating-from-v221--user-v110).
 
 > [!NOTE]
 > **Upgrading from combined v3.3 to v3.4** keeps the same namespace and policy `name` attributes for all v3.3 settings. Re-upload `AdobeDC.admx` + ADML. This is the **final classification pass**: **2** user toggles become enum dropdowns (`iAccessColorPolicy`, `iPageLayout`), and **17** new user text policies are added - re-select only those affected settings. Future v3.4+ releases are additive-only. See [v3.4 changelog](../Documentation/changelog.md#v34---20-july-2026).
@@ -44,7 +44,7 @@
 
 This is the **only** REG_BINARY setting in the template. ADMX/ADML has **no binary element type**, so it cannot be authored via Group Policy or Intune ADMX upload. Combined v3.1 incorrectly used a text box (REG_SZ); v3.2 removed the policy.
 
-Deploy the attachment allow/block list using [`PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1`](../PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1) (**`-ImportHex`** from `-ExportHex` is the trusted path; `-PermList` is best-effort), Group Policy Preferences registry items, or Intune custom OMA-URI with bytes captured from Acrobat Trust Manager.
+Deploy the attachment allow/block list using [`Helper_Scripts/Set-AdobeBuiltInPermList.ps1`](../Helper_Scripts/Set-AdobeBuiltInPermList.ps1) (**`-ImportHex`** from `-ExportHex` is the trusted path; `-PermList` is best-effort), Group Policy Preferences registry items, or Intune custom OMA-URI with bytes captured from Acrobat Trust Manager.
 
 ### Migrating from v2.21 + User v1.10
 
@@ -52,7 +52,7 @@ Because the initial combined release (v3.0) is a breaking change (see the warnin
 
 | Step | Action |
 |------|--------|
-| 1 | Convert any v2.x Intune export/backup JSON with [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](../Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV3.ps1) - it remaps category paths, de-duplicates redundant Policies-branch entries, and clears stale `definitionId` GUIDs (outputs `*_combined-v3.json`) |
+| 1 | Convert any v2.x Intune export/backup JSON with [`Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](../Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1) - it remaps category paths, de-duplicates redundant Policies-branch entries, and clears stale `definitionId` GUIDs (outputs `*_combined-v3.json`) |
 | 2 | Remove existing `Adobe.Policies.AdobeDC` **and** `Adobe.Policies.Adobe_User` ADMX imports from Intune (wait 2-5 minutes after deletion) |
 | 3 | Upload `AdobeDC.admx` and `en-US/AdobeDC.adml` from this folder |
 | 4 | Import the converted `*_combined-v3.json` and re-bind / re-assign the policy settings |

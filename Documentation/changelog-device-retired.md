@@ -206,7 +206,7 @@ Two settings added for both products, bringing the total to **262 policies** (14
 | Block JavaScript Execution | `bDisableJavaScript` | New - Both products. Blocks and locks JavaScript execution; prevents users from bypassing via privileged locations. Added to **Security Hardening** page as Recommended (Enabled). |
 | Accept EULA for Updater | `EULA` | New - Both products. Accepts the EULA on behalf of the user so the built-in updater can download product updates. |
 
-`bDisableJavaScript` was present in all v1.x ADMX versions but was inadvertently omitted when the v2.x series was generated from the lockable PrefRef CSV. The v1.3 ADMX had the enabledValue/disabledValue wired backwards (Enabled=0=allow); v2.13 corrects this to match the `bDisablePDFRedirectionActions` pattern (Enabled=1=block). `EULA` is a non-policy HKLM key under `AdobeViewer` that was present in v1.3 but dropped in v2.x; it has been re-added as an enterprise convenience for deployments that did not set `EULA_ACCEPT=YES` at install time.
+`bDisableJavaScript` was present in all v1.x ADMX versions but was inadvertently omitted when the v2.x series was generated from Adobe's lockable preference reference. The v1.3 ADMX had the enabledValue/disabledValue wired backwards (Enabled=0=allow); v2.13 corrects this to match the `bDisablePDFRedirectionActions` pattern (Enabled=1=block). `EULA` is a non-policy HKLM key under `AdobeViewer` that was present in v1.3 but dropped in v2.x; it has been re-added as an enterprise convenience for deployments that did not set `EULA_ACCEPT=YES` at install time.
 
 ---
 
@@ -343,7 +343,7 @@ Total: **247 policies** (135 Acrobat + 112 Reader).
 
 ## v2.1 - 7 April 2026
 
-Initial release. **247 policies** (135 Acrobat + 112 Reader) generated from 146 CSV rows covering 9 categories:
+Initial release. **247 policies** (135 Acrobat + 112 Reader) covering 9 categories:
 
 - Cloud & Connectors
 - Context, Tools & Search
