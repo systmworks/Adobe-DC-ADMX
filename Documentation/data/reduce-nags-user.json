@@ -1,116 +1,116 @@
-[
-  {
-    "valueName": "iNumSwitcherContextualToolTipAV2Shown",
-    "friendlyName": "New Look Coachmark",
-    "scope": "Both",
-    "recommendedDword": 0
-  },
-  {
-    "valueName": "bInfobubble",
-    "friendlyName": "Show Tool Pane Tips",
-    "scope": "Both",
-    "recommendedDword": 0
-  },
-  {
-    "valueName": "4406238",
-    "friendlyName": "Suppress PDF/UA Dialog",
-    "scope": "Acrobat",
-    "recommendedDword": 0
-  },
-  {
-    "valueName": "iNumSwitcherContextualToolTipAVShown",
-    "friendlyName": "Try New Coachmark",
-    "scope": "Both",
-    "recommendedDword": 0
-  },
-  {
-    "valueName": "iNumSessionAV2",
-    "friendlyName": "UI Switcher Sessions",
-    "scope": "Both",
-    "recommendedDword": 0
-  },
-  {
-    "valueName": "iaskFormsSelectEmailCLient",
-    "friendlyName": "Form Email Prompt",
-    "scope": "Both",
-    "recommendedDword": 0
-  },
-  {
-    "valueName": "bCreateFormDiscoveryShown",
-    "friendlyName": "Create Form Onboarding",
-    "scope": "Both",
-    "recommendedDword": 1
-  },
-  {
-    "valueName": "bEditDiscoveryShown",
-    "friendlyName": "Edit Onboarding",
-    "scope": "Both",
-    "recommendedDword": 1
-  },
-  {
-    "valueName": "bFillSignDiscoveryShown",
-    "friendlyName": "Fill & Sign Onboarding",
-    "scope": "Both",
-    "recommendedDword": 1
-  },
-  {
-    "valueName": "bHideHelpWelcome",
-    "friendlyName": "Hide Help Welcome",
-    "scope": "Both",
-    "recommendedDword": 1
-  },
-  {
-    "valueName": "bShownHomeOnboarding",
-    "friendlyName": "Home Onboarding",
-    "scope": "Both",
-    "recommendedDword": 1
-  },
-  {
-    "valueName": "bOrganizeDiscoveryShown",
-    "friendlyName": "Organize Onboarding",
-    "scope": "Both",
-    "recommendedDword": 1
-  },
-  {
-    "valueName": "bRedactDiscoveryShown",
-    "friendlyName": "Redaction Onboarding",
-    "scope": "Both",
-    "recommendedDword": 1
-  },
-  {
-    "valueName": "bDisplayAboutDialog",
-    "friendlyName": "Show About Dialog",
-    "scope": "Both",
-    "recommendedDword": 0
-  },
-  {
-    "valueName": "bLastShowStatus",
-    "friendlyName": "Show Getting Started",
-    "scope": "Both",
-    "recommendedDword": 0
-  },
-  {
-    "valueName": "bShownViewerOnboarding",
-    "friendlyName": "Viewer Onboarding",
-    "scope": "Both",
-    "recommendedDword": 1
-  },
-  {
-    "valueName": "bAcrobatAppInstalled",
-    "friendlyName": "Acrobat App Promo",
-    "scope": "Both",
-    "recommendedDword": 1
-  },
-  {
-    "valueName": "bScanAppInstalled",
-    "friendlyName": "Scan App Promo",
-    "scope": "Both",
-    "recommendedDword": 1
-  },
-  {
-    "valueName": "bShowTrialNag",
-    "friendlyName": "Show Trial Nag",
-    "scope": "Acrobat",
-    "recommendedDword": 0
-  }
+﻿[
+    {
+        "valueName":  "iNumSwitcherContextualToolTipAV2Shown",
+        "friendlyName":  "New Look Coachmark",
+        "scope":  "Both",
+        "recommendedDword":  0
+    },
+    {
+        "valueName":  "bInfobubble",
+        "friendlyName":  "Show Tool Pane Tips",
+        "scope":  "Both",
+        "recommendedDword":  0
+    },
+    {
+        "valueName":  "4406238",
+        "friendlyName":  "Suppress PDF/UA Dialog",
+        "scope":  "Acrobat",
+        "recommendedDword":  0
+    },
+    {
+        "valueName":  "iNumSwitcherContextualToolTipAVShown",
+        "friendlyName":  "Try New Coachmark",
+        "scope":  "Both",
+        "recommendedDword":  0
+    },
+    {
+        "valueName":  "iNumSessionAV2",
+        "friendlyName":  "UI Switcher Sessions",
+        "scope":  "Both",
+        "recommendedDword":  0
+    },
+    {
+        "valueName":  "iaskFormsSelectEmailCLient",
+        "friendlyName":  "Form Email Prompt",
+        "scope":  "Both",
+        "recommendedDword":  0
+    },
+    {
+        "valueName":  "bCreateFormDiscoveryShown",
+        "friendlyName":  "Create Form Onboarding",
+        "scope":  "Both",
+        "recommendedDword":  1
+    },
+    {
+        "valueName":  "bEditDiscoveryShown",
+        "friendlyName":  "Edit Onboarding",
+        "scope":  "Both",
+        "recommendedDword":  1
+    },
+    {
+        "valueName":  "bFillSignDiscoveryShown",
+        "friendlyName":  "Fill \u0026 Sign Onboarding",
+        "scope":  "Both",
+        "recommendedDword":  1
+    },
+    {
+        "valueName":  "bHideHelpWelcome",
+        "friendlyName":  "Hide Help Welcome",
+        "scope":  "Both",
+        "recommendedDword":  1
+    },
+    {
+        "valueName":  "bShownHomeOnboarding",
+        "friendlyName":  "Home Onboarding",
+        "scope":  "Both",
+        "recommendedDword":  1
+    },
+    {
+        "valueName":  "bOrganizeDiscoveryShown",
+        "friendlyName":  "Organize Onboarding",
+        "scope":  "Both",
+        "recommendedDword":  1
+    },
+    {
+        "valueName":  "bRedactDiscoveryShown",
+        "friendlyName":  "Redaction Onboarding",
+        "scope":  "Both",
+        "recommendedDword":  1
+    },
+    {
+        "valueName":  "bDisplayAboutDialog",
+        "friendlyName":  "Show About Dialog",
+        "scope":  "Both",
+        "recommendedDword":  0
+    },
+    {
+        "valueName":  "bLastShowStatus",
+        "friendlyName":  "Show Getting Started",
+        "scope":  "Both",
+        "recommendedDword":  0
+    },
+    {
+        "valueName":  "bShownViewerOnboarding",
+        "friendlyName":  "Viewer Onboarding",
+        "scope":  "Both",
+        "recommendedDword":  1
+    },
+    {
+        "valueName":  "bAcrobatAppInstalled",
+        "friendlyName":  "Acrobat App Promo",
+        "scope":  "Both",
+        "recommendedDword":  1
+    },
+    {
+        "valueName":  "bScanAppInstalled",
+        "friendlyName":  "Scan App Promo",
+        "scope":  "Both",
+        "recommendedDword":  1
+    },
+    {
+        "valueName":  "bShowTrialNag",
+        "friendlyName":  "Show Trial Nag",
+        "scope":  "Acrobat",
+        "recommendedDword":  0
+    }
 ]

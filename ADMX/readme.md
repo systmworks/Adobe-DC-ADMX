@@ -4,12 +4,15 @@
 
 # AdobeDC ADMX — Combined Machine + User
 
-**Current version: v3.2** (20 July 2026). Full version history: [Changelog (Combined)](../Documentation/changelog.md).
+**Current version: v3.3** (20 July 2026). Full version history: [Changelog (Combined)](../Documentation/changelog.md).
 
 **Current production release.** Supersedes the separate machine template (v2.21) and user template ([Adobe-DC-User-ADMX v1.10](https://github.com/systmworks/Adobe-DC-User-ADMX)) for new Group Policy and Intune deployments.
 
 > [!WARNING]
 > **Breaking change when migrating from v2.x or User ADMX v1.x.** Combined v3.0+ uses namespace `Adobe.Policies.AdobeDC` and a re-organised policy tree. **Intune ADMX policy backups / exports taken against v2.x (or the separate User ADMX v1.x) will not import** — the `definitionId` GUIDs and category paths no longer match. To migrate an existing v2.x export, run [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1`](../Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1) to convert it to the combined layout before re-importing. See [Migrating from v2.21 + User v1.10](#migrating-from-v221--user-v110).
+
+> [!NOTE]
+> **Upgrading from combined v3.2 to v3.3** keeps the same namespace and policy `name` attributes. Re-upload `AdobeDC.admx` + ADML. **5** new user text policies, enum/numeric control fixes, and **7** app-internal toggles removed — re-select affected User settings in Intune/GPO after re-upload. See [v3.3 changelog](../Documentation/changelog.md#v33---20-july-2026).
 
 > [!NOTE]
 > **Upgrading from combined v3.1 to v3.2** keeps the same namespace and policy `name` attributes. Re-upload `AdobeDC.admx` + ADML. **40 user-scope policies** change from toggles to enum dropdowns or numeric spinners — re-select those settings in Intune/GPO after re-upload. **Built-in Attachment Permissions List** (`tBuiltInPermList`) is **removed** (REG_BINARY; ADMX cannot author it). See [v3.2 changelog](../Documentation/changelog.md#v32---20-july-2026).
@@ -22,14 +25,20 @@
 | Area | Detail |
 |------|--------|
 | **Packaging** | Single `AdobeDC.admx`/ADML pair for **Computer + User** configuration under one namespace |
-| **Policy inventory** | **795** policies — **294** machine + **501** user (ADMX `<policy>` entries; see note below) |
+| **Policy inventory** | **791** policies — **294** machine + **497** user (ADMX `<policy>` entries; see note below) |
 | **Namespace** | `Adobe.Policies.AdobeDC` (replaces separate `Adobe.Policies.Adobe_User` user namespace) |
 | **Computer tree** | **Adobe DC** → **Acrobat & Reader DC** / **Reader DC (32-bit)** / **Non-Policy Settings** |
 | **User tree** | **Adobe DC** → **Acrobat DC** / **Reader DC** — leaf display names retain ` (User)` suffix |
 | **De-duplication** | `HKLM\SOFTWARE\Policies` settings emit once per product hive (no redundant `WOW6432Node\Policies` copies) |
 | **Sources** | Device v2.21 + User v1.10 |
 
-**Policy count note:** **795** is the number of configurable policy entries in the ADMX (what Intune and GPMC show). **294** machine includes architecture-specific non-policy settings emitted separately for x64 and x86. There are **157** unique machine settings in the source reference (123 apply to both Reader and Acrobat; `tBuiltInPermList` is excluded as REG_BINARY). Product-scoped tables in [Documentation](../README.md) list **128** Reader + **153** Acrobat machine settings because shared settings appear under each product.
+**Policy count note:** **791** is the number of configurable policy entries in the ADMX (what Intune and GPMC show). **294** machine includes architecture-specific non-policy settings emitted separately for x64 and x86. There are **157** unique machine settings in the source reference (123 apply to both Reader and Acrobat; `tBuiltInPermList` is excluded as REG_BINARY). Product-scoped tables in [Documentation](../README.md) list user and machine settings because shared settings appear under each product.
+
+### Built-in Attachment Permissions List (`tBuiltInPermList`)
+
+This is the **only** REG_BINARY setting in the template. ADMX/ADML has **no binary element type**, so it cannot be authored via Group Policy or Intune ADMX upload. Combined v3.1 incorrectly used a text box (REG_SZ); v3.2 removed the policy.
+
+Deploy the attachment allow/block list using [`PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1`](../PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1) (read/write REG_BINARY, export hex for OMA-URI), Group Policy Preferences registry items, or Intune custom OMA-URI with bytes captured from Acrobat Trust Manager.
 
 ### Migrating from v2.21 + User v1.10
 
@@ -48,7 +57,7 @@ If you migrated Intune exports from v2.19, Reader-only x64 upsell settings alrea
 
 | File | Scope | Policies |
 |------|-------|----------|
-| `AdobeDC.admx` + `en-US/AdobeDC.adml` | Machine + User | 795 (294 machine + 501 user) |
+| `AdobeDC.admx` + `en-US/AdobeDC.adml` | Machine + User | 791 (294 machine + 497 user) |
 
 *294 machine = ADMX policy entries; 157 unique machine settings; product-scoped reference tables total 128 Reader + 153 Acrobat.*
 
@@ -60,8 +69,8 @@ Published policy reference tables: [Documentation](../README.md).
 |-----------|-------|
 | Prefix | `AdobeDC` |
 | Namespace URI | `Adobe.Policies.AdobeDC` |
-| ADMX / ADML `revision` | 3.2 |
-| `minRequiredRevision` (`resources`) | 3.2 |
+| ADMX / ADML `revision` | 3.3 |
+| `minRequiredRevision` (`resources`) | 3.3 |
 
 ## Intune upload
 
@@ -69,7 +78,7 @@ Published policy reference tables: [Documentation](../README.md).
 2. Wait 2–5 minutes after deletion.
 3. Upload `AdobeDC.admx` and `en-US/AdobeDC.adml` together.
 4. Assign machine settings to a **device group**; assign user settings to a **user group** (or combine both in one profile — scope is determined by each policy's `class` attribute).
-5. After upgrading to v3.2, re-select **User** policies that changed from toggles to enum/numeric controls (see [v3.2 changelog](../Documentation/changelog.md#v32---20-july-2026)). After upgrading from v3.0 to v3.1, re-verify **Usage Measurement (legacy)** if configured — **Disabled** now correctly writes telemetry **off** (DWORD 0).
+5. After upgrading to v3.3, re-select **User** policies that changed (new text policies, enum/numeric fixes, removed app-internal toggles — see [v3.3 changelog](../Documentation/changelog.md#v33---20-july-2026)). After upgrading to v3.2, re-select toggle→enum/numeric User policies (see [v3.2 changelog](../Documentation/changelog.md#v32---20-july-2026)). After upgrading from v3.0 to v3.1, re-verify **Usage Measurement (legacy)** if configured — **Disabled** now correctly writes telemetry **off** (DWORD 0).
 
 ## Group Policy
 

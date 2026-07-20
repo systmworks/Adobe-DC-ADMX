@@ -7,11 +7,11 @@
 Detailed policy reference pages, changelogs, and curated guides live under [Documentation/](Documentation/).
 
 > [!WARNING]
-> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.2**.
+> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.3**.
 >
 > Convert them first with [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1`](Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1), then re-import.
 >
-> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1 to v3.2 keeps the same namespace and policy names; v3.2 reclassifies some **User** policies from toggles to enum/numeric controls (re-select those settings after ADMX re-upload).
+> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1/v3.2 to v3.3 keeps the same namespace and policy names; v3.2+ reclassifies some **User** policies from toggles to enum/numeric/text controls (re-select those settings after ADMX re-upload).
 
 ## Quick Links
 
@@ -25,17 +25,19 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 | [Security Hardening (User)](Documentation/security-hardening-user.md) | Recommended user security configurations |
 | [Reduce Nags & Upsells (Device)](Documentation/reduce-nags-device.md) | Device-scope nag and upsell controls |
 | [Reduce Nags & Upsells (User)](Documentation/reduce-nags-user.md) | User-scope nag and upsell controls |
+| [Built-in Attachment Permissions helper](PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1) | REG_BINARY deployment for `tBuiltInPermList` (not in ADMX) |
+| [User Skip text audit](Documentation/user-skip-text-audit.md) | v3.3 triage of skipped REG_SZ user prefs |
 | [Changelog (Combined)](Documentation/changelog.md) | Combined device + user version history |
 | [Changelog (Device, Retired)](Documentation/changelog-device-retired.md) | Legacy device-side ADMX version history |
 | [Changelog (User, Retired)](Documentation/changelog-user-retired.md) | Legacy user-side ADMX version history |
 | [Screenshots](Documentation/screenshots.md) | GPMC and Intune screenshots |
 | [License](LICENSE.md) | CC BY-SA 4.0 license |
 
-These ADMX/ADML templates (v3.2) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
+These ADMX/ADML templates (v3.3) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
 
 | ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
 |------|-------|----------|
-| `AdobeDC.admx` + ADML | **Adobe DC** (Computer + User) | 795 (294 machine + 501 user) |
+| `AdobeDC.admx` + ADML | **Adobe DC** (Computer + User) | 791 (294 machine + 497 user) |
 
 ### Computer Configuration tree
 
@@ -58,7 +60,7 @@ These ADMX/ADML templates (v3.2) provide Group Policy and Intune management of A
 
 ## Category Overview (Device)
 
-> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product, so Reader + Acrobat column totals are higher than the number of unique settings. The ADMX contains **294** machine policy entries (157 unique machine settings after removing non-ADMX `tBuiltInPermList`; architecture-specific non-policy settings are emitted separately for x64 and x86). Overall template: **294** machine + **501** user = **795** policy entries.
+> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product, so Reader + Acrobat column totals are higher than the number of unique settings. The ADMX contains **294** machine policy entries (157 unique machine settings after removing non-ADMX `tBuiltInPermList`; architecture-specific non-policy settings are emitted separately for x64 and x86). Overall template: **294** machine + **497** user = **791** policy entries.
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![Overview](https://img.shields.io/badge/Overview-316dca?style=flat-square) | ![Reader](https://img.shields.io/badge/Reader-316dca?style=flat-square) | ![Acrobat](https://img.shields.io/badge/Acrobat-316dca?style=flat-square) |
 |----------|----------|:------:|:-------:|
@@ -76,19 +78,19 @@ These ADMX/ADML templates (v3.2) provide Group Policy and Intune management of A
 
 ## Category Overview (User)
 
-> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product. The ADMX contains **501** user policy entries (243 Reader + 258 Acrobat in these tables).
+> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product. The ADMX contains **497** user policy entries.
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![Overview](https://img.shields.io/badge/Overview-316dca?style=flat-square) | ![Reader](https://img.shields.io/badge/Reader-316dca?style=flat-square) | ![Acrobat](https://img.shields.io/badge/Acrobat-316dca?style=flat-square) |
 |----------|----------|:------:|:-------:|
 | Context, Tools & Search | Cursor and selection tools, hand-tool behavior, filename-as-title, recent files, Modern Viewer/HUD, search, and workflow UI preferences under HKCU. | 19 | 22 |
-| Documents, Editing & Accessibility | Page display, zoom and layout defaults, rendering and fonts, commenting, forms, measurement, accessibility color replacement, and editing-related user preferences. | 86 | 89 |
+| Documents, Editing & Accessibility | Page display, zoom and layout defaults, rendering and fonts, commenting, forms, measurement, accessibility color replacement, and editing-related user preferences. | 84 | 87 |
 | Microsoft Purview (MIP) | Per-user Microsoft Purview Information Protection (MIP) preferences under HKCU MicrosoftAIP, including document message bar visibility, policy authentication, and debug logging. | 3 | 3 |
 | Security: Execution & Protection | User-level execution controls such as 3D/multimedia trust, JavaScript debugger and menu behavior, FIPS mode, and related HKCU security execution settings. | 8 | 13 |
-| Security: Trust & Permissions | Digital signatures, certificate and timestamp validation, OCSP/CRL behavior, trust-manager URL permissions, and other HKCU signing and trust preferences. | 76 | 77 |
-| Sharing & Features | Collaboration, Send & Track, shared reviews, cloud sharing hooks, and related feature toggles stored as per-user preferences. | 9 | 11 |
-| Startup & Experience | Splash screen, launch alerts, onboarding and What's New dialogs, home-screen widgets, notifications, and first-run experience controls. | 29 | 29 |
+| Security: Trust & Permissions | Digital signatures, certificate and timestamp validation, OCSP/CRL behavior, trust-manager URL permissions, and other HKCU signing and trust preferences. | 78 | 79 |
+| Sharing & Features | Collaboration, Send & Track, shared reviews, cloud sharing hooks, and related feature toggles stored as per-user preferences. | 8 | 10 |
+| Startup & Experience | Splash screen, launch alerts, onboarding and What's New dialogs, home-screen widgets, notifications, and first-run experience controls. | 28 | 28 |
 | Updates & Desktop Integration | Product updater behavior, browser and Fast Web View integration, background download, thumbnails/shell integration, and desktop UI preferences. | 11 | 11 |
 | Upsell | Upgrade prompts, trial purchase dialogs, promotional surfaces, App Center visibility, and purchasable-tool upsell controls. | 2 | 3 |
-| **Total** | | **243** | **258** |
+| **Total** | | **241** | **256** |
 
 **Sharing & responsibility** - Built for the community, shared with good intentions. Use at your own risk. The author accepts no responsibility for any outcomes resulting from the use of these files. Always verify registry paths and values, and test in a safe environment first. If you find an issue or have a suggestion, contributions are welcome.

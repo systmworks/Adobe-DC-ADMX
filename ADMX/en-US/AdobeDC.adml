@@ -11,10 +11,10 @@
 <!-- ================================================================= -->
 
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.2" schemaVersion="1.0"
+  revision="3.3" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
-  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.2)</displayName>
-  <description>ADMX v3.2 -- Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
+  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.3)</displayName>
+  <description>ADMX v3.3 -- Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
   <resources>
     <stringTable>
       <string id="SupportedAcrobatReaderPolicies">Adobe Acrobat and Reader DC</string>
@@ -977,6 +977,10 @@
       <string id="bAutoSetLayersDC_User_Explain">Specifies whether to allow the document's layer state to be set by user information.&#10;&#10;Possible values include: 0: Don't allow layer state to be set by user information. 1: Allow layer state to be set by user information.</string>
       <string id="iAccessBackgroundColorDC_User">Background Color (User)</string>
       <string id="iAccessBackgroundColorDC_User_Explain">Specifies the default document background color (accessibility feature)&#10;&#10;The key name is appended with (Blue|Green|Red|Space). Possible values include: Green text on black Yellow text on black White text on black Black text on white</string>
+      <string id="iAccessBackgroundColorDC_User_opt0">Green text on black</string>
+      <string id="iAccessBackgroundColorDC_User_opt1">Yellow text on black</string>
+      <string id="iAccessBackgroundColorDC_User_opt2">White text on black</string>
+      <string id="iAccessBackgroundColorDC_User_opt3">Black text on white</string>
       <string id="iPagesDC_User">Check Page Range (User)</string>
       <string id="iPagesDC_User_Explain">Toggles whether to check all pages of a document or a subset of pages when running an accessibility full check.&#10;&#10;Possible values include: 0: Don't check all pages. 1: Do check all pages.</string>
       <string id="benableDDRDC_User">ClearType Smoothing (User)</string>
@@ -993,10 +997,6 @@
       <string id="dNoteFontSizeDC_User_Explain">Sets the font size.&#10;&#10;The font is not embedded in the PDF; this preference merely controls the viewer's preference rather than the author's preference. Possible values include: 10: Font size. N/A: User specified.</string>
       <string id="iNoteOpacityDC_User">Comment Opacity (User)</string>
       <string id="iNoteOpacityDC_User_Explain">The opacity in percent of all comments.&#10;&#10;The number is entered in Hex. Possible values include: d99a: 85%. N/A: Any hex value representing 1-100%.</string>
-      <string id="iSensDC_User">Compare Sensitivity (User)</string>
-      <string id="iSensDC_User_Explain">Last-used compare documents sensitivity (for compare pages).</string>
-      <string id="iTypeDC_User">Compare Type (User)</string>
-      <string id="iTypeDC_User_Explain">Last-used compare documents type (pages/text/text+fonts).</string>
       <string id="bComplexScriptDC_User">Complex Script Support (User)</string>
       <string id="bComplexScriptDC_User_Explain">Specifies whether to enable support for writing direction switching (complex script).&#10;&#10;Possible values include: 0: Don't enable Writing Direction Switching. 1: Enable Writing Direction Switching.</string>
       <string id="bconfirmEBRMergeDC_User">Confirm Review Import (User)</string>
@@ -1238,10 +1238,6 @@
       <string id="iAutoAddLTVDC_User_opt2">Always add LTV information</string>
       <string id="bSavePasswordDC_User">Cache Server Password (User)</string>
       <string id="bSavePasswordDC_User_Explain">Indicates whether the password has been cached for this server.</string>
-      <string id="iSHSDC_User">Console H-Splitter (User)</string>
-      <string id="iSHSDC_User_Explain">Indicates (in pixels) the position of the horizontal window splitter.</string>
-      <string id="iSVSDC_User">Console V-Splitter (User)</string>
-      <string id="iSVSDC_User_Explain">Indicates (in pixels) the position of the vertical window splitter.</string>
       <string id="iMaxRevokeInfoCacheLifetimeDC_User">CRL Cache Lifetime (User)</string>
       <string id="iMaxRevokeInfoCacheLifetimeDC_User_Explain">Maximum lifetime in hours the cached CRL is used for revocation checking.&#10;&#10;iMaxRevokeInfoCacheLifetime is only used if the validation method is set to &quot;current time&quot;. Possible values include: The number of hours for which the cached CRL is valid.</string>
       <string id="bCustomPrefsCreatedDC_User">Custom Cert Prefs (User)</string>
@@ -1273,6 +1269,8 @@
       <string id="bSigAPStatusIconDisableDC_User_Explain">Controls whether the signature status icon is displayed in the signature appearance on the document.&#10;&#10;If true, status icon is not displayed regardless of signature status. This setting overrides iDisplayValidIcon and bShowWarningForChanges.</string>
       <string id="cDialogs_xSelHandlerDC_User">ID Dialog Position (User)</string>
       <string id="cDialogs_xSelHandlerDC_User_Explain">The last on-screen coordinates of a handler's digital ID selection dialog&#10;&#10;It is a subkey containing 4 keys: Top, Bottom, Left, and Right. This preference could be used by 3rd party handlers or by someone invoking a non-signing digital ID selection dialog via JavaScript.</string>
+      <string id="xDefEnrollmentURLDC_User">ID Enrollment URL (User)</string>
+      <string id="xDefEnrollmentURLDC_User_Explain">The destination URL when the user selects &quot;Enroll at an online CA&quot; while adding a new digital ID.</string>
       <string id="bIgnoreNextUpdateDC_User">Ignore OCSP NextUpdate (User)</string>
       <string id="bIgnoreNextUpdateDC_User_Explain">Specifies whether to use embedded OCSP responses when nextUpdate is not present and the validation time is less than the greater of thisUpdate or producedAt time plus the value of iMaxClockSkew .&#10;&#10;For 10.1 and later, this preference is used along with iMaxClockSkew to determine whether or not embedded OCSP responses are actually used for signature validation. For details, see the subfeature description above. This behavior is designed to support Acrobat's long term validation feature and allows validating a signature with embedded responses that were valid at signing time. Possible values include: 0: iMaxClockSkew is applied to thisUpdate on both sides of the validation time, i.e. thisUpdate - iMaxClockSkew ( validation time ( checkTime + iMaxClockSkew where checkTime is the later of the producedAt and thisUpdate. When true, iMaxClockSkew is applied to thisUpdate only before the validation time: thisUpdate - iMaxClockSkew ( validation time. 1: If there is no nextUpdate, then we accept the OCSP response indefinitely (we do not check for if the validation time is too late) and don't check whether validation time is ( than checkTime)</string>
       <string id="iImportAddressBookDC_User">Import Address Book (User)</string>
@@ -1284,8 +1282,6 @@
       <string id="bCertStoreImportEnableDC_User_Explain">If true, then users can import from MSCAPI certificate stores into their Trusted Identity Manager.</string>
       <string id="bDontRemoveOverlappingDC_User">Keep Hidden Content (User)</string>
       <string id="bDontRemoveOverlappingDC_User_Explain">Specifies whether to remove hidden content when sanitizing a document.&#10;&#10;During sanitization workflows, the app automatically rasterizes the document if overlapping content exists. This can result in a large file size increase. Disable this feature to avoid extremely large files. 0: Remove hidden (overlapping) content. 1: Do not remove hidden content when sanitizing a document.</string>
-      <string id="iAPIndexDC_User">Last Sig Appearance (User)</string>
-      <string id="iAPIndexDC_User_Explain">Remembers the last used signature appearance index.</string>
       <string id="bLoadSettingsFromURLAdobeDC_User">Load Security Settings from Server (Adobe Certificates) (User)</string>
       <string id="bLoadSettingsFromURLAdobeDC_User_Explain">Controls whether trust anchors are periodically downloaded from Adobe's certificate server.&#10;&#10;0: Don't load settings from an URL. 1: Do load settings from an URL.&#10;&#10;Security Reference: STIG ARDC-CN-000335 (V-213191) Low; STIG AADC-CN-001320 (V-213138) Low</string>
       <string id="bLoadSettingsFromURLEUTLDC_User">Load Security Settings from Server (European Certificates) (User)</string>
@@ -1343,12 +1339,16 @@
       <string id="iRSAPSSSaltLengthDC_User_Explain">Specifies the Salt Length the RSA-PSS algorithm uses.&#10;&#10;When setting the salt length, you must assure the default base is hexadecimal. Either change the base to decimal or input its hex value. For example, if the salt length decimal value is 32, then set the hex value to 20.</string>
       <string id="bEnableRSAPSSSigningDC_User">RSA-PSS Signing (User)</string>
       <string id="bEnableRSAPSSSigningDC_User_Explain">Specifies whether a signature should be created with the RSA-PSS algorithm.&#10;&#10;Possible values include: 0: Do not sign with the RSA-PSS algorithm. 1: Use the RSA-PSS algorithm.</string>
+      <string id="tSAML_Assertion_SourceDC_User">SAML Auth Server URL (User)</string>
+      <string id="tSAML_Assertion_SourceDC_User_Explain">Holds the URL of the authentication server from which the SAML assertion stored in cSAML_Assertion was obtained.</string>
       <string id="iDigSigSaveAsCertifiedDC_User">Save Certified Alert (User)</string>
       <string id="iDigSigSaveAsCertifiedDC_User_Explain">&#10;&#10;Possible values include: 0: Don't show an alert. 1: Do show an alert.</string>
       <string id="bSecureOpenFileDC_User">Secure Open Attachments (User)</string>
       <string id="bSecureOpenFileDC_User_Explain">Specifies whether to allow opening attachments which are not PDF.&#10;&#10;When this pref is set to true, then Acrobat only allows opening PDF attachments. bAllowOpenFile, bSecureOpenFile, and tBuiltInPermsList work in tandem: If any of these are set to prevent the opening of an attachment, then the attachment type won't open (or all attachments depending on the setting). Possible values include: 0: Allow opening attachments with filetype other than PDF. 1: Don't open non-PDF attachments.</string>
       <string id="bSelfSignCertGenDC_User">Self-Sign ID Create (User)</string>
       <string id="bSelfSignCertGenDC_User_Explain">Specifies whether or not the Create a self-signed ID option in Add ID workflows is available.&#10;&#10;Prevents users from creating a self-signed digital ID. Note that for products released after June 2016, disabling a user's ability to create a self-signed digital ID requires setting both bSelfSignCertGen and bEnableCEFBasedUI to 0. Possible values include: 0: Don't allow creating self-signed digital IDs. 1: Allow self-signed digital IDs.</string>
+      <string id="tServerURLDC_User">Server URL (User)</string>
+      <string id="tServerURLDC_User_Explain">The default server URL.</string>
       <string id="bShowAllChainsDC_User">Show All Chains (User)</string>
       <string id="bShowAllChainsDC_User_Explain">Specifies whether to show all chains in the Certificate Viewer.&#10;&#10;If true, the Certificate Viewer shows all the chains; otherwise, it shows only the trusted chain. If there are no trusted chains, then all the chains are shown and this preference is ignored.</string>
       <string id="iShowDocumentWarningsDC_User">Show Document Warnings (User)</string>
@@ -1389,6 +1389,8 @@
       <string id="iHashAlgoDC_User_opt2">SHA256</string>
       <string id="iSizeDC_User">Timestamp Sig Size (User)</string>
       <string id="iSizeDC_User_Explain">ASPKI requires the signature property to predict the size (in bytes) so that enough space can be set aside.</string>
+      <string id="tServerDC_User">Tracker Server URL (User)</string>
+      <string id="tServerDC_User_Explain">The DNS server name (i.e. alrms.adobe.com).&#10;&#10;There is no scheme specified.</string>
       <string id="bTrueTypeFontPDFSigQWarnDC_User">TrueType Font Warn (User)</string>
       <string id="bTrueTypeFontPDFSigQWarnDC_User_Explain">Turns on and off warnings about True Type fonts.</string>
       <string id="bTrustCertifiedDocumentsDC_User">Trust Certified Docs (User)</string>
@@ -1402,6 +1404,8 @@
       <string id="iURLPermsDC_User_opt0">Custom Setting (uses tHostPerms URL list)</string>
       <string id="iURLPermsDC_User_opt1">Block all websites</string>
       <string id="iURLPermsDC_User_opt2">Allow all websites</string>
+      <string id="tURLDC_User">Url Of The Roaming Id (User)</string>
+      <string id="tURLDC_User_Explain">The URL of the Roaming ID server.</string>
       <string id="iUseArchivedRevInfoDC_User">Use Archived Rev Info (User)</string>
       <string id="iUseArchivedRevInfoDC_User_Explain">Indicates whether the revocation information archived with the signature is used for revocation checking.&#10;&#10;Allowable values include: 0: Never (always require fresh revocation information to be successfully downloaded). 1: Deprecated. Do not use. 2: Always use (if embedded revocation information is available do not download fresh revocation information).</string>
       <string id="iUseArchivedRevInfoDC_User_opt0">Never (require fresh revocation download)</string>
@@ -1412,10 +1416,7 @@
       <string id="iValidityModelDC_User_opt0">PKIX shell model (default)</string>
       <string id="iValidityModelDC_User_opt1">Chain validity model</string>
       <string id="iMSStoreTrustedDC_User">Windows Store Trust (User)</string>
-      <string id="iMSStoreTrustedDC_User_Explain">Controls whether or not certificates in the Windows Certificate Store are trusted for signing and certifying.&#10;&#10;To lock this setting, use bMSStoreTrusted. Allowable values include: 0x00: No checkbox selected. 0x60: Validating Signatures. 0x62: Validating Certified Documents and Signatures. Note that this setting disables the Validating Signatures checkbox because it also controls non-certified signatures and users should not be able to uncheck that checkbox.</string>
-      <string id="iMSStoreTrustedDC_User_opt0">No checkbox selected (0x00)</string>
-      <string id="iMSStoreTrustedDC_User_opt1">Validating Signatures (0x60)</string>
-      <string id="iMSStoreTrustedDC_User_opt2">Validating Certified Documents and Signatures (0x62)</string>
+      <string id="iMSStoreTrustedDC_User_Explain">Controls whether or not certificates in the Windows Certificate Store are trusted for signing and certifying.&#10;&#10;To lock this setting, use bMSStoreTrusted. Allowable values include: 0x00: No checkbox selected. 0x60: Validating Signatures. 0x62: Validating Certified Documents and Signatures. Note that this setting disables the Validating Signatures checkbox because it also controls non-certified signatures and users should not be able to uncheck that checkbox.&#10;&#10;Windows Store trust is a hex bitmask stored as a DWORD. Documented values: 0x00 (0) = no trust; 0x60 (96) = validating signatures; 0x62 (98) = validating certified documents and signatures. Other bit combinations may be set using the numeric control (0-255).</string>
 
       <!-- ======================================== -->
       <!--           Sharing and Features           -->
@@ -1433,8 +1434,6 @@
       <string id="bEnableFillSignDC_User_Explain">Specifies whether to remove the Fill and Sign pane without removing the Work with Certificates menu.&#10;&#10;11.x products only. This setting allows users to remove the Acrobat Sign menu items without removing the menu item for using digital signatures on the local machine. Possible values include: 0: Remove the Fill and Sign pane. 1: Don't remove the Fill and Sign pane.</string>
       <string id="bRemoveCommaDelimiterDC_User">Remove Comma Delimiter (User)</string>
       <string id="bRemoveCommaDelimiterDC_User_Explain">Specifies whether to remove the comma in comma-delimited addressbook entries.&#10;&#10;During shared review workflows, the user invoke the addressbook to invite participants. In cases where the addressbook is comma-delimited, pre DC versions of the product display an error dialog. Use this prefererence to remove commas. Possible values include: 0: Don't remove commas. 1: Remove commas.</string>
-      <string id="iSendForReviewConfirmDC_User">Review Confirm Alert (User)</string>
-      <string id="iSendForReviewConfirmDC_User_Explain">See Adobe Preference Reference documentation for this setting.</string>
       <string id="bShowConnectDialogDC_User">Show Connect Dialog (User)</string>
       <string id="bShowConnectDialogDC_User_Explain">Specifies whether to display the Connect dialog in Shared Reviews.&#10;&#10;Possible values include: 0: Don't show the Connect dialog. 1: Do show the Connect dialog.</string>
       <string id="bIsUsedShareReviewDC_User">Show Review Tip (User)</string>
@@ -1464,8 +1463,6 @@
       <string id="bCreateFormDiscoveryShownDC_User_Explain">Specifies whether to show the onboarding coachmark when the user invokes the Create Form panel.&#10;&#10;Possible values include: 0: Show the onboarding coachmark. 1: Don't show the onboarding coachmark.</string>
       <string id="bEditDiscoveryShownDC_User">Edit Onboarding (User)</string>
       <string id="bEditDiscoveryShownDC_User_Explain">Specifies whether to show the onboarding coachmark when the user invokes the Edit panel.&#10;&#10;Possible values include: 0: Show the onboarding coachmark. 1: Don't show the onboarding coachmark.</string>
-      <string id="iEULAAcceptanceTimeDC_User">EULA Accept Timeout (User)</string>
-      <string id="iEULAAcceptanceTimeDC_User_Explain">The amount of time granted to users after installation to accept the end user agreement.</string>
       <string id="bFillSignDiscoveryShownDC_User">Fill &amp; Sign Onboarding (User)</string>
       <string id="bFillSignDiscoveryShownDC_User_Explain">Specifies whether to show the onboarding coachmark when the user invokes the Fill &amp; Sign panel.&#10;&#10;Possible values include: 0: Show the onboarding coachmark. 1: Don't show the onboarding coachmark.</string>
       <string id="bHideHelpWelcomeDC_User">Hide Help Welcome (User)</string>
@@ -1627,6 +1624,10 @@
       <string id="bAutoSetLayers_User_Explain">Specifies whether to allow the document's layer state to be set by user information.&#10;&#10;Possible values include: 0: Don't allow layer state to be set by user information. 1: Allow layer state to be set by user information.</string>
       <string id="iAccessBackgroundColor_User">Background Color (User)</string>
       <string id="iAccessBackgroundColor_User_Explain">Specifies the default document background color (accessibility feature)&#10;&#10;The key name is appended with (Blue|Green|Red|Space). Possible values include: Green text on black Yellow text on black White text on black Black text on white</string>
+      <string id="iAccessBackgroundColor_User_opt0">Green text on black</string>
+      <string id="iAccessBackgroundColor_User_opt1">Yellow text on black</string>
+      <string id="iAccessBackgroundColor_User_opt2">White text on black</string>
+      <string id="iAccessBackgroundColor_User_opt3">Black text on white</string>
       <string id="iPages_User">Check Page Range (User)</string>
       <string id="iPages_User_Explain">Toggles whether to check all pages of a document or a subset of pages when running an accessibility full check.&#10;&#10;Possible values include: 0: Don't check all pages. 1: Do check all pages.</string>
       <string id="benableDDR_User">ClearType Smoothing (User)</string>
@@ -1641,10 +1642,6 @@
       <string id="dNoteFontSize_User_Explain">Sets the font size.&#10;&#10;The font is not embedded in the PDF; this preference merely controls the viewer's preference rather than the author's preference. Possible values include: 10: Font size. N/A: User specified.</string>
       <string id="iNoteOpacity_User">Comment Opacity (User)</string>
       <string id="iNoteOpacity_User_Explain">The opacity in percent of all comments.&#10;&#10;The number is entered in Hex. Possible values include: d99a: 85%. N/A: Any hex value representing 1-100%.</string>
-      <string id="iSens_User">Compare Sensitivity (User)</string>
-      <string id="iSens_User_Explain">Last-used compare documents sensitivity (for compare pages).</string>
-      <string id="iType_User">Compare Type (User)</string>
-      <string id="iType_User_Explain">Last-used compare documents type (pages/text/text+fonts).</string>
       <string id="bComplexScript_User">Complex Script Support (User)</string>
       <string id="bComplexScript_User_Explain">Specifies whether to enable support for writing direction switching (complex script).&#10;&#10;Possible values include: 0: Don't enable Writing Direction Switching. 1: Enable Writing Direction Switching.</string>
       <string id="bconfirmEBRMerge_User">Confirm Review Import (User)</string>
@@ -1869,10 +1866,6 @@
       <string id="iAutoAddLTV_User_opt2">Always add LTV information</string>
       <string id="bSavePassword_User">Cache Server Password (User)</string>
       <string id="bSavePassword_User_Explain">Indicates whether the password has been cached for this server.</string>
-      <string id="iSHS_User">Console H-Splitter (User)</string>
-      <string id="iSHS_User_Explain">Indicates (in pixels) the position of the horizontal window splitter.</string>
-      <string id="iSVS_User">Console V-Splitter (User)</string>
-      <string id="iSVS_User_Explain">Indicates (in pixels) the position of the vertical window splitter.</string>
       <string id="iMaxRevokeInfoCacheLifetime_User">CRL Cache Lifetime (User)</string>
       <string id="iMaxRevokeInfoCacheLifetime_User_Explain">Maximum lifetime in hours the cached CRL is used for revocation checking.&#10;&#10;iMaxRevokeInfoCacheLifetime is only used if the validation method is set to &quot;current time&quot;. Possible values include: The number of hours for which the cached CRL is valid.</string>
       <string id="bCustomPrefsCreated_User">Custom Cert Prefs (User)</string>
@@ -1904,6 +1897,8 @@
       <string id="bSigAPStatusIconDisable_User_Explain">Controls whether the signature status icon is displayed in the signature appearance on the document.&#10;&#10;If true, status icon is not displayed regardless of signature status. This setting overrides iDisplayValidIcon and bShowWarningForChanges.</string>
       <string id="cDialogs_xSelHandler_User">ID Dialog Position (User)</string>
       <string id="cDialogs_xSelHandler_User_Explain">The last on-screen coordinates of a handler's digital ID selection dialog&#10;&#10;It is a subkey containing 4 keys: Top, Bottom, Left, and Right. This preference could be used by 3rd party handlers or by someone invoking a non-signing digital ID selection dialog via JavaScript.</string>
+      <string id="xDefEnrollmentURL_User">ID Enrollment URL (User)</string>
+      <string id="xDefEnrollmentURL_User_Explain">The destination URL when the user selects &quot;Enroll at an online CA&quot; while adding a new digital ID.</string>
       <string id="bIgnoreNextUpdate_User">Ignore OCSP NextUpdate (User)</string>
       <string id="bIgnoreNextUpdate_User_Explain">Specifies whether to use embedded OCSP responses when nextUpdate is not present and the validation time is less than the greater of thisUpdate or producedAt time plus the value of iMaxClockSkew .&#10;&#10;For 10.1 and later, this preference is used along with iMaxClockSkew to determine whether or not embedded OCSP responses are actually used for signature validation. For details, see the subfeature description above. This behavior is designed to support Acrobat's long term validation feature and allows validating a signature with embedded responses that were valid at signing time. Possible values include: 0: iMaxClockSkew is applied to thisUpdate on both sides of the validation time, i.e. thisUpdate - iMaxClockSkew ( validation time ( checkTime + iMaxClockSkew where checkTime is the later of the producedAt and thisUpdate. When true, iMaxClockSkew is applied to thisUpdate only before the validation time: thisUpdate - iMaxClockSkew ( validation time. 1: If there is no nextUpdate, then we accept the OCSP response indefinitely (we do not check for if the validation time is too late) and don't check whether validation time is ( than checkTime)</string>
       <string id="iImportAddressBook_User">Import Address Book (User)</string>
@@ -1913,8 +1908,6 @@
       <string id="iImportAddressBook_User_opt2">Import the address book silently</string>
       <string id="bCertStoreImportEnable_User">Import Windows Certs (User)</string>
       <string id="bCertStoreImportEnable_User_Explain">If true, then users can import from MSCAPI certificate stores into their Trusted Identity Manager.</string>
-      <string id="iAPIndex_User">Last Sig Appearance (User)</string>
-      <string id="iAPIndex_User_Explain">Remembers the last used signature appearance index.</string>
       <string id="bLoadSettingsFromURLAdobe_User">Load Security Settings from Server (Adobe Certificates) (User)</string>
       <string id="bLoadSettingsFromURLAdobe_User_Explain">Controls whether trust anchors are periodically downloaded from Adobe's certificate server.&#10;&#10;0: Don't load settings from an URL. 1: Do load settings from an URL.&#10;&#10;Security Reference: STIG ARDC-CN-000335 (V-213191) Low; STIG AADC-CN-001320 (V-213138) Low</string>
       <string id="bLoadSettingsFromURLEUTL_User">Load Security Settings from Server (European Certificates) (User)</string>
@@ -1972,12 +1965,16 @@
       <string id="iRSAPSSSaltLength_User_Explain">Specifies the Salt Length the RSA-PSS algorithm uses.&#10;&#10;When setting the salt length, you must assure the default base is hexadecimal. Either change the base to decimal or input its hex value. For example, if the salt length decimal value is 32, then set the hex value to 20.</string>
       <string id="bEnableRSAPSSSigning_User">RSA-PSS Signing (User)</string>
       <string id="bEnableRSAPSSSigning_User_Explain">Specifies whether a signature should be created with the RSA-PSS algorithm.&#10;&#10;Possible values include: 0: Do not sign with the RSA-PSS algorithm. 1: Use the RSA-PSS algorithm.</string>
+      <string id="tSAML_Assertion_Source_User">SAML Auth Server URL (User)</string>
+      <string id="tSAML_Assertion_Source_User_Explain">Holds the URL of the authentication server from which the SAML assertion stored in cSAML_Assertion was obtained.</string>
       <string id="iDigSigSaveAsCertified_User">Save Certified Alert (User)</string>
       <string id="iDigSigSaveAsCertified_User_Explain">&#10;&#10;Possible values include: 0: Don't show an alert. 1: Do show an alert.</string>
       <string id="bSecureOpenFile_User">Secure Open Attachments (User)</string>
       <string id="bSecureOpenFile_User_Explain">Specifies whether to allow opening attachments which are not PDF.&#10;&#10;When this pref is set to true, then Acrobat only allows opening PDF attachments. bAllowOpenFile, bSecureOpenFile, and tBuiltInPermsList work in tandem: If any of these are set to prevent the opening of an attachment, then the attachment type won't open (or all attachments depending on the setting). Possible values include: 0: Allow opening attachments with filetype other than PDF. 1: Don't open non-PDF attachments.</string>
       <string id="bSelfSignCertGen_User">Self-Sign ID Create (User)</string>
       <string id="bSelfSignCertGen_User_Explain">Specifies whether or not the Create a self-signed ID option in Add ID workflows is available.&#10;&#10;Prevents users from creating a self-signed digital ID. Note that for products released after June 2016, disabling a user's ability to create a self-signed digital ID requires setting both bSelfSignCertGen and bEnableCEFBasedUI to 0. Possible values include: 0: Don't allow creating self-signed digital IDs. 1: Allow self-signed digital IDs.</string>
+      <string id="tServerURL_User">Server URL (User)</string>
+      <string id="tServerURL_User_Explain">The default server URL.</string>
       <string id="bShowAllChains_User">Show All Chains (User)</string>
       <string id="bShowAllChains_User_Explain">Specifies whether to show all chains in the Certificate Viewer.&#10;&#10;If true, the Certificate Viewer shows all the chains; otherwise, it shows only the trusted chain. If there are no trusted chains, then all the chains are shown and this preference is ignored.</string>
       <string id="iShowDocumentWarnings_User">Show Document Warnings (User)</string>
@@ -2018,6 +2015,8 @@
       <string id="iHashAlgo_User_opt2">SHA256</string>
       <string id="iSize_User">Timestamp Sig Size (User)</string>
       <string id="iSize_User_Explain">ASPKI requires the signature property to predict the size (in bytes) so that enough space can be set aside.</string>
+      <string id="tServer_User">Tracker Server URL (User)</string>
+      <string id="tServer_User_Explain">The DNS server name (i.e. alrms.adobe.com).&#10;&#10;There is no scheme specified.</string>
       <string id="bTrueTypeFontPDFSigQWarn_User">TrueType Font Warn (User)</string>
       <string id="bTrueTypeFontPDFSigQWarn_User_Explain">Turns on and off warnings about True Type fonts.</string>
       <string id="bTrustCertifiedDocuments_User">Trust Certified Docs (User)</string>
@@ -2031,6 +2030,8 @@
       <string id="iURLPerms_User_opt0">Custom Setting (uses tHostPerms URL list)</string>
       <string id="iURLPerms_User_opt1">Block all websites</string>
       <string id="iURLPerms_User_opt2">Allow all websites</string>
+      <string id="tURL_User">Url Of The Roaming Id (User)</string>
+      <string id="tURL_User_Explain">The URL of the Roaming ID server.</string>
       <string id="iUseArchivedRevInfo_User">Use Archived Rev Info (User)</string>
       <string id="iUseArchivedRevInfo_User_Explain">Indicates whether the revocation information archived with the signature is used for revocation checking.&#10;&#10;Allowable values include: 0: Never (always require fresh revocation information to be successfully downloaded). 1: Deprecated. Do not use. 2: Always use (if embedded revocation information is available do not download fresh revocation information).</string>
       <string id="iUseArchivedRevInfo_User_opt0">Never (require fresh revocation download)</string>
@@ -2041,10 +2042,7 @@
       <string id="iValidityModel_User_opt0">PKIX shell model (default)</string>
       <string id="iValidityModel_User_opt1">Chain validity model</string>
       <string id="iMSStoreTrusted_User">Windows Store Trust (User)</string>
-      <string id="iMSStoreTrusted_User_Explain">Controls whether or not certificates in the Windows Certificate Store are trusted for signing and certifying.&#10;&#10;To lock this setting, use bMSStoreTrusted. Allowable values include: 0x00: No checkbox selected. 0x60: Validating Signatures. 0x62: Validating Certified Documents and Signatures. Note that this setting disables the Validating Signatures checkbox because it also controls non-certified signatures and users should not be able to uncheck that checkbox.</string>
-      <string id="iMSStoreTrusted_User_opt0">No checkbox selected (0x00)</string>
-      <string id="iMSStoreTrusted_User_opt1">Validating Signatures (0x60)</string>
-      <string id="iMSStoreTrusted_User_opt2">Validating Certified Documents and Signatures (0x62)</string>
+      <string id="iMSStoreTrusted_User_Explain">Controls whether or not certificates in the Windows Certificate Store are trusted for signing and certifying.&#10;&#10;To lock this setting, use bMSStoreTrusted. Allowable values include: 0x00: No checkbox selected. 0x60: Validating Signatures. 0x62: Validating Certified Documents and Signatures. Note that this setting disables the Validating Signatures checkbox because it also controls non-certified signatures and users should not be able to uncheck that checkbox.&#10;&#10;Windows Store trust is a hex bitmask stored as a DWORD. Documented values: 0x00 (0) = no trust; 0x60 (96) = validating signatures; 0x62 (98) = validating certified documents and signatures. Other bit combinations may be set using the numeric control (0-255).</string>
 
       <!-- ======================================== -->
       <!--           Sharing and Features           -->
@@ -2062,8 +2060,6 @@
       <string id="bEnableFillSign_User_Explain">Specifies whether to remove the Fill and Sign pane without removing the Work with Certificates menu.&#10;&#10;11.x products only. This setting allows users to remove the Acrobat Sign menu items without removing the menu item for using digital signatures on the local machine. Possible values include: 0: Remove the Fill and Sign pane. 1: Don't remove the Fill and Sign pane.</string>
       <string id="bRemoveCommaDelimiter_User">Remove Comma Delimiter (User)</string>
       <string id="bRemoveCommaDelimiter_User_Explain">Specifies whether to remove the comma in comma-delimited addressbook entries.&#10;&#10;During shared review workflows, the user invoke the addressbook to invite participants. In cases where the addressbook is comma-delimited, pre DC versions of the product display an error dialog. Use this prefererence to remove commas. Possible values include: 0: Don't remove commas. 1: Remove commas.</string>
-      <string id="iSendForReviewConfirm_User">Review Confirm Alert (User)</string>
-      <string id="iSendForReviewConfirm_User_Explain">See Adobe Preference Reference documentation for this setting.</string>
       <string id="bShowConnectDialog_User">Show Connect Dialog (User)</string>
       <string id="bShowConnectDialog_User_Explain">Specifies whether to display the Connect dialog in Shared Reviews.&#10;&#10;Possible values include: 0: Don't show the Connect dialog. 1: Do show the Connect dialog.</string>
       <string id="bShowWelcomeDialog_User">Show Welcome Dialog (User)</string>
@@ -2087,8 +2083,6 @@
       <string id="bCreateFormDiscoveryShown_User_Explain">Specifies whether to show the onboarding coachmark when the user invokes the Create Form panel.&#10;&#10;Possible values include: 0: Show the onboarding coachmark. 1: Don't show the onboarding coachmark.</string>
       <string id="bEditDiscoveryShown_User">Edit Onboarding (User)</string>
       <string id="bEditDiscoveryShown_User_Explain">Specifies whether to show the onboarding coachmark when the user invokes the Edit panel.&#10;&#10;Possible values include: 0: Show the onboarding coachmark. 1: Don't show the onboarding coachmark.</string>
-      <string id="iEULAAcceptanceTime_User">EULA Accept Timeout (User)</string>
-      <string id="iEULAAcceptanceTime_User_Explain">The amount of time granted to users after installation to accept the end user agreement.</string>
       <string id="EULA_User">EULA Acceptance (User)</string>
       <string id="EULA_User_Explain">For Reader, indicates whether the EULA has been accepted.&#10;&#10;If the EULA is not accepted, the application stops running after a set period of time. Possible values include: 0: Show the EULA because it has not been accepted. 1: Don't show the EULA because it has not been accepted.</string>
       <string id="bFillSignDiscoveryShown_User">Fill &amp; Sign Onboarding (User)</string>
@@ -2238,6 +2232,9 @@
       <presentation id="iAutoSaveDocsIntervalDC_User_num">
         <decimalTextBox refId="iAutoSaveDocsIntervalDC_User_num" defaultValue="5">Auto-save interval in minutes (1-99):</decimalTextBox>
       </presentation>
+      <presentation id="iAccessBackgroundColorDC_User_enum">
+        <dropdownList defaultItem="0" refId="iAccessBackgroundColorDC_User_enum">Background Color (User):</dropdownList>
+      </presentation>
       <presentation id="dNoteFontSizeDC_User_num">
         <decimalTextBox refId="dNoteFontSizeDC_User_num" defaultValue="10">Comment font size (points):</decimalTextBox>
       </presentation>
@@ -2286,6 +2283,9 @@
       <presentation id="iDirectoryProviderDC_User_enum">
         <dropdownList defaultItem="0" refId="iDirectoryProviderDC_User_enum">Directory Provider (User):</dropdownList>
       </presentation>
+      <presentation id="xDefEnrollmentURLDC_User_text">
+        <textBox refId="xDefEnrollmentURLDC_User_text"><label>Default enrollment URL:</label></textBox>
+      </presentation>
       <presentation id="iImportAddressBookDC_User_enum">
         <dropdownList defaultItem="0" refId="iImportAddressBookDC_User_enum">Import Address Book (User):</dropdownList>
       </presentation>
@@ -2310,6 +2310,12 @@
       <presentation id="iRevocationCheckerDC_User_enum">
         <dropdownList defaultItem="0" refId="iRevocationCheckerDC_User_enum">Revocation Checker (User):</dropdownList>
       </presentation>
+      <presentation id="tSAML_Assertion_SourceDC_User_text">
+        <textBox refId="tSAML_Assertion_SourceDC_User_text"><label>SAML assertion source:</label></textBox>
+      </presentation>
+      <presentation id="tServerURLDC_User_text">
+        <textBox refId="tServerURLDC_User_text"><label>Server URL:</label></textBox>
+      </presentation>
       <presentation id="iShowDocumentWarningsDC_User_enum">
         <dropdownList defaultItem="0" refId="iShowDocumentWarningsDC_User_enum">Show Document Warnings (User):</dropdownList>
       </presentation>
@@ -2322,11 +2328,17 @@
       <presentation id="iHashAlgoDC_User_enum">
         <dropdownList defaultItem="0" refId="iHashAlgoDC_User_enum">Timestamp Hash Algo (User):</dropdownList>
       </presentation>
+      <presentation id="tServerDC_User_text">
+        <textBox refId="tServerDC_User_text"><label>Server name:</label></textBox>
+      </presentation>
       <presentation id="tHostPermsDC_User_text">
         <textBox refId="tHostPermsDC_User_text"><label>URL list:</label></textBox>
       </presentation>
       <presentation id="iURLPermsDC_User_enum">
         <dropdownList defaultItem="0" refId="iURLPermsDC_User_enum">URL Access Permissions (User):</dropdownList>
+      </presentation>
+      <presentation id="tURLDC_User_text">
+        <textBox refId="tURLDC_User_text"><label>URL:</label></textBox>
       </presentation>
       <presentation id="iUseArchivedRevInfoDC_User_enum">
         <dropdownList defaultItem="0" refId="iUseArchivedRevInfoDC_User_enum">Use Archived Rev Info (User):</dropdownList>
@@ -2334,8 +2346,8 @@
       <presentation id="iValidityModelDC_User_enum">
         <dropdownList defaultItem="0" refId="iValidityModelDC_User_enum">Validity Model (User):</dropdownList>
       </presentation>
-      <presentation id="iMSStoreTrustedDC_User_enum">
-        <dropdownList defaultItem="0" refId="iMSStoreTrustedDC_User_enum">Windows Store Trust (User):</dropdownList>
+      <presentation id="iMSStoreTrustedDC_User_num">
+        <decimalTextBox refId="iMSStoreTrustedDC_User_num" defaultValue="98">Windows Store trust bitmask (0=off, 96=signatures, 98=certified+signatures):</decimalTextBox>
       </presentation>
       <presentation id="iDelayBeforeQuitViewerDC_User_num">
         <decimalTextBox refId="iDelayBeforeQuitViewerDC_User_num" defaultValue="30">Viewer quit delay in seconds:</decimalTextBox>
@@ -2360,6 +2372,9 @@
       </presentation>
       <presentation id="iAutoSaveDocsInterval_User_num">
         <decimalTextBox refId="iAutoSaveDocsInterval_User_num" defaultValue="5">Auto-save interval in minutes (1-99):</decimalTextBox>
+      </presentation>
+      <presentation id="iAccessBackgroundColor_User_enum">
+        <dropdownList defaultItem="0" refId="iAccessBackgroundColor_User_enum">Background Color (User):</dropdownList>
       </presentation>
       <presentation id="dNoteFontSize_User_num">
         <decimalTextBox refId="dNoteFontSize_User_num" defaultValue="10">Comment font size (points):</decimalTextBox>
@@ -2406,6 +2421,9 @@
       <presentation id="iDirectoryProvider_User_enum">
         <dropdownList defaultItem="0" refId="iDirectoryProvider_User_enum">Directory Provider (User):</dropdownList>
       </presentation>
+      <presentation id="xDefEnrollmentURL_User_text">
+        <textBox refId="xDefEnrollmentURL_User_text"><label>Default enrollment URL:</label></textBox>
+      </presentation>
       <presentation id="iImportAddressBook_User_enum">
         <dropdownList defaultItem="0" refId="iImportAddressBook_User_enum">Import Address Book (User):</dropdownList>
       </presentation>
@@ -2430,6 +2448,12 @@
       <presentation id="iRevocationChecker_User_enum">
         <dropdownList defaultItem="0" refId="iRevocationChecker_User_enum">Revocation Checker (User):</dropdownList>
       </presentation>
+      <presentation id="tSAML_Assertion_Source_User_text">
+        <textBox refId="tSAML_Assertion_Source_User_text"><label>SAML assertion source:</label></textBox>
+      </presentation>
+      <presentation id="tServerURL_User_text">
+        <textBox refId="tServerURL_User_text"><label>Server URL:</label></textBox>
+      </presentation>
       <presentation id="iShowDocumentWarnings_User_enum">
         <dropdownList defaultItem="0" refId="iShowDocumentWarnings_User_enum">Show Document Warnings (User):</dropdownList>
       </presentation>
@@ -2442,11 +2466,17 @@
       <presentation id="iHashAlgo_User_enum">
         <dropdownList defaultItem="0" refId="iHashAlgo_User_enum">Timestamp Hash Algo (User):</dropdownList>
       </presentation>
+      <presentation id="tServer_User_text">
+        <textBox refId="tServer_User_text"><label>Server name:</label></textBox>
+      </presentation>
       <presentation id="tHostPerms_User_text">
         <textBox refId="tHostPerms_User_text"><label>URL list:</label></textBox>
       </presentation>
       <presentation id="iURLPerms_User_enum">
         <dropdownList defaultItem="0" refId="iURLPerms_User_enum">URL Access Permissions (User):</dropdownList>
+      </presentation>
+      <presentation id="tURL_User_text">
+        <textBox refId="tURL_User_text"><label>URL:</label></textBox>
       </presentation>
       <presentation id="iUseArchivedRevInfo_User_enum">
         <dropdownList defaultItem="0" refId="iUseArchivedRevInfo_User_enum">Use Archived Rev Info (User):</dropdownList>
@@ -2454,8 +2484,8 @@
       <presentation id="iValidityModel_User_enum">
         <dropdownList defaultItem="0" refId="iValidityModel_User_enum">Validity Model (User):</dropdownList>
       </presentation>
-      <presentation id="iMSStoreTrusted_User_enum">
-        <dropdownList defaultItem="0" refId="iMSStoreTrusted_User_enum">Windows Store Trust (User):</dropdownList>
+      <presentation id="iMSStoreTrusted_User_num">
+        <decimalTextBox refId="iMSStoreTrusted_User_num" defaultValue="98">Windows Store trust bitmask (0=off, 96=signatures, 98=certified+signatures):</decimalTextBox>
       </presentation>
       <presentation id="iDelayBeforeQuitViewer_User_num">
         <decimalTextBox refId="iDelayBeforeQuitViewer_User_num" defaultValue="30">Viewer quit delay in seconds:</decimalTextBox>

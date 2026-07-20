@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings (User)
 
-Complete list of 258 Acrobat DC policies in the combined v3.2 ADMX templates, sorted by category.
+Complete list of 256 Acrobat DC policies in the combined v3.3 ADMX templates, sorted by category.
 
 ## Context, Tools & Search
 
@@ -58,8 +58,6 @@ Complete list of 258 Acrobat DC policies in the combined v3.2 ADMX templates, so
 | Comment Author | ``tauthor`` | The author name specified by balwaysUseIdent. |
 | Comment Font Size | ``dNoteFontSize`` | Sets the font size. |
 | Comment Opacity | ``iNoteOpacity`` | The opacity in percent of all comments. |
-| Compare Sensitivity | ``iSens`` | Last-used compare documents sensitivity (for compare pages). |
-| Compare Type | ``iType`` | Last-used compare documents type (pages/text/text+fonts). |
 | Complex Script Support | ``bComplexScript`` | Enable support for writing direction switching (complex script). |
 | Confirm Review Import | ``bconfirmEBRMerge`` | Displays an alert on document open asking the user to confirm importing comments into an active review. |
 | Copy Text to Drawing | ``bcopyTextToDrawAnnot`` | Copy the encircled text into drawing comment popups. |
@@ -168,8 +166,6 @@ Complete list of 258 Acrobat DC policies in the combined v3.2 ADMX templates, so
 | Auto-Accept Privacy | ``iAutoAcceptEDCPrivacyNotification`` | Show an alert confirming acceptance of the privacy policy. |
 | Auto-Add LTV Info | ``iAutoAddLTV`` | Specifies whether LTV information should be automatically added to all signatures. |
 | Cache Server Password | ``bSavePassword`` | Indicates whether the password has been cached for this server. |
-| Console H-Splitter | ``iSHS`` | Indicates (in pixels) the position of the horizontal window splitter. |
-| Console V-Splitter | ``iSVS`` | Indicates (in pixels) the position of the vertical window splitter. |
 | CRL Cache Lifetime | ``iMaxRevokeInfoCacheLifetime`` | Maximum lifetime in hours the cached CRL is used for revocation checking. |
 | Custom Cert Prefs | ``bCustomPrefsCreated`` | Indicates whether a custom certificate specific preference (e.g. Identrus) has already been created and written to the registry. |
 | Directory Provider | ``iDirectoryProvider`` | Specifies a directory provider for signature validation. |
@@ -184,11 +180,11 @@ Complete list of 258 Acrobat DC policies in the combined v3.2 ADMX templates, so
 | Follow AIA URIs | ``bFollowURIsFromAIA`` | Allow the chain builder to follow URIs in AIA certificate extensions so that certificates can be downloaded if they are not available locally. |
 | Hide Sig Status Icon | ``bSigAPStatusIconDisable`` | Controls whether the signature status icon is displayed in the signature appearance on the document. |
 | ID Dialog Position | ``cDialogs:xSelHandler`` | The last on-screen coordinates of a handler's digital ID selection dialog |
+| ID Enrollment URL | ``xDefEnrollmentURL`` | The destination URL when the user selects "Enroll at an online CA" while adding a new digital ID. |
 | Ignore OCSP NextUpdate | ``bIgnoreNextUpdate`` | Use embedded OCSP responses when nextUpdate is not present and the validation time is less than the greater of thisUpdate or producedAt time plus the value... |
 | Import Address Book | ``iImportAddressBook`` | Specifies whether the addressbook.acrodata file should be imported during a new install. |
 | Import Windows Certs | ``bCertStoreImportEnable`` | If true, then users can import from MSCAPI certificate stores into their Trusted Identity Manager. |
 | Keep Hidden Content | ``bDontRemoveOverlapping`` | Remove hidden content when sanitizing a document. |
-| Last Sig Appearance | ``iAPIndex`` | Remembers the last used signature appearance index. |
 | Load Security Settings from Server (Adobe Certificates) | ``bLoadSettingsFromURL`` | Controls whether trust anchors are periodically downloaded from Adobe's certificate server. |
 | Load Security Settings from Server (European Certificates) | ``bLoadSettingsFromURL`` | Controls whether trust anchors are periodically downloaded from the European Union Trusted Lists (EUTL) server. |
 | Long Term Validation | ``bIsEnabled`` | Specifies whether the signature revocation status is included in the signature. |
@@ -211,9 +207,11 @@ Complete list of 258 Acrobat DC policies in the combined v3.2 ADMX templates, so
 | Revoke Check Trust | ``bRevCheckTrust`` | Perform revocation checks on intermediate trust anchors (those which aren't roots). |
 | RSA-PSS Salt Length | ``iRSAPSSSaltLength`` | Specifies the Salt Length the RSA-PSS algorithm uses. |
 | RSA-PSS Signing | ``bEnableRSAPSSSigning`` | Specifies whether a signature should be created with the RSA-PSS algorithm. |
+| SAML Auth Server URL | ``tSAML_Assertion_Source`` | Holds the URL of the authentication server from which the SAML assertion stored in cSAML_Assertion was obtained. |
 | Save Certified Alert | ``iDigSigSaveAsCertified`` |  |
 | Secure Open Attachments | ``bSecureOpenFile`` | Allow opening attachments which are not PDF. |
 | Self-Sign ID Create | ``bSelfSignCertGen`` | Specifies whether or not the Create a self-signed ID option in Add ID workflows is available. |
+| Server URL | ``tServerURL`` | The default server URL. |
 | Show All Chains | ``bShowAllChains`` | Show all chains in the Certificate Viewer. |
 | Show Document Warnings | ``iShowDocumentWarnings`` | Specifies whether a button to allow reviewing document warnings shows up on the signing dialog. |
 | Show Post-Sign Warning | ``bShowWarningForChanges`` | Determines whether or not to show a blue i on validated signature(s) if the document changes after it was signed. |
@@ -228,11 +226,13 @@ Complete list of 258 Acrobat DC policies in the combined v3.2 ADMX templates, so
 | Sign OCSP Requests | ``bSignRequest`` | Specifies whether the OCSP request should be signed. |
 | Timestamp Hash Algo | ``iHashAlgo`` | Identifies the hashing algorithm used to hash the timestamped data. |
 | Timestamp Sig Size | ``iSize`` | ASPKI requires the signature property to predict the size (in bytes) so that enough space can be set aside. |
+| Tracker Server URL | ``tServer`` | The DNS server name (i.e. alrms.adobe.com). |
 | TrueType Font Warn | ``bTrueTypeFontPDFSigQWarn`` | Turns on and off warnings about True Type fonts. |
 | Trust Certified Docs | ``bTrustCertifiedDocuments`` | Elevates (trusts) certified documents as a privileged location. |
 | Trust IE Trusted Sites | ``bTrustOSTrustedSites`` | Elevates locations that Internet Explorer trusts to privileged locations so that they may bypass security restrictions. |
 | Trusted/Blocked URL List | ``tHostPerms`` | Stores the list of trusted and blocked URLs used when URL Access Permissions (iURLPerms) is set to Custom Setting. |
 | URL Access Permissions | ``iURLPerms`` | Allow or block all websites or use a custom setting. |
+| Url Of The Roaming Id | ``tURL`` | The URL of the Roaming ID server. |
 | Use Archived Rev Info | ``iUseArchivedRevInfo`` | Indicates whether the revocation information archived with the signature is used for revocation checking. |
 | Validity Model | ``iValidityModel`` | Specifies the validity model for validating signatures and certificates. |
 | Windows Store Trust | ``iMSStoreTrusted`` | Controls whether or not certificates in the Windows Certificate Store are trusted for signing and certifying. |
@@ -247,7 +247,6 @@ Complete list of 258 Acrobat DC policies in the combined v3.2 ADMX templates, so
 | Enable Synchronizer | ``bNeedSynchronizer`` | Disables the synchronizer. |
 | Fill & Sign Pane | ``bEnableFillSign`` | Remove the Fill and Sign pane without removing the Work with Certificates menu. |
 | Remove Comma Delimiter | ``bRemoveCommaDelimiter`` | Remove the comma in comma-delimited addressbook entries. |
-| Review Confirm Alert | ``iSendForReviewConfirm`` |  |
 | Show Connect Dialog | ``bShowConnectDialog`` | Display the Connect dialog in Shared Reviews. |
 | Show Review Tip | ``bIsUsedShareReview`` | Show a popup tip that informs users of the collaborative review feature. |
 | Show Share Tip | ``bIsUsedShare`` | Show a popup tip that informs users of the share file feature. |
@@ -265,7 +264,6 @@ Complete list of 258 Acrobat DC policies in the combined v3.2 ADMX templates, so
 | Choose Language Startup | ``bChooseLangAtStartup`` | Allows the user to choose the language at startup. |
 | Create Form Onboarding | ``bCreateFormDiscoveryShown`` | Show the onboarding coachmark when the user invokes the Create Form panel. |
 | Edit Onboarding | ``bEditDiscoveryShown`` | Show the onboarding coachmark when the user invokes the Edit panel. |
-| EULA Accept Timeout | ``iEULAAcceptanceTime`` | The amount of time granted to users after installation to accept the end user agreement. |
 | Fill & Sign Onboarding | ``bFillSignDiscoveryShown`` | Show the onboarding coachmark when the user invokes the Fill & Sign panel. |
 | Hide Help Welcome | ``bHideHelpWelcome`` | Disable the Welcome menu item under Help. |
 | Home Onboarding | ``bShownHomeOnboarding`` | Invoke the home onboarding tour when the modern viewer is invoked the first time. |

@@ -11,12 +11,12 @@
 <!-- ================================================================= -->
 
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.2" schemaVersion="1.0"
+  revision="3.3" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="3.2" />
+  <resources minRequiredRevision="3.3" />
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SupportedAcrobatReaderPolicies)" name="SupportedAcrobatReaderPolicies"/>
@@ -3852,11 +3852,25 @@
 
     <!-- Documents, Editing & Accessibility > Background Color (User) -->
     <policy class="User" displayName="$(string.iAccessBackgroundColorDC_User)" explainText="$(string.iAccessBackgroundColorDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Originals\cAccessBackgroundColor"
-      name="iAccessBackgroundColorDC_User" valueName="iAccessBackgroundColor">
+      name="iAccessBackgroundColorDC_User" valueName="iAccessBackgroundColor" presentation="$(presentation.iAccessBackgroundColorDC_User_enum)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iAccessBackgroundColorDC_User_enum" valueName="iAccessBackgroundColor">
+          <item displayName="$(string.iAccessBackgroundColorDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iAccessBackgroundColorDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iAccessBackgroundColorDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.iAccessBackgroundColorDC_User_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Check Page Range (User) -->
@@ -3926,24 +3940,6 @@
     <!-- Documents, Editing & Accessibility > Comment Opacity (User) -->
     <policy class="User" displayName="$(string.iNoteOpacityDC_User)" explainText="$(string.iNoteOpacityDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Originals"
       name="iNoteOpacityDC_User" valueName="iNoteOpacity">
-      <parentCategory ref="DocsEditAccessCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Documents, Editing & Accessibility > Compare Sensitivity (User) -->
-    <policy class="User" displayName="$(string.iSensDC_User)" explainText="$(string.iSensDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Recognition\cCompare"
-      name="iSensDC_User" valueName="iSens">
-      <parentCategory ref="DocsEditAccessCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Documents, Editing & Accessibility > Compare Type (User) -->
-    <policy class="User" displayName="$(string.iTypeDC_User)" explainText="$(string.iTypeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Recognition\cCompare"
-      name="iTypeDC_User" valueName="iType">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
@@ -4944,24 +4940,6 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- Security: Trust & Permissions > Console H-Splitter (User) -->
-    <policy class="User" displayName="$(string.iSHSDC_User)" explainText="$(string.iSHSDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cSecurityConsole"
-      name="iSHSDC_User" valueName="iSHS">
-      <parentCategory ref="SecurityTrustCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Security: Trust & Permissions > Console V-Splitter (User) -->
-    <policy class="User" displayName="$(string.iSVSDC_User)" explainText="$(string.iSVSDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cSecurityConsole"
-      name="iSVSDC_User" valueName="iSVS">
-      <parentCategory ref="SecurityTrustCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
     <!-- Security: Trust & Permissions > CRL Cache Lifetime (User) -->
     <policy class="User" displayName="$(string.iMaxRevokeInfoCacheLifetimeDC_User)" explainText="$(string.iMaxRevokeInfoCacheLifetimeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cPubSec"
       name="iMaxRevokeInfoCacheLifetimeDC_User" presentation="$(presentation.iMaxRevokeInfoCacheLifetimeDC_User_num)">
@@ -5100,6 +5078,16 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
+    <!-- Security: Trust & Permissions > ID Enrollment URL (User) -->
+    <policy class="User" displayName="$(string.xDefEnrollmentURLDC_User)" explainText="$(string.xDefEnrollmentURLDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cPubSec"
+      name="xDefEnrollmentURLDC_User" presentation="$(presentation.xDefEnrollmentURLDC_User_text)">
+      <parentCategory ref="SecurityTrustCategoryDC_User"/>
+      <supportedOn ref="SupportedAcrobatDC_User"/>
+      <elements>
+        <text id="xDefEnrollmentURLDC_User_text" valueName="xDefEnrollmentURL" maxLength="2048" />
+      </elements>
+    </policy>
+
     <!-- Security: Trust & Permissions > Ignore OCSP NextUpdate (User) -->
     <policy class="User" displayName="$(string.bIgnoreNextUpdateDC_User)" explainText="$(string.bIgnoreNextUpdateDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cAdobe_OCSPRevChecker"
       name="bIgnoreNextUpdateDC_User" valueName="bIgnoreNextUpdate">
@@ -5141,15 +5129,6 @@
     <!-- Security: Trust & Permissions > Keep Hidden Content (User) -->
     <policy class="User" displayName="$(string.bDontRemoveOverlappingDC_User)" explainText="$(string.bDontRemoveOverlappingDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security"
       name="bDontRemoveOverlappingDC_User" valueName="bDontRemoveOverlapping">
-      <parentCategory ref="SecurityTrustCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Security: Trust & Permissions > Last Sig Appearance (User) -->
-    <policy class="User" displayName="$(string.iAPIndexDC_User)" explainText="$(string.iAPIndexDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cPubSec"
-      name="iAPIndexDC_User" valueName="iAPIndex">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
@@ -5404,6 +5383,16 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
+    <!-- Security: Trust & Permissions > SAML Auth Server URL (User) -->
+    <policy class="User" displayName="$(string.tSAML_Assertion_SourceDC_User)" explainText="$(string.tSAML_Assertion_SourceDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cPPKHandler\cRC"
+      name="tSAML_Assertion_SourceDC_User" presentation="$(presentation.tSAML_Assertion_SourceDC_User_text)">
+      <parentCategory ref="SecurityTrustCategoryDC_User"/>
+      <supportedOn ref="SupportedAcrobatDC_User"/>
+      <elements>
+        <text id="tSAML_Assertion_SourceDC_User_text" valueName="tSAML_Assertion_Source" maxLength="2048" />
+      </elements>
+    </policy>
+
     <!-- Security: Trust & Permissions > Save Certified Alert (User) -->
     <policy class="User" displayName="$(string.iDigSigSaveAsCertifiedDC_User)" explainText="$(string.iDigSigSaveAsCertifiedDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AVAlert\cCheckbox"
       name="iDigSigSaveAsCertifiedDC_User" valueName="iDigSigSaveAsCertified">
@@ -5429,6 +5418,16 @@
       <supportedOn ref="SupportedAcrobatDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
       <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Security: Trust & Permissions > Server URL (User) -->
+    <policy class="User" displayName="$(string.tServerURLDC_User)" explainText="$(string.tServerURLDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cEDC"
+      name="tServerURLDC_User" presentation="$(presentation.tServerURLDC_User_text)">
+      <parentCategory ref="SecurityTrustCategoryDC_User"/>
+      <supportedOn ref="SupportedAcrobatDC_User"/>
+      <elements>
+        <text id="tServerURLDC_User_text" valueName="tServerURL" maxLength="2048" />
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Show All Chains (User) -->
@@ -5601,6 +5600,16 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
+    <!-- Security: Trust & Permissions > Tracker Server URL (User) -->
+    <policy class="User" displayName="$(string.tServerDC_User)" explainText="$(string.tServerDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cEDC\cKnownServers"
+      name="tServerDC_User" presentation="$(presentation.tServerDC_User_text)">
+      <parentCategory ref="SecurityTrustCategoryDC_User"/>
+      <supportedOn ref="SupportedAcrobatDC_User"/>
+      <elements>
+        <text id="tServerDC_User_text" valueName="tServer" maxLength="2048" />
+      </elements>
+    </policy>
+
     <!-- Security: Trust & Permissions > TrueType Font Warn (User) -->
     <policy class="User" displayName="$(string.bTrueTypeFontPDFSigQWarnDC_User)" explainText="$(string.bTrueTypeFontPDFSigQWarnDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cDigSig"
       name="bTrueTypeFontPDFSigQWarnDC_User" valueName="bTrueTypeFontPDFSigQWarn">
@@ -5658,6 +5667,16 @@
       </elements>
     </policy>
 
+    <!-- Security: Trust & Permissions > Url Of The Roaming Id (User) -->
+    <policy class="User" displayName="$(string.tURLDC_User)" explainText="$(string.tURLDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cAdobe_RoamingID\cDefaultServerInfo"
+      name="tURLDC_User" presentation="$(presentation.tURLDC_User_text)">
+      <parentCategory ref="SecurityTrustCategoryDC_User"/>
+      <supportedOn ref="SupportedAcrobatDC_User"/>
+      <elements>
+        <text id="tURLDC_User_text" valueName="tURL" maxLength="2048" />
+      </elements>
+    </policy>
+
     <!-- Security: Trust & Permissions > Use Archived Rev Info (User) -->
     <policy class="User" displayName="$(string.iUseArchivedRevInfoDC_User)" explainText="$(string.iUseArchivedRevInfoDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cAdobe_LTVProvider"
       name="iUseArchivedRevInfoDC_User" valueName="iUseArchivedRevInfo" presentation="$(presentation.iUseArchivedRevInfoDC_User_enum)">
@@ -5697,21 +5716,11 @@
 
     <!-- Security: Trust & Permissions > Windows Store Trust (User) -->
     <policy class="User" displayName="$(string.iMSStoreTrustedDC_User)" explainText="$(string.iMSStoreTrustedDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cMSCAPI_DirectoryProvider"
-      name="iMSStoreTrustedDC_User" valueName="iMSStoreTrusted" presentation="$(presentation.iMSStoreTrustedDC_User_enum)">
+      name="iMSStoreTrustedDC_User" presentation="$(presentation.iMSStoreTrustedDC_User_num)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
       <elements>
-        <enum id="iMSStoreTrustedDC_User_enum" valueName="iMSStoreTrusted">
-          <item displayName="$(string.iMSStoreTrustedDC_User_opt0)">
-            <value><decimal value="0" /></value>
-          </item>
-          <item displayName="$(string.iMSStoreTrustedDC_User_opt1)">
-            <value><decimal value="96" /></value>
-          </item>
-          <item displayName="$(string.iMSStoreTrustedDC_User_opt2)">
-            <value><decimal value="98" /></value>
-          </item>
-        </enum>
+        <decimal id="iMSStoreTrustedDC_User_num" valueName="iMSStoreTrusted" minValue="0" maxValue="255" />
       </elements>
     </policy>
 
@@ -5767,15 +5776,6 @@
     <!-- Sharing & Features > Remove Comma Delimiter (User) -->
     <policy class="User" displayName="$(string.bRemoveCommaDelimiterDC_User)" explainText="$(string.bRemoveCommaDelimiterDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\SendMail"
       name="bRemoveCommaDelimiterDC_User" valueName="bRemoveCommaDelimiter">
-      <parentCategory ref="SharingFeaturesCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Sharing & Features > Review Confirm Alert (User) -->
-    <policy class="User" displayName="$(string.iSendForReviewConfirmDC_User)" explainText="$(string.iSendForReviewConfirmDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AVAlert\cCheckBox\cAnnots"
-      name="iSendForReviewConfirmDC_User" valueName="iSendForReviewConfirm">
       <parentCategory ref="SharingFeaturesCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
@@ -5892,15 +5892,6 @@
       <supportedOn ref="SupportedAcrobatDC_User"/>
       <enabledValue><decimal value="0" /></enabledValue>
       <disabledValue><decimal value="1" /></disabledValue>
-    </policy>
-
-    <!-- Startup & Experience > EULA Accept Timeout (User) -->
-    <policy class="User" displayName="$(string.iEULAAcceptanceTimeDC_User)" explainText="$(string.iEULAAcceptanceTimeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AVPrivate"
-      name="iEULAAcceptanceTimeDC_User" valueName="iEULAAcceptanceTime">
-      <parentCategory ref="StartupExperienceCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
     <!-- Startup & Experience > Fill & Sign Onboarding (User) -->
@@ -6529,11 +6520,25 @@
 
     <!-- Documents, Editing & Accessibility > Background Color (User) -->
     <policy class="User" displayName="$(string.iAccessBackgroundColor_User)" explainText="$(string.iAccessBackgroundColor_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Originals\cAccessBackgroundColor"
-      name="iAccessBackgroundColor_User" valueName="iAccessBackgroundColor">
+      name="iAccessBackgroundColor_User" valueName="iAccessBackgroundColor" presentation="$(presentation.iAccessBackgroundColor_User_enum)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iAccessBackgroundColor_User_enum" valueName="iAccessBackgroundColor">
+          <item displayName="$(string.iAccessBackgroundColor_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iAccessBackgroundColor_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iAccessBackgroundColor_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.iAccessBackgroundColor_User_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Check Page Range (User) -->
@@ -6594,24 +6599,6 @@
     <!-- Documents, Editing & Accessibility > Comment Opacity (User) -->
     <policy class="User" displayName="$(string.iNoteOpacity_User)" explainText="$(string.iNoteOpacity_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Originals"
       name="iNoteOpacity_User" valueName="iNoteOpacity">
-      <parentCategory ref="DocsEditAccessCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Documents, Editing & Accessibility > Compare Sensitivity (User) -->
-    <policy class="User" displayName="$(string.iSens_User)" explainText="$(string.iSens_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Recognition\cCompare"
-      name="iSens_User" valueName="iSens">
-      <parentCategory ref="DocsEditAccessCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Documents, Editing & Accessibility > Compare Type (User) -->
-    <policy class="User" displayName="$(string.iType_User)" explainText="$(string.iType_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Recognition\cCompare"
-      name="iType_User" valueName="iType">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
@@ -7538,24 +7525,6 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- Security: Trust & Permissions > Console H-Splitter (User) -->
-    <policy class="User" displayName="$(string.iSHS_User)" explainText="$(string.iSHS_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cSecurityConsole"
-      name="iSHS_User" valueName="iSHS">
-      <parentCategory ref="SecurityTrustCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Security: Trust & Permissions > Console V-Splitter (User) -->
-    <policy class="User" displayName="$(string.iSVS_User)" explainText="$(string.iSVS_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cSecurityConsole"
-      name="iSVS_User" valueName="iSVS">
-      <parentCategory ref="SecurityTrustCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
     <!-- Security: Trust & Permissions > CRL Cache Lifetime (User) -->
     <policy class="User" displayName="$(string.iMaxRevokeInfoCacheLifetime_User)" explainText="$(string.iMaxRevokeInfoCacheLifetime_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cPubSec"
       name="iMaxRevokeInfoCacheLifetime_User" presentation="$(presentation.iMaxRevokeInfoCacheLifetime_User_num)">
@@ -7694,6 +7663,16 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
+    <!-- Security: Trust & Permissions > ID Enrollment URL (User) -->
+    <policy class="User" displayName="$(string.xDefEnrollmentURL_User)" explainText="$(string.xDefEnrollmentURL_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cPubSec"
+      name="xDefEnrollmentURL_User" presentation="$(presentation.xDefEnrollmentURL_User_text)">
+      <parentCategory ref="SecurityTrustCategory_User"/>
+      <supportedOn ref="SupportedReaderDC_User"/>
+      <elements>
+        <text id="xDefEnrollmentURL_User_text" valueName="xDefEnrollmentURL" maxLength="2048" />
+      </elements>
+    </policy>
+
     <!-- Security: Trust & Permissions > Ignore OCSP NextUpdate (User) -->
     <policy class="User" displayName="$(string.bIgnoreNextUpdate_User)" explainText="$(string.bIgnoreNextUpdate_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cAdobe_OCSPRevChecker"
       name="bIgnoreNextUpdate_User" valueName="bIgnoreNextUpdate">
@@ -7726,15 +7705,6 @@
     <!-- Security: Trust & Permissions > Import Windows Certs (User) -->
     <policy class="User" displayName="$(string.bCertStoreImportEnable_User)" explainText="$(string.bCertStoreImportEnable_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\PPKHandler"
       name="bCertStoreImportEnable_User" valueName="bCertStoreImportEnable">
-      <parentCategory ref="SecurityTrustCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Security: Trust & Permissions > Last Sig Appearance (User) -->
-    <policy class="User" displayName="$(string.iAPIndex_User)" explainText="$(string.iAPIndex_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cPubSec"
-      name="iAPIndex_User" valueName="iAPIndex">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
@@ -7989,6 +7959,16 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
+    <!-- Security: Trust & Permissions > SAML Auth Server URL (User) -->
+    <policy class="User" displayName="$(string.tSAML_Assertion_Source_User)" explainText="$(string.tSAML_Assertion_Source_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cPPKHandler\cRC"
+      name="tSAML_Assertion_Source_User" presentation="$(presentation.tSAML_Assertion_Source_User_text)">
+      <parentCategory ref="SecurityTrustCategory_User"/>
+      <supportedOn ref="SupportedReaderDC_User"/>
+      <elements>
+        <text id="tSAML_Assertion_Source_User_text" valueName="tSAML_Assertion_Source" maxLength="2048" />
+      </elements>
+    </policy>
+
     <!-- Security: Trust & Permissions > Save Certified Alert (User) -->
     <policy class="User" displayName="$(string.iDigSigSaveAsCertified_User)" explainText="$(string.iDigSigSaveAsCertified_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\AVAlert\cCheckbox"
       name="iDigSigSaveAsCertified_User" valueName="iDigSigSaveAsCertified">
@@ -8014,6 +7994,16 @@
       <supportedOn ref="SupportedReaderDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
       <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Security: Trust & Permissions > Server URL (User) -->
+    <policy class="User" displayName="$(string.tServerURL_User)" explainText="$(string.tServerURL_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cEDC"
+      name="tServerURL_User" presentation="$(presentation.tServerURL_User_text)">
+      <parentCategory ref="SecurityTrustCategory_User"/>
+      <supportedOn ref="SupportedReaderDC_User"/>
+      <elements>
+        <text id="tServerURL_User_text" valueName="tServerURL" maxLength="2048" />
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Show All Chains (User) -->
@@ -8186,6 +8176,16 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
+    <!-- Security: Trust & Permissions > Tracker Server URL (User) -->
+    <policy class="User" displayName="$(string.tServer_User)" explainText="$(string.tServer_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cEDC\cKnownServers"
+      name="tServer_User" presentation="$(presentation.tServer_User_text)">
+      <parentCategory ref="SecurityTrustCategory_User"/>
+      <supportedOn ref="SupportedReaderDC_User"/>
+      <elements>
+        <text id="tServer_User_text" valueName="tServer" maxLength="2048" />
+      </elements>
+    </policy>
+
     <!-- Security: Trust & Permissions > TrueType Font Warn (User) -->
     <policy class="User" displayName="$(string.bTrueTypeFontPDFSigQWarn_User)" explainText="$(string.bTrueTypeFontPDFSigQWarn_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cDigSig"
       name="bTrueTypeFontPDFSigQWarn_User" valueName="bTrueTypeFontPDFSigQWarn">
@@ -8243,6 +8243,16 @@
       </elements>
     </policy>
 
+    <!-- Security: Trust & Permissions > Url Of The Roaming Id (User) -->
+    <policy class="User" displayName="$(string.tURL_User)" explainText="$(string.tURL_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cAdobe_RoamingID\cDefaultServerInfo"
+      name="tURL_User" presentation="$(presentation.tURL_User_text)">
+      <parentCategory ref="SecurityTrustCategory_User"/>
+      <supportedOn ref="SupportedReaderDC_User"/>
+      <elements>
+        <text id="tURL_User_text" valueName="tURL" maxLength="2048" />
+      </elements>
+    </policy>
+
     <!-- Security: Trust & Permissions > Use Archived Rev Info (User) -->
     <policy class="User" displayName="$(string.iUseArchivedRevInfo_User)" explainText="$(string.iUseArchivedRevInfo_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cAdobe_LTVProvider"
       name="iUseArchivedRevInfo_User" valueName="iUseArchivedRevInfo" presentation="$(presentation.iUseArchivedRevInfo_User_enum)">
@@ -8282,21 +8292,11 @@
 
     <!-- Security: Trust & Permissions > Windows Store Trust (User) -->
     <policy class="User" displayName="$(string.iMSStoreTrusted_User)" explainText="$(string.iMSStoreTrusted_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cMSCAPI_DirectoryProvider"
-      name="iMSStoreTrusted_User" valueName="iMSStoreTrusted" presentation="$(presentation.iMSStoreTrusted_User_enum)">
+      name="iMSStoreTrusted_User" presentation="$(presentation.iMSStoreTrusted_User_num)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
       <elements>
-        <enum id="iMSStoreTrusted_User_enum" valueName="iMSStoreTrusted">
-          <item displayName="$(string.iMSStoreTrusted_User_opt0)">
-            <value><decimal value="0" /></value>
-          </item>
-          <item displayName="$(string.iMSStoreTrusted_User_opt1)">
-            <value><decimal value="96" /></value>
-          </item>
-          <item displayName="$(string.iMSStoreTrusted_User_opt2)">
-            <value><decimal value="98" /></value>
-          </item>
-        </enum>
+        <decimal id="iMSStoreTrusted_User_num" valueName="iMSStoreTrusted" minValue="0" maxValue="255" />
       </elements>
     </policy>
 
@@ -8352,15 +8352,6 @@
     <!-- Sharing & Features > Remove Comma Delimiter (User) -->
     <policy class="User" displayName="$(string.bRemoveCommaDelimiter_User)" explainText="$(string.bRemoveCommaDelimiter_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\SendMail"
       name="bRemoveCommaDelimiter_User" valueName="bRemoveCommaDelimiter">
-      <parentCategory ref="SharingFeaturesCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Sharing & Features > Review Confirm Alert (User) -->
-    <policy class="User" displayName="$(string.iSendForReviewConfirm_User)" explainText="$(string.iSendForReviewConfirm_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\AVAlert\cCheckBox\cAnnots"
-      name="iSendForReviewConfirm_User" valueName="iSendForReviewConfirm">
       <parentCategory ref="SharingFeaturesCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
@@ -8450,15 +8441,6 @@
       <supportedOn ref="SupportedReaderDC_User"/>
       <enabledValue><decimal value="0" /></enabledValue>
       <disabledValue><decimal value="1" /></disabledValue>
-    </policy>
-
-    <!-- Startup & Experience > EULA Accept Timeout (User) -->
-    <policy class="User" displayName="$(string.iEULAAcceptanceTime_User)" explainText="$(string.iEULAAcceptanceTime_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\AVPrivate"
-      name="iEULAAcceptanceTime_User" valueName="iEULAAcceptanceTime">
-      <parentCategory ref="StartupExperienceCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
     <!-- Startup & Experience > EULA Acceptance (User) -->

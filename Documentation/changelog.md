@@ -10,6 +10,23 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 
 ---
 
+## v3.3 - 20 July 2026
+
+**791 policies** (294 machine + 497 user) — user count reduced by 4 after removing app-internal toggles and adding curated text policies.
+
+| Change | Detail |
+|---|---|
+| **tBuiltInPermList helper** | New [`PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1`](../PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1) reads/writes the attachment permissions list as **REG_BINARY**. ADMX has no binary element type; v3.1 wrote unusable REG_SZ; v3.2 removed the policy. Script documents why and supports `-ExportHex` for Intune OMA-URI / GPP deployment. |
+| **User text policies** | **5** curated REG_SZ prefs adopted from Skip: `tServerURL`, `xDefEnrollmentURL`, `tServer`, `tURL`, `tSAML_Assertion_Source`. See [user-skip-text-audit.md](user-skip-text-audit.md). |
+| **User control fixes** | `iAccessBackgroundColor` toggle → **enum** (4 documented accessibility modes). `iMSStoreTrusted` enum → **numeric bitmask** (0–255; documented 0/96/98). **7** app-internal toggles demoted to **Skip** (`iSens`, `iType`, `iAPIndex`, `iSHS`, `iSVS`, `iSendForReviewConfirm`, `iEULAAcceptanceTime`). |
+| **iNumSessionAV2** | Kept as **Toggle** (GoodSetting hardening manifest maps cleanly; numeric UX not worth manifest special-case). |
+| **Source CSV schema** | New optional `EnumValues`, `NumericSpec`, `TextSpec` JSON columns; existing enum/numeric maps migrated from `tools/AdobeDcPolicySpecs.ps1` with code fallback retained. Stale `RegValEnabled`/`RegValDisabled` cleared on Enum/Numeric rows. |
+| **Import impact** | Same namespace and policy `name` attributes as v3.2. **Partially binding-breaking for User scope:** new text policies, enum/numeric control changes, and removed app-internal toggles — re-select affected settings in Intune/GPO after re-upload. |
+
+Historical ADMX/ADML files for this release: [GitHub Release v3.3](https://github.com/systmworks/Adobe-DC-ADMX/releases/tag/v3.3) (when published).
+
+---
+
 ## v3.2 - 20 July 2026
 
 **795 policies** (294 machine + 501 user) — machine count reduced by 2; user policy count unchanged.

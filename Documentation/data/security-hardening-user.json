@@ -1,86 +1,86 @@
-[
-  {
-    "valueName": "b3DEnableContent",
-    "friendlyName": "3D Content Trust",
-    "scope": "Both",
-    "hardenedDword": 0,
-    "recommendation": "Optional"
-  },
-  {
-    "valueName": "bEnableDebugger",
-    "friendlyName": "Enable JS Debugger",
-    "scope": "Both",
-    "hardenedDword": 0,
-    "recommendation": "Optional"
-  },
-  {
-    "valueName": "bFIPSMode",
-    "friendlyName": "FIPS Mode",
-    "scope": "Both",
-    "hardenedDword": 1,
-    "recommendation": "Recommended"
-  },
-  {
-    "valueName": "bEnableGlobalSecurity",
-    "friendlyName": "JS Global Security",
-    "scope": "Both",
-    "hardenedDword": 1,
-    "recommendation": "Optional"
-  },
-  {
-    "valueName": "bEnableMenuItems",
-    "friendlyName": "JS Menu Items",
-    "scope": "Both",
-    "hardenedDword": 0,
-    "recommendation": "Optional"
-  },
-  {
-    "valueName": "bEnableAlwaysOutlookAttachmentProtectedView",
-    "friendlyName": "Outlook Protected View",
-    "scope": "Both",
-    "hardenedDword": 0,
-    "recommendation": "Optional"
-  },
-  {
-    "valueName": "bUseExpiredTimestamps",
-    "friendlyName": "Accept Expired Timestamps",
-    "scope": "Both",
-    "hardenedDword": 0,
-    "recommendation": "Optional"
-  },
-  {
-    "valueName": "bAllowConnectViaHTTP",
-    "friendlyName": "Allow LiveCycle HTTP",
-    "scope": "Both",
-    "hardenedDword": 0,
-    "recommendation": "Optional"
-  },
-  {
-    "valueName": "bLoadSettingsFromURL",
-    "friendlyName": "Load Security Settings from Server (Adobe Certificates)",
-    "scope": "Both",
-    "hardenedDword": 0,
-    "recommendation": "Recommended"
-  },
-  {
-    "valueName": "bLoadSettingsFromURL",
-    "friendlyName": "Load Security Settings from Server (European Certificates)",
-    "scope": "Both",
-    "hardenedDword": 0,
-    "recommendation": "Recommended"
-  },
-  {
-    "valueName": "bAllowOpenFile",
-    "friendlyName": "Open Non-PDF Attachments",
-    "scope": "Both",
-    "hardenedDword": 0,
-    "recommendation": "Optional"
-  },
-  {
-    "valueName": "bSecureOpenFile",
-    "friendlyName": "Secure Open Attachments",
-    "scope": "Both",
-    "hardenedDword": 1,
-    "recommendation": "Optional"
-  }
+﻿[
+    {
+        "valueName":  "b3DEnableContent",
+        "friendlyName":  "3D Content Trust",
+        "scope":  "Both",
+        "hardenedDword":  0,
+        "recommendation":  "Optional"
+    },
+    {
+        "valueName":  "bEnableDebugger",
+        "friendlyName":  "Enable JS Debugger",
+        "scope":  "Both",
+        "hardenedDword":  0,
+        "recommendation":  "Optional"
+    },
+    {
+        "valueName":  "bFIPSMode",
+        "friendlyName":  "FIPS Mode",
+        "scope":  "Both",
+        "hardenedDword":  1,
+        "recommendation":  "Recommended"
+    },
+    {
+        "valueName":  "bEnableGlobalSecurity",
+        "friendlyName":  "JS Global Security",
+        "scope":  "Both",
+        "hardenedDword":  1,
+        "recommendation":  "Optional"
+    },
+    {
+        "valueName":  "bEnableMenuItems",
+        "friendlyName":  "JS Menu Items",
+        "scope":  "Both",
+        "hardenedDword":  0,
+        "recommendation":  "Optional"
+    },
+    {
+        "valueName":  "bEnableAlwaysOutlookAttachmentProtectedView",
+        "friendlyName":  "Outlook Protected View",
+        "scope":  "Both",
+        "hardenedDword":  0,
+        "recommendation":  "Optional"
+    },
+    {
+        "valueName":  "bUseExpiredTimestamps",
+        "friendlyName":  "Accept Expired Timestamps",
+        "scope":  "Both",
+        "hardenedDword":  0,
+        "recommendation":  "Optional"
+    },
+    {
+        "valueName":  "bAllowConnectViaHTTP",
+        "friendlyName":  "Allow LiveCycle HTTP",
+        "scope":  "Both",
+        "hardenedDword":  0,
+        "recommendation":  "Optional"
+    },
+    {
+        "valueName":  "bLoadSettingsFromURL",
+        "friendlyName":  "Load Security Settings from Server (Adobe Certificates)",
+        "scope":  "Both",
+        "hardenedDword":  0,
+        "recommendation":  "Recommended"
+    },
+    {
+        "valueName":  "bLoadSettingsFromURL",
+        "friendlyName":  "Load Security Settings from Server (European Certificates)",
+        "scope":  "Both",
+        "hardenedDword":  0,
+        "recommendation":  "Recommended"
+    },
+    {
+        "valueName":  "bAllowOpenFile",
+        "friendlyName":  "Open Non-PDF Attachments",
+        "scope":  "Both",
+        "hardenedDword":  0,
+        "recommendation":  "Optional"
+    },
+    {
+        "valueName":  "bSecureOpenFile",
+        "friendlyName":  "Secure Open Attachments",
+        "scope":  "Both",
+        "hardenedDword":  1,
+        "recommendation":  "Optional"
+    }
 ]
