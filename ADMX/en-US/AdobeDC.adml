@@ -11,10 +11,10 @@
 <!-- ================================================================= -->
 
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.1" schemaVersion="1.0"
+  revision="3.2" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
-  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.1)</displayName>
-  <description>ADMX v3.1 -- Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
+  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.2)</displayName>
+  <description>ADMX v3.2 -- Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
   <resources>
     <stringTable>
       <string id="SupportedAcrobatReaderPolicies">Adobe Acrobat and Reader DC</string>
@@ -189,8 +189,6 @@
       <string id="iFileAttachmentPerms_Acrobat_Explain">Prevents users from opening or launching file types other than PDF or FDF from PDF file attachments and restricts the related Trust Manager behavior.&#10;&#10;Possible values include: 0: Allow opening non-PDF file attachments with external applications or equivalent (not STIG-compliant). 1: Block non-PDF/FDF attachments (recommended; DISA STIG and NSA hardening guidance).&#10;&#10;Security Reference: STIG ARDC-CN-000035 (V-213174) Medium; STIG AADC-CN-000275 (V-213119) Medium</string>
       <string id="bDisablePDFRedirectionActions_Acrobat">Block PDF Link Actions</string>
       <string id="bDisablePDFRedirectionActions_Acrobat_Explain">Specifies whether to block specific PDF actions (listed below) which result in opening a link.&#10;&#10;This preference does not block regular web links. Enabling this feature blocks PDF actions that open links, including GoToE, GoToR, Launch, Thread, Import Data, Export Form Data, Submit Form, and Reset Form. Possible values include: 0 or null: Don't block these opening links. 1: Block links.</string>
-      <string id="tBuiltInPermList_Acrobat">Built-in Attachment Permissions List</string>
-      <string id="tBuiltInPermList_Acrobat_Explain">Defines the white and black list of file types that can be saved and opened from a document.&#10;&#10;Pipe-separated list of file extensions with permission levels. Format: version:1|.ext:N where N is 0 (prompt, no allow), 1 (prompt, can allow/prohibit), 2 (always open), or 3 (never open). Referenced by bEnableBlacklistForOpenSave. Extensions with level 3 are hidden from save/open dialogs (build 21.011.20029+).</string>
       <string id="bEnablePVCertificateBasedTrust_Acrobat">Certification Status in Protected View</string>
       <string id="bEnablePVCertificateBasedTrust_Acrobat_Explain">Specifies whether a document's certification status should appear in the Protected View document message bar.&#10;&#10;Possible values include: 0: Don't show the document's certification status. 1: Do show the document's certification status.</string>
       <string id="bEnhancedSecurityInBrowser_Acrobat">Enhanced Security in Browser</string>
@@ -525,8 +523,6 @@
       <string id="iFileAttachmentPerms_Reader_Explain">Prevents users from opening or launching file types other than PDF or FDF from PDF file attachments and restricts the related Trust Manager behavior.&#10;&#10;Possible values include: 0: Allow opening non-PDF file attachments with external applications or equivalent (not STIG-compliant). 1: Block non-PDF/FDF attachments (recommended; DISA STIG and NSA hardening guidance).&#10;&#10;Security Reference: STIG ARDC-CN-000035 (V-213174) Medium; STIG AADC-CN-000275 (V-213119) Medium</string>
       <string id="bDisablePDFRedirectionActions_Reader">Block PDF Link Actions</string>
       <string id="bDisablePDFRedirectionActions_Reader_Explain">Specifies whether to block specific PDF actions (listed below) which result in opening a link.&#10;&#10;This preference does not block regular web links. Enabling this feature blocks PDF actions that open links, including GoToE, GoToR, Launch, Thread, Import Data, Export Form Data, Submit Form, and Reset Form. Possible values include: 0 or null: Don't block these opening links. 1: Block links.</string>
-      <string id="tBuiltInPermList_Reader">Built-in Attachment Permissions List</string>
-      <string id="tBuiltInPermList_Reader_Explain">Defines the white and black list of file types that can be saved and opened from a document.&#10;&#10;Pipe-separated list of file extensions with permission levels. Format: version:1|.ext:N where N is 0 (prompt, no allow), 1 (prompt, can allow/prohibit), 2 (always open), or 3 (never open). Referenced by bEnableBlacklistForOpenSave. Extensions with level 3 are hidden from save/open dialogs (build 21.011.20029+).</string>
       <string id="bEnablePVCertificateBasedTrust_Reader">Certification Status in Protected View</string>
       <string id="bEnablePVCertificateBasedTrust_Reader_Explain">Specifies whether a document's certification status should appear in the Protected View document message bar.&#10;&#10;Possible values include: 0: Don't show the document's certification status. 1: Do show the document's certification status.</string>
       <string id="bEnhancedSecurityInBrowser_Reader">Enhanced Security in Browser</string>
@@ -943,8 +939,13 @@
       <string id="ADC4406238DC_User_Explain">Specifies whether to suppress the confirmation dialog when the Acrobat preference Mark PDF/UA compliant is checked in Microsoft Word.&#10;&#10;Admins can disable the following dialog when converting a Microsoft Word document to PDF: Possible values include: 0: Don't show the dialog. 1: Show the dialog.</string>
       <string id="irightPaneStateDC_User">Tools Pane State (User)</string>
       <string id="irightPaneStateDC_User_Explain">Specifies whether to automatically open the Tools Pane on launch.&#10;&#10;Possible values include: 0: Use the default. 1: Always closed. 2: Always open.</string>
+      <string id="irightPaneStateDC_User_opt0">Use the default</string>
+      <string id="irightPaneStateDC_User_opt1">Always closed</string>
+      <string id="irightPaneStateDC_User_opt2">Always open</string>
       <string id="iBasicSharePaneStickyStatusDC_User">Tools Pane Sticky (User)</string>
       <string id="iBasicSharePaneStickyStatusDC_User_Explain">Specifies whether to remember the Tools Pane state across sessions.&#10;&#10;For example, if the user closes the Tools Pane, it will not automatically open on launch. Interacts with irightPaneState. Possible values include: 0: Don't remember the Tool Pane's state. The Pane is always closed on application open. 1: Do remember the Tool Pane's state.</string>
+      <string id="iBasicSharePaneStickyStatusDC_User_opt0">Don't remember the Tool Pane's state (always closed on launch)</string>
+      <string id="iBasicSharePaneStickyStatusDC_User_opt1">Do remember the Tool Pane's state</string>
       <string id="iNumSwitcherContextualToolTipAVShownDC_User">Try New Coachmark (User)</string>
       <string id="iNumSwitcherContextualToolTipAVShownDC_User_Explain">Specifies whether to show the &quot;Try the new Acrobat/Reader&quot; coachmark after launching Acrobat the first time.&#10;&#10;Once the coachmark displays, the app automatically resets this value to 0. This preference has no effect if bEnableAv2 is 0. 0: Do not show the coachmark. 1: Show the coachmark.</string>
       <string id="iNumSessionAV2DC_User">UI Switcher Sessions (User)</string>
@@ -1010,12 +1011,25 @@
       <string id="iDictionaryDefaultIDDC_User_Explain">Identifies the default spelling dictionary ID.&#10;&#10;The value is an ID from cDictionaryOrderID\i0 . The dictionary name can be found in cDictionaryOrder\t0. Alternatively, set the value in the user interface, close the product, and look here again. Use the value that appears during deployment.</string>
       <string id="iPageViewLayoutModeDC_User">Default Page Layout (User)</string>
       <string id="iPageViewLayoutModeDC_User_Explain">Specifies the default page layout when a PDF opens.&#10;&#10;These settings can be overridden by Accessiblity settings such as bOverridePageLayout. Possible values include: null: Automatic 1: Single Page 2: Single Page Continuous 3: Two Up Continuous 5: Two Up</string>
+      <string id="iPageViewLayoutModeDC_User_opt0">Automatic</string>
+      <string id="iPageViewLayoutModeDC_User_opt1">Single Page</string>
+      <string id="iPageViewLayoutModeDC_User_opt2">Single Page Continuous</string>
+      <string id="iPageViewLayoutModeDC_User_opt3">Two Up Continuous</string>
+      <string id="iPageViewLayoutModeDC_User_opt4">Two Up</string>
       <string id="iParaDirDC_User">Default Paragraph Dir (User)</string>
       <string id="iParaDirDC_User_Explain">Specifies the paragraph direction.&#10;&#10;Possible values include: 0: Left to Right 1: Right to Left 2: Infer from document</string>
+      <string id="iParaDirDC_User_opt0">Left to Right</string>
+      <string id="iParaDirDC_User_opt1">Right to Left</string>
+      <string id="iParaDirDC_User_opt2">Infer from document</string>
       <string id="iDefaultZoomScaleDC_User">Default Zoom Scale (User)</string>
       <string id="iDefaultZoomScaleDC_User_Explain">Specifies the zoom scale % to use when a PDF opens.&#10;&#10;Possible values include a range beginning with Fit Page to Reflow . To set a value, configure the UI and look at the registry/plist preference to see what has been written. Possible values include: 199a: 10% 4000 25% 8000: 50% c000: 75% 10000: 100% etc.</string>
       <string id="iDefaultZoomTypeDC_User">Default Zoom Type (User)</string>
       <string id="iDefaultZoomTypeDC_User_Explain">Specifies the default zoom type (other than a %) to use when a PDF opens.&#10;&#10;% scales are stored in iZoomScale. Possible values include: 1: Fit Page (automatic) 2: Fit Width 3: Fit Hieght 4: Fit Visible 6: Reflow</string>
+      <string id="iDefaultZoomTypeDC_User_opt0">Fit Page (automatic)</string>
+      <string id="iDefaultZoomTypeDC_User_opt1">Fit Width</string>
+      <string id="iDefaultZoomTypeDC_User_opt2">Fit Height</string>
+      <string id="iDefaultZoomTypeDC_User_opt3">Fit Visible</string>
+      <string id="iDefaultZoomTypeDC_User_opt4">Reflow</string>
       <string id="imaxPDFCommentsSizeDC_User">Embedded Comment Limit (User)</string>
       <string id="imaxPDFCommentsSizeDC_User_Explain">Sets the comment threshold size for determining whether comments are embedded or sent as FDF files.&#10;&#10;When collaboration involves sending comments with a PDF, comments below the threshold size are embedded in the document. Comments above the threshold size are sent as FDF files. Possible values include: 3: Max size for Reader (Acrobat is 5)</string>
       <string id="bemptyContentToolTipDC_User">Empty Comment Tooltip (User)</string>
@@ -1036,6 +1050,9 @@
       <string id="bInlineAutoCompleteDC_User_Explain">Specifies whether to auto complete a field based on remembered values when a user starts typing.&#10;&#10;This option is enabled for both the Basic and Advanced options. Possible values include: 0: Don't auto complete. 1: Do autocomplete.</string>
       <string id="iIntlSelectFontDC_User">International Font (User)</string>
       <string id="iIntlSelectFontDC_User_Explain">Specifies the font to use.&#10;&#10;Possible values include: 0: Application default 1: GB18030 compatible font 2: HKSCS compatible font</string>
+      <string id="iIntlSelectFontDC_User_opt0">Application default</string>
+      <string id="iIntlSelectFontDC_User_opt1">GB18030 compatible font</string>
+      <string id="iIntlSelectFontDC_User_opt2">HKSCS compatible font</string>
       <string id="bLigaturesDC_User">Ligatures (User)</string>
       <string id="bLigaturesDC_User_Explain">Specifies whether to enable support for ligatures.&#10;&#10;Possible values include: 0: Don't enable ligatures. 1: Enable ligatures.</string>
       <string id="balwaysUseIdentDC_User">Login Name as Author (User)</string>
@@ -1056,8 +1073,15 @@
       <string id="iZoomScaleDC_User_Explain">Specifies the value in % to zoom when iZoomType is set to a % value and overrides Page Display settings.&#10;&#10;Possible values include a range beginning with Fit Page to Reflow . When selected, % values are stored in iZoomScale. To set a value, configure the UI and look at the registry/plist preference to see what has been written. Possible values include: 199a: 10% 4000 25% 8000: 50% c000: 75% 10000: 100% etc.</string>
       <string id="iZoomTypeDC_User">Override Zoom Type (User)</string>
       <string id="iZoomTypeDC_User_Explain">Specifies the zoom scale for all other documents other than a % scale and overrides Page Display settings.&#10;&#10;% scales are stored in iZoomScale. Possible values include: 1: Fit Page 2: Fit Width 3: Fit Hieght 4: Fit Visible 6: Reflow</string>
+      <string id="iZoomTypeDC_User_opt0">Fit Page</string>
+      <string id="iZoomTypeDC_User_opt1">Fit Width</string>
+      <string id="iZoomTypeDC_User_opt2">Fit Height</string>
+      <string id="iZoomTypeDC_User_opt3">Fit Visible</string>
+      <string id="iZoomTypeDC_User_opt4">Reflow</string>
       <string id="iParagraphDirectionDC_User">Paragraph Direction (User)</string>
       <string id="iParagraphDirectionDC_User_Explain">Specifies the paragraph direction.&#10;&#10;Possible values include: 0: Right to Left 1: Left to Right</string>
+      <string id="iParagraphDirectionDC_User_opt0">Right to Left</string>
+      <string id="iParagraphDirectionDC_User_opt1">Left to Right</string>
       <string id="bPopupsOpenIffSelectedDC_User">Popup When Selected (User)</string>
       <string id="bPopupsOpenIffSelectedDC_User_Explain">Specifies whether to open a popup when it is selected.</string>
       <string id="bPopupsScrollWithPageDC_User">Popups Scroll With Page (User)</string>
@@ -1074,10 +1098,15 @@
       <string id="bUserAskedToEnableAutoCompleteDC_User_Explain">Specifies whether the user is asked to enable auto complete at runtime.&#10;&#10;This option is enabled for the Advanced option. Possible values include: 0: Don't ask the user. 1: Do ask the user.</string>
       <string id="iShowOrderDC_User">Reading Order Display (User)</string>
       <string id="iShowOrderDC_User_Explain">Specifies the type of grouping order to display in the touchup reading order panel.&#10;&#10;Possible values include: 0: Order (numbered). 1: Structure type. 2: None.</string>
+      <string id="iShowOrderDC_User_opt0">Order (numbered)</string>
+      <string id="iShowOrderDC_User_opt1">Structure type</string>
+      <string id="iShowOrderDC_User_opt2">None</string>
       <string id="bRecordNewEntriesDC_User">Remember Form Entries (User)</string>
       <string id="bRecordNewEntriesDC_User_Explain">Specifies whether to remember form field entries for use with future auto-complete actions.&#10;&#10;This option is enabled for both the Basic and Advanced options. Possible values include: 0: Don't remember entries. 1: Do remember entries.</string>
       <string id="iRememberViewDC_User">Restore Last View (User)</string>
       <string id="iRememberViewDC_User_Explain">Specifies whether to restore last view settings when reopening documents.&#10;&#10;Possible values include: 1: Don't restore the last view settings. 2: Do restore the last view settings.</string>
+      <string id="iRememberViewDC_User_opt0">Don't restore the last view settings</string>
+      <string id="iRememberViewDC_User_opt1">Do restore the last view settings</string>
       <string id="bRTLUIDC_User">Right-to-Left UI (User)</string>
       <string id="bRTLUIDC_User_Explain">Specifies whether to enable right to left language options.&#10;&#10;Possible values include: 0: Disable right to left language options. 1: Enable right to left language options.</string>
       <string id="bDigitsUIDC_User">RTL Digit Display (User)</string>
@@ -1132,6 +1161,9 @@
       <string id="iEmailClientSelectionDC_User_Explain">Specifies the email client to use when submitting an XFA form.&#10;&#10;Adobe's preference reference does not describe this value; use the URL column for the documentation link.</string>
       <string id="iRXOPolicyDC_User">XObjects View Mode (User)</string>
       <string id="iRXOPolicyDC_User_Explain">Sets XObject access to either Never (0), Always (1), or Only PDF/X-5 Compliant Ones (2).&#10;&#10;The user must also set cRXOLocation and (Windows only) specify a privileged location for each parent (referencing) document. Possible values include: 0: Never 1: Always 2: Only PDF/X-5 Compliant Ones</string>
+      <string id="iRXOPolicyDC_User_opt0">Never allow XObjects view mode</string>
+      <string id="iRXOPolicyDC_User_opt1">Always allow XObjects view mode</string>
+      <string id="iRXOPolicyDC_User_opt2">Only PDF/X-5 compliant documents</string>
 
       <!-- ======================================== -->
       <!--         Microsoft Purview (MIP)          -->
@@ -1164,6 +1196,9 @@
       <string id="bConsoleOpenDC_User_Explain">Enables the interactive debugger console.</string>
       <string id="iExceptionsDC_User">JS Exception Handling (User)</string>
       <string id="iExceptionsDC_User_Explain">Specifies how exceptions should be handled.&#10;&#10;Allowable values include: 0: Ignore 1: Trace 2: Break</string>
+      <string id="iExceptionsDC_User_opt0">Ignore</string>
+      <string id="iExceptionsDC_User_opt1">Trace</string>
+      <string id="iExceptionsDC_User_opt2">Break</string>
       <string id="bEnableGlobalSecurityDC_User">JS Global Security (User)</string>
       <string id="bEnableGlobalSecurityDC_User_Explain">Controls whether or not a script in one sandbox can access a script object in another sandbox.&#10;&#10;By default, scripts can not access objects outside the current document sandbox. With 9.x and later, such communication only works in the standalone application since both the Acrobat and Reader browser-based viewer opens each window in a discrete browser instance.</string>
       <string id="bEnableMenuItemsDC_User">JS Menu Items (User)</string>
@@ -1191,10 +1226,16 @@
       <string id="bAlwaysConsultDC_User_Explain">Determines when the URL is used for an additional URL CRL distribution point.&#10;&#10;If false, the URL is only used when the certificate does not have a CRLDp extension.</string>
       <string id="iAuthMechanismsDC_User">Auth Mechanisms (User)</string>
       <string id="iAuthMechanismsDC_User_Explain">Specifies which registered provider(s) to use.&#10;&#10;0: Use none of the registered providers. 1: Use first registered provider. 2: Use all registered providers.</string>
+      <string id="iAuthMechanismsDC_User_opt0">Use none of the registered providers</string>
+      <string id="iAuthMechanismsDC_User_opt1">Use first registered provider</string>
+      <string id="iAuthMechanismsDC_User_opt2">Use all registered providers</string>
       <string id="iAutoAcceptEDCPrivacyNotificationDC_User">Auto-Accept Privacy (User)</string>
       <string id="iAutoAcceptEDCPrivacyNotificationDC_User_Explain">Specifies whether to show an alert confirming acceptance of the privacy policy.&#10;&#10;Possible values include: 0: Don't show an alert. 1: Do show an alert.</string>
       <string id="iAutoAddLTVDC_User">Auto-Add LTV Info (User)</string>
       <string id="iAutoAddLTVDC_User_Explain">Specifies whether LTV information should be automatically added to all signatures.&#10;&#10;Possible values include: 0: Never add LTV information. 1: (default) Ask whether LTV information should be added if it is too big. 2: Always add LTV information. When the cumulative size of the LTV data is greater than the sum of 10% of the PDF file size plus 10KB and Automatically add verification information on Save is set to &quot;Ask...&quot; a dialog appears asking the user if they would like to continue embedding the LTV information. Note that in workflows where the dialog appears asking whether to enable LTV, if the user selects the &quot;Do not show this message again&quot; checkbox, AND click the No button, then this preference is set to zero.</string>
+      <string id="iAutoAddLTVDC_User_opt0">Never add LTV information</string>
+      <string id="iAutoAddLTVDC_User_opt1">Ask whether to add LTV if too big (default)</string>
+      <string id="iAutoAddLTVDC_User_opt2">Always add LTV information</string>
       <string id="bSavePasswordDC_User">Cache Server Password (User)</string>
       <string id="bSavePasswordDC_User_Explain">Indicates whether the password has been cached for this server.</string>
       <string id="iSHSDC_User">Console H-Splitter (User)</string>
@@ -1207,6 +1248,9 @@
       <string id="bCustomPrefsCreatedDC_User_Explain">Indicates whether a custom certificate specific preference (e.g. Identrus) has already been created and written to the registry.&#10;&#10;If true, it doesn't get created again. Deleting or setting this key to 0 forces Acrobat to recreate custom certificate preferences after which it will reset this key to 1.</string>
       <string id="iDirectoryProviderDC_User">Directory Provider (User)</string>
       <string id="iDirectoryProviderDC_User_Explain">Specifies a directory provider for signature validation.&#10;&#10;0: Use none of the registered providers. 1: Use first registered provider. 2: Use all registered providers.</string>
+      <string id="iDirectoryProviderDC_User_opt0">Use none of the registered providers</string>
+      <string id="iDirectoryProviderDC_User_opt1">Use first registered provider</string>
+      <string id="iDirectoryProviderDC_User_opt2">Use all registered providers</string>
       <string id="bEnforceSecureChannelDC_User">Enforce Digest Compare (User)</string>
       <string id="bEnforceSecureChannelDC_User_Explain">Specifies whether to prevent signing when the original message digest and the signed message digest do not match.&#10;&#10;When set to 1, the user sees a warning dialog when the digest mismatch occurs. This error can be caused by a modification of the original message digest, a modification of the signed message digest, or a mismatch between the private and public key used for signing. When using a certificate that doesn't include a public key (such as a DSA certificate with an omitted public key), the test to detect signature validity is not performed. Do not turn this setting on if such certificates are used.</string>
       <string id="bAutoLaunchAtDocCloseDC_User">Examine on Close (User)</string>
@@ -1233,6 +1277,9 @@
       <string id="bIgnoreNextUpdateDC_User_Explain">Specifies whether to use embedded OCSP responses when nextUpdate is not present and the validation time is less than the greater of thisUpdate or producedAt time plus the value of iMaxClockSkew .&#10;&#10;For 10.1 and later, this preference is used along with iMaxClockSkew to determine whether or not embedded OCSP responses are actually used for signature validation. For details, see the subfeature description above. This behavior is designed to support Acrobat's long term validation feature and allows validating a signature with embedded responses that were valid at signing time. Possible values include: 0: iMaxClockSkew is applied to thisUpdate on both sides of the validation time, i.e. thisUpdate - iMaxClockSkew ( validation time ( checkTime + iMaxClockSkew where checkTime is the later of the producedAt and thisUpdate. When true, iMaxClockSkew is applied to thisUpdate only before the validation time: thisUpdate - iMaxClockSkew ( validation time. 1: If there is no nextUpdate, then we accept the OCSP response indefinitely (we do not check for if the validation time is too late) and don't check whether validation time is ( than checkTime)</string>
       <string id="iImportAddressBookDC_User">Import Address Book (User)</string>
       <string id="iImportAddressBookDC_User_Explain">Specifies whether the addressbook.acrodata file should be imported during a new install.&#10;&#10;Many admins set a value of 2 so that the import dialog does not appear for end users. Possible values include: 0: Do not copy the old address book. The user is NOT prompted and the address book should NOT be installed. 1 or null: Default: The user is asked whether the address book should either be installed or not. 2: Import the address book silently.</string>
+      <string id="iImportAddressBookDC_User_opt0">Do not copy; user not prompted</string>
+      <string id="iImportAddressBookDC_User_opt1">Ask whether to install the address book (default)</string>
+      <string id="iImportAddressBookDC_User_opt2">Import the address book silently</string>
       <string id="bCertStoreImportEnableDC_User">Import Windows Certs (User)</string>
       <string id="bCertStoreImportEnableDC_User_Explain">If true, then users can import from MSCAPI certificate stores into their Trusted Identity Manager.</string>
       <string id="bDontRemoveOverlappingDC_User">Keep Hidden Content (User)</string>
@@ -1255,8 +1302,15 @@
       <string id="bEnNonEmbFontLegPDFWarnDC_User_Explain">Turns on and off warnings about non-embedded fonts.&#10;&#10;A warning appears when the LegalPDF dictionary NonEmbeddedFonts attribute has a non zero value. Turning this value on causes a warning to appear in the PDF Signature Report which indicates the document contains unembedded fonts.</string>
       <string id="iSendNonceDC_User">OCSP Nonce Behavior (User)</string>
       <string id="iSendNonceDC_User_Explain">Specifies signature validation behavior with respect to nonces.&#10;&#10;With 10.0, this preference replaces bSendNonce. Possible values include: 0: No nonces are sent. 1: Nonces are included in the OCSP request and expected to be present in the response and should match the request's nonce. 2: Nonces are included in the OCSP request, but if none are present in the response, their abscence is ignored.</string>
+      <string id="iSendNonceDC_User_opt0">No nonces sent</string>
+      <string id="iSendNonceDC_User_opt1">Send nonces; expect matching nonce in response</string>
+      <string id="iSendNonceDC_User_opt2">Send nonces; ignore absent nonce in response</string>
       <string id="iURLToConsultDC_User">OCSP Responder URL (User)</string>
       <string id="iURLToConsultDC_User_Explain">Specifies how the revocation checker chooses which responder to use.&#10;&#10;Possible values include: 0: Use the AIA extension in the certificate. 1: Use the URL key in sURL. 2: Use the AIA extension in the certificate. If it is not present, use the URL key in sURL. 3: Use the OCSP request signer's certificate AIA extension. Relevant only if SignRequest is 0.</string>
+      <string id="iURLToConsultDC_User_opt0">Use the AIA extension in the certificate</string>
+      <string id="iURLToConsultDC_User_opt1">Use the URL key in sURL</string>
+      <string id="iURLToConsultDC_User_opt2">Use AIA; if absent use URL key in sURL</string>
+      <string id="iURLToConsultDC_User_opt3">Use OCSP request signer certificate AIA (SignRequest=0 only)</string>
       <string id="iResponseFreshnessDC_User">OCSP Response Freshness (User)</string>
       <string id="iResponseFreshnessDC_User_Explain">Specifies the amount of time in minutes after the response's published thisUpdate time for which the response will be valid.&#10;&#10;After that time, the response will be invalid.</string>
       <string id="bAllowOpenFileDC_User">Open Non-PDF Attachments (User)</string>
@@ -1269,6 +1323,9 @@
       <string id="bRequireOCSPCertHashDC_User_Explain">Specifies whether a certificate public key hash extension must be present in OCSP responses.</string>
       <string id="iRequireReviewWarningsDC_User">Require Sign Warnings (User)</string>
       <string id="iRequireReviewWarningsDC_User_Explain">Specifies whether the user is required to review document warnings before signing via the signing dialog.&#10;&#10;Interacts with iShowDocumentWarnings. The possible values include: 0: Never 1: Show when certifying only 2: Always</string>
+      <string id="iRequireReviewWarningsDC_User_opt0">Never</string>
+      <string id="iRequireReviewWarningsDC_User_opt1">Show when certifying only</string>
+      <string id="iRequireReviewWarningsDC_User_opt2">Always</string>
       <string id="bReqSigPropRetrievalDC_User">Require Timestamp (User)</string>
       <string id="bReqSigPropRetrievalDC_User_Explain">Indicates whether retrieving a signature property must succeed.&#10;&#10;Acrobat currently provides a signature property for timestamps. By default, retrieving a valid and trusted timestamp is not required, and property retrieval failure only results in creating a signature which uses the local time. When property retrieval is required during signature creation and fetching a timestamp fails for any reason (bad URL, no network connection, etc.) the signature creation process is aborted, no signature is created, and an error appears. 0: Make best effort, but success is not required. A signature is created. 1: Property retrieval must succeed. On failure, a signature is not created and an error dialog appears.</string>
       <string id="bRequireValidSigForChainingDC_User">Require Valid Sig Chain (User)</string>
@@ -1277,6 +1334,9 @@
       <string id="bReturnRevInfoToUserDC_User_Explain">If true, the revocation information is maintained within the SignatureInfo object and can be retrieved through JavaScript.&#10;&#10;For more information, see the Acrobat JavaScript Reference .</string>
       <string id="iRevocationCheckerDC_User">Revocation Checker (User)</string>
       <string id="iRevocationCheckerDC_User_Explain">Specifies a provider for revocation checking.&#10;&#10;0: Use none of the registered providers. 1: Use first registered provider. 2: Use all registered providers.</string>
+      <string id="iRevocationCheckerDC_User_opt0">Use none of the registered providers</string>
+      <string id="iRevocationCheckerDC_User_opt1">Use first registered provider</string>
+      <string id="iRevocationCheckerDC_User_opt2">Use all registered providers</string>
       <string id="bRevCheckTrustDC_User">Revoke Check Trust (User)</string>
       <string id="bRevCheckTrustDC_User_Explain">Specifies whether to perform revocation checks on intermediate trust anchors (those which aren't roots).&#10;&#10;In previous versions, the application did not perform revocation checks on any intermediate trust anchors since it was assumed they were self-signed. With 10.1.2 and 9.5, this setting enables revocation checking on intermediate trust anchors if such information is available. Trust anchors from 3rd parties are often installed locally to facilitate signature validation. Since it is possible that the trust anchors could become compromised and thereby open the host machine to malicious attack, those 3rd party providers in such cases would revoke their certificates. This preference enables detecting that revocation by forcing a revocation check on any intermediate trust anchors. Root and self-signed certificates are exempt from checking. Possible values include: 0: Don't perform a revocation check on intermediate trust anchors. 1: Perform a revocation check on intermediate trust anchors.</string>
       <string id="iRSAPSSSaltLengthDC_User">RSA-PSS Salt Length (User)</string>
@@ -1293,6 +1353,9 @@
       <string id="bShowAllChainsDC_User_Explain">Specifies whether to show all chains in the Certificate Viewer.&#10;&#10;If true, the Certificate Viewer shows all the chains; otherwise, it shows only the trusted chain. If there are no trusted chains, then all the chains are shown and this preference is ignored.</string>
       <string id="iShowDocumentWarningsDC_User">Show Document Warnings (User)</string>
       <string id="iShowDocumentWarningsDC_User_Explain">Specifies whether a button to allow reviewing document warnings shows up on the signing dialog.&#10;&#10;Interacts with iRequireDocumentWarnings. The possible values include: 0: Never 1: Show when certifying only 2: Always</string>
+      <string id="iShowDocumentWarningsDC_User_opt0">Never</string>
+      <string id="iShowDocumentWarningsDC_User_opt1">Show when certifying only</string>
+      <string id="iShowDocumentWarningsDC_User_opt2">Always</string>
       <string id="bShowWarningForChangesDC_User">Show Post-Sign Warning (User)</string>
       <string id="bShowWarningForChangesDC_User_Explain">Determines whether or not to show a blue i on validated signature(s) if the document changes after it was signed.&#10;&#10;If true, a document change results in a blue i status icon appearing for validated approval signatures. Use this setting when users need to know a document has changed after it was signed. If false, the status icon remains a green check and pen even if a document changes after it is signed. The setting provides a method for administrators to turn off the blue i in workflows where documents can be changed or signed multiple times. This setting does not affect certification signatures. The warning icon never appears for valid certification or approval signatures in certified documents if the signatures were allowed by the certifier. Interacts with iDisplayValidIcon which cannot be set to 2, or the icons will not appear regardless of how bShowWarningForChanges is set.</string>
       <string id="bAllowOtherInfoWhenSigningDC_User">Show Sign Contact Info (User)</string>
@@ -1301,10 +1364,16 @@
       <string id="bShowSignerWarningsDC_User_Explain">Specifies whether to show a warning that there is a greater forgery risk when revocation information is embedded in the signature.&#10;&#10;Because this warning was removed from 10.x products, this preference is only applicable to 9.4.6 and later products in the 9.x line. Possible values include: 0: Don't show the warnings. 1: Do show the warnings.</string>
       <string id="iDisplayValidIconDC_User">Show Valid Sig Icon (User)</string>
       <string id="iDisplayValidIconDC_User_Explain">Determines when the signature status icon is displayed in a signature appearance.&#10;&#10;Possible values include: 0: Always. 1: Display except when the signature is valid. 2: Never. This value disables bShowWarningForChanges and removes the Hide signature field validity icon option from the GUI. This setting does not affect the icons in the Signatures Pane or in the Signature Properties dialog Note : This UI item was removed from versions 9.x and later because signature status was moved to the Document Message Bar.</string>
+      <string id="iDisplayValidIconDC_User_opt0">Always display valid signature icon</string>
+      <string id="iDisplayValidIconDC_User_opt1">Hide icon when signature is valid</string>
+      <string id="iDisplayValidIconDC_User_opt2">Never display valid signature icon</string>
       <string id="bReqSigPropVerificationDC_User">Sig Property Verify (User)</string>
       <string id="bReqSigPropVerificationDC_User_Explain">Specifies whether signature property verification must succeed for a signature to be valid.&#10;&#10;As of 8.0, the only property used is the timestamp URL.</string>
       <string id="iSigVerificationTimeDC_User">Sig Verification Time (User)</string>
       <string id="iSigVerificationTimeDC_User_Explain">Indicates the time at which signature validation should occur.&#10;&#10;Possible values include: 0: Always carry out the verification at current time 1: Use the signing time if it's secure (e.g. timestamped), else use current time 2: Always use signing time</string>
+      <string id="iSigVerificationTimeDC_User_opt0">Verify at current time</string>
+      <string id="iSigVerificationTimeDC_User_opt1">Use signing time if secure, else current time</string>
+      <string id="iSigVerificationTimeDC_User_opt2">Always use signing time</string>
       <string id="bAllowSigCertOnlyDC_User">Sign Certified Only (User)</string>
       <string id="bAllowSigCertOnlyDC_User_Explain">Specifies whether any subsequent signers can sign a certified document containing LegalPDF warnings with additional approval signatures.&#10;&#10;In other words, the presence of any LegalPDF warning prevent any additonal signatures.</string>
       <string id="isignDoneDC_User">Sign Done Dialog (User)</string>
@@ -1315,6 +1384,9 @@
       <string id="bSignRequestDC_User_Explain">Specifies whether the OCSP request should be signed.&#10;&#10;Some OCSP providers require that OCSP requests are signed (e.g IdenTrust). 0: Don't sign the OCSP request. 1: Force Acrobat to sign OCSP requests prior to sending.</string>
       <string id="iHashAlgoDC_User">Timestamp Hash Algo (User)</string>
       <string id="iHashAlgoDC_User_Explain">Identifies the hashing algorithm used to hash the timestamped data.&#10;&#10;The valid values are: 0: MD5 1: SHA1 2: SHA256 For an alternative, see sHashAlgo which supports more options.</string>
+      <string id="iHashAlgoDC_User_opt0">MD5</string>
+      <string id="iHashAlgoDC_User_opt1">SHA1</string>
+      <string id="iHashAlgoDC_User_opt2">SHA256</string>
       <string id="iSizeDC_User">Timestamp Sig Size (User)</string>
       <string id="iSizeDC_User_Explain">ASPKI requires the signature property to predict the size (in bytes) so that enough space can be set aside.</string>
       <string id="bTrueTypeFontPDFSigQWarnDC_User">TrueType Font Warn (User)</string>
@@ -1326,13 +1398,24 @@
       <string id="tHostPermsDC_User">Trusted/Blocked URL List (User)</string>
       <string id="tHostPermsDC_User_Explain">Stores trusted and blocked URLs when URL Access Permissions (iURLPerms) is set to Custom Setting (DWORD 0). Pipe-separated Adobe TrustManager host permission list syntax: version:1|host:N where N is 2 (Allow) or 3 (Block). Only effective when iURLPerms is 0; Allow or Block overrides this list. Not lockable via HKLM -- this preference only exists at User scope.</string>
       <string id="iURLPermsDC_User">URL Access Permissions (User)</string>
-      <string id="iURLPermsDC_User_Explain">Specifies whether to allow or block all websites or use a custom setting.&#10;&#10;If the user selects Custom Setting, tHostPerms is populated with the user's custom URLs. If Allow or Block is later selected, then iURLPerms overrides tHostPerms and tHostPerms is reset to null (the user list is ignored). Possible values include: 0: Custom Setting 1: Block all websites 2: Allow all websites For additional security-related details, refer to the Application Security Guide .</string>
+      <string id="iURLPermsDC_User_Explain">Specifies whether to allow or block all websites or use a custom setting.&#10;&#10;If the user selects Custom Setting, tHostPerms is populated with the user's custom URLs. If Allow or Block is later selected, then iURLPerms overrides tHostPerms and tHostPerms is reset to null (the user list is ignored). Possible values include: 0: Custom Setting 1: Block all websites 2: Allow all websites For additional security-related details, refer to the Application Security Guide .&#10;&#10;When set to Custom Setting (0), configure the URL list using the Trusted/Blocked URL List (tHostPerms) text policy.</string>
+      <string id="iURLPermsDC_User_opt0">Custom Setting (uses tHostPerms URL list)</string>
+      <string id="iURLPermsDC_User_opt1">Block all websites</string>
+      <string id="iURLPermsDC_User_opt2">Allow all websites</string>
       <string id="iUseArchivedRevInfoDC_User">Use Archived Rev Info (User)</string>
       <string id="iUseArchivedRevInfoDC_User_Explain">Indicates whether the revocation information archived with the signature is used for revocation checking.&#10;&#10;Allowable values include: 0: Never (always require fresh revocation information to be successfully downloaded). 1: Deprecated. Do not use. 2: Always use (if embedded revocation information is available do not download fresh revocation information).</string>
+      <string id="iUseArchivedRevInfoDC_User_opt0">Never (require fresh revocation download)</string>
+      <string id="iUseArchivedRevInfoDC_User_opt1">Deprecated - do not use</string>
+      <string id="iUseArchivedRevInfoDC_User_opt2">Always use embedded revocation if available</string>
       <string id="iValidityModelDC_User">Validity Model (User)</string>
       <string id="iValidityModelDC_User_Explain">Specifies the validity model for validating signatures and certificates.&#10;&#10;The application uses shell validation by default, but chain validation may be used when required. Compliance with the German signature law requires chain validation. Allowabled values include: 0: PKIX shell model 1: Chain validity model. Chain validation is used to validate all or part of a certificate chain when any certificate chaining up to a CA certificate containing the qualified certificate policy extension (OID 1.3.36.8.1.1) or the validity model certificate extension OID (1.3.6.1.4.1.8301.3.5) with the value set to the chain model OID (1.3.6.1.4.1.8301.3.5.1).</string>
+      <string id="iValidityModelDC_User_opt0">PKIX shell model (default)</string>
+      <string id="iValidityModelDC_User_opt1">Chain validity model</string>
       <string id="iMSStoreTrustedDC_User">Windows Store Trust (User)</string>
       <string id="iMSStoreTrustedDC_User_Explain">Controls whether or not certificates in the Windows Certificate Store are trusted for signing and certifying.&#10;&#10;To lock this setting, use bMSStoreTrusted. Allowable values include: 0x00: No checkbox selected. 0x60: Validating Signatures. 0x62: Validating Certified Documents and Signatures. Note that this setting disables the Validating Signatures checkbox because it also controls non-certified signatures and users should not be able to uncheck that checkbox.</string>
+      <string id="iMSStoreTrustedDC_User_opt0">No checkbox selected (0x00)</string>
+      <string id="iMSStoreTrustedDC_User_opt1">Validating Signatures (0x60)</string>
+      <string id="iMSStoreTrustedDC_User_opt2">Validating Certified Documents and Signatures (0x62)</string>
 
       <!-- ======================================== -->
       <!--           Sharing and Features           -->
@@ -1446,6 +1529,9 @@
       <string id="bFavoritesStripInRFLDC_User_Explain">Specifies whether to show starred files in the recent files list.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. Note that the lockable version of this preference is named bFavoritesFeaturesLockDown . Possible values include: 0: Show starred files in the recent files list. 1: Don't show starred files in the recent files list.</string>
       <string id="iFavoriteFilesAccessOptionDC_User">Starred Files Action (User)</string>
       <string id="iFavoriteFilesAccessOptionDC_User_Explain">Specifies what action to take when starring a file.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. Possible values include: 0: Show a dialog and ask whether to save or upload. This option also results in creating a new bFavoriteFilesRememberChoice . 1: Upload to Document Cloud 2: Save the file locally</string>
+      <string id="iFavoriteFilesAccessOptionDC_User_opt0">Show dialog (save or upload)</string>
+      <string id="iFavoriteFilesAccessOptionDC_User_opt1">Upload to Document Cloud</string>
+      <string id="iFavoriteFilesAccessOptionDC_User_opt2">Save the file locally</string>
       <string id="bStoreCredentialsDC_User">Store Credentials (User)</string>
       <string id="bStoreCredentialsDC_User_Explain">Specifies whether the user logon credentials for the Tracker should be stored.&#10;&#10;Possible values include: 0: Don't store credentials. 1: Store credentials.</string>
       <string id="iAVARMNoAutoUpdateWarningDC_User">Suppress Update Warning (User)</string>
@@ -1503,8 +1589,13 @@
       <string id="iSnapshotResolution_User_Explain">Adobe's preference reference does not describe this value; use the URL column for the documentation link.</string>
       <string id="irightPaneState_User">Tools Pane State (User)</string>
       <string id="irightPaneState_User_Explain">Specifies whether to automatically open the Tools Pane on launch.&#10;&#10;Possible values include: 0: Use the default. 1: Always closed. 2: Always open.</string>
+      <string id="irightPaneState_User_opt0">Use the default</string>
+      <string id="irightPaneState_User_opt1">Always closed</string>
+      <string id="irightPaneState_User_opt2">Always open</string>
       <string id="iBasicSharePaneStickyStatus_User">Tools Pane Sticky (User)</string>
       <string id="iBasicSharePaneStickyStatus_User_Explain">Specifies whether to remember the Tools Pane state across sessions.&#10;&#10;For example, if the user closes the Tools Pane, it will not automatically open on launch. Interacts with irightPaneState. Possible values include: 0: Don't remember the Tool Pane's state. The Pane is always closed on application open. 1: Do remember the Tool Pane's state.</string>
+      <string id="iBasicSharePaneStickyStatus_User_opt0">Don't remember the Tool Pane's state (always closed on launch)</string>
+      <string id="iBasicSharePaneStickyStatus_User_opt1">Do remember the Tool Pane's state</string>
       <string id="iNumSwitcherContextualToolTipAVShown_User">Try New Coachmark (User)</string>
       <string id="iNumSwitcherContextualToolTipAVShown_User_Explain">Specifies whether to show the &quot;Try the new Acrobat/Reader&quot; coachmark after launching Acrobat the first time.&#10;&#10;Once the coachmark displays, the app automatically resets this value to 0. This preference has no effect if bEnableAv2 is 0. 0: Do not show the coachmark. 1: Show the coachmark.</string>
       <string id="iNumSessionAV2_User">UI Switcher Sessions (User)</string>
@@ -1568,12 +1659,25 @@
       <string id="iDictionaryDefaultID_User_Explain">Identifies the default spelling dictionary ID.&#10;&#10;The value is an ID from cDictionaryOrderID\i0 . The dictionary name can be found in cDictionaryOrder\t0. Alternatively, set the value in the user interface, close the product, and look here again. Use the value that appears during deployment.</string>
       <string id="iPageViewLayoutMode_User">Default Page Layout (User)</string>
       <string id="iPageViewLayoutMode_User_Explain">Specifies the default page layout when a PDF opens.&#10;&#10;These settings can be overridden by Accessiblity settings such as bOverridePageLayout. Possible values include: null: Automatic 1: Single Page 2: Single Page Continuous 3: Two Up Continuous 5: Two Up</string>
+      <string id="iPageViewLayoutMode_User_opt0">Automatic</string>
+      <string id="iPageViewLayoutMode_User_opt1">Single Page</string>
+      <string id="iPageViewLayoutMode_User_opt2">Single Page Continuous</string>
+      <string id="iPageViewLayoutMode_User_opt3">Two Up Continuous</string>
+      <string id="iPageViewLayoutMode_User_opt4">Two Up</string>
       <string id="iParaDir_User">Default Paragraph Dir (User)</string>
       <string id="iParaDir_User_Explain">Specifies the paragraph direction.&#10;&#10;Possible values include: 0: Left to Right 1: Right to Left 2: Infer from document</string>
+      <string id="iParaDir_User_opt0">Left to Right</string>
+      <string id="iParaDir_User_opt1">Right to Left</string>
+      <string id="iParaDir_User_opt2">Infer from document</string>
       <string id="iDefaultZoomScale_User">Default Zoom Scale (User)</string>
       <string id="iDefaultZoomScale_User_Explain">Specifies the zoom scale % to use when a PDF opens.&#10;&#10;Possible values include a range beginning with Fit Page to Reflow . To set a value, configure the UI and look at the registry/plist preference to see what has been written. Possible values include: 199a: 10% 4000 25% 8000: 50% c000: 75% 10000: 100% etc.</string>
       <string id="iDefaultZoomType_User">Default Zoom Type (User)</string>
       <string id="iDefaultZoomType_User_Explain">Specifies the default zoom type (other than a %) to use when a PDF opens.&#10;&#10;% scales are stored in iZoomScale. Possible values include: 1: Fit Page (automatic) 2: Fit Width 3: Fit Hieght 4: Fit Visible 6: Reflow</string>
+      <string id="iDefaultZoomType_User_opt0">Fit Page (automatic)</string>
+      <string id="iDefaultZoomType_User_opt1">Fit Width</string>
+      <string id="iDefaultZoomType_User_opt2">Fit Height</string>
+      <string id="iDefaultZoomType_User_opt3">Fit Visible</string>
+      <string id="iDefaultZoomType_User_opt4">Reflow</string>
       <string id="imaxPDFCommentsSize_User">Embedded Comment Limit (User)</string>
       <string id="imaxPDFCommentsSize_User_Explain">Sets the comment threshold size for determining whether comments are embedded or sent as FDF files.&#10;&#10;When collaboration involves sending comments with a PDF, comments below the threshold size are embedded in the document. Comments above the threshold size are sent as FDF files. Possible values include: 3: Max size for Reader (Acrobat is 5)</string>
       <string id="bemptyContentToolTip_User">Empty Comment Tooltip (User)</string>
@@ -1594,6 +1698,9 @@
       <string id="bInlineAutoComplete_User_Explain">Specifies whether to auto complete a field based on remembered values when a user starts typing.&#10;&#10;This option is enabled for both the Basic and Advanced options. Possible values include: 0: Don't auto complete. 1: Do autocomplete.</string>
       <string id="iIntlSelectFont_User">International Font (User)</string>
       <string id="iIntlSelectFont_User_Explain">Specifies the font to use.&#10;&#10;Possible values include: 0: Application default 1: GB18030 compatible font 2: HKSCS compatible font</string>
+      <string id="iIntlSelectFont_User_opt0">Application default</string>
+      <string id="iIntlSelectFont_User_opt1">GB18030 compatible font</string>
+      <string id="iIntlSelectFont_User_opt2">HKSCS compatible font</string>
       <string id="bLigatures_User">Ligatures (User)</string>
       <string id="bLigatures_User_Explain">Specifies whether to enable support for ligatures.&#10;&#10;Possible values include: 0: Don't enable ligatures. 1: Enable ligatures.</string>
       <string id="balwaysUseIdent_User">Login Name as Author (User)</string>
@@ -1614,8 +1721,15 @@
       <string id="iZoomScale_User_Explain">Specifies the value in % to zoom when iZoomType is set to a % value and overrides Page Display settings.&#10;&#10;Possible values include a range beginning with Fit Page to Reflow . When selected, % values are stored in iZoomScale. To set a value, configure the UI and look at the registry/plist preference to see what has been written. Possible values include: 199a: 10% 4000 25% 8000: 50% c000: 75% 10000: 100% etc.</string>
       <string id="iZoomType_User">Override Zoom Type (User)</string>
       <string id="iZoomType_User_Explain">Specifies the zoom scale for all other documents other than a % scale and overrides Page Display settings.&#10;&#10;% scales are stored in iZoomScale. Possible values include: 1: Fit Page 2: Fit Width 3: Fit Hieght 4: Fit Visible 6: Reflow</string>
+      <string id="iZoomType_User_opt0">Fit Page</string>
+      <string id="iZoomType_User_opt1">Fit Width</string>
+      <string id="iZoomType_User_opt2">Fit Height</string>
+      <string id="iZoomType_User_opt3">Fit Visible</string>
+      <string id="iZoomType_User_opt4">Reflow</string>
       <string id="iParagraphDirection_User">Paragraph Direction (User)</string>
       <string id="iParagraphDirection_User_Explain">Specifies the paragraph direction.&#10;&#10;Possible values include: 0: Right to Left 1: Left to Right</string>
+      <string id="iParagraphDirection_User_opt0">Right to Left</string>
+      <string id="iParagraphDirection_User_opt1">Left to Right</string>
       <string id="bPopupsOpenIffSelected_User">Popup When Selected (User)</string>
       <string id="bPopupsOpenIffSelected_User_Explain">Specifies whether to open a popup when it is selected.</string>
       <string id="bUseDetailsNavigator_User">Portfolio File List (User)</string>
@@ -1630,10 +1744,15 @@
       <string id="bUserAskedToEnableAutoComplete_User_Explain">Specifies whether the user is asked to enable auto complete at runtime.&#10;&#10;This option is enabled for the Advanced option. Possible values include: 0: Don't ask the user. 1: Do ask the user.</string>
       <string id="iShowOrder_User">Reading Order Display (User)</string>
       <string id="iShowOrder_User_Explain">Specifies the type of grouping order to display in the touchup reading order panel.&#10;&#10;Possible values include: 0: Order (numbered). 1: Structure type. 2: None.</string>
+      <string id="iShowOrder_User_opt0">Order (numbered)</string>
+      <string id="iShowOrder_User_opt1">Structure type</string>
+      <string id="iShowOrder_User_opt2">None</string>
       <string id="bRecordNewEntries_User">Remember Form Entries (User)</string>
       <string id="bRecordNewEntries_User_Explain">Specifies whether to remember form field entries for use with future auto-complete actions.&#10;&#10;This option is enabled for both the Basic and Advanced options. Possible values include: 0: Don't remember entries. 1: Do remember entries.</string>
       <string id="iRememberView_User">Restore Last View (User)</string>
       <string id="iRememberView_User_Explain">Specifies whether to restore last view settings when reopening documents.&#10;&#10;Possible values include: 1: Don't restore the last view settings. 2: Do restore the last view settings.</string>
+      <string id="iRememberView_User_opt0">Don't restore the last view settings</string>
+      <string id="iRememberView_User_opt1">Do restore the last view settings</string>
       <string id="bRTLUI_User">Right-to-Left UI (User)</string>
       <string id="bRTLUI_User_Explain">Specifies whether to enable right to left language options.&#10;&#10;Possible values include: 0: Disable right to left language options. 1: Enable right to left language options.</string>
       <string id="bDigitsUI_User">RTL Digit Display (User)</string>
@@ -1686,6 +1805,9 @@
       <string id="iEmailClientSelection_User_Explain">Specifies the email client to use when submitting an XFA form.&#10;&#10;Adobe's preference reference does not describe this value; use the URL column for the documentation link.</string>
       <string id="iRXOPolicy_User">XObjects View Mode (User)</string>
       <string id="iRXOPolicy_User_Explain">Sets XObject access to either Never (0), Always (1), or Only PDF/X-5 Compliant Ones (2).&#10;&#10;The user must also set cRXOLocation and (Windows only) specify a privileged location for each parent (referencing) document. Possible values include: 0: Never 1: Always 2: Only PDF/X-5 Compliant Ones</string>
+      <string id="iRXOPolicy_User_opt0">Never allow XObjects view mode</string>
+      <string id="iRXOPolicy_User_opt1">Always allow XObjects view mode</string>
+      <string id="iRXOPolicy_User_opt2">Only PDF/X-5 compliant documents</string>
 
       <!-- ======================================== -->
       <!--         Microsoft Purview (MIP)          -->
@@ -1735,10 +1857,16 @@
       <string id="bAlwaysConsult_User_Explain">Determines when the URL is used for an additional URL CRL distribution point.&#10;&#10;If false, the URL is only used when the certificate does not have a CRLDp extension.</string>
       <string id="iAuthMechanisms_User">Auth Mechanisms (User)</string>
       <string id="iAuthMechanisms_User_Explain">Specifies which registered provider(s) to use.&#10;&#10;0: Use none of the registered providers. 1: Use first registered provider. 2: Use all registered providers.</string>
+      <string id="iAuthMechanisms_User_opt0">Use none of the registered providers</string>
+      <string id="iAuthMechanisms_User_opt1">Use first registered provider</string>
+      <string id="iAuthMechanisms_User_opt2">Use all registered providers</string>
       <string id="iAutoAcceptEDCPrivacyNotification_User">Auto-Accept Privacy (User)</string>
       <string id="iAutoAcceptEDCPrivacyNotification_User_Explain">Specifies whether to show an alert confirming acceptance of the privacy policy.&#10;&#10;Possible values include: 0: Don't show an alert. 1: Do show an alert.</string>
       <string id="iAutoAddLTV_User">Auto-Add LTV Info (User)</string>
       <string id="iAutoAddLTV_User_Explain">Specifies whether LTV information should be automatically added to all signatures.&#10;&#10;Possible values include: 0: Never add LTV information. 1: (default) Ask whether LTV information should be added if it is too big. 2: Always add LTV information. When the cumulative size of the LTV data is greater than the sum of 10% of the PDF file size plus 10KB and Automatically add verification information on Save is set to &quot;Ask...&quot; a dialog appears asking the user if they would like to continue embedding the LTV information. Note that in workflows where the dialog appears asking whether to enable LTV, if the user selects the &quot;Do not show this message again&quot; checkbox, AND click the No button, then this preference is set to zero.</string>
+      <string id="iAutoAddLTV_User_opt0">Never add LTV information</string>
+      <string id="iAutoAddLTV_User_opt1">Ask whether to add LTV if too big (default)</string>
+      <string id="iAutoAddLTV_User_opt2">Always add LTV information</string>
       <string id="bSavePassword_User">Cache Server Password (User)</string>
       <string id="bSavePassword_User_Explain">Indicates whether the password has been cached for this server.</string>
       <string id="iSHS_User">Console H-Splitter (User)</string>
@@ -1751,6 +1879,9 @@
       <string id="bCustomPrefsCreated_User_Explain">Indicates whether a custom certificate specific preference (e.g. Identrus) has already been created and written to the registry.&#10;&#10;If true, it doesn't get created again. Deleting or setting this key to 0 forces Acrobat to recreate custom certificate preferences after which it will reset this key to 1.</string>
       <string id="iDirectoryProvider_User">Directory Provider (User)</string>
       <string id="iDirectoryProvider_User_Explain">Specifies a directory provider for signature validation.&#10;&#10;0: Use none of the registered providers. 1: Use first registered provider. 2: Use all registered providers.</string>
+      <string id="iDirectoryProvider_User_opt0">Use none of the registered providers</string>
+      <string id="iDirectoryProvider_User_opt1">Use first registered provider</string>
+      <string id="iDirectoryProvider_User_opt2">Use all registered providers</string>
       <string id="bEnforceSecureChannel_User">Enforce Digest Compare (User)</string>
       <string id="bEnforceSecureChannel_User_Explain">Specifies whether to prevent signing when the original message digest and the signed message digest do not match.&#10;&#10;When set to 1, the user sees a warning dialog when the digest mismatch occurs. This error can be caused by a modification of the original message digest, a modification of the signed message digest, or a mismatch between the private and public key used for signing. When using a certificate that doesn't include a public key (such as a DSA certificate with an omitted public key), the test to detect signature validity is not performed. Do not turn this setting on if such certificates are used.</string>
       <string id="bAutoLaunchAtDocClose_User">Examine on Close (User)</string>
@@ -1777,6 +1908,9 @@
       <string id="bIgnoreNextUpdate_User_Explain">Specifies whether to use embedded OCSP responses when nextUpdate is not present and the validation time is less than the greater of thisUpdate or producedAt time plus the value of iMaxClockSkew .&#10;&#10;For 10.1 and later, this preference is used along with iMaxClockSkew to determine whether or not embedded OCSP responses are actually used for signature validation. For details, see the subfeature description above. This behavior is designed to support Acrobat's long term validation feature and allows validating a signature with embedded responses that were valid at signing time. Possible values include: 0: iMaxClockSkew is applied to thisUpdate on both sides of the validation time, i.e. thisUpdate - iMaxClockSkew ( validation time ( checkTime + iMaxClockSkew where checkTime is the later of the producedAt and thisUpdate. When true, iMaxClockSkew is applied to thisUpdate only before the validation time: thisUpdate - iMaxClockSkew ( validation time. 1: If there is no nextUpdate, then we accept the OCSP response indefinitely (we do not check for if the validation time is too late) and don't check whether validation time is ( than checkTime)</string>
       <string id="iImportAddressBook_User">Import Address Book (User)</string>
       <string id="iImportAddressBook_User_Explain">Specifies whether the addressbook.acrodata file should be imported during a new install.&#10;&#10;Many admins set a value of 2 so that the import dialog does not appear for end users. Possible values include: 0: Do not copy the old address book. The user is NOT prompted and the address book should NOT be installed. 1 or null: Default: The user is asked whether the address book should either be installed or not. 2: Import the address book silently.</string>
+      <string id="iImportAddressBook_User_opt0">Do not copy; user not prompted</string>
+      <string id="iImportAddressBook_User_opt1">Ask whether to install the address book (default)</string>
+      <string id="iImportAddressBook_User_opt2">Import the address book silently</string>
       <string id="bCertStoreImportEnable_User">Import Windows Certs (User)</string>
       <string id="bCertStoreImportEnable_User_Explain">If true, then users can import from MSCAPI certificate stores into their Trusted Identity Manager.</string>
       <string id="iAPIndex_User">Last Sig Appearance (User)</string>
@@ -1797,8 +1931,15 @@
       <string id="bEnNonEmbFontLegPDFWarn_User_Explain">Turns on and off warnings about non-embedded fonts.&#10;&#10;A warning appears when the LegalPDF dictionary NonEmbeddedFonts attribute has a non zero value. Turning this value on causes a warning to appear in the PDF Signature Report which indicates the document contains unembedded fonts.</string>
       <string id="iSendNonce_User">OCSP Nonce Behavior (User)</string>
       <string id="iSendNonce_User_Explain">Specifies signature validation behavior with respect to nonces.&#10;&#10;With 10.0, this preference replaces bSendNonce. Possible values include: 0: No nonces are sent. 1: Nonces are included in the OCSP request and expected to be present in the response and should match the request's nonce. 2: Nonces are included in the OCSP request, but if none are present in the response, their abscence is ignored.</string>
+      <string id="iSendNonce_User_opt0">No nonces sent</string>
+      <string id="iSendNonce_User_opt1">Send nonces; expect matching nonce in response</string>
+      <string id="iSendNonce_User_opt2">Send nonces; ignore absent nonce in response</string>
       <string id="iURLToConsult_User">OCSP Responder URL (User)</string>
       <string id="iURLToConsult_User_Explain">Specifies how the revocation checker chooses which responder to use.&#10;&#10;Possible values include: 0: Use the AIA extension in the certificate. 1: Use the URL key in sURL. 2: Use the AIA extension in the certificate. If it is not present, use the URL key in sURL. 3: Use the OCSP request signer's certificate AIA extension. Relevant only if SignRequest is 0.</string>
+      <string id="iURLToConsult_User_opt0">Use the AIA extension in the certificate</string>
+      <string id="iURLToConsult_User_opt1">Use the URL key in sURL</string>
+      <string id="iURLToConsult_User_opt2">Use AIA; if absent use URL key in sURL</string>
+      <string id="iURLToConsult_User_opt3">Use OCSP request signer certificate AIA (SignRequest=0 only)</string>
       <string id="iResponseFreshness_User">OCSP Response Freshness (User)</string>
       <string id="iResponseFreshness_User_Explain">Specifies the amount of time in minutes after the response's published thisUpdate time for which the response will be valid.&#10;&#10;After that time, the response will be invalid.</string>
       <string id="bAllowOpenFile_User">Open Non-PDF Attachments (User)</string>
@@ -1811,6 +1952,9 @@
       <string id="bRequireOCSPCertHash_User_Explain">Specifies whether a certificate public key hash extension must be present in OCSP responses.</string>
       <string id="iRequireReviewWarnings_User">Require Sign Warnings (User)</string>
       <string id="iRequireReviewWarnings_User_Explain">Specifies whether the user is required to review document warnings before signing via the signing dialog.&#10;&#10;Interacts with iShowDocumentWarnings. The possible values include: 0: Never 1: Show when certifying only 2: Always</string>
+      <string id="iRequireReviewWarnings_User_opt0">Never</string>
+      <string id="iRequireReviewWarnings_User_opt1">Show when certifying only</string>
+      <string id="iRequireReviewWarnings_User_opt2">Always</string>
       <string id="bReqSigPropRetrieval_User">Require Timestamp (User)</string>
       <string id="bReqSigPropRetrieval_User_Explain">Indicates whether retrieving a signature property must succeed.&#10;&#10;Acrobat currently provides a signature property for timestamps. By default, retrieving a valid and trusted timestamp is not required, and property retrieval failure only results in creating a signature which uses the local time. When property retrieval is required during signature creation and fetching a timestamp fails for any reason (bad URL, no network connection, etc.) the signature creation process is aborted, no signature is created, and an error appears. 0: Make best effort, but success is not required. A signature is created. 1: Property retrieval must succeed. On failure, a signature is not created and an error dialog appears.</string>
       <string id="bRequireValidSigForChaining_User">Require Valid Sig Chain (User)</string>
@@ -1819,6 +1963,9 @@
       <string id="bReturnRevInfoToUser_User_Explain">If true, the revocation information is maintained within the SignatureInfo object and can be retrieved through JavaScript.&#10;&#10;For more information, see the Acrobat JavaScript Reference .</string>
       <string id="iRevocationChecker_User">Revocation Checker (User)</string>
       <string id="iRevocationChecker_User_Explain">Specifies a provider for revocation checking.&#10;&#10;0: Use none of the registered providers. 1: Use first registered provider. 2: Use all registered providers.</string>
+      <string id="iRevocationChecker_User_opt0">Use none of the registered providers</string>
+      <string id="iRevocationChecker_User_opt1">Use first registered provider</string>
+      <string id="iRevocationChecker_User_opt2">Use all registered providers</string>
       <string id="bRevCheckTrust_User">Revoke Check Trust (User)</string>
       <string id="bRevCheckTrust_User_Explain">Specifies whether to perform revocation checks on intermediate trust anchors (those which aren't roots).&#10;&#10;In previous versions, the application did not perform revocation checks on any intermediate trust anchors since it was assumed they were self-signed. With 10.1.2 and 9.5, this setting enables revocation checking on intermediate trust anchors if such information is available. Trust anchors from 3rd parties are often installed locally to facilitate signature validation. Since it is possible that the trust anchors could become compromised and thereby open the host machine to malicious attack, those 3rd party providers in such cases would revoke their certificates. This preference enables detecting that revocation by forcing a revocation check on any intermediate trust anchors. Root and self-signed certificates are exempt from checking. Possible values include: 0: Don't perform a revocation check on intermediate trust anchors. 1: Perform a revocation check on intermediate trust anchors.</string>
       <string id="iRSAPSSSaltLength_User">RSA-PSS Salt Length (User)</string>
@@ -1835,6 +1982,9 @@
       <string id="bShowAllChains_User_Explain">Specifies whether to show all chains in the Certificate Viewer.&#10;&#10;If true, the Certificate Viewer shows all the chains; otherwise, it shows only the trusted chain. If there are no trusted chains, then all the chains are shown and this preference is ignored.</string>
       <string id="iShowDocumentWarnings_User">Show Document Warnings (User)</string>
       <string id="iShowDocumentWarnings_User_Explain">Specifies whether a button to allow reviewing document warnings shows up on the signing dialog.&#10;&#10;Interacts with iRequireDocumentWarnings. The possible values include: 0: Never 1: Show when certifying only 2: Always</string>
+      <string id="iShowDocumentWarnings_User_opt0">Never</string>
+      <string id="iShowDocumentWarnings_User_opt1">Show when certifying only</string>
+      <string id="iShowDocumentWarnings_User_opt2">Always</string>
       <string id="bShowWarningForChanges_User">Show Post-Sign Warning (User)</string>
       <string id="bShowWarningForChanges_User_Explain">Determines whether or not to show a blue i on validated signature(s) if the document changes after it was signed.&#10;&#10;If true, a document change results in a blue i status icon appearing for validated approval signatures. Use this setting when users need to know a document has changed after it was signed. If false, the status icon remains a green check and pen even if a document changes after it is signed. The setting provides a method for administrators to turn off the blue i in workflows where documents can be changed or signed multiple times. This setting does not affect certification signatures. The warning icon never appears for valid certification or approval signatures in certified documents if the signatures were allowed by the certifier. Interacts with iDisplayValidIcon which cannot be set to 2, or the icons will not appear regardless of how bShowWarningForChanges is set.</string>
       <string id="bAllowOtherInfoWhenSigning_User">Show Sign Contact Info (User)</string>
@@ -1843,10 +1993,16 @@
       <string id="bShowSignerWarnings_User_Explain">Specifies whether to show a warning that there is a greater forgery risk when revocation information is embedded in the signature.&#10;&#10;Because this warning was removed from 10.x products, this preference is only applicable to 9.4.6 and later products in the 9.x line. Possible values include: 0: Don't show the warnings. 1: Do show the warnings.</string>
       <string id="iDisplayValidIcon_User">Show Valid Sig Icon (User)</string>
       <string id="iDisplayValidIcon_User_Explain">Determines when the signature status icon is displayed in a signature appearance.&#10;&#10;Possible values include: 0: Always. 1: Display except when the signature is valid. 2: Never. This value disables bShowWarningForChanges and removes the Hide signature field validity icon option from the GUI. This setting does not affect the icons in the Signatures Pane or in the Signature Properties dialog Note : This UI item was removed from versions 9.x and later because signature status was moved to the Document Message Bar.</string>
+      <string id="iDisplayValidIcon_User_opt0">Always display valid signature icon</string>
+      <string id="iDisplayValidIcon_User_opt1">Hide icon when signature is valid</string>
+      <string id="iDisplayValidIcon_User_opt2">Never display valid signature icon</string>
       <string id="bReqSigPropVerification_User">Sig Property Verify (User)</string>
       <string id="bReqSigPropVerification_User_Explain">Specifies whether signature property verification must succeed for a signature to be valid.&#10;&#10;As of 8.0, the only property used is the timestamp URL.</string>
       <string id="iSigVerificationTime_User">Sig Verification Time (User)</string>
       <string id="iSigVerificationTime_User_Explain">Indicates the time at which signature validation should occur.&#10;&#10;Possible values include: 0: Always carry out the verification at current time 1: Use the signing time if it's secure (e.g. timestamped), else use current time 2: Always use signing time</string>
+      <string id="iSigVerificationTime_User_opt0">Verify at current time</string>
+      <string id="iSigVerificationTime_User_opt1">Use signing time if secure, else current time</string>
+      <string id="iSigVerificationTime_User_opt2">Always use signing time</string>
       <string id="bAllowSigCertOnly_User">Sign Certified Only (User)</string>
       <string id="bAllowSigCertOnly_User_Explain">Specifies whether any subsequent signers can sign a certified document containing LegalPDF warnings with additional approval signatures.&#10;&#10;In other words, the presence of any LegalPDF warning prevent any additonal signatures.</string>
       <string id="isignDone_User">Sign Done Dialog (User)</string>
@@ -1857,6 +2013,9 @@
       <string id="bSignRequest_User_Explain">Specifies whether the OCSP request should be signed.&#10;&#10;Some OCSP providers require that OCSP requests are signed (e.g IdenTrust). 0: Don't sign the OCSP request. 1: Force Acrobat to sign OCSP requests prior to sending.</string>
       <string id="iHashAlgo_User">Timestamp Hash Algo (User)</string>
       <string id="iHashAlgo_User_Explain">Identifies the hashing algorithm used to hash the timestamped data.&#10;&#10;The valid values are: 0: MD5 1: SHA1 2: SHA256 For an alternative, see sHashAlgo which supports more options.</string>
+      <string id="iHashAlgo_User_opt0">MD5</string>
+      <string id="iHashAlgo_User_opt1">SHA1</string>
+      <string id="iHashAlgo_User_opt2">SHA256</string>
       <string id="iSize_User">Timestamp Sig Size (User)</string>
       <string id="iSize_User_Explain">ASPKI requires the signature property to predict the size (in bytes) so that enough space can be set aside.</string>
       <string id="bTrueTypeFontPDFSigQWarn_User">TrueType Font Warn (User)</string>
@@ -1868,13 +2027,24 @@
       <string id="tHostPerms_User">Trusted/Blocked URL List (User)</string>
       <string id="tHostPerms_User_Explain">Stores trusted and blocked URLs when URL Access Permissions (iURLPerms) is set to Custom Setting (DWORD 0). Pipe-separated Adobe TrustManager host permission list syntax: version:1|host:N where N is 2 (Allow) or 3 (Block). Only effective when iURLPerms is 0; Allow or Block overrides this list. Not lockable via HKLM -- this preference only exists at User scope.</string>
       <string id="iURLPerms_User">URL Access Permissions (User)</string>
-      <string id="iURLPerms_User_Explain">Specifies whether to allow or block all websites or use a custom setting.&#10;&#10;If the user selects Custom Setting, tHostPerms is populated with the user's custom URLs. If Allow or Block is later selected, then iURLPerms overrides tHostPerms and tHostPerms is reset to null (the user list is ignored). Possible values include: 0: Custom Setting 1: Block all websites 2: Allow all websites For additional security-related details, refer to the Application Security Guide .</string>
+      <string id="iURLPerms_User_Explain">Specifies whether to allow or block all websites or use a custom setting.&#10;&#10;If the user selects Custom Setting, tHostPerms is populated with the user's custom URLs. If Allow or Block is later selected, then iURLPerms overrides tHostPerms and tHostPerms is reset to null (the user list is ignored). Possible values include: 0: Custom Setting 1: Block all websites 2: Allow all websites For additional security-related details, refer to the Application Security Guide .&#10;&#10;When set to Custom Setting (0), configure the URL list using the Trusted/Blocked URL List (tHostPerms) text policy.</string>
+      <string id="iURLPerms_User_opt0">Custom Setting (uses tHostPerms URL list)</string>
+      <string id="iURLPerms_User_opt1">Block all websites</string>
+      <string id="iURLPerms_User_opt2">Allow all websites</string>
       <string id="iUseArchivedRevInfo_User">Use Archived Rev Info (User)</string>
       <string id="iUseArchivedRevInfo_User_Explain">Indicates whether the revocation information archived with the signature is used for revocation checking.&#10;&#10;Allowable values include: 0: Never (always require fresh revocation information to be successfully downloaded). 1: Deprecated. Do not use. 2: Always use (if embedded revocation information is available do not download fresh revocation information).</string>
+      <string id="iUseArchivedRevInfo_User_opt0">Never (require fresh revocation download)</string>
+      <string id="iUseArchivedRevInfo_User_opt1">Deprecated - do not use</string>
+      <string id="iUseArchivedRevInfo_User_opt2">Always use embedded revocation if available</string>
       <string id="iValidityModel_User">Validity Model (User)</string>
       <string id="iValidityModel_User_Explain">Specifies the validity model for validating signatures and certificates.&#10;&#10;The application uses shell validation by default, but chain validation may be used when required. Compliance with the German signature law requires chain validation. Allowabled values include: 0: PKIX shell model 1: Chain validity model. Chain validation is used to validate all or part of a certificate chain when any certificate chaining up to a CA certificate containing the qualified certificate policy extension (OID 1.3.36.8.1.1) or the validity model certificate extension OID (1.3.6.1.4.1.8301.3.5) with the value set to the chain model OID (1.3.6.1.4.1.8301.3.5.1).</string>
+      <string id="iValidityModel_User_opt0">PKIX shell model (default)</string>
+      <string id="iValidityModel_User_opt1">Chain validity model</string>
       <string id="iMSStoreTrusted_User">Windows Store Trust (User)</string>
       <string id="iMSStoreTrusted_User_Explain">Controls whether or not certificates in the Windows Certificate Store are trusted for signing and certifying.&#10;&#10;To lock this setting, use bMSStoreTrusted. Allowable values include: 0x00: No checkbox selected. 0x60: Validating Signatures. 0x62: Validating Certified Documents and Signatures. Note that this setting disables the Validating Signatures checkbox because it also controls non-certified signatures and users should not be able to uncheck that checkbox.</string>
+      <string id="iMSStoreTrusted_User_opt0">No checkbox selected (0x00)</string>
+      <string id="iMSStoreTrusted_User_opt1">Validating Signatures (0x60)</string>
+      <string id="iMSStoreTrusted_User_opt2">Validating Certified Documents and Signatures (0x62)</string>
 
       <!-- ======================================== -->
       <!--           Sharing and Features           -->
@@ -1984,6 +2154,9 @@
       <string id="bFavoritesStripInRFL_User_Explain">Specifies whether to show starred files in the recent files list.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. Note that the lockable version of this preference is named bFavoritesFeaturesLockDown . Possible values include: 0: Show starred files in the recent files list. 1: Don't show starred files in the recent files list.</string>
       <string id="iFavoriteFilesAccessOption_User">Starred Files Action (User)</string>
       <string id="iFavoriteFilesAccessOption_User_Explain">Specifies what action to take when starring a file.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. Possible values include: 0: Show a dialog and ask whether to save or upload. This option also results in creating a new bFavoriteFilesRememberChoice . 1: Upload to Document Cloud 2: Save the file locally</string>
+      <string id="iFavoriteFilesAccessOption_User_opt0">Show dialog (save or upload)</string>
+      <string id="iFavoriteFilesAccessOption_User_opt1">Upload to Document Cloud</string>
+      <string id="iFavoriteFilesAccessOption_User_opt2">Save the file locally</string>
       <string id="bStoreCredentials_User">Store Credentials (User)</string>
       <string id="bStoreCredentials_User_Explain">Specifies whether the user logon credentials for the Tracker should be stored.&#10;&#10;Possible values include: 0: Don't store credentials. 1: Store credentials.</string>
       <string id="iAVARMNoAutoUpdateWarning_User">Suppress Update Warning (User)</string>
@@ -2001,11 +2174,6 @@
     <presentationTable>
       <presentation id="iMIPCloud_Acrobat_enum">
         <dropdownList defaultItem="0" refId="iMIPCloud_Acrobat_enum">MIP Sovereign Cloud:</dropdownList>
-      </presentation>
-      <presentation id="tBuiltInPermList_Acrobat_text">
-        <textBox refId="tBuiltInPermList_Acrobat_text">
-          <label>Attachment permissions (pipe-separated list):</label>
-        </textBox>
       </presentation>
       <presentation id="iProtectedView_Acrobat_enum">
         <dropdownList defaultItem="0" refId="iProtectedView_Acrobat_enum">Protected View Mode:</dropdownList>
@@ -2034,11 +2202,6 @@
       <presentation id="iMIPCloud_Reader_enum">
         <dropdownList defaultItem="0" refId="iMIPCloud_Reader_enum">MIP Sovereign Cloud:</dropdownList>
       </presentation>
-      <presentation id="tBuiltInPermList_Reader_text">
-        <textBox refId="tBuiltInPermList_Reader_text">
-          <label>Attachment permissions (pipe-separated list):</label>
-        </textBox>
-      </presentation>
       <presentation id="iUnlistedAttachmentTypePerm_Reader_enum">
         <dropdownList defaultItem="0" refId="iUnlistedAttachmentTypePerm_Reader_enum">Unlisted Attachment Type Permissions:</dropdownList>
       </presentation>
@@ -2060,11 +2223,248 @@
       <presentation id="iInterval_AcrobatX86_enum">
         <dropdownList defaultItem="0" refId="iInterval_AcrobatX86_enum">Update Watchdog Interval (Days):</dropdownList>
       </presentation>
+      <presentation id="iMaxMRUCntToBeStoredDC_User_num">
+        <decimalTextBox refId="iMaxMRUCntToBeStoredDC_User_num" defaultValue="100">Maximum recent files (0-100):</decimalTextBox>
+      </presentation>
+      <presentation id="iSnapshotResolutionDC_User_num">
+        <decimalTextBox refId="iSnapshotResolutionDC_User_num" defaultValue="150">Snapshot resolution (DPI):</decimalTextBox>
+      </presentation>
+      <presentation id="irightPaneStateDC_User_enum">
+        <dropdownList defaultItem="0" refId="irightPaneStateDC_User_enum">Tools Pane State (User):</dropdownList>
+      </presentation>
+      <presentation id="iBasicSharePaneStickyStatusDC_User_enum">
+        <dropdownList defaultItem="0" refId="iBasicSharePaneStickyStatusDC_User_enum">Tools Pane Sticky (User):</dropdownList>
+      </presentation>
+      <presentation id="iAutoSaveDocsIntervalDC_User_num">
+        <decimalTextBox refId="iAutoSaveDocsIntervalDC_User_num" defaultValue="5">Auto-save interval in minutes (1-99):</decimalTextBox>
+      </presentation>
+      <presentation id="dNoteFontSizeDC_User_num">
+        <decimalTextBox refId="dNoteFontSizeDC_User_num" defaultValue="10">Comment font size (points):</decimalTextBox>
+      </presentation>
+      <presentation id="iPageViewLayoutModeDC_User_enum">
+        <dropdownList defaultItem="0" refId="iPageViewLayoutModeDC_User_enum">Default Page Layout (User):</dropdownList>
+      </presentation>
+      <presentation id="iParaDirDC_User_enum">
+        <dropdownList defaultItem="0" refId="iParaDirDC_User_enum">Default Paragraph Dir (User):</dropdownList>
+      </presentation>
+      <presentation id="iDefaultZoomTypeDC_User_enum">
+        <dropdownList defaultItem="0" refId="iDefaultZoomTypeDC_User_enum">Default Zoom Type (User):</dropdownList>
+      </presentation>
+      <presentation id="imaxPDFCommentsSizeDC_User_num">
+        <decimalTextBox refId="imaxPDFCommentsSizeDC_User_num" defaultValue="3">Embedded comment size threshold (MB):</decimalTextBox>
+      </presentation>
+      <presentation id="iIntlSelectFontDC_User_enum">
+        <dropdownList defaultItem="0" refId="iIntlSelectFontDC_User_enum">International Font (User):</dropdownList>
+      </presentation>
+      <presentation id="iZoomTypeDC_User_enum">
+        <dropdownList defaultItem="0" refId="iZoomTypeDC_User_enum">Override Zoom Type (User):</dropdownList>
+      </presentation>
+      <presentation id="iParagraphDirectionDC_User_enum">
+        <dropdownList defaultItem="0" refId="iParagraphDirectionDC_User_enum">Paragraph Direction (User):</dropdownList>
+      </presentation>
+      <presentation id="iShowOrderDC_User_enum">
+        <dropdownList defaultItem="0" refId="iShowOrderDC_User_enum">Reading Order Display (User):</dropdownList>
+      </presentation>
+      <presentation id="iRememberViewDC_User_enum">
+        <dropdownList defaultItem="0" refId="iRememberViewDC_User_enum">Restore Last View (User):</dropdownList>
+      </presentation>
+      <presentation id="iRXOPolicyDC_User_enum">
+        <dropdownList defaultItem="0" refId="iRXOPolicyDC_User_enum">XObjects View Mode (User):</dropdownList>
+      </presentation>
+      <presentation id="iExceptionsDC_User_enum">
+        <dropdownList defaultItem="0" refId="iExceptionsDC_User_enum">JS Exception Handling (User):</dropdownList>
+      </presentation>
+      <presentation id="iAuthMechanismsDC_User_enum">
+        <dropdownList defaultItem="0" refId="iAuthMechanismsDC_User_enum">Auth Mechanisms (User):</dropdownList>
+      </presentation>
+      <presentation id="iAutoAddLTVDC_User_enum">
+        <dropdownList defaultItem="0" refId="iAutoAddLTVDC_User_enum">Auto-Add LTV Info (User):</dropdownList>
+      </presentation>
+      <presentation id="iMaxRevokeInfoCacheLifetimeDC_User_num">
+        <decimalTextBox refId="iMaxRevokeInfoCacheLifetimeDC_User_num" defaultValue="24">CRL cache lifetime in hours:</decimalTextBox>
+      </presentation>
+      <presentation id="iDirectoryProviderDC_User_enum">
+        <dropdownList defaultItem="0" refId="iDirectoryProviderDC_User_enum">Directory Provider (User):</dropdownList>
+      </presentation>
+      <presentation id="iImportAddressBookDC_User_enum">
+        <dropdownList defaultItem="0" refId="iImportAddressBookDC_User_enum">Import Address Book (User):</dropdownList>
+      </presentation>
+      <presentation id="iMaxRevInfoArchiveSizeDC_User_num">
+        <decimalTextBox refId="iMaxRevInfoArchiveSizeDC_User_num" defaultValue="1024">Max revocation info archive size (bytes):</decimalTextBox>
+      </presentation>
+      <presentation id="iMaxVerifySessionDC_User_num">
+        <decimalTextBox refId="iMaxVerifySessionDC_User_num" defaultValue="10">Max OCSP/CRL verify sessions:</decimalTextBox>
+      </presentation>
+      <presentation id="iSendNonceDC_User_enum">
+        <dropdownList defaultItem="0" refId="iSendNonceDC_User_enum">OCSP Nonce Behavior (User):</dropdownList>
+      </presentation>
+      <presentation id="iURLToConsultDC_User_enum">
+        <dropdownList defaultItem="0" refId="iURLToConsultDC_User_enum">OCSP Responder URL (User):</dropdownList>
+      </presentation>
+      <presentation id="iResponseFreshnessDC_User_num">
+        <decimalTextBox refId="iResponseFreshnessDC_User_num" defaultValue="3600">OCSP response freshness in seconds:</decimalTextBox>
+      </presentation>
+      <presentation id="iRequireReviewWarningsDC_User_enum">
+        <dropdownList defaultItem="0" refId="iRequireReviewWarningsDC_User_enum">Require Sign Warnings (User):</dropdownList>
+      </presentation>
+      <presentation id="iRevocationCheckerDC_User_enum">
+        <dropdownList defaultItem="0" refId="iRevocationCheckerDC_User_enum">Revocation Checker (User):</dropdownList>
+      </presentation>
+      <presentation id="iShowDocumentWarningsDC_User_enum">
+        <dropdownList defaultItem="0" refId="iShowDocumentWarningsDC_User_enum">Show Document Warnings (User):</dropdownList>
+      </presentation>
+      <presentation id="iDisplayValidIconDC_User_enum">
+        <dropdownList defaultItem="0" refId="iDisplayValidIconDC_User_enum">Show Valid Sig Icon (User):</dropdownList>
+      </presentation>
+      <presentation id="iSigVerificationTimeDC_User_enum">
+        <dropdownList defaultItem="0" refId="iSigVerificationTimeDC_User_enum">Sig Verification Time (User):</dropdownList>
+      </presentation>
+      <presentation id="iHashAlgoDC_User_enum">
+        <dropdownList defaultItem="0" refId="iHashAlgoDC_User_enum">Timestamp Hash Algo (User):</dropdownList>
+      </presentation>
       <presentation id="tHostPermsDC_User_text">
         <textBox refId="tHostPermsDC_User_text"><label>URL list:</label></textBox>
       </presentation>
+      <presentation id="iURLPermsDC_User_enum">
+        <dropdownList defaultItem="0" refId="iURLPermsDC_User_enum">URL Access Permissions (User):</dropdownList>
+      </presentation>
+      <presentation id="iUseArchivedRevInfoDC_User_enum">
+        <dropdownList defaultItem="0" refId="iUseArchivedRevInfoDC_User_enum">Use Archived Rev Info (User):</dropdownList>
+      </presentation>
+      <presentation id="iValidityModelDC_User_enum">
+        <dropdownList defaultItem="0" refId="iValidityModelDC_User_enum">Validity Model (User):</dropdownList>
+      </presentation>
+      <presentation id="iMSStoreTrustedDC_User_enum">
+        <dropdownList defaultItem="0" refId="iMSStoreTrustedDC_User_enum">Windows Store Trust (User):</dropdownList>
+      </presentation>
+      <presentation id="iDelayBeforeQuitViewerDC_User_num">
+        <decimalTextBox refId="iDelayBeforeQuitViewerDC_User_num" defaultValue="30">Viewer quit delay in seconds:</decimalTextBox>
+      </presentation>
+      <presentation id="iDelayBeforeQuitBrowserDC_User_num">
+        <decimalTextBox refId="iDelayBeforeQuitBrowserDC_User_num" defaultValue="30">Browser quit delay in seconds:</decimalTextBox>
+      </presentation>
+      <presentation id="iFavoriteFilesAccessOptionDC_User_enum">
+        <dropdownList defaultItem="0" refId="iFavoriteFilesAccessOptionDC_User_enum">Starred Files Action (User):</dropdownList>
+      </presentation>
+      <presentation id="iMaxMRUCntToBeStored_User_num">
+        <decimalTextBox refId="iMaxMRUCntToBeStored_User_num" defaultValue="100">Maximum recent files (0-100):</decimalTextBox>
+      </presentation>
+      <presentation id="iSnapshotResolution_User_num">
+        <decimalTextBox refId="iSnapshotResolution_User_num" defaultValue="150">Snapshot resolution (DPI):</decimalTextBox>
+      </presentation>
+      <presentation id="irightPaneState_User_enum">
+        <dropdownList defaultItem="0" refId="irightPaneState_User_enum">Tools Pane State (User):</dropdownList>
+      </presentation>
+      <presentation id="iBasicSharePaneStickyStatus_User_enum">
+        <dropdownList defaultItem="0" refId="iBasicSharePaneStickyStatus_User_enum">Tools Pane Sticky (User):</dropdownList>
+      </presentation>
+      <presentation id="iAutoSaveDocsInterval_User_num">
+        <decimalTextBox refId="iAutoSaveDocsInterval_User_num" defaultValue="5">Auto-save interval in minutes (1-99):</decimalTextBox>
+      </presentation>
+      <presentation id="dNoteFontSize_User_num">
+        <decimalTextBox refId="dNoteFontSize_User_num" defaultValue="10">Comment font size (points):</decimalTextBox>
+      </presentation>
+      <presentation id="iPageViewLayoutMode_User_enum">
+        <dropdownList defaultItem="0" refId="iPageViewLayoutMode_User_enum">Default Page Layout (User):</dropdownList>
+      </presentation>
+      <presentation id="iParaDir_User_enum">
+        <dropdownList defaultItem="0" refId="iParaDir_User_enum">Default Paragraph Dir (User):</dropdownList>
+      </presentation>
+      <presentation id="iDefaultZoomType_User_enum">
+        <dropdownList defaultItem="0" refId="iDefaultZoomType_User_enum">Default Zoom Type (User):</dropdownList>
+      </presentation>
+      <presentation id="imaxPDFCommentsSize_User_num">
+        <decimalTextBox refId="imaxPDFCommentsSize_User_num" defaultValue="3">Embedded comment size threshold (MB):</decimalTextBox>
+      </presentation>
+      <presentation id="iIntlSelectFont_User_enum">
+        <dropdownList defaultItem="0" refId="iIntlSelectFont_User_enum">International Font (User):</dropdownList>
+      </presentation>
+      <presentation id="iZoomType_User_enum">
+        <dropdownList defaultItem="0" refId="iZoomType_User_enum">Override Zoom Type (User):</dropdownList>
+      </presentation>
+      <presentation id="iParagraphDirection_User_enum">
+        <dropdownList defaultItem="0" refId="iParagraphDirection_User_enum">Paragraph Direction (User):</dropdownList>
+      </presentation>
+      <presentation id="iShowOrder_User_enum">
+        <dropdownList defaultItem="0" refId="iShowOrder_User_enum">Reading Order Display (User):</dropdownList>
+      </presentation>
+      <presentation id="iRememberView_User_enum">
+        <dropdownList defaultItem="0" refId="iRememberView_User_enum">Restore Last View (User):</dropdownList>
+      </presentation>
+      <presentation id="iRXOPolicy_User_enum">
+        <dropdownList defaultItem="0" refId="iRXOPolicy_User_enum">XObjects View Mode (User):</dropdownList>
+      </presentation>
+      <presentation id="iAuthMechanisms_User_enum">
+        <dropdownList defaultItem="0" refId="iAuthMechanisms_User_enum">Auth Mechanisms (User):</dropdownList>
+      </presentation>
+      <presentation id="iAutoAddLTV_User_enum">
+        <dropdownList defaultItem="0" refId="iAutoAddLTV_User_enum">Auto-Add LTV Info (User):</dropdownList>
+      </presentation>
+      <presentation id="iMaxRevokeInfoCacheLifetime_User_num">
+        <decimalTextBox refId="iMaxRevokeInfoCacheLifetime_User_num" defaultValue="24">CRL cache lifetime in hours:</decimalTextBox>
+      </presentation>
+      <presentation id="iDirectoryProvider_User_enum">
+        <dropdownList defaultItem="0" refId="iDirectoryProvider_User_enum">Directory Provider (User):</dropdownList>
+      </presentation>
+      <presentation id="iImportAddressBook_User_enum">
+        <dropdownList defaultItem="0" refId="iImportAddressBook_User_enum">Import Address Book (User):</dropdownList>
+      </presentation>
+      <presentation id="iMaxRevInfoArchiveSize_User_num">
+        <decimalTextBox refId="iMaxRevInfoArchiveSize_User_num" defaultValue="1024">Max revocation info archive size (bytes):</decimalTextBox>
+      </presentation>
+      <presentation id="iMaxVerifySession_User_num">
+        <decimalTextBox refId="iMaxVerifySession_User_num" defaultValue="10">Max OCSP/CRL verify sessions:</decimalTextBox>
+      </presentation>
+      <presentation id="iSendNonce_User_enum">
+        <dropdownList defaultItem="0" refId="iSendNonce_User_enum">OCSP Nonce Behavior (User):</dropdownList>
+      </presentation>
+      <presentation id="iURLToConsult_User_enum">
+        <dropdownList defaultItem="0" refId="iURLToConsult_User_enum">OCSP Responder URL (User):</dropdownList>
+      </presentation>
+      <presentation id="iResponseFreshness_User_num">
+        <decimalTextBox refId="iResponseFreshness_User_num" defaultValue="3600">OCSP response freshness in seconds:</decimalTextBox>
+      </presentation>
+      <presentation id="iRequireReviewWarnings_User_enum">
+        <dropdownList defaultItem="0" refId="iRequireReviewWarnings_User_enum">Require Sign Warnings (User):</dropdownList>
+      </presentation>
+      <presentation id="iRevocationChecker_User_enum">
+        <dropdownList defaultItem="0" refId="iRevocationChecker_User_enum">Revocation Checker (User):</dropdownList>
+      </presentation>
+      <presentation id="iShowDocumentWarnings_User_enum">
+        <dropdownList defaultItem="0" refId="iShowDocumentWarnings_User_enum">Show Document Warnings (User):</dropdownList>
+      </presentation>
+      <presentation id="iDisplayValidIcon_User_enum">
+        <dropdownList defaultItem="0" refId="iDisplayValidIcon_User_enum">Show Valid Sig Icon (User):</dropdownList>
+      </presentation>
+      <presentation id="iSigVerificationTime_User_enum">
+        <dropdownList defaultItem="0" refId="iSigVerificationTime_User_enum">Sig Verification Time (User):</dropdownList>
+      </presentation>
+      <presentation id="iHashAlgo_User_enum">
+        <dropdownList defaultItem="0" refId="iHashAlgo_User_enum">Timestamp Hash Algo (User):</dropdownList>
+      </presentation>
       <presentation id="tHostPerms_User_text">
         <textBox refId="tHostPerms_User_text"><label>URL list:</label></textBox>
+      </presentation>
+      <presentation id="iURLPerms_User_enum">
+        <dropdownList defaultItem="0" refId="iURLPerms_User_enum">URL Access Permissions (User):</dropdownList>
+      </presentation>
+      <presentation id="iUseArchivedRevInfo_User_enum">
+        <dropdownList defaultItem="0" refId="iUseArchivedRevInfo_User_enum">Use Archived Rev Info (User):</dropdownList>
+      </presentation>
+      <presentation id="iValidityModel_User_enum">
+        <dropdownList defaultItem="0" refId="iValidityModel_User_enum">Validity Model (User):</dropdownList>
+      </presentation>
+      <presentation id="iMSStoreTrusted_User_enum">
+        <dropdownList defaultItem="0" refId="iMSStoreTrusted_User_enum">Windows Store Trust (User):</dropdownList>
+      </presentation>
+      <presentation id="iDelayBeforeQuitViewer_User_num">
+        <decimalTextBox refId="iDelayBeforeQuitViewer_User_num" defaultValue="30">Viewer quit delay in seconds:</decimalTextBox>
+      </presentation>
+      <presentation id="iDelayBeforeQuitBrowser_User_num">
+        <decimalTextBox refId="iDelayBeforeQuitBrowser_User_num" defaultValue="30">Browser quit delay in seconds:</decimalTextBox>
+      </presentation>
+      <presentation id="iFavoriteFilesAccessOption_User_enum">
+        <dropdownList defaultItem="0" refId="iFavoriteFilesAccessOption_User_enum">Starred Files Action (User):</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

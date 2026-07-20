@@ -10,6 +10,30 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 
 ---
 
+## v3.2 - 20 July 2026
+
+**795 policies** (294 machine + 501 user) — machine count reduced by 2; user policy count unchanged.
+
+| Change | Detail |
+|---|---|
+| **User scope (control types)** | **29** user HKCU prefs reclassified from fake Enabled/Disabled toggles to **enum dropdowns**; **11** to **numeric spinners**. Examples: `irightPaneState`, `iURLPerms`, `iRXOPolicy` → enum; `iMaxMRUCntToBeStored`, `iAutoSaveDocsInterval` → numeric. Same policy `name` attributes; Intune/GPO presentation and `presentationValues` change — **re-select** affected settings after ADMX re-upload. |
+| **Removed (Device)** | **Built-in Attachment Permissions List** (`tBuiltInPermList`) — Adobe stores this as **REG_BINARY** (opaque app-serialized blob). ADMX cannot author `REG_BINARY`; the v3.1 text box wrote unusable `REG_SZ`. Deploy via GPP registry item / script / Intune custom OMA-URI using bytes captured from Acrobat Trust Manager. Not tied to any GitHub issue. |
+| **Source CSV** | New `ControlType` column (`Toggle` / `Enum` / `Numeric` / `Text` / `Skip`) in both machine and user PrefRef CSVs; enum/numeric value maps live in shared `tools/AdobeDcPolicySpecs.ps1`. |
+| **Docs** | Device reference pages now describe all machine enum choices (fixes pre-existing docs drift). README quick links: removed **ADMX + ADML** row; **Changelog (Combined)** moved below Reduce Nags. |
+| **Import impact** | Same namespace and policy `name` attributes as v3.1. **Partially binding-breaking for User scope:** toggle → enum/numeric changes UI control type; migrated Intune exports may need `presentationValues` re-selected. Machine scope: only `tBuiltInPermList` removed (2 policies). |
+
+### User policies reclassified to enum (29 ValueNames)
+
+`irightPaneState`, `iBasicSharePaneStickyStatus`, `iPageViewLayoutMode`, `iParaDir`, `iParagraphDirection`, `iDefaultZoomType`, `iZoomType`, `iIntlSelectFont`, `iShowOrder`, `iRememberView`, `iExceptions`, `iAuthMechanisms`, `iAutoAddLTV`, `iDirectoryProvider`, `iImportAddressBook`, `iURLToConsult`, `iRequireReviewWarnings`, `iRevocationChecker`, `iShowDocumentWarnings`, `iDisplayValidIcon`, `iSigVerificationTime`, `iHashAlgo`, `iURLPerms`, `iUseArchivedRevInfo`, `iSendNonce`, `iValidityModel`, `iRXOPolicy`, `iFavoriteFilesAccessOption`, `iMSStoreTrusted`.
+
+### User policies reclassified to numeric (11 ValueNames)
+
+`iMaxMRUCntToBeStored`, `iAutoSaveDocsInterval`, `iDelayBeforeQuitViewer`, `iDelayBeforeQuitBrowser`, `iSnapshotResolution`, `iMaxRevokeInfoCacheLifetime`, `iMaxRevInfoArchiveSize`, `iMaxVerifySession`, `iResponseFreshness`, `imaxPDFCommentsSize`, `dNoteFontSize`.
+
+Historical ADMX/ADML files for this release: [GitHub Release v3.2](https://github.com/systmworks/Adobe-DC-ADMX/releases/tag/v3.2) (when published).
+
+---
+
 ## v3.1 - 20 July 2026
 
 **797 policies** (296 machine + 501 user) — policy count unchanged.

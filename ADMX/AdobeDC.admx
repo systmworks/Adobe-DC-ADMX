@@ -11,12 +11,12 @@
 <!-- ================================================================= -->
 
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.1" schemaVersion="1.0"
+  revision="3.2" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="3.1" />
+  <resources minRequiredRevision="3.2" />
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SupportedAcrobatReaderPolicies)" name="SupportedAcrobatReaderPolicies"/>
@@ -727,17 +727,6 @@
       <supportedOn ref="SupportedAcrobatReaderPolicies"/>
       <enabledValue><decimal value="1" /></enabledValue>
       <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Security: Execution & Protection > Built-in Attachment Permissions List (AcrobatPolicies) -->
-    <!-- tBuiltInPermList   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/Attachments.html -->
-    <policy class="Machine" displayName="$(string.tBuiltInPermList_Acrobat)" explainText="$(string.tBuiltInPermList_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cDefaultLaunchAttachmentPerms"
-      name="tBuiltInPermList_Acrobat" presentation="$(presentation.tBuiltInPermList_Acrobat_text)">
-      <parentCategory ref="SecurityExec_AcrobatCategory"/>
-      <supportedOn ref="SupportedAcrobatReaderPolicies"/>
-      <elements>
-        <text id="tBuiltInPermList_Acrobat_text" valueName="tBuiltInPermList" maxLength="16384" />
-      </elements>
     </policy>
 
     <!-- Security: Execution & Protection > Certification Status in Protected View (AcrobatPolicies) -->
@@ -2131,17 +2120,6 @@
       <supportedOn ref="SupportedReaderPolicies"/>
       <enabledValue><decimal value="1" /></enabledValue>
       <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Security: Execution & Protection > Built-in Attachment Permissions List (ReaderPolicies) -->
-    <!-- tBuiltInPermList   https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/Attachments.html -->
-    <policy class="Machine" displayName="$(string.tBuiltInPermList_Reader)" explainText="$(string.tBuiltInPermList_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cDefaultLaunchAttachmentPerms"
-      name="tBuiltInPermList_Reader" presentation="$(presentation.tBuiltInPermList_Reader_text)">
-      <parentCategory ref="SecurityExec_ReaderCategory"/>
-      <supportedOn ref="SupportedReaderPolicies"/>
-      <elements>
-        <text id="tBuiltInPermList_Reader_text" valueName="tBuiltInPermList" maxLength="16384" />
-      </elements>
     </policy>
 
     <!-- Security: Execution & Protection > Certification Status in Protected View (ReaderPolicies) -->
@@ -3623,11 +3601,12 @@
 
     <!-- Context, Tools & Search > Max Recent Files (User) -->
     <policy class="User" displayName="$(string.iMaxMRUCntToBeStoredDC_User)" explainText="$(string.iMaxMRUCntToBeStoredDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AVGeneral"
-      name="iMaxMRUCntToBeStoredDC_User" valueName="iMaxMRUCntToBeStored">
+      name="iMaxMRUCntToBeStoredDC_User" presentation="$(presentation.iMaxMRUCntToBeStoredDC_User_num)">
       <parentCategory ref="ContextToolsSearchCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iMaxMRUCntToBeStoredDC_User_num" valueName="iMaxMRUCntToBeStored" minValue="0" maxValue="100" />
+      </elements>
     </policy>
 
     <!-- Context, Tools & Search > Modern Viewer (User) -->
@@ -3704,11 +3683,12 @@
 
     <!-- Context, Tools & Search > Snapshot Resolution DPI (User) -->
     <policy class="User" displayName="$(string.iSnapshotResolutionDC_User)" explainText="$(string.iSnapshotResolutionDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Selection"
-      name="iSnapshotResolutionDC_User" valueName="iSnapshotResolution">
+      name="iSnapshotResolutionDC_User" presentation="$(presentation.iSnapshotResolutionDC_User_num)">
       <parentCategory ref="ContextToolsSearchCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iSnapshotResolutionDC_User_num" valueName="iSnapshotResolution" minValue="72" maxValue="600" />
+      </elements>
     </policy>
 
     <!-- Context, Tools & Search > Suppress PDF/UA Dialog (User) -->
@@ -3722,20 +3702,39 @@
 
     <!-- Context, Tools & Search > Tools Pane State (User) -->
     <policy class="User" displayName="$(string.irightPaneStateDC_User)" explainText="$(string.irightPaneStateDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AVGeneral\cTaskPanes"
-      name="irightPaneStateDC_User" valueName="irightPaneState">
+      name="irightPaneStateDC_User" valueName="irightPaneState" presentation="$(presentation.irightPaneStateDC_User_enum)">
       <parentCategory ref="ContextToolsSearchCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="irightPaneStateDC_User_enum" valueName="irightPaneState">
+          <item displayName="$(string.irightPaneStateDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.irightPaneStateDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.irightPaneStateDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Context, Tools & Search > Tools Pane Sticky (User) -->
     <policy class="User" displayName="$(string.iBasicSharePaneStickyStatusDC_User)" explainText="$(string.iBasicSharePaneStickyStatusDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AVGeneral\cTaskPanes"
-      name="iBasicSharePaneStickyStatusDC_User" valueName="iBasicSharePaneStickyStatus">
+      name="iBasicSharePaneStickyStatusDC_User" valueName="iBasicSharePaneStickyStatus" presentation="$(presentation.iBasicSharePaneStickyStatusDC_User_enum)">
       <parentCategory ref="ContextToolsSearchCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iBasicSharePaneStickyStatusDC_User_enum" valueName="iBasicSharePaneStickyStatus">
+          <item displayName="$(string.iBasicSharePaneStickyStatusDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iBasicSharePaneStickyStatusDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Context, Tools & Search > Try New Coachmark (User) -->
@@ -3834,11 +3833,12 @@
 
     <!-- Documents, Editing & Accessibility > Auto-Save Interval (User) -->
     <policy class="User" displayName="$(string.iAutoSaveDocsIntervalDC_User)" explainText="$(string.iAutoSaveDocsIntervalDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AutoSaveDocs"
-      name="iAutoSaveDocsIntervalDC_User" valueName="iAutoSaveDocsInterval">
+      name="iAutoSaveDocsIntervalDC_User" presentation="$(presentation.iAutoSaveDocsIntervalDC_User_num)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iAutoSaveDocsIntervalDC_User_num" valueName="iAutoSaveDocsInterval" minValue="1" maxValue="99" />
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Auto-Set Layers (User) -->
@@ -3915,11 +3915,12 @@
 
     <!-- Documents, Editing & Accessibility > Comment Font Size (User) -->
     <policy class="User" displayName="$(string.dNoteFontSizeDC_User)" explainText="$(string.dNoteFontSizeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Comments"
-      name="dNoteFontSizeDC_User" valueName="dNoteFontSize">
+      name="dNoteFontSizeDC_User" presentation="$(presentation.dNoteFontSizeDC_User_num)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="dNoteFontSizeDC_User_num" valueName="dNoteFontSize" minValue="6" maxValue="72" />
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Comment Opacity (User) -->
@@ -4005,20 +4006,48 @@
 
     <!-- Documents, Editing & Accessibility > Default Page Layout (User) -->
     <policy class="User" displayName="$(string.iPageViewLayoutModeDC_User)" explainText="$(string.iPageViewLayoutModeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Originals"
-      name="iPageViewLayoutModeDC_User" valueName="iPageViewLayoutMode">
+      name="iPageViewLayoutModeDC_User" valueName="iPageViewLayoutMode" presentation="$(presentation.iPageViewLayoutModeDC_User_enum)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iPageViewLayoutModeDC_User_enum" valueName="iPageViewLayoutMode">
+          <item displayName="$(string.iPageViewLayoutModeDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iPageViewLayoutModeDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iPageViewLayoutModeDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.iPageViewLayoutModeDC_User_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+          <item displayName="$(string.iPageViewLayoutModeDC_User_opt4)">
+            <value><decimal value="5" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Default Paragraph Dir (User) -->
     <policy class="User" displayName="$(string.iParaDirDC_User)" explainText="$(string.iParaDirDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Intl"
-      name="iParaDirDC_User" valueName="iParaDir">
+      name="iParaDirDC_User" valueName="iParaDir" presentation="$(presentation.iParaDirDC_User_enum)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iParaDirDC_User_enum" valueName="iParaDir">
+          <item displayName="$(string.iParaDirDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iParaDirDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iParaDirDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Default Zoom Scale (User) -->
@@ -4032,20 +4061,38 @@
 
     <!-- Documents, Editing & Accessibility > Default Zoom Type (User) -->
     <policy class="User" displayName="$(string.iDefaultZoomTypeDC_User)" explainText="$(string.iDefaultZoomTypeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Originals"
-      name="iDefaultZoomTypeDC_User" valueName="iDefaultZoomType">
+      name="iDefaultZoomTypeDC_User" valueName="iDefaultZoomType" presentation="$(presentation.iDefaultZoomTypeDC_User_enum)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iDefaultZoomTypeDC_User_enum" valueName="iDefaultZoomType">
+          <item displayName="$(string.iDefaultZoomTypeDC_User_opt0)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iDefaultZoomTypeDC_User_opt1)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.iDefaultZoomTypeDC_User_opt2)">
+            <value><decimal value="3" /></value>
+          </item>
+          <item displayName="$(string.iDefaultZoomTypeDC_User_opt3)">
+            <value><decimal value="4" /></value>
+          </item>
+          <item displayName="$(string.iDefaultZoomTypeDC_User_opt4)">
+            <value><decimal value="6" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Embedded Comment Limit (User) -->
     <policy class="User" displayName="$(string.imaxPDFCommentsSizeDC_User)" explainText="$(string.imaxPDFCommentsSizeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Annots\cPrefs"
-      name="imaxPDFCommentsSizeDC_User" valueName="imaxPDFCommentsSize">
+      name="imaxPDFCommentsSizeDC_User" presentation="$(presentation.imaxPDFCommentsSizeDC_User_num)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="imaxPDFCommentsSizeDC_User_num" valueName="imaxPDFCommentsSize" minValue="1" maxValue="100" />
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Empty Comment Tooltip (User) -->
@@ -4122,11 +4169,22 @@
 
     <!-- Documents, Editing & Accessibility > International Font (User) -->
     <policy class="User" displayName="$(string.iIntlSelectFontDC_User)" explainText="$(string.iIntlSelectFontDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Intl"
-      name="iIntlSelectFontDC_User" valueName="iIntlSelectFont">
+      name="iIntlSelectFontDC_User" valueName="iIntlSelectFont" presentation="$(presentation.iIntlSelectFontDC_User_enum)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iIntlSelectFontDC_User_enum" valueName="iIntlSelectFont">
+          <item displayName="$(string.iIntlSelectFontDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iIntlSelectFontDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iIntlSelectFontDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Ligatures (User) -->
@@ -4212,20 +4270,45 @@
 
     <!-- Documents, Editing & Accessibility > Override Zoom Type (User) -->
     <policy class="User" displayName="$(string.iZoomTypeDC_User)" explainText="$(string.iZoomTypeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Access"
-      name="iZoomTypeDC_User" valueName="iZoomType">
+      name="iZoomTypeDC_User" valueName="iZoomType" presentation="$(presentation.iZoomTypeDC_User_enum)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iZoomTypeDC_User_enum" valueName="iZoomType">
+          <item displayName="$(string.iZoomTypeDC_User_opt0)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iZoomTypeDC_User_opt1)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.iZoomTypeDC_User_opt2)">
+            <value><decimal value="3" /></value>
+          </item>
+          <item displayName="$(string.iZoomTypeDC_User_opt3)">
+            <value><decimal value="4" /></value>
+          </item>
+          <item displayName="$(string.iZoomTypeDC_User_opt4)">
+            <value><decimal value="6" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Paragraph Direction (User) -->
     <policy class="User" displayName="$(string.iParagraphDirectionDC_User)" explainText="$(string.iParagraphDirectionDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Intl"
-      name="iParagraphDirectionDC_User" valueName="iParagraphDirection">
+      name="iParagraphDirectionDC_User" valueName="iParagraphDirection" presentation="$(presentation.iParagraphDirectionDC_User_enum)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iParagraphDirectionDC_User_enum" valueName="iParagraphDirection">
+          <item displayName="$(string.iParagraphDirectionDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iParagraphDirectionDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Popup When Selected (User) -->
@@ -4293,11 +4376,22 @@
 
     <!-- Documents, Editing & Accessibility > Reading Order Display (User) -->
     <policy class="User" displayName="$(string.iShowOrderDC_User)" explainText="$(string.iShowOrderDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\TouchUp"
-      name="iShowOrderDC_User" valueName="iShowOrder">
+      name="iShowOrderDC_User" valueName="iShowOrder" presentation="$(presentation.iShowOrderDC_User_enum)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iShowOrderDC_User_enum" valueName="iShowOrder">
+          <item displayName="$(string.iShowOrderDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iShowOrderDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iShowOrderDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Remember Form Entries (User) -->
@@ -4311,11 +4405,19 @@
 
     <!-- Documents, Editing & Accessibility > Restore Last View (User) -->
     <policy class="User" displayName="$(string.iRememberViewDC_User)" explainText="$(string.iRememberViewDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\RememberedViews"
-      name="iRememberViewDC_User" valueName="iRememberView">
+      name="iRememberViewDC_User" valueName="iRememberView" presentation="$(presentation.iRememberViewDC_User_enum)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iRememberViewDC_User_enum" valueName="iRememberView">
+          <item displayName="$(string.iRememberViewDC_User_opt0)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iRememberViewDC_User_opt1)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Right-to-Left UI (User) -->
@@ -4554,11 +4656,22 @@
 
     <!-- Documents, Editing & Accessibility > XObjects View Mode (User) -->
     <policy class="User" displayName="$(string.iRXOPolicyDC_User)" explainText="$(string.iRXOPolicyDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AVDisplay"
-      name="iRXOPolicyDC_User" valueName="iRXOPolicy">
+      name="iRXOPolicyDC_User" valueName="iRXOPolicy" presentation="$(presentation.iRXOPolicyDC_User_enum)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iRXOPolicyDC_User_enum" valueName="iRXOPolicy">
+          <item displayName="$(string.iRXOPolicyDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iRXOPolicyDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iRXOPolicyDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- ======================================== -->
@@ -4661,11 +4774,22 @@
 
     <!-- Security: Execution & Protection > JS Exception Handling (User) -->
     <policy class="User" displayName="$(string.iExceptionsDC_User)" explainText="$(string.iExceptionsDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\JSPrefs"
-      name="iExceptionsDC_User" valueName="iExceptions">
+      name="iExceptionsDC_User" valueName="iExceptions" presentation="$(presentation.iExceptionsDC_User_enum)">
       <parentCategory ref="SecurityExecCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iExceptionsDC_User_enum" valueName="iExceptions">
+          <item displayName="$(string.iExceptionsDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iExceptionsDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iExceptionsDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Execution & Protection > JS Global Security (User) -->
@@ -4764,11 +4888,22 @@
 
     <!-- Security: Trust & Permissions > Auth Mechanisms (User) -->
     <policy class="User" displayName="$(string.iAuthMechanismsDC_User)" explainText="$(string.iAuthMechanismsDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cSPIs"
-      name="iAuthMechanismsDC_User" valueName="iAuthMechanisms">
+      name="iAuthMechanismsDC_User" valueName="iAuthMechanisms" presentation="$(presentation.iAuthMechanismsDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iAuthMechanismsDC_User_enum" valueName="iAuthMechanisms">
+          <item displayName="$(string.iAuthMechanismsDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iAuthMechanismsDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iAuthMechanismsDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Auto-Accept Privacy (User) -->
@@ -4782,11 +4917,22 @@
 
     <!-- Security: Trust & Permissions > Auto-Add LTV Info (User) -->
     <policy class="User" displayName="$(string.iAutoAddLTVDC_User)" explainText="$(string.iAutoAddLTVDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cAdobe_LTVProvider"
-      name="iAutoAddLTVDC_User" valueName="iAutoAddLTV">
+      name="iAutoAddLTVDC_User" valueName="iAutoAddLTV" presentation="$(presentation.iAutoAddLTVDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iAutoAddLTVDC_User_enum" valueName="iAutoAddLTV">
+          <item displayName="$(string.iAutoAddLTVDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iAutoAddLTVDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iAutoAddLTVDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Cache Server Password (User) -->
@@ -4818,11 +4964,12 @@
 
     <!-- Security: Trust & Permissions > CRL Cache Lifetime (User) -->
     <policy class="User" displayName="$(string.iMaxRevokeInfoCacheLifetimeDC_User)" explainText="$(string.iMaxRevokeInfoCacheLifetimeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cPubSec"
-      name="iMaxRevokeInfoCacheLifetimeDC_User" valueName="iMaxRevokeInfoCacheLifetime">
+      name="iMaxRevokeInfoCacheLifetimeDC_User" presentation="$(presentation.iMaxRevokeInfoCacheLifetimeDC_User_num)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iMaxRevokeInfoCacheLifetimeDC_User_num" valueName="iMaxRevokeInfoCacheLifetime" minValue="1" maxValue="8760" />
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Custom Cert Prefs (User) -->
@@ -4836,11 +4983,22 @@
 
     <!-- Security: Trust & Permissions > Directory Provider (User) -->
     <policy class="User" displayName="$(string.iDirectoryProviderDC_User)" explainText="$(string.iDirectoryProviderDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cSPIs"
-      name="iDirectoryProviderDC_User" valueName="iDirectoryProvider">
+      name="iDirectoryProviderDC_User" valueName="iDirectoryProvider" presentation="$(presentation.iDirectoryProviderDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iDirectoryProviderDC_User_enum" valueName="iDirectoryProvider">
+          <item displayName="$(string.iDirectoryProviderDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iDirectoryProviderDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iDirectoryProviderDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Enforce Digest Compare (User) -->
@@ -4953,11 +5111,22 @@
 
     <!-- Security: Trust & Permissions > Import Address Book (User) -->
     <policy class="User" displayName="$(string.iImportAddressBookDC_User)" explainText="$(string.iImportAddressBookDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cDigSig"
-      name="iImportAddressBookDC_User" valueName="iImportAddressBook">
+      name="iImportAddressBookDC_User" valueName="iImportAddressBook" presentation="$(presentation.iImportAddressBookDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iImportAddressBookDC_User_enum" valueName="iImportAddressBook">
+          <item displayName="$(string.iImportAddressBookDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iImportAddressBookDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iImportAddressBookDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Import Windows Certs (User) -->
@@ -5016,20 +5185,22 @@
 
     <!-- Security: Trust & Permissions > Max Rev Info Archive (User) -->
     <policy class="User" displayName="$(string.iMaxRevInfoArchiveSizeDC_User)" explainText="$(string.iMaxRevInfoArchiveSizeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cAdobe_LTVProvider"
-      name="iMaxRevInfoArchiveSizeDC_User" valueName="iMaxRevInfoArchiveSize">
+      name="iMaxRevInfoArchiveSizeDC_User" presentation="$(presentation.iMaxRevInfoArchiveSizeDC_User_num)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iMaxRevInfoArchiveSizeDC_User_num" valueName="iMaxRevInfoArchiveSize" minValue="1" maxValue="1048576" />
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Max Verify Sessions (User) -->
     <policy class="User" displayName="$(string.iMaxVerifySessionDC_User)" explainText="$(string.iMaxVerifySessionDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cASPKI\cVerify"
-      name="iMaxVerifySessionDC_User" valueName="iMaxVerifySession">
+      name="iMaxVerifySessionDC_User" presentation="$(presentation.iMaxVerifySessionDC_User_num)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iMaxVerifySessionDC_User_num" valueName="iMaxVerifySession" minValue="1" maxValue="100" />
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > New Sig Field Alert (User) -->
@@ -5052,29 +5223,55 @@
 
     <!-- Security: Trust & Permissions > OCSP Nonce Behavior (User) -->
     <policy class="User" displayName="$(string.iSendNonceDC_User)" explainText="$(string.iSendNonceDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cAdobe_OCSPRevChecker"
-      name="iSendNonceDC_User" valueName="iSendNonce">
+      name="iSendNonceDC_User" valueName="iSendNonce" presentation="$(presentation.iSendNonceDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iSendNonceDC_User_enum" valueName="iSendNonce">
+          <item displayName="$(string.iSendNonceDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iSendNonceDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iSendNonceDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > OCSP Responder URL (User) -->
     <policy class="User" displayName="$(string.iURLToConsultDC_User)" explainText="$(string.iURLToConsultDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cAdobe_OCSPRevChecker"
-      name="iURLToConsultDC_User" valueName="iURLToConsult">
+      name="iURLToConsultDC_User" valueName="iURLToConsult" presentation="$(presentation.iURLToConsultDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iURLToConsultDC_User_enum" valueName="iURLToConsult">
+          <item displayName="$(string.iURLToConsultDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iURLToConsultDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iURLToConsultDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.iURLToConsultDC_User_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > OCSP Response Freshness (User) -->
     <policy class="User" displayName="$(string.iResponseFreshnessDC_User)" explainText="$(string.iResponseFreshnessDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cAdobe_OCSPRevChecker"
-      name="iResponseFreshnessDC_User" valueName="iResponseFreshness">
+      name="iResponseFreshnessDC_User" presentation="$(presentation.iResponseFreshnessDC_User_num)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iResponseFreshnessDC_User_num" valueName="iResponseFreshness" minValue="1" maxValue="86400" />
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Open Non-PDF Attachments (User) -->
@@ -5115,11 +5312,22 @@
 
     <!-- Security: Trust & Permissions > Require Sign Warnings (User) -->
     <policy class="User" displayName="$(string.iRequireReviewWarningsDC_User)" explainText="$(string.iRequireReviewWarningsDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cDigSig"
-      name="iRequireReviewWarningsDC_User" valueName="iRequireReviewWarnings">
+      name="iRequireReviewWarningsDC_User" valueName="iRequireReviewWarnings" presentation="$(presentation.iRequireReviewWarningsDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iRequireReviewWarningsDC_User_enum" valueName="iRequireReviewWarnings">
+          <item displayName="$(string.iRequireReviewWarningsDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iRequireReviewWarningsDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iRequireReviewWarningsDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Require Timestamp (User) -->
@@ -5151,11 +5359,22 @@
 
     <!-- Security: Trust & Permissions > Revocation Checker (User) -->
     <policy class="User" displayName="$(string.iRevocationCheckerDC_User)" explainText="$(string.iRevocationCheckerDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cSPIs"
-      name="iRevocationCheckerDC_User" valueName="iRevocationChecker">
+      name="iRevocationCheckerDC_User" valueName="iRevocationChecker" presentation="$(presentation.iRevocationCheckerDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iRevocationCheckerDC_User_enum" valueName="iRevocationChecker">
+          <item displayName="$(string.iRevocationCheckerDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iRevocationCheckerDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iRevocationCheckerDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Revoke Check Trust (User) -->
@@ -5223,11 +5442,22 @@
 
     <!-- Security: Trust & Permissions > Show Document Warnings (User) -->
     <policy class="User" displayName="$(string.iShowDocumentWarningsDC_User)" explainText="$(string.iShowDocumentWarningsDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cPubSec"
-      name="iShowDocumentWarningsDC_User" valueName="iShowDocumentWarnings">
+      name="iShowDocumentWarningsDC_User" valueName="iShowDocumentWarnings" presentation="$(presentation.iShowDocumentWarningsDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iShowDocumentWarningsDC_User_enum" valueName="iShowDocumentWarnings">
+          <item displayName="$(string.iShowDocumentWarningsDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iShowDocumentWarningsDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iShowDocumentWarningsDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Show Post-Sign Warning (User) -->
@@ -5259,11 +5489,22 @@
 
     <!-- Security: Trust & Permissions > Show Valid Sig Icon (User) -->
     <policy class="User" displayName="$(string.iDisplayValidIconDC_User)" explainText="$(string.iDisplayValidIconDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cPubSec"
-      name="iDisplayValidIconDC_User" valueName="iDisplayValidIcon">
+      name="iDisplayValidIconDC_User" valueName="iDisplayValidIcon" presentation="$(presentation.iDisplayValidIconDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iDisplayValidIconDC_User_enum" valueName="iDisplayValidIcon">
+          <item displayName="$(string.iDisplayValidIconDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iDisplayValidIconDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iDisplayValidIconDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Sig Property Verify (User) -->
@@ -5277,11 +5518,22 @@
 
     <!-- Security: Trust & Permissions > Sig Verification Time (User) -->
     <policy class="User" displayName="$(string.iSigVerificationTimeDC_User)" explainText="$(string.iSigVerificationTimeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cPPKHandler"
-      name="iSigVerificationTimeDC_User" valueName="iSigVerificationTime">
+      name="iSigVerificationTimeDC_User" valueName="iSigVerificationTime" presentation="$(presentation.iSigVerificationTimeDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iSigVerificationTimeDC_User_enum" valueName="iSigVerificationTime">
+          <item displayName="$(string.iSigVerificationTimeDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iSigVerificationTimeDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iSigVerificationTimeDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Sign Certified Only (User) -->
@@ -5322,11 +5574,22 @@
 
     <!-- Security: Trust & Permissions > Timestamp Hash Algo (User) -->
     <policy class="User" displayName="$(string.iHashAlgoDC_User)" explainText="$(string.iHashAlgoDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cAdobe_TSPProvider"
-      name="iHashAlgoDC_User" valueName="iHashAlgo">
+      name="iHashAlgoDC_User" valueName="iHashAlgo" presentation="$(presentation.iHashAlgoDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iHashAlgoDC_User_enum" valueName="iHashAlgo">
+          <item displayName="$(string.iHashAlgoDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iHashAlgoDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iHashAlgoDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Timestamp Sig Size (User) -->
@@ -5377,38 +5640,79 @@
 
     <!-- Security: Trust & Permissions > URL Access Permissions (User) -->
     <policy class="User" displayName="$(string.iURLPermsDC_User)" explainText="$(string.iURLPermsDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\TrustManager\cDefaultLaunchURLPerms"
-      name="iURLPermsDC_User" valueName="iURLPerms">
+      name="iURLPermsDC_User" valueName="iURLPerms" presentation="$(presentation.iURLPermsDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iURLPermsDC_User_enum" valueName="iURLPerms">
+          <item displayName="$(string.iURLPermsDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iURLPermsDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iURLPermsDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Use Archived Rev Info (User) -->
     <policy class="User" displayName="$(string.iUseArchivedRevInfoDC_User)" explainText="$(string.iUseArchivedRevInfoDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cAdobe_LTVProvider"
-      name="iUseArchivedRevInfoDC_User" valueName="iUseArchivedRevInfo">
+      name="iUseArchivedRevInfoDC_User" valueName="iUseArchivedRevInfo" presentation="$(presentation.iUseArchivedRevInfoDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iUseArchivedRevInfoDC_User_enum" valueName="iUseArchivedRevInfo">
+          <item displayName="$(string.iUseArchivedRevInfoDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iUseArchivedRevInfoDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iUseArchivedRevInfoDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Validity Model (User) -->
     <policy class="User" displayName="$(string.iValidityModelDC_User)" explainText="$(string.iValidityModelDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cAdobe_Validation"
-      name="iValidityModelDC_User" valueName="iValidityModel">
+      name="iValidityModelDC_User" valueName="iValidityModel" presentation="$(presentation.iValidityModelDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iValidityModelDC_User_enum" valueName="iValidityModel">
+          <item displayName="$(string.iValidityModelDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iValidityModelDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Windows Store Trust (User) -->
     <policy class="User" displayName="$(string.iMSStoreTrustedDC_User)" explainText="$(string.iMSStoreTrustedDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cMSCAPI_DirectoryProvider"
-      name="iMSStoreTrustedDC_User" valueName="iMSStoreTrusted">
+      name="iMSStoreTrustedDC_User" valueName="iMSStoreTrusted" presentation="$(presentation.iMSStoreTrustedDC_User_enum)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iMSStoreTrustedDC_User_enum" valueName="iMSStoreTrusted">
+          <item displayName="$(string.iMSStoreTrustedDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iMSStoreTrustedDC_User_opt1)">
+            <value><decimal value="96" /></value>
+          </item>
+          <item displayName="$(string.iMSStoreTrustedDC_User_opt2)">
+            <value><decimal value="98" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- ======================================== -->
@@ -5772,11 +6076,12 @@
 
     <!-- Startup & Experience > Viewer Quit Delay (User) -->
     <policy class="User" displayName="$(string.iDelayBeforeQuitViewerDC_User)" explainText="$(string.iDelayBeforeQuitViewerDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AVGeneral"
-      name="iDelayBeforeQuitViewerDC_User" valueName="iDelayBeforeQuitViewer">
+      name="iDelayBeforeQuitViewerDC_User" presentation="$(presentation.iDelayBeforeQuitViewerDC_User_num)">
       <parentCategory ref="StartupExperienceCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iDelayBeforeQuitViewerDC_User_num" valueName="iDelayBeforeQuitViewer" minValue="0" maxValue="3600" />
+      </elements>
     </policy>
 
     <!-- ======================================== -->
@@ -5794,11 +6099,12 @@
 
     <!-- Updates & Desktop Integration > Browser Quit Delay (User) -->
     <policy class="User" displayName="$(string.iDelayBeforeQuitBrowserDC_User)" explainText="$(string.iDelayBeforeQuitBrowserDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AVGeneral"
-      name="iDelayBeforeQuitBrowserDC_User" valueName="iDelayBeforeQuitBrowser">
+      name="iDelayBeforeQuitBrowserDC_User" presentation="$(presentation.iDelayBeforeQuitBrowserDC_User_num)">
       <parentCategory ref="UpdatesDesktopCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iDelayBeforeQuitBrowserDC_User_num" valueName="iDelayBeforeQuitBrowser" minValue="0" maxValue="3600" />
+      </elements>
     </policy>
 
     <!-- Updates & Desktop Integration > Browser Read Mode (User) -->
@@ -5857,11 +6163,22 @@
 
     <!-- Updates & Desktop Integration > Starred Files Action (User) -->
     <policy class="User" displayName="$(string.iFavoriteFilesAccessOptionDC_User)" explainText="$(string.iFavoriteFilesAccessOptionDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\FavoriteFilesSync"
-      name="iFavoriteFilesAccessOptionDC_User" valueName="iFavoriteFilesAccessOption">
+      name="iFavoriteFilesAccessOptionDC_User" valueName="iFavoriteFilesAccessOption" presentation="$(presentation.iFavoriteFilesAccessOptionDC_User_enum)">
       <parentCategory ref="UpdatesDesktopCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iFavoriteFilesAccessOptionDC_User_enum" valueName="iFavoriteFilesAccessOption">
+          <item displayName="$(string.iFavoriteFilesAccessOptionDC_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iFavoriteFilesAccessOptionDC_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iFavoriteFilesAccessOptionDC_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Updates & Desktop Integration > Store Credentials (User) -->
@@ -5970,11 +6287,12 @@
 
     <!-- Context, Tools & Search > Max Recent Files (User) -->
     <policy class="User" displayName="$(string.iMaxMRUCntToBeStored_User)" explainText="$(string.iMaxMRUCntToBeStored_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\AVGeneral"
-      name="iMaxMRUCntToBeStored_User" valueName="iMaxMRUCntToBeStored">
+      name="iMaxMRUCntToBeStored_User" presentation="$(presentation.iMaxMRUCntToBeStored_User_num)">
       <parentCategory ref="ContextToolsSearchCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iMaxMRUCntToBeStored_User_num" valueName="iMaxMRUCntToBeStored" minValue="0" maxValue="100" />
+      </elements>
     </policy>
 
     <!-- Context, Tools & Search > Modern Viewer (User) -->
@@ -6051,29 +6369,49 @@
 
     <!-- Context, Tools & Search > Snapshot Resolution DPI (User) -->
     <policy class="User" displayName="$(string.iSnapshotResolution_User)" explainText="$(string.iSnapshotResolution_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Selection"
-      name="iSnapshotResolution_User" valueName="iSnapshotResolution">
+      name="iSnapshotResolution_User" presentation="$(presentation.iSnapshotResolution_User_num)">
       <parentCategory ref="ContextToolsSearchCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iSnapshotResolution_User_num" valueName="iSnapshotResolution" minValue="72" maxValue="600" />
+      </elements>
     </policy>
 
     <!-- Context, Tools & Search > Tools Pane State (User) -->
     <policy class="User" displayName="$(string.irightPaneState_User)" explainText="$(string.irightPaneState_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\AVGeneral\cTaskPanes"
-      name="irightPaneState_User" valueName="irightPaneState">
+      name="irightPaneState_User" valueName="irightPaneState" presentation="$(presentation.irightPaneState_User_enum)">
       <parentCategory ref="ContextToolsSearchCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="irightPaneState_User_enum" valueName="irightPaneState">
+          <item displayName="$(string.irightPaneState_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.irightPaneState_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.irightPaneState_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Context, Tools & Search > Tools Pane Sticky (User) -->
     <policy class="User" displayName="$(string.iBasicSharePaneStickyStatus_User)" explainText="$(string.iBasicSharePaneStickyStatus_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\AVGeneral\cTaskPanes"
-      name="iBasicSharePaneStickyStatus_User" valueName="iBasicSharePaneStickyStatus">
+      name="iBasicSharePaneStickyStatus_User" valueName="iBasicSharePaneStickyStatus" presentation="$(presentation.iBasicSharePaneStickyStatus_User_enum)">
       <parentCategory ref="ContextToolsSearchCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iBasicSharePaneStickyStatus_User_enum" valueName="iBasicSharePaneStickyStatus">
+          <item displayName="$(string.iBasicSharePaneStickyStatus_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iBasicSharePaneStickyStatus_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Context, Tools & Search > Try New Coachmark (User) -->
@@ -6172,11 +6510,12 @@
 
     <!-- Documents, Editing & Accessibility > Auto-Save Interval (User) -->
     <policy class="User" displayName="$(string.iAutoSaveDocsInterval_User)" explainText="$(string.iAutoSaveDocsInterval_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\AutoSaveDocs"
-      name="iAutoSaveDocsInterval_User" valueName="iAutoSaveDocsInterval">
+      name="iAutoSaveDocsInterval_User" presentation="$(presentation.iAutoSaveDocsInterval_User_num)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iAutoSaveDocsInterval_User_num" valueName="iAutoSaveDocsInterval" minValue="1" maxValue="99" />
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Auto-Set Layers (User) -->
@@ -6244,11 +6583,12 @@
 
     <!-- Documents, Editing & Accessibility > Comment Font Size (User) -->
     <policy class="User" displayName="$(string.dNoteFontSize_User)" explainText="$(string.dNoteFontSize_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Comments"
-      name="dNoteFontSize_User" valueName="dNoteFontSize">
+      name="dNoteFontSize_User" presentation="$(presentation.dNoteFontSize_User_num)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="dNoteFontSize_User_num" valueName="dNoteFontSize" minValue="6" maxValue="72" />
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Comment Opacity (User) -->
@@ -6334,20 +6674,48 @@
 
     <!-- Documents, Editing & Accessibility > Default Page Layout (User) -->
     <policy class="User" displayName="$(string.iPageViewLayoutMode_User)" explainText="$(string.iPageViewLayoutMode_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Originals"
-      name="iPageViewLayoutMode_User" valueName="iPageViewLayoutMode">
+      name="iPageViewLayoutMode_User" valueName="iPageViewLayoutMode" presentation="$(presentation.iPageViewLayoutMode_User_enum)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iPageViewLayoutMode_User_enum" valueName="iPageViewLayoutMode">
+          <item displayName="$(string.iPageViewLayoutMode_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iPageViewLayoutMode_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iPageViewLayoutMode_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.iPageViewLayoutMode_User_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+          <item displayName="$(string.iPageViewLayoutMode_User_opt4)">
+            <value><decimal value="5" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Default Paragraph Dir (User) -->
     <policy class="User" displayName="$(string.iParaDir_User)" explainText="$(string.iParaDir_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Intl"
-      name="iParaDir_User" valueName="iParaDir">
+      name="iParaDir_User" valueName="iParaDir" presentation="$(presentation.iParaDir_User_enum)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iParaDir_User_enum" valueName="iParaDir">
+          <item displayName="$(string.iParaDir_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iParaDir_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iParaDir_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Default Zoom Scale (User) -->
@@ -6361,20 +6729,38 @@
 
     <!-- Documents, Editing & Accessibility > Default Zoom Type (User) -->
     <policy class="User" displayName="$(string.iDefaultZoomType_User)" explainText="$(string.iDefaultZoomType_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Originals"
-      name="iDefaultZoomType_User" valueName="iDefaultZoomType">
+      name="iDefaultZoomType_User" valueName="iDefaultZoomType" presentation="$(presentation.iDefaultZoomType_User_enum)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iDefaultZoomType_User_enum" valueName="iDefaultZoomType">
+          <item displayName="$(string.iDefaultZoomType_User_opt0)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iDefaultZoomType_User_opt1)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.iDefaultZoomType_User_opt2)">
+            <value><decimal value="3" /></value>
+          </item>
+          <item displayName="$(string.iDefaultZoomType_User_opt3)">
+            <value><decimal value="4" /></value>
+          </item>
+          <item displayName="$(string.iDefaultZoomType_User_opt4)">
+            <value><decimal value="6" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Embedded Comment Limit (User) -->
     <policy class="User" displayName="$(string.imaxPDFCommentsSize_User)" explainText="$(string.imaxPDFCommentsSize_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Annots\cPrefs"
-      name="imaxPDFCommentsSize_User" valueName="imaxPDFCommentsSize">
+      name="imaxPDFCommentsSize_User" presentation="$(presentation.imaxPDFCommentsSize_User_num)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="imaxPDFCommentsSize_User_num" valueName="imaxPDFCommentsSize" minValue="1" maxValue="100" />
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Empty Comment Tooltip (User) -->
@@ -6451,11 +6837,22 @@
 
     <!-- Documents, Editing & Accessibility > International Font (User) -->
     <policy class="User" displayName="$(string.iIntlSelectFont_User)" explainText="$(string.iIntlSelectFont_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Intl"
-      name="iIntlSelectFont_User" valueName="iIntlSelectFont">
+      name="iIntlSelectFont_User" valueName="iIntlSelectFont" presentation="$(presentation.iIntlSelectFont_User_enum)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iIntlSelectFont_User_enum" valueName="iIntlSelectFont">
+          <item displayName="$(string.iIntlSelectFont_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iIntlSelectFont_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iIntlSelectFont_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Ligatures (User) -->
@@ -6541,20 +6938,45 @@
 
     <!-- Documents, Editing & Accessibility > Override Zoom Type (User) -->
     <policy class="User" displayName="$(string.iZoomType_User)" explainText="$(string.iZoomType_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Access"
-      name="iZoomType_User" valueName="iZoomType">
+      name="iZoomType_User" valueName="iZoomType" presentation="$(presentation.iZoomType_User_enum)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iZoomType_User_enum" valueName="iZoomType">
+          <item displayName="$(string.iZoomType_User_opt0)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iZoomType_User_opt1)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.iZoomType_User_opt2)">
+            <value><decimal value="3" /></value>
+          </item>
+          <item displayName="$(string.iZoomType_User_opt3)">
+            <value><decimal value="4" /></value>
+          </item>
+          <item displayName="$(string.iZoomType_User_opt4)">
+            <value><decimal value="6" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Paragraph Direction (User) -->
     <policy class="User" displayName="$(string.iParagraphDirection_User)" explainText="$(string.iParagraphDirection_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Intl"
-      name="iParagraphDirection_User" valueName="iParagraphDirection">
+      name="iParagraphDirection_User" valueName="iParagraphDirection" presentation="$(presentation.iParagraphDirection_User_enum)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iParagraphDirection_User_enum" valueName="iParagraphDirection">
+          <item displayName="$(string.iParagraphDirection_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iParagraphDirection_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Popup When Selected (User) -->
@@ -6613,11 +7035,22 @@
 
     <!-- Documents, Editing & Accessibility > Reading Order Display (User) -->
     <policy class="User" displayName="$(string.iShowOrder_User)" explainText="$(string.iShowOrder_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\TouchUp"
-      name="iShowOrder_User" valueName="iShowOrder">
+      name="iShowOrder_User" valueName="iShowOrder" presentation="$(presentation.iShowOrder_User_enum)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iShowOrder_User_enum" valueName="iShowOrder">
+          <item displayName="$(string.iShowOrder_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iShowOrder_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iShowOrder_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Remember Form Entries (User) -->
@@ -6631,11 +7064,19 @@
 
     <!-- Documents, Editing & Accessibility > Restore Last View (User) -->
     <policy class="User" displayName="$(string.iRememberView_User)" explainText="$(string.iRememberView_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\RememberedViews"
-      name="iRememberView_User" valueName="iRememberView">
+      name="iRememberView_User" valueName="iRememberView" presentation="$(presentation.iRememberView_User_enum)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iRememberView_User_enum" valueName="iRememberView">
+          <item displayName="$(string.iRememberView_User_opt0)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iRememberView_User_opt1)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Right-to-Left UI (User) -->
@@ -6865,11 +7306,22 @@
 
     <!-- Documents, Editing & Accessibility > XObjects View Mode (User) -->
     <policy class="User" displayName="$(string.iRXOPolicy_User)" explainText="$(string.iRXOPolicy_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\AVDisplay"
-      name="iRXOPolicy_User" valueName="iRXOPolicy">
+      name="iRXOPolicy_User" valueName="iRXOPolicy" presentation="$(presentation.iRXOPolicy_User_enum)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iRXOPolicy_User_enum" valueName="iRXOPolicy">
+          <item displayName="$(string.iRXOPolicy_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iRXOPolicy_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iRXOPolicy_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- ======================================== -->
@@ -7030,11 +7482,22 @@
 
     <!-- Security: Trust & Permissions > Auth Mechanisms (User) -->
     <policy class="User" displayName="$(string.iAuthMechanisms_User)" explainText="$(string.iAuthMechanisms_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cSPIs"
-      name="iAuthMechanisms_User" valueName="iAuthMechanisms">
+      name="iAuthMechanisms_User" valueName="iAuthMechanisms" presentation="$(presentation.iAuthMechanisms_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iAuthMechanisms_User_enum" valueName="iAuthMechanisms">
+          <item displayName="$(string.iAuthMechanisms_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iAuthMechanisms_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iAuthMechanisms_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Auto-Accept Privacy (User) -->
@@ -7048,11 +7511,22 @@
 
     <!-- Security: Trust & Permissions > Auto-Add LTV Info (User) -->
     <policy class="User" displayName="$(string.iAutoAddLTV_User)" explainText="$(string.iAutoAddLTV_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cAdobe_LTVProvider"
-      name="iAutoAddLTV_User" valueName="iAutoAddLTV">
+      name="iAutoAddLTV_User" valueName="iAutoAddLTV" presentation="$(presentation.iAutoAddLTV_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iAutoAddLTV_User_enum" valueName="iAutoAddLTV">
+          <item displayName="$(string.iAutoAddLTV_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iAutoAddLTV_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iAutoAddLTV_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Cache Server Password (User) -->
@@ -7084,11 +7558,12 @@
 
     <!-- Security: Trust & Permissions > CRL Cache Lifetime (User) -->
     <policy class="User" displayName="$(string.iMaxRevokeInfoCacheLifetime_User)" explainText="$(string.iMaxRevokeInfoCacheLifetime_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cPubSec"
-      name="iMaxRevokeInfoCacheLifetime_User" valueName="iMaxRevokeInfoCacheLifetime">
+      name="iMaxRevokeInfoCacheLifetime_User" presentation="$(presentation.iMaxRevokeInfoCacheLifetime_User_num)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iMaxRevokeInfoCacheLifetime_User_num" valueName="iMaxRevokeInfoCacheLifetime" minValue="1" maxValue="8760" />
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Custom Cert Prefs (User) -->
@@ -7102,11 +7577,22 @@
 
     <!-- Security: Trust & Permissions > Directory Provider (User) -->
     <policy class="User" displayName="$(string.iDirectoryProvider_User)" explainText="$(string.iDirectoryProvider_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cSPIs"
-      name="iDirectoryProvider_User" valueName="iDirectoryProvider">
+      name="iDirectoryProvider_User" valueName="iDirectoryProvider" presentation="$(presentation.iDirectoryProvider_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iDirectoryProvider_User_enum" valueName="iDirectoryProvider">
+          <item displayName="$(string.iDirectoryProvider_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iDirectoryProvider_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iDirectoryProvider_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Enforce Digest Compare (User) -->
@@ -7219,11 +7705,22 @@
 
     <!-- Security: Trust & Permissions > Import Address Book (User) -->
     <policy class="User" displayName="$(string.iImportAddressBook_User)" explainText="$(string.iImportAddressBook_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cDigSig"
-      name="iImportAddressBook_User" valueName="iImportAddressBook">
+      name="iImportAddressBook_User" valueName="iImportAddressBook" presentation="$(presentation.iImportAddressBook_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iImportAddressBook_User_enum" valueName="iImportAddressBook">
+          <item displayName="$(string.iImportAddressBook_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iImportAddressBook_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iImportAddressBook_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Import Windows Certs (User) -->
@@ -7273,20 +7770,22 @@
 
     <!-- Security: Trust & Permissions > Max Rev Info Archive (User) -->
     <policy class="User" displayName="$(string.iMaxRevInfoArchiveSize_User)" explainText="$(string.iMaxRevInfoArchiveSize_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cAdobe_LTVProvider"
-      name="iMaxRevInfoArchiveSize_User" valueName="iMaxRevInfoArchiveSize">
+      name="iMaxRevInfoArchiveSize_User" presentation="$(presentation.iMaxRevInfoArchiveSize_User_num)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iMaxRevInfoArchiveSize_User_num" valueName="iMaxRevInfoArchiveSize" minValue="1" maxValue="1048576" />
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Max Verify Sessions (User) -->
     <policy class="User" displayName="$(string.iMaxVerifySession_User)" explainText="$(string.iMaxVerifySession_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cASPKI\cVerify"
-      name="iMaxVerifySession_User" valueName="iMaxVerifySession">
+      name="iMaxVerifySession_User" presentation="$(presentation.iMaxVerifySession_User_num)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iMaxVerifySession_User_num" valueName="iMaxVerifySession" minValue="1" maxValue="100" />
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > New Sig Field Alert (User) -->
@@ -7309,29 +7808,55 @@
 
     <!-- Security: Trust & Permissions > OCSP Nonce Behavior (User) -->
     <policy class="User" displayName="$(string.iSendNonce_User)" explainText="$(string.iSendNonce_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cAdobe_OCSPRevChecker"
-      name="iSendNonce_User" valueName="iSendNonce">
+      name="iSendNonce_User" valueName="iSendNonce" presentation="$(presentation.iSendNonce_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iSendNonce_User_enum" valueName="iSendNonce">
+          <item displayName="$(string.iSendNonce_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iSendNonce_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iSendNonce_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > OCSP Responder URL (User) -->
     <policy class="User" displayName="$(string.iURLToConsult_User)" explainText="$(string.iURLToConsult_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cAdobe_OCSPRevChecker"
-      name="iURLToConsult_User" valueName="iURLToConsult">
+      name="iURLToConsult_User" valueName="iURLToConsult" presentation="$(presentation.iURLToConsult_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iURLToConsult_User_enum" valueName="iURLToConsult">
+          <item displayName="$(string.iURLToConsult_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iURLToConsult_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iURLToConsult_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.iURLToConsult_User_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > OCSP Response Freshness (User) -->
     <policy class="User" displayName="$(string.iResponseFreshness_User)" explainText="$(string.iResponseFreshness_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cAdobe_OCSPRevChecker"
-      name="iResponseFreshness_User" valueName="iResponseFreshness">
+      name="iResponseFreshness_User" presentation="$(presentation.iResponseFreshness_User_num)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iResponseFreshness_User_num" valueName="iResponseFreshness" minValue="1" maxValue="86400" />
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Open Non-PDF Attachments (User) -->
@@ -7372,11 +7897,22 @@
 
     <!-- Security: Trust & Permissions > Require Sign Warnings (User) -->
     <policy class="User" displayName="$(string.iRequireReviewWarnings_User)" explainText="$(string.iRequireReviewWarnings_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cDigSig"
-      name="iRequireReviewWarnings_User" valueName="iRequireReviewWarnings">
+      name="iRequireReviewWarnings_User" valueName="iRequireReviewWarnings" presentation="$(presentation.iRequireReviewWarnings_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iRequireReviewWarnings_User_enum" valueName="iRequireReviewWarnings">
+          <item displayName="$(string.iRequireReviewWarnings_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iRequireReviewWarnings_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iRequireReviewWarnings_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Require Timestamp (User) -->
@@ -7408,11 +7944,22 @@
 
     <!-- Security: Trust & Permissions > Revocation Checker (User) -->
     <policy class="User" displayName="$(string.iRevocationChecker_User)" explainText="$(string.iRevocationChecker_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cSPIs"
-      name="iRevocationChecker_User" valueName="iRevocationChecker">
+      name="iRevocationChecker_User" valueName="iRevocationChecker" presentation="$(presentation.iRevocationChecker_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iRevocationChecker_User_enum" valueName="iRevocationChecker">
+          <item displayName="$(string.iRevocationChecker_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iRevocationChecker_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iRevocationChecker_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Revoke Check Trust (User) -->
@@ -7480,11 +8027,22 @@
 
     <!-- Security: Trust & Permissions > Show Document Warnings (User) -->
     <policy class="User" displayName="$(string.iShowDocumentWarnings_User)" explainText="$(string.iShowDocumentWarnings_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cPubSec"
-      name="iShowDocumentWarnings_User" valueName="iShowDocumentWarnings">
+      name="iShowDocumentWarnings_User" valueName="iShowDocumentWarnings" presentation="$(presentation.iShowDocumentWarnings_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iShowDocumentWarnings_User_enum" valueName="iShowDocumentWarnings">
+          <item displayName="$(string.iShowDocumentWarnings_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iShowDocumentWarnings_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iShowDocumentWarnings_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Show Post-Sign Warning (User) -->
@@ -7516,11 +8074,22 @@
 
     <!-- Security: Trust & Permissions > Show Valid Sig Icon (User) -->
     <policy class="User" displayName="$(string.iDisplayValidIcon_User)" explainText="$(string.iDisplayValidIcon_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cPubSec"
-      name="iDisplayValidIcon_User" valueName="iDisplayValidIcon">
+      name="iDisplayValidIcon_User" valueName="iDisplayValidIcon" presentation="$(presentation.iDisplayValidIcon_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iDisplayValidIcon_User_enum" valueName="iDisplayValidIcon">
+          <item displayName="$(string.iDisplayValidIcon_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iDisplayValidIcon_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iDisplayValidIcon_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Sig Property Verify (User) -->
@@ -7534,11 +8103,22 @@
 
     <!-- Security: Trust & Permissions > Sig Verification Time (User) -->
     <policy class="User" displayName="$(string.iSigVerificationTime_User)" explainText="$(string.iSigVerificationTime_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cPPKHandler"
-      name="iSigVerificationTime_User" valueName="iSigVerificationTime">
+      name="iSigVerificationTime_User" valueName="iSigVerificationTime" presentation="$(presentation.iSigVerificationTime_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iSigVerificationTime_User_enum" valueName="iSigVerificationTime">
+          <item displayName="$(string.iSigVerificationTime_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iSigVerificationTime_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iSigVerificationTime_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Sign Certified Only (User) -->
@@ -7579,11 +8159,22 @@
 
     <!-- Security: Trust & Permissions > Timestamp Hash Algo (User) -->
     <policy class="User" displayName="$(string.iHashAlgo_User)" explainText="$(string.iHashAlgo_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cAdobe_TSPProvider"
-      name="iHashAlgo_User" valueName="iHashAlgo">
+      name="iHashAlgo_User" valueName="iHashAlgo" presentation="$(presentation.iHashAlgo_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iHashAlgo_User_enum" valueName="iHashAlgo">
+          <item displayName="$(string.iHashAlgo_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iHashAlgo_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iHashAlgo_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Timestamp Sig Size (User) -->
@@ -7634,38 +8225,79 @@
 
     <!-- Security: Trust & Permissions > URL Access Permissions (User) -->
     <policy class="User" displayName="$(string.iURLPerms_User)" explainText="$(string.iURLPerms_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\TrustManager\cDefaultLaunchURLPerms"
-      name="iURLPerms_User" valueName="iURLPerms">
+      name="iURLPerms_User" valueName="iURLPerms" presentation="$(presentation.iURLPerms_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iURLPerms_User_enum" valueName="iURLPerms">
+          <item displayName="$(string.iURLPerms_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iURLPerms_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iURLPerms_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Use Archived Rev Info (User) -->
     <policy class="User" displayName="$(string.iUseArchivedRevInfo_User)" explainText="$(string.iUseArchivedRevInfo_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cAdobe_LTVProvider"
-      name="iUseArchivedRevInfo_User" valueName="iUseArchivedRevInfo">
+      name="iUseArchivedRevInfo_User" valueName="iUseArchivedRevInfo" presentation="$(presentation.iUseArchivedRevInfo_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iUseArchivedRevInfo_User_enum" valueName="iUseArchivedRevInfo">
+          <item displayName="$(string.iUseArchivedRevInfo_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iUseArchivedRevInfo_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iUseArchivedRevInfo_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Validity Model (User) -->
     <policy class="User" displayName="$(string.iValidityModel_User)" explainText="$(string.iValidityModel_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cAdobe_Validation"
-      name="iValidityModel_User" valueName="iValidityModel">
+      name="iValidityModel_User" valueName="iValidityModel" presentation="$(presentation.iValidityModel_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iValidityModel_User_enum" valueName="iValidityModel">
+          <item displayName="$(string.iValidityModel_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iValidityModel_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Security: Trust & Permissions > Windows Store Trust (User) -->
     <policy class="User" displayName="$(string.iMSStoreTrusted_User)" explainText="$(string.iMSStoreTrusted_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cMSCAPI_DirectoryProvider"
-      name="iMSStoreTrusted_User" valueName="iMSStoreTrusted">
+      name="iMSStoreTrusted_User" valueName="iMSStoreTrusted" presentation="$(presentation.iMSStoreTrusted_User_enum)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iMSStoreTrusted_User_enum" valueName="iMSStoreTrusted">
+          <item displayName="$(string.iMSStoreTrusted_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iMSStoreTrusted_User_opt1)">
+            <value><decimal value="96" /></value>
+          </item>
+          <item displayName="$(string.iMSStoreTrusted_User_opt2)">
+            <value><decimal value="98" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- ======================================== -->
@@ -8011,11 +8643,12 @@
 
     <!-- Startup & Experience > Viewer Quit Delay (User) -->
     <policy class="User" displayName="$(string.iDelayBeforeQuitViewer_User)" explainText="$(string.iDelayBeforeQuitViewer_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\AVGeneral"
-      name="iDelayBeforeQuitViewer_User" valueName="iDelayBeforeQuitViewer">
+      name="iDelayBeforeQuitViewer_User" presentation="$(presentation.iDelayBeforeQuitViewer_User_num)">
       <parentCategory ref="StartupExperienceCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iDelayBeforeQuitViewer_User_num" valueName="iDelayBeforeQuitViewer" minValue="0" maxValue="3600" />
+      </elements>
     </policy>
 
     <!-- ======================================== -->
@@ -8033,11 +8666,12 @@
 
     <!-- Updates & Desktop Integration > Browser Quit Delay (User) -->
     <policy class="User" displayName="$(string.iDelayBeforeQuitBrowser_User)" explainText="$(string.iDelayBeforeQuitBrowser_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\AVGeneral"
-      name="iDelayBeforeQuitBrowser_User" valueName="iDelayBeforeQuitBrowser">
+      name="iDelayBeforeQuitBrowser_User" presentation="$(presentation.iDelayBeforeQuitBrowser_User_num)">
       <parentCategory ref="UpdatesDesktopCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iDelayBeforeQuitBrowser_User_num" valueName="iDelayBeforeQuitBrowser" minValue="0" maxValue="3600" />
+      </elements>
     </policy>
 
     <!-- Updates & Desktop Integration > Browser Read Mode (User) -->
@@ -8096,11 +8730,22 @@
 
     <!-- Updates & Desktop Integration > Starred Files Action (User) -->
     <policy class="User" displayName="$(string.iFavoriteFilesAccessOption_User)" explainText="$(string.iFavoriteFilesAccessOption_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\FavoriteFilesSync"
-      name="iFavoriteFilesAccessOption_User" valueName="iFavoriteFilesAccessOption">
+      name="iFavoriteFilesAccessOption_User" valueName="iFavoriteFilesAccessOption" presentation="$(presentation.iFavoriteFilesAccessOption_User_enum)">
       <parentCategory ref="UpdatesDesktopCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iFavoriteFilesAccessOption_User_enum" valueName="iFavoriteFilesAccessOption">
+          <item displayName="$(string.iFavoriteFilesAccessOption_User_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iFavoriteFilesAccessOption_User_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iFavoriteFilesAccessOption_User_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Updates & Desktop Integration > Store Credentials (User) -->

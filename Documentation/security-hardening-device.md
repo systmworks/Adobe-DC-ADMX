@@ -6,7 +6,7 @@
 
 # Security Hardening (Device)
 
-Recommended and optional security settings for the combined v3.1 ADMX templates (Device scope).
+Recommended and optional security settings for the combined v3.2 ADMX templates (Device scope).
 
 - ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) settings most organisations should apply.
 - ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) stronger hardening that may affect workflows.
@@ -34,12 +34,12 @@ Recommended and optional security settings for the combined v3.1 ADMX templates 
 | Security: Execution & Protection | Enhanced Security Standalone | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Flash Content in PDFs | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Protected Mode Sandbox | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
-| Security: Execution & Protection | Unlisted Attachment Type Permissions | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Prompt without ability to allow | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Security: Execution & Protection | Unlisted Attachment Type Permissions | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Prompt without ability to allow (most restrictive prompt) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Trust & Permissions | Allow Password Caching | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Trust & Permissions | Disable IE Trusted Sites as Privileged Locations | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Security: Trust & Permissions | Lock Trusted Folders and Files | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Security: Trust & Permissions | Lock Trusted Host Sites | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
-| Security: Trust & Permissions | Unknown URL Access Policy | DWORD `1` | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Security: Trust & Permissions | Unknown URL Access Policy | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Always ask | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Sharing & Features | Adobe Acrobat Sign | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Sharing & Features | Adobe Send & Track | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Sharing & Features | Disable SharePoint & Office 365 Integration | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
@@ -78,14 +78,14 @@ Recommended and optional security settings for the combined v3.1 ADMX templates 
 | Security: Execution & Protection | Enhanced Security Standalone | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Flash Content in PDFs | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Protected Mode Sandbox | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
-| Security: Execution & Protection | Protected View Mode | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Enable for unsafe locations only | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
-| Security: Execution & Protection | Unlisted Attachment Type Permissions | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Prompt without ability to allow | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Security: Execution & Protection | Protected View Mode | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Enable Protected View for unsafe locations only | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Security: Execution & Protection | Unlisted Attachment Type Permissions | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Prompt without ability to allow (most restrictive prompt) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Trust & Permissions | Allow Password Caching | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Trust & Permissions | Disable Acrobat.com File Storage | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Trust & Permissions | Disable IE Trusted Sites as Privileged Locations | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Security: Trust & Permissions | Lock Trusted Folders and Files | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Security: Trust & Permissions | Lock Trusted Host Sites | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
-| Security: Trust & Permissions | Unknown URL Access Policy | DWORD `1` | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Security: Trust & Permissions | Unknown URL Access Policy | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Always ask | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Sharing & Features | Adobe Acrobat Sign | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Sharing & Features | Adobe Send & Track | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Sharing & Features | Disable SharePoint & Office 365 Integration | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |

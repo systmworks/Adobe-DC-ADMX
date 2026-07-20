@@ -7,18 +7,16 @@
 Detailed policy reference pages, changelogs, and curated guides live under [Documentation/](Documentation/).
 
 > [!WARNING]
-> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.1**.
+> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.2**.
 >
 > Convert them first with [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1`](Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1), then re-import.
 >
-> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0 to v3.1 is **not** import-breaking (same namespace and policy names).
+> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1 to v3.2 keeps the same namespace and policy names; v3.2 reclassifies some **User** policies from toggles to enum/numeric controls (re-select those settings after ADMX re-upload).
 
 ## Quick Links
 
 | ![Page](https://img.shields.io/badge/Page-316dca?style=flat-square) | ![Description](https://img.shields.io/badge/Description-316dca?style=flat-square) |
 |------|-------------|
-| [ADMX + ADML](ADMX/) | Download the combined AdobeDC.admx + en-US/AdobeDC.adml (latest) |
-| [Changelog (Combined)](Documentation/changelog.md) | Combined device + user version history |
 | [Acrobat DC Settings (Device)](Documentation/acrobat-settings-device.md) | Machine-scope Acrobat DC policies |
 | [Acrobat DC Settings (User)](Documentation/acrobat-settings-user.md) | User-scope Acrobat DC policies |
 | [Reader DC Settings (Device)](Documentation/reader-settings-device.md) | Machine-scope Reader DC policies |
@@ -27,16 +25,17 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 | [Security Hardening (User)](Documentation/security-hardening-user.md) | Recommended user security configurations |
 | [Reduce Nags & Upsells (Device)](Documentation/reduce-nags-device.md) | Device-scope nag and upsell controls |
 | [Reduce Nags & Upsells (User)](Documentation/reduce-nags-user.md) | User-scope nag and upsell controls |
+| [Changelog (Combined)](Documentation/changelog.md) | Combined device + user version history |
 | [Changelog (Device, Retired)](Documentation/changelog-device-retired.md) | Legacy device-side ADMX version history |
 | [Changelog (User, Retired)](Documentation/changelog-user-retired.md) | Legacy user-side ADMX version history |
 | [Screenshots](Documentation/screenshots.md) | GPMC and Intune screenshots |
 | [License](LICENSE.md) | CC BY-SA 4.0 license |
 
-These ADMX/ADML templates (v3.1) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
+These ADMX/ADML templates (v3.2) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
 
 | ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
 |------|-------|----------|
-| `AdobeDC.admx` + ADML | **Adobe DC** (Computer + User) | 797 (296 machine + 501 user) |
+| `AdobeDC.admx` + ADML | **Adobe DC** (Computer + User) | 795 (294 machine + 501 user) |
 
 ### Computer Configuration tree
 
@@ -59,7 +58,7 @@ These ADMX/ADML templates (v3.1) provide Group Policy and Intune management of A
 
 ## Category Overview (Device)
 
-> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product, so Reader + Acrobat column totals are higher than the number of unique settings. The ADMX contains **296** machine policy entries (158 unique machine settings; architecture-specific non-policy settings are emitted separately for x64 and x86). Overall template: **296** machine + **501** user = **797** policy entries.
+> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product, so Reader + Acrobat column totals are higher than the number of unique settings. The ADMX contains **294** machine policy entries (157 unique machine settings after removing non-ADMX `tBuiltInPermList`; architecture-specific non-policy settings are emitted separately for x64 and x86). Overall template: **294** machine + **501** user = **795** policy entries.
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![Overview](https://img.shields.io/badge/Overview-316dca?style=flat-square) | ![Reader](https://img.shields.io/badge/Reader-316dca?style=flat-square) | ![Acrobat](https://img.shields.io/badge/Acrobat-316dca?style=flat-square) |
 |----------|----------|:------:|:-------:|
@@ -67,13 +66,13 @@ These ADMX/ADML templates (v3.1) provide Group Policy and Intune management of A
 | Context, Tools & Search | UI toolbars, context menus, search features, Modern Viewer, tool shortcuts, and editing mode settings. | 12 | 21 |
 | Documents, Editing & Accessibility | PDF creation, editing, form handling, accessibility tagging, and document conversion controls. | 4 | 11 |
 | Microsoft Purview (MIP) | Machine-level FeatureLockDown policies for Microsoft Purview Information Protection: MIP labelling lockdown, save-time policy checks, sovereign cloud selection, browser auth, double key encryption, and OS auth prompt control. | 6 | 6 |
-| Security: Execution & Protection | Sandbox modes (Protected Mode, AppContainer, Protected View), enhanced security, Flash content, and dangerous action blocking. | 16 | 16 |
+| Security: Execution & Protection | Sandbox modes (Protected Mode, AppContainer, Protected View), enhanced security, Flash content, and dangerous action blocking. | 15 | 15 |
 | Security: Trust & Permissions | Digital signatures, trusted locations, certificate trust, security handlers, and URL access policies. | 19 | 21 |
 | Sharing & Features | Adobe Sign, Send & Track, shared reviews, SharePoint/Office 365 integration, WebMail configuration, and cloud signature storage. | 19 | 21 |
 | Startup & Experience | Launch messages, notifications, First Time Experience, What's New, Home screen widgets, and feedback prompts. | 15 | 16 |
 | Updates & Desktop Integration | Product updater, Chrome extension, Explorer thumbnails, repair options, desktop UI, and deployment settings. | 19 | 21 |
 | Upsell | Upgrade prompts, trial purchase dialogs, promotional campaigns, App Center, and purchasable tool visibility. | 5 | 7 |
-| **Total** | | **128** | **153** |
+| **Total** | | **127** | **152** |
 
 ## Category Overview (User)
 

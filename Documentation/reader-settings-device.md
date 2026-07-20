@@ -6,7 +6,7 @@
 
 # Reader DC Settings (Device)
 
-Complete list of 128 Reader DC policies in the combined v3.1 ADMX templates, sorted by category.
+Complete list of 127 Reader DC policies in the combined v3.2 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -73,7 +73,6 @@ Complete list of 128 Reader DC policies in the combined v3.1 ADMX templates, sor
 | Block JavaScript Execution | ``bDisableJavaScript`` | Blocks and locks JavaScript execution in PDF documents, preventing users from bypassing via privileged locations. |
 | Block non-PDF file attachments | ``iFileAttachmentPerms`` | Prevents users from opening or launching file types other than PDF or FDF from PDF file attachments and restricts the related Trust Manager behavior. |
 | Block PDF Link Actions | ``bDisablePDFRedirectionActions`` | Block specific PDF actions (listed below) which result in opening a link. |
-| Built-in Attachment Permissions List | ``tBuiltInPermList`` | Defines the white and black list of file types that can be saved and opened from a document. |
 | Certification Status in Protected View | ``bEnablePVCertificateBasedTrust`` | Specifies whether a document's certification status should appear in the Protected View document message bar. |
 | Enhanced Security in Browser | ``bEnhancedSecurityInBrowser`` | Toggles enhanced security when the application is running in the browser. |
 | Enhanced Security Standalone | ``bEnhancedSecurityStandalone`` | Toggles enhanced security for the standalone application. |
