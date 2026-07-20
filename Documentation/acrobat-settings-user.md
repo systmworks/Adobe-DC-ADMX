@@ -6,15 +6,17 @@
 
 # Acrobat DC Settings (User)
 
-Complete list of 255 Acrobat DC policies in the combined v3.3 ADMX templates, sorted by category.
+Complete list of 271 Acrobat DC policies in the combined v3.4 ADMX templates, sorted by category.
 
 ## Context, Tools & Search
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
+| Base Folder Name | ``tBaseFolderName`` | An alias referring to a particular folder. |
 | Column Select Halo | ``iColumnSelectHalo`` | Adobe's preference reference does not describe this value; use the URL column for the documentation link. |
 | Disable Sign in Office | ``DisableSignInOffice`` | Install PDFMaker's Acrobat Sign integration component so that the sign user interface appears in Microsoft Office products. |
-| Enable Sign in Office | ``EnableSignInOffice`` | Install PDFMaker's Acrobat Sign integration component so that the sign user interface appears in Microsoft Office products. |
+| Enable Sign in Office | ``EnableSignInOffice`` | Install PDFMaker Acrobat Sign UI in Microsoft Office. |
+| File Format Version | ``tFileFormat`` | The version number associated with the file format. |
 | Filename as Title | ``bAlwaysUseFileNameAsDocTitle`` | Use the PDF file name as the display name in the application's title bar. |
 | Fixed Snapshot Resolution | ``bUseFixedSnapshotResolution`` | Adobe's preference reference does not describe this value; use the URL column for the documentation link. |
 | Flash Player for 3D | ``ADC4318556`` | Enables playing 3D and multimedia content using a Flash player in PDF. |
@@ -41,8 +43,8 @@ Complete list of 255 Acrobat DC policies in the combined v3.3 ADMX templates, so
 |---|---|---|
 | 2D GPU Acceleration | ``bUse2DGPUf`` | Specifies whether 2D graphics acceleration should be used. |
 | Allow Hide UI | ``bAllowDocsToHideUI`` | Allow documents to hide the menu bar, toolbars, and window controls. |
-| Annotation Text Selection | ``benableTextSelection`` | Enable text selection for annotations such as highlight, strikethrough or underline. |
-| Assistive Technology | ``bEnableAT`` | Toggles assistive technology on and off. |
+| Annotation Text Selection | ``benableTextSelection`` | Enable text selection on highlight, strikethrough, and underline annotations. |
+| Assistive Technology | ``bEnableAT`` | Enable assistive technology workflows. |
 | Attach Report | ``bAttachLog`` | Toggles whether to attach the accessibility report to the checked document after running accessibility full check. |
 | Auto-Complete on Tab | ``bAutoCompleteOnTab`` | Auto complete form field entries on a tab key action. |
 | Auto-Open Drawing Popup | ``bautoOpenOther`` | Automatically adds a popup note when another type of annotation is added. |
@@ -52,9 +54,10 @@ Complete list of 255 Acrobat DC policies in the combined v3.3 ADMX templates, so
 | Check Page Range | ``iPages`` | Toggles whether to check all pages of a document or a subset of pages when running an accessibility full check. |
 | ClearType Smoothing | ``benableDDR`` | Further smooth text on LCD screens. |
 | Cloud Auto Tagging | ``bEnableCloudBasedAT`` | Enable cloud-based auto-tagging. |
-| Color Replace Policy | ``iAccessColorPolicy`` | Specifies whether all the controls in the Replace Document Colors panel should be enabled. |
+| Color Replace Policy | ``iAccessColorPolicy`` | Replace Document Colors panel policy. |
 | Combine Reading Order | ``bCombineContent`` | Specifies whether similar content should be displayed together or separately. |
 | Comment Author | ``tauthor`` | The author name specified by balwaysUseIdent. |
+| Comment Font Name | ``tNoteFontName`` | Sets the comment font name for the viewer. |
 | Comment Font Size | ``dNoteFontSize`` | Sets the font size. |
 | Comment Opacity | ``iNoteOpacity`` | The opacity in percent of all comments. |
 | Complex Script Support | ``bComplexScript`` | Enable support for writing direction switching (complex script). |
@@ -67,10 +70,11 @@ Complete list of 255 Acrobat DC policies in the combined v3.3 ADMX templates, so
 | Default Paragraph Dir | ``iParaDir`` | Specifies the paragraph direction. |
 | Default Zoom Scale | ``iDefaultZoomScale`` | Specifies the zoom scale % to use when a PDF opens. |
 | Default Zoom Type | ``iDefaultZoomType`` | Specifies the default zoom type (other than a %) to use when a PDF opens. |
+| Dictionary Name | ``tDictionaryName`` | Identifies the default spelling dictionary name. |
 | Embedded Comment Limit | ``imaxPDFCommentsSize`` | Sets the comment threshold size for determining whether comments are embedded or sent as FDF files. |
 | Empty Comment Tooltip | ``bemptyContentToolTip`` | Displays a tooltip stating the comment being hovered over is empty. |
 | Enhance Thin Lines | ``bUseThinCode`` | Enhance thin lines to improve visibility. |
-| Fast Scroll Drawing | ``bSuperFastDrawing`` | Use fast, low resolution intermediate representation during scrolling, zooming, etc. |
+| Fast Scroll Drawing | ``bSuperFastDrawing`` | Use low-resolution rendering during scroll, zoom, and pan. |
 | Form Email Prompt | ``iaskFormsSelectEmailCLient`` | Specifies whether the dialog confirming selection of desktop vs. internet email on XFA form submit appears. |
 | Hide Popup on Summary | ``bHidePopupIfShowSummary`` | Hide comment popups when comment's list is open. |
 | Hindi Digits | ``bHindiDigit`` | Enable support for Hindi digits. |
@@ -78,14 +82,14 @@ Complete list of 255 Acrobat DC policies in the combined v3.3 ADMX templates, so
 | Inline Auto-Complete | ``bInlineAutoComplete`` | Auto complete a field based on remembered values when a user starts typing. |
 | International Font | ``iIntlSelectFont`` | Specifies the font to use. |
 | Ligatures | ``bLigatures`` | Enable support for ligatures. |
-| Login Name as Author | ``balwaysUseIdent`` | Uses the login names as the comment author name. |
+| Login Name as Author | ``balwaysUseIdent`` | Use login name as comment author. |
 | Open Links in Place | ``bOpenInPlace`` | Open cross document links in the same window. |
-| Overprint Shift+Click | ``bOverprintPreviewUseShiftClick`` | Use Shift + Click for multiple selection or for adding sticky notes containing color value when output preview dialog is open. |
+| Overprint Shift+Click | ``bOverprintPreviewUseShiftClick`` | Shift+Click behavior in the output preview dialog. |
 | Override Document Colors | ``bAccessOverrideDocColors`` | Replace black test or line art colors when iAccessColorPolicy is enabled and a replacement color has been specified. |
 | Override Line Art Colors | ``bOverrideLineArtColors`` | Limits color changes to black text and line art when iAccessColorPolicy is enabled and a replacement color has been specified. |
 | Override Page Layout | ``iPageLayout`` | Specifies the user selected page layout override. |
-| Override Zoom | ``bOverrideZoom`` | Enables the zoom setting drop down list so that the user can specify a default zoom setting for all documents and overrides Page Display settings. |
-| Override Zoom Scale | ``iZoomScale`` | Specifies the value in % to zoom when iZoomType is set to a % value and overrides Page Display settings. |
+| Override Zoom | ``bOverrideZoom`` | Let users set a default zoom for all documents. |
+| Override Zoom Scale | ``iZoomScale`` | Zoom percentage when iZoomType is a percent value. |
 | Override Zoom Type | ``iZoomType`` | Specifies the zoom scale for all other documents other than a % scale and overrides Page Display settings. |
 | Paragraph Direction | ``iParagraphDirection`` | Specifies the paragraph direction. |
 | Popup When Selected | ``bPopupsOpenIffSelected`` | Open a popup when it is selected. |
@@ -115,7 +119,7 @@ Complete list of 255 Acrobat DC policies in the combined v3.3 ADMX templates, so
 | Side-Aligned Popups | ``bsideNotes`` | Creates new popups aligned to the edge of the document. |
 | Smooth Images | ``bAntialiasImages`` | Specifies wither to use anti-aliasing (smoothing) for images. |
 | Smooth Line Art | ``bAntialiasGraphics`` | Specifies wither to use anti-aliasing (smoothing) for line art. |
-| Smooth Text | ``bAntialiasText`` | Smooth (anti-alias) text. |
+| Smooth Text | ``bAntialiasText`` | Anti-alias text when Smooth Text is Monitor or Laptop/LCD. |
 | Smooth Zooming | ``bSmoothZooming`` | Specifies whether smooth zooming should be enabled. |
 | Spell Check Underline | ``bSpellingUnderline`` | Turns off and on spell checking as you type. |
 | Store Numeric Entries | ``bStoreNumericEntries`` | Store user entered numeric values. |
@@ -139,7 +143,10 @@ Complete list of 255 Acrobat DC policies in the combined v3.3 ADMX templates, so
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | 3D Content Trust | ``b3DEnableContent`` | Trust and render 3D content. |
-| Cross-Domain Logging | ``bCrossDomainLogging`` | Enables cross domain logging for communication with a server that uses a cross domain policy file to manage the flow of data that does not conform to a... |
+| Cross-Domain Logging | ``bCrossDomainLogging`` | Enable cross-domain logging for non-same-origin server communication. |
+| Editor Font Name | ``tEditorFontName`` | Specifies the font for the script editor. |
+| Editor Font Size | ``tEditorFontSize`` | Specifies the font size for the script editor. |
+| Editor Path | ``tEditorPath`` | Provides a path to an external editor. |
 | Enable JS Debugger | ``bEnableDebugger`` | Enables the debugger. |
 | External JS Editor | ``bChooseDialog`` | Specifies wither or not to use the Acrobat editor or an external editor. |
 | FIPS Mode | ``bFIPSMode`` | Turns FIPS mode on and off thereby requiring stronger encryption algorithm and limiting certain application behavior. |
@@ -148,7 +155,7 @@ Complete list of 255 Acrobat DC policies in the combined v3.3 ADMX templates, so
 | JS Exception Handling | ``iExceptions`` | Specifies how exceptions should be handled. |
 | JS Global Security | ``bEnableGlobalSecurity`` | Controls whether or not a script in one sandbox can access a script object in another sandbox. |
 | JS Menu Items | ``bEnableMenuItems`` | Toggles off and on JavaScript's ability to execute menu items. |
-| Outlook Protected View | ``bEnableAlwaysOutlookAttachmentProtectedView`` | Specifies whether Protected View is turned off for Outlook attachments. |
+| Outlook Protected View | ``bEnableAlwaysOutlookAttachmentProtectedView`` | Protected View for Outlook attachments. |
 | Recent Files Migrated | ``bOldRecentFilesMigrated`` | Indicates whether the recent files list has been migrated. |
 | Save JS Breakpoints | ``bSaveBreakpoints`` | Stores breakpoints in a PDF file |
 
@@ -163,15 +170,16 @@ Complete list of 255 Acrobat DC policies in the combined v3.3 ADMX templates, so
 | Always Consult CDP | ``bAlwaysConsult`` | Determines when the URL is used for an additional URL CRL distribution point. |
 | Auth Mechanisms | ``iAuthMechanisms`` | Specifies which registered provider(s) to use. |
 | Auto-Accept Privacy | ``iAutoAcceptEDCPrivacyNotification`` | Show an alert confirming acceptance of the privacy policy. |
-| Auto-Add LTV Info | ``iAutoAddLTV`` | Specifies whether LTV information should be automatically added to all signatures. |
+| Auto-Add LTV Info | ``iAutoAddLTV`` | Auto-add LTV information to signatures. |
 | Cache Server Password | ``bSavePassword`` | Indicates whether the password has been cached for this server. |
 | CRL Cache Lifetime | ``iMaxRevokeInfoCacheLifetime`` | Maximum lifetime in hours the cached CRL is used for revocation checking. |
 | Custom Cert Prefs | ``bCustomPrefsCreated`` | Indicates whether a custom certificate specific preference (e.g. Identrus) has already been created and written to the registry. |
+| Default ID Directory | ``aDefDirectory`` | Default directory when searching for digital IDs. |
 | Directory Provider | ``iDirectoryProvider`` | Specifies a directory provider for signature validation. |
-| Enforce Digest Compare | ``bEnforceSecureChannel`` | Prevent signing when the original message digest and the signed message digest do not match. |
+| Enforce Digest Compare | ``bEnforceSecureChannel`` | Block signing when original and signed message digests differ. |
 | Examine on Close | ``bAutoLaunchAtDocClose`` | Automatically examines the document for hidden content when it is closed. |
 | Examine on Send | ``bAutoLaunchAtSendMail`` | Automatically examines the document for hidden content when it is sent in an email. |
-| Expired Cert Go Online | ``bExpiredCertGoOnline`` | Go online to get the revocation information for an expired certificate. |
+| Expired Cert Go Online | ``bExpiredCertGoOnline`` | Go online for revocation on expired certificates. |
 | FDF Exclude Cert | ``bFDFRequestExcludeCert`` | Similar to the bFDFRequestSave. |
 | FDF Export Save | ``bFDFExportSave`` | Persists whether user chose to save (1) or email (0) the FDF during export. |
 | FDF Export Sign | ``bFDFExportSign`` | Persists whether the user chose to sign the FDF during export. |
@@ -180,12 +188,14 @@ Complete list of 255 Acrobat DC policies in the combined v3.3 ADMX templates, so
 | Hide Sig Status Icon | ``bSigAPStatusIconDisable`` | Controls whether the signature status icon is displayed in the signature appearance on the document. |
 | ID Dialog Position | ``cDialogs:xSelHandler`` | The last on-screen coordinates of a handler's digital ID selection dialog |
 | ID Enrollment URL | ``xDefEnrollmentURL`` | The destination URL when the user selects "Enroll at an online CA" while adding a new digital ID. |
-| Ignore OCSP NextUpdate | ``bIgnoreNextUpdate`` | Use embedded OCSP responses when nextUpdate is not present and the validation time is less than the greater of thisUpdate or producedAt time plus the value... |
-| Import Address Book | ``iImportAddressBook`` | Specifies whether the addressbook.acrodata file should be imported during a new install. |
+| Ignore OCSP NextUpdate | ``bIgnoreNextUpdate`` | Use embedded OCSP when nextUpdate is absent (with iMaxClockSkew). |
+| Import Address Book | ``iImportAddressBook`` | Import addressbook.acrodata on new install. |
 | Import Windows Certs | ``bCertStoreImportEnable`` | If true, then users can import from MSCAPI certificate stores into their Trusted Identity Manager. |
 | Keep Hidden Content | ``bDontRemoveOverlapping`` | Remove hidden content when sanitizing a document. |
+| List Of Signing Reasons | ``cReasons`` | Custom signing reason list. |
 | Load Security Settings from Server (Adobe Certificates) | ``bLoadSettingsFromURL`` | Controls whether trust anchors are periodically downloaded from Adobe's certificate server. |
 | Load Security Settings from Server (European Certificates) | ``bLoadSettingsFromURL`` | Controls whether trust anchors are periodically downloaded from the European Union Trusted Lists (EUTL) server. |
+| Load Settings NAME | ``tLoadSettingsNAME`` | Specifies the signing certificate for the imported settings file. |
 | Long Term Validation | ``bIsEnabled`` | Specifies whether the signature revocation status is included in the signature. |
 | Max Rev Info Archive | ``iMaxRevInfoArchiveSize`` | The maximum size of the revocation archival information in kilobytes. |
 | Max Verify Sessions | ``iMaxVerifySession`` | Specifies the maximum number of nested verification sessions allowed. |
@@ -194,47 +204,53 @@ Complete list of 255 Acrobat DC policies in the combined v3.3 ADMX templates, so
 | OCSP Nonce Behavior | ``iSendNonce`` | Specifies signature validation behavior with respect to nonces. |
 | OCSP Responder URL | ``iURLToConsult`` | Specifies how the revocation checker chooses which responder to use. |
 | OCSP Response Freshness | ``iResponseFreshness`` | Specifies the amount of time in minutes after the response's published thisUpdate time for which the response will be valid. |
-| Open Non-PDF Attachments | ``bAllowOpenFile`` | Open non-PDF attachments in their native application. |
+| Open Non-PDF Attachments | ``bAllowOpenFile`` | Open non-PDF attachments in native applications. |
+| Password Lockbox ID | ``tLockboxId`` | Set if bSavePassword is not 0 to look up the password in a user's secure password cache. |
 | Preview Before Signing | ``bPreviewModeBeforeSigning`` | Specifies whether a signer is forced to use preview mode during signing. |
 | Require AKI in CRL | ``bRequireAKI`` | Specifies whether the Authority Key Identifier extension must be present in a CRL. |
 | Require OCSP Cert Hash | ``bRequireOCSPCertHash`` | Specifies whether a certificate public key hash extension must be present in OCSP responses. |
 | Require Sign Warnings | ``iRequireReviewWarnings`` | Specifies whether the user is required to review document warnings before signing via the signing dialog. |
-| Require Timestamp | ``bReqSigPropRetrieval`` | Indicates whether retrieving a signature property must succeed. |
-| Require Valid Sig Chain | ``bRequireValidSigForChaining`` | Allow the chain builder to build chains with invalid RSA signatures on certificates. |
+| Require Timestamp | ``bReqSigPropRetrieval`` | Require successful timestamp retrieval when signing. |
+| Require Valid Sig Chain | ``bRequireValidSigForChaining`` | Stop chain building at invalid RSA signatures on intermediates. |
 | Return Rev Info to JS | ``bReturnRevInfoToUser`` | If true, the revocation information is maintained within the SignatureInfo object and can be retrieved through JavaScript. |
 | Revocation Checker | ``iRevocationChecker`` | Specifies a provider for revocation checking. |
-| Revoke Check Trust | ``bRevCheckTrust`` | Perform revocation checks on intermediate trust anchors (those which aren't roots). |
+| Revoke Check Trust | ``bRevCheckTrust`` | Revocation-check intermediate (non-root) trust anchors. |
 | RSA-PSS Salt Length | ``iRSAPSSSaltLength`` | Specifies the Salt Length the RSA-PSS algorithm uses. |
 | RSA-PSS Signing | ``bEnableRSAPSSSigning`` | Specifies whether a signature should be created with the RSA-PSS algorithm. |
+| RSAPSS Hash Algorithm | ``aRSAPSSHashAlgorithm`` | Specifies the hash algorithm used for RSA-PSS signing. |
 | SAML Auth Server URL | ``tSAML_Assertion_Source`` | Holds the URL of the authentication server from which the SAML assertion stored in cSAML_Assertion was obtained. |
+| SAML Name Format | ``tSAML_Name_Format`` | SAML_NAME_<Value, Format, Qualifier> comprise the subject name identifier taken from the SAML assertion received during the account's last user authentication. |
+| SAML Name Qualifier | ``tSAML_Name_Qualifier`` | SAML_NAME_<Value, Format, Qualifier> comprise the subject name identifier taken from the SAML assertion received during the account's last user authentication. |
 | Save Certified Alert | ``iDigSigSaveAsCertified`` |  |
-| Secure Open Attachments | ``bSecureOpenFile`` | Allow opening attachments which are not PDF. |
-| Self-Sign ID Create | ``bSelfSignCertGen`` | Specifies whether or not the Create a self-signed ID option in Add ID workflows is available. |
+| Secure Open Attachments | ``bSecureOpenFile`` | Restrict attachment opens to PDF only. |
+| Self-Sign ID Create | ``bSelfSignCertGen`` | Allow Create a self-signed ID in Add ID workflows. |
 | Server URL | ``tServerURL`` | The default server URL. |
 | Show All Chains | ``bShowAllChains`` | Show all chains in the Certificate Viewer. |
 | Show Document Warnings | ``iShowDocumentWarnings`` | Specifies whether a button to allow reviewing document warnings shows up on the signing dialog. |
-| Show Post-Sign Warning | ``bShowWarningForChanges`` | Determines whether or not to show a blue i on validated signature(s) if the document changes after it was signed. |
+| Show Post-Sign Warning | ``bShowWarningForChanges`` | Show blue info icon when a validated approval signature document changes after signing. |
 | Show Sign Contact Info | ``bAllowOtherInfoWhenSigning`` | Specifies whether the location and contact information UI will appear during signing. |
 | Show Signer Warnings | ``bShowSignerWarnings`` | Show a warning that there is a greater forgery risk when revocation information is embedded in the signature. |
-| Show Valid Sig Icon | ``iDisplayValidIcon`` | Determines when the signature status icon is displayed in a signature appearance. |
+| Show Valid Sig Icon | ``iDisplayValidIcon`` | When to show signature status icon in appearance. |
 | Sig Property Verify | ``bReqSigPropVerification`` | Specifies whether signature property verification must succeed for a signature to be valid. |
 | Sig Verification Time | ``iSigVerificationTime`` | Indicates the time at which signature validation should occur. |
 | Sign Certified Only | ``bAllowSigCertOnly`` | Specifies whether any subsequent signers can sign a certified document containing LegalPDF warnings with additional approval signatures. |
 | Sign Done Dialog | ``isignDone`` | Show a dialog indicating that a document was successfully signed. |
 | Sign Green Cert Only | ``bAllowSigCertGreenOnly`` | Specifies whether any subsequent signers can sign a certified document that does not contain LegalPDF warnings with additional approval signatures. |
+| Sign Hash Algorithm | ``tSignHash`` | A text entry that contains the OID of the hashing algorithm. |
 | Sign OCSP Requests | ``bSignRequest`` | Specifies whether the OCSP request should be signed. |
+| Signing Contact Info | ``tContactInfo`` | When bAllowOtherInfoWhenSigning is true (on), the signing dialog displays a location and contact field. |
 | Timestamp Hash Algo | ``iHashAlgo`` | Identifies the hashing algorithm used to hash the timestamped data. |
 | Timestamp Sig Size | ``iSize`` | ASPKI requires the signature property to predict the size (in bytes) so that enough space can be set aside. |
 | Tracker Server URL | ``tServer`` | The DNS server name (i.e. alrms.adobe.com). |
 | TrueType Font Warn | ``bTrueTypeFontPDFSigQWarn`` | Turns on and off warnings about True Type fonts. |
-| Trust Certified Docs | ``bTrustCertifiedDocuments`` | Elevates (trusts) certified documents as a privileged location. |
-| Trust IE Trusted Sites | ``bTrustOSTrustedSites`` | Elevates locations that Internet Explorer trusts to privileged locations so that they may bypass security restrictions. |
+| Trust Certified Docs | ``bTrustCertifiedDocuments`` | Trust certified documents as privileged locations. |
+| Trust IE Trusted Sites | ``bTrustOSTrustedSites`` | Treat IE Trusted Sites and Local Intranet as privileged locations. |
 | Trusted/Blocked URL List | ``tHostPerms`` | Stores the list of trusted and blocked URLs used when URL Access Permissions (iURLPerms) is set to Custom Setting. |
-| URL Access Permissions | ``iURLPerms`` | Allow or block all websites or use a custom setting. |
+| URL Access Permissions | ``iURLPerms`` | Allow, block, or custom website access. |
 | Url Of The Roaming Id | ``tURL`` | The URL of the Roaming ID server. |
 | Use Archived Rev Info | ``iUseArchivedRevInfo`` | Indicates whether the revocation information archived with the signature is used for revocation checking. |
-| Validity Model | ``iValidityModel`` | Specifies the validity model for validating signatures and certificates. |
-| Windows Store Trust | ``iMSStoreTrusted`` | Controls whether or not certificates in the Windows Certificate Store are trusted for signing and certifying. |
+| Validity Model | ``iValidityModel`` | Signature and certificate validity model. |
+| Windows Store Trust | ``iMSStoreTrusted`` | Trust Windows Certificate Store certs for signing and certifying. |
 
 ## Sharing & Features
 
@@ -242,8 +258,8 @@ Complete list of 255 Acrobat DC policies in the combined v3.3 ADMX templates, so
 |---|---|---|
 | Default Email Prompt | ``iSendMailDefaultAccountAlert`` | Specifies whether a dialog should appear asking if a PDF should be sent via the user's default email account. |
 | Default Email Set | ``bDefaultSet`` | Indicates whether a default email client has been set. |
-| Disable Shared Review | ``bDisableSharedReview`` | Enable cloud-based shared reviews. |
-| Enable Synchronizer | ``bNeedSynchronizer`` | Disables the synchronizer. |
+| Disable Shared Review | ``bDisableSharedReview`` | Control cloud-based shared review availability. |
+| Enable Synchronizer | ``bNeedSynchronizer`` | Enable the synchronizer. |
 | Fill & Sign Pane | ``bEnableFillSign`` | Remove the Fill and Sign pane without removing the Work with Certificates menu. |
 | Remove Comma Delimiter | ``bRemoveCommaDelimiter`` | Remove the comma in comma-delimited addressbook entries. |
 | Show Connect Dialog | ``bShowConnectDialog`` | Display the Connect dialog in Shared Reviews. |
@@ -290,7 +306,7 @@ Complete list of 255 Acrobat DC policies in the combined v3.3 ADMX templates, so
 |---|---|---|
 | Background Download | ``bDownloadEntireFile`` | Allow background downloading of resources the view thinks it needs to properly display the PDF. |
 | Browser Quit Delay | ``iDelayBeforeQuitBrowser`` | Specifies the number of seconds the browser-based application stays in memory before it shuts down. |
-| Browser Read Mode | ``bBrowserDisplayInReadMode`` | Open documents in a browser in Read Mode. |
+| Browser Read Mode | ``bBrowserDisplayInReadMode`` | Open browser PDFs in Read Mode. |
 | Cleanup Check Done | ``bInstalledCleanupCheckDone`` | A preference used by the usage measurement feature to determine whether the previously set UsageMeasurement-related keys should be reset. |
 | Collab Sync Startup | ``bLoadOnStart`` | Specifies whether the collaboration executable should be invoked and run as a background process on startup. |
 | Fast Web View | ``bAllowByteRangeRequests`` | Enable Fast Web View by allowing display of the PDF before the entire file is downloaded. |

@@ -4,12 +4,18 @@
 
 # AdobeDC ADMX - Combined Machine + User
 
-**Current version: v3.3** (20 July 2026). Full version history: [Changelog (Combined)](../Documentation/changelog.md).
+**Current version: v3.4** (20 July 2026). Full version history: [Changelog (Combined)](../Documentation/changelog.md).
 
 **Current production release.** Supersedes the separate machine template (v2.21) and user template ([Adobe-DC-User-ADMX v1.10](https://github.com/systmworks/Adobe-DC-User-ADMX)) for new Group Policy and Intune deployments.
 
+> [!IMPORTANT]
+> **Stable upgrade path (v3.4+).** From v3.4 onward, releases are **additive-only**: existing policy `name` attributes, registry keys, value names, and control types are frozen. Re-uploading `AdobeDC.admx` + ADML preserves existing Intune/GPO bindings - only **new** settings need selection. Deleting the imported ADMX in Intune before re-upload is still required (platform limitation for custom ADMX); the template no longer forces re-selection of configured settings on upgrade. Enforced by `Test-AdmxBackCompat.ps1` against `Documentation/data/policy-baseline.json`.
+
 > [!WARNING]
 > **Breaking change when migrating from v2.x or User ADMX v1.x.** Combined v3.0+ uses namespace `Adobe.Policies.AdobeDC` and a re-organised policy tree. **Intune ADMX policy backups / exports taken against v2.x (or the separate User ADMX v1.x) will not import** - the `definitionId` GUIDs and category paths no longer match. To migrate an existing v2.x export, run [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](../Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV3.ps1) to convert it to the combined layout before re-importing. See [Migrating from v2.21 + User v1.10](#migrating-from-v221--user-v110).
+
+> [!NOTE]
+> **Upgrading from combined v3.3 to v3.4** keeps the same namespace and policy `name` attributes for all v3.3 settings. Re-upload `AdobeDC.admx` + ADML. This is the **final classification pass**: **2** user toggles become enum dropdowns (`iAccessColorPolicy`, `iPageLayout`), and **17** new user text policies are added - re-select only those affected settings. Future v3.4+ releases are additive-only. See [v3.4 changelog](../Documentation/changelog.md#v34---20-july-2026).
 
 > [!NOTE]
 > **Upgrading from combined v3.2 to v3.3** keeps the same namespace and policy `name` attributes. Re-upload `AdobeDC.admx` + ADML. **5** new user text policies, enum/numeric control fixes, and **8** app-internal toggles removed - re-select affected User settings in Intune/GPO after re-upload. See [v3.3 changelog](../Documentation/changelog.md#v33---20-july-2026).
@@ -25,14 +31,14 @@
 | Area | Detail |
 |------|--------|
 | **Packaging** | Single `AdobeDC.admx`/ADML pair for **Computer + User** configuration under one namespace |
-| **Policy inventory** | **<!--COUNT:total-->789<!--/COUNT:total-->** policies - **<!--COUNT:machine-->294<!--/COUNT:machine-->** machine + **<!--COUNT:user-->495<!--/COUNT:user-->** user (ADMX `<policy>` entries; see note below) |
+| **Policy inventory** | **<!--COUNT:total-->819<!--/COUNT:total-->** policies - **<!--COUNT:machine-->294<!--/COUNT:machine-->** machine + **<!--COUNT:user-->525<!--/COUNT:user-->** user (ADMX `<policy>` entries; see note below) |
 | **Namespace** | `Adobe.Policies.AdobeDC` (replaces separate `Adobe.Policies.Adobe_User` user namespace) |
 | **Computer tree** | **Adobe DC** -> **Acrobat & Reader DC** / **Reader DC (32-bit)** / **Non-Policy Settings** |
 | **User tree** | **Adobe DC** -> **Acrobat DC** / **Reader DC** - leaf display names retain ` (User)` suffix |
 | **De-duplication** | `HKLM\SOFTWARE\Policies` settings emit once per product hive (no redundant `WOW6432Node\Policies` copies) |
 | **Sources** | Device v2.21 + User v1.10 |
 
-**Policy count note:** **<!--COUNT:total-->789<!--/COUNT:total-->** is the number of configurable policy entries in the ADMX (what Intune and GPMC show). **<!--COUNT:machine-->294<!--/COUNT:machine-->** machine includes architecture-specific non-policy settings emitted separately for x64 and x86. There are **<!--COUNT:machineUnique-->155<!--/COUNT:machineUnique-->** unique machine settings in the source reference (<!--COUNT:machineShared-->117<!--/COUNT:machineShared--> apply to both Reader and Acrobat; `tBuiltInPermList` is excluded as REG_BINARY). Product-scoped tables in [Documentation](../README.md) list user and machine settings because shared settings appear under each product.
+**Policy count note:** **<!--COUNT:total-->819<!--/COUNT:total-->** is the number of configurable policy entries in the ADMX (what Intune and GPMC show). **<!--COUNT:machine-->294<!--/COUNT:machine-->** machine includes architecture-specific non-policy settings emitted separately for x64 and x86. There are **<!--COUNT:machineUnique-->155<!--/COUNT:machineUnique-->** unique machine settings in the source reference (<!--COUNT:machineShared-->117<!--/COUNT:machineShared--> apply to both Reader and Acrobat; `tBuiltInPermList` is excluded as REG_BINARY). Product-scoped tables in [Documentation](../README.md) list user and machine settings because shared settings appear under each product.
 
 ### Built-in Attachment Permissions List (`tBuiltInPermList`)
 
@@ -57,7 +63,7 @@ If you migrated Intune exports from v2.19, Reader-only x64 upsell settings alrea
 
 | File | Scope | Policies |
 |------|-------|----------|
-| `AdobeDC.admx` + `en-US/AdobeDC.adml` | Machine + User | <!--COUNT:total-->789<!--/COUNT:total--> (<!--COUNT:machine-->294<!--/COUNT:machine--> machine + <!--COUNT:user-->495<!--/COUNT:user--> user) |
+| `AdobeDC.admx` + `en-US/AdobeDC.adml` | Machine + User | <!--COUNT:total-->819<!--/COUNT:total--> (<!--COUNT:machine-->294<!--/COUNT:machine--> machine + <!--COUNT:user-->525<!--/COUNT:user--> user) |
 
 *<!--COUNT:machine-->294<!--/COUNT:machine--> machine = ADMX policy entries; <!--COUNT:machineUnique-->155<!--/COUNT:machineUnique--> unique machine settings; product-scoped reference tables total <!--COUNT:readerDevice-->124<!--/COUNT:readerDevice--> Reader + <!--COUNT:acrobatDevice-->170<!--/COUNT:acrobatDevice--> Acrobat.*
 
@@ -69,8 +75,8 @@ Published policy reference tables: [Documentation](../README.md).
 |-----------|-------|
 | Prefix | `AdobeDC` |
 | Namespace URI | `Adobe.Policies.AdobeDC` |
-| ADMX / ADML `revision` | 3.3 |
-| `minRequiredRevision` (`resources`) | 3.3 |
+| ADMX / ADML `revision` | 3.4 |
+| `minRequiredRevision` (`resources`) | 3.4 |
 
 ## Intune upload
 
@@ -78,7 +84,7 @@ Published policy reference tables: [Documentation](../README.md).
 2. Wait 2-5 minutes after deletion.
 3. Upload `AdobeDC.admx` and `en-US/AdobeDC.adml` together.
 4. Assign machine settings to a **device group**; assign user settings to a **user group** (or combine both in one profile - scope is determined by each policy's `class` attribute).
-5. After upgrading to v3.3, re-select **User** policies that changed (new text policies, enum/numeric fixes, removed app-internal toggles - see [v3.3 changelog](../Documentation/changelog.md#v33---20-july-2026)). After upgrading to v3.2, re-select toggle->enum/numeric User policies (see [v3.2 changelog](../Documentation/changelog.md#v32---20-july-2026)). After upgrading from v3.0 to v3.1, re-verify **Usage Measurement (legacy)** if configured - **Disabled** now correctly writes telemetry **off** (DWORD 0).
+5. After upgrading to v3.4, re-select **User** policies that changed in the final classification pass (`iAccessColorPolicy`, `iPageLayout`, and any newly added text policies - see [v3.4 changelog](../Documentation/changelog.md#v34---20-july-2026)). After upgrading to v3.3, re-select User policies that changed (new text policies, enum/numeric fixes, removed app-internal toggles - see [v3.3 changelog](../Documentation/changelog.md#v33---20-july-2026)). After upgrading to v3.2, re-select toggle->enum/numeric User policies (see [v3.2 changelog](../Documentation/changelog.md#v32---20-july-2026)). After upgrading from v3.0 to v3.1, re-verify **Usage Measurement (legacy)** if configured - **Disabled** now correctly writes telemetry **off** (DWORD 0).
 
 ## Group Policy
 

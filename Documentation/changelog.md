@@ -10,6 +10,18 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 
 ---
 
+## v3.4 - 20 July 2026
+
+**819 policies** (294 machine + 525 user) - final classification freeze; additive-only from this release forward.
+
+| Change | Detail |
+|---|---|
+| **Classification freeze** | Last breaking control-type pass. **2** user toggles reclassified to enum: `iAccessColorPolicy`, `iPageLayout`. **17** admin-deployable user REG_SZ prefs adopted as new **Text** policies (30 new ADMX entries across Acrobat+Reader): `tNoteFontName`, `tEditorFontName`, `tEditorPath`, `tEditorFontSize`, `tSignHash`, `aRSAPSSHashAlgorithm`, `tSAML_Name_Format`, `tSAML_Name_Qualifier`, `tDictionaryName`, `tBrokerLogfilePath`, `tLoadSettingsNAME`, `cReasons`, `tContactInfo`, `aDefDirectory`, `tFileFormat`, `tBaseFolderName`, `tLockboxId`. **23** REG_SZ runtime/app-internal prefs remain Skip. |
+| **Additive-only guardrail** | New `Documentation/data/policy-baseline.json` and `tools/Test-AdmxBackCompat.ps1` - fails the build if any published policy is removed or has a changed `class`, `valueName`, `key`, or `controlType`. Future releases may only add new policy names. |
+| **Import impact** | Same namespace and policy `name` attributes as v3.3 for all existing settings. **Partially binding-breaking for User scope:** `iAccessColorPolicy` and `iPageLayout` change from toggle to enum; **30** new text policies require initial selection. Re-select only affected settings after re-upload. **v3.4+ upgrades are additive-only** - existing bindings preserved. |
+
+---
+
 ## v3.3 - 20 July 2026
 
 **789 policies** (294 machine + 495 user) - user count reduced by 6 after removing app-internal toggles and adding curated text policies.
