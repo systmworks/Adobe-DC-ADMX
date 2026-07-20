@@ -1,23 +1,23 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-  Converts Intune ADMX policy export JSON to combined v3.0 category layout.
+  Converts Intune ADMX policy export JSON to combined v3 category layout.
 .DESCRIPTION
   Maps v2.19 four-branch, v2.21 three-branch machine, and v2.21 user paths to the
-  combined v3.0 tree under \Adobe DC\. De-duplicates redundant Policies-branch entries.
+  combined v3 tree under \Adobe DC\. De-duplicates redundant Policies-branch entries.
   Clears definitionId GUIDs (re-bind after uploading combined ADMX to Intune).
 
   Output: converted JSON + migration report markdown alongside each input file.
 .PARAMETER InputPath
   Path to a single export JSON file.
 .PARAMETER InputDir
-  Directory of export JSON files (skips *_combined-v3.0.json outputs).
+  Directory of export JSON files (skips *_combined-v3.json and legacy *_combined-v3.0.json outputs).
 .PARAMETER AdmxPath
   Path to combined AdobeDC.admx (default: ../ADMX/AdobeDC.admx).
 .PARAMETER AdmlPath
   Path to combined ADML (default: ../ADMX/en-US/AdobeDC.adml).
 .EXAMPLE
-  .\Convert-AdobeDcIntuneExportToCombinedV30.ps1 -InputDir '..\Convert_Policies'
+  .\Convert-AdobeDcIntuneExportToCombinedV3.ps1 -InputDir '..\Convert_Policies'
 #>
 [CmdletBinding(DefaultParameterSetName = 'File')]
 param(
@@ -254,13 +254,20 @@ function Find-PolicyIndexEntry {
 
 function Get-SettingSignature {
     param($Setting)
-    $pv = $null
+    $pvParts = [System.Collections.Generic.List[string]]::new()
     if ($Setting.PSObject.Properties['presentationValues'] -and $Setting.presentationValues) {
-        $pv = ($Setting.presentationValues | ForEach-Object { $_.value }) -join '|'
+        foreach ($entry in @($Setting.presentationValues)) {
+            if ($entry.PSObject.Properties['value'] -and $null -ne $entry.value) {
+                [void]$pvParts.Add([string]$entry.value)
+            }
+            if ($entry.PSObject.Properties['values'] -and $entry.values) {
+                [void]$pvParts.Add(($entry.values | ForEach-Object { [string]$_ }) -join ',')
+            }
+        }
     }
     return [pscustomobject]@{
         Enabled            = [bool]$Setting.enabled
-        PresentationValues = $pv
+        PresentationValues = ($pvParts -join '|')
     }
 }
 
@@ -280,12 +287,12 @@ function Convert-SettingForExport {
                 '@odata.type'     = $pv.'@odata.type'
                 presentationLabel = $pv.presentationLabel
                 value             = $pv.value
-                migrationNote     = 'Re-link presentation after combined v3.0 ADMX upload (presentationId removed).'
+                migrationNote     = 'Re-link presentation after combined v3 ADMX upload (presentationId removed).'
             })
         }
         $out['presentationValues'] = $pvList.ToArray()
     }
-    $out['migrationNote'] = 'definitionId cleared - assign via Intune after uploading combined AdobeDC.admx v3.0.'
+    $out['migrationNote'] = 'definitionId cleared - assign via Intune after uploading combined AdobeDC.admx (v3.x).'
     return [pscustomobject]$out
 }
 
@@ -299,20 +306,16 @@ function Convert-SingleExportFile {
 
     $dir = [System.IO.Path]::GetDirectoryName($SourcePath)
     $base = [System.IO.Path]::GetFileNameWithoutExtension($SourcePath)
-    $outputPath = Join-Path $dir "${base}_combined-v3.0.json"
-    $reportPath = Join-Path $dir "${base}_combined-v3.0.migration-report.md"
+    $outputPath = Join-Path $dir "${base}_combined-v3.json"
+    $reportPath = Join-Path $dir "${base}_combined-v3.migration-report.md"
 
     $acrobatX64ByName = @{}
-    $readerX64ByName = @{}
     foreach ($s in $export.settings) {
         $p = Parse-OldCategoryPath -Path $s.definitionCategoryPath -ClassType $s.definitionClassType
         if (-not $p) { continue }
         $fn = $s.definitionDisplayName.Trim()
         if ($p.Branch -in @('UnifiedAcrobat', 'AcrobatX64') -or ($p.Format -eq 'V219' -and $p.Product -eq 'Acrobat DC' -and $p.Arch -eq 'x64')) {
             $acrobatX64ByName[$fn] = $s
-        }
-        if ($p.Branch -eq 'ReaderX64' -or ($p.Format -eq 'V219' -and $p.Product -eq 'Reader DC' -and $p.Arch -eq 'x64')) {
-            $readerX64ByName[$fn] = $s
         }
     }
 
@@ -347,7 +350,7 @@ function Convert-SingleExportFile {
             $dropped.Add([pscustomobject]@{
                 FriendlyName = $fn
                 SourcePath   = $s.definitionCategoryPath
-                Reason       = 'ARM updater setting: combined v3.0 exposes under Non-Policy Acrobat DC (32-bit) only.'
+                Reason       = 'ARM updater setting: combined v3 exposes under Non-Policy Acrobat DC (32-bit) only.'
             })
             continue
         }
@@ -363,7 +366,7 @@ function Convert-SingleExportFile {
             $unparsed.Add([pscustomobject]@{
                 FriendlyName = $fn
                 Path         = $s.definitionCategoryPath
-                Note         = "No matching combined v3.0 policy (branch $($parsed.Branch))."
+                Note         = "No matching combined v3 policy (branch $($parsed.Branch))."
             })
             continue
         }
@@ -409,7 +412,7 @@ function Convert-SingleExportFile {
                 $dropped.Add([pscustomobject]@{
                     FriendlyName = $fn
                     SourcePath   = $s.definitionCategoryPath
-                    Reason       = "Duplicate v3.0 target (first source kept): $($dedupeKeys[$dedupeKey])"
+                    Reason       = "Duplicate v3 target (first source kept): $($dedupeKeys[$dedupeKey])"
                 })
             }
             continue
@@ -426,12 +429,12 @@ function Convert-SingleExportFile {
 
     $outObj = [ordered]@{
         schemaVersion      = 1
-        policyDisplayName  = if ($export.policyDisplayName) { "$($export.policyDisplayName) [combined v3.0 migrated]" } else { 'Adobe DC ADMX [combined v3.0 migrated]' }
+        policyDisplayName  = if ($export.policyDisplayName) { "$($export.policyDisplayName) [combined v3 migrated]" } else { 'Adobe DC ADMX [combined v3 migrated]' }
         policyDescription  = @(
             ($export.policyDescription)
             ''
-            'Migrated to combined v3.0 ADMX category paths (\Adobe DC\...).'
-            'Redundant Policies-branch duplicates removed. definitionId values cleared - re-upload AdobeDC.admx v3.0 to Intune and re-bind settings.'
+            'Migrated to combined v3 ADMX category paths (\Adobe DC\...).'
+            'Redundant Policies-branch duplicates removed. definitionId values cleared - re-upload AdobeDC.admx (v3.x) to Intune and re-bind settings.'
         ) -join "`n"
         exportDate         = (Get-Date).ToString('yyyy-MM-ddTHH:mm:ssK')
         migratedFrom       = $SourcePath
@@ -445,7 +448,7 @@ function Convert-SingleExportFile {
     [System.IO.File]::WriteAllText($outputPath, $jsonOut, [System.Text.UTF8Encoding]::new($false))
 
     $rb = [System.Text.StringBuilder]::new()
-    [void]$rb.AppendLine('# Combined v3.0 ADMX migration report')
+    [void]$rb.AppendLine('# combined v3 ADMX migration report')
     [void]$rb.AppendLine()
     [void]$rb.AppendLine('| | |')
     [void]$rb.AppendLine('|---|---|')
@@ -461,7 +464,7 @@ function Convert-SingleExportFile {
     [void]$rb.AppendLine()
     [void]$rb.AppendLine('1. Upload `ADMX/AdobeDC.admx` + ADML to Intune.')
     [void]$rb.AppendLine('2. Create or update Administrative Templates profiles using converted paths and display names.')
-    [void]$rb.AppendLine('3. Re-select enum/dropdown settings where `presentationValues` were preserved without Intune IDs.')
+    [void]$rb.AppendLine('3. Re-select enum/dropdown and numeric spinner settings where `presentationValues` were preserved without Intune IDs (required after combined v3.2 ADMX upload for 40 reclassified User-scope policies).')
     [void]$rb.AppendLine('4. Review dropped and unparsed rows below before assigning.')
     [void]$rb.AppendLine()
 
@@ -526,7 +529,7 @@ if ($PSCmdlet.ParameterSetName -eq 'File') {
 else {
     $InputDir = [System.IO.Path]::GetFullPath($InputDir)
     Get-ChildItem -LiteralPath $InputDir -Filter '*.json' | ForEach-Object {
-        if ($_.Name -notmatch '_combined-v3\.0\.json$') {
+        if ($_.Name -notmatch '_combined-v3(\.0)?\.json$') {
             $files.Add($_.FullName)
         }
     }

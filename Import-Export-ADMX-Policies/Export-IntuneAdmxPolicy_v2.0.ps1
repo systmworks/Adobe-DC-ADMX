@@ -7,10 +7,10 @@
 .DESCRIPTION
     Connects to Microsoft Graph via interactive browser sign-in, lists all
     Administrative Template policies, lets you pick one by friendly name,
-    then exports every configured setting — including stable identifiers
+    then exports every configured setting - including stable identifiers
     (categoryPath, displayName, classType) that survive ADMX delete/re-upload.
 
-    The exported JSON can be re-imported by Import-IntuneAdmxPolicy.ps1 even
+    The exported JSON can be re-imported by Import-IntuneAdmxPolicy_v2.0.ps1 even
     after the ADMX namespaces have been deleted and re-uploaded with new GUIDs.
 
     With no parameters, after each export you can pick another policy or Q to quit (repeat menu).
@@ -29,7 +29,7 @@
     https://creativecommons.org/licenses/by-sa/4.0/
 .EXAMPLE
     .\Export-IntuneAdmxPolicy_v2.0.ps1
-    Interactive run — lists policies; after each export the list appears again until you enter Q.
+    Interactive run - lists policies; after each export the list appears again until you enter Q.
 .EXAMPLE
     .\Export-IntuneAdmxPolicy_v2.0.ps1 -PolicyName 'Firefox'
     Single export: auto-selects the policy whose name contains 'Firefox' (if unique match), then exits.
@@ -37,7 +37,7 @@
     .\Export-IntuneAdmxPolicy_v2.0.ps1 -PolicyName 'Firefox' -DelayMillisecondsBetweenSettings 150
     Single export with 150ms delay between settings (no repeat menu).
 .PARAMETER DelayMillisecondsBetweenSettings
-    Optional delay after each setting is exported. Use 100–300 if you still see HTTP 429
+    Optional delay after each setting is exported. Use 100-300 if you still see HTTP 429
     (ThrottledByInfra) after other mitigations.
 #>
 [CmdletBinding()]
@@ -323,7 +323,7 @@ function Find-Policy([string]$Search, $Policies) {
     $partial = @($Policies | Where-Object { $_.displayName -like "*$Search*" })
     if ($partial.Count -eq 1) { return $partial[0] }
     if ($partial.Count -gt 1) {
-        Write-Host '  Multiple matches — enter a number from the list to select:' -ForegroundColor Yellow
+        Write-Host '  Multiple matches - enter a number from the list to select:' -ForegroundColor Yellow
         foreach ($p in $partial) { Write-Host "    - $($p.displayName)" -ForegroundColor Yellow }
     }
     return $null
@@ -477,7 +477,7 @@ function Invoke-AdmxPolicyExport {
     [System.IO.File]::WriteAllText($outPath, $json, [System.Text.UTF8Encoding]::new($false))
 
     Write-Host ''
-    Write-Host "  Time (policy selected → last setting): ${settingsPhaseSec}s" -ForegroundColor DarkGray
+    Write-Host "  Time (policy selected -> last setting): ${settingsPhaseSec}s" -ForegroundColor DarkGray
     Write-Host "  Export complete: $($exportedSettings.Count) settings" -ForegroundColor Green
     if ($skipCount -gt 0) {
         Write-Host "  Skipped:  $skipCount settings" -ForegroundColor Yellow
@@ -498,13 +498,13 @@ if ($allowRepeatMenu) {
         Show-AdministrativeTemplatePolicyList -Policies $allPolicies -IncludeQuit
         $input_val = Read-Host 'Enter policy number or name (or Q to quit)'
         if ($null -eq $input_val) {
-            Write-Warning 'No input — enter a selection or Q to quit.'
+            Write-Warning 'No input - enter a selection or Q to quit.'
             continue
         }
         $trim = $input_val.Trim()
         if ($trim -match '^[qQ]$') { break }
         if ([string]::IsNullOrWhiteSpace($trim)) {
-            Write-Warning 'Empty input — try again or Q to quit.'
+            Write-Warning 'Empty input - try again or Q to quit.'
             continue
         }
         $selected = Find-Policy $trim $allPolicies
@@ -528,10 +528,10 @@ while (-not $selected) {
     $input_val = Read-Host 'Enter the policy name (or number from the list above)'
     if ($null -eq $input_val) {
         Write-Error 'No input received. Run the script with -PolicyName to skip the prompt.'
-        return
+        exit 1
     }
     $selected = Find-Policy $input_val.Trim() $allPolicies
     if (-not $selected) { Write-Host '  No match found. Try again.' -ForegroundColor Red }
 }
 
-if ((Invoke-AdmxPolicyExport -Selected $selected -DelayMs $DelayMillisecondsBetweenSettings) -eq 'NoSettings') { return }
+if ((Invoke-AdmxPolicyExport -Selected $selected -DelayMs $DelayMillisecondsBetweenSettings) -eq 'NoSettings') { exit 1 }

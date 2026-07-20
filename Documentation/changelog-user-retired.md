@@ -23,7 +23,7 @@ Merged into the combined `AdobeDC.admx`/ADML bundle (see [Changelog (Device, Ret
 
 ### `(User)` suffix on all leaf display names
 
-Every policy ADML display string gains ` (User)` (e.g. `Show Splash Screen` → `Show Splash Screen (User)`). Matches Microsoft convention for user-scope administrative templates. Helps IT admins tell user vs machine Adobe settings apart when both are in the same Intune profile - imported ADMX does not show hive or category path in the configuration list.
+Every policy ADML display string gains ` (User)` (e.g. `Show Splash Screen` -> `Show Splash Screen (User)`). Matches Microsoft convention for user-scope administrative templates. Helps IT admins tell user vs machine Adobe settings apart when both are in the same Intune profile - imported ADMX does not show hive or category path in the configuration list.
 
 Same namespace, files, registry keys, and ADMX `name` attributes as v1.9. Validated Intune import after delete-and-reupload workflow.
 
@@ -41,7 +41,7 @@ See [readme in v1.10 (User)](https://github.com/systmworks/Adobe-DC-User-ADMX/bl
 
 ### Category layout for Intune
 
-Category folders restructured to **`Adobe (User)`** → **`Acrobat DC`** / **`Reader DC`** (product branches no longer repeat `(User)`).
+Category folders restructured to **`Adobe (User)`** -> **`Acrobat DC`** / **`Reader DC`** (product branches no longer repeat `(User)`).
 
 ADML strings are sanitized for Intune (no bare `http://` literals in policy text; empty explain strings get a fallback). Leaf display names have no scope suffix (use v1.10 for `(User)` on all settings).
 
@@ -110,8 +110,8 @@ See [readme in v1.7 (User)](https://github.com/systmworks/Adobe-DC-User-ADMX/blo
 
 | Setting | ValueName | Suggested hardening |
 |---|---|---|
-| Open Non-PDF Attachments | `bAllowOpenFile` | Disabled → DWORD **0** |
-| Secure Open Attachments | `bSecureOpenFile` | Enabled → DWORD **1** |
+| Open Non-PDF Attachments | `bAllowOpenFile` | Disabled -> DWORD **0** |
+| Secure Open Attachments | `bSecureOpenFile` | Enabled -> DWORD **1** |
 
 *Thanks to **[@CyberChelonian](https://github.com/CyberChelonian)** for [issue #4](https://github.com/systmworks/Adobe-DC-ADMX/issues/4) on the Computer ADMX repo (mis-filed as HKCU; addressed here in the User ADMX line).*
 
@@ -123,7 +123,7 @@ Adobe PrefRef labels these as version 10.x; community verification on current DC
 
 | Setting | ValueName | Notes |
 |---|---|---|
-| Outlook Protected View | `bEnableAlwaysOutlookAttachmentProtectedView` | New for **Reader DC**; Enabled → DWORD **0** (Protected View on for Outlook attachments). Acrobat DC was already present from v1.4. |
+| Outlook Protected View | `bEnableAlwaysOutlookAttachmentProtectedView` | New for **Reader DC**; Enabled -> DWORD **0** (Protected View on for Outlook attachments). Acrobat DC was already present from v1.4. |
 
 *Thanks to **[@CyberChelonian](https://github.com/CyberChelonian)** for [issue #5](https://github.com/systmworks/Adobe-DC-ADMX/issues/5). Adobe documentation shows the Acrobat icon only; Reader path included per community request - verify Reader behaviour in your environment.*
 

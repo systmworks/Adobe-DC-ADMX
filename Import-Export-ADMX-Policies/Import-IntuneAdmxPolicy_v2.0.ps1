@@ -5,7 +5,7 @@
     Imports an Intune Administrative Template (ADMX-backed) policy from JSON.
 .DESCRIPTION
     Re-creates an Administrative Template policy that was previously exported
-    by Export-IntuneAdmxPolicy.ps1.  Uses stable identifiers (categoryPath,
+    by Export-IntuneAdmxPolicy_v2.0.ps1.  Uses stable identifiers (categoryPath,
     displayName, classType) to look up the correct definition GUIDs in the
     current tenant, so the import works even after the ADMX has been deleted
     and re-uploaded with new GUIDs.
@@ -33,7 +33,7 @@
     https://creativecommons.org/licenses/by-sa/4.0/
 .EXAMPLE
     .\Import-IntuneAdmxPolicy_v2.0.ps1
-    Interactive run — prompts for file and policy name.
+    Interactive run - prompts for file and policy name.
 .EXAMPLE
     .\Import-IntuneAdmxPolicy_v2.0.ps1 -PolicyName 'Firefox Hardening - TEST'
     Skips the name prompt and creates the policy with the given name.
@@ -212,7 +212,7 @@ if ($FilePath) {
 }
 if (-not $jsonPath -or -not (Test-Path -LiteralPath $jsonPath)) {
     Write-Error "File not found: $jsonPath"
-    return
+    exit 1
 }
 Write-Information "Loading: $jsonPath"
 
@@ -222,7 +222,7 @@ $raw = Get-Content -LiteralPath $jsonPath -Raw -Encoding utf8 | ConvertFrom-Json
 
 if (-not $raw.policyDisplayName -or -not $raw.settings) {
     Write-Error 'Invalid export file - missing policyDisplayName or settings array.'
-    return
+    exit 1
 }
 
 $policyDesc = if ($raw.policyDescription) { $raw.policyDescription } else { '' }
@@ -244,7 +244,7 @@ Write-Information "Policy: $policyName  ($($settings.Count) settings)"
 $importStopwatch = [System.Diagnostics.Stopwatch]::StartNew()
 
 # ── Build definition lookup from tenant ──────────────────────────────────────
-#    Index by "categoryPath|displayName|classType" → definition object.
+#    Index by "categoryPath|displayName|classType" -> definition object.
 #    Tries a scoped fetch first (only the category-path prefixes present in
 #    the export) to avoid enumerating the entire tenant catalog.  Falls back
 #    to a full fetch when the Graph endpoint rejects the $filter.
@@ -291,7 +291,7 @@ foreach ($d in $allDefs) {
 #    Only fetches presentations for definitions we actually need.
 #    Some ADMX (e.g. Firefox) expose empty presentation labels; a hashtable keyed
 #    by label cannot hold multiple ''. We also keep a stable ordered list for
-#    positional matching (export order ↔ same index in sorted tenant list).
+#    positional matching (export order <-> same index in sorted tenant list).
 
 function Get-PresentationLookup([string]$definitionId) {
     $presentations = Invoke-GraphGetAll "$graphBase/deviceManagement/groupPolicyDefinitions/$definitionId/presentations"
@@ -302,7 +302,7 @@ function Get-PresentationLookup([string]$definitionId) {
             $byLabel[$lbl] = $p
         }
     }
-    # Preserve Graph API order (same logical order as export) — do not sort by id; GUID order can differ across tenants.
+    # Preserve Graph API order (same logical order as export) - do not sort by id; GUID order can differ across tenants.
     $ordered = @($presentations)
     return [pscustomobject]@{
         ByLabel = $byLabel
@@ -431,7 +431,7 @@ Write-Host ''
 Write-Host '  Import Summary' -ForegroundColor Cyan
 Write-Host '  ==============' -ForegroundColor Cyan
 Write-Host "  Policy:    $policyName" -ForegroundColor White
-Write-Host "  Time (policy name set → last setting): ${settingsPhaseSec}s" -ForegroundColor DarkGray
+Write-Host "  Time (policy name set -> last setting): ${settingsPhaseSec}s" -ForegroundColor DarkGray
 Write-Host "  Imported:  $successCount settings" -ForegroundColor Green
 if ($skipCount -gt 0) {
     Write-Host "  Skipped:   $skipCount settings" -ForegroundColor Yellow

@@ -145,7 +145,8 @@
     "recommendedDword": 0
   },
   {
-    "valueName": "bUpdater_FeatureLockDown",
+    "valueName": "bUpdater",
+    "friendlyName": "Product Updater",
     "scope": "Both",
     "recommendedDword": 0
   },

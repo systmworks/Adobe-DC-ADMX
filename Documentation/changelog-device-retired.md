@@ -18,7 +18,7 @@ Settings changes across ADMX versions. Only new, renamed, or reclassified settin
 | Change | Detail |
 |---|---|
 | Packaging | Single combined template (Machine + User) under namespace `Adobe.Policies.AdobeDC` |
-| Tree | **Adobe DC** → **Acrobat & Reader DC** / **Reader DC (32-bit)** / **Non-Policy Settings** (Computer); **Acrobat DC** / **Reader DC** (User) |
+| Tree | **Adobe DC** -> **Acrobat & Reader DC** / **Reader DC (32-bit)** / **Non-Policy Settings** (Computer); **Acrobat DC** / **Reader DC** (User) |
 | De-duplication | `HKLM\SOFTWARE\Policies` settings emit once per product hive (no redundant `WOW6432Node\Policies` copies) |
 | Sources | Device v2.21 + User v1.10 |
 
@@ -46,7 +46,7 @@ Policy count: **436** (was 431). Reader x86 branch unchanged (WOW6432Node `Acrob
 
 | Change | Detail |
 |---|---|
-| Tree | **Adobe (Machine)** → **Acrobat & Reader DC (Unified x64)** → **Acrobat DC (x86)** → **Reader DC (x86)** |
+| Tree | **Adobe (Machine)** -> **Acrobat & Reader DC (Unified x64)** -> **Acrobat DC (x86)** -> **Reader DC (x86)** |
 | Unified x64 | Uses Acrobat HKLM hive for x64 Reader and Acrobat (Unified Codebase); separate Reader x64 branch removed |
 | ARM updater | All ARM hive policies use `WOW6432Node`; duplicated under Unified x64 and Acrobat x86 |
 | File size | **431** policies (was 552 in v2.19 combined template) |
@@ -55,9 +55,9 @@ Policy count: **436** (was 431). Reader x86 branch unchanged (WOW6432Node `Acrob
 
 | Setting | ValueName | Old version | New version |
 |---|---|---|---|
-| Disable Acrobat.com File Storage | `bDisableADCFileStore` | N/A | Enabled → DWORD **1** (Acrobat only) |
-| Disable Welcome Screen | `bShowWelcomeScreen` | N/A | Enabled → DWORD **0** |
-| Usage Measurement (legacy) | `bUsageMeasurement` | N/A | Disabled → DWORD **0** |
+| Disable Acrobat.com File Storage | `bDisableADCFileStore` | N/A | Enabled -> DWORD **1** (Acrobat only) |
+| Disable Welcome Screen | `bShowWelcomeScreen` | N/A | Enabled -> DWORD **0** |
+| Usage Measurement (legacy) | `bUsageMeasurement` | N/A | Disabled -> DWORD **0** |
 
 *Thanks to **[@virtitnerd](https://github.com/virtitnerd)** for community review (ARM path fix and STIG gap policies).*
 
@@ -79,16 +79,16 @@ Registry values are sourced from [Adobe enterprise MIP guidance](https://helpx.a
 
 | Setting | ValueName | Old version | New version |
 |---|---|---|---|
-| Enable MIP Labelling | `bMIPLabelling` | N/A | Enabled → DWORD **1** |
-| Check MIP Policy on Save | `bMIPCheckPolicyOnDocSave` | N/A | Enabled → DWORD **1** |
-| MIP Sovereign Cloud | `iMIPCloud` | N/A | Dropdown (0–10; Commercial = **3**) |
-| MIP External Browser Auth | `bMIPExternalAuthAdmin` | N/A | Enabled → DWORD **1** |
-| MIP Double Key Encryption | `bEnableDKEAdmin` | N/A | Enabled → DWORD **1** |
-| Suppress OS Auth Prompts (MIP) | `bSilentAuth` | N/A | Enabled → DWORD **1** (Disabled → **0** for auth troubleshooting) |
+| Enable MIP Labelling | `bMIPLabelling` | N/A | Enabled -> DWORD **1** |
+| Check MIP Policy on Save | `bMIPCheckPolicyOnDocSave` | N/A | Enabled -> DWORD **1** |
+| MIP Sovereign Cloud | `iMIPCloud` | N/A | Dropdown (0-10; Commercial = **3**) |
+| MIP External Browser Auth | `bMIPExternalAuthAdmin` | N/A | Enabled -> DWORD **1** |
+| MIP Double Key Encryption | `bEnableDKEAdmin` | N/A | Enabled -> DWORD **1** |
+| Suppress OS Auth Prompts (MIP) | `bSilentAuth` | N/A | Enabled -> DWORD **1** (Disabled -> **0** for auth troubleshooting) |
 
 Per-user HKCU policies (`bShowDMB`, `bEnablePolicyAuthentication`, `bEnableLogging`) ship in **User ADMX v1.6** only. Computer and User templates use separate namespaces (`Adobe.Policies.AdobeDC` vs `Adobe.Policies.Adobe_User`) and can be deployed together.
 
-See readme in v2.19 (retired) (archived locally; see git history or GitHub Releases — includes **v2.18** release notes in the same file).
+See readme in v2.19 (retired) (archived locally; see git history or GitHub Releases - includes **v2.18** release notes in the same file).
 
 | ADMX File | Policies |
 |---|---:|
@@ -105,9 +105,9 @@ See readme in v2.19 (retired) (archived locally; see git history or GitHub Relea
 
 | Setting | ValueName | Old version | New version |
 |---|---|---|---|
-| Block non-PDF file attachments | `iFileAttachmentPerms` | N/A | Enabled → DWORD **1** (Not configured = product default; Disabled → DWORD **0**) |
+| Block non-PDF file attachments | `iFileAttachmentPerms` | N/A | Enabled -> DWORD **1** (Not configured = product default; Disabled -> DWORD **0**) |
 
-See readme in v2.19 (retired) (archived locally; see git history or GitHub Releases — includes **v2.17** release notes in the same file; version readmes do not link across folders).
+See readme in v2.19 (retired) (archived locally; see git history or GitHub Releases - includes **v2.17** release notes in the same file; version readmes do not link across folders).
 
 | ADMX File | Policies |
 |---|---:|
@@ -124,10 +124,10 @@ See readme in v2.19 (retired) (archived locally; see git history or GitHub Relea
 
 | Setting | ValueName | Old version | New version |
 |---|---|---|---|
-| Protected Mode Sandbox | `bProtectedMode` | N/A | New for **Acrobat DC**; Enabled → DWORD **1** |
-| AppContainer Sandbox | `bEnableProtectedModeAppContainer` | N/A | New for **Acrobat DC**; Enabled → DWORD **1** |
+| Protected Mode Sandbox | `bProtectedMode` | N/A | New for **Acrobat DC**; Enabled -> DWORD **1** |
+| AppContainer Sandbox | `bEnableProtectedModeAppContainer` | N/A | New for **Acrobat DC**; Enabled -> DWORD **1** |
 
-Release notes for **v2.17** and **v2.16** are documented in the v2.19 (retired) readme (archived locally; see git history or GitHub Releases — version readmes do not link across folders).
+Release notes for **v2.17** and **v2.16** are documented in the v2.19 (retired) readme (archived locally; see git history or GitHub Releases - version readmes do not link across folders).
 
 | ADMX File | Policies |
 |---|---:|
@@ -148,9 +148,9 @@ Release notes for **v2.17** and **v2.16** are documented in the v2.19 (retired) 
 
 | Setting | ValueName | v2.14 (old) | v2.15 (new) |
 |---|---|---|---|
-| Block JavaScript Execution | `bDisableJavaScript` | Enabled → DWORD 0 (allow) | Enabled → DWORD 1 (block) |
-| Disable SharePoint & Office 365 Integration | `bDisableSharePointFeatures` | Enabled → DWORD 0 (enable) | Enabled → DWORD 1 (disable) |
-| Disable WebMail Integration | `bDisableWebmail` | Enabled → DWORD 0 (enable) | Enabled → DWORD 1 (disable) |
+| Block JavaScript Execution | `bDisableJavaScript` | Enabled -> DWORD 0 (allow) | Enabled -> DWORD 1 (block) |
+| Disable SharePoint & Office 365 Integration | `bDisableSharePointFeatures` | Enabled -> DWORD 0 (enable) | Enabled -> DWORD 1 (disable) |
+| Disable WebMail Integration | `bDisableWebmail` | Enabled -> DWORD 0 (enable) | Enabled -> DWORD 1 (disable) |
 
 **If you previously deployed these policies, verify and re-apply the intended state after upgrading.**
 
@@ -216,8 +216,8 @@ Two settings added for both products, bringing the total to **262 policies** (14
 
 | Setting | ValueName | v2.11 (old) | v2.12 (new) |
 |---|---|---|---|
-| Block EMF to PDF Conversion | `BlockEMFParsing` | Enabled → DWORD 0 (allow) | Enabled → DWORD 1 (block) |
-| Block XPS to PDF Conversion | `BlockXPSParsing` | Enabled → DWORD 0 (allow) | Enabled → DWORD 1 (block) |
+| Block EMF to PDF Conversion | `BlockEMFParsing` | Enabled -> DWORD 0 (allow) | Enabled -> DWORD 1 (block) |
+| Block XPS to PDF Conversion | `BlockXPSParsing` | Enabled -> DWORD 0 (allow) | Enabled -> DWORD 1 (block) |
 
 In v2.11, setting these policies to **Enabled** wrote DWORD 0 (allow conversion), contradicting the "Block..." friendly name. v2.12 aligns the toggle so **Enabled = block** and **Disabled = allow**, matching both the policy name and Adobe's documented registry semantics.
 

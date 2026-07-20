@@ -6,7 +6,7 @@
 
 # Reader DC Settings (Device)
 
-Complete list of 127 Reader DC policies in the combined v3.3 ADMX templates, sorted by category.
+Complete list of 124 Reader DC policies in the combined v3.3 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -160,7 +160,6 @@ Complete list of 127 Reader DC policies in the combined v3.3 ADMX templates, sor
 | Auto Dock HUD Bar | ``bEnableAutoDockUndockHUD`` | Automatically dock and undock the HUD bar based on the window size. |
 | Auto Open Acrobat from Reader | ``bHasAcrobatConsent`` | Specifies whether the Reader process should automatically open Acrobat for the current file. |
 | Disable Chrome PDF Extension | ``bAcroSuppressOpenInReader`` | Disable and lock the PDF viewer Chrome extension. |
-| Disable Major Version Upgrade Prompt | ``iDisablePromptForUpgrade`` | Specifies whether the application should show a prompt suggesting the user upgrade to the next major version (for example, 10.0 to 11.0). |
 | Disable Repair for All Users | ``DisableMaintenance`` | Disable the Help > Repair Installation menu for all users on virtual and regular installs. |
 | Disable Repair for Standard Users | ``Disable_Repair`` | Disable the Help > Repair Installation menu for standard users on virtualized installations. |
 | Hide Document Message Bar | ``bSuppressMessageBar`` | Prevents the appearance of the document message bar. |
@@ -172,8 +171,6 @@ Complete list of 127 Reader DC policies in the combined v3.3 ADMX templates, sor
 | Prompt to Use Acrobat from Reader | ``bEnableAcrobatPromptForDocOpen`` | Prompt users to use Acrobat when both Reader and Acrobat are installed. |
 | Scalable Cursor | ``bShouldUseScalableCursor`` | Disable the scalable cursor. |
 | Starred Files Feature | ``bFavoritesFeaturesLockDown`` | Disable and lock the starred file feature. |
-| Update Watchdog Interval (Days) | ``iInterval`` | Sets the time that can elapse without a successful update before the Watchdog dialog appears suggesting the user manually update. |
-| Updater Log Level | ``iLogLevel`` | Sets the log level to either brief (0) or verbose (1). |
 
 ## Upsell
 

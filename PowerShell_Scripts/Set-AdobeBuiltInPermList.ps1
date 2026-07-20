@@ -10,7 +10,7 @@
   opened or saved from PDF attachments. It is a security control referenced by the ADMX policy
   Attachment Extension Blocklist in Dialogs (bEnableBlacklistForOpenSave).
 
-  Acrobat/Reader stores this preference as REG_BINARY — an opaque, app-serialized byte blob.
+  Acrobat/Reader stores this preference as REG_BINARY - an opaque, app-serialized byte blob.
   The ADMX/ADML schema has no binary element type (only text, decimal, enum, boolean, list), so
   REG_BINARY cannot be authored via Group Policy or Intune ADMX upload.
 
@@ -25,7 +25,7 @@
   3. Deploy those bytes with -ImportHex (this script), GPP registry items, or Intune OMA-URI.
 
   -ImportHex is the trusted path. -PermList writes UTF-8 bytes of the logical string and is
-  best-effort only — Acrobat may expect a different encoding on your build.
+  best-effort only - Acrobat may expect a different encoding on your build.
 
   PERMISSION STRING FORMAT (for -PermList / decode reference)
   ----------------------------------------------------------
@@ -62,7 +62,7 @@
     HKLM\SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cDefaultLaunchAttachmentPerms
     HKLM\SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cDefaultLaunchAttachmentPerms
   Value name: tBuiltInPermList (REG_BINARY)
-  License: CC BY-SA 4.0 — https://github.com/systmworks/Adobe-DC-ADMX/
+  License: CC BY-SA 4.0 - https://github.com/systmworks/Adobe-DC-ADMX/
 #>
 [CmdletBinding(SupportsShouldProcess = $true)]
 param(
@@ -178,7 +178,7 @@ foreach ($target in Get-TargetProducts) {
                 Write-Host "Decoded: $decoded"
             }
             else {
-                Write-Host 'Decoded: (unable to decode as version:N| string — use hex below for deployment)'
+                Write-Host 'Decoded: (unable to decode as version:N| string - use hex below for deployment)'
             }
             Write-Host "Hex: $(ConvertTo-HexString $bytes)"
         }

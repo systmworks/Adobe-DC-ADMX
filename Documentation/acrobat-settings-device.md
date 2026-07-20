@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings (Device)
 
-Complete list of 152 Acrobat DC policies in the combined v3.3 ADMX templates, sorted by category.
+Complete list of 170 Acrobat DC policies in the combined v3.3 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -32,12 +32,15 @@ Complete list of 152 Acrobat DC policies in the combined v3.3 ADMX templates, so
 |---|---|---|
 | Auto UI Density Detection | ``bUIDensityAutoDetectionEnabled`` | Disable the auto detection logic and bezel for changing Acrobat's display size. |
 | Click-to-Edit Mode | ``ADC4275035_ClickEdit`` | Automatically enter edit mode when a user clicks a PDF object. |
+| Click-to-Edit Mode | ``ADC4275035_ClickEdit`` | Automatically enter edit mode when a user clicks a PDF object. |
 | Cloud Search Token Caching | ``bEnableCloudPoweredSearchTokenCaching`` | Cache locally cloud-based search service suggestions. |
 | Cloud-Powered Search | ``bEnableCloudPoweredSearch`` | Enable the cloud-based search service in the Find Tool. |
 | Contextual Help Tips | ``bEnableContextualTips`` | Controls whether to automatically display help tips based on the current context. |
 | Contextual Toolbar | ``bEnableContextualToolbar`` | Show the context toolbar (popup) when selecting a PDF object. |
 | Extract Page Range UI | ``bEnableExtractPageRange`` | Show the page range UI in the Extract Page dialog. |
 | Fill & Sign Color Picker | ``ADC4275034`` | Disable the color picker in the Fill and Sign tool. |
+| Fill & Sign Color Picker | ``ADC4275034`` | Disable the color picker in the Fill and Sign tool. |
+| Legacy Protect Tool Menu | ``ProtectOldExperience`` | Disable the new Protect tool and revert to the old menu |
 | Legacy Protect Tool Menu | ``ProtectOldExperience`` | Disable the new Protect tool and revert to the old menu |
 | Lock Tool Shortcut Customization | ``bDisableAcrobatShortcutCustomization`` | Prevents end users from modifying the tool shortcuts in the right hand pane. |
 | Modern Viewer | ``bEnableAV2Enterprise`` | Enable the Modern Viewer. |
@@ -46,6 +49,8 @@ Complete list of 152 Acrobat DC policies in the combined v3.3 ADMX templates, so
 | Online Tool Set Exchange Link | ``bFindMoreCustomizationsOnline`` | Show the menu item that opens the online Acrobat Tool Set Exchange. |
 | Organize Pages Thumbnail Shortcut | ``bOrganizePagesFromThumbnails`` | Show shortcut UI for the Organize tool from thumbnails. |
 | Paste in Place | ``ADC4302862`` | Paste copied elements to the exact location as the copied element. |
+| Paste in Place | ``ADC4302862`` | Paste copied elements to the exact location as the copied element. |
+| Remove Form Editing Tools (2019) | ``ADC4275035`` | Remove the forms tools delivered with the October, 2019 release. |
 | Remove Form Editing Tools (2019) | ``ADC4275035`` | Remove the forms tools delivered with the October, 2019 release. |
 | Show Combine Files Context Menu | ``bRCMCombineFeatureKey`` | Display the Combine Files item in a document's right-click context menu. |
 | Show Search Loading Message | ``bEnableAutoCompleteExactMatchLoader`` | Show a "Working on it" message when using the cloud-based search service. |
@@ -59,11 +64,17 @@ Complete list of 152 Acrobat DC policies in the combined v3.3 ADMX templates, so
 | Accessibility Auto Tagging | ``bCloudATFeatureEnable`` | Show the new auto tagging experience or revert to the old experience. |
 | Bates Log Original File Name | ``bBatesLogOriginalFileName`` | Use the original filename in the log file when the user selects Bates number-based output filenames. |
 | Block EMF to PDF Conversion | ``BlockEMFParsing`` | Disable EMF file conversion to PDF. |
+| Block EMF to PDF Conversion | ``BlockEMFParsing`` | Disable EMF file conversion to PDF. |
+| Block XPS to PDF Conversion | ``BlockXPSParsing`` | Disable XPS file conversion to PDF. |
 | Block XPS to PDF Conversion | ``BlockXPSParsing`` | Disable XPS file conversion to PDF. |
 | Create PDF Split Menu | ``bGlobalBarMenuFeatureKey`` | Show the Create Split Menu under Create a PDF menu item. |
 | Disable Scanned PDF Text Recognition | ``DisableScannedDocumentEditing`` | Disable text recognition while editing scanned PDFs. |
+| Disable Scanned PDF Text Recognition | ``DisableScannedDocumentEditing`` | Disable text recognition while editing scanned PDFs. |
+| PDFMaker Grouped Image Tag Fix | ``EnablePDFMakerGroupImagesTagCorrectionFeature`` | Disable accessibility fixes for tagging grouped images. |
 | PDFMaker Grouped Image Tag Fix | ``EnablePDFMakerGroupImagesTagCorrectionFeature`` | Disable accessibility fixes for tagging grouped images. |
 | PDFMaker Table Header Tag Fix | ``EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeature`` | Disable accessibility fixes for tagging table headers. |
+| PDFMaker Table Header Tag Fix | ``EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeature`` | Disable accessibility fixes for tagging table headers. |
+| PDFMaker Text Path Tag Fix | ``EnablePDFMakerSplitTextPathElemsFeature`` | Enable the "SplitTextPathElemsFeature" tags correction feature when creating a PDF with Acrobat. |
 | PDFMaker Text Path Tag Fix | ``EnablePDFMakerSplitTextPathElemsFeature`` | Enable the "SplitTextPathElemsFeature" tags correction feature when creating a PDF with Acrobat. |
 | Reflow Editing | ``bEnableReflowEditing`` | Lock ReflowEditing and the reflow feature. |
 | Restrict Form Data to Schema | ``bIgnoreDataSchema`` | Specifies whether all data in a form is saved rather than only data related to the form's schema. |
@@ -94,7 +105,9 @@ Complete list of 152 Acrobat DC policies in the combined v3.3 ADMX templates, so
 | Enhanced Security Standalone | ``bEnhancedSecurityStandalone`` | Toggles enhanced security for the standalone application. |
 | Flash Content in PDFs | ``bEnableFlash`` | Specifies whether Flash content should be rendered in a PDF. |
 | Flash Editing Tools | ``EnableFlashEditing`` | Enable the Flash tools for adding annotations or Flash in the Rich Media app. |
+| Flash Editing Tools | ``EnableFlashEditing`` | Enable the Flash tools for adding annotations or Flash in the Rich Media app. |
 | Protected Mode Sandbox | ``bProtectedMode`` | Enables Protected Mode which sandboxes Acrobat and Reader processes. |
+| Protected View Exit Shortcut Key | ``bEnablePVSwitchoutShortcut`` | Enables a shortcut key that allows users to exit Protected View for a specific document. |
 | Protected View Exit Shortcut Key | ``bEnablePVSwitchoutShortcut`` | Enables a shortcut key that allows users to exit Protected View for a specific document. |
 | Protected View Mode | ``iProtectedView`` | Use Protected View never (default), for files from an untrusted location (recommended), or always. |
 | Unlisted Attachment Type Permissions | ``iUnlistedAttachmentTypePerm`` | Specifies the default permissions for file types that aren't listed in the default or user-specified lists. |
@@ -178,17 +191,22 @@ Complete list of 152 Acrobat DC policies in the combined v3.3 ADMX templates, so
 |---|---|---|
 | 32-Bit Plugin Upgrade Notification | ``bDisableThirdPartyPluginNotif`` | Notify users with 32 bit plugins that the app will soon update to 64 bit. |
 | Accept EULA for Updater | ``EULA`` | Accepts the Adobe end-user license agreement (EULA) on behalf of the user. |
+| Accept EULA for Updater | ``EULA`` | Accepts the Adobe end-user license agreement (EULA) on behalf of the user. |
 | Auto Dock HUD Bar | ``bEnableAutoDockUndockHUD`` | Automatically dock and undock the HUD bar based on the window size. |
 | Auto Open Acrobat from Reader | ``bHasAcrobatConsent`` | Specifies whether the Reader process should automatically open Acrobat for the current file. |
 | Crash Reporter Dialog | ``bCrashReporterEnabled`` | Show the crash reporter dialog on application crash (Windows only). |
 | Disable Chrome PDF Extension | ``bAcroSuppressOpenInReader`` | Disable and lock the PDF viewer Chrome extension. |
 | Disable Major Version Upgrade Prompt | ``iDisablePromptForUpgrade`` | Specifies whether the application should show a prompt suggesting the user upgrade to the next major version (for example, 10.0 to 11.0). |
 | Disable Repair for All Users | ``DisableMaintenance`` | Disable the Help > Repair Installation menu for all users on virtual and regular installs. |
+| Disable Repair for All Users | ``DisableMaintenance`` | Disable the Help > Repair Installation menu for all users on virtual and regular installs. |
 | Disable Repair for Standard Users | ``Disable_Repair`` | Disable the Help > Repair Installation menu for standard users on virtualized installations. |
+| Disable Repair for Standard Users | ``Disable_Repair`` | Disable the Help > Repair Installation menu for standard users on virtualized installations. |
+| Enforce AMT for AppV Deployment | ``IsAMTEnforced`` | Allows deployment of Acrobat on AppV for December, 2018 and later products. |
 | Enforce AMT for AppV Deployment | ``IsAMTEnforced`` | Allows deployment of Acrobat on AppV for December, 2018 and later products. |
 | Hide Document Message Bar | ``bSuppressMessageBar`` | Prevents the appearance of the document message bar. |
 | Lock Default PDF Viewer | ``bDisablePDFHandlerSwitching`` | Disables the ability to change the specified default handler (PDF viewer). |
 | Lock PDF Thumbnails in Explorer | ``bDisableThumbnailPreviewHandler`` | Disable and lock the user interface option that controls Acrobat-generated PDF thumbnail previews in Windows Explorer. |
+| Merge Title and Menu Bar | ``bMergeMenuBar`` | Merge the application's title bar and menu bar into a single bar. |
 | Merge Title and Menu Bar | ``bMergeMenuBar`` | Merge the application's title bar and menu bar into a single bar. |
 | Patch Cache Cleanup | ``PatchCleanFlag`` | Triggers cleanup of old cached update patch files (MSI/MSP) on the next update cycle. |
 | Product Updater | ``bUpdater`` | Disables the Updater and removes associated user interface items. |

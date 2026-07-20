@@ -9,7 +9,7 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 > [!WARNING]
 > **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.3**.
 >
-> Convert them first with [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1`](Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1), then re-import.
+> Convert them first with [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV3.ps1), then re-import.
 >
 > See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1/v3.2 to v3.3 keeps the same namespace and policy names; v3.2+ reclassifies some **User** policies from toggles to enum/numeric/text controls (re-select those settings after ADMX re-upload).
 
@@ -26,7 +26,6 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 | [Reduce Nags & Upsells (Device)](Documentation/reduce-nags-device.md) | Device-scope nag and upsell controls |
 | [Reduce Nags & Upsells (User)](Documentation/reduce-nags-user.md) | User-scope nag and upsell controls |
 | [Built-in Attachment Permissions helper](PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1) | REG_BINARY deployment for `tBuiltInPermList` (not in ADMX) |
-| [User Skip text audit](Documentation/user-skip-text-audit.md) | v3.3 triage of skipped REG_SZ user prefs |
 | [Changelog (Combined)](Documentation/changelog.md) | Combined device + user version history |
 | [Changelog (Device, Retired)](Documentation/changelog-device-retired.md) | Legacy device-side ADMX version history |
 | [Changelog (User, Retired)](Documentation/changelog-user-retired.md) | Legacy user-side ADMX version history |
@@ -60,21 +59,21 @@ These ADMX/ADML templates (v3.3) provide Group Policy and Intune management of A
 
 ## Category Overview (Device)
 
-> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product, so Reader + Acrobat column totals are higher than the number of unique settings. The ADMX contains **294** machine policy entries (157 unique machine settings after removing non-ADMX `tBuiltInPermList`; architecture-specific non-policy settings are emitted separately for x64 and x86). Overall template: **294** machine + **495** user = **789** policy entries.
+> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product, so Reader + Acrobat column totals are higher than the number of unique settings. The ADMX contains **294** machine policy entries (**155** unique machine settings after removing non-ADMX `tBuiltInPermList`; architecture-specific non-policy settings are emitted separately for x64 and x86). Overall template: **294** machine + **495** user = **789** policy entries.
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![Overview](https://img.shields.io/badge/Overview-316dca?style=flat-square) | ![Reader](https://img.shields.io/badge/Reader-316dca?style=flat-square) | ![Acrobat](https://img.shields.io/badge/Acrobat-316dca?style=flat-square) |
 |----------|----------|:------:|:-------:|
 | Cloud & Connectors | Cloud storage connectors (Box, Dropbox, Google Drive, OneDrive), Document Cloud services, preferences sync, generative AI, and sign-in controls. | 13 | 13 |
-| Context, Tools & Search | UI toolbars, context menus, search features, Modern Viewer, tool shortcuts, and editing mode settings. | 12 | 21 |
-| Documents, Editing & Accessibility | PDF creation, editing, form handling, accessibility tagging, and document conversion controls. | 4 | 11 |
+| Context, Tools & Search | UI toolbars, context menus, search features, Modern Viewer, tool shortcuts, and editing mode settings. | 12 | 26 |
+| Documents, Editing & Accessibility | PDF creation, editing, form handling, accessibility tagging, and document conversion controls. | 4 | 17 |
 | Microsoft Purview (MIP) | Machine-level FeatureLockDown policies for Microsoft Purview Information Protection: MIP labelling lockdown, save-time policy checks, sovereign cloud selection, browser auth, double key encryption, and OS auth prompt control. | 6 | 6 |
-| Security: Execution & Protection | Sandbox modes (Protected Mode, AppContainer, Protected View), enhanced security, Flash content, and dangerous action blocking. | 15 | 15 |
+| Security: Execution & Protection | Sandbox modes (Protected Mode, AppContainer, Protected View), enhanced security, Flash content, and dangerous action blocking. | 15 | 17 |
 | Security: Trust & Permissions | Digital signatures, trusted locations, certificate trust, security handlers, and URL access policies. | 19 | 21 |
 | Sharing & Features | Adobe Sign, Send & Track, shared reviews, SharePoint/Office 365 integration, WebMail configuration, and cloud signature storage. | 19 | 21 |
 | Startup & Experience | Launch messages, notifications, First Time Experience, What's New, Home screen widgets, and feedback prompts. | 15 | 16 |
-| Updates & Desktop Integration | Product updater, Chrome extension, Explorer thumbnails, repair options, desktop UI, and deployment settings. | 19 | 21 |
+| Updates & Desktop Integration | Product updater, Chrome extension, Explorer thumbnails, repair options, desktop UI, and deployment settings. | 16 | 26 |
 | Upsell | Upgrade prompts, trial purchase dialogs, promotional campaigns, App Center, and purchasable tool visibility. | 5 | 7 |
-| **Total** | | **127** | **152** |
+| **Total** | | **124** | **170** |
 
 ## Category Overview (User)
 
