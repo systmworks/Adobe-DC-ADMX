@@ -975,12 +975,6 @@
       <string id="iAutoSaveDocsIntervalDC_User_Explain">Specifies the time interval in minutes at which to automatically save docs.&#10;&#10;Interacts with bAutoSaveDocsEnabled. Possible values include: 5: Minutes User specified: Any value 1-99</string>
       <string id="bAutoSetLayersDC_User">Auto-Set Layers (User)</string>
       <string id="bAutoSetLayersDC_User_Explain">Specifies whether to allow the document's layer state to be set by user information.&#10;&#10;Possible values include: 0: Don't allow layer state to be set by user information. 1: Allow layer state to be set by user information.</string>
-      <string id="iAccessBackgroundColorDC_User">Background Color (User)</string>
-      <string id="iAccessBackgroundColorDC_User_Explain">Specifies the default document background color (accessibility feature)&#10;&#10;The key name is appended with (Blue|Green|Red|Space). Possible values include: Green text on black Yellow text on black White text on black Black text on white</string>
-      <string id="iAccessBackgroundColorDC_User_opt0">Green text on black</string>
-      <string id="iAccessBackgroundColorDC_User_opt1">Yellow text on black</string>
-      <string id="iAccessBackgroundColorDC_User_opt2">White text on black</string>
-      <string id="iAccessBackgroundColorDC_User_opt3">Black text on white</string>
       <string id="iPagesDC_User">Check Page Range (User)</string>
       <string id="iPagesDC_User_Explain">Toggles whether to check all pages of a document or a subset of pages when running an accessibility full check.&#10;&#10;Possible values include: 0: Don't check all pages. 1: Do check all pages.</string>
       <string id="benableDDRDC_User">ClearType Smoothing (User)</string>
@@ -1622,12 +1616,6 @@
       <string id="iAutoSaveDocsInterval_User_Explain">Specifies the time interval in minutes at which to automatically save docs.&#10;&#10;Interacts with bAutoSaveDocsEnabled. Possible values include: 5: Minutes User specified: Any value 1-99</string>
       <string id="bAutoSetLayers_User">Auto-Set Layers (User)</string>
       <string id="bAutoSetLayers_User_Explain">Specifies whether to allow the document's layer state to be set by user information.&#10;&#10;Possible values include: 0: Don't allow layer state to be set by user information. 1: Allow layer state to be set by user information.</string>
-      <string id="iAccessBackgroundColor_User">Background Color (User)</string>
-      <string id="iAccessBackgroundColor_User_Explain">Specifies the default document background color (accessibility feature)&#10;&#10;The key name is appended with (Blue|Green|Red|Space). Possible values include: Green text on black Yellow text on black White text on black Black text on white</string>
-      <string id="iAccessBackgroundColor_User_opt0">Green text on black</string>
-      <string id="iAccessBackgroundColor_User_opt1">Yellow text on black</string>
-      <string id="iAccessBackgroundColor_User_opt2">White text on black</string>
-      <string id="iAccessBackgroundColor_User_opt3">Black text on white</string>
       <string id="iPages_User">Check Page Range (User)</string>
       <string id="iPages_User_Explain">Toggles whether to check all pages of a document or a subset of pages when running an accessibility full check.&#10;&#10;Possible values include: 0: Don't check all pages. 1: Do check all pages.</string>
       <string id="benableDDR_User">ClearType Smoothing (User)</string>
@@ -2232,9 +2220,6 @@
       <presentation id="iAutoSaveDocsIntervalDC_User_num">
         <decimalTextBox refId="iAutoSaveDocsIntervalDC_User_num" defaultValue="5">Auto-save interval in minutes (1-99):</decimalTextBox>
       </presentation>
-      <presentation id="iAccessBackgroundColorDC_User_enum">
-        <dropdownList defaultItem="0" refId="iAccessBackgroundColorDC_User_enum">Background Color (User):</dropdownList>
-      </presentation>
       <presentation id="dNoteFontSizeDC_User_num">
         <decimalTextBox refId="dNoteFontSizeDC_User_num" defaultValue="10">Comment font size (points):</decimalTextBox>
       </presentation>
@@ -2372,9 +2357,6 @@
       </presentation>
       <presentation id="iAutoSaveDocsInterval_User_num">
         <decimalTextBox refId="iAutoSaveDocsInterval_User_num" defaultValue="5">Auto-save interval in minutes (1-99):</decimalTextBox>
-      </presentation>
-      <presentation id="iAccessBackgroundColor_User_enum">
-        <dropdownList defaultItem="0" refId="iAccessBackgroundColor_User_enum">Background Color (User):</dropdownList>
       </presentation>
       <presentation id="dNoteFontSize_User_num">
         <decimalTextBox refId="dNoteFontSize_User_num" defaultValue="10">Comment font size (points):</decimalTextBox>

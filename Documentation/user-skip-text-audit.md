@@ -19,4 +19,17 @@ Audit of user-scope `ControlType=Skip` rows with `DataType=REG_SZ`. Disposition 
 
 **Remaining Skip count:** 40 user REG_SZ rows (45 before adoption).
 
+## DWORD demotions (also Skip)
+
+These were shipped as meaningless Enabled/Disabled toggles in v3.2/v3.3 and demoted to **Skip** in the quality re-release (not REG_SZ, but same app-internal rationale):
+
+| ValueName | Reason |
+|-----------|--------|
+| `iSens`, `iType` | Last-used compare settings |
+| `iAPIndex` | Last-used signature appearance index |
+| `iSHS`, `iSVS` | Console window splitter pixel positions |
+| `iSendForReviewConfirm` | Alert checkbox remembered state |
+| `iEULAAcceptanceTime` | Post-install EULA timeout |
+| `iAccessBackgroundColor` | RGB container keys under `cAccessBackgroundColor\` — not a single DWORD enum; integer values were undocumented |
+
 See [changelog](changelog.md#v33---20-july-2026) for full v3.3 changes.

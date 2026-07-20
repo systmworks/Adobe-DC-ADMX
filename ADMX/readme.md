@@ -25,20 +25,20 @@
 | Area | Detail |
 |------|--------|
 | **Packaging** | Single `AdobeDC.admx`/ADML pair for **Computer + User** configuration under one namespace |
-| **Policy inventory** | **791** policies — **294** machine + **497** user (ADMX `<policy>` entries; see note below) |
+| **Policy inventory** | **789** policies — **294** machine + **495** user (ADMX `<policy>` entries; see note below) |
 | **Namespace** | `Adobe.Policies.AdobeDC` (replaces separate `Adobe.Policies.Adobe_User` user namespace) |
 | **Computer tree** | **Adobe DC** → **Acrobat & Reader DC** / **Reader DC (32-bit)** / **Non-Policy Settings** |
 | **User tree** | **Adobe DC** → **Acrobat DC** / **Reader DC** — leaf display names retain ` (User)` suffix |
 | **De-duplication** | `HKLM\SOFTWARE\Policies` settings emit once per product hive (no redundant `WOW6432Node\Policies` copies) |
 | **Sources** | Device v2.21 + User v1.10 |
 
-**Policy count note:** **791** is the number of configurable policy entries in the ADMX (what Intune and GPMC show). **294** machine includes architecture-specific non-policy settings emitted separately for x64 and x86. There are **157** unique machine settings in the source reference (123 apply to both Reader and Acrobat; `tBuiltInPermList` is excluded as REG_BINARY). Product-scoped tables in [Documentation](../README.md) list user and machine settings because shared settings appear under each product.
+**Policy count note:** **789** is the number of configurable policy entries in the ADMX (what Intune and GPMC show). **294** machine includes architecture-specific non-policy settings emitted separately for x64 and x86. There are **157** unique machine settings in the source reference (123 apply to both Reader and Acrobat; `tBuiltInPermList` is excluded as REG_BINARY). Product-scoped tables in [Documentation](../README.md) list user and machine settings because shared settings appear under each product.
 
 ### Built-in Attachment Permissions List (`tBuiltInPermList`)
 
 This is the **only** REG_BINARY setting in the template. ADMX/ADML has **no binary element type**, so it cannot be authored via Group Policy or Intune ADMX upload. Combined v3.1 incorrectly used a text box (REG_SZ); v3.2 removed the policy.
 
-Deploy the attachment allow/block list using [`PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1`](../PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1) (read/write REG_BINARY, export hex for OMA-URI), Group Policy Preferences registry items, or Intune custom OMA-URI with bytes captured from Acrobat Trust Manager.
+Deploy the attachment allow/block list using [`PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1`](../PowerShell_Scripts/Set-AdobeBuiltInPermList.ps1) (**`-ImportHex`** from `-ExportHex` is the trusted path; `-PermList` is best-effort), Group Policy Preferences registry items, or Intune custom OMA-URI with bytes captured from Acrobat Trust Manager.
 
 ### Migrating from v2.21 + User v1.10
 
@@ -57,7 +57,7 @@ If you migrated Intune exports from v2.19, Reader-only x64 upsell settings alrea
 
 | File | Scope | Policies |
 |------|-------|----------|
-| `AdobeDC.admx` + `en-US/AdobeDC.adml` | Machine + User | 791 (294 machine + 497 user) |
+| `AdobeDC.admx` + `en-US/AdobeDC.adml` | Machine + User | 789 (294 machine + 495 user) |
 
 *294 machine = ADMX policy entries; 157 unique machine settings; product-scoped reference tables total 128 Reader + 153 Acrobat.*
 

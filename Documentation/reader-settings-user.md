@@ -6,7 +6,7 @@
 
 # Reader DC Settings (User)
 
-Complete list of 241 Reader DC policies in the combined v3.3 ADMX templates, sorted by category.
+Complete list of 240 Reader DC policies in the combined v3.3 ADMX templates, sorted by category.
 
 ## Context, Tools & Search
 
@@ -46,7 +46,6 @@ Complete list of 241 Reader DC policies in the combined v3.3 ADMX templates, sor
 | Auto-Save | ``bAutoSaveDocsEnabled`` | Specifies whether or not to automatically save documents. |
 | Auto-Save Interval | ``iAutoSaveDocsInterval`` | Specifies the time interval in minutes at which to automatically save docs. |
 | Auto-Set Layers | ``bAutoSetLayers`` | Allow the document's layer state to be set by user information. |
-| Background Color | ``iAccessBackgroundColor`` | Specifies the default document background color (accessibility feature) |
 | Check Page Range | ``iPages`` | Toggles whether to check all pages of a document or a subset of pages when running an accessibility full check. |
 | ClearType Smoothing | ``benableDDR`` | Further smooth text on LCD screens. |
 | Color Replace Policy | ``iAccessColorPolicy`` | Specifies whether all the controls in the Replace Document Colors panel should be enabled. |

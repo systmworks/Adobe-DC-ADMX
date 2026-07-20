@@ -18,21 +18,23 @@
   read that form. It was removed in v3.2. Use this script, Group Policy Preferences registry
   items, or Intune custom OMA-URI with captured bytes instead.
 
-  PERMISSION STRING FORMAT
-  ------------------------
+  RECOMMENDED DEPLOYMENT PATH
+  ---------------------------
+  1. Configure the attachment list once in Acrobat Trust Manager on a reference machine.
+  2. Run -ExportHex on that machine to capture the exact REG_BINARY bytes Acrobat wrote.
+  3. Deploy those bytes with -ImportHex (this script), GPP registry items, or Intune OMA-URI.
+
+  -ImportHex is the trusted path. -PermList writes UTF-8 bytes of the logical string and is
+  best-effort only — Acrobat may expect a different encoding on your build.
+
+  PERMISSION STRING FORMAT (for -PermList / decode reference)
+  ----------------------------------------------------------
   Adobe documents the logical value as a pipe-separated string, for example:
     version:1|.pdf:2|.zip:1|.exe:3
   Levels: 0=prompt (no allow), 1=prompt (allow/prohibit), 2=always open, 3=never open.
 
-  ENCODING NOTE
-  -------------
-  Adobe stores the string as REG_BINARY (not REG_SZ). This script writes UTF-8 bytes of the
-  permission string. If Acrobat on your build expects a different encoding, configure the list
-  in Acrobat Trust Manager UI once, then run -Export / -ExportHex on that machine and deploy
-  those exact bytes via -ImportHex or GPP/OMA-URI.
-
 .PARAMETER PermList
-  Permission string in Adobe format (version:1|.ext:N|...).
+  Permission string in Adobe format (version:1|.ext:N|...). Best-effort encoding only.
 
 .PARAMETER Product
   Target product hive: Acrobat, Reader, or Both (default).
@@ -41,19 +43,19 @@
   Read current value and print decoded string (best effort) plus hex.
 
 .PARAMETER ExportHex
-  Print raw hex only (for Intune OMA-URI / GPP binary import).
+  Print raw hex only (for Intune OMA-URI / GPP binary import). Primary capture method.
 
 .PARAMETER ImportHex
-  Write exact byte values from a hex string (spaces optional). Use bytes captured from -ExportHex.
-
-.EXAMPLE
-  .\Set-AdobeBuiltInPermList.ps1 -Product Both -PermList 'version:1|.pdf:2|.zip:3' -WhatIf
-
-.EXAMPLE
-  .\Set-AdobeBuiltInPermList.ps1 -Product Acrobat -Export
+  Write exact byte values from a hex string (spaces optional). Preferred deployment method.
 
 .EXAMPLE
   .\Set-AdobeBuiltInPermList.ps1 -Product Reader -ExportHex
+
+.EXAMPLE
+  .\Set-AdobeBuiltInPermList.ps1 -Product Both -ImportHex '76 65 72 73 69 6F 6E 3A 31 ...'
+
+.EXAMPLE
+  .\Set-AdobeBuiltInPermList.ps1 -Product Both -PermList 'version:1|.pdf:2|.zip:3' -WhatIf
 
 .NOTES
   Registry paths (Policies):
@@ -137,24 +139,30 @@ function Get-BuiltInPermListBytes {
     )
     $path = "HKLM:\$($Script:ProductPaths[$TargetProduct])"
     if (-not (Test-Path -LiteralPath $path)) {
-        throw "Registry key not found: $path"
+        throw "Registry key not found: $path. Configure tBuiltInPermList in Acrobat Trust Manager first, or deploy with -ImportHex."
     }
-    $value = Get-ItemProperty -LiteralPath $path -Name 'tBuiltInPermList' -ErrorAction Stop
-    return [byte[]]$value.tBuiltInPermList
+    $props = Get-ItemProperty -LiteralPath $path -ErrorAction Stop
+    if ($props.PSObject.Properties.Name -notcontains 'tBuiltInPermList') {
+        throw "Value tBuiltInPermList not found under $path. Capture bytes with -ExportHex after configuring Acrobat Trust Manager."
+    }
+    return [byte[]]$props.tBuiltInPermList
 }
 
 function Set-BuiltInPermListBytes {
     param(
         [ValidateSet('Acrobat', 'Reader')][string]$TargetProduct,
-        [byte[]]$Bytes
+        [byte[]]$Bytes,
+        [string]$ActionLabel
     )
     $path = "HKLM:\$($Script:ProductPaths[$TargetProduct])"
+    if (-not $PSCmdlet.ShouldProcess($path, $ActionLabel)) {
+        return $false
+    }
     if (-not (Test-Path -LiteralPath $path)) {
         New-Item -Path $path -Force | Out-Null
     }
-    if ($PSCmdlet.ShouldProcess($path, "Set tBuiltInPermList REG_BINARY ($($Bytes.Length) bytes)")) {
-        Set-ItemProperty -LiteralPath $path -Name 'tBuiltInPermList' -Value $Bytes -Type Binary
-    }
+    Set-ItemProperty -LiteralPath $path -Name 'tBuiltInPermList' -Value $Bytes -Type Binary
+    return $true
 }
 
 foreach ($target in Get-TargetProducts) {
@@ -179,12 +187,15 @@ foreach ($target in Get-TargetProducts) {
 
     if ($PSCmdlet.ParameterSetName -eq 'ImportHex') {
         $bytes = ConvertFrom-HexString $ImportHex
-        Set-BuiltInPermListBytes -TargetProduct $target -Bytes $bytes
-        Write-Host "[$target] Wrote tBuiltInPermList from hex ($($bytes.Length) bytes)."
+        if (Set-BuiltInPermListBytes -TargetProduct $target -Bytes $bytes -ActionLabel "Set tBuiltInPermList REG_BINARY from hex ($($bytes.Length) bytes)") {
+            Write-Host "[$target] Wrote tBuiltInPermList from hex ($($bytes.Length) bytes)."
+        }
         continue
     }
 
+    Write-Warning "[$target] -PermList writes UTF-8 bytes (best-effort). Prefer -ExportHex from a configured machine, then deploy with -ImportHex."
     $bytes = ConvertTo-RegistryBinaryText $PermList
-    Set-BuiltInPermListBytes -TargetProduct $target -Bytes $bytes
-    Write-Host "[$target] Wrote tBuiltInPermList from PermList ($($bytes.Length) bytes)."
+    if (Set-BuiltInPermListBytes -TargetProduct $target -Bytes $bytes -ActionLabel "Set tBuiltInPermList REG_BINARY from PermList ($($bytes.Length) bytes)") {
+        Write-Host "[$target] Wrote tBuiltInPermList from PermList ($($bytes.Length) bytes)."
+    }
 }

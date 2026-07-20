@@ -3850,29 +3850,6 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- Documents, Editing & Accessibility > Background Color (User) -->
-    <policy class="User" displayName="$(string.iAccessBackgroundColorDC_User)" explainText="$(string.iAccessBackgroundColorDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Originals\cAccessBackgroundColor"
-      name="iAccessBackgroundColorDC_User" valueName="iAccessBackgroundColor" presentation="$(presentation.iAccessBackgroundColorDC_User_enum)">
-      <parentCategory ref="DocsEditAccessCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <elements>
-        <enum id="iAccessBackgroundColorDC_User_enum" valueName="iAccessBackgroundColor">
-          <item displayName="$(string.iAccessBackgroundColorDC_User_opt0)">
-            <value><decimal value="0" /></value>
-          </item>
-          <item displayName="$(string.iAccessBackgroundColorDC_User_opt1)">
-            <value><decimal value="1" /></value>
-          </item>
-          <item displayName="$(string.iAccessBackgroundColorDC_User_opt2)">
-            <value><decimal value="2" /></value>
-          </item>
-          <item displayName="$(string.iAccessBackgroundColorDC_User_opt3)">
-            <value><decimal value="3" /></value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
-
     <!-- Documents, Editing & Accessibility > Check Page Range (User) -->
     <policy class="User" displayName="$(string.iPagesDC_User)" explainText="$(string.iPagesDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Accessibility\cAccCheckerOptions"
       name="iPagesDC_User" valueName="iPages">
@@ -6516,29 +6493,6 @@
       <supportedOn ref="SupportedReaderDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
       <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Documents, Editing & Accessibility > Background Color (User) -->
-    <policy class="User" displayName="$(string.iAccessBackgroundColor_User)" explainText="$(string.iAccessBackgroundColor_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Originals\cAccessBackgroundColor"
-      name="iAccessBackgroundColor_User" valueName="iAccessBackgroundColor" presentation="$(presentation.iAccessBackgroundColor_User_enum)">
-      <parentCategory ref="DocsEditAccessCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <elements>
-        <enum id="iAccessBackgroundColor_User_enum" valueName="iAccessBackgroundColor">
-          <item displayName="$(string.iAccessBackgroundColor_User_opt0)">
-            <value><decimal value="0" /></value>
-          </item>
-          <item displayName="$(string.iAccessBackgroundColor_User_opt1)">
-            <value><decimal value="1" /></value>
-          </item>
-          <item displayName="$(string.iAccessBackgroundColor_User_opt2)">
-            <value><decimal value="2" /></value>
-          </item>
-          <item displayName="$(string.iAccessBackgroundColor_User_opt3)">
-            <value><decimal value="3" /></value>
-          </item>
-        </enum>
-      </elements>
     </policy>
 
     <!-- Documents, Editing & Accessibility > Check Page Range (User) -->
