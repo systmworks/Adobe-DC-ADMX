@@ -4,14 +4,16 @@
 
 [<- Back to Documentation](../README.md)
 
-# Changelog (User)
+# Changelog (User, Retired)
+
+> **Retired.** Version history for combined releases is maintained in [Changelog (Combined)](changelog.md). This file is frozen for reference to pre-combined user-only releases.
 
 Settings changes across User ADMX versions. Only new, renamed, or reclassified settings are listed - internal script and formatting changes are omitted.
 
 ---
 ## Combined v3.0 - 18 July 2026
 
-Merged into the combined `AdobeDC.admx`/ADML bundle (see [Changelog (Device)](changelog-device.md)). User namespace `Adobe.Policies.Adobe_User` dropped; policies retain `(User)` suffix and `class="User"`.
+Merged into the combined `AdobeDC.admx`/ADML bundle (see [Changelog (Device, Retired)](changelog-device-retired.md)). User namespace `Adobe.Policies.Adobe_User` dropped; policies retain `(User)` suffix and `class="User"`.
 
 ---
 

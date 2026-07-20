@@ -7,16 +7,18 @@
 Detailed policy reference pages, changelogs, and curated guides live under [Documentation/](Documentation/).
 
 > [!WARNING]
-> **v3.0 is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from v2.x (or User ADMX v1.x) will not import into v3.0**.
+> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.1**.
 >
 > Convert them first with [`Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1`](Import-Export-ADMX-Policies/Convert-AdobeDcIntuneExportToCombinedV30.ps1), then re-import.
 >
-> See the [v3.0 readme](v3.0/readme.md) for migration steps.
+> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0 to v3.1 is **not** import-breaking (same namespace and policy names).
 
 ## Quick Links
 
 | ![Page](https://img.shields.io/badge/Page-316dca?style=flat-square) | ![Description](https://img.shields.io/badge/Description-316dca?style=flat-square) |
 |------|-------------|
+| [ADMX + ADML](ADMX/) | Download the combined AdobeDC.admx + en-US/AdobeDC.adml (latest) |
+| [Changelog (Combined)](Documentation/changelog.md) | Combined device + user version history |
 | [Acrobat DC Settings (Device)](Documentation/acrobat-settings-device.md) | Machine-scope Acrobat DC policies |
 | [Acrobat DC Settings (User)](Documentation/acrobat-settings-user.md) | User-scope Acrobat DC policies |
 | [Reader DC Settings (Device)](Documentation/reader-settings-device.md) | Machine-scope Reader DC policies |
@@ -25,12 +27,12 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 | [Security Hardening (User)](Documentation/security-hardening-user.md) | Recommended user security configurations |
 | [Reduce Nags & Upsells (Device)](Documentation/reduce-nags-device.md) | Device-scope nag and upsell controls |
 | [Reduce Nags & Upsells (User)](Documentation/reduce-nags-user.md) | User-scope nag and upsell controls |
-| [Changelog (Device)](Documentation/changelog-device.md) | Device-side ADMX version history |
-| [Changelog (User)](Documentation/changelog-user.md) | User-side ADMX version history |
+| [Changelog (Device, Retired)](Documentation/changelog-device-retired.md) | Legacy device-side ADMX version history |
+| [Changelog (User, Retired)](Documentation/changelog-user-retired.md) | Legacy user-side ADMX version history |
 | [Screenshots](Documentation/screenshots.md) | GPMC and Intune screenshots |
 | [License](LICENSE.md) | CC BY-SA 4.0 license |
 
-These ADMX/ADML templates (v3.0) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
+These ADMX/ADML templates (v3.1) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
 
 | ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
 |------|-------|----------|

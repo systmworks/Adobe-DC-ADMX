@@ -11,12 +11,12 @@
 <!-- ================================================================= -->
 
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.0" schemaVersion="1.0"
+  revision="3.1" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="3.0" />
+  <resources minRequiredRevision="3.1" />
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SupportedAcrobatReaderPolicies)" name="SupportedAcrobatReaderPolicies"/>
@@ -1453,8 +1453,8 @@
       name="bUsageMeasurement_Acrobat" valueName="bUsageMeasurement">
       <parentCategory ref="StartupExperience_AcrobatCategory"/>
       <supportedOn ref="SupportedAcrobatReaderPolicies"/>
-      <enabledValue><decimal value="0" /></enabledValue>
-      <disabledValue><decimal value="1" /></disabledValue>
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
     <!-- Startup & Experience > What's New Experience (AcrobatPolicies) -->
@@ -2796,8 +2796,8 @@
       name="bUsageMeasurement_Reader" valueName="bUsageMeasurement">
       <parentCategory ref="StartupExperience_ReaderCategory"/>
       <supportedOn ref="SupportedReaderPolicies"/>
-      <enabledValue><decimal value="0" /></enabledValue>
-      <disabledValue><decimal value="1" /></disabledValue>
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
     <!-- Startup & Experience > What's New Experience (ReaderPolicies) -->

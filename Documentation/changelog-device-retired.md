@@ -4,7 +4,9 @@
 
 [<- Back to Documentation](../README.md)
 
-# Changelog (Device)
+# Changelog (Device, Retired)
+
+> **Retired.** Version history for combined releases is maintained in [Changelog (Combined)](changelog.md). This file is frozen for reference to pre-combined device-only releases.
 
 Settings changes across ADMX versions. Only new, renamed, or reclassified settings are listed - internal script and formatting changes are omitted.
 
@@ -59,7 +61,7 @@ Policy count: **436** (was 431). Reader x86 branch unchanged (WOW6432Node `Acrob
 
 *Thanks to **[@virtitnerd](https://github.com/virtitnerd)** for community review (ARM path fix and STIG gap policies).*
 
-See [readme in v2.19 (retired)](../v2.19%20%28retired%29/readme.md) (includes **v2.19** release notes in the same file).
+See readme in v2.19 (retired) (archived locally; see git history or GitHub Releases for v2.19 release notes).
 
 | ADMX File | Policies |
 |---|---:|
@@ -86,7 +88,7 @@ Registry values are sourced from [Adobe enterprise MIP guidance](https://helpx.a
 
 Per-user HKCU policies (`bShowDMB`, `bEnablePolicyAuthentication`, `bEnableLogging`) ship in **User ADMX v1.6** only. Computer and User templates use separate namespaces (`Adobe.Policies.AdobeDC` vs `Adobe.Policies.Adobe_User`) and can be deployed together.
 
-See [readme in v2.19 (retired)](../v2.19%20%28retired%29/readme.md) (includes **v2.18** release notes in the same file).
+See readme in v2.19 (retired) (archived locally; see git history or GitHub Releases — includes **v2.18** release notes in the same file).
 
 | ADMX File | Policies |
 |---|---:|
@@ -105,7 +107,7 @@ See [readme in v2.19 (retired)](../v2.19%20%28retired%29/readme.md) (includes **
 |---|---|---|---|
 | Block non-PDF file attachments | `iFileAttachmentPerms` | N/A | Enabled → DWORD **1** (Not configured = product default; Disabled → DWORD **0**) |
 
-See [readme in v2.19 (retired)](../v2.19%20%28retired%29/readme.md) (includes **v2.17** release notes in the same file; version readmes do not link across folders).
+See readme in v2.19 (retired) (archived locally; see git history or GitHub Releases — includes **v2.17** release notes in the same file; version readmes do not link across folders).
 
 | ADMX File | Policies |
 |---|---:|
@@ -125,7 +127,7 @@ See [readme in v2.19 (retired)](../v2.19%20%28retired%29/readme.md) (includes **
 | Protected Mode Sandbox | `bProtectedMode` | N/A | New for **Acrobat DC**; Enabled → DWORD **1** |
 | AppContainer Sandbox | `bEnableProtectedModeAppContainer` | N/A | New for **Acrobat DC**; Enabled → DWORD **1** |
 
-Release notes for **v2.17** and **v2.16** are documented in the [v2.19 (retired) readme](../v2.19%20%28retired%29/readme.md) (version readmes do not link across folders).
+Release notes for **v2.17** and **v2.16** are documented in the v2.19 (retired) readme (archived locally; see git history or GitHub Releases — version readmes do not link across folders).
 
 | ADMX File | Policies |
 |---|---:|
@@ -136,7 +138,7 @@ Release notes for **v2.17** and **v2.16** are documented in the [v2.19 (retired)
 
 ## v2.16 - 28 April 2026
 
-**No settings changes:** Policy definitions are unchanged from **v2.15** below; this drop updates ADMX/ADML-only metadata (`revision`/`minRequiredRevision` alignment and three-line localization root element layout for Group Policy interoperability). Omitted per the rule above; see [readme in v2.19 (retired)](../v2.19%20%28retired%29/readme.md).
+**No settings changes:** Policy definitions are unchanged from **v2.15** below; this drop updates ADMX/ADML-only metadata (`revision`/`minRequiredRevision` alignment and three-line localization root element layout for Group Policy interoperability). Omitted per the rule above; see readme in v2.19 (retired) (archived locally; see git history or GitHub Releases).
 
 ---
 

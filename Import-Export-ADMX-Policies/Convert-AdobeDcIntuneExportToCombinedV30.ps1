@@ -13,9 +13,9 @@
 .PARAMETER InputDir
   Directory of export JSON files (skips *_combined-v3.0.json outputs).
 .PARAMETER AdmxPath
-  Path to combined AdobeDC.admx (default: ../v3.0/AdobeDC.admx).
+  Path to combined AdobeDC.admx (default: ../ADMX/AdobeDC.admx).
 .PARAMETER AdmlPath
-  Path to combined ADML (default: ../v3.0/en-US/AdobeDC.adml).
+  Path to combined ADML (default: ../ADMX/en-US/AdobeDC.adml).
 .EXAMPLE
   .\Convert-AdobeDcIntuneExportToCombinedV30.ps1 -InputDir '..\Convert_Policies'
 #>
@@ -36,8 +36,8 @@ $ErrorActionPreference = 'Stop'
 
 $scriptDir = if ($PSScriptRoot) { $PSScriptRoot } else { Split-Path -Parent $MyInvocation.MyCommand.Definition }
 $combinedRoot = Split-Path $scriptDir -Parent
-if (-not $AdmxPath) { $AdmxPath = Join-Path $combinedRoot 'Publish_to_GitHub\v3.0\AdobeDC.admx' }
-if (-not $AdmlPath) { $AdmlPath = Join-Path $combinedRoot 'Publish_to_GitHub\v3.0\en-US\AdobeDC.adml' }
+if (-not $AdmxPath) { $AdmxPath = Join-Path $combinedRoot 'ADMX\AdobeDC.admx' }
+if (-not $AdmlPath) { $AdmlPath = Join-Path $combinedRoot 'ADMX\en-US\AdobeDC.adml' }
 
 $Script:ArmFriendlyNames = [System.Collections.Generic.HashSet[string]]::new(
     [string[]]@(
@@ -459,7 +459,7 @@ function Convert-SingleExportFile {
     [void]$rb.AppendLine()
     [void]$rb.AppendLine('## Next steps')
     [void]$rb.AppendLine()
-    [void]$rb.AppendLine('1. Upload `v3.0/AdobeDC.admx` + ADML to Intune.')
+    [void]$rb.AppendLine('1. Upload `ADMX/AdobeDC.admx` + ADML to Intune.')
     [void]$rb.AppendLine('2. Create or update Administrative Templates profiles using converted paths and display names.')
     [void]$rb.AppendLine('3. Re-select enum/dropdown settings where `presentationValues` were preserved without Intune IDs.')
     [void]$rb.AppendLine('4. Review dropped and unparsed rows below before assigning.')
