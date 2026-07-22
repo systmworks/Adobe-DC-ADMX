@@ -1,13 +1,13 @@
 {
-  "readerUser": 254,
-  "machineUnique": 155,
-  "machineShared": 117,
-  "revision": "3.4",
-  "total": 819.0,
-  "userText": 42,
   "user": 525,
+  "machineShared": 117,
+  "revision": "3.5",
+  "total": 819.0,
+  "acrobatDevice": 170,
   "readerDevice": 124,
-  "machine": 294.0,
+  "readerUser": 254,
   "acrobatUser": 271,
-  "acrobatDevice": 170
+  "machineUnique": 155,
+  "userText": 44,
+  "machine": 294.0
 }

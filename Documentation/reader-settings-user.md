@@ -6,7 +6,7 @@
 
 # Reader DC Settings (User)
 
-Complete list of 254 Reader DC policies in the combined v3.4 ADMX templates, sorted by category.
+Complete list of 254 Reader DC policies in the combined v3.5 ADMX templates, sorted by category.
 
 ## Context, Tools & Search
 
@@ -207,7 +207,7 @@ Complete list of 254 Reader DC policies in the combined v3.4 ADMX templates, sor
 | SAML Auth Server URL | ``tSAML_Assertion_Source`` | Holds the URL of the authentication server from which the SAML assertion stored in cSAML_Assertion was obtained. |
 | SAML Name Format | ``tSAML_Name_Format`` | SAML_NAME_<Value, Format, Qualifier> comprise the subject name identifier taken from the SAML assertion received during the account's last user authentication. |
 | SAML Name Qualifier | ``tSAML_Name_Qualifier`` | SAML_NAME_<Value, Format, Qualifier> comprise the subject name identifier taken from the SAML assertion received during the account's last user authentication. |
-| Save Certified Alert | ``iDigSigSaveAsCertified`` |  |
+| Save Certified Alert | ``iDigSigSaveAsCertified`` | Controls whether to show an alert when saving a certified document. |
 | Secure Open Attachments | ``bSecureOpenFile`` | Restrict attachment opens to PDF only. |
 | Self-Sign ID Create | ``bSelfSignCertGen`` | Allow Create a self-signed ID in Add ID workflows. |
 | Server URL | ``tServerURL`` | The default server URL. |

@@ -432,7 +432,7 @@
       "class": "User",
       "valueName": "tauthor",
       "key": "Software\\Adobe\\Acrobat Reader\\DC\\cAnnots\\cAnnot",
-      "controlType": "Toggle"
+      "controlType": "Text"
     },
     {
       "name": "tNoteFontName_User",
@@ -4471,7 +4471,7 @@
       "class": "User",
       "valueName": "tauthor",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\cAnnots\\cAnnot",
-      "controlType": "Toggle"
+      "controlType": "Text"
     },
     {
       "name": "bCombineContentDC_User",
@@ -5395,7 +5395,7 @@
       "class": "Machine",
       "valueName": "iLogLevel",
       "key": "SOFTWARE\\WOW6432Node\\Adobe\\Adobe ARM\\1.0\\ARM",
-      "controlType": "Toggle"
+      "controlType": "Enum"
     },
     {
       "name": "ProtectOldExperience_ReaderX86",
@@ -5734,5 +5734,5 @@
       "controlType": "Toggle"
     }
   ],
-  "revision": "3.4"
+  "revision": "3.5"
 }

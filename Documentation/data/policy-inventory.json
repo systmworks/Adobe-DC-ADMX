@@ -220,7 +220,7 @@
       "branch": "AcrobatPolicies",
       "controlType": "Toggle",
       "summary": "Specifies whether to enable the cloud-based search service in the Find Tool.",
-      "details": "Interacts with bEnableCloudPoweredSearchTokenCaching . Data sent to the cloud is not stored and is encrypted. Possible values include: 0 or null: Don't enable the cloud search service 1: Enable the cloud search service",
+      "details": "Interacts with bEnableCloudPoweredSearchTokenCaching. Data sent to the cloud is not stored and is encrypted. Possible values include: 0 or null: Don't enable the cloud search service 1: Enable the cloud search service",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -1689,8 +1689,8 @@
       "product": "Acrobat",
       "branch": "AcrobatPolicies",
       "controlType": "Toggle",
-      "summary": "Web-plugin updates and cloud services.",
-      "details": "Disables all services including sign-in. Not the same as FeatureLockDown\\bUpdater (product updates). Values: 0 = disable services and component updates; 1 = enable.",
+      "summary": "Controls Adobe Acrobat/Reader product updates.",
+      "details": "Disables or enables automatic product updates (distinct from cloud services in FeatureLockDown\\cServices). Values: 0 = disable product updates; 1 = enable product updates.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -1732,7 +1732,7 @@
       "branch": "AcrobatPolicies",
       "controlType": "Toggle",
       "summary": "Specifies whether to disable and lock the starred file feature.",
-      "details": "A starred file is somewhat similar to a \"favorited\" file. This preference overrides bFavoritesStripInRFL . Possible values include: 0: Disable and lock starred files in the recent files list. 1: Use bFavoritesStripInRFL to control this feature.",
+      "details": "A starred file is somewhat similar to a \"favorited\" file. This preference overrides bFavoritesStripInRFL. Possible values include: 0: Disable and lock starred files in the recent files list. 1: Use bFavoritesStripInRFL to control this feature.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -3327,8 +3327,8 @@
       "product": "Reader",
       "branch": "ReaderPolicies",
       "controlType": "Toggle",
-      "summary": "Web-plugin updates and cloud services.",
-      "details": "Disables all services including sign-in. Not the same as FeatureLockDown\\bUpdater (product updates). Values: 0 = disable services and component updates; 1 = enable.",
+      "summary": "Controls Adobe Acrobat/Reader product updates.",
+      "details": "Disables or enables automatic product updates (distinct from cloud services in FeatureLockDown\\cServices). Values: 0 = disable product updates; 1 = enable product updates.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -3370,7 +3370,7 @@
       "branch": "ReaderPolicies",
       "controlType": "Toggle",
       "summary": "Specifies whether to disable and lock the starred file feature.",
-      "details": "A starred file is somewhat similar to a \"favorited\" file. This preference overrides bFavoritesStripInRFL . Possible values include: 0: Disable and lock starred files in the recent files list. 1: Use bFavoritesStripInRFL to control this feature.",
+      "details": "A starred file is somewhat similar to a \"favorited\" file. This preference overrides bFavoritesStripInRFL. Possible values include: 0: Disable and lock starred files in the recent files list. 1: Use bFavoritesStripInRFL to control this feature.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -3593,7 +3593,7 @@
       "product": "Acrobat",
       "branch": "AcrobatX64",
       "controlType": "Toggle",
-      "summary": "Fix PathPath rendering bug in PDFMaker tags.",
+      "summary": "Fix Text Path rendering bug in PDFMaker tags.",
       "details": "Mitigates incorrect border/alt-text rendering from a 2020 bug. Enabled by default. Values: 0 = disable correction; 1 = enable.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -3845,7 +3845,7 @@
       "product": "Acrobat",
       "branch": "AcrobatX86",
       "controlType": "Toggle",
-      "summary": "Fix PathPath rendering bug in PDFMaker tags.",
+      "summary": "Fix Text Path rendering bug in PDFMaker tags.",
       "details": "Mitigates incorrect border/alt-text rendering from a 2020 bug. Enabled by default. Values: 0 = disable correction; 1 = enable.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -3984,7 +3984,7 @@
       "scope": "Device",
       "product": "Acrobat",
       "branch": "AcrobatX86",
-      "controlType": "Toggle",
+      "controlType": "Enum",
       "summary": "Updater log verbosity.",
       "details": "Logs truncated at 1 MB (backed up as AdobeARM-backup). Path: %LOCALAPPDATA%\\Temp\\AdobeARM.log. Values: 0 = brief; 1 = verbose.",
       "regValEnabled": null,
@@ -4670,11 +4670,11 @@
       "scope": "User",
       "product": "Acrobat",
       "branch": null,
-      "controlType": "Toggle",
+      "controlType": "Text",
       "summary": "The author name specified by balwaysUseIdent.",
       "details": "Possible values include: N/A: User specified.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
+      "regValEnabled": null,
+      "regValDisabled": null
     },
     {
       "policyName": "tNoteFontNameDC_User",
@@ -4812,7 +4812,7 @@
       "branch": null,
       "controlType": "Enum",
       "summary": "Specifies the default page layout when a PDF opens.",
-      "details": "These settings can be overridden by Accessiblity settings such as bOverridePageLayout. Possible values include: null: Automatic 1: Single Page 2: Single Page Continuous 3: Two Up Continuous 5: Two Up",
+      "details": "These settings can be overridden by Accessibility settings such as bOverridePageLayout. Possible values include: null: Automatic 1: Single Page 2: Single Page Continuous 3: Two Up Continuous 5: Two Up",
       "regValEnabled": null,
       "regValDisabled": null
     },
@@ -6380,7 +6380,7 @@
       "branch": null,
       "controlType": "Toggle",
       "summary": "Controls whether trust anchors are periodically downloaded from Adobe's certificate server.",
-      "details": "0: Don't load settings from an URL. 1: Do load settings from an URL.",
+      "details": "0: Don't load settings from a URL. 1: Do load settings from a URL.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -6394,7 +6394,7 @@
       "branch": null,
       "controlType": "Toggle",
       "summary": "Controls whether trust anchors are periodically downloaded from the European Union Trusted Lists (EUTL) server.",
-      "details": "0: Don't load settings from an URL. 1: Do load settings from an URL.",
+      "details": "0: Don't load settings from a URL. 1: Do load settings from a URL.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -6771,7 +6771,7 @@
       "product": "Acrobat",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "",
+      "summary": "Controls whether to show an alert when saving a certified document.",
       "details": "Possible values include: 0: Don't show an alert. 1: Do show an alert.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -8408,11 +8408,11 @@
       "scope": "User",
       "product": "Reader",
       "branch": null,
-      "controlType": "Toggle",
+      "controlType": "Text",
       "summary": "The author name specified by balwaysUseIdent.",
       "details": "Possible values include: N/A: User specified.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
+      "regValEnabled": null,
+      "regValDisabled": null
     },
     {
       "policyName": "tNoteFontName_User",
@@ -8550,7 +8550,7 @@
       "branch": null,
       "controlType": "Enum",
       "summary": "Specifies the default page layout when a PDF opens.",
-      "details": "These settings can be overridden by Accessiblity settings such as bOverridePageLayout. Possible values include: null: Automatic 1: Single Page 2: Single Page Continuous 3: Two Up Continuous 5: Two Up",
+      "details": "These settings can be overridden by Accessibility settings such as bOverridePageLayout. Possible values include: null: Automatic 1: Single Page 2: Single Page Continuous 3: Two Up Continuous 5: Two Up",
       "regValEnabled": null,
       "regValDisabled": null
     },
@@ -9978,7 +9978,7 @@
       "branch": null,
       "controlType": "Toggle",
       "summary": "Controls whether trust anchors are periodically downloaded from Adobe's certificate server.",
-      "details": "0: Don't load settings from an URL. 1: Do load settings from an URL.",
+      "details": "0: Don't load settings from a URL. 1: Do load settings from a URL.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -9992,7 +9992,7 @@
       "branch": null,
       "controlType": "Toggle",
       "summary": "Controls whether trust anchors are periodically downloaded from the European Union Trusted Lists (EUTL) server.",
-      "details": "0: Don't load settings from an URL. 1: Do load settings from an URL.",
+      "details": "0: Don't load settings from a URL. 1: Do load settings from a URL.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -10369,7 +10369,7 @@
       "product": "Reader",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "",
+      "summary": "Controls whether to show an alert when saving a certified document.",
       "details": "Possible values include: 0: Don't show an alert. 1: Do show an alert.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -11467,5 +11467,5 @@
       "regValDisabled": 1
     }
   ],
-  "revision": "3.4"
+  "revision": "3.5"
 }

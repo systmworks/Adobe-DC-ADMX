@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- ================================================================= -->
 <!--                                                                   -->
-<!--    ADML templates created by Darren Milne                         -->
+<!--    ADML templates created by systmworks                           -->
 <!--    Source: https://github.com/systmworks/Adobe-DC-ADMX/           -->
 <!--                                                                   -->
 <!--    License: CC BY-SA 4.0                                          -->
@@ -11,10 +11,10 @@
 <!-- ================================================================= -->
 
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.4" schemaVersion="1.0"
+  revision="3.5" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
-  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.4)</displayName>
-  <description>ADMX v3.4 -- Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
+  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.5)</displayName>
+  <description>ADMX v3.5 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
   <resources>
     <stringTable>
       <string id="SupportedAcrobatReaderPolicies">Adobe Acrobat and Reader DC</string>
@@ -102,7 +102,7 @@
       <string id="bEnableCloudPoweredSearchTokenCaching_Acrobat">Cloud Search Token Caching</string>
       <string id="bEnableCloudPoweredSearchTokenCaching_Acrobat_Explain">Specifies whether to cache locally cloud-based search service suggestions.&#10;&#10;Possible values include: 0 or null: Don't cache cloud search service suggestions 1: Cache suggestions</string>
       <string id="bEnableCloudPoweredSearch_Acrobat">Cloud-Powered Search</string>
-      <string id="bEnableCloudPoweredSearch_Acrobat_Explain">Specifies whether to enable the cloud-based search service in the Find Tool.&#10;&#10;Interacts with bEnableCloudPoweredSearchTokenCaching . Data sent to the cloud is not stored and is encrypted. Possible values include: 0 or null: Don't enable the cloud search service 1: Enable the cloud search service</string>
+      <string id="bEnableCloudPoweredSearch_Acrobat_Explain">Specifies whether to enable the cloud-based search service in the Find Tool.&#10;&#10;Interacts with bEnableCloudPoweredSearchTokenCaching. Data sent to the cloud is not stored and is encrypted. Possible values include: 0 or null: Don't enable the cloud search service 1: Enable the cloud search service</string>
       <string id="bEnableContextualTips_Acrobat">Contextual Help Tips</string>
       <string id="bEnableContextualTips_Acrobat_Explain">Controls whether to automatically display help tips based on the current context.&#10;&#10;Possible values include: 0: Disable contextual tips. 1: Enable tips.</string>
       <string id="bEnableContextualToolbar_Acrobat">Contextual Toolbar</string>
@@ -375,7 +375,7 @@
       <string id="PatchCleanFlag_Acrobat">Patch Cache Cleanup</string>
       <string id="PatchCleanFlag_Acrobat_Explain">Clean cached MSI/MSP patches on next update.&#10;&#10;Patches accumulate under ProgramData\Adobe\ARM and Windows\Installer. Values: 0 = no cleanup; 1 = cleanup on next update.</string>
       <string id="bUpdater_Updater_Acrobat">Product Updater</string>
-      <string id="bUpdater_Updater_Acrobat_Explain">Web-plugin updates and cloud services.&#10;&#10;Disables all services including sign-in. Not the same as FeatureLockDown\bUpdater (product updates). Values: 0 = disable services and component updates; 1 = enable.</string>
+      <string id="bUpdater_Updater_Acrobat_Explain">Controls Adobe Acrobat/Reader product updates.&#10;&#10;Disables or enables automatic product updates (distinct from cloud services in FeatureLockDown\cServices). Values: 0 = disable product updates; 1 = enable product updates.</string>
       <string id="bShouldUseScalableCursor_Acrobat">Scalable Cursor</string>
       <string id="bShouldUseScalableCursor_Acrobat_Explain">Specifies whether to disable the scalable cursor.&#10;&#10;Because Citrix does not provide support for scalable cursors (32-bit cursors with an alpha channel) in legacy graphics mode, scalable cursor performance may be impaired on Citrix. Use this setting to improve performance on Citrix by using a non-scalable cursor. Possible values include: 0: Don't use a scalable cursor. 1: Use a scalable cursor.</string>
       <string id="dSplitBySizeMaxSize_Acrobat">Split by Size Maximum (MB)</string>
@@ -386,7 +386,7 @@
       <string id="dSplitBySizeMaxSize_Acrobat_opt3">500 MB</string>
       <string id="dSplitBySizeMaxSize_Acrobat_opt4">1024 MB (maximum)</string>
       <string id="bFavoritesFeaturesLockDown_Acrobat">Starred Files Feature</string>
-      <string id="bFavoritesFeaturesLockDown_Acrobat_Explain">Specifies whether to disable and lock the starred file feature.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. This preference overrides bFavoritesStripInRFL . Possible values include: 0: Disable and lock starred files in the recent files list. 1: Use bFavoritesStripInRFL to control this feature.</string>
+      <string id="bFavoritesFeaturesLockDown_Acrobat_Explain">Specifies whether to disable and lock the starred file feature.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. This preference overrides bFavoritesStripInRFL. Possible values include: 0: Disable and lock starred files in the recent files list. 1: Use bFavoritesStripInRFL to control this feature.</string>
 
       <!-- ======================================== -->
       <!--                  Upsell                  -->
@@ -694,13 +694,13 @@
       <string id="PatchCleanFlag_Reader">Patch Cache Cleanup</string>
       <string id="PatchCleanFlag_Reader_Explain">Clean cached MSI/MSP patches on next update.&#10;&#10;Patches accumulate under ProgramData\Adobe\ARM and Windows\Installer. Values: 0 = no cleanup; 1 = cleanup on next update.</string>
       <string id="bUpdater_Updater_Reader">Product Updater</string>
-      <string id="bUpdater_Updater_Reader_Explain">Web-plugin updates and cloud services.&#10;&#10;Disables all services including sign-in. Not the same as FeatureLockDown\bUpdater (product updates). Values: 0 = disable services and component updates; 1 = enable.</string>
+      <string id="bUpdater_Updater_Reader_Explain">Controls Adobe Acrobat/Reader product updates.&#10;&#10;Disables or enables automatic product updates (distinct from cloud services in FeatureLockDown\cServices). Values: 0 = disable product updates; 1 = enable product updates.</string>
       <string id="bEnableAcrobatPromptForDocOpen_Reader">Prompt to Use Acrobat from Reader</string>
       <string id="bEnableAcrobatPromptForDocOpen_Reader_Explain">Specifies whether to prompt users to use Acrobat when both Reader and Acrobat are installed.&#10;&#10;When Acrobat and Reader are both present, opening a file in Reader prompts the user to switch to Acrobat as well as make Acrobat the default PDF viewer. Possible values include: 0: Don't prompt to use Acrobat. 1: Prompt to use Acrobat.</string>
       <string id="bShouldUseScalableCursor_Reader">Scalable Cursor</string>
       <string id="bShouldUseScalableCursor_Reader_Explain">Specifies whether to disable the scalable cursor.&#10;&#10;Because Citrix does not provide support for scalable cursors (32-bit cursors with an alpha channel) in legacy graphics mode, scalable cursor performance may be impaired on Citrix. Use this setting to improve performance on Citrix by using a non-scalable cursor. Possible values include: 0: Don't use a scalable cursor. 1: Use a scalable cursor.</string>
       <string id="bFavoritesFeaturesLockDown_Reader">Starred Files Feature</string>
-      <string id="bFavoritesFeaturesLockDown_Reader_Explain">Specifies whether to disable and lock the starred file feature.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. This preference overrides bFavoritesStripInRFL . Possible values include: 0: Disable and lock starred files in the recent files list. 1: Use bFavoritesStripInRFL to control this feature.</string>
+      <string id="bFavoritesFeaturesLockDown_Reader_Explain">Specifies whether to disable and lock the starred file feature.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. This preference overrides bFavoritesStripInRFL. Possible values include: 0: Disable and lock starred files in the recent files list. 1: Use bFavoritesStripInRFL to control this feature.</string>
 
       <!-- ======================================== -->
       <!--                  Upsell                  -->
@@ -752,7 +752,7 @@
       <string id="EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeature_AcrobatX64">PDFMaker Table Header Tag Fix</string>
       <string id="EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeature_AcrobatX64_Explain">Specifies whether to disable accessibility fixes for tagging table headers.&#10;&#10;0: Disable. 1: Enable.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
       <string id="EnablePDFMakerSplitTextPathElemsFeature_AcrobatX64">PDFMaker Text Path Tag Fix</string>
-      <string id="EnablePDFMakerSplitTextPathElemsFeature_AcrobatX64_Explain">Fix PathPath rendering bug in PDFMaker tags.&#10;&#10;Mitigates incorrect border/alt-text rendering from a 2020 bug. Enabled by default. Values: 0 = disable correction; 1 = enable.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
+      <string id="EnablePDFMakerSplitTextPathElemsFeature_AcrobatX64_Explain">Fix Text Path rendering bug in PDFMaker tags.&#10;&#10;Mitigates incorrect border/alt-text rendering from a 2020 bug. Enabled by default. Values: 0 = disable correction; 1 = enable.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
 
       <!-- ======================================== -->
       <!--    Security: Execution and Protection    -->
@@ -813,7 +813,7 @@
       <string id="EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeature_AcrobatX86">PDFMaker Table Header Tag Fix</string>
       <string id="EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeature_AcrobatX86_Explain">Specifies whether to disable accessibility fixes for tagging table headers.&#10;&#10;0: Disable. 1: Enable.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
       <string id="EnablePDFMakerSplitTextPathElemsFeature_AcrobatX86">PDFMaker Text Path Tag Fix</string>
-      <string id="EnablePDFMakerSplitTextPathElemsFeature_AcrobatX86_Explain">Fix PathPath rendering bug in PDFMaker tags.&#10;&#10;Mitigates incorrect border/alt-text rendering from a 2020 bug. Enabled by default. Values: 0 = disable correction; 1 = enable.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
+      <string id="EnablePDFMakerSplitTextPathElemsFeature_AcrobatX86_Explain">Fix Text Path rendering bug in PDFMaker tags.&#10;&#10;Mitigates incorrect border/alt-text rendering from a 2020 bug. Enabled by default. Values: 0 = disable correction; 1 = enable.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
 
       <!-- ======================================== -->
       <!--    Security: Execution and Protection    -->
@@ -848,6 +848,8 @@
       <string id="iInterval_AcrobatX86_opt3">365 days</string>
       <string id="iLogLevel_AcrobatX86">Updater Log Level</string>
       <string id="iLogLevel_AcrobatX86_Explain">Updater log verbosity.&#10;&#10;Logs truncated at 1 MB (backed up as AdobeARM-backup). Path: %LOCALAPPDATA%\Temp\AdobeARM.log. Values: 0 = brief; 1 = verbose.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...&#10;&#10;Adobe ARM is a 32-bit component; on 64-bit Windows this policy writes to HKLM\SOFTWARE\WOW6432Node\Adobe\Adobe ARM\...</string>
+      <string id="iLogLevel_AcrobatX86_opt0">Brief</string>
+      <string id="iLogLevel_AcrobatX86_opt1">Verbose</string>
       <!-- ======================================== -->
       <!--                                          -->
       <!-- Non-Policy Settings - Reader DC (32-bit) -->
@@ -1013,7 +1015,7 @@
       <string id="iDictionaryDefaultIDDC_User">Default Dictionary (User)</string>
       <string id="iDictionaryDefaultIDDC_User_Explain">Identifies the default spelling dictionary ID.&#10;&#10;The value is an ID from cDictionaryOrderID\i0 . The dictionary name can be found in cDictionaryOrder\t0. Alternatively, set the value in the user interface, close the product, and look here again. Use the value that appears during deployment.</string>
       <string id="iPageViewLayoutModeDC_User">Default Page Layout (User)</string>
-      <string id="iPageViewLayoutModeDC_User_Explain">Specifies the default page layout when a PDF opens.&#10;&#10;These settings can be overridden by Accessiblity settings such as bOverridePageLayout. Possible values include: null: Automatic 1: Single Page 2: Single Page Continuous 3: Two Up Continuous 5: Two Up</string>
+      <string id="iPageViewLayoutModeDC_User_Explain">Specifies the default page layout when a PDF opens.&#10;&#10;These settings can be overridden by Accessibility settings such as bOverridePageLayout. Possible values include: null: Automatic 1: Single Page 2: Single Page Continuous 3: Two Up Continuous 5: Two Up</string>
       <string id="iPageViewLayoutModeDC_User_opt0">Automatic</string>
       <string id="iPageViewLayoutModeDC_User_opt1">Single Page</string>
       <string id="iPageViewLayoutModeDC_User_opt2">Single Page Continuous</string>
@@ -1302,9 +1304,9 @@
       <string id="cReasonsDC_User">List Of Signing Reasons (User)</string>
       <string id="cReasonsDC_User_Explain">Custom signing reason list.&#10;&#10;Entries named t0, t1, etc. Overridable by document seed value. Defaults: author, reviewed, approving, attest accuracy, agree terms, agree portions.</string>
       <string id="bLoadSettingsFromURLAdobeDC_User">Load Security Settings from Server (Adobe Certificates) (User)</string>
-      <string id="bLoadSettingsFromURLAdobeDC_User_Explain">Controls whether trust anchors are periodically downloaded from Adobe's certificate server.&#10;&#10;0: Don't load settings from an URL. 1: Do load settings from an URL.&#10;&#10;Security Reference: STIG ARDC-CN-000335 (V-213191) Low; STIG AADC-CN-001320 (V-213138) Low</string>
+      <string id="bLoadSettingsFromURLAdobeDC_User_Explain">Controls whether trust anchors are periodically downloaded from Adobe's certificate server.&#10;&#10;0: Don't load settings from a URL. 1: Do load settings from a URL.&#10;&#10;Security Reference: STIG ARDC-CN-000335 (V-213191) Low; STIG AADC-CN-001320 (V-213138) Low</string>
       <string id="bLoadSettingsFromURLEUTLDC_User">Load Security Settings from Server (European Certificates) (User)</string>
-      <string id="bLoadSettingsFromURLEUTLDC_User_Explain">Controls whether trust anchors are periodically downloaded from the European Union Trusted Lists (EUTL) server.&#10;&#10;0: Don't load settings from an URL. 1: Do load settings from an URL.&#10;&#10;Security Reference: STIG ARDC-CN-000330 (V-213190) Low; STIG AADC-CN-000990 (V-213126) Low</string>
+      <string id="bLoadSettingsFromURLEUTLDC_User_Explain">Controls whether trust anchors are periodically downloaded from the European Union Trusted Lists (EUTL) server.&#10;&#10;0: Don't load settings from a URL. 1: Do load settings from a URL.&#10;&#10;Security Reference: STIG ARDC-CN-000330 (V-213190) Low; STIG AADC-CN-000990 (V-213126) Low</string>
       <string id="tLoadSettingsNAMEDC_User">Load Settings NAME (User)</string>
       <string id="tLoadSettingsNAMEDC_User_Explain">Specifies the signing certificate for the imported settings file.&#10;&#10;Admins can specify specific certificates that must be used to sign a settings file. 0: Allow Any Certificate 1: Any user-specified certificate</string>
       <string id="bIsEnabledDC_User">Long Term Validation (User)</string>
@@ -1371,7 +1373,7 @@
       <string id="tSAML_Name_QualifierDC_User">SAML Name Qualifier (User)</string>
       <string id="tSAML_Name_QualifierDC_User_Explain">SAML_NAME_ comprise the subject name identifier taken from the SAML assertion received during the account's last user authentication.&#10;&#10;The identifier is essentially a machine-readable user name that is unaffected by the choice of authentication mechanisms.</string>
       <string id="iDigSigSaveAsCertifiedDC_User">Save Certified Alert (User)</string>
-      <string id="iDigSigSaveAsCertifiedDC_User_Explain">&#10;&#10;Possible values include: 0: Don't show an alert. 1: Do show an alert.</string>
+      <string id="iDigSigSaveAsCertifiedDC_User_Explain">Controls whether to show an alert when saving a certified document.&#10;&#10;Possible values include: 0: Don't show an alert. 1: Do show an alert.</string>
       <string id="bSecureOpenFileDC_User">Secure Open Attachments (User)</string>
       <string id="bSecureOpenFileDC_User_Explain">Restrict attachment opens to PDF only.&#10;&#10;Works with bAllowOpenFile and tBuiltInPermsList; any block setting prevents opening. Values: 0 = allow non-PDF; 1 = PDF only.</string>
       <string id="bSelfSignCertGenDC_User">Self-Sign ID Create (User)</string>
@@ -1431,7 +1433,7 @@
       <string id="bTrustOSTrustedSitesDC_User">Trust IE Trusted Sites (User)</string>
       <string id="bTrustOSTrustedSitesDC_User_Explain">Treat IE Trusted Sites and Local Intranet as privileged locations.&#10;&#10;Local Intranet included since 10.1.2/9.5. Disable with bDisableOSTrustedSites. Values: 0 = do not trust OS zones; 1 = trust OS zones.</string>
       <string id="tHostPermsDC_User">Trusted/Blocked URL List (User)</string>
-      <string id="tHostPermsDC_User_Explain">Stores trusted and blocked URLs when URL Access Permissions (iURLPerms) is set to Custom Setting (DWORD 0). Pipe-separated Adobe TrustManager host permission list syntax: version:1|host:N where N is 2 (Allow) or 3 (Block). Only effective when iURLPerms is 0; Allow or Block overrides this list. Not lockable via HKLM -- this preference only exists at User scope.</string>
+      <string id="tHostPermsDC_User_Explain">Stores trusted and blocked URLs when URL Access Permissions (iURLPerms) is set to Custom Setting (DWORD 0). Pipe-separated Adobe TrustManager host permission list syntax: version:1|host:N where N is 2 (Allow) or 3 (Block). Only effective when iURLPerms is 0; Allow or Block overrides this list. Not lockable via HKLM - this preference only exists at User scope.</string>
       <string id="iURLPermsDC_User">URL Access Permissions (User)</string>
       <string id="iURLPermsDC_User_Explain">Allow, block, or custom website access.&#10;&#10;Allow or Block resets tHostPerms; Custom uses tHostPerms. Values: 0 = custom; 1 = block all; 2 = allow all.&#10;&#10;When set to Custom Setting (0), configure the URL list using the Trusted/Blocked URL List (tHostPerms) text policy.</string>
       <string id="iURLPermsDC_User_opt0">Custom Setting (uses tHostPerms URL list)</string>
@@ -1691,7 +1693,7 @@
       <string id="iDictionaryDefaultID_User">Default Dictionary (User)</string>
       <string id="iDictionaryDefaultID_User_Explain">Identifies the default spelling dictionary ID.&#10;&#10;The value is an ID from cDictionaryOrderID\i0 . The dictionary name can be found in cDictionaryOrder\t0. Alternatively, set the value in the user interface, close the product, and look here again. Use the value that appears during deployment.</string>
       <string id="iPageViewLayoutMode_User">Default Page Layout (User)</string>
-      <string id="iPageViewLayoutMode_User_Explain">Specifies the default page layout when a PDF opens.&#10;&#10;These settings can be overridden by Accessiblity settings such as bOverridePageLayout. Possible values include: null: Automatic 1: Single Page 2: Single Page Continuous 3: Two Up Continuous 5: Two Up</string>
+      <string id="iPageViewLayoutMode_User_Explain">Specifies the default page layout when a PDF opens.&#10;&#10;These settings can be overridden by Accessibility settings such as bOverridePageLayout. Possible values include: null: Automatic 1: Single Page 2: Single Page Continuous 3: Two Up Continuous 5: Two Up</string>
       <string id="iPageViewLayoutMode_User_opt0">Automatic</string>
       <string id="iPageViewLayoutMode_User_opt1">Single Page</string>
       <string id="iPageViewLayoutMode_User_opt2">Single Page Continuous</string>
@@ -1957,9 +1959,9 @@
       <string id="cReasons_User">List Of Signing Reasons (User)</string>
       <string id="cReasons_User_Explain">Custom signing reason list.&#10;&#10;Entries named t0, t1, etc. Overridable by document seed value. Defaults: author, reviewed, approving, attest accuracy, agree terms, agree portions.</string>
       <string id="bLoadSettingsFromURLAdobe_User">Load Security Settings from Server (Adobe Certificates) (User)</string>
-      <string id="bLoadSettingsFromURLAdobe_User_Explain">Controls whether trust anchors are periodically downloaded from Adobe's certificate server.&#10;&#10;0: Don't load settings from an URL. 1: Do load settings from an URL.&#10;&#10;Security Reference: STIG ARDC-CN-000335 (V-213191) Low; STIG AADC-CN-001320 (V-213138) Low</string>
+      <string id="bLoadSettingsFromURLAdobe_User_Explain">Controls whether trust anchors are periodically downloaded from Adobe's certificate server.&#10;&#10;0: Don't load settings from a URL. 1: Do load settings from a URL.&#10;&#10;Security Reference: STIG ARDC-CN-000335 (V-213191) Low; STIG AADC-CN-001320 (V-213138) Low</string>
       <string id="bLoadSettingsFromURLEUTL_User">Load Security Settings from Server (European Certificates) (User)</string>
-      <string id="bLoadSettingsFromURLEUTL_User_Explain">Controls whether trust anchors are periodically downloaded from the European Union Trusted Lists (EUTL) server.&#10;&#10;0: Don't load settings from an URL. 1: Do load settings from an URL.&#10;&#10;Security Reference: STIG ARDC-CN-000330 (V-213190) Low; STIG AADC-CN-000990 (V-213126) Low</string>
+      <string id="bLoadSettingsFromURLEUTL_User_Explain">Controls whether trust anchors are periodically downloaded from the European Union Trusted Lists (EUTL) server.&#10;&#10;0: Don't load settings from a URL. 1: Do load settings from a URL.&#10;&#10;Security Reference: STIG ARDC-CN-000330 (V-213190) Low; STIG AADC-CN-000990 (V-213126) Low</string>
       <string id="tLoadSettingsNAME_User">Load Settings NAME (User)</string>
       <string id="tLoadSettingsNAME_User_Explain">Specifies the signing certificate for the imported settings file.&#10;&#10;Admins can specify specific certificates that must be used to sign a settings file. 0: Allow Any Certificate 1: Any user-specified certificate</string>
       <string id="bIsEnabled_User">Long Term Validation (User)</string>
@@ -2026,7 +2028,7 @@
       <string id="tSAML_Name_Qualifier_User">SAML Name Qualifier (User)</string>
       <string id="tSAML_Name_Qualifier_User_Explain">SAML_NAME_ comprise the subject name identifier taken from the SAML assertion received during the account's last user authentication.&#10;&#10;The identifier is essentially a machine-readable user name that is unaffected by the choice of authentication mechanisms.</string>
       <string id="iDigSigSaveAsCertified_User">Save Certified Alert (User)</string>
-      <string id="iDigSigSaveAsCertified_User_Explain">&#10;&#10;Possible values include: 0: Don't show an alert. 1: Do show an alert.</string>
+      <string id="iDigSigSaveAsCertified_User_Explain">Controls whether to show an alert when saving a certified document.&#10;&#10;Possible values include: 0: Don't show an alert. 1: Do show an alert.</string>
       <string id="bSecureOpenFile_User">Secure Open Attachments (User)</string>
       <string id="bSecureOpenFile_User_Explain">Restrict attachment opens to PDF only.&#10;&#10;Works with bAllowOpenFile and tBuiltInPermsList; any block setting prevents opening. Values: 0 = allow non-PDF; 1 = PDF only.</string>
       <string id="bSelfSignCertGen_User">Self-Sign ID Create (User)</string>
@@ -2086,7 +2088,7 @@
       <string id="bTrustOSTrustedSites_User">Trust IE Trusted Sites (User)</string>
       <string id="bTrustOSTrustedSites_User_Explain">Treat IE Trusted Sites and Local Intranet as privileged locations.&#10;&#10;Local Intranet included since 10.1.2/9.5. Disable with bDisableOSTrustedSites. Values: 0 = do not trust OS zones; 1 = trust OS zones.</string>
       <string id="tHostPerms_User">Trusted/Blocked URL List (User)</string>
-      <string id="tHostPerms_User_Explain">Stores trusted and blocked URLs when URL Access Permissions (iURLPerms) is set to Custom Setting (DWORD 0). Pipe-separated Adobe TrustManager host permission list syntax: version:1|host:N where N is 2 (Allow) or 3 (Block). Only effective when iURLPerms is 0; Allow or Block overrides this list. Not lockable via HKLM -- this preference only exists at User scope.</string>
+      <string id="tHostPerms_User_Explain">Stores trusted and blocked URLs when URL Access Permissions (iURLPerms) is set to Custom Setting (DWORD 0). Pipe-separated Adobe TrustManager host permission list syntax: version:1|host:N where N is 2 (Allow) or 3 (Block). Only effective when iURLPerms is 0; Allow or Block overrides this list. Not lockable via HKLM - this preference only exists at User scope.</string>
       <string id="iURLPerms_User">URL Access Permissions (User)</string>
       <string id="iURLPerms_User_Explain">Allow, block, or custom website access.&#10;&#10;Allow or Block resets tHostPerms; Custom uses tHostPerms. Values: 0 = custom; 1 = block all; 2 = allow all.&#10;&#10;When set to Custom Setting (0), configure the URL list using the Trusted/Blocked URL List (tHostPerms) text policy.</string>
       <string id="iURLPerms_User_opt0">Custom Setting (uses tHostPerms URL list)</string>
@@ -2279,6 +2281,9 @@
       <presentation id="iInterval_AcrobatX86_enum">
         <dropdownList defaultItem="0" refId="iInterval_AcrobatX86_enum">Update Watchdog Interval (Days):</dropdownList>
       </presentation>
+      <presentation id="iLogLevel_AcrobatX86_enum">
+        <dropdownList defaultItem="0" refId="iLogLevel_AcrobatX86_enum">Updater Log Level:</dropdownList>
+      </presentation>
       <presentation id="tBaseFolderNameDC_User_text">
         <textBox refId="tBaseFolderNameDC_User_text"><label>Base folder name:</label></textBox>
       </presentation>
@@ -2302,6 +2307,9 @@
       </presentation>
       <presentation id="iAccessColorPolicyDC_User_enum">
         <dropdownList defaultItem="0" refId="iAccessColorPolicyDC_User_enum">Color Replace Policy (User):</dropdownList>
+      </presentation>
+      <presentation id="tauthorDC_User_text">
+        <textBox refId="tauthorDC_User_text"><label>Value:</label></textBox>
       </presentation>
       <presentation id="tNoteFontNameDC_User_text">
         <textBox refId="tNoteFontNameDC_User_text"><label>Comment font name:</label></textBox>
@@ -2494,6 +2502,9 @@
       </presentation>
       <presentation id="iAccessColorPolicy_User_enum">
         <dropdownList defaultItem="0" refId="iAccessColorPolicy_User_enum">Color Replace Policy (User):</dropdownList>
+      </presentation>
+      <presentation id="tauthor_User_text">
+        <textBox refId="tauthor_User_text"><label>Value:</label></textBox>
       </presentation>
       <presentation id="tNoteFontName_User_text">
         <textBox refId="tNoteFontName_User_text"><label>Comment font name:</label></textBox>

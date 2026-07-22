@@ -6,7 +6,7 @@
 
 # Reader DC Settings (Device)
 
-Complete list of 124 Reader DC policies in the combined v3.4 ADMX templates, sorted by category.
+Complete list of 124 Reader DC policies in the combined v3.5 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -167,7 +167,7 @@ Complete list of 124 Reader DC policies in the combined v3.4 ADMX templates, sor
 | Lock PDF Thumbnails in Explorer | ``bDisableThumbnailPreviewHandler`` | Lock Explorer PDF thumbnail preview checkbox. |
 | Merge Title and Menu Bar | ``bMergeMenuBar`` | Merge the application's title bar and menu bar into a single bar. |
 | Patch Cache Cleanup | ``PatchCleanFlag`` | Clean cached MSI/MSP patches on next update. |
-| Product Updater | ``bUpdater`` | Web-plugin updates and cloud services. |
+| Product Updater | ``bUpdater`` | Controls Adobe Acrobat/Reader product updates. |
 | Prompt to Use Acrobat from Reader | ``bEnableAcrobatPromptForDocOpen`` | Prompt users to use Acrobat when both Reader and Acrobat are installed. |
 | Scalable Cursor | ``bShouldUseScalableCursor`` | Disable the scalable cursor. |
 | Starred Files Feature | ``bFavoritesFeaturesLockDown`` | Disable and lock the starred file feature. |

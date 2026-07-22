@@ -7,11 +7,11 @@
 Detailed policy reference pages, changelogs, and curated guides live under [Documentation/](Documentation/).
 
 > [!WARNING]
-> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.4**.
+> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.5**.
 >
 > Convert them first with [`Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1), then re-import.
 >
-> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1/v3.2/v3.3 to v3.4 keeps the same namespace and policy names for existing settings; v3.4 is the final classification pass (re-select affected User settings once). **v3.4+ releases are additive-only** - re-upload preserves existing Intune/GPO bindings.
+> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1/v3.2/v3.3/v3.4 to v3.5 keeps the same namespace and policy names for existing settings. **v3.4+ releases are additive-only** except where a changelog entry documents a one-time control-type correction - re-upload preserves existing Intune/GPO bindings for all other settings.
 
 ## Quick Links
 
@@ -32,7 +32,7 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 | [Screenshots](Documentation/screenshots.md) | GPMC and Intune screenshots |
 | [License](LICENSE.md) | CC BY-SA 4.0 license |
 
-These ADMX/ADML templates (v3.4) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
+These ADMX/ADML templates (v3.5) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
 
 | ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
 |------|-------|----------|

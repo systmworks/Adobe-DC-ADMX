@@ -6,7 +6,7 @@
 
 # Acrobat DC Settings (Device)
 
-Complete list of 170 Acrobat DC policies in the combined v3.4 ADMX templates, sorted by category.
+Complete list of 170 Acrobat DC policies in the combined v3.5 ADMX templates, sorted by category.
 
 ## Cloud & Connectors
 
@@ -74,8 +74,8 @@ Complete list of 170 Acrobat DC policies in the combined v3.4 ADMX templates, so
 | PDFMaker Grouped Image Tag Fix | ``EnablePDFMakerGroupImagesTagCorrectionFeature`` | Disable accessibility fixes for tagging grouped images. |
 | PDFMaker Table Header Tag Fix | ``EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeature`` | Disable accessibility fixes for tagging table headers. |
 | PDFMaker Table Header Tag Fix | ``EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeature`` | Disable accessibility fixes for tagging table headers. |
-| PDFMaker Text Path Tag Fix | ``EnablePDFMakerSplitTextPathElemsFeature`` | Fix PathPath rendering bug in PDFMaker tags. |
-| PDFMaker Text Path Tag Fix | ``EnablePDFMakerSplitTextPathElemsFeature`` | Fix PathPath rendering bug in PDFMaker tags. |
+| PDFMaker Text Path Tag Fix | ``EnablePDFMakerSplitTextPathElemsFeature`` | Fix Text Path rendering bug in PDFMaker tags. |
+| PDFMaker Text Path Tag Fix | ``EnablePDFMakerSplitTextPathElemsFeature`` | Fix Text Path rendering bug in PDFMaker tags. |
 | Reflow Editing | ``bEnableReflowEditing`` | Lock ReflowEditing and the reflow feature. |
 | Restrict Form Data to Schema | ``bIgnoreDataSchema`` | Specifies whether all data in a form is saved rather than only data related to the form's schema. |
 
@@ -209,7 +209,7 @@ Complete list of 170 Acrobat DC policies in the combined v3.4 ADMX templates, so
 | Merge Title and Menu Bar | ``bMergeMenuBar`` | Merge the application's title bar and menu bar into a single bar. |
 | Merge Title and Menu Bar | ``bMergeMenuBar`` | Merge the application's title bar and menu bar into a single bar. |
 | Patch Cache Cleanup | ``PatchCleanFlag`` | Clean cached MSI/MSP patches on next update. |
-| Product Updater | ``bUpdater`` | Web-plugin updates and cloud services. |
+| Product Updater | ``bUpdater`` | Controls Adobe Acrobat/Reader product updates. |
 | Scalable Cursor | ``bShouldUseScalableCursor`` | Disable the scalable cursor. |
 | Split by Size Maximum (MB) | ``dSplitBySizeMaxSize`` | Maximum MB per split file. |
 | Starred Files Feature | ``bFavoritesFeaturesLockDown`` | Disable and lock the starred file feature. |

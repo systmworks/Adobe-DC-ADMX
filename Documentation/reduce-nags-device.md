@@ -10,7 +10,7 @@ Settings to suppress unwanted messages, popups, and promotions (Device scope).
 
 ## Reader DC
 
-| ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![Recommended Setting](https://img.shields.io/badge/Recommended%20Setting-316dca?style=flat-square) | 
+| ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![Recommended Setting](https://img.shields.io/badge/Recommended%20Setting-316dca?style=flat-square) |
 |---|---|---|
 | Context, Tools & Search | Contextual Help Tips | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Context, Tools & Search | Modern Viewer | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
@@ -45,7 +45,7 @@ Settings to suppress unwanted messages, popups, and promotions (Device scope).
 
 ## Acrobat DC
 
-| ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![Recommended Setting](https://img.shields.io/badge/Recommended%20Setting-316dca?style=flat-square) | 
+| ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![Recommended Setting](https://img.shields.io/badge/Recommended%20Setting-316dca?style=flat-square) |
 |---|---|---|
 | Context, Tools & Search | Contextual Help Tips | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Context, Tools & Search | Modern Viewer | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |

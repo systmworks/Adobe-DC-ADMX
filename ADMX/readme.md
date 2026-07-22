@@ -4,18 +4,21 @@
 
 # AdobeDC ADMX - Combined Machine + User
 
-**Current version: v3.4** (20 July 2026). Full version history: [Changelog (Combined)](../Documentation/changelog.md).
+**Current version: v3.5** (22 July 2026). Full version history: [Changelog (Combined)](../Documentation/changelog.md).
 
 **Current production release.** Supersedes the separate machine template (v2.21) and user template ([Adobe-DC-User-ADMX v1.10](https://github.com/systmworks/Adobe-DC-User-ADMX)) for new Group Policy and Intune deployments.
 
 > [!IMPORTANT]
-> **Stable upgrade path (v3.4+).** From v3.4 onward, releases are **additive-only**: existing policy `name` attributes, registry keys, value names, and control types are frozen. Re-uploading `AdobeDC.admx` + ADML preserves existing Intune/GPO bindings - only **new** settings need selection. Deleting the imported ADMX in Intune before re-upload is still required (platform limitation for custom ADMX); the template no longer forces re-selection of configured settings on upgrade. The frozen policy set is recorded in `Documentation/data/policy-baseline.json`.
+> **Stable upgrade path (v3.4+).** From v3.4 onward, releases are **additive-only** except where a changelog entry documents a one-time control-type correction. Re-uploading `AdobeDC.admx` + ADML preserves existing Intune/GPO bindings for all other settings. Deleting the imported ADMX in Intune before re-upload is still required (platform limitation for custom ADMX). The frozen policy set is recorded in `Documentation/data/policy-baseline.json`.
+
+> [!NOTE]
+> **Upgrading from combined v3.4 to v3.5** keeps the same namespace and policy `name` attributes for all v3.4 settings. Re-upload `AdobeDC.admx` + ADML. **2** settings change control type and require one-time re-selection: **`tauthor`** (User, Toggle -> Text) and **`iLogLevel`** (Device, Toggle -> Enum). All other bindings are preserved. See [v3.5 changelog](../Documentation/changelog.md#v35---22-july-2026).
 
 > [!WARNING]
 > **Breaking change when migrating from v2.x or User ADMX v1.x.** Combined v3.0+ uses namespace `Adobe.Policies.AdobeDC` and a re-organised policy tree. **Intune ADMX policy backups / exports taken against v2.x (or the separate User ADMX v1.x) will not import** - the `definitionId` GUIDs and category paths no longer match. To migrate an existing v2.x export, run [`Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](../Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1) to convert it to the combined layout before re-importing. See [Migrating from v2.21 + User v1.10](#migrating-from-v221--user-v110).
 
 > [!NOTE]
-> **Upgrading from combined v3.3 to v3.4** keeps the same namespace and policy `name` attributes for all v3.3 settings. Re-upload `AdobeDC.admx` + ADML. This is the **final classification pass**: **2** user toggles become enum dropdowns (`iAccessColorPolicy`, `iPageLayout`), and **17** new user text policies are added - re-select only those affected settings. Future v3.4+ releases are additive-only. See [v3.4 changelog](../Documentation/changelog.md#v34---20-july-2026).
+> **Upgrading from combined v3.3 to v3.4** keeps the same namespace and policy `name` attributes for all v3.3 settings. Re-upload `AdobeDC.admx` + ADML. This was the **final classification pass**: **2** user toggles become enum dropdowns (`iAccessColorPolicy`, `iPageLayout`), and **17** unique user text prefs were added (**30** new ADMX entries across Acrobat+Reader) - re-select only those affected settings. See [v3.4 changelog](../Documentation/changelog.md#v34---20-july-2026).
 
 > [!NOTE]
 > **Upgrading from combined v3.2 to v3.3** keeps the same namespace and policy `name` attributes. Re-upload `AdobeDC.admx` + ADML. **5** new user text policies, enum/numeric control fixes, and **8** app-internal toggles removed - re-select affected User settings in Intune/GPO after re-upload. See [v3.3 changelog](../Documentation/changelog.md#v33---20-july-2026).

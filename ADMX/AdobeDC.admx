@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- ================================================================= -->
 <!--                                                                   -->
-<!--    ADMX templates created by Darren Milne                         -->
+<!--    ADMX templates created by systmworks                           -->
 <!--    Source: https://github.com/systmworks/Adobe-DC-ADMX/           -->
 <!--                                                                   -->
 <!--    License: CC BY-SA 4.0                                          -->
@@ -11,12 +11,12 @@
 <!-- ================================================================= -->
 
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.4" schemaVersion="1.0"
+  revision="3.5" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="3.4" />
+  <resources minRequiredRevision="3.5" />
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SupportedAcrobatReaderPolicies)" name="SupportedAcrobatReaderPolicies"/>
@@ -3122,11 +3122,19 @@
 
     <!-- Updater Log Level - [iLogLevel] -->
     <policy class="Machine" displayName="$(string.iLogLevel_AcrobatX86)" explainText="$(string.iLogLevel_AcrobatX86_Explain)" key="SOFTWARE\WOW6432Node\Adobe\Adobe ARM\1.0\ARM"
-      name="iLogLevel_AcrobatX86" valueName="iLogLevel">
+      name="iLogLevel_AcrobatX86" valueName="iLogLevel" presentation="$(presentation.iLogLevel_AcrobatX86_enum)">
       <parentCategory ref="UpdatesDesktop_AcrobatX86Category"/>
       <supportedOn ref="SupportedAcrobatX86"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <enum id="iLogLevel_AcrobatX86_enum" valueName="iLogLevel">
+          <item displayName="$(string.iLogLevel_AcrobatX86_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iLogLevel_AcrobatX86_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- ======================================== -->
@@ -3634,11 +3642,12 @@
 
     <!-- Comment Author (User) - [tauthor] -->
     <policy class="User" displayName="$(string.tauthorDC_User)" explainText="$(string.tauthorDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\cAnnots\cAnnot"
-      name="tauthorDC_User" valueName="tauthor">
+      name="tauthorDC_User" presentation="$(presentation.tauthorDC_User_text)">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <text id="tauthorDC_User_text" valueName="tauthor" maxLength="16384" />
+      </elements>
     </policy>
 
     <!-- Comment Font Name (User) - [tNoteFontName] -->
@@ -6455,11 +6464,12 @@
 
     <!-- Comment Author (User) - [tauthor] -->
     <policy class="User" displayName="$(string.tauthor_User)" explainText="$(string.tauthor_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\cAnnots\cAnnot"
-      name="tauthor_User" valueName="tauthor">
+      name="tauthor_User" presentation="$(presentation.tauthor_User_text)">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <text id="tauthor_User_text" valueName="tauthor" maxLength="16384" />
+      </elements>
     </policy>
 
     <!-- Comment Font Name (User) - [tNoteFontName] -->
