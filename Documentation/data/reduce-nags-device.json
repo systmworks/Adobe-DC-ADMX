@@ -81,7 +81,7 @@
   },
   {
     "valueName": "iDisablePromptForUpgrade",
-    "scope": "Both",
+    "scope": "Acrobat",
     "recommendedDword": 1
   },
   {

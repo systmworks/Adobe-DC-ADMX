@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ================================================================= -->
-<!--                                                                   -->
-<!--    ADMX templates created by systmworks                           -->
-<!--    Source: https://github.com/systmworks/Adobe-DC-ADMX/           -->
-<!--                                                                   -->
-<!--    License: CC BY-SA 4.0                                          -->
-<!--    Free to use and redistribute, including commercially, with     -->
-<!--    attribution; ShareAlike applies to adaptations you distribute. -->
-<!--                                                                   -->
-<!-- ================================================================= -->
+<!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.5" schemaVersion="1.0"
+  revision="3.6" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="3.5" />
+  <resources minRequiredRevision="3.6" />
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SupportedAcrobatReaderPolicies)" name="SupportedAcrobatReaderPolicies"/>
@@ -208,15 +199,9 @@
   </categories>
   <policies>
 
-    <!-- ======================================== -->
-    <!--                                          -->
-    <!--     Acrobat and Reader DC - policies     -->
-    <!--                                          -->
-    <!-- ======================================== -->
+    <!-- Acrobat and Reader DC - policies -->
 
-    <!-- ======================================== -->
-    <!--           Cloud and Connectors           -->
-    <!-- ======================================== -->
+    <!-- Cloud and Connectors -->
 
     <!-- Adobe Fill and Sign - [bToggleFillSign] -->
     <policy class="Machine" displayName="$(string.bToggleFillSign_Acrobat)" explainText="$(string.bToggleFillSign_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cServices"
@@ -335,9 +320,7 @@
       <disabledValue><decimal value="1" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--        Context, Tools and Search         -->
-    <!-- ======================================== -->
+    <!-- Context, Tools and Search -->
 
     <!-- Auto UI Density Detection - [bUIDensityAutoDetectionEnabled] -->
     <policy class="Machine" displayName="$(string.bUIDensityAutoDetectionEnabled_Acrobat)" explainText="$(string.bUIDensityAutoDetectionEnabled_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
@@ -483,9 +466,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--   Documents, Editing and Accessibility   -->
-    <!-- ======================================== -->
+    <!-- Documents, Editing and Accessibility -->
 
     <!-- Accessibility Auto Tagging - [bCloudATFeatureEnable] -->
     <policy class="Machine" displayName="$(string.bCloudATFeatureEnable_Acrobat)" explainText="$(string.bCloudATFeatureEnable_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
@@ -532,9 +513,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--         Microsoft Purview (MIP)          -->
-    <!-- ======================================== -->
+    <!-- Microsoft Purview (MIP) -->
 
     <!-- Check MIP Policy on Save - [bMIPCheckPolicyOnDocSave] -->
     <policy class="Machine" displayName="$(string.bMIPCheckPolicyOnDocSave_Acrobat)" explainText="$(string.bMIPCheckPolicyOnDocSave_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
@@ -625,9 +604,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--    Security: Execution and Protection    -->
-    <!-- ======================================== -->
+    <!-- Security: Execution and Protection -->
 
     <!-- 3D Content in PDFs - [bEnable3D] -->
     <policy class="Machine" displayName="$(string.bEnable3D_Acrobat)" explainText="$(string.bEnable3D_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
@@ -771,9 +748,7 @@
       </elements>
     </policy>
 
-    <!-- ======================================== -->
-    <!--     Security: Trust and Permissions      -->
-    <!-- ======================================== -->
+    <!-- Security: Trust and Permissions -->
 
     <!-- Allow Changes to Windows Certificate Store Trust - [bMSStoreTrusted] -->
     <policy class="Machine" displayName="$(string.bMSStoreTrusted_Acrobat)" explainText="$(string.bMSStoreTrusted_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cSecurity\cASPKI\cMSCAPI_DirectoryProvider"
@@ -975,9 +950,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--           Sharing and Features           -->
-    <!-- ======================================== -->
+    <!-- Sharing and Features -->
 
     <!-- Adobe Acrobat Sign - [bToggleAdobeSign] -->
     <policy class="Machine" displayName="$(string.bToggleAdobeSign_Acrobat)" explainText="$(string.bToggleAdobeSign_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cServices"
@@ -1072,15 +1045,6 @@
     <!-- Share and Review Reminder Tip - [bEnableReviewPromote] -->
     <policy class="Machine" displayName="$(string.bEnableReviewPromote_Acrobat)" explainText="$(string.bEnableReviewPromote_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
       name="bEnableReviewPromote_Acrobat" valueName="bEnableReviewPromote">
-      <parentCategory ref="SharingFeatures_AcrobatCategory"/>
-      <supportedOn ref="SupportedAcrobatReaderPolicies"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- SharePoint Chrome Extension Previous State - [bPreviouslyEnabledSharePointInChromeExtn] -->
-    <policy class="Machine" displayName="$(string.bPreviouslyEnabledSharePointInChromeExtn_Acrobat)" explainText="$(string.bPreviouslyEnabledSharePointInChromeExtn_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
-      name="bPreviouslyEnabledSharePointInChromeExtn_Acrobat" valueName="bPreviouslyEnabledSharePointInChromeExtn">
       <parentCategory ref="SharingFeatures_AcrobatCategory"/>
       <supportedOn ref="SupportedAcrobatReaderPolicies"/>
       <enabledValue><decimal value="1" /></enabledValue>
@@ -1197,9 +1161,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--          Startup and Experience          -->
-    <!-- ======================================== -->
+    <!-- Startup and Experience -->
 
     <!-- Adobe Messages at Launch - [bShowMsgAtLaunch] -->
     <policy class="Machine" displayName="$(string.bShowMsgAtLaunch_Acrobat)" explainText="$(string.bShowMsgAtLaunch_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cIPM"
@@ -1345,9 +1307,7 @@
       <disabledValue><decimal value="1" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--     Updates and Desktop Integration      -->
-    <!-- ======================================== -->
+    <!-- Updates and Desktop Integration -->
 
     <!-- 32-Bit Plugin Upgrade Notification - [bDisableThirdPartyPluginNotif] -->
     <policy class="Machine" displayName="$(string.bDisableThirdPartyPluginNotif_Acrobat)" explainText="$(string.bDisableThirdPartyPluginNotif_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cServices"
@@ -1483,9 +1443,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--                  Upsell                  -->
-    <!-- ======================================== -->
+    <!-- Upsell -->
 
     <!-- Disable Billing Issue Call to Action - [bToggleBillingIssue] -->
     <policy class="Machine" displayName="$(string.bToggleBillingIssue_Acrobat)" explainText="$(string.bToggleBillingIssue_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
@@ -1550,15 +1508,9 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--                                          -->
-    <!--      Reader DC (32-bit) - policies       -->
-    <!--                                          -->
-    <!-- ======================================== -->
+    <!-- Reader DC (32-bit) - policies -->
 
-    <!-- ======================================== -->
-    <!--           Cloud and Connectors           -->
-    <!-- ======================================== -->
+    <!-- Cloud and Connectors -->
 
     <!-- Adobe Fill and Sign - [bToggleFillSign] -->
     <policy class="Machine" displayName="$(string.bToggleFillSign_Reader)" explainText="$(string.bToggleFillSign_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices"
@@ -1677,9 +1629,7 @@
       <disabledValue><decimal value="1" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--        Context, Tools and Search         -->
-    <!-- ======================================== -->
+    <!-- Context, Tools and Search -->
 
     <!-- Auto UI Density Detection - [bUIDensityAutoDetectionEnabled] -->
     <policy class="Machine" displayName="$(string.bUIDensityAutoDetectionEnabled_Reader)" explainText="$(string.bUIDensityAutoDetectionEnabled_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
@@ -1771,9 +1721,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--   Documents, Editing and Accessibility   -->
-    <!-- ======================================== -->
+    <!-- Documents, Editing and Accessibility -->
 
     <!-- Create PDF Split Menu - [bGlobalBarMenuFeatureKey] -->
     <policy class="Machine" displayName="$(string.bGlobalBarMenuFeatureKey_Reader)" explainText="$(string.bGlobalBarMenuFeatureKey_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices"
@@ -1802,9 +1750,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--         Microsoft Purview (MIP)          -->
-    <!-- ======================================== -->
+    <!-- Microsoft Purview (MIP) -->
 
     <!-- Check MIP Policy on Save - [bMIPCheckPolicyOnDocSave] -->
     <policy class="Machine" displayName="$(string.bMIPCheckPolicyOnDocSave_Reader)" explainText="$(string.bMIPCheckPolicyOnDocSave_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
@@ -1895,9 +1841,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--    Security: Execution and Protection    -->
-    <!-- ======================================== -->
+    <!-- Security: Execution and Protection -->
 
     <!-- 3D Content in PDFs - [bEnable3D] -->
     <policy class="Machine" displayName="$(string.bEnable3D_Reader)" explainText="$(string.bEnable3D_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
@@ -2030,9 +1974,7 @@
       </elements>
     </policy>
 
-    <!-- ======================================== -->
-    <!--     Security: Trust and Permissions      -->
-    <!-- ======================================== -->
+    <!-- Security: Trust and Permissions -->
 
     <!-- Allow Changes to Windows Certificate Store Trust - [bMSStoreTrusted] -->
     <policy class="Machine" displayName="$(string.bMSStoreTrusted_Reader)" explainText="$(string.bMSStoreTrusted_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cSecurity\cASPKI\cMSCAPI_DirectoryProvider"
@@ -2216,9 +2158,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--           Sharing and Features           -->
-    <!-- ======================================== -->
+    <!-- Sharing and Features -->
 
     <!-- Adobe Acrobat Sign - [bToggleAdobeSign] -->
     <policy class="Machine" displayName="$(string.bToggleAdobeSign_Reader)" explainText="$(string.bToggleAdobeSign_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices"
@@ -2299,15 +2239,6 @@
       <supportedOn ref="SupportedReaderPolicies"/>
       <enabledValue><decimal value="0" /></enabledValue>
       <disabledValue><decimal value="1" /></disabledValue>
-    </policy>
-
-    <!-- SharePoint Chrome Extension Previous State - [bPreviouslyEnabledSharePointInChromeExtn] -->
-    <policy class="Machine" displayName="$(string.bPreviouslyEnabledSharePointInChromeExtn_Reader)" explainText="$(string.bPreviouslyEnabledSharePointInChromeExtn_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
-      name="bPreviouslyEnabledSharePointInChromeExtn_Reader" valueName="bPreviouslyEnabledSharePointInChromeExtn">
-      <parentCategory ref="SharingFeatures_ReaderCategory"/>
-      <supportedOn ref="SupportedReaderPolicies"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
     <!-- SharePoint in Chrome Extension - [bEnableSharePointInChromeExtn] -->
@@ -2420,9 +2351,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--          Startup and Experience          -->
-    <!-- ======================================== -->
+    <!-- Startup and Experience -->
 
     <!-- Adobe Messages at Launch - [bShowMsgAtLaunch] -->
     <policy class="Machine" displayName="$(string.bShowMsgAtLaunch_Reader)" explainText="$(string.bShowMsgAtLaunch_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cIPM"
@@ -2559,9 +2488,7 @@
       <disabledValue><decimal value="1" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--     Updates and Desktop Integration      -->
-    <!-- ======================================== -->
+    <!-- Updates and Desktop Integration -->
 
     <!-- 32-Bit Plugin Upgrade Notification - [bDisableThirdPartyPluginNotif] -->
     <policy class="Machine" displayName="$(string.bDisableThirdPartyPluginNotif_Reader)" explainText="$(string.bDisableThirdPartyPluginNotif_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices"
@@ -2671,9 +2598,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--                  Upsell                  -->
-    <!-- ======================================== -->
+    <!-- Upsell -->
 
     <!-- Limit Informational Prompts - [bLimitPromptsFeatureKey] -->
     <policy class="Machine" displayName="$(string.bLimitPromptsFeatureKey_Reader)" explainText="$(string.bLimitPromptsFeatureKey_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
@@ -2720,15 +2645,9 @@
       <disabledValue><decimal value="1" /></disabledValue>
     </policy>
 
-    <!-- ==================================================== -->
-    <!--                                                      -->
     <!-- Non-Policy Settings - Acrobat and Reader DC (64-bit) -->
-    <!--                                                      -->
-    <!-- ==================================================== -->
 
-    <!-- ======================================== -->
-    <!--        Context, Tools and Search         -->
-    <!-- ======================================== -->
+    <!-- Context, Tools and Search -->
 
     <!-- Click-to-Edit Mode - [ADC4275035_ClickEdit] -->
     <policy class="Machine" displayName="$(string.ADC4275035_ClickEdit_AcrobatX64)" explainText="$(string.ADC4275035_ClickEdit_AcrobatX64_Explain)" key="SOFTWARE\Adobe\Adobe Acrobat\DC\FeatureState"
@@ -2775,9 +2694,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--   Documents, Editing and Accessibility   -->
-    <!-- ======================================== -->
+    <!-- Documents, Editing and Accessibility -->
 
     <!-- Block EMF to PDF Conversion - [BlockEMFParsing] -->
     <policy class="Machine" displayName="$(string.BlockEMFParsing_AcrobatX64)" explainText="$(string.BlockEMFParsing_AcrobatX64_Explain)" key="SOFTWARE\Adobe\Adobe Acrobat\DC\FeatureState"
@@ -2833,9 +2750,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--    Security: Execution and Protection    -->
-    <!-- ======================================== -->
+    <!-- Security: Execution and Protection -->
 
     <!-- Flash Editing Tools - [EnableFlashEditing] -->
     <policy class="Machine" displayName="$(string.EnableFlashEditing_AcrobatX64)" explainText="$(string.EnableFlashEditing_AcrobatX64_Explain)" key="SOFTWARE\Adobe\Adobe Acrobat\DC\FeatureState"
@@ -2855,9 +2770,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--     Updates and Desktop Integration      -->
-    <!-- ======================================== -->
+    <!-- Updates and Desktop Integration -->
 
     <!-- Accept EULA for Updater - [EULA] -->
     <policy class="Machine" displayName="$(string.EULA_AcrobatX64)" explainText="$(string.EULA_AcrobatX64_Explain)" key="SOFTWARE\Adobe\Adobe Acrobat\DC\AdobeViewer"
@@ -2904,15 +2817,9 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ========================================= -->
-    <!--                                           -->
     <!-- Non-Policy Settings - Acrobat DC (32-bit) -->
-    <!--                                           -->
-    <!-- ========================================= -->
 
-    <!-- ======================================== -->
-    <!--        Context, Tools and Search         -->
-    <!-- ======================================== -->
+    <!-- Context, Tools and Search -->
 
     <!-- Click-to-Edit Mode - [ADC4275035_ClickEdit] -->
     <policy class="Machine" displayName="$(string.ADC4275035_ClickEdit_AcrobatX86)" explainText="$(string.ADC4275035_ClickEdit_AcrobatX86_Explain)" key="SOFTWARE\WOW6432Node\Adobe\Adobe Acrobat\DC\FeatureState"
@@ -2959,9 +2866,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--   Documents, Editing and Accessibility   -->
-    <!-- ======================================== -->
+    <!-- Documents, Editing and Accessibility -->
 
     <!-- Block EMF to PDF Conversion - [BlockEMFParsing] -->
     <policy class="Machine" displayName="$(string.BlockEMFParsing_AcrobatX86)" explainText="$(string.BlockEMFParsing_AcrobatX86_Explain)" key="SOFTWARE\WOW6432Node\Adobe\Adobe Acrobat\DC\FeatureState"
@@ -3017,9 +2922,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--    Security: Execution and Protection    -->
-    <!-- ======================================== -->
+    <!-- Security: Execution and Protection -->
 
     <!-- Flash Editing Tools - [EnableFlashEditing] -->
     <policy class="Machine" displayName="$(string.EnableFlashEditing_AcrobatX86)" explainText="$(string.EnableFlashEditing_AcrobatX86_Explain)" key="SOFTWARE\WOW6432Node\Adobe\Adobe Acrobat\DC\FeatureState"
@@ -3039,9 +2942,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--     Updates and Desktop Integration      -->
-    <!-- ======================================== -->
+    <!-- Updates and Desktop Integration -->
 
     <!-- Accept EULA for Updater - [EULA] -->
     <policy class="Machine" displayName="$(string.EULA_AcrobatX86)" explainText="$(string.EULA_AcrobatX86_Explain)" key="SOFTWARE\WOW6432Node\Adobe\Adobe Acrobat\DC\AdobeViewer"
@@ -3137,15 +3038,9 @@
       </elements>
     </policy>
 
-    <!-- ======================================== -->
-    <!--                                          -->
     <!-- Non-Policy Settings - Reader DC (32-bit) -->
-    <!--                                          -->
-    <!-- ======================================== -->
 
-    <!-- ======================================== -->
-    <!--        Context, Tools and Search         -->
-    <!-- ======================================== -->
+    <!-- Context, Tools and Search -->
 
     <!-- Legacy Protect Tool Menu - [ProtectOldExperience] -->
     <policy class="Machine" displayName="$(string.ProtectOldExperience_ReaderX86)" explainText="$(string.ProtectOldExperience_ReaderX86_Explain)" key="SOFTWARE\WOW6432Node\Adobe\Acrobat Reader\DC\FeatureState"
@@ -3165,9 +3060,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--   Documents, Editing and Accessibility   -->
-    <!-- ======================================== -->
+    <!-- Documents, Editing and Accessibility -->
 
     <!-- Disable Scanned PDF Text Recognition - [DisableScannedDocumentEditing] -->
     <policy class="Machine" displayName="$(string.DisableScannedDocumentEditing_ReaderX86)" explainText="$(string.DisableScannedDocumentEditing_ReaderX86_Explain)" key="SOFTWARE\WOW6432Node\Adobe\Acrobat Reader\DC\FeatureState"
@@ -3178,9 +3071,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--    Security: Execution and Protection    -->
-    <!-- ======================================== -->
+    <!-- Security: Execution and Protection -->
 
     <!-- Flash Editing Tools - [EnableFlashEditing] -->
     <policy class="Machine" displayName="$(string.EnableFlashEditing_ReaderX86)" explainText="$(string.EnableFlashEditing_ReaderX86_Explain)" key="SOFTWARE\WOW6432Node\Adobe\Acrobat Reader\DC\FeatureState"
@@ -3200,9 +3091,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--     Updates and Desktop Integration      -->
-    <!-- ======================================== -->
+    <!-- Updates and Desktop Integration -->
 
     <!-- Accept EULA for Updater - [EULA] -->
     <policy class="Machine" displayName="$(string.EULA_ReaderX86)" explainText="$(string.EULA_ReaderX86_Explain)" key="SOFTWARE\WOW6432Node\Adobe\Acrobat Reader\DC\AdobeViewer"
@@ -3240,15 +3129,9 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--                                          -->
-    <!--    Adobe Acrobat DC (User) - policies    -->
-    <!--                                          -->
-    <!-- ======================================== -->
+    <!-- Adobe Acrobat DC (User) - policies -->
 
-    <!-- ======================================== -->
-    <!--        Context, Tools and Search         -->
-    <!-- ======================================== -->
+    <!-- Context, Tools and Search -->
 
     <!-- Base Folder Name (User) - [tBaseFolderName] -->
     <policy class="User" displayName="$(string.tBaseFolderNameDC_User)" explainText="$(string.tBaseFolderNameDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Workflow\cRegistered"
@@ -3489,9 +3372,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--   Documents, Editing and Accessibility   -->
-    <!-- ======================================== -->
+    <!-- Documents, Editing and Accessibility -->
 
     <!-- 2D GPU Acceleration (User) - [bUse2DGPUf] -->
     <policy class="User" displayName="$(string.bUse2DGPUfDC_User)" explainText="$(string.bUse2DGPUfDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AVDisplay"
@@ -3670,15 +3551,6 @@
       </elements>
     </policy>
 
-    <!-- Comment Opacity (User) - [iNoteOpacity] -->
-    <policy class="User" displayName="$(string.iNoteOpacityDC_User)" explainText="$(string.iNoteOpacityDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Originals"
-      name="iNoteOpacityDC_User" valueName="iNoteOpacity">
-      <parentCategory ref="DocsEditAccessCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
     <!-- Complex Script Support (User) - [bComplexScript] -->
     <policy class="User" displayName="$(string.bComplexScriptDC_User)" explainText="$(string.bComplexScriptDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Intl"
       name="bComplexScriptDC_User" valueName="bComplexScript">
@@ -3718,15 +3590,6 @@
     <!-- Create Report (User) - [bCreateLog] -->
     <policy class="User" displayName="$(string.bCreateLogDC_User)" explainText="$(string.bCreateLogDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Accessibility\cAccCheckerOptions"
       name="bCreateLogDC_User" valueName="bCreateLog">
-      <parentCategory ref="DocsEditAccessCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Default Dictionary (User) - [iDictionaryDefaultID] -->
-    <policy class="User" displayName="$(string.iDictionaryDefaultIDDC_User)" explainText="$(string.iDictionaryDefaultIDDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Spelling"
-      name="iDictionaryDefaultIDDC_User" valueName="iDictionaryDefaultID">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
@@ -3777,15 +3640,6 @@
           </item>
         </enum>
       </elements>
-    </policy>
-
-    <!-- Default Zoom Scale (User) - [iDefaultZoomScale] -->
-    <policy class="User" displayName="$(string.iDefaultZoomScaleDC_User)" explainText="$(string.iDefaultZoomScaleDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Originals"
-      name="iDefaultZoomScaleDC_User" valueName="iDefaultZoomScale">
-      <parentCategory ref="DocsEditAccessCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
     <!-- Default Zoom Type (User) - [iDefaultZoomType] -->
@@ -4006,15 +3860,6 @@
     <!-- Override Zoom (User) - [bOverrideZoom] -->
     <policy class="User" displayName="$(string.bOverrideZoomDC_User)" explainText="$(string.bOverrideZoomDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Access"
       name="bOverrideZoomDC_User" valueName="bOverrideZoom">
-      <parentCategory ref="DocsEditAccessCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Override Zoom Scale (User) - [iZoomScale] -->
-    <policy class="User" displayName="$(string.iZoomScaleDC_User)" explainText="$(string.iZoomScaleDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Access"
-      name="iZoomScaleDC_User" valueName="iZoomScale">
       <parentCategory ref="DocsEditAccessCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
@@ -4380,15 +4225,6 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- Text Color (User) - [iAccessTextColor] -->
-    <policy class="User" displayName="$(string.iAccessTextColorDC_User)" explainText="$(string.iAccessTextColorDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Originals\cAccessTextColor"
-      name="iAccessTextColorDC_User" valueName="iAccessTextColor">
-      <parentCategory ref="DocsEditAccessCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
     <!-- Use Local Fonts (User) - [bUseLocalFonts] -->
     <policy class="User" displayName="$(string.bUseLocalFontsDC_User)" explainText="$(string.bUseLocalFontsDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Originals"
       name="bUseLocalFontsDC_User" valueName="bUseLocalFonts">
@@ -4427,9 +4263,7 @@
       </elements>
     </policy>
 
-    <!-- ======================================== -->
-    <!--         Microsoft Purview (MIP)          -->
-    <!-- ======================================== -->
+    <!-- Microsoft Purview (MIP) -->
 
     <!-- MIP Logging (User) - [bEnableLogging] -->
     <policy class="User" displayName="$(string.bEnableLoggingDC_User)" explainText="$(string.bEnableLoggingDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\MicrosoftAIP"
@@ -4458,9 +4292,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--    Security: Execution and Protection    -->
-    <!-- ======================================== -->
+    <!-- Security: Execution and Protection -->
 
     <!-- 3D Content Trust (User) - [b3DEnableContent] -->
     <policy class="User" displayName="$(string.b3DEnableContentDC_User)" explainText="$(string.b3DEnableContentDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\3D"
@@ -4620,9 +4452,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--     Security: Trust and Permissions      -->
-    <!-- ======================================== -->
+    <!-- Security: Trust and Permissions -->
 
     <!-- Accept Expired Timestamps (User) - [bUseExpiredTimestamps] -->
     <policy class="User" displayName="$(string.bUseExpiredTimestampsDC_User)" explainText="$(string.bUseExpiredTimestampsDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cAdobe_TSPProvider"
@@ -5066,7 +4896,7 @@
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
       <elements>
-        <decimal id="iResponseFreshnessDC_User_num" valueName="iResponseFreshness" minValue="1" maxValue="86400" />
+        <decimal id="iResponseFreshnessDC_User_num" valueName="iResponseFreshness" minValue="1" maxValue="525600" />
       </elements>
     </policy>
 
@@ -5194,11 +5024,12 @@
 
     <!-- RSA-PSS Salt Length (User) - [iRSAPSSSaltLength] -->
     <policy class="User" displayName="$(string.iRSAPSSSaltLengthDC_User)" explainText="$(string.iRSAPSSSaltLengthDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cPubSec\cRSAPSSSigning"
-      name="iRSAPSSSaltLengthDC_User" valueName="iRSAPSSSaltLength">
+      name="iRSAPSSSaltLengthDC_User" presentation="$(presentation.iRSAPSSSaltLengthDC_User_num)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iRSAPSSSaltLengthDC_User_num" valueName="iRSAPSSSaltLength" minValue="0" maxValue="512" />
+      </elements>
     </policy>
 
     <!-- RSA-PSS Signing (User) - [bEnableRSAPSSSigning] -->
@@ -5470,11 +5301,12 @@
 
     <!-- Timestamp Sig Size (User) - [iSize] -->
     <policy class="User" displayName="$(string.iSizeDC_User)" explainText="$(string.iSizeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cAdobe_TSPProvider"
-      name="iSizeDC_User" valueName="iSize">
+      name="iSizeDC_User" presentation="$(presentation.iSizeDC_User_num)">
       <parentCategory ref="SecurityTrustCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iSizeDC_User_num" valueName="iSize" minValue="0" maxValue="131072" />
+      </elements>
     </policy>
 
     <!-- Tracker Server URL (User) - [tServer] -->
@@ -5601,9 +5433,7 @@
       </elements>
     </policy>
 
-    <!-- ======================================== -->
-    <!--           Sharing and Features           -->
-    <!-- ======================================== -->
+    <!-- Sharing and Features -->
 
     <!-- Default Email Prompt (User) - [iSendMailDefaultAccountAlert] -->
     <policy class="User" displayName="$(string.iSendMailDefaultAccountAlertDC_User)" explainText="$(string.iSendMailDefaultAccountAlertDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AVAlert\cCheckbox"
@@ -5695,9 +5525,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--          Startup and Experience          -->
-    <!-- ======================================== -->
+    <!-- Startup and Experience -->
 
     <!-- App Activated (User) - [bActivated] -->
     <policy class="User" displayName="$(string.bActivatedDC_User)" explainText="$(string.bActivatedDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AVGeneral"
@@ -5952,9 +5780,7 @@
       </elements>
     </policy>
 
-    <!-- ======================================== -->
-    <!--     Updates and Desktop Integration      -->
-    <!-- ======================================== -->
+    <!-- Updates and Desktop Integration -->
 
     <!-- Background Download (User) - [bDownloadEntireFile] -->
     <policy class="User" displayName="$(string.bDownloadEntireFileDC_User)" explainText="$(string.bDownloadEntireFileDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Originals"
@@ -6067,9 +5893,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--                  Upsell                  -->
-    <!-- ======================================== -->
+    <!-- Upsell -->
 
     <!-- Acrobat App Promo (User) - [bAcrobatAppInstalled] -->
     <policy class="User" displayName="$(string.bAcrobatAppInstalledDC_User)" explainText="$(string.bAcrobatAppInstalledDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Workflows\cServices\cAcrobatApp"
@@ -6098,15 +5922,9 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--                                          -->
-    <!--    Adobe Reader DC (User) - policies     -->
-    <!--                                          -->
-    <!-- ======================================== -->
+    <!-- Adobe Reader DC (User) - policies -->
 
-    <!-- ======================================== -->
-    <!--        Context, Tools and Search         -->
-    <!-- ======================================== -->
+    <!-- Context, Tools and Search -->
 
     <!-- Base Folder Name (User) - [tBaseFolderName] -->
     <policy class="User" displayName="$(string.tBaseFolderName_User)" explainText="$(string.tBaseFolderName_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Workflow\cRegistered"
@@ -6320,9 +6138,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--   Documents, Editing and Accessibility   -->
-    <!-- ======================================== -->
+    <!-- Documents, Editing and Accessibility -->
 
     <!-- 2D GPU Acceleration (User) - [bUse2DGPUf] -->
     <policy class="User" displayName="$(string.bUse2DGPUf_User)" explainText="$(string.bUse2DGPUf_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\AVDisplay"
@@ -6492,15 +6308,6 @@
       </elements>
     </policy>
 
-    <!-- Comment Opacity (User) - [iNoteOpacity] -->
-    <policy class="User" displayName="$(string.iNoteOpacity_User)" explainText="$(string.iNoteOpacity_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Originals"
-      name="iNoteOpacity_User" valueName="iNoteOpacity">
-      <parentCategory ref="DocsEditAccessCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
     <!-- Complex Script Support (User) - [bComplexScript] -->
     <policy class="User" displayName="$(string.bComplexScript_User)" explainText="$(string.bComplexScript_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Intl"
       name="bComplexScript_User" valueName="bComplexScript">
@@ -6540,15 +6347,6 @@
     <!-- Create Report (User) - [bCreateLog] -->
     <policy class="User" displayName="$(string.bCreateLog_User)" explainText="$(string.bCreateLog_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Accessibility\cAccCheckerOptions"
       name="bCreateLog_User" valueName="bCreateLog">
-      <parentCategory ref="DocsEditAccessCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Default Dictionary (User) - [iDictionaryDefaultID] -->
-    <policy class="User" displayName="$(string.iDictionaryDefaultID_User)" explainText="$(string.iDictionaryDefaultID_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Spelling"
-      name="iDictionaryDefaultID_User" valueName="iDictionaryDefaultID">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
@@ -6599,15 +6397,6 @@
           </item>
         </enum>
       </elements>
-    </policy>
-
-    <!-- Default Zoom Scale (User) - [iDefaultZoomScale] -->
-    <policy class="User" displayName="$(string.iDefaultZoomScale_User)" explainText="$(string.iDefaultZoomScale_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Originals"
-      name="iDefaultZoomScale_User" valueName="iDefaultZoomScale">
-      <parentCategory ref="DocsEditAccessCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
     <!-- Default Zoom Type (User) - [iDefaultZoomType] -->
@@ -6828,15 +6617,6 @@
     <!-- Override Zoom (User) - [bOverrideZoom] -->
     <policy class="User" displayName="$(string.bOverrideZoom_User)" explainText="$(string.bOverrideZoom_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Access"
       name="bOverrideZoom_User" valueName="bOverrideZoom">
-      <parentCategory ref="DocsEditAccessCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- Override Zoom Scale (User) - [iZoomScale] -->
-    <policy class="User" displayName="$(string.iZoomScale_User)" explainText="$(string.iZoomScale_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Access"
-      name="iZoomScale_User" valueName="iZoomScale">
       <parentCategory ref="DocsEditAccessCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
@@ -7184,15 +6964,6 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- Text Color (User) - [iAccessTextColor] -->
-    <policy class="User" displayName="$(string.iAccessTextColor_User)" explainText="$(string.iAccessTextColor_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Originals\cAccessTextColor"
-      name="iAccessTextColor_User" valueName="iAccessTextColor">
-      <parentCategory ref="DocsEditAccessCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
     <!-- Use Local Fonts (User) - [bUseLocalFonts] -->
     <policy class="User" displayName="$(string.bUseLocalFonts_User)" explainText="$(string.bUseLocalFonts_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Originals"
       name="bUseLocalFonts_User" valueName="bUseLocalFonts">
@@ -7231,9 +7002,7 @@
       </elements>
     </policy>
 
-    <!-- ======================================== -->
-    <!--         Microsoft Purview (MIP)          -->
-    <!-- ======================================== -->
+    <!-- Microsoft Purview (MIP) -->
 
     <!-- MIP Logging (User) - [bEnableLogging] -->
     <policy class="User" displayName="$(string.bEnableLogging_User)" explainText="$(string.bEnableLogging_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\MicrosoftAIP"
@@ -7262,9 +7031,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--    Security: Execution and Protection    -->
-    <!-- ======================================== -->
+    <!-- Security: Execution and Protection -->
 
     <!-- 3D Content Trust (User) - [b3DEnableContent] -->
     <policy class="User" displayName="$(string.b3DEnableContent_User)" explainText="$(string.b3DEnableContent_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\3D"
@@ -7348,9 +7115,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--     Security: Trust and Permissions      -->
-    <!-- ======================================== -->
+    <!-- Security: Trust and Permissions -->
 
     <!-- Accept Expired Timestamps (User) - [bUseExpiredTimestamps] -->
     <policy class="User" displayName="$(string.bUseExpiredTimestamps_User)" explainText="$(string.bUseExpiredTimestamps_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cAdobe_TSPProvider"
@@ -7785,7 +7550,7 @@
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
       <elements>
-        <decimal id="iResponseFreshness_User_num" valueName="iResponseFreshness" minValue="1" maxValue="86400" />
+        <decimal id="iResponseFreshness_User_num" valueName="iResponseFreshness" minValue="1" maxValue="525600" />
       </elements>
     </policy>
 
@@ -7913,11 +7678,12 @@
 
     <!-- RSA-PSS Salt Length (User) - [iRSAPSSSaltLength] -->
     <policy class="User" displayName="$(string.iRSAPSSSaltLength_User)" explainText="$(string.iRSAPSSSaltLength_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cPubSec\cRSAPSSSigning"
-      name="iRSAPSSSaltLength_User" valueName="iRSAPSSSaltLength">
+      name="iRSAPSSSaltLength_User" presentation="$(presentation.iRSAPSSSaltLength_User_num)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iRSAPSSSaltLength_User_num" valueName="iRSAPSSSaltLength" minValue="0" maxValue="512" />
+      </elements>
     </policy>
 
     <!-- RSA-PSS Signing (User) - [bEnableRSAPSSSigning] -->
@@ -8189,11 +7955,12 @@
 
     <!-- Timestamp Sig Size (User) - [iSize] -->
     <policy class="User" displayName="$(string.iSize_User)" explainText="$(string.iSize_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cAdobe_TSPProvider"
-      name="iSize_User" valueName="iSize">
+      name="iSize_User" presentation="$(presentation.iSize_User_num)">
       <parentCategory ref="SecurityTrustCategory_User"/>
       <supportedOn ref="SupportedReaderDC_User"/>
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
+      <elements>
+        <decimal id="iSize_User_num" valueName="iSize" minValue="0" maxValue="131072" />
+      </elements>
     </policy>
 
     <!-- Tracker Server URL (User) - [tServer] -->
@@ -8320,9 +8087,7 @@
       </elements>
     </policy>
 
-    <!-- ======================================== -->
-    <!--           Sharing and Features           -->
-    <!-- ======================================== -->
+    <!-- Sharing and Features -->
 
     <!-- Default Email Prompt (User) - [iSendMailDefaultAccountAlert] -->
     <policy class="User" displayName="$(string.iSendMailDefaultAccountAlert_User)" explainText="$(string.iSendMailDefaultAccountAlert_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\AVAlert\cCheckbox"
@@ -8396,9 +8161,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--          Startup and Experience          -->
-    <!-- ======================================== -->
+    <!-- Startup and Experience -->
 
     <!-- App Activated (User) - [bActivated] -->
     <policy class="User" displayName="$(string.bActivated_User)" explainText="$(string.bActivated_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\AVGeneral"
@@ -8653,9 +8416,7 @@
       </elements>
     </policy>
 
-    <!-- ======================================== -->
-    <!--     Updates and Desktop Integration      -->
-    <!-- ======================================== -->
+    <!-- Updates and Desktop Integration -->
 
     <!-- Background Download (User) - [bDownloadEntireFile] -->
     <policy class="User" displayName="$(string.bDownloadEntireFile_User)" explainText="$(string.bDownloadEntireFile_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Originals"
@@ -8768,9 +8529,7 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
-    <!-- ======================================== -->
-    <!--                  Upsell                  -->
-    <!-- ======================================== -->
+    <!-- Upsell -->
 
     <!-- Acrobat App Promo (User) - [bAcrobatAppInstalled] -->
     <policy class="User" displayName="$(string.bAcrobatAppInstalled_User)" explainText="$(string.bAcrobatAppInstalled_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Workflows\cServices\cAcrobatApp"

@@ -6,7 +6,7 @@
 
 # Adobe DC Settings (Device)
 
-Complete list of 157 Adobe DC settings in the combined v3.5 ADMX templates, grouped by product applicability.
+Complete list of 156 Adobe DC settings in the combined v3.6 ADMX templates, grouped by product applicability.
 
 ## Common to Acrobat & Reader
 
@@ -95,7 +95,7 @@ Complete list of 157 Adobe DC settings in the combined v3.5 ADMX templates, grou
 | Block User Library Trust in Protected View | ``bDisableExpandEnvironmentVariables`` | Allow user-specific paths as trusted locations in Protected View. |
 | Cache Digital ID Session Handles | ``bWinCacheSessionHandles`` | Retain cryptographic service provider (CSP) handles when a user authenticates to a digital ID. |
 | Disable IE Trusted Sites as Privileged Locations | ``bDisableOSTrustedSites`` | Locks the ability to treat IE trusted sites as privileged locations either on or off so the users can't change the bTrustOSTrustedSites value via the user... |
-| LiveCycle RMS Server Config | ``bAllowAPSConfig`` | Prevents a LiveCycle Right Management Server from being configured by disabling the menu option in the Security Settings Console. |
+| LiveCycle RMS Server Config | ``bAllowAPSConfig`` | Prevents a LiveCycle Rights Management Server from being configured by disabling the menu option in the Security Settings Console. |
 | Lock Revocation Check Setting | ``bReqRevCheck`` | Locks Security\cASPKI\cASPKI\cVerify\iReqRevCheck and disables the user interface item. |
 | Lock Signing Reasons Settings | ``bReasons`` | Prevents users from modifying reason settings. |
 | Lock Trusted Folders and Files | ``bDisableTrustedFolders`` | Disable and lock trusted folders and files. |
@@ -120,7 +120,6 @@ Complete list of 157 Adobe DC settings in the combined v3.5 ADMX templates, grou
 | Hide Shared Files from Recent List | ``bMixRecentFilesFeatureLockDown`` | Show shared files in the Recent list. |
 | Save Signature to Cloud | ``bToggleFSSSignatureSaving`` | Save a newly created signature in the cloud. |
 | Send & Track Outlook Plugin | ``bAdobeSendPluginToggle`` | Adobe Send and Track button in Outlook. |
-| SharePoint Chrome Extension Previous State | ``bPreviouslyEnabledSharePointInChromeExtn`` | Stores the previous state of the SharePoint FeatureLockDown settings. |
 | SharePoint in Chrome Extension | ``bEnableSharePointInChromeExtn`` | Integrate SharePoint into the Acrobat's Chrome extension. |
 | Show Acrobat Sign Tracking Tab | ``bToggleManageSign`` | Signature tab on Home, notifications, and sign tracking. |
 | Show Comment Author in Shared Review | ``bDisableOnBehalfOfText`` | If false, the string "On behalf of" does not append the author's name in the comment when another person opens the document in a shared-review workflow. |

@@ -1,4 +1,5 @@
 {
+  "revision": "3.6",
   "policies": [
     {
       "policyName": "bToggleFillSign_Acrobat",
@@ -877,7 +878,7 @@
       "product": "Acrobat",
       "branch": "AcrobatPolicies",
       "controlType": "Toggle",
-      "summary": "Prevents a LiveCycle Right Management Server from being configured by disabling the menu option in the Security Settings Console.",
+      "summary": "Prevents a LiveCycle Rights Management Server from being configured by disabling the menu option in the Security Settings Console.",
       "details": "By default, configuration is allowed.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -1189,20 +1190,6 @@
       "details": "If the user has not used the review service for 30 days AND has previously opened a PDF with review comments, Acrobat displays a tip reminding the user the review/share service is available. Possible values include: 0: Don't show a tip. 1: Show tip.",
       "regValEnabled": 1,
       "regValDisabled": 0
-    },
-    {
-      "policyName": "bPreviouslyEnabledSharePointInChromeExtn_Acrobat",
-      "valueName": "bPreviouslyEnabledSharePointInChromeExtn",
-      "friendlyName": "SharePoint Chrome Extension Previous State",
-      "category": "Sharing & Features",
-      "scope": "Device",
-      "product": "Acrobat",
-      "branch": "AcrobatPolicies",
-      "controlType": "Toggle",
-      "summary": "Stores the previous state of the SharePoint FeatureLockDown settings.",
-      "details": "Possible values include: Same as bEnableSharePointInChromeExtn in FeatureLockDown.",
-      "regValEnabled": null,
-      "regValDisabled": null
     },
     {
       "policyName": "bEnableSharePointInChromeExtn_Acrobat",
@@ -2585,7 +2572,7 @@
       "product": "Reader",
       "branch": "ReaderPolicies",
       "controlType": "Toggle",
-      "summary": "Prevents a LiveCycle Right Management Server from being configured by disabling the menu option in the Security Settings Console.",
+      "summary": "Prevents a LiveCycle Rights Management Server from being configured by disabling the menu option in the Security Settings Console.",
       "details": "By default, configuration is allowed.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -2855,20 +2842,6 @@
       "details": "Uploads attachments to Document Cloud and inserts public preview/download links in email. Values: 0 = enabled; 1 = disabled.",
       "regValEnabled": 0,
       "regValDisabled": 1
-    },
-    {
-      "policyName": "bPreviouslyEnabledSharePointInChromeExtn_Reader",
-      "valueName": "bPreviouslyEnabledSharePointInChromeExtn",
-      "friendlyName": "SharePoint Chrome Extension Previous State",
-      "category": "Sharing & Features",
-      "scope": "Device",
-      "product": "Reader",
-      "branch": "ReaderPolicies",
-      "controlType": "Toggle",
-      "summary": "Stores the previous state of the SharePoint FeatureLockDown settings.",
-      "details": "Possible values include: Same as bEnableSharePointInChromeExtn in FeatureLockDown.",
-      "regValEnabled": null,
-      "regValDisabled": null
     },
     {
       "policyName": "bEnableSharePointInChromeExtn_Reader",
@@ -4705,20 +4678,6 @@
       "regValDisabled": null
     },
     {
-      "policyName": "iNoteOpacityDC_User",
-      "valueName": "iNoteOpacity",
-      "friendlyName": "Comment Opacity",
-      "category": "Documents, Editing & Accessibility",
-      "scope": "User",
-      "product": "Acrobat",
-      "branch": null,
-      "controlType": "Toggle",
-      "summary": "The opacity in percent of all comments.",
-      "details": "The number is entered in Hex. Possible values include: d99a: 85%. N/A: Any hex value representing 1-100%.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
-    },
-    {
       "policyName": "bComplexScriptDC_User",
       "valueName": "bComplexScript",
       "friendlyName": "Complex Script Support",
@@ -4789,20 +4748,6 @@
       "regValDisabled": 0
     },
     {
-      "policyName": "iDictionaryDefaultIDDC_User",
-      "valueName": "iDictionaryDefaultID",
-      "friendlyName": "Default Dictionary",
-      "category": "Documents, Editing & Accessibility",
-      "scope": "User",
-      "product": "Acrobat",
-      "branch": null,
-      "controlType": "Toggle",
-      "summary": "Identifies the default spelling dictionary ID.",
-      "details": "The value is an ID from cDictionaryOrderID\\i0 . The dictionary name can be found in cDictionaryOrder\\t0. Alternatively, set the value in the user interface, close the product, and look here again. Use the value that appears during deployment.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
-    },
-    {
       "policyName": "iPageViewLayoutModeDC_User",
       "valueName": "iPageViewLayoutMode",
       "friendlyName": "Default Page Layout",
@@ -4831,20 +4776,6 @@
       "regValDisabled": null
     },
     {
-      "policyName": "iDefaultZoomScaleDC_User",
-      "valueName": "iDefaultZoomScale",
-      "friendlyName": "Default Zoom Scale",
-      "category": "Documents, Editing & Accessibility",
-      "scope": "User",
-      "product": "Acrobat",
-      "branch": null,
-      "controlType": "Toggle",
-      "summary": "Specifies the zoom scale % to use when a PDF opens.",
-      "details": "Possible values include a range beginning with Fit Page to Reflow . To set a value, configure the UI and look at the registry/plist preference to see what has been written. Possible values include: 199a: 10% 4000 25% 8000: 50% c000: 75% 10000: 100% etc.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
-    },
-    {
       "policyName": "iDefaultZoomTypeDC_User",
       "valueName": "iDefaultZoomType",
       "friendlyName": "Default Zoom Type",
@@ -4854,7 +4785,7 @@
       "branch": null,
       "controlType": "Enum",
       "summary": "Specifies the default zoom type (other than a %) to use when a PDF opens.",
-      "details": "% scales are stored in iZoomScale. Possible values include: 1: Fit Page (automatic) 2: Fit Width 3: Fit Hieght 4: Fit Visible 6: Reflow",
+      "details": "% scales are stored in iZoomScale. Possible values include: 1: Fit Page (automatic) 2: Fit Width 3: Fit Height 4: Fit Visible 6: Reflow",
       "regValEnabled": null,
       "regValDisabled": null
     },
@@ -5077,7 +5008,7 @@
       "product": "Acrobat",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Specifies whether to replace black test or line art colors when iAccessColorPolicy is enabled and a replacement color has been specified.",
+      "summary": "Specifies whether to replace black text or line art colors when iAccessColorPolicy is enabled and a replacement color has been specified.",
       "details": "While the default is 1, the preference is not read unless iAccessPolicy is enabled (1). Possible values include: 0: Don't replace black text or line art colors. 1: Replace black text or line art colors.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -5125,20 +5056,6 @@
       "regValDisabled": 0
     },
     {
-      "policyName": "iZoomScaleDC_User",
-      "valueName": "iZoomScale",
-      "friendlyName": "Override Zoom Scale",
-      "category": "Documents, Editing & Accessibility",
-      "scope": "User",
-      "product": "Acrobat",
-      "branch": null,
-      "controlType": "Toggle",
-      "summary": "Zoom percentage when iZoomType is a percent value.",
-      "details": "Overrides Page Display. Hex examples: 199a=10%, 4000=25%, 8000=50%, c000=75%, 10000=100%.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
-    },
-    {
       "policyName": "iZoomTypeDC_User",
       "valueName": "iZoomType",
       "friendlyName": "Override Zoom Type",
@@ -5148,7 +5065,7 @@
       "branch": null,
       "controlType": "Enum",
       "summary": "Specifies the zoom scale for all other documents other than a % scale and overrides Page Display settings.",
-      "details": "% scales are stored in iZoomScale. Possible values include: 1: Fit Page 2: Fit Width 3: Fit Hieght 4: Fit Visible 6: Reflow",
+      "details": "% scales are stored in iZoomScale. Possible values include: 1: Fit Page 2: Fit Width 3: Fit Height 4: Fit Visible 6: Reflow",
       "regValEnabled": null,
       "regValDisabled": null
     },
@@ -5189,7 +5106,7 @@
       "product": "Acrobat",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Specifies whether whether popups are visible when a document is scrolled.",
+      "summary": "Specifies whether popups are visible when a document is scrolled.",
       "details": "Possible values include: 0: Hide popups on document scroll. 1: Show popups on document scroll.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -5385,7 +5302,7 @@
       "product": "Acrobat",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Toggles whether to display the options dialog when running a accessibility full check.",
+      "summary": "Toggles whether to display the options dialog when running an accessibility full check.",
       "details": "Possible values include: 0: Don't show options dialog. 1: Show options dialog.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -5525,7 +5442,7 @@
       "product": "Acrobat",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Specifies wither to use anti-aliasing (smoothing) for images.",
+      "summary": "Specifies whether to use anti-aliasing (smoothing) for images.",
       "details": "Turning this preference off can improve scrolling performance in Citrix environments. Possible values include: 0: Don't smooth images. 1: Smooth images.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -5539,7 +5456,7 @@
       "product": "Acrobat",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Specifies wither to use anti-aliasing (smoothing) for line art.",
+      "summary": "Specifies whether to use anti-aliasing (smoothing) for line art.",
       "details": "Turning this preference off can improve scrolling performance in Citrix environments. Possible values include: 0: Don't smooth line art. 1: Smooth line art.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -5625,20 +5542,6 @@
       "controlType": "Toggle",
       "summary": "Specifies whether the default selection color (blue) is overridden with a color that the system specifies.",
       "details": "Possible values include: 0: Don't use the system selection color. 1: Use the system selection color.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
-    },
-    {
-      "policyName": "iAccessTextColorDC_User",
-      "valueName": "iAccessTextColor",
-      "friendlyName": "Text Color",
-      "category": "Documents, Editing & Accessibility",
-      "scope": "User",
-      "product": "Acrobat",
-      "branch": null,
-      "controlType": "Toggle",
-      "summary": "Specifies the default document text color (accessibility feature)",
-      "details": "The key name is appended with (Blue|Green|Red|Space). Possible values include: null: not set Any RGB color: User specified.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -5819,7 +5722,7 @@
       "product": "Acrobat",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Specifies wither or not to use the Acrobat editor or an external editor.",
+      "summary": "Specifies whether or not to use the Acrobat editor or an external editor.",
       "details": "When true, the \"Choose an external editor\" field becomes enabled.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -5946,7 +5849,7 @@
       "branch": null,
       "controlType": "Toggle",
       "summary": "Stores breakpoints in a PDF file",
-      "details": "Details, interactions with other keys, and allowable values, etc.",
+      "details": "When enabled, stores JavaScript debugger breakpoints inside the PDF file so they persist across sessions.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -6492,7 +6395,7 @@
       "branch": null,
       "controlType": "Enum",
       "summary": "Specifies signature validation behavior with respect to nonces.",
-      "details": "With 10.0, this preference replaces bSendNonce. Possible values include: 0: No nonces are sent. 1: Nonces are included in the OCSP request and expected to be present in the response and should match the request's nonce. 2: Nonces are included in the OCSP request, but if none are present in the response, their abscence is ignored.",
+      "details": "With 10.0, this preference replaces bSendNonce. Possible values include: 0: No nonces are sent. 1: Nonces are included in the OCSP request and expected to be present in the response and should match the request's nonce. 2: Nonces are included in the OCSP request, but if none are present in the response, their absence is ignored.",
       "regValEnabled": null,
       "regValDisabled": null
     },
@@ -6686,11 +6589,11 @@
       "scope": "User",
       "product": "Acrobat",
       "branch": null,
-      "controlType": "Toggle",
+      "controlType": "Numeric",
       "summary": "Specifies the Salt Length the RSA-PSS algorithm uses.",
       "details": "When setting the salt length, you must assure the default base is hexadecimal. Either change the base to decimal or input its hex value. For example, if the salt length decimal value is 32, then set the hex value to 20.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
+      "regValEnabled": null,
+      "regValDisabled": null
     },
     {
       "policyName": "bEnableRSAPSSSigningDC_User",
@@ -6842,7 +6745,7 @@
       "branch": null,
       "controlType": "Enum",
       "summary": "Specifies whether a button to allow reviewing document warnings shows up on the signing dialog.",
-      "details": "Interacts with iRequireDocumentWarnings. The possible values include: 0: Never 1: Show when certifying only 2: Always",
+      "details": "Interacts with iRequireReviewWarnings. The possible values include: 0: Never 1: Show when certifying only 2: Always",
       "regValEnabled": null,
       "regValDisabled": null
     },
@@ -6940,7 +6843,7 @@
       "branch": null,
       "controlType": "Toggle",
       "summary": "Specifies whether any subsequent signers can sign a certified document containing LegalPDF warnings with additional approval signatures.",
-      "details": "In other words, the presence of any LegalPDF warning prevent any additonal signatures.",
+      "details": "In other words, the presence of any LegalPDF warning prevents any additional signatures.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -6968,7 +6871,7 @@
       "branch": null,
       "controlType": "Toggle",
       "summary": "Specifies whether any subsequent signers can sign a certified document that does not contain LegalPDF warnings with additional approval signatures.",
-      "details": "In other words, the presence of any LegalPDF warning does not prevent any additonal signatures.",
+      "details": "In other words, the presence of any LegalPDF warning does not prevent any additional signatures.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -7036,11 +6939,11 @@
       "scope": "User",
       "product": "Acrobat",
       "branch": null,
-      "controlType": "Toggle",
+      "controlType": "Numeric",
       "summary": "ASPKI requires the signature property to predict the size (in bytes) so that enough space can be set aside.",
       "details": "",
-      "regValEnabled": 1,
-      "regValDisabled": 0
+      "regValEnabled": null,
+      "regValDisabled": null
     },
     {
       "policyName": "tServerDC_User",
@@ -7262,7 +7165,7 @@
       "branch": null,
       "controlType": "Toggle",
       "summary": "Specifies whether to remove the comma in comma-delimited addressbook entries.",
-      "details": "During shared review workflows, the user invoke the addressbook to invite participants. In cases where the addressbook is comma-delimited, pre DC versions of the product display an error dialog. Use this prefererence to remove commas. Possible values include: 0: Don't remove commas. 1: Remove commas.",
+      "details": "During shared review workflows, the user invokes the addressbook to invite participants. In cases where the addressbook is comma-delimited, pre DC versions of the product display an error dialog. Use this preference to remove commas. Possible values include: 0: Don't remove commas. 1: Remove commas.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -7807,8 +7710,8 @@
       "product": "Acrobat",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Specifies the users choice",
-      "details": "When a user selects \"Ask every time\" and iFavoriteFilesAccessOption is set to 0, this new preference remembers the users choice for each file. Possible values include: Application generated.",
+      "summary": "Specifies the user's choice",
+      "details": "When a user selects \"Ask every time\" and iFavoriteFilesAccessOption is set to 0, this new preference remembers the user's choice for each file. Possible values include: Application generated.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -7863,7 +7766,7 @@
       "product": "Acrobat",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Specifies whether to turn of the \"Updater has not been able to check for updates recently\" dialog.",
+      "summary": "Specifies whether to turn off the \"Updater has not been able to check for updates recently\" dialog.",
       "details": "Possible values include: 0: Don't turn off the dialog. 1: Do turn off the dialog.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -8443,20 +8346,6 @@
       "regValDisabled": null
     },
     {
-      "policyName": "iNoteOpacity_User",
-      "valueName": "iNoteOpacity",
-      "friendlyName": "Comment Opacity",
-      "category": "Documents, Editing & Accessibility",
-      "scope": "User",
-      "product": "Reader",
-      "branch": null,
-      "controlType": "Toggle",
-      "summary": "The opacity in percent of all comments.",
-      "details": "The number is entered in Hex. Possible values include: d99a: 85%. N/A: Any hex value representing 1-100%.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
-    },
-    {
       "policyName": "bComplexScript_User",
       "valueName": "bComplexScript",
       "friendlyName": "Complex Script Support",
@@ -8527,20 +8416,6 @@
       "regValDisabled": 0
     },
     {
-      "policyName": "iDictionaryDefaultID_User",
-      "valueName": "iDictionaryDefaultID",
-      "friendlyName": "Default Dictionary",
-      "category": "Documents, Editing & Accessibility",
-      "scope": "User",
-      "product": "Reader",
-      "branch": null,
-      "controlType": "Toggle",
-      "summary": "Identifies the default spelling dictionary ID.",
-      "details": "The value is an ID from cDictionaryOrderID\\i0 . The dictionary name can be found in cDictionaryOrder\\t0. Alternatively, set the value in the user interface, close the product, and look here again. Use the value that appears during deployment.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
-    },
-    {
       "policyName": "iPageViewLayoutMode_User",
       "valueName": "iPageViewLayoutMode",
       "friendlyName": "Default Page Layout",
@@ -8569,20 +8444,6 @@
       "regValDisabled": null
     },
     {
-      "policyName": "iDefaultZoomScale_User",
-      "valueName": "iDefaultZoomScale",
-      "friendlyName": "Default Zoom Scale",
-      "category": "Documents, Editing & Accessibility",
-      "scope": "User",
-      "product": "Reader",
-      "branch": null,
-      "controlType": "Toggle",
-      "summary": "Specifies the zoom scale % to use when a PDF opens.",
-      "details": "Possible values include a range beginning with Fit Page to Reflow . To set a value, configure the UI and look at the registry/plist preference to see what has been written. Possible values include: 199a: 10% 4000 25% 8000: 50% c000: 75% 10000: 100% etc.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
-    },
-    {
       "policyName": "iDefaultZoomType_User",
       "valueName": "iDefaultZoomType",
       "friendlyName": "Default Zoom Type",
@@ -8592,7 +8453,7 @@
       "branch": null,
       "controlType": "Enum",
       "summary": "Specifies the default zoom type (other than a %) to use when a PDF opens.",
-      "details": "% scales are stored in iZoomScale. Possible values include: 1: Fit Page (automatic) 2: Fit Width 3: Fit Hieght 4: Fit Visible 6: Reflow",
+      "details": "% scales are stored in iZoomScale. Possible values include: 1: Fit Page (automatic) 2: Fit Width 3: Fit Height 4: Fit Visible 6: Reflow",
       "regValEnabled": null,
       "regValDisabled": null
     },
@@ -8815,7 +8676,7 @@
       "product": "Reader",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Specifies whether to replace black test or line art colors when iAccessColorPolicy is enabled and a replacement color has been specified.",
+      "summary": "Specifies whether to replace black text or line art colors when iAccessColorPolicy is enabled and a replacement color has been specified.",
       "details": "While the default is 1, the preference is not read unless iAccessPolicy is enabled (1). Possible values include: 0: Don't replace black text or line art colors. 1: Replace black text or line art colors.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -8863,20 +8724,6 @@
       "regValDisabled": 0
     },
     {
-      "policyName": "iZoomScale_User",
-      "valueName": "iZoomScale",
-      "friendlyName": "Override Zoom Scale",
-      "category": "Documents, Editing & Accessibility",
-      "scope": "User",
-      "product": "Reader",
-      "branch": null,
-      "controlType": "Toggle",
-      "summary": "Zoom percentage when iZoomType is a percent value.",
-      "details": "Overrides Page Display. Hex examples: 199a=10%, 4000=25%, 8000=50%, c000=75%, 10000=100%.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
-    },
-    {
       "policyName": "iZoomType_User",
       "valueName": "iZoomType",
       "friendlyName": "Override Zoom Type",
@@ -8886,7 +8733,7 @@
       "branch": null,
       "controlType": "Enum",
       "summary": "Specifies the zoom scale for all other documents other than a % scale and overrides Page Display settings.",
-      "details": "% scales are stored in iZoomScale. Possible values include: 1: Fit Page 2: Fit Width 3: Fit Hieght 4: Fit Visible 6: Reflow",
+      "details": "% scales are stored in iZoomScale. Possible values include: 1: Fit Page 2: Fit Width 3: Fit Height 4: Fit Visible 6: Reflow",
       "regValEnabled": null,
       "regValDisabled": null
     },
@@ -9109,7 +8956,7 @@
       "product": "Reader",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Toggles whether to display the options dialog when running a accessibility full check.",
+      "summary": "Toggles whether to display the options dialog when running an accessibility full check.",
       "details": "Possible values include: 0: Don't show options dialog. 1: Show options dialog.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -9235,7 +9082,7 @@
       "product": "Reader",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Specifies wither to use anti-aliasing (smoothing) for images.",
+      "summary": "Specifies whether to use anti-aliasing (smoothing) for images.",
       "details": "Turning this preference off can improve scrolling performance in Citrix environments. Possible values include: 0: Don't smooth images. 1: Smooth images.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -9249,7 +9096,7 @@
       "product": "Reader",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Specifies wither to use anti-aliasing (smoothing) for line art.",
+      "summary": "Specifies whether to use anti-aliasing (smoothing) for line art.",
       "details": "Turning this preference off can improve scrolling performance in Citrix environments. Possible values include: 0: Don't smooth line art. 1: Smooth line art.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -9335,20 +9182,6 @@
       "controlType": "Toggle",
       "summary": "Specifies whether the default selection color (blue) is overridden with a color that the system specifies.",
       "details": "Possible values include: 0: Don't use the system selection color. 1: Use the system selection color.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
-    },
-    {
-      "policyName": "iAccessTextColor_User",
-      "valueName": "iAccessTextColor",
-      "friendlyName": "Text Color",
-      "category": "Documents, Editing & Accessibility",
-      "scope": "User",
-      "product": "Reader",
-      "branch": null,
-      "controlType": "Toggle",
-      "summary": "Specifies the default document text color (accessibility feature)",
-      "details": "The key name is appended with (Blue|Green|Red|Space). Possible values include: null: not set Any RGB color: User specified.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -10090,7 +9923,7 @@
       "branch": null,
       "controlType": "Enum",
       "summary": "Specifies signature validation behavior with respect to nonces.",
-      "details": "With 10.0, this preference replaces bSendNonce. Possible values include: 0: No nonces are sent. 1: Nonces are included in the OCSP request and expected to be present in the response and should match the request's nonce. 2: Nonces are included in the OCSP request, but if none are present in the response, their abscence is ignored.",
+      "details": "With 10.0, this preference replaces bSendNonce. Possible values include: 0: No nonces are sent. 1: Nonces are included in the OCSP request and expected to be present in the response and should match the request's nonce. 2: Nonces are included in the OCSP request, but if none are present in the response, their absence is ignored.",
       "regValEnabled": null,
       "regValDisabled": null
     },
@@ -10284,11 +10117,11 @@
       "scope": "User",
       "product": "Reader",
       "branch": null,
-      "controlType": "Toggle",
+      "controlType": "Numeric",
       "summary": "Specifies the Salt Length the RSA-PSS algorithm uses.",
       "details": "When setting the salt length, you must assure the default base is hexadecimal. Either change the base to decimal or input its hex value. For example, if the salt length decimal value is 32, then set the hex value to 20.",
-      "regValEnabled": 1,
-      "regValDisabled": 0
+      "regValEnabled": null,
+      "regValDisabled": null
     },
     {
       "policyName": "bEnableRSAPSSSigning_User",
@@ -10440,7 +10273,7 @@
       "branch": null,
       "controlType": "Enum",
       "summary": "Specifies whether a button to allow reviewing document warnings shows up on the signing dialog.",
-      "details": "Interacts with iRequireDocumentWarnings. The possible values include: 0: Never 1: Show when certifying only 2: Always",
+      "details": "Interacts with iRequireReviewWarnings. The possible values include: 0: Never 1: Show when certifying only 2: Always",
       "regValEnabled": null,
       "regValDisabled": null
     },
@@ -10538,7 +10371,7 @@
       "branch": null,
       "controlType": "Toggle",
       "summary": "Specifies whether any subsequent signers can sign a certified document containing LegalPDF warnings with additional approval signatures.",
-      "details": "In other words, the presence of any LegalPDF warning prevent any additonal signatures.",
+      "details": "In other words, the presence of any LegalPDF warning prevents any additional signatures.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -10566,7 +10399,7 @@
       "branch": null,
       "controlType": "Toggle",
       "summary": "Specifies whether any subsequent signers can sign a certified document that does not contain LegalPDF warnings with additional approval signatures.",
-      "details": "In other words, the presence of any LegalPDF warning does not prevent any additonal signatures.",
+      "details": "In other words, the presence of any LegalPDF warning does not prevent any additional signatures.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -10634,11 +10467,11 @@
       "scope": "User",
       "product": "Reader",
       "branch": null,
-      "controlType": "Toggle",
+      "controlType": "Numeric",
       "summary": "ASPKI requires the signature property to predict the size (in bytes) so that enough space can be set aside.",
       "details": "",
-      "regValEnabled": 1,
-      "regValDisabled": 0
+      "regValEnabled": null,
+      "regValDisabled": null
     },
     {
       "policyName": "tServer_User",
@@ -10860,7 +10693,7 @@
       "branch": null,
       "controlType": "Toggle",
       "summary": "Specifies whether to remove the comma in comma-delimited addressbook entries.",
-      "details": "During shared review workflows, the user invoke the addressbook to invite participants. In cases where the addressbook is comma-delimited, pre DC versions of the product display an error dialog. Use this prefererence to remove commas. Possible values include: 0: Don't remove commas. 1: Remove commas.",
+      "details": "During shared review workflows, the user invokes the addressbook to invite participants. In cases where the addressbook is comma-delimited, pre DC versions of the product display an error dialog. Use this preference to remove commas. Possible values include: 0: Don't remove commas. 1: Remove commas.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -11377,8 +11210,8 @@
       "product": "Reader",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Specifies the users choice",
-      "details": "When a user selects \"Ask every time\" and iFavoriteFilesAccessOption is set to 0, this new preference remembers the users choice for each file. Possible values include: Application generated.",
+      "summary": "Specifies the user's choice",
+      "details": "When a user selects \"Ask every time\" and iFavoriteFilesAccessOption is set to 0, this new preference remembers the user's choice for each file. Possible values include: Application generated.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -11433,7 +11266,7 @@
       "product": "Reader",
       "branch": null,
       "controlType": "Toggle",
-      "summary": "Specifies whether to turn of the \"Updater has not been able to check for updates recently\" dialog.",
+      "summary": "Specifies whether to turn off the \"Updater has not been able to check for updates recently\" dialog.",
       "details": "Possible values include: 0: Don't turn off the dialog. 1: Do turn off the dialog.",
       "regValEnabled": 1,
       "regValDisabled": 0
@@ -11466,6 +11299,5 @@
       "regValEnabled": 0,
       "regValDisabled": 1
     }
-  ],
-  "revision": "3.5"
+  ]
 }

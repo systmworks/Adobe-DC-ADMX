@@ -6,7 +6,23 @@
 
 # Changelog (Combined - Device + User)
 
-Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope changelogs are frozen in [changelog-device-retired.md](changelog-device-retired.md) and [changelog-user-retired.md](changelog-user-retired.md).
+Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope changelogs are frozen in [changelog-retired.md](changelog-retired.md).
+
+---
+
+## v3.6 - 22 July 2026
+
+**807 policies** (292 machine + 515 user) - quality fixes, prose corrections, NumericSpec corrections, control-type cleanup.
+
+| Change | Detail |
+|---|---|
+| **Published docs fix** | Changelog v3.5 guardrail wording no longer references internal build scripts; describes the committed `Documentation/data/policy-baseline.json` baseline only. |
+| **Explain-text readability** | Typos and grammar fixes in policy explain text without changing `ValueName`s. |
+| **NumericSpec corrections** | `iResponseFreshness` (minutes, default/range aligned to Adobe), `iMaxRevInfoArchiveSize` (kilobytes, default 1500), `iMaxVerifySession` (default 5). |
+| **Control-type cleanup** | **Skip:** `bPreviouslyEnabledSharePointInChromeExtn`, `iAccessTextColor`, `iNoteOpacity`, `iDefaultZoomScale`, `iZoomScale`, `iDictionaryDefaultID`. **Numeric:** `iRSAPSSSaltLength`, `iSize`. |
+| **Quality guardrails** | Expanded published-doc checks and ADMX/ADML fidelity gates to prevent explain-text corruption and internal maintainer wording in consumer docs. |
+| **Import impact (v3.5 to v3.6)** | **12** Skip policies removed from the template; no re-selection needed for removed entries. Re-upload `AdobeDC.admx` + ADML. All remaining v3.5 bindings are preserved. |
+| **Baseline** | `policy-baseline.json` advanced to v3.6 after intentional Skip/Numeric changes above. |
 
 ---
 
@@ -19,7 +35,7 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 | **Source content fixes** | Corrected Product Updater (`bUpdater`) Summary/Details (was copied from cloud-services row). Typo and grammar fixes in pref reference text (e.g. PathPath, Accessibility, URL wording, blank Summary on Save Certified Alert). |
 | **Control-type corrections** | **`tauthor`** (Comment Author, User): Toggle -> **Text** (REG_SZ author name). **`iLogLevel`** (Updater Log Level, Device): Toggle -> **Enum** (Brief / Verbose). These two settings require **one-time re-selection** in Intune/GPO after upgrade from v3.4. |
 | **Documentation** | Fixed reduce-nags curated table column alignment. Clarified v3.4 new-text-policy counts (17 unique prefs, 30 ADMX entries across Acrobat+Reader). Merged product settings pages into combined [Adobe DC Settings (Device)](adobe-settings-device.md) and [Adobe DC Settings (User)](adobe-settings-user.md) pages (Common / Acrobat Only / Reader Only). |
-| **Additive-only guardrail** | `policy-baseline.json` is no longer overwritten on every build; `Test-AdmxBackCompat.ps1` now compares against the committed frozen baseline. Baseline advanced to v3.5 after the two intended control-type changes above. |
+| **Additive-only guardrail** | The additive-only baseline (`Documentation/data/policy-baseline.json`) is no longer regenerated on every build; back-compat is now enforced against the committed baseline. Baseline advanced to v3.5 after the two intended control-type changes above. |
 
 ---
 
@@ -48,7 +64,7 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 | **Control specs and counts** | Enum, numeric, and text control metadata refined; stale toggle value columns cleared on non-toggle rows. Live policy counts in `Documentation/data/policy-counts.json`. |
 | **Import impact** | Same namespace and policy `name` attributes as v3.2. **Partially binding-breaking for User scope:** new text policies, numeric control change for `iMSStoreTrusted`, and removed app-internal toggles - re-select affected settings in Intune/GPO after re-upload. |
 
-Historical ADMX/ADML files for this release: [GitHub Release v3.3](https://github.com/systmworks/Adobe-DC-ADMX/releases/tag/v3.3) (when published).
+Historical ADMX/ADML files for this release: [GitHub Release v3.3](https://github.com/systmworks/Adobe-DC-ADMX/releases/tag/v3.3).
 
 ---
 
@@ -71,7 +87,7 @@ Historical ADMX/ADML files for this release: [GitHub Release v3.3](https://githu
 
 `iMaxMRUCntToBeStored`, `iAutoSaveDocsInterval`, `iDelayBeforeQuitViewer`, `iDelayBeforeQuitBrowser`, `iSnapshotResolution`, `iMaxRevokeInfoCacheLifetime`, `iMaxRevInfoArchiveSize`, `iMaxVerifySession`, `iResponseFreshness`, `imaxPDFCommentsSize`, `dNoteFontSize`.
 
-Historical ADMX/ADML files for this release: [GitHub Release v3.2](https://github.com/systmworks/Adobe-DC-ADMX/releases/tag/v3.2) (when published).
+Historical ADMX/ADML files for this release: [GitHub Release v3.2](https://github.com/systmworks/Adobe-DC-ADMX/releases/tag/v3.2).
 
 ---
 

@@ -6,7 +6,7 @@
 
 # Adobe DC Settings (User)
 
-Complete list of 273 Adobe DC settings in the combined v3.5 ADMX templates, grouped by product applicability.
+Complete list of 268 Adobe DC settings in the combined v3.6 ADMX templates, grouped by product applicability.
 
 ## Common to Acrobat & Reader
 
@@ -57,16 +57,13 @@ Complete list of 273 Adobe DC settings in the combined v3.5 ADMX templates, grou
 | Comment Author | ``tauthor`` | The author name specified by balwaysUseIdent. |
 | Comment Font Name | ``tNoteFontName`` | Sets the comment font name for the viewer. |
 | Comment Font Size | ``dNoteFontSize`` | Sets the font size. |
-| Comment Opacity | ``iNoteOpacity`` | The opacity in percent of all comments. |
 | Complex Script Support | ``bComplexScript`` | Enable support for writing direction switching (complex script). |
 | Confirm Review Import | ``bconfirmEBRMerge`` | Displays an alert on document open asking the user to confirm importing comments into an active review. |
 | Copy Text to Drawing | ``bcopyTextToDrawAnnot`` | Copy the encircled text into drawing comment popups. |
 | Copy Text to Markup | ``bcopyTextToMarkupAnnot`` | Copies the selected text into highlight, cross-out, and underline comment popups. |
 | Create Report | ``bCreateLog`` | Toggles whether to create an accessibility report when running an accessibility full check. |
-| Default Dictionary | ``iDictionaryDefaultID`` | Identifies the default spelling dictionary ID. |
 | Default Page Layout | ``iPageViewLayoutMode`` | Specifies the default page layout when a PDF opens. |
 | Default Paragraph Dir | ``iParaDir`` | Specifies the paragraph direction. |
-| Default Zoom Scale | ``iDefaultZoomScale`` | Specifies the zoom scale % to use when a PDF opens. |
 | Default Zoom Type | ``iDefaultZoomType`` | Specifies the default zoom type (other than a %) to use when a PDF opens. |
 | Dictionary Name | ``tDictionaryName`` | Identifies the default spelling dictionary name. |
 | Embedded Comment Limit | ``imaxPDFCommentsSize`` | Sets the comment threshold size for determining whether comments are embedded or sent as FDF files. |
@@ -83,11 +80,10 @@ Complete list of 273 Adobe DC settings in the combined v3.5 ADMX templates, grou
 | Login Name as Author | ``balwaysUseIdent`` | Use login name as comment author. |
 | Open Links in Place | ``bOpenInPlace`` | Open cross document links in the same window. |
 | Overprint Shift+Click | ``bOverprintPreviewUseShiftClick`` | Shift+Click behavior in the output preview dialog. |
-| Override Document Colors | ``bAccessOverrideDocColors`` | Replace black test or line art colors when iAccessColorPolicy is enabled and a replacement color has been specified. |
+| Override Document Colors | ``bAccessOverrideDocColors`` | Replace black text or line art colors when iAccessColorPolicy is enabled and a replacement color has been specified. |
 | Override Line Art Colors | ``bOverrideLineArtColors`` | Limits color changes to black text and line art when iAccessColorPolicy is enabled and a replacement color has been specified. |
 | Override Page Layout | ``iPageLayout`` | Specifies the user selected page layout override. |
 | Override Zoom | ``bOverrideZoom`` | Let users set a default zoom for all documents. |
-| Override Zoom Scale | ``iZoomScale`` | Zoom percentage when iZoomType is a percent value. |
 | Override Zoom Type | ``iZoomType`` | Specifies the zoom scale for all other documents other than a % scale and overrides Page Display settings. |
 | Paragraph Direction | ``iParagraphDirection`` | Specifies the paragraph direction. |
 | Popup When Selected | ``bPopupsOpenIffSelected`` | Open a popup when it is selected. |
@@ -104,7 +100,7 @@ Complete list of 273 Adobe DC settings in the combined v3.5 ADMX templates, grou
 | Save Toner/Ink | ``bPrintSaveToner`` | Optimize content so that the printer uses less ink. |
 | SDI Mode | ``bSDIMode`` | Open documents in a new window or in tabs in the same window. |
 | Send Approval Email | ``bsendFinalApprovalEmail`` | Send a notification email when the current approval is identified as the final one. |
-| Show Check Options | ``bShowOptionsDialog`` | Toggles whether to display the options dialog when running a accessibility full check. |
+| Show Check Options | ``bShowOptionsDialog`` | Toggles whether to display the options dialog when running an accessibility full check. |
 | Show Comments on Import | ``bcommentPanelOnImport`` | Open the comment list when comments are imported. |
 | Show Connector Lines | ``bShowAnnotConnector`` | Show lines connecting comment markups to their popups on mouse rollover. |
 | Show Focus Rectangle | ``bFocusRect`` | Surround a field with a rectangle when it has focus. |
@@ -113,15 +109,14 @@ Complete list of 273 Adobe DC settings in the combined v3.5 ADMX templates, grou
 | Show Stamps Palette | ``bStampsPaletteInvisible`` | Show the stamps palette automatically when the commenting toolbar is displayed. |
 | Show Tab Order | ``bShowAnnotSequence`` | Show tab order of fields for Acroforms and XFA forms. |
 | Side-Aligned Popups | ``bsideNotes`` | Creates new popups aligned to the edge of the document. |
-| Smooth Images | ``bAntialiasImages`` | Specifies wither to use anti-aliasing (smoothing) for images. |
-| Smooth Line Art | ``bAntialiasGraphics`` | Specifies wither to use anti-aliasing (smoothing) for line art. |
+| Smooth Images | ``bAntialiasImages`` | Use anti-aliasing (smoothing) for images. |
+| Smooth Line Art | ``bAntialiasGraphics`` | Use anti-aliasing (smoothing) for line art. |
 | Smooth Text | ``bAntialiasText`` | Anti-alias text when Smooth Text is Monitor or Laptop/LCD. |
 | Smooth Zooming | ``bSmoothZooming`` | Specifies whether smooth zooming should be enabled. |
 | Spell Check Underline | ``bSpellingUnderline`` | Turns off and on spell checking as you type. |
 | Store Numeric Entries | ``bStoreNumericEntries`` | Store user entered numeric values. |
 | Structure Tab Order | ``bUseStructTabOrder`` | Use the PDF document structure for determining the tab order. |
 | System Selection Color | ``bUseSystemSelectionColor`` | Specifies whether the default selection color (blue) is overridden with a color that the system specifies. |
-| Text Color | ``iAccessTextColor`` | Specifies the default document text color (accessibility feature) |
 | Use Local Fonts | ``bUseLocalFonts`` | Use local fonts. |
 | XFA Email Client | ``iEmailClientSelection`` | Specifies the email client to use when submitting an XFA form. |
 | XObjects View Mode | ``iRXOPolicy`` | Sets XObject access to either Never (0), Always (1), or Only PDF/X-5 Compliant Ones (2). |
@@ -202,9 +197,9 @@ Complete list of 273 Adobe DC settings in the combined v3.5 ADMX templates, grou
 | Return Rev Info to JS | ``bReturnRevInfoToUser`` | If true, the revocation information is maintained within the SignatureInfo object and can be retrieved through JavaScript. |
 | Revocation Checker | ``iRevocationChecker`` | Specifies a provider for revocation checking. |
 | Revoke Check Trust | ``bRevCheckTrust`` | Revocation-check intermediate (non-root) trust anchors. |
-| RSAPSS Hash Algorithm | ``aRSAPSSHashAlgorithm`` | Specifies the hash algorithm used for RSA-PSS signing. |
 | RSA-PSS Salt Length | ``iRSAPSSSaltLength`` | Specifies the Salt Length the RSA-PSS algorithm uses. |
 | RSA-PSS Signing | ``bEnableRSAPSSSigning`` | Specifies whether a signature should be created with the RSA-PSS algorithm. |
+| RSAPSS Hash Algorithm | ``aRSAPSSHashAlgorithm`` | Specifies the hash algorithm used for RSA-PSS signing. |
 | SAML Auth Server URL | ``tSAML_Assertion_Source`` | Holds the URL of the authentication server from which the SAML assertion stored in cSAML_Assertion was obtained. |
 | SAML Name Format | ``tSAML_Name_Format`` | SAML_NAME_<Value, Format, Qualifier> comprise the subject name identifier taken from the SAML assertion received during the account's last user authentication. |
 | SAML Name Qualifier | ``tSAML_Name_Qualifier`` | SAML_NAME_<Value, Format, Qualifier> comprise the subject name identifier taken from the SAML assertion received during the account's last user authentication. |
@@ -294,11 +289,11 @@ Complete list of 273 Adobe DC settings in the combined v3.5 ADMX templates, grou
 | Cleanup Check Done | ``bInstalledCleanupCheckDone`` | A preference used by the usage measurement feature to determine whether the previously set UsageMeasurement-related keys should be reset. |
 | Collab Sync Startup | ``bLoadOnStart`` | Specifies whether the collaboration executable should be invoked and run as a background process on startup. |
 | Fast Web View | ``bAllowByteRangeRequests`` | Enable Fast Web View by allowing display of the PDF before the entire file is downloaded. |
-| Remember Stars Choice | ``bFavoriteFilesRememberChoice`` | Specifies the users choice |
+| Remember Stars Choice | ``bFavoriteFilesRememberChoice`` | Specifies the user's choice |
 | Show Starred Files | ``bFavoritesStripInRFL`` | Show starred files in the recent files list. |
 | Starred Files Action | ``iFavoriteFilesAccessOption`` | Specifies what action to take when starring a file. |
 | Store Credentials | ``bStoreCredentials`` | Specifies whether the user logon credentials for the Tracker should be stored. |
-| Suppress Update Warning | ``iAVARMNoAutoUpdateWarning`` | Turn of the "Updater has not been able to check for updates recently" dialog. |
+| Suppress Update Warning | ``iAVARMNoAutoUpdateWarning`` | Turn off the "Updater has not been able to check for updates recently" dialog. |
 
 ### Upsell
 
@@ -322,7 +317,7 @@ Complete list of 273 Adobe DC settings in the combined v3.5 ADMX templates, grou
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | Cloud Auto Tagging | ``bEnableCloudBasedAT`` | Enable cloud-based auto-tagging. |
-| Popups Scroll With Page | ``bPopupsScrollWithPage`` | Specifies whether whether popups are visible when a document is scrolled. |
+| Popups Scroll With Page | ``bPopupsScrollWithPage`` | Specifies whether popups are visible when a document is scrolled. |
 | Show Rulers | ``bRulersVisible`` | Show or hide rulers for every new document launch. |
 
 ### Security: Execution & Protection
@@ -332,7 +327,7 @@ Complete list of 273 Adobe DC settings in the combined v3.5 ADMX templates, grou
 | Editor Font Name | ``tEditorFontName`` | Specifies the font for the script editor. |
 | Editor Font Size | ``tEditorFontSize`` | Specifies the font size for the script editor. |
 | Editor Path | ``tEditorPath`` | Provides a path to an external editor. |
-| External JS Editor | ``bChooseDialog`` | Specifies wither or not to use the Acrobat editor or an external editor. |
+| External JS Editor | ``bChooseDialog`` | Specifies whether or not to use the Acrobat editor or an external editor. |
 | JS Console Input | ``bConsoleInput`` | Toggles whether or not the console appears if script execution results in an error or message. |
 | JS Debugger Console | ``bConsoleOpen`` | Enables the interactive debugger console. |
 | JS Exception Handling | ``iExceptions`` | Specifies how exceptions should be handled. |

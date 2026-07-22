@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ================================================================= -->
-<!--                                                                   -->
-<!--    ADML templates created by systmworks                           -->
-<!--    Source: https://github.com/systmworks/Adobe-DC-ADMX/           -->
-<!--                                                                   -->
-<!--    License: CC BY-SA 4.0                                          -->
-<!--    Free to use and redistribute, including commercially, with     -->
-<!--    attribution; ShareAlike applies to adaptations you distribute. -->
-<!--                                                                   -->
-<!-- ================================================================= -->
+<!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.5" schemaVersion="1.0"
+  revision="3.6" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
-  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.5)</displayName>
-  <description>ADMX v3.5 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
+  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.6)</displayName>
+  <description>ADMX v3.6 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
   <resources>
     <stringTable>
       <string id="SupportedAcrobatReaderPolicies">Adobe Acrobat and Reader DC</string>
@@ -56,15 +47,9 @@
       <string id="Cat_UpdatesDesktop_User">Updates &amp; Desktop Integration</string>
       <string id="Cat_Upsell_User">Upsell</string>
 
-      <!-- ======================================== -->
-      <!--                                          -->
-      <!--  Acrobat and Reader DC - policy strings  -->
-      <!--                                          -->
-      <!-- ======================================== -->
+      <!-- Acrobat and Reader DC - policy strings -->
 
-      <!-- ======================================== -->
-      <!--           Cloud and Connectors           -->
-      <!-- ======================================== -->
+      <!-- Cloud and Connectors -->
 
       <string id="bToggleFillSign_Acrobat">Adobe Fill &amp; Sign</string>
       <string id="bToggleFillSign_Acrobat_Explain">Disables Adobe Fill and Sign.&#10;&#10;Possible values include: 0: Enable Adobe Fill and Sign. 1: Disable Adobe Fill and Sign.</string>
@@ -93,9 +78,7 @@
       <string id="bToggleWebConnectors_Acrobat">Third-Party Cloud Connectors</string>
       <string id="bToggleWebConnectors_Acrobat_Explain">Third-party cloud storage connectors (Continuous track).&#10;&#10;Controls Box, OneDrive, and Dropbox (not SharePoint). Disables Home, Add Account, and custom Open/Save entry points. Values: 0 = enabled; 1 = disabled.&#10;&#10;Security Reference: STIG ARDC-CN-000075 (V-213181) Medium; STIG AADC-CN-001300 (V-213134) Low</string>
 
-      <!-- ======================================== -->
-      <!--        Context, Tools and Search         -->
-      <!-- ======================================== -->
+      <!-- Context, Tools and Search -->
 
       <string id="bUIDensityAutoDetectionEnabled_Acrobat">Auto UI Density Detection</string>
       <string id="bUIDensityAutoDetectionEnabled_Acrobat_Explain">Specifies whether to disable the auto detection logic and bezel for changing Acrobat's display size.&#10;&#10;By default, the UI is enabled so that a user may change the display size based on device screen size, resolution, and monitor scaling. 0: Disable the UI. 1: Show the UI.</string>
@@ -130,9 +113,7 @@
       <string id="bEnableAutoCompleteNoExactMatchHeader_Acrobat">Show Search No Match Message</string>
       <string id="bEnableAutoCompleteNoExactMatchHeader_Acrobat_Explain">Specifies whether to show a &quot;No exact match&quot; message when using the cloud-based search service.&#10;&#10;The message appears in the Suggestions section of the Find tool's autocomplete list. Possible values include: 0 or null: Don't show the message 1: Show the message</string>
 
-      <!-- ======================================== -->
-      <!--   Documents, Editing and Accessibility   -->
-      <!-- ======================================== -->
+      <!-- Documents, Editing and Accessibility -->
 
       <string id="bCloudATFeatureEnable_Acrobat">Accessibility Auto Tagging</string>
       <string id="bCloudATFeatureEnable_Acrobat_Explain">Specifies whether to show the new auto tagging experience or revert to the old experience.&#10;&#10;Possible values include: 0: Disable the new auto tagging feature in the accessibility UI. 1: Enable the new auto tagging feature in the accessibility UI.</string>
@@ -145,14 +126,12 @@
       <string id="bIgnoreDataSchema_Acrobat">Restrict Form Data to Schema</string>
       <string id="bIgnoreDataSchema_Acrobat_Explain">Specifies whether all data in a form is saved rather than only data related to the form's schema.&#10;&#10;Possible values include: null: Save form data even when it's not part of a schema. 1: Save only form data that's part of the schema.</string>
 
-      <!-- ======================================== -->
-      <!--         Microsoft Purview (MIP)          -->
-      <!-- ======================================== -->
+      <!-- Microsoft Purview (MIP) -->
 
       <string id="bMIPCheckPolicyOnDocSave_Acrobat">Check MIP Policy on Save</string>
       <string id="bMIPCheckPolicyOnDocSave_Acrobat_Explain">Lock MIP labeling checks on save (admin).&#10;&#10;Requires default or mandatory labeling in the Purview portal. Grays out related Preferences UI. HKLM lockdown, not per-user MicrosoftAIP prefs. Values: 0 = do not lock; 1 = lock enabled.</string>
       <string id="bMIPLabelling_Acrobat">Enable MIP Labelling</string>
-      <string id="bMIPLabelling_Acrobat_Explain">Lock Enable MIP labeling in Preferences ) Security.&#10;&#10;Machine-level lockdown; complements per-user MicrosoftAIP prefs. Values: 0 = do not lock; 1 = lock enabled.</string>
+      <string id="bMIPLabelling_Acrobat_Explain">Lock Enable MIP labeling in Preferences &gt; Security.&#10;&#10;Machine-level lockdown; complements per-user MicrosoftAIP prefs. Values: 0 = do not lock; 1 = lock enabled.</string>
       <string id="bEnableDKEAdmin_Acrobat">MIP Double Key Encryption</string>
       <string id="bEnableDKEAdmin_Acrobat_Explain">Locks double key encryption (DKE) label support for Microsoft Purview Information Protection.&#10;&#10;Machine-level FeatureLockDown lockdown for MIP DKE workflows. Possible values include: 0: Lock DKE disabled. 1: Lock DKE enabled.</string>
       <string id="bMIPExternalAuthAdmin_Acrobat">MIP External Browser Auth</string>
@@ -173,9 +152,7 @@
       <string id="bSilentAuth_Acrobat">Suppress OS Auth Prompts (MIP)</string>
       <string id="bSilentAuth_Acrobat_Explain">Locks whether operating-system authentication prompts are suppressed during MIP operations.&#10;&#10;By default, OS-driven auth prompts for MIP are suppressed. Set policy Disabled to write DWORD 0 and allow OS auth prompts (useful when troubleshooting AADSTS50020-type errors). Possible values include: 0: Allow OS auth prompts. 1: Suppress OS auth prompts.</string>
 
-      <!-- ======================================== -->
-      <!--    Security: Execution and Protection    -->
-      <!-- ======================================== -->
+      <!-- Security: Execution and Protection -->
 
       <string id="bEnable3D_Acrobat">3D Content in PDFs</string>
       <string id="bEnable3D_Acrobat_Explain">Specifies whether to trust and render 3D content in PDFs.&#10;&#10;This setting can override b3DEnableContent. Possible values include: 0: Don't render 3D content. 1: Trust and render 3D files.</string>
@@ -211,9 +188,7 @@
       <string id="iUnlistedAttachmentTypePerm_Acrobat_opt2">Always open unlisted file types</string>
       <string id="iUnlistedAttachmentTypePerm_Acrobat_opt3">Never open unlisted file types (most restrictive)</string>
 
-      <!-- ======================================== -->
-      <!--     Security: Trust and Permissions      -->
-      <!-- ======================================== -->
+      <!-- Security: Trust and Permissions -->
 
       <string id="bMSStoreTrusted_Acrobat">Allow Changes to Windows Certificate Store Trust</string>
       <string id="bMSStoreTrusted_Acrobat_Explain">Locks the UI so that end users cannot change the value set by iMSStoreTrusted.&#10;&#10;Set iMSStoreTrusted first, then use this preference to lock it. Allowable values include: 0: Lock the UI. 1: Same as null. Don't lock the UI.</string>
@@ -234,7 +209,7 @@
       <string id="bDisableOSTrustedSites_Acrobat">Disable IE Trusted Sites as Privileged Locations</string>
       <string id="bDisableOSTrustedSites_Acrobat_Explain">Locks the ability to treat IE trusted sites as privileged locations either on or off so the users can't change the bTrustOSTrustedSites value via the user interface.&#10;&#10;If set, bTrustOSTrustedSites is simply ignored. Possible values include: 0 or null: Enables and locks trusting sites from IE. 1: Disables and locks trusting sites from IE.</string>
       <string id="bAllowAPSConfig_Acrobat">LiveCycle RMS Server Config</string>
-      <string id="bAllowAPSConfig_Acrobat_Explain">Prevents a LiveCycle Right Management Server from being configured by disabling the menu option in the Security Settings Console.&#10;&#10;By default, configuration is allowed.</string>
+      <string id="bAllowAPSConfig_Acrobat_Explain">Prevents a LiveCycle Rights Management Server from being configured by disabling the menu option in the Security Settings Console.&#10;&#10;By default, configuration is allowed.</string>
       <string id="bReqRevCheck_Acrobat">Lock Revocation Check Setting</string>
       <string id="bReqRevCheck_Acrobat_Explain">Locks Security\cASPKI\cASPKI\cVerify\iReqRevCheck and disables the user interface item.</string>
       <string id="bReasons_Acrobat">Lock Signing Reasons Settings</string>
@@ -261,9 +236,7 @@
       <string id="bValidateOnOpen_Acrobat">Validate Signatures on Open</string>
       <string id="bValidateOnOpen_Acrobat_Explain">Specifies whether to automatically validate all signatures on document open.&#10;&#10;Note that the lockable setting does not configure the feature; instead, it locks what is set in HKCU and the user interface. 0: Don't validate signatures on document open. 1: Validate signatures on document open.</string>
 
-      <!-- ======================================== -->
-      <!--           Sharing and Features           -->
-      <!-- ======================================== -->
+      <!-- Sharing and Features -->
 
       <string id="bToggleAdobeSign_Acrobat">Adobe Acrobat Sign</string>
       <string id="bToggleAdobeSign_Acrobat_Explain">Adobe Acrobat Sign (Send for Signature).&#10;&#10;On Continuous track, also set bToggleManageSign. Values: 0 = enabled; 1 = disabled.&#10;&#10;Security Reference: STIG ARDC-CN-000085 (V-213183) Low</string>
@@ -287,8 +260,6 @@
       <string id="bAdobeSendPluginToggle_Acrobat_Explain">Adobe Send and Track button in Outlook.&#10;&#10;Uploads attachments to Document Cloud and inserts public preview/download links in email. Values: 0 = enabled; 1 = disabled.&#10;&#10;Security Reference: STIG ARDC-CN-000055 (V-213177) Low; STIG AADC-CN-000295 (V-213123) Medium</string>
       <string id="bEnableReviewPromote_Acrobat">Share and Review Reminder Tip</string>
       <string id="bEnableReviewPromote_Acrobat_Explain">Specifies whether to display a Share/Review feature reminder message when users have used those features in the past.&#10;&#10;If the user has not used the review service for 30 days AND has previously opened a PDF with review comments, Acrobat displays a tip reminding the user the review/share service is available. Possible values include: 0: Don't show a tip. 1: Show tip.</string>
-      <string id="bPreviouslyEnabledSharePointInChromeExtn_Acrobat">SharePoint Chrome Extension Previous State</string>
-      <string id="bPreviouslyEnabledSharePointInChromeExtn_Acrobat_Explain">Stores the previous state of the SharePoint FeatureLockDown settings.&#10;&#10;Possible values include: Same as bEnableSharePointInChromeExtn in FeatureLockDown.</string>
       <string id="bEnableSharePointInChromeExtn_Acrobat">SharePoint in Chrome Extension</string>
       <string id="bEnableSharePointInChromeExtn_Acrobat_Explain">Specifies whether to integrate SharePoint into the Acrobat's Chrome extension.&#10;&#10;Possible values include: 0: Don't enable SharePoint integration. 1: Enable.</string>
       <string id="bToggleManageSign_Acrobat">Show Acrobat Sign Tracking Tab</string>
@@ -315,9 +286,7 @@
       <string id="iSMTPSecurity_Acrobat">WebMail SMTP Security</string>
       <string id="iSMTPSecurity_Acrobat_Explain">Specifies whether to enable the My Profile Mail SMTP security for WebMail.&#10;&#10;The value can be: 0: Don't enable security. 1: Enable security.</string>
 
-      <!-- ======================================== -->
-      <!--          Startup and Experience          -->
-      <!-- ======================================== -->
+      <!-- Startup and Experience -->
 
       <string id="bShowMsgAtLaunch_Acrobat">Adobe Messages at Launch</string>
       <string id="bShowMsgAtLaunch_Acrobat_Explain">Show Adobe messages at product launch.&#10;&#10;Also hides Share Feedback, EOL warnings, profile prompts, and the Home banner. Values: 0 = hide; 1 = show.</string>
@@ -352,9 +321,7 @@
       <string id="bWhatsNewExp_Acrobat">What's New Experience</string>
       <string id="bWhatsNewExp_Acrobat_Explain">Specifies whether to disable the What's New experience.&#10;&#10;This feature was phased in incrementally over 2022. When enabled, the default user on first launch will see a What's New screen as well as a See new features notification. These UI items appear once. Possible values include: 0: Enable the What's New experience. 1: Disable.</string>
 
-      <!-- ======================================== -->
-      <!--     Updates and Desktop Integration      -->
-      <!-- ======================================== -->
+      <!-- Updates and Desktop Integration -->
 
       <string id="bDisableThirdPartyPluginNotif_Acrobat">32-Bit Plugin Upgrade Notification</string>
       <string id="bDisableThirdPartyPluginNotif_Acrobat_Explain">Specifies whether to notify users with 32 bit plugins that the app will soon update to 64 bit.&#10;&#10;32 bit plugins will not work in the 64 bit app. The notification provides a &quot;Learn more&quot; link that provides additional details about how to upgrade their plugin. Possible values include: 0: Do not warn the user about 32 bit plugins. 1: Do warn the user.</string>
@@ -388,9 +355,7 @@
       <string id="bFavoritesFeaturesLockDown_Acrobat">Starred Files Feature</string>
       <string id="bFavoritesFeaturesLockDown_Acrobat_Explain">Specifies whether to disable and lock the starred file feature.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. This preference overrides bFavoritesStripInRFL. Possible values include: 0: Disable and lock starred files in the recent files list. 1: Use bFavoritesStripInRFL to control this feature.</string>
 
-      <!-- ======================================== -->
-      <!--                  Upsell                  -->
-      <!-- ======================================== -->
+      <!-- Upsell -->
 
       <string id="bToggleBillingIssue_Acrobat">Disable Billing Issue Call to Action</string>
       <string id="bToggleBillingIssue_Acrobat_Explain">Specifies whether to show a Call to Action UI item in the top bar if a billing issue is detected.&#10;&#10;Possible values include: 0 or null: Disable the CTA UI. 1: Show the CTA UI.</string>
@@ -406,15 +371,9 @@
       <string id="bAcroSuppressUpsell_Acrobat_Explain">Disable upgrade and upsell messages (12.x+).&#10;&#10;Controls Reader tool purchase and Standard-to-Professional prompts. Values: 0 or null = show upsell; 1 = disable upsell.&#10;&#10;Security Reference: STIG ARDC-CN-000080 (V-213182) Low</string>
       <string id="bEnableTrialistLaunchCard_Acrobat">Trial Purchase Prompt</string>
       <string id="bEnableTrialistLaunchCard_Acrobat_Explain">Specifies whether to prompt Acrobat trial users to complete the purchase.&#10;&#10;Possible values include: 0: Disable the purchase Acrobat prompt. 1: Don't disable the prompt.</string>
-      <!-- ======================================== -->
-      <!--                                          -->
-      <!--   Reader DC (32-bit) - policy strings    -->
-      <!--                                          -->
-      <!-- ======================================== -->
+      <!-- Reader DC (32-bit) - policy strings -->
 
-      <!-- ======================================== -->
-      <!--           Cloud and Connectors           -->
-      <!-- ======================================== -->
+      <!-- Cloud and Connectors -->
 
       <string id="bToggleFillSign_Reader">Adobe Fill &amp; Sign</string>
       <string id="bToggleFillSign_Reader_Explain">Disables Adobe Fill and Sign.&#10;&#10;Possible values include: 0: Enable Adobe Fill and Sign. 1: Disable Adobe Fill and Sign.</string>
@@ -443,9 +402,7 @@
       <string id="bToggleWebConnectors_Reader">Third-Party Cloud Connectors</string>
       <string id="bToggleWebConnectors_Reader_Explain">Third-party cloud storage connectors (Continuous track).&#10;&#10;Controls Box, OneDrive, and Dropbox (not SharePoint). Disables Home, Add Account, and custom Open/Save entry points. Values: 0 = enabled; 1 = disabled.&#10;&#10;Security Reference: STIG ARDC-CN-000075 (V-213181) Medium; STIG AADC-CN-001300 (V-213134) Low</string>
 
-      <!-- ======================================== -->
-      <!--        Context, Tools and Search         -->
-      <!-- ======================================== -->
+      <!-- Context, Tools and Search -->
 
       <string id="bUIDensityAutoDetectionEnabled_Reader">Auto UI Density Detection</string>
       <string id="bUIDensityAutoDetectionEnabled_Reader_Explain">Specifies whether to disable the auto detection logic and bezel for changing Acrobat's display size.&#10;&#10;By default, the UI is enabled so that a user may change the display size based on device screen size, resolution, and monitor scaling. 0: Disable the UI. 1: Show the UI.</string>
@@ -468,9 +425,7 @@
       <string id="bRCMCombineFeatureKey_Reader">Show Combine Files Context Menu</string>
       <string id="bRCMCombineFeatureKey_Reader_Explain">Specifies whether to display the Combine Files item in a document's right-click context menu.&#10;&#10;This preference only applies to machines that display the Modern Viewer (a phased rollout over 2023). When the Modern Viewer is disabled, admins can toggle the Combine Files UI off/on. Possible values include: 0: Don't show the Combine Files UI. 1: Do show the Combine Files UI.</string>
 
-      <!-- ======================================== -->
-      <!--   Documents, Editing and Accessibility   -->
-      <!-- ======================================== -->
+      <!-- Documents, Editing and Accessibility -->
 
       <string id="bGlobalBarMenuFeatureKey_Reader">Create PDF Split Menu</string>
       <string id="bGlobalBarMenuFeatureKey_Reader_Explain">Specifies whether to show the Create Split Menu under Create a PDF menu item.&#10;&#10;Possible values include: 0: Don't show the Create Split menu. 1: Show the Create Split menu.</string>
@@ -479,14 +434,12 @@
       <string id="bIgnoreDataSchema_Reader">Restrict Form Data to Schema</string>
       <string id="bIgnoreDataSchema_Reader_Explain">Specifies whether all data in a form is saved rather than only data related to the form's schema.&#10;&#10;Possible values include: null: Save form data even when it's not part of a schema. 1: Save only form data that's part of the schema.</string>
 
-      <!-- ======================================== -->
-      <!--         Microsoft Purview (MIP)          -->
-      <!-- ======================================== -->
+      <!-- Microsoft Purview (MIP) -->
 
       <string id="bMIPCheckPolicyOnDocSave_Reader">Check MIP Policy on Save</string>
       <string id="bMIPCheckPolicyOnDocSave_Reader_Explain">Lock MIP labeling checks on save (admin).&#10;&#10;Requires default or mandatory labeling in the Purview portal. Grays out related Preferences UI. HKLM lockdown, not per-user MicrosoftAIP prefs. Values: 0 = do not lock; 1 = lock enabled.</string>
       <string id="bMIPLabelling_Reader">Enable MIP Labelling</string>
-      <string id="bMIPLabelling_Reader_Explain">Lock Enable MIP labeling in Preferences ) Security.&#10;&#10;Machine-level lockdown; complements per-user MicrosoftAIP prefs. Values: 0 = do not lock; 1 = lock enabled.</string>
+      <string id="bMIPLabelling_Reader_Explain">Lock Enable MIP labeling in Preferences &gt; Security.&#10;&#10;Machine-level lockdown; complements per-user MicrosoftAIP prefs. Values: 0 = do not lock; 1 = lock enabled.</string>
       <string id="bEnableDKEAdmin_Reader">MIP Double Key Encryption</string>
       <string id="bEnableDKEAdmin_Reader_Explain">Locks double key encryption (DKE) label support for Microsoft Purview Information Protection.&#10;&#10;Machine-level FeatureLockDown lockdown for MIP DKE workflows. Possible values include: 0: Lock DKE disabled. 1: Lock DKE enabled.</string>
       <string id="bMIPExternalAuthAdmin_Reader">MIP External Browser Auth</string>
@@ -507,9 +460,7 @@
       <string id="bSilentAuth_Reader">Suppress OS Auth Prompts (MIP)</string>
       <string id="bSilentAuth_Reader_Explain">Locks whether operating-system authentication prompts are suppressed during MIP operations.&#10;&#10;By default, OS-driven auth prompts for MIP are suppressed. Set policy Disabled to write DWORD 0 and allow OS auth prompts (useful when troubleshooting AADSTS50020-type errors). Possible values include: 0: Allow OS auth prompts. 1: Suppress OS auth prompts.</string>
 
-      <!-- ======================================== -->
-      <!--    Security: Execution and Protection    -->
-      <!-- ======================================== -->
+      <!-- Security: Execution and Protection -->
 
       <string id="bEnable3D_Reader">3D Content in PDFs</string>
       <string id="bEnable3D_Reader_Explain">Specifies whether to trust and render 3D content in PDFs.&#10;&#10;This setting can override b3DEnableContent. Possible values include: 0: Don't render 3D content. 1: Trust and render 3D files.</string>
@@ -542,9 +493,7 @@
       <string id="iUnlistedAttachmentTypePerm_Reader_opt2">Always open unlisted file types</string>
       <string id="iUnlistedAttachmentTypePerm_Reader_opt3">Never open unlisted file types (most restrictive)</string>
 
-      <!-- ======================================== -->
-      <!--     Security: Trust and Permissions      -->
-      <!-- ======================================== -->
+      <!-- Security: Trust and Permissions -->
 
       <string id="bMSStoreTrusted_Reader">Allow Changes to Windows Certificate Store Trust</string>
       <string id="bMSStoreTrusted_Reader_Explain">Locks the UI so that end users cannot change the value set by iMSStoreTrusted.&#10;&#10;Set iMSStoreTrusted first, then use this preference to lock it. Allowable values include: 0: Lock the UI. 1: Same as null. Don't lock the UI.</string>
@@ -563,7 +512,7 @@
       <string id="bDisableOSTrustedSites_Reader">Disable IE Trusted Sites as Privileged Locations</string>
       <string id="bDisableOSTrustedSites_Reader_Explain">Locks the ability to treat IE trusted sites as privileged locations either on or off so the users can't change the bTrustOSTrustedSites value via the user interface.&#10;&#10;If set, bTrustOSTrustedSites is simply ignored. Possible values include: 0 or null: Enables and locks trusting sites from IE. 1: Disables and locks trusting sites from IE.</string>
       <string id="bAllowAPSConfig_Reader">LiveCycle RMS Server Config</string>
-      <string id="bAllowAPSConfig_Reader_Explain">Prevents a LiveCycle Right Management Server from being configured by disabling the menu option in the Security Settings Console.&#10;&#10;By default, configuration is allowed.</string>
+      <string id="bAllowAPSConfig_Reader_Explain">Prevents a LiveCycle Rights Management Server from being configured by disabling the menu option in the Security Settings Console.&#10;&#10;By default, configuration is allowed.</string>
       <string id="bReqRevCheck_Reader">Lock Revocation Check Setting</string>
       <string id="bReqRevCheck_Reader_Explain">Locks Security\cASPKI\cASPKI\cVerify\iReqRevCheck and disables the user interface item.</string>
       <string id="bReasons_Reader">Lock Signing Reasons Settings</string>
@@ -588,9 +537,7 @@
       <string id="bValidateOnOpen_Reader">Validate Signatures on Open</string>
       <string id="bValidateOnOpen_Reader_Explain">Specifies whether to automatically validate all signatures on document open.&#10;&#10;Note that the lockable setting does not configure the feature; instead, it locks what is set in HKCU and the user interface. 0: Don't validate signatures on document open. 1: Validate signatures on document open.</string>
 
-      <!-- ======================================== -->
-      <!--           Sharing and Features           -->
-      <!-- ======================================== -->
+      <!-- Sharing and Features -->
 
       <string id="bToggleAdobeSign_Reader">Adobe Acrobat Sign</string>
       <string id="bToggleAdobeSign_Reader_Explain">Adobe Acrobat Sign (Send for Signature).&#10;&#10;On Continuous track, also set bToggleManageSign. Values: 0 = enabled; 1 = disabled.&#10;&#10;Security Reference: STIG ARDC-CN-000085 (V-213183) Low</string>
@@ -610,8 +557,6 @@
       <string id="bToggleFSSSignatureSaving_Reader_Explain">Specifies whether to save a newly created signature in the cloud.&#10;&#10;When a user creates a new signature, the dialog offers the option to store the signature in the cloud for later use. This preference also controls saving user initials. Possible values include: 0: Show the Save Signature UI 1: Hide the Save Signature UI</string>
       <string id="bAdobeSendPluginToggle_Reader">Send &amp; Track Outlook Plugin</string>
       <string id="bAdobeSendPluginToggle_Reader_Explain">Adobe Send and Track button in Outlook.&#10;&#10;Uploads attachments to Document Cloud and inserts public preview/download links in email. Values: 0 = enabled; 1 = disabled.&#10;&#10;Security Reference: STIG ARDC-CN-000055 (V-213177) Low; STIG AADC-CN-000295 (V-213123) Medium</string>
-      <string id="bPreviouslyEnabledSharePointInChromeExtn_Reader">SharePoint Chrome Extension Previous State</string>
-      <string id="bPreviouslyEnabledSharePointInChromeExtn_Reader_Explain">Stores the previous state of the SharePoint FeatureLockDown settings.&#10;&#10;Possible values include: Same as bEnableSharePointInChromeExtn in FeatureLockDown.</string>
       <string id="bEnableSharePointInChromeExtn_Reader">SharePoint in Chrome Extension</string>
       <string id="bEnableSharePointInChromeExtn_Reader_Explain">Specifies whether to integrate SharePoint into the Acrobat's Chrome extension.&#10;&#10;Possible values include: 0: Don't enable SharePoint integration. 1: Enable.</string>
       <string id="bToggleManageSign_Reader">Show Acrobat Sign Tracking Tab</string>
@@ -638,9 +583,7 @@
       <string id="iSMTPSecurity_Reader">WebMail SMTP Security</string>
       <string id="iSMTPSecurity_Reader_Explain">Specifies whether to enable the My Profile Mail SMTP security for WebMail.&#10;&#10;The value can be: 0: Don't enable security. 1: Enable security.</string>
 
-      <!-- ======================================== -->
-      <!--          Startup and Experience          -->
-      <!-- ======================================== -->
+      <!-- Startup and Experience -->
 
       <string id="bShowMsgAtLaunch_Reader">Adobe Messages at Launch</string>
       <string id="bShowMsgAtLaunch_Reader_Explain">Show Adobe messages at product launch.&#10;&#10;Also hides Share Feedback, EOL warnings, profile prompts, and the Home banner. Values: 0 = hide; 1 = show.</string>
@@ -673,9 +616,7 @@
       <string id="bWhatsNewExp_Reader">What's New Experience</string>
       <string id="bWhatsNewExp_Reader_Explain">Specifies whether to disable the What's New experience.&#10;&#10;This feature was phased in incrementally over 2022. When enabled, the default user on first launch will see a What's New screen as well as a See new features notification. These UI items appear once. Possible values include: 0: Enable the What's New experience. 1: Disable.</string>
 
-      <!-- ======================================== -->
-      <!--     Updates and Desktop Integration      -->
-      <!-- ======================================== -->
+      <!-- Updates and Desktop Integration -->
 
       <string id="bDisableThirdPartyPluginNotif_Reader">32-Bit Plugin Upgrade Notification</string>
       <string id="bDisableThirdPartyPluginNotif_Reader_Explain">Specifies whether to notify users with 32 bit plugins that the app will soon update to 64 bit.&#10;&#10;32 bit plugins will not work in the 64 bit app. The notification provides a &quot;Learn more&quot; link that provides additional details about how to upgrade their plugin. Possible values include: 0: Do not warn the user about 32 bit plugins. 1: Do warn the user.</string>
@@ -702,9 +643,7 @@
       <string id="bFavoritesFeaturesLockDown_Reader">Starred Files Feature</string>
       <string id="bFavoritesFeaturesLockDown_Reader_Explain">Specifies whether to disable and lock the starred file feature.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. This preference overrides bFavoritesStripInRFL. Possible values include: 0: Disable and lock starred files in the recent files list. 1: Use bFavoritesStripInRFL to control this feature.</string>
 
-      <!-- ======================================== -->
-      <!--                  Upsell                  -->
-      <!-- ======================================== -->
+      <!-- Upsell -->
 
       <string id="bLimitPromptsFeatureKey_Reader">Limit Informational Prompts</string>
       <string id="bLimitPromptsFeatureKey_Reader_Explain">Specifies whether to limit the number of prompts a user will see in a 24 hour period.&#10;&#10;Prompts include items like tips, calls-to-action, and feature walk throughs. These are not necessarily upsell items. Possible values include: 0: Don't restrict informational prompts. 1: Limit prompts to 1 per day and 3 per week.</string>
@@ -716,15 +655,9 @@
       <string id="bShowRhpToolSearch_Reader_Explain">Specifies whether to show &quot;for purchase&quot; tools when searching for tools in Reader.&#10;&#10;When enabled, searching for tools in Reader shows all possible tool subscriptions. Possible values include: 0: Don't show tool subscriptions. 1: Show tools which can be purchased.</string>
       <string id="bAcroSuppressUpsell_Reader">Show Upgrade Prompts</string>
       <string id="bAcroSuppressUpsell_Reader_Explain">Disable upgrade and upsell messages (12.x+).&#10;&#10;Controls Reader tool purchase and Standard-to-Professional prompts. Values: 0 or null = show upsell; 1 = disable upsell.&#10;&#10;Security Reference: STIG ARDC-CN-000080 (V-213182) Low</string>
-      <!-- ==================================================== -->
-      <!--                                                      -->
       <!-- Non-Policy Settings - Acrobat and Reader DC (64-bit) -->
-      <!--                                                      -->
-      <!-- ==================================================== -->
 
-      <!-- ======================================== -->
-      <!--        Context, Tools and Search         -->
-      <!-- ======================================== -->
+      <!-- Context, Tools and Search -->
 
       <string id="ADC4275035_ClickEdit_AcrobatX64">Click-to-Edit Mode</string>
       <string id="ADC4275035_ClickEdit_AcrobatX64_Explain">Auto-enter edit mode when the user clicks a PDF object.&#10;&#10;Clicking image or text opens edit tools; clicking a form field enables form authoring. Values: 0 or null = disabled; 1 = enabled.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
@@ -737,9 +670,7 @@
       <string id="ADC4275035_AcrobatX64">Remove Form Editing Tools (2019)</string>
       <string id="ADC4275035_AcrobatX64_Explain">Remove Oct 2019 AddText and EditText form tools from the UI.&#10;&#10;Form editing moved into the Prepare Form toolbar. Values: 0 or null = no change; 1 = remove AddText and EditText tools.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
 
-      <!-- ======================================== -->
-      <!--   Documents, Editing and Accessibility   -->
-      <!-- ======================================== -->
+      <!-- Documents, Editing and Accessibility -->
 
       <string id="BlockEMFParsing_AcrobatX64">Block EMF to PDF Conversion</string>
       <string id="BlockEMFParsing_AcrobatX64_Explain">Block EMF to PDF conversion.&#10;&#10;Shows an unsupported dialog when blocked. Values: 0 = allow; 1 = block.&#10;&#10;When this policy is Enabled, EMF-to-PDF conversion is blocked. When Disabled, conversion is allowed.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
@@ -754,38 +685,28 @@
       <string id="EnablePDFMakerSplitTextPathElemsFeature_AcrobatX64">PDFMaker Text Path Tag Fix</string>
       <string id="EnablePDFMakerSplitTextPathElemsFeature_AcrobatX64_Explain">Fix Text Path rendering bug in PDFMaker tags.&#10;&#10;Mitigates incorrect border/alt-text rendering from a 2020 bug. Enabled by default. Values: 0 = disable correction; 1 = enable.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
 
-      <!-- ======================================== -->
-      <!--    Security: Execution and Protection    -->
-      <!-- ======================================== -->
+      <!-- Security: Execution and Protection -->
 
       <string id="EnableFlashEditing_AcrobatX64">Flash Editing Tools</string>
-      <string id="EnableFlashEditing_AcrobatX64_Explain">Specifies whether to enable the Flash tools for adding annotations or Flash in the Rich Media app.&#10;&#10;Possible values include: 0 or null: Remove &quot;Disable Flash ) Add SWF menu item.&quot; 1: Show the menu item.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
+      <string id="EnableFlashEditing_AcrobatX64_Explain">Specifies whether to enable the Flash tools for adding annotations or Flash in the Rich Media app.&#10;&#10;Possible values include: 0 or null: Remove &quot;Disable Flash &gt; Add SWF menu item.&quot; 1: Show the menu item.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
       <string id="bEnablePVSwitchoutShortcut_AcrobatX64">Protected View Exit Shortcut Key</string>
       <string id="bEnablePVSwitchoutShortcut_AcrobatX64_Explain">Shortcut key to exit Protected View for the current document.&#10;&#10;Allows Protected View by default with on-demand exit. Values: 0 = disabled; 1 = enabled.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
 
-      <!-- ======================================== -->
-      <!--     Updates and Desktop Integration      -->
-      <!-- ======================================== -->
+      <!-- Updates and Desktop Integration -->
 
       <string id="EULA_AcrobatX64">Accept EULA for Updater</string>
       <string id="EULA_AcrobatX64_Explain">Accept EULA for the built-in updater.&#10;&#10;Alternative to EULA_ACCEPT=YES at install time. Values: 0 = not accepted; 1 = accepted.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
       <string id="DisableMaintenance_AcrobatX64">Disable Repair for All Users</string>
-      <string id="DisableMaintenance_AcrobatX64_Explain">Disable Help ) Repair for all users.&#10;&#10;See Disable_Repair. Registry: HKLM\...\Installer.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.&#10;&#10;Security Reference: STIG ARDC-CN-000070 (V-213180) Low; STIG AADC-CN-001295 (V-213133) Low</string>
+      <string id="DisableMaintenance_AcrobatX64_Explain">Disable Help &gt; Repair for all users.&#10;&#10;See Disable_Repair. Registry: HKLM\...\Installer.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.&#10;&#10;Security Reference: STIG ARDC-CN-000070 (V-213180) Low; STIG AADC-CN-001295 (V-213133) Low</string>
       <string id="Disable_Repair_AcrobatX64">Disable Repair for Standard Users</string>
-      <string id="Disable_Repair_AcrobatX64_Explain">Disable Help ) Repair for standard users on virtual installs.&#10;&#10;Restricts repair to admins on Citrix/WT servers. See DisableMaintenance. Registry: HKLM\...\Installer.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
+      <string id="Disable_Repair_AcrobatX64_Explain">Disable Help &gt; Repair for standard users on virtual installs.&#10;&#10;Restricts repair to admins on Citrix/WT servers. See DisableMaintenance. Registry: HKLM\...\Installer.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
       <string id="IsAMTEnforced_AcrobatX64">Enforce AMT for AppV Deployment</string>
       <string id="IsAMTEnforced_AcrobatX64_Explain">Allows deployment of Acrobat on AppV for December, 2018 and later products.&#10;&#10;0: Do not use. 1: Required after December 2018 for Acrobat on AppV.&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
       <string id="bMergeMenuBar_AcrobatX64">Merge Title and Menu Bar</string>
       <string id="bMergeMenuBar_AcrobatX64_Explain">Specifies whether to merge the application's title bar and menu bar into a single bar.&#10;&#10;Note that &quot;Policies&quot; does not appear in the HKLM path. Possible values include: 0: Don't merge the title and menu bars 1: Merge the bars&#10;&#10;This non-Policies setting applies to Acrobat and Reader DC (64-bit) installations and writes to the native 64-bit registry view.</string>
-      <!-- ========================================= -->
-      <!--                                           -->
       <!-- Non-Policy Settings - Acrobat DC (32-bit) -->
-      <!--                                           -->
-      <!-- ========================================= -->
 
-      <!-- ======================================== -->
-      <!--        Context, Tools and Search         -->
-      <!-- ======================================== -->
+      <!-- Context, Tools and Search -->
 
       <string id="ADC4275035_ClickEdit_AcrobatX86">Click-to-Edit Mode</string>
       <string id="ADC4275035_ClickEdit_AcrobatX86_Explain">Auto-enter edit mode when the user clicks a PDF object.&#10;&#10;Clicking image or text opens edit tools; clicking a form field enables form authoring. Values: 0 or null = disabled; 1 = enabled.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
@@ -798,9 +719,7 @@
       <string id="ADC4275035_AcrobatX86">Remove Form Editing Tools (2019)</string>
       <string id="ADC4275035_AcrobatX86_Explain">Remove Oct 2019 AddText and EditText form tools from the UI.&#10;&#10;Form editing moved into the Prepare Form toolbar. Values: 0 or null = no change; 1 = remove AddText and EditText tools.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
 
-      <!-- ======================================== -->
-      <!--   Documents, Editing and Accessibility   -->
-      <!-- ======================================== -->
+      <!-- Documents, Editing and Accessibility -->
 
       <string id="BlockEMFParsing_AcrobatX86">Block EMF to PDF Conversion</string>
       <string id="BlockEMFParsing_AcrobatX86_Explain">Block EMF to PDF conversion.&#10;&#10;Shows an unsupported dialog when blocked. Values: 0 = allow; 1 = block.&#10;&#10;When this policy is Enabled, EMF-to-PDF conversion is blocked. When Disabled, conversion is allowed.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
@@ -815,27 +734,23 @@
       <string id="EnablePDFMakerSplitTextPathElemsFeature_AcrobatX86">PDFMaker Text Path Tag Fix</string>
       <string id="EnablePDFMakerSplitTextPathElemsFeature_AcrobatX86_Explain">Fix Text Path rendering bug in PDFMaker tags.&#10;&#10;Mitigates incorrect border/alt-text rendering from a 2020 bug. Enabled by default. Values: 0 = disable correction; 1 = enable.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
 
-      <!-- ======================================== -->
-      <!--    Security: Execution and Protection    -->
-      <!-- ======================================== -->
+      <!-- Security: Execution and Protection -->
 
       <string id="EnableFlashEditing_AcrobatX86">Flash Editing Tools</string>
-      <string id="EnableFlashEditing_AcrobatX86_Explain">Specifies whether to enable the Flash tools for adding annotations or Flash in the Rich Media app.&#10;&#10;Possible values include: 0 or null: Remove &quot;Disable Flash ) Add SWF menu item.&quot; 1: Show the menu item.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
+      <string id="EnableFlashEditing_AcrobatX86_Explain">Specifies whether to enable the Flash tools for adding annotations or Flash in the Rich Media app.&#10;&#10;Possible values include: 0 or null: Remove &quot;Disable Flash &gt; Add SWF menu item.&quot; 1: Show the menu item.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
       <string id="bEnablePVSwitchoutShortcut_AcrobatX86">Protected View Exit Shortcut Key</string>
       <string id="bEnablePVSwitchoutShortcut_AcrobatX86_Explain">Shortcut key to exit Protected View for the current document.&#10;&#10;Allows Protected View by default with on-demand exit. Values: 0 = disabled; 1 = enabled.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
 
-      <!-- ======================================== -->
-      <!--     Updates and Desktop Integration      -->
-      <!-- ======================================== -->
+      <!-- Updates and Desktop Integration -->
 
       <string id="EULA_AcrobatX86">Accept EULA for Updater</string>
       <string id="EULA_AcrobatX86_Explain">Accept EULA for the built-in updater.&#10;&#10;Alternative to EULA_ACCEPT=YES at install time. Values: 0 = not accepted; 1 = accepted.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
       <string id="iDisablePromptForUpgrade_AcrobatX86">Disable Major Version Upgrade Prompt</string>
       <string id="iDisablePromptForUpgrade_AcrobatX86_Explain">Suppress major-version upgrade prompt.&#10;&#10;Requires automatic update settings; if bUpdater=0, upgrades are also disabled. Values: 0 or null = no effect; 1 = disable prompt.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...&#10;&#10;Adobe ARM is a 32-bit component; on 64-bit Windows this policy writes to HKLM\SOFTWARE\WOW6432Node\Adobe\Adobe ARM\...</string>
       <string id="DisableMaintenance_AcrobatX86">Disable Repair for All Users</string>
-      <string id="DisableMaintenance_AcrobatX86_Explain">Disable Help ) Repair for all users.&#10;&#10;See Disable_Repair. Registry: HKLM\...\Installer.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...&#10;&#10;Security Reference: STIG ARDC-CN-000070 (V-213180) Low; STIG AADC-CN-001295 (V-213133) Low</string>
+      <string id="DisableMaintenance_AcrobatX86_Explain">Disable Help &gt; Repair for all users.&#10;&#10;See Disable_Repair. Registry: HKLM\...\Installer.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...&#10;&#10;Security Reference: STIG ARDC-CN-000070 (V-213180) Low; STIG AADC-CN-001295 (V-213133) Low</string>
       <string id="Disable_Repair_AcrobatX86">Disable Repair for Standard Users</string>
-      <string id="Disable_Repair_AcrobatX86_Explain">Disable Help ) Repair for standard users on virtual installs.&#10;&#10;Restricts repair to admins on Citrix/WT servers. See DisableMaintenance. Registry: HKLM\...\Installer.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
+      <string id="Disable_Repair_AcrobatX86_Explain">Disable Help &gt; Repair for standard users on virtual installs.&#10;&#10;Restricts repair to admins on Citrix/WT servers. See DisableMaintenance. Registry: HKLM\...\Installer.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
       <string id="IsAMTEnforced_AcrobatX86">Enforce AMT for AppV Deployment</string>
       <string id="IsAMTEnforced_AcrobatX86_Explain">Allows deployment of Acrobat on AppV for December, 2018 and later products.&#10;&#10;0: Do not use. 1: Required after December 2018 for Acrobat on AppV.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
       <string id="bMergeMenuBar_AcrobatX86">Merge Title and Menu Bar</string>
@@ -850,58 +765,40 @@
       <string id="iLogLevel_AcrobatX86_Explain">Updater log verbosity.&#10;&#10;Logs truncated at 1 MB (backed up as AdobeARM-backup). Path: %LOCALAPPDATA%\Temp\AdobeARM.log. Values: 0 = brief; 1 = verbose.&#10;&#10;This non-Policies setting applies to 32-bit Acrobat DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...&#10;&#10;Adobe ARM is a 32-bit component; on 64-bit Windows this policy writes to HKLM\SOFTWARE\WOW6432Node\Adobe\Adobe ARM\...</string>
       <string id="iLogLevel_AcrobatX86_opt0">Brief</string>
       <string id="iLogLevel_AcrobatX86_opt1">Verbose</string>
-      <!-- ======================================== -->
-      <!--                                          -->
       <!-- Non-Policy Settings - Reader DC (32-bit) -->
-      <!--                                          -->
-      <!-- ======================================== -->
 
-      <!-- ======================================== -->
-      <!--        Context, Tools and Search         -->
-      <!-- ======================================== -->
+      <!-- Context, Tools and Search -->
 
       <string id="ProtectOldExperience_ReaderX86">Legacy Protect Tool Menu</string>
       <string id="ProtectOldExperience_ReaderX86_Explain">Use legacy Protect tool menus instead of the new UI.&#10;&#10;Values: 0 or null = new UI; 1 = pre-Oct 2019 menus.&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
       <string id="ADC4302862_ReaderX86">Paste in Place</string>
       <string id="ADC4302862_ReaderX86_Explain">Paste copied elements to the same location as the source.&#10;&#10;Applies to form fields, annotations, and links. Values: 0 = disabled; 1 = enabled.&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
 
-      <!-- ======================================== -->
-      <!--   Documents, Editing and Accessibility   -->
-      <!-- ======================================== -->
+      <!-- Documents, Editing and Accessibility -->
 
       <string id="DisableScannedDocumentEditing_ReaderX86">Disable Scanned PDF Text Recognition</string>
       <string id="DisableScannedDocumentEditing_ReaderX86_Explain">Specifies whether to disable text recognition while editing scanned PDFs.&#10;&#10;Possible values include: 0: Text recognition will be performed when invoking editing on scanned PDFs. 1: Text recognition will not be performed when invoking editing on scanned PDFs.&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
 
-      <!-- ======================================== -->
-      <!--    Security: Execution and Protection    -->
-      <!-- ======================================== -->
+      <!-- Security: Execution and Protection -->
 
       <string id="EnableFlashEditing_ReaderX86">Flash Editing Tools</string>
-      <string id="EnableFlashEditing_ReaderX86_Explain">Specifies whether to enable the Flash tools for adding annotations or Flash in the Rich Media app.&#10;&#10;Possible values include: 0 or null: Remove &quot;Disable Flash ) Add SWF menu item.&quot; 1: Show the menu item.&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
+      <string id="EnableFlashEditing_ReaderX86_Explain">Specifies whether to enable the Flash tools for adding annotations or Flash in the Rich Media app.&#10;&#10;Possible values include: 0 or null: Remove &quot;Disable Flash &gt; Add SWF menu item.&quot; 1: Show the menu item.&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
       <string id="bEnablePVSwitchoutShortcut_ReaderX86">Protected View Exit Shortcut Key</string>
       <string id="bEnablePVSwitchoutShortcut_ReaderX86_Explain">Shortcut key to exit Protected View for the current document.&#10;&#10;Allows Protected View by default with on-demand exit. Values: 0 = disabled; 1 = enabled.&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
 
-      <!-- ======================================== -->
-      <!--     Updates and Desktop Integration      -->
-      <!-- ======================================== -->
+      <!-- Updates and Desktop Integration -->
 
       <string id="EULA_ReaderX86">Accept EULA for Updater</string>
       <string id="EULA_ReaderX86_Explain">Accept EULA for the built-in updater.&#10;&#10;Alternative to EULA_ACCEPT=YES at install time. Values: 0 = not accepted; 1 = accepted.&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
       <string id="DisableMaintenance_ReaderX86">Disable Repair for All Users</string>
-      <string id="DisableMaintenance_ReaderX86_Explain">Disable Help ) Repair for all users.&#10;&#10;See Disable_Repair. Registry: HKLM\...\Installer.&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...&#10;&#10;Security Reference: STIG ARDC-CN-000070 (V-213180) Low; STIG AADC-CN-001295 (V-213133) Low</string>
+      <string id="DisableMaintenance_ReaderX86_Explain">Disable Help &gt; Repair for all users.&#10;&#10;See Disable_Repair. Registry: HKLM\...\Installer.&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...&#10;&#10;Security Reference: STIG ARDC-CN-000070 (V-213180) Low; STIG AADC-CN-001295 (V-213133) Low</string>
       <string id="Disable_Repair_ReaderX86">Disable Repair for Standard Users</string>
-      <string id="Disable_Repair_ReaderX86_Explain">Disable Help ) Repair for standard users on virtual installs.&#10;&#10;Restricts repair to admins on Citrix/WT servers. See DisableMaintenance. Registry: HKLM\...\Installer.&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
+      <string id="Disable_Repair_ReaderX86_Explain">Disable Help &gt; Repair for standard users on virtual installs.&#10;&#10;Restricts repair to admins on Citrix/WT servers. See DisableMaintenance. Registry: HKLM\...\Installer.&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
       <string id="bMergeMenuBar_ReaderX86">Merge Title and Menu Bar</string>
       <string id="bMergeMenuBar_ReaderX86_Explain">Specifies whether to merge the application's title bar and menu bar into a single bar.&#10;&#10;Note that &quot;Policies&quot; does not appear in the HKLM path. Possible values include: 0: Don't merge the title and menu bars 1: Merge the bars&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
-      <!-- ======================================== -->
-      <!--                                          -->
       <!-- Adobe Acrobat DC (User) - policy strings -->
-      <!--                                          -->
-      <!-- ======================================== -->
 
-      <!-- ======================================== -->
-      <!--        Context, Tools and Search         -->
-      <!-- ======================================== -->
+      <!-- Context, Tools and Search -->
 
       <string id="tBaseFolderNameDC_User">Base Folder Name (User)</string>
       <string id="tBaseFolderNameDC_User_Explain">An alias referring to a particular folder.&#10;&#10;The two standard values are &quot;install&quot; and &quot;user&quot;, which refer to the application-level Sequences folder and the user-level Sequences folders, respectively. The name can also refer to an administrator-specified folder. Possible values include: install user</string>
@@ -957,9 +854,7 @@
       <string id="iNumSessionAV2DC_User">UI Switcher Sessions (User)</string>
       <string id="iNumSessionAV2DC_User_Explain">Specifies whether to show the UI switcher coachmark based on the number of user sessions.&#10;&#10;Interacts with iNumSwitcherContextualToolTipAV2Shown . Possible values include: 0 or 1: Don't show the UI switcher. 2 or greater: Show the UI switcher if iNumSwitcherContextualToolTipAV2Shown is 0.</string>
 
-      <!-- ======================================== -->
-      <!--   Documents, Editing and Accessibility   -->
-      <!-- ======================================== -->
+      <!-- Documents, Editing and Accessibility -->
 
       <string id="bUse2DGPUfDC_User">2D GPU Acceleration (User)</string>
       <string id="bUse2DGPUfDC_User_Explain">Specifies whether 2D graphics acceleration should be used.&#10;&#10;Possible values include: 0: Disable 1: Enable</string>
@@ -1000,8 +895,6 @@
       <string id="tNoteFontNameDC_User_Explain">Sets the comment font name for the viewer.&#10;&#10;The UI displays all the available fonts on the user system. The font is not embedded in the PDF; this preference merely controls the viewer's preference rather than the author's preference. Possible values include: Tahoma: May vary with available system fonts. N/A: User specified.</string>
       <string id="dNoteFontSizeDC_User">Comment Font Size (User)</string>
       <string id="dNoteFontSizeDC_User_Explain">Sets the font size.&#10;&#10;The font is not embedded in the PDF; this preference merely controls the viewer's preference rather than the author's preference. Possible values include: 10: Font size. N/A: User specified.</string>
-      <string id="iNoteOpacityDC_User">Comment Opacity (User)</string>
-      <string id="iNoteOpacityDC_User_Explain">The opacity in percent of all comments.&#10;&#10;The number is entered in Hex. Possible values include: d99a: 85%. N/A: Any hex value representing 1-100%.</string>
       <string id="bComplexScriptDC_User">Complex Script Support (User)</string>
       <string id="bComplexScriptDC_User_Explain">Specifies whether to enable support for writing direction switching (complex script).&#10;&#10;Possible values include: 0: Don't enable Writing Direction Switching. 1: Enable Writing Direction Switching.</string>
       <string id="bconfirmEBRMergeDC_User">Confirm Review Import (User)</string>
@@ -1012,8 +905,6 @@
       <string id="bcopyTextToMarkupAnnotDC_User_Explain">Copies the selected text into highlight, cross-out, and underline comment popups.&#10;&#10;Adds a popup comment automatically to specified markup types so that they can be annotated. Possible values include: 0: Copy selected text. 1: Don't copy selected text.</string>
       <string id="bCreateLogDC_User">Create Report (User)</string>
       <string id="bCreateLogDC_User_Explain">Toggles whether to create an accessibility report when running an accessibility full check.&#10;&#10;Possible values include: 0: Don't create report. 1: Do create report.</string>
-      <string id="iDictionaryDefaultIDDC_User">Default Dictionary (User)</string>
-      <string id="iDictionaryDefaultIDDC_User_Explain">Identifies the default spelling dictionary ID.&#10;&#10;The value is an ID from cDictionaryOrderID\i0 . The dictionary name can be found in cDictionaryOrder\t0. Alternatively, set the value in the user interface, close the product, and look here again. Use the value that appears during deployment.</string>
       <string id="iPageViewLayoutModeDC_User">Default Page Layout (User)</string>
       <string id="iPageViewLayoutModeDC_User_Explain">Specifies the default page layout when a PDF opens.&#10;&#10;These settings can be overridden by Accessibility settings such as bOverridePageLayout. Possible values include: null: Automatic 1: Single Page 2: Single Page Continuous 3: Two Up Continuous 5: Two Up</string>
       <string id="iPageViewLayoutModeDC_User_opt0">Automatic</string>
@@ -1026,10 +917,8 @@
       <string id="iParaDirDC_User_opt0">Left to Right</string>
       <string id="iParaDirDC_User_opt1">Right to Left</string>
       <string id="iParaDirDC_User_opt2">Infer from document</string>
-      <string id="iDefaultZoomScaleDC_User">Default Zoom Scale (User)</string>
-      <string id="iDefaultZoomScaleDC_User_Explain">Specifies the zoom scale % to use when a PDF opens.&#10;&#10;Possible values include a range beginning with Fit Page to Reflow . To set a value, configure the UI and look at the registry/plist preference to see what has been written. Possible values include: 199a: 10% 4000 25% 8000: 50% c000: 75% 10000: 100% etc.</string>
       <string id="iDefaultZoomTypeDC_User">Default Zoom Type (User)</string>
-      <string id="iDefaultZoomTypeDC_User_Explain">Specifies the default zoom type (other than a %) to use when a PDF opens.&#10;&#10;% scales are stored in iZoomScale. Possible values include: 1: Fit Page (automatic) 2: Fit Width 3: Fit Hieght 4: Fit Visible 6: Reflow</string>
+      <string id="iDefaultZoomTypeDC_User_Explain">Specifies the default zoom type (other than a %) to use when a PDF opens.&#10;&#10;% scales are stored in iZoomScale. Possible values include: 1: Fit Page (automatic) 2: Fit Width 3: Fit Height 4: Fit Visible 6: Reflow</string>
       <string id="iDefaultZoomTypeDC_User_opt0">Fit Page (automatic)</string>
       <string id="iDefaultZoomTypeDC_User_opt1">Fit Width</string>
       <string id="iDefaultZoomTypeDC_User_opt2">Fit Height</string>
@@ -1069,7 +958,7 @@
       <string id="bOverprintPreviewUseShiftClickDC_User">Overprint Shift+Click (User)</string>
       <string id="bOverprintPreviewUseShiftClickDC_User_Explain">Shift+Click behavior in the output preview dialog.&#10;&#10;Values: 0 = Shift+Click adds color-value sticky note; 1 = Shift+Click multi-select; Alt/Option+Click adds sticky note.</string>
       <string id="bAccessOverrideDocColorsDC_User">Override Document Colors (User)</string>
-      <string id="bAccessOverrideDocColorsDC_User_Explain">Specifies whether to replace black test or line art colors when iAccessColorPolicy is enabled and a replacement color has been specified.&#10;&#10;While the default is 1, the preference is not read unless iAccessPolicy is enabled (1). Possible values include: 0: Don't replace black text or line art colors. 1: Replace black text or line art colors.</string>
+      <string id="bAccessOverrideDocColorsDC_User_Explain">Specifies whether to replace black text or line art colors when iAccessColorPolicy is enabled and a replacement color has been specified.&#10;&#10;While the default is 1, the preference is not read unless iAccessPolicy is enabled (1). Possible values include: 0: Don't replace black text or line art colors. 1: Replace black text or line art colors.</string>
       <string id="bOverrideLineArtColorsDC_User">Override Line Art Colors (User)</string>
       <string id="bOverrideLineArtColorsDC_User_Explain">Limits color changes to black text and line art when iAccessColorPolicy is enabled and a replacement color has been specified.&#10;&#10;While the default is 1, the preference is not read unless &quot;Accessibility&quot; enabled (1). Possible values include: 0: Don't replace text or line art colors. 1: Replace text or line art colors. See also bAccessOverrideDocColors in Originals.</string>
       <string id="iPageLayoutDC_User">Override Page Layout (User)</string>
@@ -1080,10 +969,8 @@
       <string id="iPageLayoutDC_User_opt3">Two Up</string>
       <string id="bOverrideZoomDC_User">Override Zoom (User)</string>
       <string id="bOverrideZoomDC_User_Explain">Let users set a default zoom for all documents.&#10;&#10;Overrides author Page Display settings and sets iZoomScale when enabled. Values: 0 = document default; 1 = enable zoom dropdown.</string>
-      <string id="iZoomScaleDC_User">Override Zoom Scale (User)</string>
-      <string id="iZoomScaleDC_User_Explain">Zoom percentage when iZoomType is a percent value.&#10;&#10;Overrides Page Display. Hex examples: 199a=10%, 4000=25%, 8000=50%, c000=75%, 10000=100%.</string>
       <string id="iZoomTypeDC_User">Override Zoom Type (User)</string>
-      <string id="iZoomTypeDC_User_Explain">Specifies the zoom scale for all other documents other than a % scale and overrides Page Display settings.&#10;&#10;% scales are stored in iZoomScale. Possible values include: 1: Fit Page 2: Fit Width 3: Fit Hieght 4: Fit Visible 6: Reflow</string>
+      <string id="iZoomTypeDC_User_Explain">Specifies the zoom scale for all other documents other than a % scale and overrides Page Display settings.&#10;&#10;% scales are stored in iZoomScale. Possible values include: 1: Fit Page 2: Fit Width 3: Fit Height 4: Fit Visible 6: Reflow</string>
       <string id="iZoomTypeDC_User_opt0">Fit Page</string>
       <string id="iZoomTypeDC_User_opt1">Fit Width</string>
       <string id="iZoomTypeDC_User_opt2">Fit Height</string>
@@ -1096,7 +983,7 @@
       <string id="bPopupsOpenIffSelectedDC_User">Popup When Selected (User)</string>
       <string id="bPopupsOpenIffSelectedDC_User_Explain">Specifies whether to open a popup when it is selected.</string>
       <string id="bPopupsScrollWithPageDC_User">Popups Scroll With Page (User)</string>
-      <string id="bPopupsScrollWithPageDC_User_Explain">Specifies whether whether popups are visible when a document is scrolled.&#10;&#10;Possible values include: 0: Hide popups on document scroll. 1: Show popups on document scroll.</string>
+      <string id="bPopupsScrollWithPageDC_User_Explain">Specifies whether popups are visible when a document is scrolled.&#10;&#10;Possible values include: 0: Hide popups on document scroll. 1: Show popups on document scroll.</string>
       <string id="bUseDetailsNavigatorDC_User">Portfolio File List (User)</string>
       <string id="bUseDetailsNavigatorDC_User_Explain">Specifies whether to show portfolio component files and file details in an accessible list.&#10;&#10;This preference replaces bUsePlatformNavigator. Files mode provides a better reading experience for people with disabilities such as mobility impairments, blindness, and low vision. Possible values include: 0: Don't show portfolio components in a list. 1: Do show portfolio components in a list.</string>
       <string id="bPrintAnnotsDC_User">Print Annotations (User)</string>
@@ -1129,7 +1016,7 @@
       <string id="bsendFinalApprovalEmailDC_User">Send Approval Email (User)</string>
       <string id="bsendFinalApprovalEmailDC_User_Explain">Specifies whether to send a notification email when the current approval is identified as the final one.&#10;&#10;Only valid for an approval workflow. Possible values include: 0: Don't send an email on final approval. 1: Do send an email on final approval.</string>
       <string id="bShowOptionsDialogDC_User">Show Check Options (User)</string>
-      <string id="bShowOptionsDialogDC_User_Explain">Toggles whether to display the options dialog when running a accessibility full check.&#10;&#10;Possible values include: 0: Don't show options dialog. 1: Show options dialog.</string>
+      <string id="bShowOptionsDialogDC_User_Explain">Toggles whether to display the options dialog when running an accessibility full check.&#10;&#10;Possible values include: 0: Don't show options dialog. 1: Show options dialog.</string>
       <string id="bcommentPanelOnImportDC_User">Show Comments on Import (User)</string>
       <string id="bcommentPanelOnImportDC_User_Explain">Specifies whether to open the comment list when comments are imported.&#10;&#10;Possible values include: 0: Don't open the comment list when comments are imported. 1: Do open the comment list when comments are imported.</string>
       <string id="bShowAnnotConnectorDC_User">Show Connector Lines (User)</string>
@@ -1149,9 +1036,9 @@
       <string id="bsideNotesDC_User">Side-Aligned Popups (User)</string>
       <string id="bsideNotesDC_User_Explain">Creates new popups aligned to the edge of the document.&#10;&#10;Controls popup positioning. Possible values include: 0: Don't align popups at the document edge. 1: Align popups at the document edge.</string>
       <string id="bAntialiasImagesDC_User">Smooth Images (User)</string>
-      <string id="bAntialiasImagesDC_User_Explain">Specifies wither to use anti-aliasing (smoothing) for images.&#10;&#10;Turning this preference off can improve scrolling performance in Citrix environments. Possible values include: 0: Don't smooth images. 1: Smooth images.</string>
+      <string id="bAntialiasImagesDC_User_Explain">Specifies whether to use anti-aliasing (smoothing) for images.&#10;&#10;Turning this preference off can improve scrolling performance in Citrix environments. Possible values include: 0: Don't smooth images. 1: Smooth images.</string>
       <string id="bAntialiasGraphicsDC_User">Smooth Line Art (User)</string>
-      <string id="bAntialiasGraphicsDC_User_Explain">Specifies wither to use anti-aliasing (smoothing) for line art.&#10;&#10;Turning this preference off can improve scrolling performance in Citrix environments. Possible values include: 0: Don't smooth line art. 1: Smooth line art.</string>
+      <string id="bAntialiasGraphicsDC_User_Explain">Specifies whether to use anti-aliasing (smoothing) for line art.&#10;&#10;Turning this preference off can improve scrolling performance in Citrix environments. Possible values include: 0: Don't smooth line art. 1: Smooth line art.</string>
       <string id="bAntialiasTextDC_User">Smooth Text (User)</string>
       <string id="bAntialiasTextDC_User_Explain">Anti-alias text when Smooth Text is Monitor or Laptop/LCD.&#10;&#10;With benableDDR=1, DDR further smooths text on capable displays. Values: 0 = none; 1 = monitor and laptop/LCD.</string>
       <string id="bSmoothZoomingDC_User">Smooth Zooming (User)</string>
@@ -1164,8 +1051,6 @@
       <string id="bUseStructTabOrderDC_User_Explain">Specifies whether to use the PDF document structure for determining the tab order.&#10;&#10;Possible values include: 0: Don't use document structure. 1: Use document structure.</string>
       <string id="bUseSystemSelectionColorDC_User">System Selection Color (User)</string>
       <string id="bUseSystemSelectionColorDC_User_Explain">Specifies whether the default selection color (blue) is overridden with a color that the system specifies.&#10;&#10;Possible values include: 0: Don't use the system selection color. 1: Use the system selection color.</string>
-      <string id="iAccessTextColorDC_User">Text Color (User)</string>
-      <string id="iAccessTextColorDC_User_Explain">Specifies the default document text color (accessibility feature)&#10;&#10;The key name is appended with (Blue|Green|Red|Space). Possible values include: null: not set Any RGB color: User specified.</string>
       <string id="bUseLocalFontsDC_User">Use Local Fonts (User)</string>
       <string id="bUseLocalFontsDC_User_Explain">Specifies whether to use local fonts.&#10;&#10;Possible values include: 0: Don't use local fonts. 1: Do use local fonts.</string>
       <string id="iEmailClientSelectionDC_User">XFA Email Client (User)</string>
@@ -1176,9 +1061,7 @@
       <string id="iRXOPolicyDC_User_opt1">Always allow XObjects view mode</string>
       <string id="iRXOPolicyDC_User_opt2">Only PDF/X-5 compliant documents</string>
 
-      <!-- ======================================== -->
-      <!--         Microsoft Purview (MIP)          -->
-      <!-- ======================================== -->
+      <!-- Microsoft Purview (MIP) -->
 
       <string id="bEnableLoggingDC_User">MIP Logging (User)</string>
       <string id="bEnableLoggingDC_User_Explain">Specifies whether to enable debug logging for Microsoft Purview Information Protection operations.&#10;&#10;Useful for troubleshooting MIP label and authentication issues. Possible values include: 0: Disable MIP debug logging. 1: Enable MIP debug logging.</string>
@@ -1187,9 +1070,7 @@
       <string id="bShowDMBDC_User">Show Document Message Bar (MIP) (User)</string>
       <string id="bShowDMBDC_User_Explain">Specifies whether to show Microsoft Purview Information Protection label information in the document message bar.&#10;&#10;Per-user preference under MicrosoftAIP. Possible values include: 0: Do not show MIP label info in the document message bar. 1: Show MIP label info in the document message bar.</string>
 
-      <!-- ======================================== -->
-      <!--    Security: Execution and Protection    -->
-      <!-- ======================================== -->
+      <!-- Security: Execution and Protection -->
 
       <string id="b3DEnableContentDC_User">3D Content Trust (User)</string>
       <string id="b3DEnableContentDC_User_Explain">Specifies whether to trust and render 3D content.&#10;&#10;This setting can be overridden by bEnable3D . Possible values include: 0: Don't trust and render 3D content. Show the Yellow Message Bar so the end user can trust the document. 1: Trust and render 3D files.</string>
@@ -1204,7 +1085,7 @@
       <string id="bEnableDebuggerDC_User">Enable JS Debugger (User)</string>
       <string id="bEnableDebuggerDC_User_Explain">Enables the debugger.&#10;&#10;Requires an application restart.</string>
       <string id="bChooseDialogDC_User">External JS Editor (User)</string>
-      <string id="bChooseDialogDC_User_Explain">Specifies wither or not to use the Acrobat editor or an external editor.&#10;&#10;When true, the &quot;Choose an external editor&quot; field becomes enabled.</string>
+      <string id="bChooseDialogDC_User_Explain">Specifies whether or not to use the Acrobat editor or an external editor.&#10;&#10;When true, the &quot;Choose an external editor&quot; field becomes enabled.</string>
       <string id="bFIPSModeDC_User">FIPS Mode (User)</string>
       <string id="bFIPSModeDC_User_Explain">Turns FIPS mode on and off thereby requiring stronger encryption algorithm and limiting certain application behavior.&#10;&#10;Security Reference: STIG ARDC-CN-000345 (V-213193) Medium; STIG AADC-CN-000955 (V-245874) Medium</string>
       <string id="bConsoleInputDC_User">JS Console Input (User)</string>
@@ -1225,11 +1106,9 @@
       <string id="bOldRecentFilesMigratedDC_User">Recent Files Migrated (User)</string>
       <string id="bOldRecentFilesMigratedDC_User_Explain">Indicates whether the recent files list has been migrated.&#10;&#10;Admins should not change the preference value.</string>
       <string id="bSaveBreakpointsDC_User">Save JS Breakpoints (User)</string>
-      <string id="bSaveBreakpointsDC_User_Explain">Stores breakpoints in a PDF file&#10;&#10;Details, interactions with other keys, and allowable values, etc.</string>
+      <string id="bSaveBreakpointsDC_User_Explain">Stores breakpoints in a PDF file&#10;&#10;When enabled, stores JavaScript debugger breakpoints inside the PDF file so they persist across sessions.</string>
 
-      <!-- ======================================== -->
-      <!--     Security: Trust and Permissions      -->
-      <!-- ======================================== -->
+      <!-- Security: Trust and Permissions -->
 
       <string id="bUseExpiredTimestampsDC_User">Accept Expired Timestamps (User)</string>
       <string id="bUseExpiredTimestampsDC_User_Explain">Specifies whether expired timestamps should be used.&#10;&#10;If true, an expired timestamp will not invalidate a signature.</string>
@@ -1320,7 +1199,7 @@
       <string id="bEnNonEmbFontLegPDFWarnDC_User">Non-Embedded Font Warn (User)</string>
       <string id="bEnNonEmbFontLegPDFWarnDC_User_Explain">Turns on and off warnings about non-embedded fonts.&#10;&#10;A warning appears when the LegalPDF dictionary NonEmbeddedFonts attribute has a non zero value. Turning this value on causes a warning to appear in the PDF Signature Report which indicates the document contains unembedded fonts.</string>
       <string id="iSendNonceDC_User">OCSP Nonce Behavior (User)</string>
-      <string id="iSendNonceDC_User_Explain">Specifies signature validation behavior with respect to nonces.&#10;&#10;With 10.0, this preference replaces bSendNonce. Possible values include: 0: No nonces are sent. 1: Nonces are included in the OCSP request and expected to be present in the response and should match the request's nonce. 2: Nonces are included in the OCSP request, but if none are present in the response, their abscence is ignored.</string>
+      <string id="iSendNonceDC_User_Explain">Specifies signature validation behavior with respect to nonces.&#10;&#10;With 10.0, this preference replaces bSendNonce. Possible values include: 0: No nonces are sent. 1: Nonces are included in the OCSP request and expected to be present in the response and should match the request's nonce. 2: Nonces are included in the OCSP request, but if none are present in the response, their absence is ignored.</string>
       <string id="iSendNonceDC_User_opt0">No nonces sent</string>
       <string id="iSendNonceDC_User_opt1">Send nonces; expect matching nonce in response</string>
       <string id="iSendNonceDC_User_opt2">Send nonces; ignore absent nonce in response</string>
@@ -1383,7 +1262,7 @@
       <string id="bShowAllChainsDC_User">Show All Chains (User)</string>
       <string id="bShowAllChainsDC_User_Explain">Specifies whether to show all chains in the Certificate Viewer.&#10;&#10;If true, the Certificate Viewer shows all the chains; otherwise, it shows only the trusted chain. If there are no trusted chains, then all the chains are shown and this preference is ignored.</string>
       <string id="iShowDocumentWarningsDC_User">Show Document Warnings (User)</string>
-      <string id="iShowDocumentWarningsDC_User_Explain">Specifies whether a button to allow reviewing document warnings shows up on the signing dialog.&#10;&#10;Interacts with iRequireDocumentWarnings. The possible values include: 0: Never 1: Show when certifying only 2: Always</string>
+      <string id="iShowDocumentWarningsDC_User_Explain">Specifies whether a button to allow reviewing document warnings shows up on the signing dialog.&#10;&#10;Interacts with iRequireReviewWarnings. The possible values include: 0: Never 1: Show when certifying only 2: Always</string>
       <string id="iShowDocumentWarningsDC_User_opt0">Never</string>
       <string id="iShowDocumentWarningsDC_User_opt1">Show when certifying only</string>
       <string id="iShowDocumentWarningsDC_User_opt2">Always</string>
@@ -1406,11 +1285,11 @@
       <string id="iSigVerificationTimeDC_User_opt1">Use signing time if secure, else current time</string>
       <string id="iSigVerificationTimeDC_User_opt2">Always use signing time</string>
       <string id="bAllowSigCertOnlyDC_User">Sign Certified Only (User)</string>
-      <string id="bAllowSigCertOnlyDC_User_Explain">Specifies whether any subsequent signers can sign a certified document containing LegalPDF warnings with additional approval signatures.&#10;&#10;In other words, the presence of any LegalPDF warning prevent any additonal signatures.</string>
+      <string id="bAllowSigCertOnlyDC_User_Explain">Specifies whether any subsequent signers can sign a certified document containing LegalPDF warnings with additional approval signatures.&#10;&#10;In other words, the presence of any LegalPDF warning prevents any additional signatures.</string>
       <string id="isignDoneDC_User">Sign Done Dialog (User)</string>
       <string id="isignDoneDC_User_Explain">Specifies whether to show a dialog indicating that a document was successfully signed.&#10;&#10;Possible values include: 0: Show the dialog after signing successfully. 1: Don't show the dialog after signing successfully.</string>
       <string id="bAllowSigCertGreenOnlyDC_User">Sign Green Cert Only (User)</string>
-      <string id="bAllowSigCertGreenOnlyDC_User_Explain">Specifies whether any subsequent signers can sign a certified document that does not contain LegalPDF warnings with additional approval signatures.&#10;&#10;In other words, the presence of any LegalPDF warning does not prevent any additonal signatures.</string>
+      <string id="bAllowSigCertGreenOnlyDC_User_Explain">Specifies whether any subsequent signers can sign a certified document that does not contain LegalPDF warnings with additional approval signatures.&#10;&#10;In other words, the presence of any LegalPDF warning does not prevent any additional signatures.</string>
       <string id="tSignHashDC_User">Sign Hash Algorithm (User)</string>
       <string id="tSignHashDC_User_Explain">A text entry that contains the OID of the hashing algorithm.&#10;&#10;For an alternative, see aSignHash. Allowable values include: 1.2.840.113549.2.5: MD5 1.3.14.3.2.26: SHA1 2.16.840.1.101.3.4.2.1: SHA256 (v. 7.0) 1.3.36.3.2.1: RIPEMD160 (v. 8.0) 2.16.840.1.101.3.4.2.2: SHA384 (v. 8.0) 2.16.840.1.101.3.4.2.3: SHA512 (v. 8.0)</string>
       <string id="bSignRequestDC_User">Sign OCSP Requests (User)</string>
@@ -1433,7 +1312,7 @@
       <string id="bTrustOSTrustedSitesDC_User">Trust IE Trusted Sites (User)</string>
       <string id="bTrustOSTrustedSitesDC_User_Explain">Treat IE Trusted Sites and Local Intranet as privileged locations.&#10;&#10;Local Intranet included since 10.1.2/9.5. Disable with bDisableOSTrustedSites. Values: 0 = do not trust OS zones; 1 = trust OS zones.</string>
       <string id="tHostPermsDC_User">Trusted/Blocked URL List (User)</string>
-      <string id="tHostPermsDC_User_Explain">Stores trusted and blocked URLs when URL Access Permissions (iURLPerms) is set to Custom Setting (DWORD 0). Pipe-separated Adobe TrustManager host permission list syntax: version:1|host:N where N is 2 (Allow) or 3 (Block). Only effective when iURLPerms is 0; Allow or Block overrides this list. Not lockable via HKLM - this preference only exists at User scope.</string>
+      <string id="tHostPermsDC_User_Explain">Stores trusted and blocked URLs when URL Access Permissions (iURLPerms) is set to Custom Setting (DWORD 0).&#10;&#10;Pipe-separated Adobe TrustManager host permission list syntax: version:1|host:N where N is 2 (Allow) or 3 (Block).&#10;&#10;Only effective when iURLPerms is 0; Allow or Block overrides this list.&#10;&#10;Not lockable via HKLM - this preference only exists at User scope.</string>
       <string id="iURLPermsDC_User">URL Access Permissions (User)</string>
       <string id="iURLPermsDC_User_Explain">Allow, block, or custom website access.&#10;&#10;Allow or Block resets tHostPerms; Custom uses tHostPerms. Values: 0 = custom; 1 = block all; 2 = allow all.&#10;&#10;When set to Custom Setting (0), configure the URL list using the Trusted/Blocked URL List (tHostPerms) text policy.</string>
       <string id="iURLPermsDC_User_opt0">Custom Setting (uses tHostPerms URL list)</string>
@@ -1453,9 +1332,7 @@
       <string id="iMSStoreTrustedDC_User">Windows Store Trust (User)</string>
       <string id="iMSStoreTrustedDC_User_Explain">Trust Windows Certificate Store certs for signing and certifying.&#10;&#10;Lock via bMSStoreTrusted. Values: 0x00 = none; 0x60 = validating signatures; 0x62 = certified documents and signatures.&#10;&#10;Windows Store trust is a hex bitmask stored as a DWORD. Documented values: 0x00 (0) = no trust; 0x60 (96) = validating signatures; 0x62 (98) = validating certified documents and signatures. Other bit combinations may be set using the numeric control (0-255).</string>
 
-      <!-- ======================================== -->
-      <!--           Sharing and Features           -->
-      <!-- ======================================== -->
+      <!-- Sharing and Features -->
 
       <string id="iSendMailDefaultAccountAlertDC_User">Default Email Prompt (User)</string>
       <string id="iSendMailDefaultAccountAlertDC_User_Explain">Specifies whether a dialog should appear asking if a PDF should be sent via the user's default email account.&#10;&#10;When a new user tries to send a PDF via email, a dialog appears and asks &quot;How would you like to send this email.&quot; Users then need to select a choice and check Remember my choice . Possible values include: 0: Don't show the dialog. 1: Do show the dialog.</string>
@@ -1468,7 +1345,7 @@
       <string id="bEnableFillSignDC_User">Fill &amp; Sign Pane (User)</string>
       <string id="bEnableFillSignDC_User_Explain">Specifies whether to remove the Fill and Sign pane without removing the Work with Certificates menu.&#10;&#10;11.x products only. This setting allows users to remove the Acrobat Sign menu items without removing the menu item for using digital signatures on the local machine. Possible values include: 0: Remove the Fill and Sign pane. 1: Don't remove the Fill and Sign pane.</string>
       <string id="bRemoveCommaDelimiterDC_User">Remove Comma Delimiter (User)</string>
-      <string id="bRemoveCommaDelimiterDC_User_Explain">Specifies whether to remove the comma in comma-delimited addressbook entries.&#10;&#10;During shared review workflows, the user invoke the addressbook to invite participants. In cases where the addressbook is comma-delimited, pre DC versions of the product display an error dialog. Use this prefererence to remove commas. Possible values include: 0: Don't remove commas. 1: Remove commas.</string>
+      <string id="bRemoveCommaDelimiterDC_User_Explain">Specifies whether to remove the comma in comma-delimited addressbook entries.&#10;&#10;During shared review workflows, the user invokes the addressbook to invite participants. In cases where the addressbook is comma-delimited, pre DC versions of the product display an error dialog. Use this preference to remove commas. Possible values include: 0: Don't remove commas. 1: Remove commas.</string>
       <string id="bShowConnectDialogDC_User">Show Connect Dialog (User)</string>
       <string id="bShowConnectDialogDC_User_Explain">Specifies whether to display the Connect dialog in Shared Reviews.&#10;&#10;Possible values include: 0: Don't show the Connect dialog. 1: Do show the Connect dialog.</string>
       <string id="bIsUsedShareReviewDC_User">Show Review Tip (User)</string>
@@ -1478,9 +1355,7 @@
       <string id="bShowWelcomeDialogDC_User">Show Welcome Dialog (User)</string>
       <string id="bShowWelcomeDialogDC_User_Explain">Specifies whether to show the Welcome dialog when a shared review is initiated.&#10;&#10;Possible values include: 0: Don't show the welcome dialog. 1: Do show the welcome dialog.</string>
 
-      <!-- ======================================== -->
-      <!--          Startup and Experience          -->
-      <!-- ======================================== -->
+      <!-- Startup and Experience -->
 
       <string id="bActivatedDC_User">App Activated (User)</string>
       <string id="bActivatedDC_User_Explain">Records whether the application has been activated online after installation.&#10;&#10;Possible values include: 0: Not activated 1: Activated</string>
@@ -1539,9 +1414,7 @@
       <string id="iDelayBeforeQuitViewerDC_User">Viewer Quit Delay (User)</string>
       <string id="iDelayBeforeQuitViewerDC_User_Explain">Specifies the number of seconds the standalone application stays in memory before it shuts down.&#10;&#10;Possible values include: 30 Any integer</string>
 
-      <!-- ======================================== -->
-      <!--     Updates and Desktop Integration      -->
-      <!-- ======================================== -->
+      <!-- Updates and Desktop Integration -->
 
       <string id="bDownloadEntireFileDC_User">Background Download (User)</string>
       <string id="bDownloadEntireFileDC_User_Explain">Specifies whether to allow background downloading of resources the view thinks it needs to properly display the PDF.&#10;&#10;Possible values include: 0: Don't allow background downloading. 1: Do allow background downloading.</string>
@@ -1556,7 +1429,7 @@
       <string id="bAllowByteRangeRequestsDC_User">Fast Web View (User)</string>
       <string id="bAllowByteRangeRequestsDC_User_Explain">Specifies whether to enable Fast Web View by allowing display of the PDF before the entire file is downloaded.&#10;&#10;Possible values include: 0: Don't enable Fast Web View. 1: Enable Fast Web View.</string>
       <string id="bFavoriteFilesRememberChoiceDC_User">Remember Stars Choice (User)</string>
-      <string id="bFavoriteFilesRememberChoiceDC_User_Explain">Specifies the users choice&#10;&#10;When a user selects &quot;Ask every time&quot; and iFavoriteFilesAccessOption is set to 0, this new preference remembers the users choice for each file. Possible values include: Application generated.</string>
+      <string id="bFavoriteFilesRememberChoiceDC_User_Explain">Specifies the user's choice&#10;&#10;When a user selects &quot;Ask every time&quot; and iFavoriteFilesAccessOption is set to 0, this new preference remembers the user's choice for each file. Possible values include: Application generated.</string>
       <string id="bFavoritesStripInRFLDC_User">Show Starred Files (User)</string>
       <string id="bFavoritesStripInRFLDC_User_Explain">Specifies whether to show starred files in the recent files list.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. Note that the lockable version of this preference is named bFavoritesFeaturesLockDown . Possible values include: 0: Show starred files in the recent files list. 1: Don't show starred files in the recent files list.</string>
       <string id="iFavoriteFilesAccessOptionDC_User">Starred Files Action (User)</string>
@@ -1567,11 +1440,9 @@
       <string id="bStoreCredentialsDC_User">Store Credentials (User)</string>
       <string id="bStoreCredentialsDC_User_Explain">Specifies whether the user logon credentials for the Tracker should be stored.&#10;&#10;Possible values include: 0: Don't store credentials. 1: Store credentials.</string>
       <string id="iAVARMNoAutoUpdateWarningDC_User">Suppress Update Warning (User)</string>
-      <string id="iAVARMNoAutoUpdateWarningDC_User_Explain">Specifies whether to turn of the &quot;Updater has not been able to check for updates recently&quot; dialog.&#10;&#10;Possible values include: 0: Don't turn off the dialog. 1: Do turn off the dialog.</string>
+      <string id="iAVARMNoAutoUpdateWarningDC_User_Explain">Specifies whether to turn off the &quot;Updater has not been able to check for updates recently&quot; dialog.&#10;&#10;Possible values include: 0: Don't turn off the dialog. 1: Do turn off the dialog.</string>
 
-      <!-- ======================================== -->
-      <!--                  Upsell                  -->
-      <!-- ======================================== -->
+      <!-- Upsell -->
 
       <string id="bAcrobatAppInstalledDC_User">Acrobat App Promo (User)</string>
       <string id="bAcrobatAppInstalledDC_User_Explain">Specifies whether to show the Acrobat mobile app promotion and link in the Home banner.&#10;&#10;Disable and lock both the App Center and Home banner with bToggleDCAppCenter under FeatureLockDown. Possible values include: 0: Promote the mobile app. 1: Don't promote the mobile app.</string>
@@ -1579,15 +1450,9 @@
       <string id="bScanAppInstalledDC_User_Explain">Specifies whether to show the Adobe Scan mobile app promotion and link in the Home banner.&#10;&#10;Disable and lock both the App Center and Home banner with bToggleDCAppCenter under FeatureLockDown. Possible values include: 0: Promote the mobile app. 1: Don't promote the mobile app.</string>
       <string id="bShowTrialNagDC_User">Show Trial Nag (User)</string>
       <string id="bShowTrialNagDC_User_Explain">Specifies whether a &quot;Trial Expired&quot; dialog should appear after 30 days.&#10;&#10;This preference is automatically set by the application. When the 30 day trial period expires, Acrobat is launched in reduced functionality mode, and a dialog appears asking if the user would like to purchase the product. Possible values include: 0: Don't show the &quot;Trial Expired&quot; dialog. 1: &quot;Trial Expired&quot; dialog.</string>
-      <!-- ======================================== -->
-      <!--                                          -->
-      <!-- Adobe Reader DC (User) - policy strings  -->
-      <!--                                          -->
-      <!-- ======================================== -->
+      <!-- Adobe Reader DC (User) - policy strings -->
 
-      <!-- ======================================== -->
-      <!--        Context, Tools and Search         -->
-      <!-- ======================================== -->
+      <!-- Context, Tools and Search -->
 
       <string id="tBaseFolderName_User">Base Folder Name (User)</string>
       <string id="tBaseFolderName_User_Explain">An alias referring to a particular folder.&#10;&#10;The two standard values are &quot;install&quot; and &quot;user&quot;, which refer to the application-level Sequences folder and the user-level Sequences folders, respectively. The name can also refer to an administrator-specified folder. Possible values include: install user</string>
@@ -1637,9 +1502,7 @@
       <string id="iNumSessionAV2_User">UI Switcher Sessions (User)</string>
       <string id="iNumSessionAV2_User_Explain">Specifies whether to show the UI switcher coachmark based on the number of user sessions.&#10;&#10;Interacts with iNumSwitcherContextualToolTipAV2Shown . Possible values include: 0 or 1: Don't show the UI switcher. 2 or greater: Show the UI switcher if iNumSwitcherContextualToolTipAV2Shown is 0.</string>
 
-      <!-- ======================================== -->
-      <!--   Documents, Editing and Accessibility   -->
-      <!-- ======================================== -->
+      <!-- Documents, Editing and Accessibility -->
 
       <string id="bUse2DGPUf_User">2D GPU Acceleration (User)</string>
       <string id="bUse2DGPUf_User_Explain">Specifies whether 2D graphics acceleration should be used.&#10;&#10;Possible values include: 0: Disable 1: Enable</string>
@@ -1678,8 +1541,6 @@
       <string id="tNoteFontName_User_Explain">Sets the comment font name for the viewer.&#10;&#10;The UI displays all the available fonts on the user system. The font is not embedded in the PDF; this preference merely controls the viewer's preference rather than the author's preference. Possible values include: Tahoma: May vary with available system fonts. N/A: User specified.</string>
       <string id="dNoteFontSize_User">Comment Font Size (User)</string>
       <string id="dNoteFontSize_User_Explain">Sets the font size.&#10;&#10;The font is not embedded in the PDF; this preference merely controls the viewer's preference rather than the author's preference. Possible values include: 10: Font size. N/A: User specified.</string>
-      <string id="iNoteOpacity_User">Comment Opacity (User)</string>
-      <string id="iNoteOpacity_User_Explain">The opacity in percent of all comments.&#10;&#10;The number is entered in Hex. Possible values include: d99a: 85%. N/A: Any hex value representing 1-100%.</string>
       <string id="bComplexScript_User">Complex Script Support (User)</string>
       <string id="bComplexScript_User_Explain">Specifies whether to enable support for writing direction switching (complex script).&#10;&#10;Possible values include: 0: Don't enable Writing Direction Switching. 1: Enable Writing Direction Switching.</string>
       <string id="bconfirmEBRMerge_User">Confirm Review Import (User)</string>
@@ -1690,8 +1551,6 @@
       <string id="bcopyTextToMarkupAnnot_User_Explain">Copies the selected text into highlight, cross-out, and underline comment popups.&#10;&#10;Adds a popup comment automatically to specified markup types so that they can be annotated. Possible values include: 0: Copy selected text. 1: Don't copy selected text.</string>
       <string id="bCreateLog_User">Create Report (User)</string>
       <string id="bCreateLog_User_Explain">Toggles whether to create an accessibility report when running an accessibility full check.&#10;&#10;Possible values include: 0: Don't create report. 1: Do create report.</string>
-      <string id="iDictionaryDefaultID_User">Default Dictionary (User)</string>
-      <string id="iDictionaryDefaultID_User_Explain">Identifies the default spelling dictionary ID.&#10;&#10;The value is an ID from cDictionaryOrderID\i0 . The dictionary name can be found in cDictionaryOrder\t0. Alternatively, set the value in the user interface, close the product, and look here again. Use the value that appears during deployment.</string>
       <string id="iPageViewLayoutMode_User">Default Page Layout (User)</string>
       <string id="iPageViewLayoutMode_User_Explain">Specifies the default page layout when a PDF opens.&#10;&#10;These settings can be overridden by Accessibility settings such as bOverridePageLayout. Possible values include: null: Automatic 1: Single Page 2: Single Page Continuous 3: Two Up Continuous 5: Two Up</string>
       <string id="iPageViewLayoutMode_User_opt0">Automatic</string>
@@ -1704,10 +1563,8 @@
       <string id="iParaDir_User_opt0">Left to Right</string>
       <string id="iParaDir_User_opt1">Right to Left</string>
       <string id="iParaDir_User_opt2">Infer from document</string>
-      <string id="iDefaultZoomScale_User">Default Zoom Scale (User)</string>
-      <string id="iDefaultZoomScale_User_Explain">Specifies the zoom scale % to use when a PDF opens.&#10;&#10;Possible values include a range beginning with Fit Page to Reflow . To set a value, configure the UI and look at the registry/plist preference to see what has been written. Possible values include: 199a: 10% 4000 25% 8000: 50% c000: 75% 10000: 100% etc.</string>
       <string id="iDefaultZoomType_User">Default Zoom Type (User)</string>
-      <string id="iDefaultZoomType_User_Explain">Specifies the default zoom type (other than a %) to use when a PDF opens.&#10;&#10;% scales are stored in iZoomScale. Possible values include: 1: Fit Page (automatic) 2: Fit Width 3: Fit Hieght 4: Fit Visible 6: Reflow</string>
+      <string id="iDefaultZoomType_User_Explain">Specifies the default zoom type (other than a %) to use when a PDF opens.&#10;&#10;% scales are stored in iZoomScale. Possible values include: 1: Fit Page (automatic) 2: Fit Width 3: Fit Height 4: Fit Visible 6: Reflow</string>
       <string id="iDefaultZoomType_User_opt0">Fit Page (automatic)</string>
       <string id="iDefaultZoomType_User_opt1">Fit Width</string>
       <string id="iDefaultZoomType_User_opt2">Fit Height</string>
@@ -1747,7 +1604,7 @@
       <string id="bOverprintPreviewUseShiftClick_User">Overprint Shift+Click (User)</string>
       <string id="bOverprintPreviewUseShiftClick_User_Explain">Shift+Click behavior in the output preview dialog.&#10;&#10;Values: 0 = Shift+Click adds color-value sticky note; 1 = Shift+Click multi-select; Alt/Option+Click adds sticky note.</string>
       <string id="bAccessOverrideDocColors_User">Override Document Colors (User)</string>
-      <string id="bAccessOverrideDocColors_User_Explain">Specifies whether to replace black test or line art colors when iAccessColorPolicy is enabled and a replacement color has been specified.&#10;&#10;While the default is 1, the preference is not read unless iAccessPolicy is enabled (1). Possible values include: 0: Don't replace black text or line art colors. 1: Replace black text or line art colors.</string>
+      <string id="bAccessOverrideDocColors_User_Explain">Specifies whether to replace black text or line art colors when iAccessColorPolicy is enabled and a replacement color has been specified.&#10;&#10;While the default is 1, the preference is not read unless iAccessPolicy is enabled (1). Possible values include: 0: Don't replace black text or line art colors. 1: Replace black text or line art colors.</string>
       <string id="bOverrideLineArtColors_User">Override Line Art Colors (User)</string>
       <string id="bOverrideLineArtColors_User_Explain">Limits color changes to black text and line art when iAccessColorPolicy is enabled and a replacement color has been specified.&#10;&#10;While the default is 1, the preference is not read unless &quot;Accessibility&quot; enabled (1). Possible values include: 0: Don't replace text or line art colors. 1: Replace text or line art colors. See also bAccessOverrideDocColors in Originals.</string>
       <string id="iPageLayout_User">Override Page Layout (User)</string>
@@ -1758,10 +1615,8 @@
       <string id="iPageLayout_User_opt3">Two Up</string>
       <string id="bOverrideZoom_User">Override Zoom (User)</string>
       <string id="bOverrideZoom_User_Explain">Let users set a default zoom for all documents.&#10;&#10;Overrides author Page Display settings and sets iZoomScale when enabled. Values: 0 = document default; 1 = enable zoom dropdown.</string>
-      <string id="iZoomScale_User">Override Zoom Scale (User)</string>
-      <string id="iZoomScale_User_Explain">Zoom percentage when iZoomType is a percent value.&#10;&#10;Overrides Page Display. Hex examples: 199a=10%, 4000=25%, 8000=50%, c000=75%, 10000=100%.</string>
       <string id="iZoomType_User">Override Zoom Type (User)</string>
-      <string id="iZoomType_User_Explain">Specifies the zoom scale for all other documents other than a % scale and overrides Page Display settings.&#10;&#10;% scales are stored in iZoomScale. Possible values include: 1: Fit Page 2: Fit Width 3: Fit Hieght 4: Fit Visible 6: Reflow</string>
+      <string id="iZoomType_User_Explain">Specifies the zoom scale for all other documents other than a % scale and overrides Page Display settings.&#10;&#10;% scales are stored in iZoomScale. Possible values include: 1: Fit Page 2: Fit Width 3: Fit Height 4: Fit Visible 6: Reflow</string>
       <string id="iZoomType_User_opt0">Fit Page</string>
       <string id="iZoomType_User_opt1">Fit Width</string>
       <string id="iZoomType_User_opt2">Fit Height</string>
@@ -1805,7 +1660,7 @@
       <string id="bsendFinalApprovalEmail_User">Send Approval Email (User)</string>
       <string id="bsendFinalApprovalEmail_User_Explain">Specifies whether to send a notification email when the current approval is identified as the final one.&#10;&#10;Only valid for an approval workflow. Possible values include: 0: Don't send an email on final approval. 1: Do send an email on final approval.</string>
       <string id="bShowOptionsDialog_User">Show Check Options (User)</string>
-      <string id="bShowOptionsDialog_User_Explain">Toggles whether to display the options dialog when running a accessibility full check.&#10;&#10;Possible values include: 0: Don't show options dialog. 1: Show options dialog.</string>
+      <string id="bShowOptionsDialog_User_Explain">Toggles whether to display the options dialog when running an accessibility full check.&#10;&#10;Possible values include: 0: Don't show options dialog. 1: Show options dialog.</string>
       <string id="bcommentPanelOnImport_User">Show Comments on Import (User)</string>
       <string id="bcommentPanelOnImport_User_Explain">Specifies whether to open the comment list when comments are imported.&#10;&#10;Possible values include: 0: Don't open the comment list when comments are imported. 1: Do open the comment list when comments are imported.</string>
       <string id="bShowAnnotConnector_User">Show Connector Lines (User)</string>
@@ -1823,9 +1678,9 @@
       <string id="bsideNotes_User">Side-Aligned Popups (User)</string>
       <string id="bsideNotes_User_Explain">Creates new popups aligned to the edge of the document.&#10;&#10;Controls popup positioning. Possible values include: 0: Don't align popups at the document edge. 1: Align popups at the document edge.</string>
       <string id="bAntialiasImages_User">Smooth Images (User)</string>
-      <string id="bAntialiasImages_User_Explain">Specifies wither to use anti-aliasing (smoothing) for images.&#10;&#10;Turning this preference off can improve scrolling performance in Citrix environments. Possible values include: 0: Don't smooth images. 1: Smooth images.</string>
+      <string id="bAntialiasImages_User_Explain">Specifies whether to use anti-aliasing (smoothing) for images.&#10;&#10;Turning this preference off can improve scrolling performance in Citrix environments. Possible values include: 0: Don't smooth images. 1: Smooth images.</string>
       <string id="bAntialiasGraphics_User">Smooth Line Art (User)</string>
-      <string id="bAntialiasGraphics_User_Explain">Specifies wither to use anti-aliasing (smoothing) for line art.&#10;&#10;Turning this preference off can improve scrolling performance in Citrix environments. Possible values include: 0: Don't smooth line art. 1: Smooth line art.</string>
+      <string id="bAntialiasGraphics_User_Explain">Specifies whether to use anti-aliasing (smoothing) for line art.&#10;&#10;Turning this preference off can improve scrolling performance in Citrix environments. Possible values include: 0: Don't smooth line art. 1: Smooth line art.</string>
       <string id="bAntialiasText_User">Smooth Text (User)</string>
       <string id="bAntialiasText_User_Explain">Anti-alias text when Smooth Text is Monitor or Laptop/LCD.&#10;&#10;With benableDDR=1, DDR further smooths text on capable displays. Values: 0 = none; 1 = monitor and laptop/LCD.</string>
       <string id="bSmoothZooming_User">Smooth Zooming (User)</string>
@@ -1838,8 +1693,6 @@
       <string id="bUseStructTabOrder_User_Explain">Specifies whether to use the PDF document structure for determining the tab order.&#10;&#10;Possible values include: 0: Don't use document structure. 1: Use document structure.</string>
       <string id="bUseSystemSelectionColor_User">System Selection Color (User)</string>
       <string id="bUseSystemSelectionColor_User_Explain">Specifies whether the default selection color (blue) is overridden with a color that the system specifies.&#10;&#10;Possible values include: 0: Don't use the system selection color. 1: Use the system selection color.</string>
-      <string id="iAccessTextColor_User">Text Color (User)</string>
-      <string id="iAccessTextColor_User_Explain">Specifies the default document text color (accessibility feature)&#10;&#10;The key name is appended with (Blue|Green|Red|Space). Possible values include: null: not set Any RGB color: User specified.</string>
       <string id="bUseLocalFonts_User">Use Local Fonts (User)</string>
       <string id="bUseLocalFonts_User_Explain">Specifies whether to use local fonts.&#10;&#10;Possible values include: 0: Don't use local fonts. 1: Do use local fonts.</string>
       <string id="iEmailClientSelection_User">XFA Email Client (User)</string>
@@ -1850,9 +1703,7 @@
       <string id="iRXOPolicy_User_opt1">Always allow XObjects view mode</string>
       <string id="iRXOPolicy_User_opt2">Only PDF/X-5 compliant documents</string>
 
-      <!-- ======================================== -->
-      <!--         Microsoft Purview (MIP)          -->
-      <!-- ======================================== -->
+      <!-- Microsoft Purview (MIP) -->
 
       <string id="bEnableLogging_User">MIP Logging (User)</string>
       <string id="bEnableLogging_User_Explain">Specifies whether to enable debug logging for Microsoft Purview Information Protection operations.&#10;&#10;Useful for troubleshooting MIP label and authentication issues. Possible values include: 0: Disable MIP debug logging. 1: Enable MIP debug logging.</string>
@@ -1861,9 +1712,7 @@
       <string id="bShowDMB_User">Show Document Message Bar (MIP) (User)</string>
       <string id="bShowDMB_User_Explain">Specifies whether to show Microsoft Purview Information Protection label information in the document message bar.&#10;&#10;Per-user preference under MicrosoftAIP. Possible values include: 0: Do not show MIP label info in the document message bar. 1: Show MIP label info in the document message bar.</string>
 
-      <!-- ======================================== -->
-      <!--    Security: Execution and Protection    -->
-      <!-- ======================================== -->
+      <!-- Security: Execution and Protection -->
 
       <string id="b3DEnableContent_User">3D Content Trust (User)</string>
       <string id="b3DEnableContent_User_Explain">Specifies whether to trust and render 3D content.&#10;&#10;This setting can be overridden by bEnable3D . Possible values include: 0: Don't trust and render 3D content. Show the Yellow Message Bar so the end user can trust the document. 1: Trust and render 3D files.</string>
@@ -1884,9 +1733,7 @@
       <string id="bOldRecentFilesMigrated_User">Recent Files Migrated (User)</string>
       <string id="bOldRecentFilesMigrated_User_Explain">Indicates whether the recent files list has been migrated.&#10;&#10;Admins should not change the preference value.</string>
 
-      <!-- ======================================== -->
-      <!--     Security: Trust and Permissions      -->
-      <!-- ======================================== -->
+      <!-- Security: Trust and Permissions -->
 
       <string id="bUseExpiredTimestamps_User">Accept Expired Timestamps (User)</string>
       <string id="bUseExpiredTimestamps_User_Explain">Specifies whether expired timestamps should be used.&#10;&#10;If true, an expired timestamp will not invalidate a signature.</string>
@@ -1975,7 +1822,7 @@
       <string id="bEnNonEmbFontLegPDFWarn_User">Non-Embedded Font Warn (User)</string>
       <string id="bEnNonEmbFontLegPDFWarn_User_Explain">Turns on and off warnings about non-embedded fonts.&#10;&#10;A warning appears when the LegalPDF dictionary NonEmbeddedFonts attribute has a non zero value. Turning this value on causes a warning to appear in the PDF Signature Report which indicates the document contains unembedded fonts.</string>
       <string id="iSendNonce_User">OCSP Nonce Behavior (User)</string>
-      <string id="iSendNonce_User_Explain">Specifies signature validation behavior with respect to nonces.&#10;&#10;With 10.0, this preference replaces bSendNonce. Possible values include: 0: No nonces are sent. 1: Nonces are included in the OCSP request and expected to be present in the response and should match the request's nonce. 2: Nonces are included in the OCSP request, but if none are present in the response, their abscence is ignored.</string>
+      <string id="iSendNonce_User_Explain">Specifies signature validation behavior with respect to nonces.&#10;&#10;With 10.0, this preference replaces bSendNonce. Possible values include: 0: No nonces are sent. 1: Nonces are included in the OCSP request and expected to be present in the response and should match the request's nonce. 2: Nonces are included in the OCSP request, but if none are present in the response, their absence is ignored.</string>
       <string id="iSendNonce_User_opt0">No nonces sent</string>
       <string id="iSendNonce_User_opt1">Send nonces; expect matching nonce in response</string>
       <string id="iSendNonce_User_opt2">Send nonces; ignore absent nonce in response</string>
@@ -2038,7 +1885,7 @@
       <string id="bShowAllChains_User">Show All Chains (User)</string>
       <string id="bShowAllChains_User_Explain">Specifies whether to show all chains in the Certificate Viewer.&#10;&#10;If true, the Certificate Viewer shows all the chains; otherwise, it shows only the trusted chain. If there are no trusted chains, then all the chains are shown and this preference is ignored.</string>
       <string id="iShowDocumentWarnings_User">Show Document Warnings (User)</string>
-      <string id="iShowDocumentWarnings_User_Explain">Specifies whether a button to allow reviewing document warnings shows up on the signing dialog.&#10;&#10;Interacts with iRequireDocumentWarnings. The possible values include: 0: Never 1: Show when certifying only 2: Always</string>
+      <string id="iShowDocumentWarnings_User_Explain">Specifies whether a button to allow reviewing document warnings shows up on the signing dialog.&#10;&#10;Interacts with iRequireReviewWarnings. The possible values include: 0: Never 1: Show when certifying only 2: Always</string>
       <string id="iShowDocumentWarnings_User_opt0">Never</string>
       <string id="iShowDocumentWarnings_User_opt1">Show when certifying only</string>
       <string id="iShowDocumentWarnings_User_opt2">Always</string>
@@ -2061,11 +1908,11 @@
       <string id="iSigVerificationTime_User_opt1">Use signing time if secure, else current time</string>
       <string id="iSigVerificationTime_User_opt2">Always use signing time</string>
       <string id="bAllowSigCertOnly_User">Sign Certified Only (User)</string>
-      <string id="bAllowSigCertOnly_User_Explain">Specifies whether any subsequent signers can sign a certified document containing LegalPDF warnings with additional approval signatures.&#10;&#10;In other words, the presence of any LegalPDF warning prevent any additonal signatures.</string>
+      <string id="bAllowSigCertOnly_User_Explain">Specifies whether any subsequent signers can sign a certified document containing LegalPDF warnings with additional approval signatures.&#10;&#10;In other words, the presence of any LegalPDF warning prevents any additional signatures.</string>
       <string id="isignDone_User">Sign Done Dialog (User)</string>
       <string id="isignDone_User_Explain">Specifies whether to show a dialog indicating that a document was successfully signed.&#10;&#10;Possible values include: 0: Show the dialog after signing successfully. 1: Don't show the dialog after signing successfully.</string>
       <string id="bAllowSigCertGreenOnly_User">Sign Green Cert Only (User)</string>
-      <string id="bAllowSigCertGreenOnly_User_Explain">Specifies whether any subsequent signers can sign a certified document that does not contain LegalPDF warnings with additional approval signatures.&#10;&#10;In other words, the presence of any LegalPDF warning does not prevent any additonal signatures.</string>
+      <string id="bAllowSigCertGreenOnly_User_Explain">Specifies whether any subsequent signers can sign a certified document that does not contain LegalPDF warnings with additional approval signatures.&#10;&#10;In other words, the presence of any LegalPDF warning does not prevent any additional signatures.</string>
       <string id="tSignHash_User">Sign Hash Algorithm (User)</string>
       <string id="tSignHash_User_Explain">A text entry that contains the OID of the hashing algorithm.&#10;&#10;For an alternative, see aSignHash. Allowable values include: 1.2.840.113549.2.5: MD5 1.3.14.3.2.26: SHA1 2.16.840.1.101.3.4.2.1: SHA256 (v. 7.0) 1.3.36.3.2.1: RIPEMD160 (v. 8.0) 2.16.840.1.101.3.4.2.2: SHA384 (v. 8.0) 2.16.840.1.101.3.4.2.3: SHA512 (v. 8.0)</string>
       <string id="bSignRequest_User">Sign OCSP Requests (User)</string>
@@ -2088,7 +1935,7 @@
       <string id="bTrustOSTrustedSites_User">Trust IE Trusted Sites (User)</string>
       <string id="bTrustOSTrustedSites_User_Explain">Treat IE Trusted Sites and Local Intranet as privileged locations.&#10;&#10;Local Intranet included since 10.1.2/9.5. Disable with bDisableOSTrustedSites. Values: 0 = do not trust OS zones; 1 = trust OS zones.</string>
       <string id="tHostPerms_User">Trusted/Blocked URL List (User)</string>
-      <string id="tHostPerms_User_Explain">Stores trusted and blocked URLs when URL Access Permissions (iURLPerms) is set to Custom Setting (DWORD 0). Pipe-separated Adobe TrustManager host permission list syntax: version:1|host:N where N is 2 (Allow) or 3 (Block). Only effective when iURLPerms is 0; Allow or Block overrides this list. Not lockable via HKLM - this preference only exists at User scope.</string>
+      <string id="tHostPerms_User_Explain">Stores trusted and blocked URLs when URL Access Permissions (iURLPerms) is set to Custom Setting (DWORD 0).&#10;&#10;Pipe-separated Adobe TrustManager host permission list syntax: version:1|host:N where N is 2 (Allow) or 3 (Block).&#10;&#10;Only effective when iURLPerms is 0; Allow or Block overrides this list.&#10;&#10;Not lockable via HKLM - this preference only exists at User scope.</string>
       <string id="iURLPerms_User">URL Access Permissions (User)</string>
       <string id="iURLPerms_User_Explain">Allow, block, or custom website access.&#10;&#10;Allow or Block resets tHostPerms; Custom uses tHostPerms. Values: 0 = custom; 1 = block all; 2 = allow all.&#10;&#10;When set to Custom Setting (0), configure the URL list using the Trusted/Blocked URL List (tHostPerms) text policy.</string>
       <string id="iURLPerms_User_opt0">Custom Setting (uses tHostPerms URL list)</string>
@@ -2108,9 +1955,7 @@
       <string id="iMSStoreTrusted_User">Windows Store Trust (User)</string>
       <string id="iMSStoreTrusted_User_Explain">Trust Windows Certificate Store certs for signing and certifying.&#10;&#10;Lock via bMSStoreTrusted. Values: 0x00 = none; 0x60 = validating signatures; 0x62 = certified documents and signatures.&#10;&#10;Windows Store trust is a hex bitmask stored as a DWORD. Documented values: 0x00 (0) = no trust; 0x60 (96) = validating signatures; 0x62 (98) = validating certified documents and signatures. Other bit combinations may be set using the numeric control (0-255).</string>
 
-      <!-- ======================================== -->
-      <!--           Sharing and Features           -->
-      <!-- ======================================== -->
+      <!-- Sharing and Features -->
 
       <string id="iSendMailDefaultAccountAlert_User">Default Email Prompt (User)</string>
       <string id="iSendMailDefaultAccountAlert_User_Explain">Specifies whether a dialog should appear asking if a PDF should be sent via the user's default email account.&#10;&#10;When a new user tries to send a PDF via email, a dialog appears and asks &quot;How would you like to send this email.&quot; Users then need to select a choice and check Remember my choice . Possible values include: 0: Don't show the dialog. 1: Do show the dialog.</string>
@@ -2123,15 +1968,13 @@
       <string id="bEnableFillSign_User">Fill &amp; Sign Pane (User)</string>
       <string id="bEnableFillSign_User_Explain">Specifies whether to remove the Fill and Sign pane without removing the Work with Certificates menu.&#10;&#10;11.x products only. This setting allows users to remove the Acrobat Sign menu items without removing the menu item for using digital signatures on the local machine. Possible values include: 0: Remove the Fill and Sign pane. 1: Don't remove the Fill and Sign pane.</string>
       <string id="bRemoveCommaDelimiter_User">Remove Comma Delimiter (User)</string>
-      <string id="bRemoveCommaDelimiter_User_Explain">Specifies whether to remove the comma in comma-delimited addressbook entries.&#10;&#10;During shared review workflows, the user invoke the addressbook to invite participants. In cases where the addressbook is comma-delimited, pre DC versions of the product display an error dialog. Use this prefererence to remove commas. Possible values include: 0: Don't remove commas. 1: Remove commas.</string>
+      <string id="bRemoveCommaDelimiter_User_Explain">Specifies whether to remove the comma in comma-delimited addressbook entries.&#10;&#10;During shared review workflows, the user invokes the addressbook to invite participants. In cases where the addressbook is comma-delimited, pre DC versions of the product display an error dialog. Use this preference to remove commas. Possible values include: 0: Don't remove commas. 1: Remove commas.</string>
       <string id="bShowConnectDialog_User">Show Connect Dialog (User)</string>
       <string id="bShowConnectDialog_User_Explain">Specifies whether to display the Connect dialog in Shared Reviews.&#10;&#10;Possible values include: 0: Don't show the Connect dialog. 1: Do show the Connect dialog.</string>
       <string id="bShowWelcomeDialog_User">Show Welcome Dialog (User)</string>
       <string id="bShowWelcomeDialog_User_Explain">Specifies whether to show the Welcome dialog when a shared review is initiated.&#10;&#10;Possible values include: 0: Don't show the welcome dialog. 1: Do show the welcome dialog.</string>
 
-      <!-- ======================================== -->
-      <!--          Startup and Experience          -->
-      <!-- ======================================== -->
+      <!-- Startup and Experience -->
 
       <string id="bActivated_User">App Activated (User)</string>
       <string id="bActivated_User_Explain">Records whether the application has been activated online after installation.&#10;&#10;Possible values include: 0: Not activated 1: Activated</string>
@@ -2190,9 +2033,7 @@
       <string id="iDelayBeforeQuitViewer_User">Viewer Quit Delay (User)</string>
       <string id="iDelayBeforeQuitViewer_User_Explain">Specifies the number of seconds the standalone application stays in memory before it shuts down.&#10;&#10;Possible values include: 30 Any integer</string>
 
-      <!-- ======================================== -->
-      <!--     Updates and Desktop Integration      -->
-      <!-- ======================================== -->
+      <!-- Updates and Desktop Integration -->
 
       <string id="bDownloadEntireFile_User">Background Download (User)</string>
       <string id="bDownloadEntireFile_User_Explain">Specifies whether to allow background downloading of resources the view thinks it needs to properly display the PDF.&#10;&#10;Possible values include: 0: Don't allow background downloading. 1: Do allow background downloading.</string>
@@ -2207,7 +2048,7 @@
       <string id="bAllowByteRangeRequests_User">Fast Web View (User)</string>
       <string id="bAllowByteRangeRequests_User_Explain">Specifies whether to enable Fast Web View by allowing display of the PDF before the entire file is downloaded.&#10;&#10;Possible values include: 0: Don't enable Fast Web View. 1: Enable Fast Web View.</string>
       <string id="bFavoriteFilesRememberChoice_User">Remember Stars Choice (User)</string>
-      <string id="bFavoriteFilesRememberChoice_User_Explain">Specifies the users choice&#10;&#10;When a user selects &quot;Ask every time&quot; and iFavoriteFilesAccessOption is set to 0, this new preference remembers the users choice for each file. Possible values include: Application generated.</string>
+      <string id="bFavoriteFilesRememberChoice_User_Explain">Specifies the user's choice&#10;&#10;When a user selects &quot;Ask every time&quot; and iFavoriteFilesAccessOption is set to 0, this new preference remembers the user's choice for each file. Possible values include: Application generated.</string>
       <string id="bFavoritesStripInRFL_User">Show Starred Files (User)</string>
       <string id="bFavoritesStripInRFL_User_Explain">Specifies whether to show starred files in the recent files list.&#10;&#10;A starred file is somewhat similar to a &quot;favorited&quot; file. Note that the lockable version of this preference is named bFavoritesFeaturesLockDown . Possible values include: 0: Show starred files in the recent files list. 1: Don't show starred files in the recent files list.</string>
       <string id="iFavoriteFilesAccessOption_User">Starred Files Action (User)</string>
@@ -2218,11 +2059,9 @@
       <string id="bStoreCredentials_User">Store Credentials (User)</string>
       <string id="bStoreCredentials_User_Explain">Specifies whether the user logon credentials for the Tracker should be stored.&#10;&#10;Possible values include: 0: Don't store credentials. 1: Store credentials.</string>
       <string id="iAVARMNoAutoUpdateWarning_User">Suppress Update Warning (User)</string>
-      <string id="iAVARMNoAutoUpdateWarning_User_Explain">Specifies whether to turn of the &quot;Updater has not been able to check for updates recently&quot; dialog.&#10;&#10;Possible values include: 0: Don't turn off the dialog. 1: Do turn off the dialog.</string>
+      <string id="iAVARMNoAutoUpdateWarning_User_Explain">Specifies whether to turn off the &quot;Updater has not been able to check for updates recently&quot; dialog.&#10;&#10;Possible values include: 0: Don't turn off the dialog. 1: Do turn off the dialog.</string>
 
-      <!-- ======================================== -->
-      <!--                  Upsell                  -->
-      <!-- ======================================== -->
+      <!-- Upsell -->
 
       <string id="bAcrobatAppInstalled_User">Acrobat App Promo (User)</string>
       <string id="bAcrobatAppInstalled_User_Explain">Specifies whether to show the Acrobat mobile app promotion and link in the Home banner.&#10;&#10;Disable and lock both the App Center and Home banner with bToggleDCAppCenter under FeatureLockDown. Possible values include: 0: Promote the mobile app. 1: Don't promote the mobile app.</string>
@@ -2309,7 +2148,7 @@
         <dropdownList defaultItem="0" refId="iAccessColorPolicyDC_User_enum">Color Replace Policy (User):</dropdownList>
       </presentation>
       <presentation id="tauthorDC_User_text">
-        <textBox refId="tauthorDC_User_text"><label>Value:</label></textBox>
+        <textBox refId="tauthorDC_User_text"><label>Comment author:</label></textBox>
       </presentation>
       <presentation id="tNoteFontNameDC_User_text">
         <textBox refId="tNoteFontNameDC_User_text"><label>Comment font name:</label></textBox>
@@ -2393,10 +2232,10 @@
         <textBox refId="tLoadSettingsNAMEDC_User_text"><label>Load settings name:</label></textBox>
       </presentation>
       <presentation id="iMaxRevInfoArchiveSizeDC_User_num">
-        <decimalTextBox refId="iMaxRevInfoArchiveSizeDC_User_num" defaultValue="1024">Max revocation info archive size (bytes):</decimalTextBox>
+        <decimalTextBox refId="iMaxRevInfoArchiveSizeDC_User_num" defaultValue="1500">Max revocation info archive size (kilobytes):</decimalTextBox>
       </presentation>
       <presentation id="iMaxVerifySessionDC_User_num">
-        <decimalTextBox refId="iMaxVerifySessionDC_User_num" defaultValue="10">Max OCSP/CRL verify sessions:</decimalTextBox>
+        <decimalTextBox refId="iMaxVerifySessionDC_User_num" defaultValue="5">Max OCSP/CRL verify sessions:</decimalTextBox>
       </presentation>
       <presentation id="iSendNonceDC_User_enum">
         <dropdownList defaultItem="0" refId="iSendNonceDC_User_enum">OCSP Nonce Behavior (User):</dropdownList>
@@ -2405,7 +2244,7 @@
         <dropdownList defaultItem="0" refId="iURLToConsultDC_User_enum">OCSP Responder URL (User):</dropdownList>
       </presentation>
       <presentation id="iResponseFreshnessDC_User_num">
-        <decimalTextBox refId="iResponseFreshnessDC_User_num" defaultValue="3600">OCSP response freshness in seconds:</decimalTextBox>
+        <decimalTextBox refId="iResponseFreshnessDC_User_num" defaultValue="525600">OCSP response freshness in minutes:</decimalTextBox>
       </presentation>
       <presentation id="tLockboxIdDC_User_text">
         <textBox refId="tLockboxIdDC_User_text"><label>Password lockbox ID:</label></textBox>
@@ -2415,6 +2254,9 @@
       </presentation>
       <presentation id="iRevocationCheckerDC_User_enum">
         <dropdownList defaultItem="0" refId="iRevocationCheckerDC_User_enum">Revocation Checker (User):</dropdownList>
+      </presentation>
+      <presentation id="iRSAPSSSaltLengthDC_User_num">
+        <decimalTextBox refId="iRSAPSSSaltLengthDC_User_num" defaultValue="32">RSA-PSS salt length (bytes):</decimalTextBox>
       </presentation>
       <presentation id="aRSAPSSHashAlgorithmDC_User_text">
         <textBox refId="aRSAPSSHashAlgorithmDC_User_text"><label>RSAPSS hash algorithm:</label></textBox>
@@ -2448,6 +2290,9 @@
       </presentation>
       <presentation id="iHashAlgoDC_User_enum">
         <dropdownList defaultItem="0" refId="iHashAlgoDC_User_enum">Timestamp Hash Algo (User):</dropdownList>
+      </presentation>
+      <presentation id="iSizeDC_User_num">
+        <decimalTextBox refId="iSizeDC_User_num" defaultValue="4192">Timestamp signature size (bytes):</decimalTextBox>
       </presentation>
       <presentation id="tServerDC_User_text">
         <textBox refId="tServerDC_User_text"><label>Server name:</label></textBox>
@@ -2504,7 +2349,7 @@
         <dropdownList defaultItem="0" refId="iAccessColorPolicy_User_enum">Color Replace Policy (User):</dropdownList>
       </presentation>
       <presentation id="tauthor_User_text">
-        <textBox refId="tauthor_User_text"><label>Value:</label></textBox>
+        <textBox refId="tauthor_User_text"><label>Comment author:</label></textBox>
       </presentation>
       <presentation id="tNoteFontName_User_text">
         <textBox refId="tNoteFontName_User_text"><label>Comment font name:</label></textBox>
@@ -2579,10 +2424,10 @@
         <textBox refId="tLoadSettingsNAME_User_text"><label>Load settings name:</label></textBox>
       </presentation>
       <presentation id="iMaxRevInfoArchiveSize_User_num">
-        <decimalTextBox refId="iMaxRevInfoArchiveSize_User_num" defaultValue="1024">Max revocation info archive size (bytes):</decimalTextBox>
+        <decimalTextBox refId="iMaxRevInfoArchiveSize_User_num" defaultValue="1500">Max revocation info archive size (kilobytes):</decimalTextBox>
       </presentation>
       <presentation id="iMaxVerifySession_User_num">
-        <decimalTextBox refId="iMaxVerifySession_User_num" defaultValue="10">Max OCSP/CRL verify sessions:</decimalTextBox>
+        <decimalTextBox refId="iMaxVerifySession_User_num" defaultValue="5">Max OCSP/CRL verify sessions:</decimalTextBox>
       </presentation>
       <presentation id="iSendNonce_User_enum">
         <dropdownList defaultItem="0" refId="iSendNonce_User_enum">OCSP Nonce Behavior (User):</dropdownList>
@@ -2591,7 +2436,7 @@
         <dropdownList defaultItem="0" refId="iURLToConsult_User_enum">OCSP Responder URL (User):</dropdownList>
       </presentation>
       <presentation id="iResponseFreshness_User_num">
-        <decimalTextBox refId="iResponseFreshness_User_num" defaultValue="3600">OCSP response freshness in seconds:</decimalTextBox>
+        <decimalTextBox refId="iResponseFreshness_User_num" defaultValue="525600">OCSP response freshness in minutes:</decimalTextBox>
       </presentation>
       <presentation id="tLockboxId_User_text">
         <textBox refId="tLockboxId_User_text"><label>Password lockbox ID:</label></textBox>
@@ -2601,6 +2446,9 @@
       </presentation>
       <presentation id="iRevocationChecker_User_enum">
         <dropdownList defaultItem="0" refId="iRevocationChecker_User_enum">Revocation Checker (User):</dropdownList>
+      </presentation>
+      <presentation id="iRSAPSSSaltLength_User_num">
+        <decimalTextBox refId="iRSAPSSSaltLength_User_num" defaultValue="32">RSA-PSS salt length (bytes):</decimalTextBox>
       </presentation>
       <presentation id="aRSAPSSHashAlgorithm_User_text">
         <textBox refId="aRSAPSSHashAlgorithm_User_text"><label>RSAPSS hash algorithm:</label></textBox>
@@ -2634,6 +2482,9 @@
       </presentation>
       <presentation id="iHashAlgo_User_enum">
         <dropdownList defaultItem="0" refId="iHashAlgo_User_enum">Timestamp Hash Algo (User):</dropdownList>
+      </presentation>
+      <presentation id="iSize_User_num">
+        <decimalTextBox refId="iSize_User_num" defaultValue="4192">Timestamp signature size (bytes):</decimalTextBox>
       </presentation>
       <presentation id="tServer_User_text">
         <textBox refId="tServer_User_text"><label>Server name:</label></textBox>
