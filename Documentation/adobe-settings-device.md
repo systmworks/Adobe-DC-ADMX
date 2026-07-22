@@ -4,11 +4,13 @@
 
 [<- Back to Documentation](../README.md)
 
-# Reader DC Settings (Device)
+# Adobe DC Settings (Device)
 
-Complete list of 124 Reader DC policies in the combined v3.5 ADMX templates, sorted by category.
+Complete list of 157 Adobe DC settings in the combined v3.5 ADMX templates, grouped by product applicability.
 
-## Cloud & Connectors
+## Common to Acrobat & Reader
+
+### Cloud & Connectors
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -26,7 +28,7 @@ Complete list of 124 Reader DC policies in the combined v3.5 ADMX templates, sor
 | Services & Web-Plugin Updates | ``bUpdater`` | Web-plugin updates and cloud services. |
 | Third-Party Cloud Connectors | ``bToggleWebConnectors`` | Third-party cloud storage connectors (Continuous track). |
 
-## Context, Tools & Search
+### Context, Tools & Search
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -43,16 +45,15 @@ Complete list of 124 Reader DC policies in the combined v3.5 ADMX templates, sor
 | Paste in Place | ``ADC4302862`` | Paste copied elements to the same location as the source. |
 | Show Combine Files Context Menu | ``bRCMCombineFeatureKey`` | Display the Combine Files item in a document's right-click context menu. |
 
-## Documents, Editing & Accessibility
+### Documents, Editing & Accessibility
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | Create PDF Split Menu | ``bGlobalBarMenuFeatureKey`` | Show the Create Split Menu under Create a PDF menu item. |
 | Disable Scanned PDF Text Recognition | ``DisableScannedDocumentEditing`` | Disable text recognition while editing scanned PDFs. |
-| Online Create PDF in Reader | ``bEnableFrictionlessInChromeExtn`` | Show Reader users the online Create PDF service option. |
 | Restrict Form Data to Schema | ``bIgnoreDataSchema`` | Specifies whether all data in a form is saved rather than only data related to the form's schema. |
 
-## Microsoft Purview (MIP)
+### Microsoft Purview (MIP)
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -63,7 +64,7 @@ Complete list of 124 Reader DC policies in the combined v3.5 ADMX templates, sor
 | MIP Sovereign Cloud | ``iMIPCloud`` | Locks which Microsoft cloud instance Acrobat and Reader use for MIP SDK operations. |
 | Suppress OS Auth Prompts (MIP) | ``bSilentAuth`` | Locks whether operating-system authentication prompts are suppressed during MIP operations. |
 
-## Security: Execution & Protection
+### Security: Execution & Protection
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -79,11 +80,10 @@ Complete list of 124 Reader DC policies in the combined v3.5 ADMX templates, sor
 | Flash Content in PDFs | ``bEnableFlash`` | Render Flash content in PDFs. |
 | Flash Editing Tools | ``EnableFlashEditing`` | Enable the Flash tools for adding annotations or Flash in the Rich Media app. |
 | Protected Mode Sandbox | ``bProtectedMode`` | Enables Protected Mode which sandboxes Acrobat and Reader processes. |
-| Protected Mode Whitelist Config | ``bUseWhitelistConfigFile`` | Allows the use of the policy whitelist to allow behavior that Protected Mode would otherwise prevent. |
 | Protected View Exit Shortcut Key | ``bEnablePVSwitchoutShortcut`` | Shortcut key to exit Protected View for the current document. |
 | Unlisted Attachment Type Permissions | ``iUnlistedAttachmentTypePerm`` | Specifies the default permissions for file types that aren't listed in the default or user-specified lists. |
 
-## Security: Trust & Permissions
+### Security: Trust & Permissions
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -107,7 +107,7 @@ Complete list of 124 Reader DC policies in the combined v3.5 ADMX templates, sor
 | Unknown URL Access Policy | ``iUnknownURLPerms`` | Access policy for URLs not in the user list. |
 | Validate Signatures on Open | ``bValidateOnOpen`` | Automatically validate all signatures on document open. |
 
-## Sharing & Features
+### Sharing & Features
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -131,7 +131,7 @@ Complete list of 124 Reader DC policies in the combined v3.5 ADMX templates, sor
 | WebMail SMTP Port | ``iSMTPPort`` | Identifies the My Profile Mail SMTP server port number for WebMail. |
 | WebMail SMTP Security | ``iSMTPSecurity`` | Enable the My Profile Mail SMTP security for WebMail. |
 
-## Startup & Experience
+### Startup & Experience
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -151,7 +151,7 @@ Complete list of 124 Reader DC policies in the combined v3.5 ADMX templates, sor
 | Usage Measurement (legacy) | ``bUsageMeasurement`` | Legacy master switch for usage measurement and analytics. |
 | What's New Experience | ``bWhatsNewExp`` | Disable the What's New experience. |
 
-## Updates & Desktop Integration
+### Updates & Desktop Integration
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -168,18 +168,117 @@ Complete list of 124 Reader DC policies in the combined v3.5 ADMX templates, sor
 | Merge Title and Menu Bar | ``bMergeMenuBar`` | Merge the application's title bar and menu bar into a single bar. |
 | Patch Cache Cleanup | ``PatchCleanFlag`` | Clean cached MSI/MSP patches on next update. |
 | Product Updater | ``bUpdater`` | Controls Adobe Acrobat/Reader product updates. |
-| Prompt to Use Acrobat from Reader | ``bEnableAcrobatPromptForDocOpen`` | Prompt users to use Acrobat when both Reader and Acrobat are installed. |
 | Scalable Cursor | ``bShouldUseScalableCursor`` | Disable the scalable cursor. |
 | Starred Files Feature | ``bFavoritesFeaturesLockDown`` | Disable and lock the starred file feature. |
 
-## Upsell
+### Upsell
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | Limit Informational Prompts | ``bLimitPromptsFeatureKey`` | Limit the number of prompts a user will see in a 24 hour period. |
-| Prompt Reader Users to Download Acrobat | ``bReaderRetentionExperiment`` | Prompt Acrobat subscribers using Reader to download Acrobat. |
 | Show App Center UI | ``bToggleDCAppCenter`` | App Center and get-apps banner on Home. |
-| Show Purchasable Tools in Search | ``bShowRhpToolSearch`` | Show "for purchase" tools when searching for tools in Reader. |
 | Show Upgrade Prompts | ``bAcroSuppressUpsell`` | Disable upgrade and upsell messages (12.x+). |
+
+## Acrobat Only
+
+### Context, Tools & Search
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Click-to-Edit Mode | ``ADC4275035_ClickEdit`` | Auto-enter edit mode when the user clicks a PDF object. |
+| Cloud Search Token Caching | ``bEnableCloudPoweredSearchTokenCaching`` | Cache locally cloud-based search service suggestions. |
+| Cloud-Powered Search | ``bEnableCloudPoweredSearch`` | Enable the cloud-based search service in the Find Tool. |
+| Fill & Sign Color Picker | ``ADC4275034`` | Disable the color picker in the Fill and Sign tool. |
+| Organize Pages Thumbnail Shortcut | ``bOrganizePagesFromThumbnails`` | Show shortcut UI for the Organize tool from thumbnails. |
+| Remove Form Editing Tools (2019) | ``ADC4275035`` | Remove Oct 2019 AddText and EditText form tools from the UI. |
+| Show Search Loading Message | ``bEnableAutoCompleteExactMatchLoader`` | Show a "Working on it" message when using the cloud-based search service. |
+| Show Search No Internet Message | ``bEnableAutoCompleteNoInternetConnectionHeader`` | Show a "Requires internet connection" message when using the cloud-based search service. |
+| Show Search No Match Message | ``bEnableAutoCompleteNoExactMatchHeader`` | Show a "No exact match" message when using the cloud-based search service. |
+
+### Documents, Editing & Accessibility
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Accessibility Auto Tagging | ``bCloudATFeatureEnable`` | Show the new auto tagging experience or revert to the old experience. |
+| Bates Log Original File Name | ``bBatesLogOriginalFileName`` | Use original filename in Bates numbering log output. |
+| Block EMF to PDF Conversion | ``BlockEMFParsing`` | Block EMF to PDF conversion. |
+| Block XPS to PDF Conversion | ``BlockXPSParsing`` | Block XPS to PDF conversion. |
+| PDFMaker Grouped Image Tag Fix | ``EnablePDFMakerGroupImagesTagCorrectionFeature`` | Disable accessibility fixes for tagging grouped images. |
+| PDFMaker Table Header Tag Fix | ``EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeature`` | Disable accessibility fixes for tagging table headers. |
+| PDFMaker Text Path Tag Fix | ``EnablePDFMakerSplitTextPathElemsFeature`` | Fix Text Path rendering bug in PDFMaker tags. |
+| Reflow Editing | ``bEnableReflowEditing`` | Lock ReflowEditing and the reflow feature. |
+
+### Security: Execution & Protection
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Protected View Mode | ``iProtectedView`` | Protected View mode. |
+
+### Security: Trust & Permissions
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Disable Acrobat.com File Storage | ``bDisableADCFileStore`` | Disables Acrobat.com file storage integration. |
+| Sign Menu in Menu Bar | ``bShowSignMenu`` | Show the Sign menu in Acrobat's top level menu bar. |
+
+### Sharing & Features
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Allow @Mention Non-Reviewers | ``bEnableRecipientMention`` | Allow participants in a shared review to @mention people who are not review collaborators. |
+| Share and Review Reminder Tip | ``bEnableReviewPromote`` | Display a Share/Review feature reminder message when users have used those features in the past. |
+
+### Startup & Experience
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Reader mode on Acrobat (Unified x64) | ``bIsSCReducedModeEnforcedEx`` | Enforce Reader-like reduced mode on Unified Acrobat (64-bit MUI). |
+
+### Updates & Desktop Integration
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Crash Reporter Dialog | ``bCrashReporterEnabled`` | Show the crash reporter dialog on application crash (Windows only). |
+| Disable Major Version Upgrade Prompt (32-bit Updater) | ``iDisablePromptForUpgrade`` | Suppress major-version upgrade prompt. |
+| Enforce AMT for AppV Deployment | ``IsAMTEnforced`` | Allows deployment of Acrobat on AppV for December, 2018 and later products. |
+| Split by Size Maximum (MB) | ``dSplitBySizeMaxSize`` | Maximum MB per split file. |
+| Update Watchdog Interval (Days) (32-bit Updater) | ``iInterval`` | Days before Watchdog prompts manual update after a failed update. |
+| Updater Log Level (32-bit Updater) | ``iLogLevel`` | Updater log verbosity. |
+
+### Upsell
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Disable Billing Issue Call to Action | ``bToggleBillingIssue`` | Show a Call to Action UI item in the top bar if a billing issue is detected. |
+| Disable Promotional Campaign Messages | ``bToggleSophiaWebInfra`` | Show users messages which promote (Trials, Acrobat, PDF Pack etc.) |
+| Express Templates in Create PDF | ``bMerchandizingEnabled`` | Show the Express Templates options in Acrobat's Create PDF UI. |
+| Trial Purchase Prompt | ``bEnableTrialistLaunchCard`` | Prompt Acrobat trial users to complete the purchase. |
+
+## Reader Only
+
+### Documents, Editing & Accessibility
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Online Create PDF in Reader | ``bEnableFrictionlessInChromeExtn`` | Show Reader users the online Create PDF service option. |
+
+### Security: Execution & Protection
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Protected Mode Whitelist Config | ``bUseWhitelistConfigFile`` | Allows the use of the policy whitelist to allow behavior that Protected Mode would otherwise prevent. |
+
+### Updates & Desktop Integration
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Prompt to Use Acrobat from Reader | ``bEnableAcrobatPromptForDocOpen`` | Prompt users to use Acrobat when both Reader and Acrobat are installed. |
+
+### Upsell
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Prompt Reader Users to Download Acrobat | ``bReaderRetentionExperiment`` | Prompt Acrobat subscribers using Reader to download Acrobat. |
+| Show Purchasable Tools in Search | ``bShowRhpToolSearch`` | Show "for purchase" tools when searching for tools in Reader. |
 
 **Sharing & responsibility** - Built for the community, shared with good intentions. Use at your own risk. The author accepts no responsibility for any outcomes resulting from the use of these files. Always verify registry paths and values, and test in a safe environment first. If you find an issue or have a suggestion, contributions are welcome.

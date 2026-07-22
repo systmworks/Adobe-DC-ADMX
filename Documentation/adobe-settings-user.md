@@ -4,18 +4,18 @@
 
 [<- Back to Documentation](../README.md)
 
-# Acrobat DC Settings (User)
+# Adobe DC Settings (User)
 
-Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, sorted by category.
+Complete list of 273 Adobe DC settings in the combined v3.5 ADMX templates, grouped by product applicability.
 
-## Context, Tools & Search
+## Common to Acrobat & Reader
+
+### Context, Tools & Search
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | Base Folder Name | ``tBaseFolderName`` | An alias referring to a particular folder. |
 | Column Select Halo | ``iColumnSelectHalo`` | Adobe's preference reference does not describe this value; use the URL column for the documentation link. |
-| Disable Sign in Office | ``DisableSignInOffice`` | Install PDFMaker's Acrobat Sign integration component so that the sign user interface appears in Microsoft Office products. |
-| Enable Sign in Office | ``EnableSignInOffice`` | Install PDFMaker Acrobat Sign UI in Microsoft Office. |
 | File Format Version | ``tFileFormat`` | The version number associated with the file format. |
 | Filename as Title | ``bAlwaysUseFileNameAsDocTitle`` | Use the PDF file name as the display name in the application's title bar. |
 | Fixed Snapshot Resolution | ``bUseFixedSnapshotResolution`` | Adobe's preference reference does not describe this value; use the URL column for the documentation link. |
@@ -31,13 +31,12 @@ Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, so
 | Show Tool Pane Tips | ``bInfobubble`` | Specifies whether the popup tooltips for the Tools, Comments, and Share panes should appear. |
 | Show Touch Keyboard | ``bKeyPrefsShowVirtualKeyoard`` | Show the touch keyboard if device is in touch or tablet mode on Win 8 and later. |
 | Snapshot Resolution DPI | ``iSnapshotResolution`` | Adobe's preference reference does not describe this value; use the URL column for the documentation link. |
-| Suppress PDF/UA Dialog | ``4406238`` | Suppress the confirmation dialog when the Acrobat preference Mark PDF/UA compliant is checked in Microsoft Word. |
 | Tools Pane State | ``irightPaneState`` | Automatically open the Tools Pane on launch. |
 | Tools Pane Sticky | ``iBasicSharePaneStickyStatus`` | Remember the Tools Pane state across sessions. |
 | Try New Coachmark | ``iNumSwitcherContextualToolTipAVShown`` | Show the "Try the new Acrobat/Reader" coachmark after launching Acrobat the first time. |
 | UI Switcher Sessions | ``iNumSessionAV2`` | Show the UI switcher coachmark based on the number of user sessions. |
 
-## Documents, Editing & Accessibility
+### Documents, Editing & Accessibility
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -53,7 +52,6 @@ Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, so
 | Auto-Set Layers | ``bAutoSetLayers`` | Allow the document's layer state to be set by user information. |
 | Check Page Range | ``iPages`` | Toggles whether to check all pages of a document or a subset of pages when running an accessibility full check. |
 | ClearType Smoothing | ``benableDDR`` | Further smooth text on LCD screens. |
-| Cloud Auto Tagging | ``bEnableCloudBasedAT`` | Enable cloud-based auto-tagging. |
 | Color Replace Policy | ``iAccessColorPolicy`` | Replace Document Colors panel policy. |
 | Combine Reading Order | ``bCombineContent`` | Specifies whether similar content should be displayed together or separately. |
 | Comment Author | ``tauthor`` | The author name specified by balwaysUseIdent. |
@@ -93,7 +91,6 @@ Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, so
 | Override Zoom Type | ``iZoomType`` | Specifies the zoom scale for all other documents other than a % scale and overrides Page Display settings. |
 | Paragraph Direction | ``iParagraphDirection`` | Specifies the paragraph direction. |
 | Popup When Selected | ``bPopupsOpenIffSelected`` | Open a popup when it is selected. |
-| Popups Scroll With Page | ``bPopupsScrollWithPage`` | Specifies whether whether popups are visible when a document is scrolled. |
 | Portfolio File List | ``bUseDetailsNavigator`` | Show portfolio component files and file details in an accessible list. |
 | Print Annotations | ``bPrintAnnots`` | Print notes, popups, and other annotations. |
 | Print Comment Popups | ``bprintCommentPopups`` | Enables printing of comments and other annotations. |
@@ -113,7 +110,6 @@ Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, so
 | Show Focus Rectangle | ``bFocusRect`` | Surround a field with a rectangle when it has focus. |
 | Show Keyboard Cursor | ``bShowKeyboardSelectionCursor`` | Specifies whether the keyboard selection cursor should always be active in the document. |
 | Show Markup Indicators | ``bshowMarkupModifiers`` | Show markup tool-tips and text indicators. |
-| Show Rulers | ``bRulersVisible`` | Show or hide rulers for every new document launch. |
 | Show Stamps Palette | ``bStampsPaletteInvisible`` | Show the stamps palette automatically when the commenting toolbar is displayed. |
 | Show Tab Order | ``bShowAnnotSequence`` | Show tab order of fields for Acroforms and XFA forms. |
 | Side-Aligned Popups | ``bsideNotes`` | Creates new popups aligned to the edge of the document. |
@@ -130,7 +126,7 @@ Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, so
 | XFA Email Client | ``iEmailClientSelection`` | Specifies the email client to use when submitting an XFA form. |
 | XObjects View Mode | ``iRXOPolicy`` | Sets XObject access to either Never (0), Always (1), or Only PDF/X-5 Compliant Ones (2). |
 
-## Microsoft Purview (MIP)
+### Microsoft Purview (MIP)
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -138,28 +134,20 @@ Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, so
 | MIP Policy Authentication | ``bEnablePolicyAuthentication`` | Specifies whether MIP policy authentication is enabled for the current user. |
 | Show Document Message Bar (MIP) | ``bShowDMB`` | Show Microsoft Purview Information Protection label information in the document message bar. |
 
-## Security: Execution & Protection
+### Security: Execution & Protection
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | 3D Content Trust | ``b3DEnableContent`` | Trust and render 3D content. |
 | Cross-Domain Logging | ``bCrossDomainLogging`` | Enable cross-domain logging for non-same-origin server communication. |
-| Editor Font Name | ``tEditorFontName`` | Specifies the font for the script editor. |
-| Editor Font Size | ``tEditorFontSize`` | Specifies the font size for the script editor. |
-| Editor Path | ``tEditorPath`` | Provides a path to an external editor. |
 | Enable JS Debugger | ``bEnableDebugger`` | Enables the debugger. |
-| External JS Editor | ``bChooseDialog`` | Specifies wither or not to use the Acrobat editor or an external editor. |
 | FIPS Mode | ``bFIPSMode`` | Turns FIPS mode on and off thereby requiring stronger encryption algorithm and limiting certain application behavior. |
-| JS Console Input | ``bConsoleInput`` | Toggles whether or not the console appears if script execution results in an error or message. |
-| JS Debugger Console | ``bConsoleOpen`` | Enables the interactive debugger console. |
-| JS Exception Handling | ``iExceptions`` | Specifies how exceptions should be handled. |
 | JS Global Security | ``bEnableGlobalSecurity`` | Controls whether or not a script in one sandbox can access a script object in another sandbox. |
 | JS Menu Items | ``bEnableMenuItems`` | Toggles off and on JavaScript's ability to execute menu items. |
 | Outlook Protected View | ``bEnableAlwaysOutlookAttachmentProtectedView`` | Protected View for Outlook attachments. |
 | Recent Files Migrated | ``bOldRecentFilesMigrated`` | Indicates whether the recent files list has been migrated. |
-| Save JS Breakpoints | ``bSaveBreakpoints`` | Stores breakpoints in a PDF file |
 
-## Security: Trust & Permissions
+### Security: Trust & Permissions
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -191,7 +179,6 @@ Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, so
 | Ignore OCSP NextUpdate | ``bIgnoreNextUpdate`` | Use embedded OCSP when nextUpdate is absent (with iMaxClockSkew). |
 | Import Address Book | ``iImportAddressBook`` | Import addressbook.acrodata on new install. |
 | Import Windows Certs | ``bCertStoreImportEnable`` | If true, then users can import from MSCAPI certificate stores into their Trusted Identity Manager. |
-| Keep Hidden Content | ``bDontRemoveOverlapping`` | Remove hidden content when sanitizing a document. |
 | List Of Signing Reasons | ``cReasons`` | Custom signing reason list. |
 | Load Security Settings from Server (Adobe Certificates) | ``bLoadSettingsFromURL`` | Controls whether trust anchors are periodically downloaded from Adobe's certificate server. |
 | Load Security Settings from Server (European Certificates) | ``bLoadSettingsFromURL`` | Controls whether trust anchors are periodically downloaded from the European Union Trusted Lists (EUTL) server. |
@@ -215,9 +202,9 @@ Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, so
 | Return Rev Info to JS | ``bReturnRevInfoToUser`` | If true, the revocation information is maintained within the SignatureInfo object and can be retrieved through JavaScript. |
 | Revocation Checker | ``iRevocationChecker`` | Specifies a provider for revocation checking. |
 | Revoke Check Trust | ``bRevCheckTrust`` | Revocation-check intermediate (non-root) trust anchors. |
+| RSAPSS Hash Algorithm | ``aRSAPSSHashAlgorithm`` | Specifies the hash algorithm used for RSA-PSS signing. |
 | RSA-PSS Salt Length | ``iRSAPSSSaltLength`` | Specifies the Salt Length the RSA-PSS algorithm uses. |
 | RSA-PSS Signing | ``bEnableRSAPSSSigning`` | Specifies whether a signature should be created with the RSA-PSS algorithm. |
-| RSAPSS Hash Algorithm | ``aRSAPSSHashAlgorithm`` | Specifies the hash algorithm used for RSA-PSS signing. |
 | SAML Auth Server URL | ``tSAML_Assertion_Source`` | Holds the URL of the authentication server from which the SAML assertion stored in cSAML_Assertion was obtained. |
 | SAML Name Format | ``tSAML_Name_Format`` | SAML_NAME_<Value, Format, Qualifier> comprise the subject name identifier taken from the SAML assertion received during the account's last user authentication. |
 | SAML Name Qualifier | ``tSAML_Name_Qualifier`` | SAML_NAME_<Value, Format, Qualifier> comprise the subject name identifier taken from the SAML assertion received during the account's last user authentication. |
@@ -252,7 +239,7 @@ Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, so
 | Validity Model | ``iValidityModel`` | Signature and certificate validity model. |
 | Windows Store Trust | ``iMSStoreTrusted`` | Trust Windows Certificate Store certs for signing and certifying. |
 
-## Sharing & Features
+### Sharing & Features
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -263,11 +250,9 @@ Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, so
 | Fill & Sign Pane | ``bEnableFillSign`` | Remove the Fill and Sign pane without removing the Work with Certificates menu. |
 | Remove Comma Delimiter | ``bRemoveCommaDelimiter`` | Remove the comma in comma-delimited addressbook entries. |
 | Show Connect Dialog | ``bShowConnectDialog`` | Display the Connect dialog in Shared Reviews. |
-| Show Review Tip | ``bIsUsedShareReview`` | Show a popup tip that informs users of the collaborative review feature. |
-| Show Share Tip | ``bIsUsedShare`` | Show a popup tip that informs users of the share file feature. |
 | Show Welcome Dialog | ``bShowWelcomeDialog`` | Show the Welcome dialog when a shared review is initiated. |
 
-## Startup & Experience
+### Startup & Experience
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -275,7 +260,6 @@ Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, so
 | App Has Launched | ``bHasLaunched`` | Records whether the application has been launched after installation. |
 | App Initialized | ``bAppInitialized`` | Records whether the application has been initialized after installation. |
 | App Launched | ``bLaunched`` | Caches whether or not the application has ever been launched. |
-| Browser EULA Accepted | ``EULAAcceptedForBrowser`` | For Acrobat's browser plugin, caches whether the browser-based EULA has been accepted. |
 | Choose Language Startup | ``bChooseLangAtStartup`` | Allows the user to choose the language at startup. |
 | Create Form Onboarding | ``bCreateFormDiscoveryShown`` | Show the onboarding coachmark when the user invokes the Create Form panel. |
 | Edit Onboarding | ``bEditDiscoveryShown`` | Show the onboarding coachmark when the user invokes the Edit panel. |
@@ -300,7 +284,7 @@ Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, so
 | Viewer Onboarding | ``bShownViewerOnboarding`` | Invoke the new viewer onboarding tour when a PDF opens in the modern viewer the first time. |
 | Viewer Quit Delay | ``iDelayBeforeQuitViewer`` | Specifies the number of seconds the standalone application stays in memory before it shuts down. |
 
-## Updates & Desktop Integration
+### Updates & Desktop Integration
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
@@ -316,12 +300,81 @@ Complete list of 271 Acrobat DC policies in the combined v3.5 ADMX templates, so
 | Store Credentials | ``bStoreCredentials`` | Specifies whether the user logon credentials for the Tracker should be stored. |
 | Suppress Update Warning | ``iAVARMNoAutoUpdateWarning`` | Turn of the "Updater has not been able to check for updates recently" dialog. |
 
-## Upsell
+### Upsell
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | Acrobat App Promo | ``bAcrobatAppInstalled`` | Show the Acrobat mobile app promotion and link in the Home banner. |
 | Scan App Promo | ``bScanAppInstalled`` | Show the Adobe Scan mobile app promotion and link in the Home banner. |
+
+## Acrobat Only
+
+### Context, Tools & Search
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Disable Sign in Office | ``DisableSignInOffice`` | Install PDFMaker's Acrobat Sign integration component so that the sign user interface appears in Microsoft Office products. |
+| Enable Sign in Office | ``EnableSignInOffice`` | Install PDFMaker Acrobat Sign UI in Microsoft Office. |
+| Suppress PDF/UA Dialog | ``4406238`` | Suppress the confirmation dialog when the Acrobat preference Mark PDF/UA compliant is checked in Microsoft Word. |
+
+### Documents, Editing & Accessibility
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Cloud Auto Tagging | ``bEnableCloudBasedAT`` | Enable cloud-based auto-tagging. |
+| Popups Scroll With Page | ``bPopupsScrollWithPage`` | Specifies whether whether popups are visible when a document is scrolled. |
+| Show Rulers | ``bRulersVisible`` | Show or hide rulers for every new document launch. |
+
+### Security: Execution & Protection
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Editor Font Name | ``tEditorFontName`` | Specifies the font for the script editor. |
+| Editor Font Size | ``tEditorFontSize`` | Specifies the font size for the script editor. |
+| Editor Path | ``tEditorPath`` | Provides a path to an external editor. |
+| External JS Editor | ``bChooseDialog`` | Specifies wither or not to use the Acrobat editor or an external editor. |
+| JS Console Input | ``bConsoleInput`` | Toggles whether or not the console appears if script execution results in an error or message. |
+| JS Debugger Console | ``bConsoleOpen`` | Enables the interactive debugger console. |
+| JS Exception Handling | ``iExceptions`` | Specifies how exceptions should be handled. |
+| Save JS Breakpoints | ``bSaveBreakpoints`` | Stores breakpoints in a PDF file |
+
+### Security: Trust & Permissions
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Keep Hidden Content | ``bDontRemoveOverlapping`` | Remove hidden content when sanitizing a document. |
+
+### Sharing & Features
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Show Review Tip | ``bIsUsedShareReview`` | Show a popup tip that informs users of the collaborative review feature. |
+| Show Share Tip | ``bIsUsedShare`` | Show a popup tip that informs users of the share file feature. |
+
+### Startup & Experience
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Browser EULA Accepted | ``EULAAcceptedForBrowser`` | For Acrobat's browser plugin, caches whether the browser-based EULA has been accepted. |
+
+### Upsell
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
 | Show Trial Nag | ``bShowTrialNag`` | Specifies whether a "Trial Expired" dialog should appear after 30 days. |
+
+## Reader Only
+
+### Security: Execution & Protection
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| Broker Logfile Path | ``tBrokerLogfilePath`` | Specifies the path and log file name for the Protected Mode log. |
+
+### Startup & Experience
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| EULA Acceptance | ``EULA`` | Accept EULA for the built-in updater. |
 
 **Sharing & responsibility** - Built for the community, shared with good intentions. Use at your own risk. The author accepts no responsibility for any outcomes resulting from the use of these files. Always verify registry paths and values, and test in a safe environment first. If you find an issue or have a suggestion, contributions are welcome.

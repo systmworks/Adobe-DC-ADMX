@@ -17,10 +17,8 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 
 | ![Page](https://img.shields.io/badge/Page-316dca?style=flat-square) | ![Description](https://img.shields.io/badge/Description-316dca?style=flat-square) |
 |------|-------------|
-| [Acrobat DC Settings (Device)](Documentation/acrobat-settings-device.md) | Machine-scope Acrobat DC policies |
-| [Acrobat DC Settings (User)](Documentation/acrobat-settings-user.md) | User-scope Acrobat DC policies |
-| [Reader DC Settings (Device)](Documentation/reader-settings-device.md) | Machine-scope Reader DC policies |
-| [Reader DC Settings (User)](Documentation/reader-settings-user.md) | User-scope Reader DC policies |
+| [Adobe DC Settings (Device)](Documentation/adobe-settings-device.md) | Machine-scope Acrobat + Reader policies |
+| [Adobe DC Settings (User)](Documentation/adobe-settings-user.md) | User-scope Acrobat + Reader policies |
 | [Security Hardening (Device)](Documentation/security-hardening-device.md) | Recommended device security configurations |
 | [Security Hardening (User)](Documentation/security-hardening-user.md) | Recommended user security configurations |
 | [Reduce Nags & Upsells (Device)](Documentation/reduce-nags-device.md) | Device-scope nag and upsell controls |

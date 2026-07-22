@@ -18,7 +18,7 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 |---|---|
 | **Source content fixes** | Corrected Product Updater (`bUpdater`) Summary/Details (was copied from cloud-services row). Typo and grammar fixes in pref reference text (e.g. PathPath, Accessibility, URL wording, blank Summary on Save Certified Alert). |
 | **Control-type corrections** | **`tauthor`** (Comment Author, User): Toggle -> **Text** (REG_SZ author name). **`iLogLevel`** (Updater Log Level, Device): Toggle -> **Enum** (Brief / Verbose). These two settings require **one-time re-selection** in Intune/GPO after upgrade from v3.4. |
-| **Documentation** | Fixed reduce-nags curated table column alignment. Clarified v3.4 new-text-policy counts (17 unique prefs, 30 ADMX entries across Acrobat+Reader). |
+| **Documentation** | Fixed reduce-nags curated table column alignment. Clarified v3.4 new-text-policy counts (17 unique prefs, 30 ADMX entries across Acrobat+Reader). Merged product settings pages into combined [Adobe DC Settings (Device)](adobe-settings-device.md) and [Adobe DC Settings (User)](adobe-settings-user.md) pages (Common / Acrobat Only / Reader Only). |
 | **Additive-only guardrail** | `policy-baseline.json` is no longer overwritten on every build; `Test-AdmxBackCompat.ps1` now compares against the committed frozen baseline. Baseline advanced to v3.5 after the two intended control-type changes above. |
 
 ---
