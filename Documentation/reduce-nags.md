@@ -4,7 +4,7 @@
 
 [<- Back to Documentation](../README.md)
 
-# Reduce Nags & Upsells
+# Suppress Nags & Upsells
 
 Settings to suppress unwanted messages, popups, and promotions.
 

@@ -12,13 +12,11 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 |------|-------------|
 | [Adobe DC Settings (Device)](Documentation/adobe-settings-device.md) | Machine-scope Acrobat + Reader policies |
 | [Adobe DC Settings (User)](Documentation/adobe-settings-user.md) | User-scope Acrobat + Reader policies |
+| [Suppress Nags & Upsells](Documentation/reduce-nags.md) | Nag and upsell controls (Device and User) |
 | [Security Hardening](Documentation/security-hardening.md) | Recommended security configurations (Device and User) |
-| [Reduce Nags & Upsells](Documentation/reduce-nags.md) | Nag and upsell controls (Device and User) |
-| [Built-in Attachment Permissions helper](Helper_Scripts/Set-AdobeBuiltInPermList.ps1) | REG_BINARY deployment for `tBuiltInPermList` (not in ADMX) |
+| [Screenshots](Documentation/screenshots.md) | GPMC and Intune screenshots |
 | [Changelog (Combined)](Documentation/changelog.md) | Combined device + user version history |
 | [Changelog (Retired)](Documentation/changelog-retired.md) | Legacy device-only and user-only ADMX version history |
-| [Screenshots](Documentation/screenshots.md) | GPMC and Intune screenshots |
-| [License](LICENSE.md) | CC BY-SA 4.0 license |
 
 > [!WARNING]
 > **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.6**.
@@ -33,15 +31,19 @@ These ADMX/ADML templates (v3.6) provide Group Policy and Intune management of A
 |------|-------|----------|
 | `AdobeDC.admx` + ADML | **Adobe DC** (Computer + User) | 807 (292 machine + 515 user) |
 
-### Computer Configuration tree
+### Configuration tree
 
-- **Acrobat & Reader DC** - shared ``HKLM\SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\...`` (Acrobat x86/x64 + modern x64 Reader)
-- **Reader DC (32-bit)** - shared ``HKLM\SOFTWARE\Policies\Adobe\Acrobat Reader\DC\...`` (legacy 32-bit standalone Reader)
-- **Non-Policy Settings** - architecture-specific non-Policies registry paths (64-bit Acrobat/Reader, 32-bit Acrobat, 32-bit Reader)
-
-### User Configuration tree
-
-- **Acrobat DC** / **Reader DC** - ``HKCU`` preferences; leaf names include `` (User)`` suffix
+```mermaid
+flowchart TD
+    ADMX["AdobeDC.admx + ADML"]
+    ADMX --> Computer["Computer Configuration (HKLM)"]
+    ADMX --> User["User Configuration (HKCU)"]
+    Computer --> AR["Acrobat & Reader DC<br/>Policies\\Adobe\\Adobe Acrobat\\DC (Acrobat x86/x64 + modern x64 Reader)"]
+    Computer --> R32["Reader DC (32-bit)<br/>Policies\\Adobe\\Acrobat Reader\\DC (legacy 32-bit Reader)"]
+    Computer --> NP["Non-Policy Settings<br/>architecture-specific non-Policies paths"]
+    User --> UA["Acrobat DC (User)"]
+    User --> UR["Reader DC (User)<br/>HKCU prefs; leaf names carry the (User) suffix"]
+```
 
 ## Important Notes
 
