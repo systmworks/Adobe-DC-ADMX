@@ -175,6 +175,7 @@
   },
   {
     "valueName": "bUpdater",
+    "friendlyName": "Product Updater",
     "scope": "Both",
     "hardenedDword": 0,
     "recommendation": "Recommended"
@@ -234,6 +235,26 @@
     "recommendation": "Recommended"
   },
   {
+    "valueName": "bEnableBlacklistForOpenSave",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended"
+  },
+  {
+    "valueName": "bValidateOnOpen",
+    "scope": "Both",
+    "hardenedDword": 1,
+    "recommendation": "Recommended",
+    "note": "Locks the HKCU setting and user interface rather than configuring the feature itself."
+  },
+  {
+    "valueName": "bEnableCertificateBasedTrust",
+    "scope": "Both",
+    "hardenedDword": 0,
+    "recommendation": "Optional",
+    "note": "Does not apply in Protected View."
+  },
+  {
     "valueName": "bShowWelcomeScreen",
     "scope": "Both",
     "hardenedDword": 0,
@@ -243,6 +264,7 @@
     "valueName": "bUsageMeasurement",
     "scope": "Both",
     "hardenedDword": 0,
-    "recommendation": "Optional"
+    "recommendation": "Optional",
+    "note": "DWORD 0 also disables the welcome screen at launch. Also listed on Suppress Nags and Upsells."
   }
 ]

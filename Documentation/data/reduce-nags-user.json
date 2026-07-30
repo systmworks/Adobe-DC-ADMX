@@ -112,5 +112,48 @@
         "friendlyName":  "Show Trial Nag",
         "scope":  "Acrobat",
         "recommendedDword":  0
+    },
+    {
+        "valueName":  "iBasicSharePaneStickyStatus",
+        "friendlyName":  "Tools Pane Sticky",
+        "scope":  "Both",
+        "recommendedDword":  0,
+        "note":  "Pair with Tools Pane State for a consistently closed Tools pane on launch."
+    },
+    {
+        "valueName":  "irightPaneState",
+        "friendlyName":  "Tools Pane State",
+        "scope":  "Both",
+        "recommendedDword":  1
+    },
+    {
+        "valueName":  "bPinHUD",
+        "friendlyName":  "Pin HUD Toolbar",
+        "scope":  "Both",
+        "recommendedDword":  0
+    },
+    {
+        "valueName":  "bSplashDisplayedAtStartup",
+        "friendlyName":  "Show Splash Screen",
+        "scope":  "Both",
+        "recommendedDword":  0
+    },
+    {
+        "valueName":  "bShowedSkipCard",
+        "friendlyName":  "Show Skip Card",
+        "scope":  "Both",
+        "recommendedDword":  0
+    },
+    {
+        "valueName":  "bIsUsedShare",
+        "friendlyName":  "Show Share Tip",
+        "scope":  "Acrobat",
+        "recommendedDword":  1
+    },
+    {
+        "valueName":  "bIsUsedShareReview",
+        "friendlyName":  "Show Review Tip",
+        "scope":  "Acrobat",
+        "recommendedDword":  1
     }
 ]

@@ -11,6 +11,8 @@ Recommended and optional security settings for the combined v3.6 ADMX templates.
 - ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) settings most organisations should apply.
 - ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) stronger hardening that may affect workflows.
 
+- Settings marked ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) are under **Adobe DC > Non-Policy Settings** in Group Policy or Intune, not under **Adobe DC > Acrobat & Reader DC**. Configure the sub-node that matches your installed architecture: **Acrobat & Reader DC (64-bit)** (64-bit Acrobat and unified 64-bit Reader), **Acrobat DC (32-bit)** (32-bit Acrobat), or **Reader DC (32-bit)** (32-bit Reader).
+
 ## Device
 
 ### Common to Acrobat & Reader
@@ -29,6 +31,7 @@ Recommended and optional security settings for the combined v3.6 ADMX templates.
 | Cloud & Connectors | Third-Party Cloud Connectors | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | 3D Content in PDFs | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | AppContainer Sandbox | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Security: Execution & Protection | Attachment Extension Blocklist in Dialogs | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Block JavaScript Execution | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Block non-PDF file attachments | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Block PDF Link Actions | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
@@ -41,7 +44,9 @@ Recommended and optional security settings for the combined v3.6 ADMX templates.
 | Security: Trust & Permissions | Disable IE Trusted Sites as Privileged Locations | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Security: Trust & Permissions | Lock Trusted Folders and Files | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Security: Trust & Permissions | Lock Trusted Host Sites | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
+| Security: Trust & Permissions | Trust Certified Documents | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Security: Trust & Permissions | Unknown URL Access Policy | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Always ask | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Security: Trust & Permissions | Validate Signatures on Open | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Sharing & Features | Adobe Acrobat Sign | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Sharing & Features | Adobe Send & Track | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Sharing & Features | Disable SharePoint & Office 365 Integration | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
@@ -53,14 +58,18 @@ Recommended and optional security settings for the combined v3.6 ADMX templates.
 | Startup & Experience | Usage Measurement (legacy) | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Updates & Desktop Integration | Product Updater | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 
+- **Trust Certified Documents** - Does not apply in Protected View.
+- **Validate Signatures on Open** - Locks the HKCU setting and user interface rather than configuring the feature itself.
+- **Usage Measurement (legacy)** - DWORD 0 also disables the welcome screen at launch. Also listed on Suppress Nags and Upsells.
+
 ### Acrobat Only
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![Hardened Value](https://img.shields.io/badge/Hardened%20Value-316dca?style=flat-square) | ![Recommendation](https://img.shields.io/badge/Recommendation-316dca?style=flat-square) |
 |---|---|---|---|
 | Context, Tools & Search | Cloud Search Token Caching | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Context, Tools & Search | Cloud-Powered Search | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
-| Documents, Editing & Accessibility | Block EMF to PDF Conversion | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
-| Documents, Editing & Accessibility | Block XPS to PDF Conversion | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
+| Documents, Editing & Accessibility | Block EMF to PDF Conversion ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
+| Documents, Editing & Accessibility | Block XPS to PDF Conversion ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Security: Execution & Protection | Protected View Mode | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Enable Protected View for unsafe locations only | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Trust & Permissions | Disable Acrobat.com File Storage | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 

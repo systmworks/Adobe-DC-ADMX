@@ -18,6 +18,8 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 - Number defaults corrected: `iResponseFreshness`, `iMaxRevInfoArchiveSize` (1500 KB), `iMaxVerifySession` (5).
 - Removed non-configurable settings: `bPreviouslyEnabledSharePointInChromeExtn`, `iAccessTextColor`, `iNoteOpacity`, `iDefaultZoomScale`, `iZoomScale`, `iDictionaryDefaultID`.
 - Control type changed to numeric: `iRSAPSSSaltLength`, `iSize`.
+- Documentation: curated guides and settings pages now mark **Non-Policy Settings** branch entries with a badge and legend (fixes GitHub issues #11 and #12). No ADMX change; no re-upload required for this documentation update.
+- Documentation: expanded [Suppress Nags and Upsells](reduce-nags.md) with toolbar, panel, HUD, splash, welcome-screen, and onboarding settings for a cleaner reading view; added Attachment Extension Blocklist, Validate Signatures on Open, and Trust Certified Documents to [Security Hardening](security-hardening.md). Curated pages support optional per-setting notes. No ADMX change.
 
 **Upgrade:** Re-upload ADMX + ADML. Removed entries need no re-selection; all other v3.5 bindings are preserved.
 

@@ -46,6 +46,18 @@
 
 **Policy count note:** **<!--COUNT:total-->807<!--/COUNT:total-->** is the number of configurable policy entries in the ADMX (what Intune and GPMC show). **<!--COUNT:machine-->292<!--/COUNT:machine-->** machine includes architecture-specific non-policy settings emitted separately for x64 and x86. There are **<!--COUNT:machineUnique-->154<!--/COUNT:machineUnique-->** unique machine settings in the source reference (<!--COUNT:machineShared-->116<!--/COUNT:machineShared--> apply to both Reader and Acrobat; `tBuiltInPermList` is excluded as REG_BINARY). Product-scoped tables in [Documentation](../README.md) list user and machine settings because shared settings appear under each product.
 
+### Non-Policy Settings branch
+
+Some machine settings write to native Adobe registry paths outside `HKLM\SOFTWARE\Policies`. They appear under **Adobe DC > Non-Policy Settings** in Group Policy or Intune, with architecture-specific sub-nodes:
+
+| Sub-node | Applies to |
+|----------|------------|
+| **Acrobat & Reader DC (64-bit)** | 64-bit Acrobat and unified 64-bit Reader |
+| **Acrobat DC (32-bit)** | 32-bit Acrobat (includes Adobe ARM updater prefs) |
+| **Reader DC (32-bit)** | Legacy 32-bit Reader |
+
+Examples include **Block EMF to PDF Conversion**, **Disable Repair for All Users**, and **Disable Major Version Upgrade Prompt**. Curated guides mark these with a **Non-Policy** badge and list the exact tree path. No ADMX re-upload is required when documentation is updated.
+
 ### Built-in Attachment Permissions List (`tBuiltInPermList`)
 
 This is the **only** REG_BINARY setting in the template. ADMX/ADML has **no binary element type**, so it cannot be authored via Group Policy or Intune ADMX upload. Combined v3.1 incorrectly used a text box (REG_SZ); v3.2 removed the policy.

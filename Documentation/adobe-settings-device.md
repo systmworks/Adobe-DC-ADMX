@@ -6,7 +6,9 @@
 
 # Adobe DC Settings (Device)
 
-Complete list of 156 Adobe DC settings in the combined v3.6 ADMX templates, grouped by product applicability.
+Complete list of 154 unique Adobe DC settings (156 table entries where the same `ValueName` has more than one friendly name) in the combined v3.6 ADMX templates, grouped by product applicability.
+
+- Settings marked ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) are under **Adobe DC > Non-Policy Settings** in Group Policy or Intune, not under **Adobe DC > Acrobat & Reader DC**. Configure the sub-node that matches your installed architecture: **Acrobat & Reader DC (64-bit)** (64-bit Acrobat and unified 64-bit Reader), **Acrobat DC (32-bit)** (32-bit Acrobat), or **Reader DC (32-bit)** (32-bit Reader).
 
 ## Common to Acrobat & Reader
 
@@ -36,13 +38,13 @@ Complete list of 156 Adobe DC settings in the combined v3.6 ADMX templates, grou
 | Contextual Help Tips | ``bEnableContextualTips`` | Controls whether to automatically display help tips based on the current context. |
 | Contextual Toolbar | ``bEnableContextualToolbar`` | Show the context toolbar (popup) when selecting a PDF object. |
 | Extract Page Range UI | ``bEnableExtractPageRange`` | Show the page range UI in the Extract Page dialog. |
-| Legacy Protect Tool Menu | ``ProtectOldExperience`` | Use legacy Protect tool menus instead of the new UI. |
+| Legacy Protect Tool Menu ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``ProtectOldExperience`` | Use legacy Protect tool menus instead of the new UI. |
 | Lock Tool Shortcut Customization | ``bDisableAcrobatShortcutCustomization`` | Prevents end users from modifying the tool shortcuts in the right hand pane. |
 | Modern Viewer | ``bEnableAV2Enterprise`` | Enable the Modern Viewer. |
 | New Right-Click Context Menu | ``bEnableRCMNewPOPUp`` | Disable the new context menu and use the legacy version. |
 | Online Actions Library Link | ``bFindMoreWorkflowsOnline`` | Show the menu item that opens the online Actions file library. |
 | Online Tool Set Exchange Link | ``bFindMoreCustomizationsOnline`` | Show the menu item that opens the online Acrobat Tool Set Exchange. |
-| Paste in Place | ``ADC4302862`` | Paste copied elements to the same location as the source. |
+| Paste in Place ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``ADC4302862`` | Paste copied elements to the same location as the source. |
 | Show Combine Files Context Menu | ``bRCMCombineFeatureKey`` | Display the Combine Files item in a document's right-click context menu. |
 
 ### Documents, Editing & Accessibility
@@ -50,7 +52,7 @@ Complete list of 156 Adobe DC settings in the combined v3.6 ADMX templates, grou
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | Create PDF Split Menu | ``bGlobalBarMenuFeatureKey`` | Show the Create Split Menu under Create a PDF menu item. |
-| Disable Scanned PDF Text Recognition | ``DisableScannedDocumentEditing`` | Disable text recognition while editing scanned PDFs. |
+| Disable Scanned PDF Text Recognition ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``DisableScannedDocumentEditing`` | Disable text recognition while editing scanned PDFs. |
 | Restrict Form Data to Schema | ``bIgnoreDataSchema`` | Specifies whether all data in a form is saved rather than only data related to the form's schema. |
 
 ### Microsoft Purview (MIP)
@@ -78,9 +80,9 @@ Complete list of 156 Adobe DC settings in the combined v3.6 ADMX templates, grou
 | Enhanced Security in Browser | ``bEnhancedSecurityInBrowser`` | Enhanced security when running in the browser. |
 | Enhanced Security Standalone | ``bEnhancedSecurityStandalone`` | Enhanced security in the standalone application. |
 | Flash Content in PDFs | ``bEnableFlash`` | Render Flash content in PDFs. |
-| Flash Editing Tools | ``EnableFlashEditing`` | Enable the Flash tools for adding annotations or Flash in the Rich Media app. |
+| Flash Editing Tools ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``EnableFlashEditing`` | Enable the Flash tools for adding annotations or Flash in the Rich Media app. |
 | Protected Mode Sandbox | ``bProtectedMode`` | Enables Protected Mode which sandboxes Acrobat and Reader processes. |
-| Protected View Exit Shortcut Key | ``bEnablePVSwitchoutShortcut`` | Shortcut key to exit Protected View for the current document. |
+| Protected View Exit Shortcut Key ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``bEnablePVSwitchoutShortcut`` | Shortcut key to exit Protected View for the current document. |
 | Unlisted Attachment Type Permissions | ``iUnlistedAttachmentTypePerm`` | Specifies the default permissions for file types that aren't listed in the default or user-specified lists. |
 
 ### Security: Trust & Permissions
@@ -155,16 +157,16 @@ Complete list of 156 Adobe DC settings in the combined v3.6 ADMX templates, grou
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | 32-Bit Plugin Upgrade Notification | ``bDisableThirdPartyPluginNotif`` | Notify users with 32 bit plugins that the app will soon update to 64 bit. |
-| Accept EULA for Updater | ``EULA`` | Accept EULA for the built-in updater. |
+| Accept EULA for Updater ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``EULA`` | Accept EULA for the built-in updater. |
 | Auto Dock HUD Bar | ``bEnableAutoDockUndockHUD`` | Automatically dock and undock the HUD bar based on the window size. |
 | Auto Open Acrobat from Reader | ``bHasAcrobatConsent`` | Specifies whether the Reader process should automatically open Acrobat for the current file. |
 | Disable Chrome PDF Extension | ``bAcroSuppressOpenInReader`` | Disable and lock the PDF viewer Chrome extension. |
-| Disable Repair for All Users | ``DisableMaintenance`` | Disable Help > Repair for all users. |
-| Disable Repair for Standard Users | ``Disable_Repair`` | Disable Help > Repair for standard users on virtual installs. |
+| Disable Repair for All Users ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``DisableMaintenance`` | Disable Help > Repair for all users. |
+| Disable Repair for Standard Users ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``Disable_Repair`` | Disable Help > Repair for standard users on virtual installs. |
 | Hide Document Message Bar | ``bSuppressMessageBar`` | Prevents the appearance of the document message bar. |
 | Lock Default PDF Viewer | ``bDisablePDFHandlerSwitching`` | Lock the default PDF viewer handler. |
 | Lock PDF Thumbnails in Explorer | ``bDisableThumbnailPreviewHandler`` | Lock Explorer PDF thumbnail preview checkbox. |
-| Merge Title and Menu Bar | ``bMergeMenuBar`` | Merge the application's title bar and menu bar into a single bar. |
+| Merge Title and Menu Bar ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``bMergeMenuBar`` | Merge the application's title bar and menu bar into a single bar. |
 | Patch Cache Cleanup | ``PatchCleanFlag`` | Clean cached MSI/MSP patches on next update. |
 | Product Updater | ``bUpdater`` | Controls Adobe Acrobat/Reader product updates. |
 | Scalable Cursor | ``bShouldUseScalableCursor`` | Disable the scalable cursor. |
@@ -184,12 +186,12 @@ Complete list of 156 Adobe DC settings in the combined v3.6 ADMX templates, grou
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
-| Click-to-Edit Mode | ``ADC4275035_ClickEdit`` | Auto-enter edit mode when the user clicks a PDF object. |
+| Click-to-Edit Mode ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``ADC4275035_ClickEdit`` | Auto-enter edit mode when the user clicks a PDF object. |
 | Cloud Search Token Caching | ``bEnableCloudPoweredSearchTokenCaching`` | Cache locally cloud-based search service suggestions. |
 | Cloud-Powered Search | ``bEnableCloudPoweredSearch`` | Enable the cloud-based search service in the Find Tool. |
-| Fill & Sign Color Picker | ``ADC4275034`` | Disable the color picker in the Fill and Sign tool. |
+| Fill & Sign Color Picker ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``ADC4275034`` | Disable the color picker in the Fill and Sign tool. |
 | Organize Pages Thumbnail Shortcut | ``bOrganizePagesFromThumbnails`` | Show shortcut UI for the Organize tool from thumbnails. |
-| Remove Form Editing Tools (2019) | ``ADC4275035`` | Remove Oct 2019 AddText and EditText form tools from the UI. |
+| Remove Form Editing Tools (2019) ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``ADC4275035`` | Remove Oct 2019 AddText and EditText form tools from the UI. |
 | Show Search Loading Message | ``bEnableAutoCompleteExactMatchLoader`` | Show a "Working on it" message when using the cloud-based search service. |
 | Show Search No Internet Message | ``bEnableAutoCompleteNoInternetConnectionHeader`` | Show a "Requires internet connection" message when using the cloud-based search service. |
 | Show Search No Match Message | ``bEnableAutoCompleteNoExactMatchHeader`` | Show a "No exact match" message when using the cloud-based search service. |
@@ -200,11 +202,11 @@ Complete list of 156 Adobe DC settings in the combined v3.6 ADMX templates, grou
 |---|---|---|
 | Accessibility Auto Tagging | ``bCloudATFeatureEnable`` | Show the new auto tagging experience or revert to the old experience. |
 | Bates Log Original File Name | ``bBatesLogOriginalFileName`` | Use original filename in Bates numbering log output. |
-| Block EMF to PDF Conversion | ``BlockEMFParsing`` | Block EMF to PDF conversion. |
-| Block XPS to PDF Conversion | ``BlockXPSParsing`` | Block XPS to PDF conversion. |
-| PDFMaker Grouped Image Tag Fix | ``EnablePDFMakerGroupImagesTagCorrectionFeature`` | Disable accessibility fixes for tagging grouped images. |
-| PDFMaker Table Header Tag Fix | ``EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeature`` | Disable accessibility fixes for tagging table headers. |
-| PDFMaker Text Path Tag Fix | ``EnablePDFMakerSplitTextPathElemsFeature`` | Fix Text Path rendering bug in PDFMaker tags. |
+| Block EMF to PDF Conversion ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``BlockEMFParsing`` | Block EMF to PDF conversion. |
+| Block XPS to PDF Conversion ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``BlockXPSParsing`` | Block XPS to PDF conversion. |
+| PDFMaker Grouped Image Tag Fix ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``EnablePDFMakerGroupImagesTagCorrectionFeature`` | Disable accessibility fixes for tagging grouped images. |
+| PDFMaker Table Header Tag Fix ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeature`` | Disable accessibility fixes for tagging table headers. |
+| PDFMaker Text Path Tag Fix ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``EnablePDFMakerSplitTextPathElemsFeature`` | Fix Text Path rendering bug in PDFMaker tags. |
 | Reflow Editing | ``bEnableReflowEditing`` | Lock ReflowEditing and the reflow feature. |
 
 ### Security: Execution & Protection
@@ -238,11 +240,11 @@ Complete list of 156 Adobe DC settings in the combined v3.6 ADMX templates, grou
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | Crash Reporter Dialog | ``bCrashReporterEnabled`` | Show the crash reporter dialog on application crash (Windows only). |
-| Disable Major Version Upgrade Prompt (32-bit Updater) | ``iDisablePromptForUpgrade`` | Suppress major-version upgrade prompt. |
-| Enforce AMT for AppV Deployment | ``IsAMTEnforced`` | Allows deployment of Acrobat on AppV for December, 2018 and later products. |
+| Disable Major Version Upgrade Prompt (32-bit Updater) ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``iDisablePromptForUpgrade`` | Suppress major-version upgrade prompt. |
+| Enforce AMT for AppV Deployment ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``IsAMTEnforced`` | Allows deployment of Acrobat on AppV for December, 2018 and later products. |
 | Split by Size Maximum (MB) | ``dSplitBySizeMaxSize`` | Maximum MB per split file. |
-| Update Watchdog Interval (Days) (32-bit Updater) | ``iInterval`` | Days before Watchdog prompts manual update after a failed update. |
-| Updater Log Level (32-bit Updater) | ``iLogLevel`` | Updater log verbosity. |
+| Update Watchdog Interval (Days) (32-bit Updater) ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``iInterval`` | Days before Watchdog prompts manual update after a failed update. |
+| Updater Log Level (32-bit Updater) ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``iLogLevel`` | Updater log verbosity. |
 
 ### Upsell
 

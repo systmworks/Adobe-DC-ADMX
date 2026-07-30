@@ -80,6 +80,11 @@
     "recommendedDword": 0
   },
   {
+    "valueName": "bEnableContextualToolbar",
+    "scope": "Both",
+    "recommendedDword": 0
+  },
+  {
     "valueName": "iDisablePromptForUpgrade",
     "scope": "Acrobat",
     "recommendedDword": 1
@@ -184,5 +189,27 @@
     "valueName": "bShowScanTabInHomeView",
     "scope": "Both",
     "recommendedDword": 0
+  },
+  {
+    "valueName": "bSuppressMessageBar",
+    "scope": "Both",
+    "recommendedDword": 1,
+    "note": "Hides the document message bar, including Protected View and trust prompts. Adobe documents that this adversely affects signing when preview mode is used."
+  },
+  {
+    "valueName": "bEnableAutoDockUndockHUD",
+    "scope": "Both",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bShowWelcomeScreen",
+    "scope": "Both",
+    "recommendedDword": 0
+  },
+  {
+    "valueName": "bUsageMeasurement",
+    "scope": "Both",
+    "recommendedDword": 0,
+    "note": "Also stops all usage data collection sent to Adobe, including dialog analytics that Hide Send Feedback Icon does not cover. Also listed on Security Hardening."
   }
 ]
