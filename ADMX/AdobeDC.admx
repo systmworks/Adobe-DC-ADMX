@@ -2,12 +2,12 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.7" schemaVersion="1.0"
+  revision="3.8" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="3.7" />
+  <resources minRequiredRevision="3.8" />
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SupportedAcrobatReaderPolicies)" name="SupportedAcrobatReaderPolicies"/>
@@ -2619,6 +2619,15 @@
     </policy>
 
     <!-- Upsell -->
+
+    <!-- Disable Promotional Campaign Messages - [bToggleSophiaWebInfra] -->
+    <policy class="Machine" displayName="$(string.bToggleSophiaWebInfra_Reader)" explainText="$(string.bToggleSophiaWebInfra_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
+      name="bToggleSophiaWebInfra_Reader" valueName="bToggleSophiaWebInfra">
+      <parentCategory ref="Upsell_ReaderCategory"/>
+      <supportedOn ref="SupportedReaderPolicies"/>
+      <enabledValue><decimal value="0" /></enabledValue>
+      <disabledValue><decimal value="1" /></disabledValue>
+    </policy>
 
     <!-- Limit Informational Prompts - [bLimitPromptsFeatureKey] -->
     <policy class="Machine" displayName="$(string.bLimitPromptsFeatureKey_Reader)" explainText="$(string.bLimitPromptsFeatureKey_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"

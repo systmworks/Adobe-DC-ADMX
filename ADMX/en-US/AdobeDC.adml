@@ -2,10 +2,10 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.7" schemaVersion="1.0"
+  revision="3.8" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
-  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.7)</displayName>
-  <description>ADMX v3.7 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
+  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.8)</displayName>
+  <description>ADMX v3.8 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
   <resources>
     <stringTable>
       <string id="SupportedAcrobatReaderPolicies">Adobe Acrobat and Reader DC</string>
@@ -650,6 +650,8 @@
 
       <!-- Upsell -->
 
+      <string id="bToggleSophiaWebInfra_Reader">Disable Promotional Campaign Messages</string>
+      <string id="bToggleSophiaWebInfra_Reader_Explain">Specifies whether to show users messages which promote (Trials, Acrobat, PDF Pack etc.)&#10;&#10;Subscription users may be prompted to download Acrobat. Theoretically, this preference does not interact with any other upsell preferences. Possible values include: 0 or null: Disable campaigns in Reader's right-hand pane bottom banner 1: Enable campaigns</string>
       <string id="bLimitPromptsFeatureKey_Reader">Limit Informational Prompts</string>
       <string id="bLimitPromptsFeatureKey_Reader_Explain">Specifies whether to limit the number of prompts a user will see in a 24 hour period.&#10;&#10;Prompts include items like tips, calls-to-action, and feature walk throughs. These are not necessarily upsell items. Possible values include: 0: Don't restrict informational prompts. 1: Limit prompts to 1 per day and 3 per week.</string>
       <string id="bReaderRetentionExperiment_Reader">Prompt Reader Users to Download Acrobat</string>

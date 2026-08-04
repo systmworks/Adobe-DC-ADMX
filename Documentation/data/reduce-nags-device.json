@@ -126,7 +126,7 @@
   },
   {
     "valueName": "bToggleSophiaWebInfra",
-    "scope": "Acrobat",
+    "scope": "Both",
     "recommendedDword": 0
   },
   {

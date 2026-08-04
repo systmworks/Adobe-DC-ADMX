@@ -6,7 +6,7 @@
 
 # Adobe DC Settings (User)
 
-Complete list of 267 unique Adobe DC settings (268 table entries where the same `ValueName` has more than one friendly name) in the combined v3.7 ADMX templates, grouped by product applicability.
+Complete list of 267 unique Adobe DC settings (268 table entries where the same `ValueName` has more than one friendly name) in the combined v3.8 ADMX templates, grouped by product applicability.
 
 ## Common to Acrobat & Reader
 

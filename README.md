@@ -19,17 +19,17 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 | [Changelog (Retired)](Documentation/changelog-retired.md) | Legacy device-only and user-only ADMX version history |
 
 > [!WARNING]
-> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.7**.
+> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.8**.
 >
 > Convert them first with [`Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1), then re-import.
 >
-> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1/v3.2/v3.3/v3.4/v3.5 to v3.7 keeps the same namespace and policy names for existing settings. **v3.4+ releases are additive-only** except where a changelog entry documents a one-time control-type correction - re-upload preserves existing Intune/GPO bindings for all other settings.
+> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1/v3.2/v3.3/v3.4/v3.5 to v3.8 keeps the same namespace and policy names for existing settings. **v3.4+ releases are additive-only** except where a changelog entry documents a one-time control-type correction - re-upload preserves existing Intune/GPO bindings for all other settings.
 
-These ADMX/ADML templates (v3.7) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
+These ADMX/ADML templates (v3.8) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
 
 | ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
 |------|-------|----------|
-| `AdobeDC.admx` + ADML | **Adobe DC** (Computer + User) | 808 (293 machine + 515 user) |
+| `AdobeDC.admx` + ADML | **Adobe DC** (Computer + User) | 809 (294 machine + 515 user) |
 
 ### Configuration tree
 
@@ -57,7 +57,7 @@ flowchart TD
 
 ## Category Overview (Device)
 
-> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product, so Reader + Acrobat column totals are higher than the number of unique settings. The ADMX contains **293** machine policy entries (**154** unique machine settings after removing non-ADMX `tBuiltInPermList`; architecture-specific non-policy settings are emitted separately for x64 and x86). Overall template: **293** machine + **515** user = **808** policy entries.
+> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product, so Reader + Acrobat column totals are higher than the number of unique settings. The ADMX contains **294** machine policy entries (**154** unique machine settings after removing non-ADMX `tBuiltInPermList`; architecture-specific non-policy settings are emitted separately for x64 and x86). Overall template: **294** machine + **515** user = **809** policy entries.
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![Overview](https://img.shields.io/badge/Overview-316dca?style=flat-square) | ![Reader](https://img.shields.io/badge/Reader-316dca?style=flat-square) | ![Acrobat](https://img.shields.io/badge/Acrobat-316dca?style=flat-square) |
 |----------|----------|:------:|:-------:|
@@ -70,8 +70,8 @@ flowchart TD
 | Sharing & Features | Adobe Sign, Send & Track, shared reviews, SharePoint/Office 365 integration, WebMail configuration, and cloud signature storage. | 18 | 20 |
 | Startup & Experience | Launch messages, notifications, First Time Experience, What's New, Home screen widgets, and feedback prompts. | 15 | 16 |
 | Updates & Desktop Integration | Product updater, Chrome extension, Explorer thumbnails, repair options, desktop UI, and deployment settings. | 16 | 26 |
-| Upsell | Upgrade prompts, trial purchase dialogs, promotional campaigns, App Center, and purchasable tool visibility. | 5 | 7 |
-| **Total** | | **124** | **169** |
+| Upsell | Upgrade prompts, trial purchase dialogs, promotional campaigns, App Center, and purchasable tool visibility. | 6 | 7 |
+| **Total** | | **125** | **169** |
 
 ## Category Overview (User)
 

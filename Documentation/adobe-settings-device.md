@@ -6,7 +6,7 @@
 
 # Adobe DC Settings (Device)
 
-Complete list of 154 unique Adobe DC settings (156 table entries where the same `ValueName` has more than one friendly name) in the combined v3.7 ADMX templates, grouped by product applicability.
+Complete list of 154 unique Adobe DC settings (156 table entries where the same `ValueName` has more than one friendly name) in the combined v3.8 ADMX templates, grouped by product applicability.
 
 - Settings marked ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) are under **Adobe DC > Non-Policy Settings** in Group Policy or Intune, not under **Adobe DC > Acrobat & Reader DC**. Configure the sub-node that matches your installed architecture: **Acrobat & Reader DC (64-bit)** (64-bit Acrobat and unified 64-bit Reader), **Acrobat DC (32-bit)** (32-bit Acrobat), or **Reader DC (32-bit)** (32-bit Reader).
 
@@ -177,6 +177,7 @@ Complete list of 154 unique Adobe DC settings (156 table entries where the same 
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
+| Disable Promotional Campaign Messages | ``bToggleSophiaWebInfra`` | Show users messages which promote (Trials, Acrobat, PDF Pack etc.) |
 | Limit Informational Prompts | ``bLimitPromptsFeatureKey`` | Limit the number of prompts a user will see in a 24 hour period. |
 | Show App Center UI | ``bToggleDCAppCenter`` | App Center and get-apps banner on Home. |
 | Show Upgrade Prompts | ``bAcroSuppressUpsell`` | Disable upgrade and upsell messages (12.x+). |
@@ -246,7 +247,6 @@ Complete list of 154 unique Adobe DC settings (156 table entries where the same 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | Disable Billing Issue Call to Action | ``bToggleBillingIssue`` | Show a Call to Action UI item in the top bar if a billing issue is detected. |
-| Disable Promotional Campaign Messages | ``bToggleSophiaWebInfra`` | Show users messages which promote (Trials, Acrobat, PDF Pack etc.) |
 | Express Templates in Create PDF | ``bMerchandizingEnabled`` | Show the Express Templates options in Acrobat's Create PDF UI. |
 | Trial Purchase Prompt | ``bEnableTrialistLaunchCard`` | Prompt Acrobat trial users to complete the purchase. |
 

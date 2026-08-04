@@ -10,6 +10,17 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 
 ---
 
+## v3.8 - 4 August 2026
+
+**809 policies** (294 machine + 515 user) - Reader promotional campaign messages.
+
+- Added **Disable Promotional Campaign Messages** (`bToggleSophiaWebInfra_Reader`) for Reader DC under Upsell. Same scoping error class as v3.7 `iProtectedView`; Adobe documents both tracks and the explain text targets Reader's right-hand pane banner.
+- Documentation: [Suppress Nags and Upsells](reduce-nags.md) lists this setting under Common to Acrobat & Reader.
+
+**Upgrade:** Re-upload ADMX + ADML. Additive only; all v3.7 bindings are preserved.
+
+---
+
 ## v3.7 - 4 August 2026
 
 **808 policies** (293 machine + 515 user) - Reader Protected View; Product Updater explain text.

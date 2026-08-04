@@ -1,5 +1,4 @@
 {
-  "revision": "3.7",
   "policies": [
     {
       "policyName": "bToggleFillSign_Acrobat",
@@ -3360,6 +3359,20 @@
       "details": "A starred file is somewhat similar to a \"favorited\" file. This preference overrides bFavoritesStripInRFL. Possible values include: 0: Disable and lock starred files in the recent files list. 1: Use bFavoritesStripInRFL to control this feature.",
       "regValEnabled": 1,
       "regValDisabled": 0
+    },
+    {
+      "policyName": "bToggleSophiaWebInfra_Reader",
+      "valueName": "bToggleSophiaWebInfra",
+      "friendlyName": "Disable Promotional Campaign Messages",
+      "category": "Upsell",
+      "scope": "Device",
+      "product": "Reader",
+      "branch": "ReaderPolicies",
+      "controlType": "Toggle",
+      "summary": "Specifies whether to show users messages which promote (Trials, Acrobat, PDF Pack etc.)",
+      "details": "Subscription users may be prompted to download Acrobat. Theoretically, this preference does not interact with any other upsell preferences. Possible values include: 0 or null: Disable campaigns in Reader's right-hand pane bottom banner 1: Enable campaigns",
+      "regValEnabled": 0,
+      "regValDisabled": 1
     },
     {
       "policyName": "bLimitPromptsFeatureKey_Reader",
@@ -11313,5 +11326,6 @@
       "regValEnabled": 0,
       "regValDisabled": 1
     }
-  ]
+  ],
+  "revision": "3.8"
 }

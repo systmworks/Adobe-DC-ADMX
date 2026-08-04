@@ -44,6 +44,7 @@ Settings to suppress unwanted messages, popups, and promotions, plus the toolbar
 | Updates & Desktop Integration | Lock Default PDF Viewer | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Updates & Desktop Integration | Patch Cache Cleanup | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Updates & Desktop Integration | Product Updater | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Upsell | Disable Promotional Campaign Messages | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Upsell | Limit Informational Prompts | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Upsell | Show App Center UI | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Upsell | Show Upgrade Prompts | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
@@ -60,7 +61,6 @@ Settings to suppress unwanted messages, popups, and promotions, plus the toolbar
 | Updates & Desktop Integration | Crash Reporter Dialog | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Updates & Desktop Integration | Disable Major Version Upgrade Prompt (32-bit Updater) ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Upsell | Disable Billing Issue Call to Action | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
-| Upsell | Disable Promotional Campaign Messages | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Upsell | Express Templates in Create PDF | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Upsell | Trial Purchase Prompt | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 
