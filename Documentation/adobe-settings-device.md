@@ -6,7 +6,7 @@
 
 # Adobe DC Settings (Device)
 
-Complete list of 154 unique Adobe DC settings (156 table entries where the same `ValueName` has more than one friendly name) in the combined v3.6 ADMX templates, grouped by product applicability.
+Complete list of 154 unique Adobe DC settings (156 table entries where the same `ValueName` has more than one friendly name) in the combined v3.7 ADMX templates, grouped by product applicability.
 
 - Settings marked ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) are under **Adobe DC > Non-Policy Settings** in Group Policy or Intune, not under **Adobe DC > Acrobat & Reader DC**. Configure the sub-node that matches your installed architecture: **Acrobat & Reader DC (64-bit)** (64-bit Acrobat and unified 64-bit Reader), **Acrobat DC (32-bit)** (32-bit Acrobat), or **Reader DC (32-bit)** (32-bit Reader).
 
@@ -83,6 +83,7 @@ Complete list of 154 unique Adobe DC settings (156 table entries where the same 
 | Flash Editing Tools ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``EnableFlashEditing`` | Enable the Flash tools for adding annotations or Flash in the Rich Media app. |
 | Protected Mode Sandbox | ``bProtectedMode`` | Enables Protected Mode which sandboxes Acrobat and Reader processes. |
 | Protected View Exit Shortcut Key ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``bEnablePVSwitchoutShortcut`` | Shortcut key to exit Protected View for the current document. |
+| Protected View Mode | ``iProtectedView`` | Protected View mode. |
 | Unlisted Attachment Type Permissions | ``iUnlistedAttachmentTypePerm`` | Specifies the default permissions for file types that aren't listed in the default or user-specified lists. |
 
 ### Security: Trust & Permissions
@@ -208,12 +209,6 @@ Complete list of 154 unique Adobe DC settings (156 table entries where the same 
 | PDFMaker Table Header Tag Fix ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``EnablePDFMakerTableHeaderCellTagAndScopeUpdateFeature`` | Disable accessibility fixes for tagging table headers. |
 | PDFMaker Text Path Tag Fix ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``EnablePDFMakerSplitTextPathElemsFeature`` | Fix Text Path rendering bug in PDFMaker tags. |
 | Reflow Editing | ``bEnableReflowEditing`` | Lock ReflowEditing and the reflow feature. |
-
-### Security: Execution & Protection
-
-| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
-|---|---|---|
-| Protected View Mode | ``iProtectedView`` | Protected View mode. |
 
 ### Security: Trust & Permissions
 

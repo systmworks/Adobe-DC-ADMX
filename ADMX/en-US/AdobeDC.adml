@@ -2,10 +2,10 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.6" schemaVersion="1.0"
+  revision="3.7" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
-  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.6)</displayName>
-  <description>ADMX v3.6 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
+  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.7)</displayName>
+  <description>ADMX v3.7 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
   <resources>
     <stringTable>
       <string id="SupportedAcrobatReaderPolicies">Adobe Acrobat and Reader DC</string>
@@ -342,7 +342,7 @@
       <string id="PatchCleanFlag_Acrobat">Patch Cache Cleanup</string>
       <string id="PatchCleanFlag_Acrobat_Explain">Clean cached MSI/MSP patches on next update.&#10;&#10;Patches accumulate under ProgramData\Adobe\ARM and Windows\Installer. Values: 0 = no cleanup; 1 = cleanup on next update.</string>
       <string id="bUpdater_Updater_Acrobat">Product Updater</string>
-      <string id="bUpdater_Updater_Acrobat_Explain">Controls Adobe Acrobat/Reader product updates.&#10;&#10;Disables or enables automatic product updates (distinct from cloud services in FeatureLockDown\cServices). Values: 0 = disable product updates; 1 = enable product updates.</string>
+      <string id="bUpdater_Updater_Acrobat_Explain">Controls Adobe Acrobat/Reader product updates.&#10;&#10;Disables or enables automatic product updates (distinct from cloud services in FeatureLockDown\cServices). For 12.x and later, this setting overrides the ARM Legacy Mode preference; setting to 0 also removes the updater UI (Preferences &gt; Updater and Help &gt; Check for updates). Values: 0 = disable product updates; 1 = enable product updates.</string>
       <string id="bShouldUseScalableCursor_Acrobat">Scalable Cursor</string>
       <string id="bShouldUseScalableCursor_Acrobat_Explain">Specifies whether to disable the scalable cursor.&#10;&#10;Because Citrix does not provide support for scalable cursors (32-bit cursors with an alpha channel) in legacy graphics mode, scalable cursor performance may be impaired on Citrix. Use this setting to improve performance on Citrix by using a non-scalable cursor. Possible values include: 0: Don't use a scalable cursor. 1: Use a scalable cursor.</string>
       <string id="dSplitBySizeMaxSize_Acrobat">Split by Size Maximum (MB)</string>
@@ -486,6 +486,11 @@
       <string id="bProtectedMode_Reader_Explain">Enables Protected Mode which sandboxes Acrobat and Reader processes.&#10;&#10;Protected Mode should be enabled to protect user systems and data. Possible values include: 0: Don't enable protected mode. 1: Do enable protected mode.&#10;&#10;Security Reference: STIG ARDC-CN-000015 (V-213170) Medium; STIG AADC-CN-001010 (V-213127) Medium</string>
       <string id="bUseWhitelistConfigFile_Reader">Protected Mode Whitelist Config</string>
       <string id="bUseWhitelistConfigFile_Reader_Explain">Allows the use of the policy whitelist to allow behavior that Protected Mode would otherwise prevent.&#10;&#10;This preference just toggles the ability of the application to read policy files. For additional security-related details, refer to the Application Security Guide .</string>
+      <string id="iProtectedView_Reader">Protected View Mode</string>
+      <string id="iProtectedView_Reader_Explain">Protected View mode.&#10;&#10;Values: 0 = off (default); 1 = untrusted locations only (recommended); 2 = all files.&#10;&#10;Security Reference: STIG ARDC-CN-000020 (V-213171) Medium; STIG AADC-CN-001015 (V-213128) Medium</string>
+      <string id="iProtectedView_Reader_opt0">Disable Protected View</string>
+      <string id="iProtectedView_Reader_opt1">Enable Protected View for unsafe locations only</string>
+      <string id="iProtectedView_Reader_opt2">Enable Protected View for all files</string>
       <string id="iUnlistedAttachmentTypePerm_Reader">Unlisted Attachment Type Permissions</string>
       <string id="iUnlistedAttachmentTypePerm_Reader_Explain">Specifies the default permissions for file types that aren't listed in the default or user-specified lists.&#10;&#10;Possible values include: 0: Prompt user without ability to set file type as Allowed (two choices: Open File, Never Allow). 1 (default): Prompt user with ability to Allow or Prohibit (three choices). 2: Always open unlisted file types. 3: Never open unlisted file types.</string>
       <string id="iUnlistedAttachmentTypePerm_Reader_opt0">Prompt without ability to allow (most restrictive prompt)</string>
@@ -635,7 +640,7 @@
       <string id="PatchCleanFlag_Reader">Patch Cache Cleanup</string>
       <string id="PatchCleanFlag_Reader_Explain">Clean cached MSI/MSP patches on next update.&#10;&#10;Patches accumulate under ProgramData\Adobe\ARM and Windows\Installer. Values: 0 = no cleanup; 1 = cleanup on next update.</string>
       <string id="bUpdater_Updater_Reader">Product Updater</string>
-      <string id="bUpdater_Updater_Reader_Explain">Controls Adobe Acrobat/Reader product updates.&#10;&#10;Disables or enables automatic product updates (distinct from cloud services in FeatureLockDown\cServices). Values: 0 = disable product updates; 1 = enable product updates.</string>
+      <string id="bUpdater_Updater_Reader_Explain">Controls Adobe Acrobat/Reader product updates.&#10;&#10;Disables or enables automatic product updates (distinct from cloud services in FeatureLockDown\cServices). For 12.x and later, this setting overrides the ARM Legacy Mode preference; setting to 0 also removes the updater UI (Preferences &gt; Updater and Help &gt; Check for updates). Values: 0 = disable product updates; 1 = enable product updates.</string>
       <string id="bEnableAcrobatPromptForDocOpen_Reader">Prompt to Use Acrobat from Reader</string>
       <string id="bEnableAcrobatPromptForDocOpen_Reader_Explain">Specifies whether to prompt users to use Acrobat when both Reader and Acrobat are installed.&#10;&#10;When Acrobat and Reader are both present, opening a file in Reader prompts the user to switch to Acrobat as well as make Acrobat the default PDF viewer. Possible values include: 0: Don't prompt to use Acrobat. 1: Prompt to use Acrobat.</string>
       <string id="bShouldUseScalableCursor_Reader">Scalable Cursor</string>
@@ -2098,6 +2103,9 @@
       </presentation>
       <presentation id="iMIPCloud_Reader_enum">
         <dropdownList defaultItem="0" refId="iMIPCloud_Reader_enum">MIP Sovereign Cloud:</dropdownList>
+      </presentation>
+      <presentation id="iProtectedView_Reader_enum">
+        <dropdownList defaultItem="0" refId="iProtectedView_Reader_enum">Protected View Mode:</dropdownList>
       </presentation>
       <presentation id="iUnlistedAttachmentTypePerm_Reader_enum">
         <dropdownList defaultItem="0" refId="iUnlistedAttachmentTypePerm_Reader_enum">Unlisted Attachment Type Permissions:</dropdownList>

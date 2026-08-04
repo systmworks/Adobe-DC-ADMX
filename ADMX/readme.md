@@ -4,12 +4,15 @@
 
 # AdobeDC ADMX - Combined Machine + User
 
-**Current version: v3.6** (22 July 2026). Full version history: [Changelog (Combined)](../Documentation/changelog.md).
+**Current version: v3.7** (4 August 2026). Full version history: [Changelog (Combined)](../Documentation/changelog.md).
 
 **Current production release.** Supersedes the separate machine template (v2.21) and user template ([Adobe-DC-User-ADMX v1.10](https://github.com/systmworks/Adobe-DC-User-ADMX)) for new Group Policy and Intune deployments.
 
 > [!IMPORTANT]
 > **Stable upgrade path (v3.4+).** From v3.4 onward, releases are **additive-only** except where a changelog entry documents a one-time control-type correction. Re-uploading `AdobeDC.admx` + ADML preserves existing Intune/GPO bindings for all other settings. Deleting the imported ADMX in Intune before re-upload is still required (platform limitation for custom ADMX). The frozen policy set is recorded in `Documentation/data/policy-baseline.json`.
+
+> [!NOTE]
+> **Upgrading from combined v3.6 to v3.7** keeps the same namespace and policy `name` attributes for all v3.6 settings. Re-upload `AdobeDC.admx` + ADML. **1** new Reader machine policy (**Protected View Mode**) was added; all existing bindings are preserved. See [v3.7 changelog](../Documentation/changelog.md#v37---4-august-2026).
 
 > [!NOTE]
 > **Upgrading from combined v3.5 to v3.6** keeps the same namespace and policy `name` attributes for all v3.5 settings. Re-upload `AdobeDC.admx` + ADML. **12** Skip policies were removed from the template; removed entries need no re-selection. All remaining bindings are preserved. See [v3.6 changelog](../Documentation/changelog.md#v36---22-july-2026).
@@ -37,14 +40,14 @@
 | Area | Detail |
 |------|--------|
 | **Packaging** | Single `AdobeDC.admx`/ADML pair for **Computer + User** configuration under one namespace |
-| **Policy inventory** | **<!--COUNT:total-->807<!--/COUNT:total-->** policies - **<!--COUNT:machine-->292<!--/COUNT:machine-->** machine + **<!--COUNT:user-->515<!--/COUNT:user-->** user (ADMX `<policy>` entries; see note below) |
+| **Policy inventory** | **<!--COUNT:total-->808<!--/COUNT:total-->** policies - **<!--COUNT:machine-->293<!--/COUNT:machine-->** machine + **<!--COUNT:user-->515<!--/COUNT:user-->** user (ADMX `<policy>` entries; see note below) |
 | **Namespace** | `Adobe.Policies.AdobeDC` (replaces separate `Adobe.Policies.Adobe_User` user namespace) |
 | **Computer tree** | **Adobe DC** -> **Acrobat & Reader DC** / **Reader DC (32-bit)** / **Non-Policy Settings** |
 | **User tree** | **Adobe DC** -> **Acrobat DC** / **Reader DC** - leaf display names retain ` (User)` suffix |
 | **De-duplication** | `HKLM\SOFTWARE\Policies` settings emit once per product hive (no redundant `WOW6432Node\Policies` copies) |
 | **Sources** | Device v2.21 + User v1.10 |
 
-**Policy count note:** **<!--COUNT:total-->807<!--/COUNT:total-->** is the number of configurable policy entries in the ADMX (what Intune and GPMC show). **<!--COUNT:machine-->292<!--/COUNT:machine-->** machine includes architecture-specific non-policy settings emitted separately for x64 and x86. There are **<!--COUNT:machineUnique-->154<!--/COUNT:machineUnique-->** unique machine settings in the source reference (<!--COUNT:machineShared-->116<!--/COUNT:machineShared--> apply to both Reader and Acrobat; `tBuiltInPermList` is excluded as REG_BINARY). Product-scoped tables in [Documentation](../README.md) list user and machine settings because shared settings appear under each product.
+**Policy count note:** **<!--COUNT:total-->808<!--/COUNT:total-->** is the number of configurable policy entries in the ADMX (what Intune and GPMC show). **<!--COUNT:machine-->293<!--/COUNT:machine-->** machine includes architecture-specific non-policy settings emitted separately for x64 and x86. There are **<!--COUNT:machineUnique-->154<!--/COUNT:machineUnique-->** unique machine settings in the source reference (<!--COUNT:machineShared-->117<!--/COUNT:machineShared--> apply to both Reader and Acrobat; `tBuiltInPermList` is excluded as REG_BINARY). Product-scoped tables in [Documentation](../README.md) list user and machine settings because shared settings appear under each product.
 
 ### Non-Policy Settings branch
 
@@ -81,9 +84,9 @@ If you migrated Intune exports from v2.19, Reader-only x64 upsell settings alrea
 
 | File | Scope | Policies |
 |------|-------|----------|
-| `AdobeDC.admx` + `en-US/AdobeDC.adml` | Machine + User | <!--COUNT:total-->807<!--/COUNT:total--> (<!--COUNT:machine-->292<!--/COUNT:machine--> machine + <!--COUNT:user-->515<!--/COUNT:user--> user) |
+| `AdobeDC.admx` + `en-US/AdobeDC.adml` | Machine + User | <!--COUNT:total-->808<!--/COUNT:total--> (<!--COUNT:machine-->293<!--/COUNT:machine--> machine + <!--COUNT:user-->515<!--/COUNT:user--> user) |
 
-*<!--COUNT:machine-->292<!--/COUNT:machine--> machine = ADMX policy entries; <!--COUNT:machineUnique-->154<!--/COUNT:machineUnique--> unique machine settings; product-scoped reference tables total <!--COUNT:readerDevice-->123<!--/COUNT:readerDevice--> Reader + <!--COUNT:acrobatDevice-->169<!--/COUNT:acrobatDevice--> Acrobat.*
+*<!--COUNT:machine-->293<!--/COUNT:machine--> machine = ADMX policy entries; <!--COUNT:machineUnique-->154<!--/COUNT:machineUnique--> unique machine settings; product-scoped reference tables total <!--COUNT:readerDevice-->124<!--/COUNT:readerDevice--> Reader + <!--COUNT:acrobatDevice-->169<!--/COUNT:acrobatDevice--> Acrobat.*
 
 Published policy reference tables: [Documentation](../README.md).
 
@@ -93,8 +96,8 @@ Published policy reference tables: [Documentation](../README.md).
 |-----------|-------|
 | Prefix | `AdobeDC` |
 | Namespace URI | `Adobe.Policies.AdobeDC` |
-| ADMX / ADML `revision` | 3.6 |
-| `minRequiredRevision` (`resources`) | 3.6 |
+| ADMX / ADML `revision` | 3.7 |
+| `minRequiredRevision` (`resources`) | 3.7 |
 
 ## Intune upload
 

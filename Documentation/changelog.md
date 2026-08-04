@@ -10,6 +10,18 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 
 ---
 
+## v3.7 - 4 August 2026
+
+**808 policies** (293 machine + 515 user) - Reader Protected View; Product Updater explain text.
+
+- Added **Protected View Mode** (`iProtectedView_Reader`) for Reader DC under Security: Execution & Protection (fixes GitHub issue #13). Previously Acrobat-only due to a source scoping error; Reader support is documented by Adobe from 11.0 and cited by STIG ARDC-CN-000020.
+- Clarified **Product Updater** (`bUpdater`) explain text: for 12.x and later this setting overrides the ARM Legacy `Mode` preference, and setting to 0 also removes the updater UI.
+- Documentation: [Security Hardening](security-hardening.md) lists Protected View Mode under Common to Acrobat & Reader.
+
+**Upgrade:** Re-upload ADMX + ADML. Additive only; all v3.6 bindings are preserved.
+
+---
+
 ## v3.6 - 22 July 2026
 
 **807 policies** (292 machine + 515 user) - quality and text fixes; 12 app-internal settings removed.

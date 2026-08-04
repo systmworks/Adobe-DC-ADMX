@@ -2,12 +2,12 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.6" schemaVersion="1.0"
+  revision="3.7" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="3.6" />
+  <resources minRequiredRevision="3.7" />
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SupportedAcrobatReaderPolicies)" name="SupportedAcrobatReaderPolicies"/>
@@ -1949,6 +1949,26 @@
       <supportedOn ref="SupportedReaderPolicies"/>
       <enabledValue><decimal value="1" /></enabledValue>
       <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Protected View Mode - [iProtectedView] -->
+    <policy class="Machine" displayName="$(string.iProtectedView_Reader)" explainText="$(string.iProtectedView_Reader_Explain)" key="SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
+      name="iProtectedView_Reader" valueName="iProtectedView" presentation="$(presentation.iProtectedView_Reader_enum)">
+      <parentCategory ref="SecurityExec_ReaderCategory"/>
+      <supportedOn ref="SupportedReaderPolicies"/>
+      <elements>
+        <enum id="iProtectedView_Reader_enum" valueName="iProtectedView">
+          <item displayName="$(string.iProtectedView_Reader_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.iProtectedView_Reader_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.iProtectedView_Reader_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- Unlisted Attachment Type Permissions - [iUnlistedAttachmentTypePerm] -->

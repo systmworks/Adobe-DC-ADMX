@@ -1,5 +1,5 @@
 {
-  "revision": "3.6",
+  "revision": "3.7",
   "policies": [
     {
       "policyName": "bToggleFillSign_Acrobat",
@@ -1677,7 +1677,7 @@
       "branch": "AcrobatPolicies",
       "controlType": "Toggle",
       "summary": "Controls Adobe Acrobat/Reader product updates.",
-      "details": "Disables or enables automatic product updates (distinct from cloud services in FeatureLockDown\\cServices). Values: 0 = disable product updates; 1 = enable product updates.",
+      "details": "Disables or enables automatic product updates (distinct from cloud services in FeatureLockDown\\cServices). For 12.x and later, this setting overrides the ARM Legacy Mode preference; setting to 0 also removes the updater UI (Preferences > Updater and Help > Check for updates). Values: 0 = disable product updates; 1 = enable product updates.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },
@@ -2436,6 +2436,20 @@
       "details": "This preference just toggles the ability of the application to read policy files. For additional security-related details, refer to the Application Security Guide .",
       "regValEnabled": 1,
       "regValDisabled": 0
+    },
+    {
+      "policyName": "iProtectedView_Reader",
+      "valueName": "iProtectedView",
+      "friendlyName": "Protected View Mode",
+      "category": "Security: Execution & Protection",
+      "scope": "Device",
+      "product": "Reader",
+      "branch": "ReaderPolicies",
+      "controlType": "Enum",
+      "summary": "Protected View mode.",
+      "details": "Values: 0 = off (default); 1 = untrusted locations only (recommended); 2 = all files.",
+      "regValEnabled": null,
+      "regValDisabled": null
     },
     {
       "policyName": "iUnlistedAttachmentTypePerm_Reader",
@@ -3301,7 +3315,7 @@
       "branch": "ReaderPolicies",
       "controlType": "Toggle",
       "summary": "Controls Adobe Acrobat/Reader product updates.",
-      "details": "Disables or enables automatic product updates (distinct from cloud services in FeatureLockDown\\cServices). Values: 0 = disable product updates; 1 = enable product updates.",
+      "details": "Disables or enables automatic product updates (distinct from cloud services in FeatureLockDown\\cServices). For 12.x and later, this setting overrides the ARM Legacy Mode preference; setting to 0 also removes the updater UI (Preferences > Updater and Help > Check for updates). Values: 0 = disable product updates; 1 = enable product updates.",
       "regValEnabled": 1,
       "regValDisabled": 0
     },

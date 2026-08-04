@@ -73,7 +73,7 @@
   },
   {
     "valueName": "iProtectedView",
-    "scope": "Acrobat",
+    "scope": "Both",
     "hardenedDword": 1,
     "recommendation": "Recommended"
   },

@@ -1,4 +1,5 @@
 {
+  "revision": "3.7",
   "policies": [
     {
       "name": "bToggleFillSign_Acrobat",
@@ -2815,17 +2816,17 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bAcrobatAppInstalled_User",
-      "class": "User",
-      "valueName": "bAcrobatAppInstalled",
-      "key": "Software\\Adobe\\Acrobat Reader\\DC\\Workflows\\cServices\\cAcrobatApp",
-      "controlType": "Toggle"
-    },
-    {
       "name": "bCrossDomainLoggingDC_User",
       "class": "User",
       "valueName": "bCrossDomainLogging",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVPrivate",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "b3DEnableContentDC_User",
+      "class": "User",
+      "valueName": "b3DEnableContent",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\3D",
       "controlType": "Toggle"
     },
     {
@@ -3186,6 +3187,13 @@
       "controlType": "Toggle"
     },
     {
+      "name": "bAllowPasswordSaving_Reader",
+      "class": "Machine",
+      "valueName": "bAllowPasswordSaving",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cSecurity\\cPPKLite",
+      "controlType": "Toggle"
+    },
+    {
       "name": "bEnableSignatureClear_Reader",
       "class": "Machine",
       "valueName": "bEnableSignatureClear",
@@ -3326,20 +3334,6 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bToggleAdobeReview_Reader",
-      "class": "Machine",
-      "valueName": "bToggleAdobeReview",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bAllowPasswordSaving_Reader",
-      "class": "Machine",
-      "valueName": "bAllowPasswordSaving",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cSecurity\\cPPKLite",
-      "controlType": "Toggle"
-    },
-    {
       "name": "bAllowInvisibleSig_Reader",
       "class": "Machine",
       "valueName": "bAllowInvisibleSig",
@@ -3358,6 +3352,13 @@
       "class": "Machine",
       "valueName": "iUnlistedAttachmentTypePerm",
       "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cDefaultLaunchAttachmentPerms",
+      "controlType": "Enum"
+    },
+    {
+      "name": "iProtectedView_Reader",
+      "class": "Machine",
+      "valueName": "iProtectedView",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
       "controlType": "Enum"
     },
     {
@@ -3522,10 +3523,10 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bSendMailShareRedirection_Reader",
+      "name": "bToggleAdobeReview_Reader",
       "class": "Machine",
-      "valueName": "bSendMailShareRedirection",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
+      "valueName": "bToggleAdobeReview",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
       "controlType": "Toggle"
     },
     {
@@ -4229,10 +4230,10 @@
       "controlType": "Toggle"
     },
     {
-      "name": "b3DEnableContentDC_User",
-      "class": "User",
-      "valueName": "b3DEnableContent",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\3D",
+      "name": "bSendMailShareRedirection_Reader",
+      "class": "Machine",
+      "valueName": "bSendMailShareRedirection",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
     {
@@ -4243,10 +4244,10 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bAdobeSendPluginToggle_Reader",
+      "name": "bToggleFSSSignatureSaving_Reader",
       "class": "Machine",
-      "valueName": "bAdobeSendPluginToggle",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cCloud",
+      "valueName": "bToggleFSSSignatureSaving",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
       "controlType": "Toggle"
     },
     {
@@ -4936,18 +4937,18 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bToggleFSSSignatureSaving_Reader",
-      "class": "Machine",
-      "valueName": "bToggleFSSSignatureSaving",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
-      "controlType": "Toggle"
-    },
-    {
       "name": "bEnableAv2DC_User",
       "class": "User",
       "valueName": "bEnableAv2",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral",
       "controlType": "Toggle"
+    },
+    {
+      "name": "iMaxMRUCntToBeStoredDC_User",
+      "class": "User",
+      "valueName": "iMaxMRUCntToBeStored",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral",
+      "controlType": "Numeric"
     },
     {
       "name": "bHandSelectsDC_User",
@@ -5111,16 +5112,16 @@
       "controlType": "Toggle"
     },
     {
-      "name": "BlockEMFParsing_AcrobatX64",
-      "class": "Machine",
-      "valueName": "BlockEMFParsing",
-      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
-      "controlType": "Toggle"
-    },
-    {
       "name": "bWhatsNewExp_Reader",
       "class": "Machine",
       "valueName": "bWhatsNewExp",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bUsageMeasurement_Reader",
+      "class": "Machine",
+      "valueName": "bUsageMeasurement",
       "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
@@ -5129,6 +5130,13 @@
       "class": "Machine",
       "valueName": "bToggleToDoTiles",
       "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bAdobeSendPluginToggle_Reader",
+      "class": "Machine",
+      "valueName": "bAdobeSendPluginToggle",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cCloud",
       "controlType": "Toggle"
     },
     {
@@ -5195,16 +5203,16 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bShowMsgAtLaunch_Reader",
+      "name": "BlockEMFParsing_AcrobatX64",
       "class": "Machine",
-      "valueName": "bShowMsgAtLaunch",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cIPM",
+      "valueName": "BlockEMFParsing",
+      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
       "controlType": "Toggle"
     },
     {
-      "name": "bAllowUserToChangeMsgPrefs_Reader",
+      "name": "bShowMsgAtLaunch_Reader",
       "class": "Machine",
-      "valueName": "bAllowUserToChangeMsgPrefs",
+      "valueName": "bShowMsgAtLaunch",
       "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cIPM",
       "controlType": "Toggle"
     },
@@ -5279,23 +5287,23 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bUsageMeasurement_Reader",
+      "name": "bAllowUserToChangeMsgPrefs_Reader",
       "class": "Machine",
-      "valueName": "bUsageMeasurement",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
+      "valueName": "bAllowUserToChangeMsgPrefs",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cIPM",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bAcrobatAppInstalled_User",
+      "class": "User",
+      "valueName": "bAcrobatAppInstalled",
+      "key": "Software\\Adobe\\Acrobat Reader\\DC\\Workflows\\cServices\\cAcrobatApp",
       "controlType": "Toggle"
     },
     {
       "name": "BlockXPSParsing_AcrobatX64",
       "class": "Machine",
       "valueName": "BlockXPSParsing",
-      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "DisableScannedDocumentEditing_AcrobatX64",
-      "class": "Machine",
-      "valueName": "DisableScannedDocumentEditing",
       "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
       "controlType": "Toggle"
     },
@@ -5552,11 +5560,11 @@
       "controlType": "Toggle"
     },
     {
-      "name": "iMaxMRUCntToBeStoredDC_User",
-      "class": "User",
-      "valueName": "iMaxMRUCntToBeStored",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral",
-      "controlType": "Numeric"
+      "name": "DisableScannedDocumentEditing_AcrobatX64",
+      "class": "Machine",
+      "valueName": "DisableScannedDocumentEditing",
+      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
+      "controlType": "Toggle"
     },
     {
       "name": "ADC4275034_AcrobatX86",
@@ -5649,6 +5657,5 @@
       "key": "Software\\Adobe\\Acrobat Reader\\DC\\Workflows\\cServices\\cScanApp",
       "controlType": "Toggle"
     }
-  ],
-  "revision": "3.6"
+  ]
 }

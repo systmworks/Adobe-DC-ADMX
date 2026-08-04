@@ -6,7 +6,7 @@
 
 # Security Hardening
 
-Recommended and optional security settings for the combined v3.6 ADMX templates.
+Recommended and optional security settings for the combined v3.7 ADMX templates.
 
 - ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) settings most organisations should apply.
 - ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) stronger hardening that may affect workflows.
@@ -39,6 +39,7 @@ Recommended and optional security settings for the combined v3.6 ADMX templates.
 | Security: Execution & Protection | Enhanced Security Standalone | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Flash Content in PDFs | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Protected Mode Sandbox | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
+| Security: Execution & Protection | Protected View Mode | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Enable Protected View for unsafe locations only | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Execution & Protection | Unlisted Attachment Type Permissions | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Prompt without ability to allow (most restrictive prompt) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Trust & Permissions | Allow Password Caching | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Trust & Permissions | Disable IE Trusted Sites as Privileged Locations | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
@@ -70,7 +71,6 @@ Recommended and optional security settings for the combined v3.6 ADMX templates.
 | Context, Tools & Search | Cloud-Powered Search | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Documents, Editing & Accessibility | Block EMF to PDF Conversion ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
 | Documents, Editing & Accessibility | Block XPS to PDF Conversion ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) |
-| Security: Execution & Protection | Protected View Mode | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) - Enable Protected View for unsafe locations only | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 | Security: Trust & Permissions | Disable Acrobat.com File Storage | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) | ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) |
 
 ## User
