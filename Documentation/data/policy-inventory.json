@@ -127,6 +127,34 @@
       "regValDisabled": 0
     },
     {
+      "policyName": "AlternateSignInMethod_Acrobat",
+      "valueName": "iAcroLoginType, iNGLCEFWorkflowEnabled",
+      "friendlyName": "Use alternate sign-in method",
+      "category": "Cloud & Connectors",
+      "scope": "Device",
+      "product": "Acrobat",
+      "branch": "AcrobatPolicies",
+      "controlType": "Enum",
+      "summary": "Use an alternative sign-in method instead of the embedded Chromium browser.",
+      "details": "Possible values are External browser or Legacy embedded engine.",
+      "regValEnabled": null,
+      "regValDisabled": null
+    },
+    {
+      "policyName": "FederatedLoginDomain_Acrobat",
+      "valueName": "login_domain",
+      "friendlyName": "Federated Login Domain",
+      "category": "Cloud & Connectors",
+      "scope": "Device",
+      "product": "Acrobat",
+      "branch": "AcrobatPolicies",
+      "controlType": "Text",
+      "summary": "Specifies the federated login domain for Acrobat.",
+      "details": "Sets the federated login domain used for authentication in Acrobat.",
+      "regValEnabled": null,
+      "regValDisabled": null
+    },
+    {
       "policyName": "bOneDriveConnectorEnabled_Acrobat",
       "valueName": "bOneDriveConnectorEnabled",
       "friendlyName": "OneDrive Connector",

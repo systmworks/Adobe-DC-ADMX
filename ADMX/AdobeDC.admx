@@ -284,6 +284,54 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
+    <!-- Use alternate sign-in methods [iAcroLoginType, iNGLCEFWorkflowEnabled] -->
+    <policy name="UseAlternateSignInMethod_Acrobat"
+        class="Machine"
+        displayName="$(string.UseAlternateSignInMethod_Acrobat)"
+        explainText="$(string.UseAlternateSignInMethod_Acrobat_Explain)"
+        key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
+        value="UseAlternateSignInMethod"
+        presentation="$(presentation.UseAlternateSignInMethod_Acrobat_enum)">
+      <parentCategory ref="CloudConnectors_AcrobatCategory" />
+      <supportedOn ref="SupportedAcrobatReaderPolicies" />
+      <elements>
+        <enum id="UseAlternateSignInMethod_Acrobat_enum" valueName="AlternateSignInMethod">
+          <item displayName="$(string.UseAlternateSignInMethod_Acrobat_opt0)">
+            <value><decimal value="0" /></value>
+            <valueList>
+              <item key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown" valueName="iAcroLoginType">
+                <value><decimal value="5" /></value>
+              </item>
+              <item key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown" valueName="iNGLCEFWorkflowEnabled">
+                <value><delete /></value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.UseAlternateSignInMethod_Acrobat_opt1)">
+            <value><decimal value="1" /></value>
+            <valueList>
+              <item key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown" valueName="iNGLCEFWorkflowEnabled">
+                <value><decimal value="0" /></value>
+              </item>
+              <item key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown" valueName="iAcroLoginType">
+                <value><delete /></value>
+              </item>
+            </valueList>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Federated login domain - [login_domain] -->
+    <policy class="Machine" displayName="$(string.FederatedLoginDomain_Acrobat)" explainText="$(string.FederatedLoginDomain_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\NGL\AuthInfo"
+      name="FederatedLoginDomain_Acrobat" presentation="$(presentation.FederatedLoginDomain_Acrobat_text)">
+      <parentCategory ref="CloudConnectors_AcrobatCategory"/>
+      <supportedOn ref="SupportedAcrobatReaderPolicies"/>
+      <elements>
+        <text id="FederatedLoginDomain_Acrobat_text" valueName="login_domain" maxLength="2048" />
+      </elements>
+    </policy>
+
     <!-- OneDrive Connector - [bOneDriveConnectorEnabled] -->
     <policy class="Machine" displayName="$(string.bOneDriveConnectorEnabled_Acrobat)" explainText="$(string.bOneDriveConnectorEnabled_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown\cServices"
       name="bOneDriveConnectorEnabled_Acrobat" valueName="bOneDriveConnectorEnabled">

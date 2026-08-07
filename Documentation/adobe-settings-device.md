@@ -21,6 +21,7 @@ Complete list of 154 unique Adobe DC settings (156 table entries where the same 
 | Document Cloud Services | ``bToggleAdobeDocumentServices`` | Enable Document Cloud services (except those controlled by other prefs). |
 | Document Cloud Storage | ``bToggleDocumentCloud`` | Enable Document Cloud storage. |
 | Dropbox Cloud Connector | ``bDropboxConnectorEnabled`` | Enable connection to the Dropbox cloud when bToggleWebConnectors is set to 1. |
+| Federated login domain | ``login_domain`` | Set the federated login domain so that the sign-in form automatically redirects to the organization's identity provider for the claimed domain, instead of Adobe's generic sign-in screen.<br />(See [Problem: CEF-based sign-in does not work with Azure Active Directory conditional access](https://community.adobe.com/announcements-623/enterprise-device-authentication-management-for-creative-cloud-desktop-apps-and-acrobat-pro-1634303)) |
 | Generative AI Technology | ``bEnableGentech`` | Enable generative AI features in Acrobat and Reader. |
 | Google Drive Connector | ``bGoogleDriveConnectorEnabled`` | Enable connection to the Google Drive cloud when bToggleWebConnectors is set to 1. |
 | Hide Fill & Sign Send a Copy Button | ``bToggleSendACopy`` | Hide the Send a Copy button from the Fill & Sign tool in Acrobat and Reader. |
@@ -29,6 +30,7 @@ Complete list of 154 unique Adobe DC settings (156 table entries where the same 
 | Preferences Synchronization | ``bTogglePrefsSync`` | Sync desktop preferences across signed-in devices. |
 | Services & Web-Plugin Updates | ``bUpdater`` | Web-plugin updates and cloud services. |
 | Third-Party Cloud Connectors | ``bToggleWebConnectors`` | Third-party cloud storage connectors (Continuous track). |
+| Use alternate sign-in method | ``iAcroLoginType, iNGLCEFWorkflowEnabled`` | Use an alternate browser for sign-ins to support conditional access policies and improve SSO.<br />(See [Problem: CEF-based sign-in does not work with Azure Active Directory conditional access](https://helpx.adobe.com/acrobat/kb/cef-based-sign-in-not-working-with-azure-ad-conditional-access.html)) |
 
 ### Context, Tools & Search
 

@@ -69,6 +69,15 @@
       <string id="bToggleSendACopy_Acrobat_Explain">Specifies whether to hide the Send a Copy button from the Fill &amp; Sign tool in Acrobat and Reader.&#10;&#10;Possible values include: 0: Hide the button. 1: Show the button.</string>
       <string id="bSuppressSignOut_Acrobat">Hide Sign Out Menu Item</string>
       <string id="bSuppressSignOut_Acrobat_Explain">Specifies whether the sign-in and sign-out Help menu item should be enabled.&#10;&#10;Possible values include: 0 or null: Don't disable the menu item. 1: Disable the Help menu item.</string>
+
+      <string id="UseAlternateSignInMethod_Acrobat">Use alternate sign-in method</string>
+      <string id="UseAlternateSignInMethod_Acrobat_Explain">Acrobat uses Chromium Embedded Framework (CEF) handle user sign-in from the desktop app, but CEF doesn't expose device information required by some identity providers or device-based conditional access policies, and can't access active SSO user sessions. Adobe has documented two alternate sign-in methods to work around these limitations. If this policy is enabled, you can select one of these options.&#10;&#10;External browser: Use the default web browser instead of the one embedded in the application.&#10;&#10;Legacy embedded engine: (HTTPS calls engine) Use the legacy embedded browser instead of CEF.&#10;&#10;If this policy is disabled or not configured, Acrobat will use its default Chromium Embedded Framework (CEF) for integrated user authentication.&#10;&#10;Ref: https://helpx.adobe.com/nz/acrobat/kb/cef-based-sign-in-not-working-with-azure-ad-conditional-access.html</string>
+      <string id="UseAlternateSignInMethod_Acrobat_opt0">External browser</string>
+      <string id="UseAlternateSignInMethod_Acrobat_opt1">Legacy embedded engine</string>
+
+      <string id="FederatedLoginDomain_Acrobat">Federated Login Domain</string>
+      <string id="FederatedLoginDomain_Acrobat_Explain">Specify a Federated ID login domain for Creative Cloud desktop applications, including Acrobat Pro. When a user signs in,they will be automatically redirected to your organization's identity provider for the claimed domain, instead of landing on Adobe's generic sign-in screen.&#10;&#10;To use this, your company must first claim the relevant domain in the Adobe Admin Console. You can claim more than one domain, but you can configure only one claimed domain on each machine. If you've claimed multiple domains, you can direct different machines to different domains.&#10;&#10;Note:&#10;-This setting is not compatible with external browser-based login&#10;-Users must authenticate with a Federated ID account&#10;&#10;Not currently supported: web services such as Acrobat Sign, Adobe Assets, and Adobe Libraries, mobile applications, Acrobat Reader, and Dreamweaver.&#10;&#10;Ref: https://community.adobe.com/announcements-623/enterprise-device-authentication-management-for-creative-cloud-desktop-apps-and-acrobat-pro-1634303</string>
+
       <string id="bOneDriveConnectorEnabled_Acrobat">OneDrive Connector</string>
       <string id="bOneDriveConnectorEnabled_Acrobat_Explain">Specifies whether to enable connection to the OneDrive cloud when bToggleWebConnectors is set to 1.&#10;&#10;Overrides a bToggleWebConnectors value of 1. Only supported on the Continuous track. Possible values include: 0: Disable connection to OneDrive 1: Enable connection to OneDrive</string>
       <string id="bTogglePrefsSync_Acrobat">Preferences Synchronization</string>
@@ -2076,6 +2085,12 @@
       <string id="bScanAppInstalled_User_Explain">Specifies whether to show the Adobe Scan mobile app promotion and link in the Home banner.&#10;&#10;Disable and lock both the App Center and Home banner with bToggleDCAppCenter under FeatureLockDown. Possible values include: 0: Promote the mobile app. 1: Don't promote the mobile app.</string>
     </stringTable>
     <presentationTable>
+      <presentation id="UseAlternateSignInMethod_Acrobat_enum">
+        <dropdownList defaultItem="0" refId="UseAlternateSignInMethod_Acrobat_enum">Alternate Sign-In Method:</dropdownList>
+      </presentation>
+      <presentation id="FederatedLoginDomain_Acrobat_text">
+        <textBox refId="FederatedLoginDomain_Acrobat_text"><label>Federated Login Domain:</label></textBox>
+      </presentation>
       <presentation id="iMIPCloud_Acrobat_enum">
         <dropdownList defaultItem="0" refId="iMIPCloud_Acrobat_enum">MIP Sovereign Cloud:</dropdownList>
       </presentation>

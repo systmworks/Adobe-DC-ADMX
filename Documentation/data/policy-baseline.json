@@ -3781,6 +3781,20 @@
       "controlType": "Toggle"
     },
     {
+      "name": "AlternateSignInMethod_Acrobat",
+      "class": "Machine",
+      "valueName": "iAcroLoginType, iNGLCEFWorkflowEnabled",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Enum"
+    },
+   {
+      "name": "FederatedLoginDomain_Acrobat",
+      "class": "Machine",
+      "valueName": "login_domain",
+      "key": "SOFTWARE\\Policies\\Adobe\\NGL\\AuthInfo",
+      "controlType": "Text"
+    },
+    {
       "name": "bOneDriveConnectorEnabled_Acrobat",
       "class": "Machine",
       "valueName": "bOneDriveConnectorEnabled",
