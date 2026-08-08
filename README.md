@@ -19,13 +19,6 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 | [Changelog (Retired)](Documentation/changelog-retired.md) | Legacy device-only and user-only ADMX version history |
 | [Contributors](Documentation/contributors.md) | Community contributors and acknowledgements |
 
-> [!WARNING]
-> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.9**.
->
-> Convert them first with [`Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1), then re-import.
->
-> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1/v3.2/v3.3/v3.4/v3.5 to v3.9 keeps the same namespace and policy names for existing settings. **v3.4+ releases are additive-only** except where a changelog entry documents a one-time control-type correction - re-upload preserves existing Intune/GPO bindings for all other settings.
-
 These ADMX/ADML templates (v3.9) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
 
 | ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
@@ -45,16 +38,6 @@ flowchart TD
     User --> UA["Acrobat DC (User)"]
     User --> UR["Reader DC (User)<br/>HKCU prefs; leaf names carry the (User) suffix"]
 ```
-
-## Important Notes
-
-| ![Note](https://img.shields.io/badge/Note-316dca?style=flat-square) |
-|------|
-| x64 Reader (Unified Installer) is configured under **Acrobat & Reader DC** (Acrobat hive), not the Reader hive. Configure legacy 32-bit Reader under **Reader DC (32-bit)**. |
-| Some machine settings write outside `HKLM\SOFTWARE\Policies` and appear under **Adobe DC > Non-Policy Settings** with architecture-specific sub-nodes (**Acrobat & Reader DC (64-bit)**, **Acrobat DC (32-bit)**, **Reader DC (32-bit)**). See curated guides for marked entries. |
-| ``HKLM\SOFTWARE\Policies`` is shared across WOW64; lockable policies are not duplicated per architecture. |
-| Several ``bToggle*`` policies use inverted registry values (DWORD 0 = feature ON, DWORD 1 = feature OFF). |
-| User policies use ``class=`"User`"`` and appear under User Configuration only. |
 
 ## Category Overview (Device)
 
@@ -90,5 +73,20 @@ flowchart TD
 | Updates & Desktop Integration | Product updater behavior, browser and Fast Web View integration, background download, thumbnails/shell integration, and desktop UI preferences. | 11 | 11 |
 | Upsell | Upgrade prompts, trial purchase dialogs, promotional surfaces, App Center visibility, and purchasable-tool upsell controls. | 2 | 3 |
 | **Total** | | **249** | **266** |
+
+## Migration and important notes
+
+> [!WARNING]
+> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.9**.
+>
+> Convert them first with [`Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1), then re-import.
+>
+> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1/v3.2/v3.3/v3.4/v3.5 to v3.9 keeps the same namespace and policy names for existing settings. **v3.4+ releases are additive-only** except where a changelog entry documents a one-time control-type correction - re-upload preserves existing Intune/GPO bindings for all other settings.
+
+| ![Note](https://img.shields.io/badge/Note-316dca?style=flat-square) |
+|------|
+| x64 Reader (Unified Installer) is configured under **Acrobat & Reader DC** (Acrobat hive), not the Reader hive. Configure legacy 32-bit Reader under **Reader DC (32-bit)**. |
+| Some machine settings write outside `HKLM\SOFTWARE\Policies` and appear under **Adobe DC > Non-Policy Settings** with architecture-specific sub-nodes (**Acrobat & Reader DC (64-bit)**, **Acrobat DC (32-bit)**, **Reader DC (32-bit)**). See curated guides for marked entries. |
+| Several ``bToggle*`` policies use inverted registry values (DWORD 0 = feature ON, DWORD 1 = feature OFF). |
 
 **Sharing & responsibility** - Built for the community, shared with good intentions. Use at your own risk. The author accepts no responsibility for any outcomes resulting from the use of these files. Always verify registry paths and values, and test in a safe environment first. If you find an issue or have a suggestion, contributions are welcome.
