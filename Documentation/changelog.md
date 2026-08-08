@@ -10,6 +10,22 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 
 ---
 
+## v3.9 - 8 August 2026
+
+**812 policies** (297 machine + 515 user) - Acrobat sign-in and federated login domain.
+
+- Added **External Browser Sign-In** (`iAcroLoginType_Acrobat`) for Acrobat DC under Cloud and Connectors. Single-item enum writes iAcroLoginType = 5 for Azure AD Conditional Access workaround 1.
+- Added **Legacy Sign-In Engine (HTTPS Calls)** (`iNGLCEFWorkflowEnabled_Acrobat`) for Acrobat DC under Cloud and Connectors. Single-item enum writes iNGLCEFWorkflowEnabled = 0 for Azure AD Conditional Access workaround 2.
+- Added **Federated Login Domain** (`login_domain_Acrobat`) for Acrobat DC under Cloud and Connectors. Machine-scope text policy under HKLM\SOFTWARE\Policies\Adobe\NGL\AuthInfo.
+
+*Thanks to **[@korzynski](https://github.com/korzynski)** for [PR #14](https://github.com/systmworks/Adobe-DC-ADMX/pull/14).*
+
+- Documentation: new [Contributors](contributors.md) page.
+
+**Upgrade:** Re-upload ADMX + ADML. Additive only; all v3.8 bindings are preserved.
+
+---
+
 ## v3.8 - 4 August 2026
 
 **809 policies** (294 machine + 515 user) - Reader promotional campaign messages.
@@ -29,6 +45,8 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 - Clarified **Product Updater** (`bUpdater`) explain text: for 12.x and later this setting overrides the ARM Legacy `Mode` preference, and setting to 0 also removes the updater UI.
 - Documentation: [Security Hardening](security-hardening.md) lists Protected View Mode under Common to Acrobat & Reader.
 
+*Thanks to **[@wauifsafis](https://github.com/wauifsafis)** for reporting issue #13.*
+
 **Upgrade:** Re-upload ADMX + ADML. Additive only; all v3.6 bindings are preserved.
 
 ---
@@ -43,6 +61,8 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 - Control type changed to numeric: `iRSAPSSSaltLength`, `iSize`.
 - Documentation: curated guides and settings pages now mark **Non-Policy Settings** branch entries with a badge and legend (fixes GitHub issues #11 and #12). No ADMX change; no re-upload required for this documentation update.
 - Documentation: expanded [Suppress Nags and Upsells](reduce-nags.md) with toolbar, panel, HUD, splash, welcome-screen, and onboarding settings for a cleaner reading view; added Attachment Extension Blocklist, Validate Signatures on Open, and Trust Certified Documents to [Security Hardening](security-hardening.md). Curated pages support optional per-setting notes. No ADMX change.
+
+*Thanks to **[@robertRuncak](https://github.com/robertRuncak)** for issues #11 and #12.*
 
 **Upgrade:** Re-upload ADMX + ADML. Removed entries need no re-selection; all other v3.5 bindings are preserved.
 

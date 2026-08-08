@@ -1,4 +1,5 @@
 {
+  "revision": "3.9",
   "policies": [
     {
       "name": "bToggleFillSign_Acrobat",
@@ -694,18 +695,18 @@
       "controlType": "Toggle"
     },
     {
-      "name": "iParaDir_User",
-      "class": "User",
-      "valueName": "iParaDir",
-      "key": "Software\\Adobe\\Acrobat Reader\\DC\\Intl",
-      "controlType": "Enum"
-    },
-    {
       "name": "iUseArchivedRevInfoDC_User",
       "class": "User",
       "valueName": "iUseArchivedRevInfo",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Security\\cASPKI\\cAdobe_LTVProvider",
       "controlType": "Enum"
+    },
+    {
+      "name": "tURLDC_User",
+      "class": "User",
+      "valueName": "tURL",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Security\\cASPKI\\cAdobe_RoamingID\\cDefaultServerInfo",
+      "controlType": "Text"
     },
     {
       "name": "iURLPermsDC_User",
@@ -869,13 +870,6 @@
       "controlType": "Toggle"
     },
     {
-      "name": "tLoadSettingsNAMEDC_User",
-      "class": "User",
-      "valueName": "tLoadSettingsNAME",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Security\\cDigSig\\cCustomDownload",
-      "controlType": "Text"
-    },
-    {
       "name": "iMaxRevokeInfoCacheLifetimeDC_User",
       "class": "User",
       "valueName": "iMaxRevokeInfoCacheLifetime",
@@ -883,11 +877,25 @@
       "controlType": "Numeric"
     },
     {
+      "name": "bSavePasswordDC_User",
+      "class": "User",
+      "valueName": "bSavePassword",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Security\\cEDC\\cKnownServers",
+      "controlType": "Toggle"
+    },
+    {
       "name": "iAutoAddLTVDC_User",
       "class": "User",
       "valueName": "iAutoAddLTV",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Security\\cASPKI\\cAdobe_LTVProvider",
       "controlType": "Enum"
+    },
+    {
+      "name": "bCrossDomainLoggingDC_User",
+      "class": "User",
+      "valueName": "bCrossDomainLogging",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVPrivate",
+      "controlType": "Toggle"
     },
     {
       "name": "tEditorFontNameDC_User",
@@ -953,16 +961,16 @@
       "controlType": "Enum"
     },
     {
+      "name": "tLoadSettingsNAMEDC_User",
+      "class": "User",
+      "valueName": "tLoadSettingsNAME",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Security\\cDigSig\\cCustomDownload",
+      "controlType": "Text"
+    },
+    {
       "name": "bEnableGlobalSecurityDC_User",
       "class": "User",
       "valueName": "bEnableGlobalSecurity",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\JSPrefs",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bEnableMenuItemsDC_User",
-      "class": "User",
-      "valueName": "bEnableMenuItems",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\JSPrefs",
       "controlType": "Toggle"
     },
@@ -1037,11 +1045,18 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bSavePasswordDC_User",
+      "name": "bEnableMenuItemsDC_User",
       "class": "User",
-      "valueName": "bSavePassword",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Security\\cEDC\\cKnownServers",
+      "valueName": "bEnableMenuItems",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\JSPrefs",
       "controlType": "Toggle"
+    },
+    {
+      "name": "iParaDir_User",
+      "class": "User",
+      "valueName": "iParaDir",
+      "key": "Software\\Adobe\\Acrobat Reader\\DC\\Intl",
+      "controlType": "Enum"
     },
     {
       "name": "bIsEnabledDC_User",
@@ -1049,13 +1064,6 @@
       "valueName": "bIsEnabled",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Security\\cASPKI\\cAdobe_LTVProvider",
       "controlType": "Toggle"
-    },
-    {
-      "name": "iMaxRevInfoArchiveSizeDC_User",
-      "class": "User",
-      "valueName": "iMaxRevInfoArchiveSize",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Security\\cASPKI\\cAdobe_LTVProvider",
-      "controlType": "Numeric"
     },
     {
       "name": "iMaxVerifySessionDC_User",
@@ -1310,11 +1318,11 @@
       "controlType": "Toggle"
     },
     {
-      "name": "tURLDC_User",
+      "name": "iMaxRevInfoArchiveSizeDC_User",
       "class": "User",
-      "valueName": "tURL",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Security\\cASPKI\\cAdobe_RoamingID\\cDefaultServerInfo",
-      "controlType": "Text"
+      "valueName": "iMaxRevInfoArchiveSize",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Security\\cASPKI\\cAdobe_LTVProvider",
+      "controlType": "Numeric"
     },
     {
       "name": "iRequireReviewWarningsDC_User",
@@ -1401,18 +1409,18 @@
       "controlType": "Toggle"
     },
     {
+      "name": "b3DEnableContentDC_User",
+      "class": "User",
+      "valueName": "b3DEnableContent",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\3D",
+      "controlType": "Toggle"
+    },
+    {
       "name": "iDefaultZoomType_User",
       "class": "User",
       "valueName": "iDefaultZoomType",
       "key": "Software\\Adobe\\Acrobat Reader\\DC\\Originals",
       "controlType": "Enum"
-    },
-    {
-      "name": "tDictionaryName_User",
-      "class": "User",
-      "valueName": "tDictionaryName",
-      "key": "Software\\Adobe\\Acrobat Reader\\DC\\Spelling",
-      "controlType": "Text"
     },
     {
       "name": "imaxPDFCommentsSize_User",
@@ -2465,11 +2473,11 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bCrossDomainLoggingDC_User",
+      "name": "tDictionaryName_User",
       "class": "User",
-      "valueName": "bCrossDomainLogging",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVPrivate",
-      "controlType": "Toggle"
+      "valueName": "tDictionaryName",
+      "key": "Software\\Adobe\\Acrobat Reader\\DC\\Spelling",
+      "controlType": "Text"
     },
     {
       "name": "bUseStructTabOrder_User",
@@ -2822,17 +2830,10 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bAcrobatAppInstalled_User",
+      "name": "bShowDMBDC_User",
       "class": "User",
-      "valueName": "bAcrobatAppInstalled",
-      "key": "Software\\Adobe\\Acrobat Reader\\DC\\Workflows\\cServices\\cAcrobatApp",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "b3DEnableContentDC_User",
-      "class": "User",
-      "valueName": "b3DEnableContent",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\3D",
+      "valueName": "bShowDMB",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\MicrosoftAIP",
       "controlType": "Toggle"
     },
     {
@@ -2840,6 +2841,27 @@
       "class": "User",
       "valueName": "bEnablePolicyAuthentication",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\MicrosoftAIP",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bEnableLoggingDC_User",
+      "class": "User",
+      "valueName": "bEnableLogging",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\MicrosoftAIP",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bMerchandizingEnabled_Acrobat",
+      "class": "Machine",
+      "valueName": "bMerchandizingEnabled",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bLimitPromptsFeatureKey_Acrobat",
+      "class": "Machine",
+      "valueName": "bLimitPromptsFeatureKey",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
     {
@@ -2976,6 +2998,13 @@
       "controlType": "Toggle"
     },
     {
+      "name": "bToggleSophiaWebInfra_Acrobat",
+      "class": "Machine",
+      "valueName": "bToggleSophiaWebInfra",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
       "name": "bEnableExtractPageRange_Reader",
       "class": "Machine",
       "valueName": "bEnableExtractPageRange",
@@ -2983,37 +3012,30 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bDisableAcrobatShortcutCustomization_Reader",
-      "class": "Machine",
-      "valueName": "bDisableAcrobatShortcutCustomization",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cAcroApp",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bLimitPromptsFeatureKey_Acrobat",
-      "class": "Machine",
-      "valueName": "bLimitPromptsFeatureKey",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bEnableAV2Enterprise_Reader",
-      "class": "Machine",
-      "valueName": "bEnableAV2Enterprise",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bMerchandizingEnabled_Acrobat",
-      "class": "Machine",
-      "valueName": "bMerchandizingEnabled",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
       "name": "bToggleBillingIssue_Acrobat",
       "class": "Machine",
       "valueName": "bToggleBillingIssue",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "dSplitBySizeMaxSize_Acrobat",
+      "class": "Machine",
+      "valueName": "dSplitBySizeMaxSize",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Enum"
+    },
+    {
+      "name": "bEnableBellButton_Acrobat",
+      "class": "Machine",
+      "valueName": "bEnableBellButton",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cServices",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bToggleShareFeedback_Acrobat",
+      "class": "Machine",
+      "valueName": "bToggleShareFeedback",
       "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
@@ -3151,13 +3173,6 @@
       "controlType": "Toggle"
     },
     {
-      "name": "dSplitBySizeMaxSize_Acrobat",
-      "class": "Machine",
-      "valueName": "dSplitBySizeMaxSize",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
-      "controlType": "Enum"
-    },
-    {
       "name": "bFavoritesFeaturesLockDown_Acrobat",
       "class": "Machine",
       "valueName": "bFavoritesFeaturesLockDown",
@@ -3165,10 +3180,17 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bToggleSophiaWebInfra_Acrobat",
+      "name": "bDisableAcrobatShortcutCustomization_Reader",
       "class": "Machine",
-      "valueName": "bToggleSophiaWebInfra",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "valueName": "bDisableAcrobatShortcutCustomization",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cAcroApp",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bEnableAV2Enterprise_Reader",
+      "class": "Machine",
+      "valueName": "bEnableAV2Enterprise",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
     {
@@ -3179,17 +3201,17 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bFindMoreWorkflowsOnline_Reader",
+      "name": "bMSStoreTrusted_Reader",
       "class": "Machine",
-      "valueName": "bFindMoreWorkflowsOnline",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
+      "valueName": "bMSStoreTrusted",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cSecurity\\cASPKI\\cMSCAPI_DirectoryProvider",
       "controlType": "Toggle"
     },
     {
-      "name": "bFindMoreCustomizationsOnline_Reader",
+      "name": "bAllowInvisibleSig_Reader",
       "class": "Machine",
-      "valueName": "bFindMoreCustomizationsOnline",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
+      "valueName": "bAllowInvisibleSig",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cSecurity\\cDigSig",
       "controlType": "Toggle"
     },
     {
@@ -3326,34 +3348,6 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bDisableSharePointFeatures_Reader",
-      "class": "Machine",
-      "valueName": "bDisableSharePointFeatures",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cSharePoint",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bDisableWebmail_Reader",
-      "class": "Machine",
-      "valueName": "bDisableWebmail",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cWebmailProfiles",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bAllowInvisibleSig_Reader",
-      "class": "Machine",
-      "valueName": "bAllowInvisibleSig",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cSecurity\\cDigSig",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bMSStoreTrusted_Reader",
-      "class": "Machine",
-      "valueName": "bMSStoreTrusted",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cSecurity\\cASPKI\\cMSCAPI_DirectoryProvider",
-      "controlType": "Toggle"
-    },
-    {
       "name": "iUnlistedAttachmentTypePerm_Reader",
       "class": "Machine",
       "valueName": "iUnlistedAttachmentTypePerm",
@@ -3366,6 +3360,34 @@
       "valueName": "iProtectedView",
       "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
       "controlType": "Enum"
+    },
+    {
+      "name": "bUseWhitelistConfigFile_Reader",
+      "class": "Machine",
+      "valueName": "bUseWhitelistConfigFile",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bProtectedMode_Reader",
+      "class": "Machine",
+      "valueName": "bProtectedMode",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bFindMoreWorkflowsOnline_Reader",
+      "class": "Machine",
+      "valueName": "bFindMoreWorkflowsOnline",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bFindMoreCustomizationsOnline_Reader",
+      "class": "Machine",
+      "valueName": "bFindMoreCustomizationsOnline",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
     },
     {
       "name": "bRCMCombineFeatureKey_Reader",
@@ -3424,6 +3446,13 @@
       "controlType": "Toggle"
     },
     {
+      "name": "bDontShowMsgWhenViewingDoc_Acrobat",
+      "class": "Machine",
+      "valueName": "bDontShowMsgWhenViewingDoc",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cIPM",
+      "controlType": "Toggle"
+    },
+    {
       "name": "iMIPCloud_Reader",
       "class": "Machine",
       "valueName": "iMIPCloud",
@@ -3431,23 +3460,16 @@
       "controlType": "Enum"
     },
     {
-      "name": "bSilentAuth_Reader",
+      "name": "bEnable3D_Reader",
       "class": "Machine",
-      "valueName": "bSilentAuth",
+      "valueName": "bEnable3D",
       "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
     {
-      "name": "bToggleShareFeedback_Acrobat",
+      "name": "bEnableProtectedModeAppContainer_Reader",
       "class": "Machine",
-      "valueName": "bToggleShareFeedback",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bEnable3D_Reader",
-      "class": "Machine",
-      "valueName": "bEnable3D",
+      "valueName": "bEnableProtectedModeAppContainer",
       "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
@@ -3508,44 +3530,44 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bProtectedMode_Reader",
+      "name": "bSilentAuth_Reader",
       "class": "Machine",
-      "valueName": "bProtectedMode",
+      "valueName": "bSilentAuth",
       "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bUseWhitelistConfigFile_Reader",
-      "class": "Machine",
-      "valueName": "bUseWhitelistConfigFile",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bEnableProtectedModeAppContainer_Reader",
-      "class": "Machine",
-      "valueName": "bEnableProtectedModeAppContainer",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bToggleAdobeReview_Reader",
-      "class": "Machine",
-      "valueName": "bToggleAdobeReview",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bEnableBellButton_Acrobat",
-      "class": "Machine",
-      "valueName": "bEnableBellButton",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cServices",
       "controlType": "Toggle"
     },
     {
       "name": "bToggleFTE_Acrobat",
       "class": "Machine",
       "valueName": "bToggleFTE",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bShowWelcomeScreen_Acrobat",
+      "class": "Machine",
+      "valueName": "bShowWelcomeScreen",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cWelcomeScreen",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bToggleNotifications_Acrobat",
+      "class": "Machine",
+      "valueName": "bToggleNotifications",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cServices",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bOrganizePagesFromThumbnails_Acrobat",
+      "class": "Machine",
+      "valueName": "bOrganizePagesFromThumbnails",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bRCMCombineFeatureKey_Acrobat",
+      "class": "Machine",
+      "valueName": "bRCMCombineFeatureKey",
       "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
@@ -3683,37 +3705,9 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bDisablePDFRedirectionActions_Acrobat",
+      "name": "bFindMoreCustomizationsOnline_Acrobat",
       "class": "Machine",
-      "valueName": "bDisablePDFRedirectionActions",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bEnablePVCertificateBasedTrust_Acrobat",
-      "class": "Machine",
-      "valueName": "bEnablePVCertificateBasedTrust",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bRCMCombineFeatureKey_Acrobat",
-      "class": "Machine",
-      "valueName": "bRCMCombineFeatureKey",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bEnhancedSecurityInBrowser_Acrobat",
-      "class": "Machine",
-      "valueName": "bEnhancedSecurityInBrowser",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bOrganizePagesFromThumbnails_Acrobat",
-      "class": "Machine",
-      "valueName": "bOrganizePagesFromThumbnails",
+      "valueName": "bFindMoreCustomizationsOnline",
       "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
@@ -3721,6 +3715,20 @@
       "name": "bFindMoreWorkflowsOnline_Acrobat",
       "class": "Machine",
       "valueName": "bFindMoreWorkflowsOnline",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bEnableRCMNewPOPUp_Acrobat",
+      "class": "Machine",
+      "valueName": "bEnableRCMNewPOPUp",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bEnableAV2Enterprise_Acrobat",
+      "class": "Machine",
+      "valueName": "bEnableAV2Enterprise",
       "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
@@ -3753,6 +3761,20 @@
       "controlType": "Toggle"
     },
     {
+      "name": "iAcroLoginType_Acrobat",
+      "class": "Machine",
+      "valueName": "iAcroLoginType",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Enum"
+    },
+    {
+      "name": "login_domain_Acrobat",
+      "class": "Machine",
+      "valueName": "login_domain",
+      "key": "SOFTWARE\\Policies\\Adobe\\NGL\\AuthInfo",
+      "controlType": "Text"
+    },
+    {
       "name": "bEnableGentech_Acrobat",
       "class": "Machine",
       "valueName": "bEnableGentech",
@@ -3781,11 +3803,18 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bOneDriveConnectorEnabled_Acrobat",
+      "name": "bDisablePDFRedirectionActions_Acrobat",
       "class": "Machine",
-      "valueName": "bOneDriveConnectorEnabled",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cServices",
+      "valueName": "bDisablePDFRedirectionActions",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
       "controlType": "Toggle"
+    },
+    {
+      "name": "iNGLCEFWorkflowEnabled_Acrobat",
+      "class": "Machine",
+      "valueName": "iNGLCEFWorkflowEnabled",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Enum"
     },
     {
       "name": "bTogglePrefsSync_Acrobat",
@@ -3858,23 +3887,23 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bEnableAV2Enterprise_Acrobat",
+      "name": "bOneDriveConnectorEnabled_Acrobat",
       "class": "Machine",
-      "valueName": "bEnableAV2Enterprise",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "valueName": "bOneDriveConnectorEnabled",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cServices",
       "controlType": "Toggle"
     },
     {
-      "name": "bEnableRCMNewPOPUp_Acrobat",
+      "name": "bDisableSharePointFeatures_Reader",
       "class": "Machine",
-      "valueName": "bEnableRCMNewPOPUp",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "valueName": "bDisableSharePointFeatures",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cSharePoint",
       "controlType": "Toggle"
     },
     {
-      "name": "bFindMoreCustomizationsOnline_Acrobat",
+      "name": "bEnablePVCertificateBasedTrust_Acrobat",
       "class": "Machine",
-      "valueName": "bFindMoreCustomizationsOnline",
+      "valueName": "bEnablePVCertificateBasedTrust",
       "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
@@ -3886,16 +3915,16 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bEnableFlash_Acrobat",
+      "name": "bToggleSendAndTrack_Acrobat",
       "class": "Machine",
-      "valueName": "bEnableFlash",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "valueName": "bToggleSendAndTrack",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cServices",
       "controlType": "Toggle"
     },
     {
-      "name": "bProtectedMode_Acrobat",
+      "name": "bEnableRecipientMention_Acrobat",
       "class": "Machine",
-      "valueName": "bProtectedMode",
+      "valueName": "bEnableRecipientMention",
       "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
@@ -4033,34 +4062,6 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bToggleNotifications_Acrobat",
-      "class": "Machine",
-      "valueName": "bToggleNotifications",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cServices",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bShowWelcomeScreen_Acrobat",
-      "class": "Machine",
-      "valueName": "bShowWelcomeScreen",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cWelcomeScreen",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bEnableRecipientMention_Acrobat",
-      "class": "Machine",
-      "valueName": "bEnableRecipientMention",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bToggleSendAndTrack_Acrobat",
-      "class": "Machine",
-      "valueName": "bToggleSendAndTrack",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cServices",
-      "controlType": "Toggle"
-    },
-    {
       "name": "bToggleAdobeSign_Acrobat",
       "class": "Machine",
       "valueName": "bToggleAdobeSign",
@@ -4072,6 +4073,34 @@
       "class": "Machine",
       "valueName": "bValidateOnOpen",
       "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cSecurity\\cDigSig",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "iUnknownURLPerms_Acrobat",
+      "class": "Machine",
+      "valueName": "iUnknownURLPerms",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cDefaultLaunchURLPerms",
+      "controlType": "Enum"
+    },
+    {
+      "name": "bEnableCertificateBasedTrust_Acrobat",
+      "class": "Machine",
+      "valueName": "bEnableCertificateBasedTrust",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bEnableFlash_Acrobat",
+      "class": "Machine",
+      "valueName": "bEnableFlash",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bProtectedMode_Acrobat",
+      "class": "Machine",
+      "valueName": "bProtectedMode",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
     {
@@ -4131,6 +4160,13 @@
       "controlType": "Toggle"
     },
     {
+      "name": "bEnhancedSecurityInBrowser_Acrobat",
+      "class": "Machine",
+      "valueName": "bEnhancedSecurityInBrowser",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
       "name": "bWinCacheSessionHandles_Acrobat",
       "class": "Machine",
       "valueName": "bWinCacheSessionHandles",
@@ -4138,24 +4174,17 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bDisableADCFileStore_Acrobat",
-      "class": "Machine",
-      "valueName": "bDisableADCFileStore",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cCloud",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bDontShowMsgWhenViewingDoc_Acrobat",
-      "class": "Machine",
-      "valueName": "bDontShowMsgWhenViewingDoc",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cIPM",
-      "controlType": "Toggle"
-    },
-    {
       "name": "bDisableOSTrustedSites_Acrobat",
       "class": "Machine",
       "valueName": "bDisableOSTrustedSites",
       "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bAllowAPSConfig_Acrobat",
+      "class": "Machine",
+      "valueName": "bAllowAPSConfig",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cSecurity\\cEDC",
       "controlType": "Toggle"
     },
     {
@@ -4215,24 +4244,24 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bEnableCertificateBasedTrust_Acrobat",
+      "name": "bDisableADCFileStore_Acrobat",
       "class": "Machine",
-      "valueName": "bEnableCertificateBasedTrust",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
+      "valueName": "bDisableADCFileStore",
+      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cCloud",
       "controlType": "Toggle"
     },
     {
-      "name": "iUnknownURLPerms_Acrobat",
+      "name": "bDisableWebmail_Reader",
       "class": "Machine",
-      "valueName": "iUnknownURLPerms",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cDefaultLaunchURLPerms",
-      "controlType": "Enum"
+      "valueName": "bDisableWebmail",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cWebmailProfiles",
+      "controlType": "Toggle"
     },
     {
-      "name": "bAllowAPSConfig_Acrobat",
+      "name": "bToggleAdobeReview_Reader",
       "class": "Machine",
-      "valueName": "bAllowAPSConfig",
-      "key": "SOFTWARE\\Policies\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown\\cSecurity\\cEDC",
+      "valueName": "bToggleAdobeReview",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
       "controlType": "Toggle"
     },
     {
@@ -4243,17 +4272,10 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bMixRecentFilesFeatureLockDown_Reader",
-      "class": "Machine",
-      "valueName": "bMixRecentFilesFeatureLockDown",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bToggleFSSSignatureSaving_Reader",
-      "class": "Machine",
-      "valueName": "bToggleFSSSignatureSaving",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
+      "name": "benableDDRDC_User",
+      "class": "User",
+      "valueName": "benableDDR",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Originals",
       "controlType": "Toggle"
     },
     {
@@ -4397,31 +4419,17 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bHidePopupIfShowSummaryDC_User",
-      "class": "User",
-      "valueName": "bHidePopupIfShowSummary",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "benableDDRDC_User",
-      "class": "User",
-      "valueName": "benableDDR",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Originals",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bHindiDigitDC_User",
-      "class": "User",
-      "valueName": "bHindiDigit",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Intl",
-      "controlType": "Toggle"
-    },
-    {
       "name": "iPagesDC_User",
       "class": "User",
       "valueName": "iPages",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Accessibility\\cAccCheckerOptions",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bAutoSetLayersDC_User",
+      "class": "User",
+      "valueName": "bAutoSetLayers",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\OptionalContent",
       "controlType": "Toggle"
     },
     {
@@ -4430,6 +4438,27 @@
       "valueName": "iAutoSaveDocsInterval",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AutoSaveDocs",
       "controlType": "Numeric"
+    },
+    {
+      "name": "bAutoSaveDocsEnabledDC_User",
+      "class": "User",
+      "valueName": "bAutoSaveDocsEnabled",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AutoSaveDocs",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "iMaxMRUCntToBeStoredDC_User",
+      "class": "User",
+      "valueName": "iMaxMRUCntToBeStored",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral",
+      "controlType": "Numeric"
+    },
+    {
+      "name": "bEnableAv2DC_User",
+      "class": "User",
+      "valueName": "bEnableAv2",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral",
+      "controlType": "Toggle"
     },
     {
       "name": "bAllowMultipleExpandedPanelsDC_User",
@@ -4488,18 +4517,18 @@
       "controlType": "Numeric"
     },
     {
+      "name": "bHidePopupIfShowSummaryDC_User",
+      "class": "User",
+      "valueName": "bHidePopupIfShowSummary",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral",
+      "controlType": "Toggle"
+    },
+    {
       "name": "ADC4406238DC_User",
       "class": "User",
       "valueName": "4406238",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
       "controlType": "Toggle"
-    },
-    {
-      "name": "irightPaneStateDC_User",
-      "class": "User",
-      "valueName": "irightPaneState",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral\\cTaskPanes",
-      "controlType": "Enum"
     },
     {
       "name": "iBasicSharePaneStickyStatusDC_User",
@@ -4572,24 +4601,24 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bAutoSaveDocsEnabledDC_User",
+      "name": "irightPaneStateDC_User",
       "class": "User",
-      "valueName": "bAutoSaveDocsEnabled",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AutoSaveDocs",
+      "valueName": "irightPaneState",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral\\cTaskPanes",
+      "controlType": "Enum"
+    },
+    {
+      "name": "bHandSelectsDC_User",
+      "class": "User",
+      "valueName": "bHandSelects",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Selection",
       "controlType": "Toggle"
     },
     {
-      "name": "bAutoSetLayersDC_User",
+      "name": "bHindiDigitDC_User",
       "class": "User",
-      "valueName": "bAutoSetLayers",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\OptionalContent",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bHoveringPopupsDC_User",
-      "class": "User",
-      "valueName": "bHoveringPopups",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Originals",
+      "valueName": "bHindiDigit",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Intl",
       "controlType": "Toggle"
     },
     {
@@ -4600,11 +4629,11 @@
       "controlType": "Toggle"
     },
     {
-      "name": "iIntlSelectFontDC_User",
+      "name": "bShowOptionsDialogDC_User",
       "class": "User",
-      "valueName": "iIntlSelectFont",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Intl",
-      "controlType": "Enum"
+      "valueName": "bShowOptionsDialog",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Accessibility\\cAccCheckerOptions",
+      "controlType": "Toggle"
     },
     {
       "name": "bcommentPanelOnImportDC_User",
@@ -4747,20 +4776,6 @@
       "controlType": "Enum"
     },
     {
-      "name": "bEnableLoggingDC_User",
-      "class": "User",
-      "valueName": "bEnableLogging",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\MicrosoftAIP",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bShowOptionsDialogDC_User",
-      "class": "User",
-      "valueName": "bShowOptionsDialog",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Accessibility\\cAccCheckerOptions",
-      "controlType": "Toggle"
-    },
-    {
       "name": "bsendFinalApprovalEmailDC_User",
       "class": "User",
       "valueName": "bsendFinalApprovalEmail",
@@ -4780,6 +4795,20 @@
       "valueName": "bPrintSaveToner",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral",
       "controlType": "Toggle"
+    },
+    {
+      "name": "bDigitsUIDC_User",
+      "class": "User",
+      "valueName": "bDigitsUI",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Intl",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "iIntlSelectFontDC_User",
+      "class": "User",
+      "valueName": "iIntlSelectFont",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Intl",
+      "controlType": "Enum"
     },
     {
       "name": "bLigaturesDC_User",
@@ -4845,6 +4874,13 @@
       "controlType": "Enum"
     },
     {
+      "name": "bHoveringPopupsDC_User",
+      "class": "User",
+      "valueName": "bHoveringPopups",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Originals",
+      "controlType": "Toggle"
+    },
+    {
       "name": "iParagraphDirectionDC_User",
       "class": "User",
       "valueName": "iParagraphDirection",
@@ -4852,17 +4888,10 @@
       "controlType": "Enum"
     },
     {
-      "name": "bEnableAv2DC_User",
+      "name": "bPopupsScrollWithPageDC_User",
       "class": "User",
-      "valueName": "bEnableAv2",
+      "valueName": "bPopupsScrollWithPage",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bPopupsOpenIffSelectedDC_User",
-      "class": "User",
-      "valueName": "bPopupsOpenIffSelected",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Annots",
       "controlType": "Toggle"
     },
     {
@@ -4929,31 +4958,17 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bDigitsUIDC_User",
+      "name": "bPopupsOpenIffSelectedDC_User",
       "class": "User",
-      "valueName": "bDigitsUI",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Intl",
+      "valueName": "bPopupsOpenIffSelected",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Annots",
       "controlType": "Toggle"
     },
     {
-      "name": "bPopupsScrollWithPageDC_User",
+      "name": "bAcrobatAppInstalled_User",
       "class": "User",
-      "valueName": "bPopupsScrollWithPage",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "iMaxMRUCntToBeStoredDC_User",
-      "class": "User",
-      "valueName": "iMaxMRUCntToBeStored",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral",
-      "controlType": "Numeric"
-    },
-    {
-      "name": "bHandSelectsDC_User",
-      "class": "User",
-      "valueName": "bHandSelects",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Selection",
+      "valueName": "bAcrobatAppInstalled",
+      "key": "Software\\Adobe\\Acrobat Reader\\DC\\Workflows\\cServices\\cAcrobatApp",
       "controlType": "Toggle"
     },
     {
@@ -4961,6 +4976,27 @@
       "class": "User",
       "valueName": "ADC4318556",
       "key": "Software\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bAlwaysUseFileNameAsDocTitleDC_User",
+      "class": "User",
+      "valueName": "bAlwaysUseFileNameAsDocTitle",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bWhatsNewExp_Reader",
+      "class": "Machine",
+      "valueName": "bWhatsNewExp",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bDisableThirdPartyPluginNotif_Reader",
+      "class": "Machine",
+      "valueName": "bDisableThirdPartyPluginNotif",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
       "controlType": "Toggle"
     },
     {
@@ -5097,34 +5133,6 @@
       "controlType": "Toggle"
     },
     {
-      "name": "ProtectOldExperience_AcrobatX64",
-      "class": "Machine",
-      "valueName": "ProtectOldExperience",
-      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "ADC4302862_AcrobatX64",
-      "class": "Machine",
-      "valueName": "ADC4302862",
-      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bDisableThirdPartyPluginNotif_Reader",
-      "class": "Machine",
-      "valueName": "bDisableThirdPartyPluginNotif",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bWhatsNewExp_Reader",
-      "class": "Machine",
-      "valueName": "bWhatsNewExp",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
       "name": "bUsageMeasurement_Reader",
       "class": "Machine",
       "valueName": "bUsageMeasurement",
@@ -5136,6 +5144,34 @@
       "class": "Machine",
       "valueName": "bToggleToDoTiles",
       "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bTogglePDFOwnershipToasts_Reader",
+      "class": "Machine",
+      "valueName": "bTogglePDFOwnershipToasts",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bToggleNotificationToasts_Reader",
+      "class": "Machine",
+      "valueName": "bToggleNotificationToasts",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bMixRecentFilesFeatureLockDown_Reader",
+      "class": "Machine",
+      "valueName": "bMixRecentFilesFeatureLockDown",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bToggleFSSSignatureSaving_Reader",
+      "class": "Machine",
+      "valueName": "bToggleFSSSignatureSaving",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
       "controlType": "Toggle"
     },
     {
@@ -5195,6 +5231,13 @@
       "controlType": "Toggle"
     },
     {
+      "name": "ProtectOldExperience_AcrobatX64",
+      "class": "Machine",
+      "valueName": "ProtectOldExperience",
+      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
+      "controlType": "Toggle"
+    },
+    {
       "name": "iSMTPPort_Reader",
       "class": "Machine",
       "valueName": "iSMTPPort",
@@ -5202,23 +5245,16 @@
       "controlType": "Enum"
     },
     {
-      "name": "iSMTPSecurity_Reader",
-      "class": "Machine",
-      "valueName": "iSMTPSecurity",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cWebmailProfiles\\cLjvCsavBfmjgwcAlmebiheBBgnfwg",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "ADC4275035_AcrobatX64",
-      "class": "Machine",
-      "valueName": "ADC4275035",
-      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
-      "controlType": "Toggle"
-    },
-    {
       "name": "bShowMsgAtLaunch_Reader",
       "class": "Machine",
       "valueName": "bShowMsgAtLaunch",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cIPM",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "bAllowUserToChangeMsgPrefs_Reader",
+      "class": "Machine",
+      "valueName": "bAllowUserToChangeMsgPrefs",
       "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cIPM",
       "controlType": "Toggle"
     },
@@ -5279,31 +5315,24 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bToggleNotificationToasts_Reader",
+      "name": "iSMTPSecurity_Reader",
       "class": "Machine",
-      "valueName": "bToggleNotificationToasts",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
+      "valueName": "iSMTPSecurity",
+      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cWebmailProfiles\\cLjvCsavBfmjgwcAlmebiheBBgnfwg",
       "controlType": "Toggle"
     },
     {
-      "name": "bTogglePDFOwnershipToasts_Reader",
-      "class": "Machine",
-      "valueName": "bTogglePDFOwnershipToasts",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cServices",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bAllowUserToChangeMsgPrefs_Reader",
-      "class": "Machine",
-      "valueName": "bAllowUserToChangeMsgPrefs",
-      "key": "SOFTWARE\\Policies\\Adobe\\Acrobat Reader\\DC\\FeatureLockDown\\cIPM",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bShowDMBDC_User",
+      "name": "bUseFixedSnapshotResolutionDC_User",
       "class": "User",
-      "valueName": "bShowDMB",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\MicrosoftAIP",
+      "valueName": "bUseFixedSnapshotResolution",
+      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Selection",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "ADC4302862_AcrobatX64",
+      "class": "Machine",
+      "valueName": "ADC4302862",
+      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
       "controlType": "Toggle"
     },
     {
@@ -5314,10 +5343,17 @@
       "controlType": "Toggle"
     },
     {
-      "name": "DisableScannedDocumentEditing_AcrobatX64",
+      "name": "iDisablePromptForUpgrade_AcrobatX86",
       "class": "Machine",
-      "valueName": "DisableScannedDocumentEditing",
-      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
+      "valueName": "iDisablePromptForUpgrade",
+      "key": "SOFTWARE\\WOW6432Node\\Adobe\\Adobe ARM\\1.0\\ARM",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "DisableMaintenance_AcrobatX86",
+      "class": "Machine",
+      "valueName": "DisableMaintenance",
+      "key": "SOFTWARE\\WOW6432Node\\Adobe\\Adobe Acrobat\\DC\\Installer",
       "controlType": "Toggle"
     },
     {
@@ -5454,34 +5490,6 @@
       "controlType": "Text"
     },
     {
-      "name": "bAlwaysUseFileNameAsDocTitleDC_User",
-      "class": "User",
-      "valueName": "bAlwaysUseFileNameAsDocTitle",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\AVGeneral",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "bUseFixedSnapshotResolutionDC_User",
-      "class": "User",
-      "valueName": "bUseFixedSnapshotResolution",
-      "key": "Software\\Adobe\\Adobe Acrobat\\DC\\Selection",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "DisableMaintenance_AcrobatX86",
-      "class": "Machine",
-      "valueName": "DisableMaintenance",
-      "key": "SOFTWARE\\WOW6432Node\\Adobe\\Adobe Acrobat\\DC\\Installer",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "iDisablePromptForUpgrade_AcrobatX86",
-      "class": "Machine",
-      "valueName": "iDisablePromptForUpgrade",
-      "key": "SOFTWARE\\WOW6432Node\\Adobe\\Adobe ARM\\1.0\\ARM",
-      "controlType": "Toggle"
-    },
-    {
       "name": "EULA_AcrobatX86",
       "class": "Machine",
       "valueName": "EULA",
@@ -5493,6 +5501,34 @@
       "class": "Machine",
       "valueName": "bEnablePVSwitchoutShortcut",
       "key": "SOFTWARE\\WOW6432Node\\Adobe\\Adobe Acrobat\\DC\\Installer",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "EnableFlashEditing_AcrobatX86",
+      "class": "Machine",
+      "valueName": "EnableFlashEditing",
+      "key": "SOFTWARE\\WOW6432Node\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "EnablePDFMakerSplitTextPathElemsFeature_AcrobatX86",
+      "class": "Machine",
+      "valueName": "EnablePDFMakerSplitTextPathElemsFeature",
+      "key": "SOFTWARE\\WOW6432Node\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "BlockXPSParsing_AcrobatX64",
+      "class": "Machine",
+      "valueName": "BlockXPSParsing",
+      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "DisableScannedDocumentEditing_AcrobatX64",
+      "class": "Machine",
+      "valueName": "DisableScannedDocumentEditing",
+      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
       "controlType": "Toggle"
     },
     {
@@ -5552,6 +5588,13 @@
       "controlType": "Toggle"
     },
     {
+      "name": "ADC4275035_AcrobatX64",
+      "class": "Machine",
+      "valueName": "ADC4275035",
+      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
+      "controlType": "Toggle"
+    },
+    {
       "name": "IsAMTEnforced_AcrobatX64",
       "class": "Machine",
       "valueName": "IsAMTEnforced",
@@ -5559,23 +5602,16 @@
       "controlType": "Toggle"
     },
     {
-      "name": "bMergeMenuBar_AcrobatX64",
-      "class": "Machine",
-      "valueName": "bMergeMenuBar",
-      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "BlockXPSParsing_AcrobatX64",
-      "class": "Machine",
-      "valueName": "BlockXPSParsing",
-      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
-      "controlType": "Toggle"
-    },
-    {
       "name": "ADC4275035_ClickEdit_AcrobatX86",
       "class": "Machine",
       "valueName": "ADC4275035_ClickEdit",
+      "key": "SOFTWARE\\WOW6432Node\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
+      "controlType": "Toggle"
+    },
+    {
+      "name": "ADC4275034_AcrobatX86",
+      "class": "Machine",
+      "valueName": "ADC4275034",
       "key": "SOFTWARE\\WOW6432Node\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
       "controlType": "Toggle"
     },
@@ -5636,24 +5672,10 @@
       "controlType": "Toggle"
     },
     {
-      "name": "EnablePDFMakerSplitTextPathElemsFeature_AcrobatX86",
+      "name": "bMergeMenuBar_AcrobatX64",
       "class": "Machine",
-      "valueName": "EnablePDFMakerSplitTextPathElemsFeature",
-      "key": "SOFTWARE\\WOW6432Node\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "EnableFlashEditing_AcrobatX86",
-      "class": "Machine",
-      "valueName": "EnableFlashEditing",
-      "key": "SOFTWARE\\WOW6432Node\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
-      "controlType": "Toggle"
-    },
-    {
-      "name": "ADC4275034_AcrobatX86",
-      "class": "Machine",
-      "valueName": "ADC4275034",
-      "key": "SOFTWARE\\WOW6432Node\\Adobe\\Adobe Acrobat\\DC\\FeatureState",
+      "valueName": "bMergeMenuBar",
+      "key": "SOFTWARE\\Adobe\\Adobe Acrobat\\DC\\FeatureLockDown",
       "controlType": "Toggle"
     },
     {
@@ -5663,6 +5685,5 @@
       "key": "Software\\Adobe\\Acrobat Reader\\DC\\Workflows\\cServices\\cScanApp",
       "controlType": "Toggle"
     }
-  ],
-  "revision": "3.8"
+  ]
 }

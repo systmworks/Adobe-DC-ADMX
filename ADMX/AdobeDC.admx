@@ -2,12 +2,12 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.8" schemaVersion="1.0"
+  revision="3.9" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="3.8" />
+  <resources minRequiredRevision="3.9" />
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SupportedAcrobatReaderPolicies)" name="SupportedAcrobatReaderPolicies"/>
@@ -248,6 +248,30 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
+    <!-- External Browser Sign-In - [iAcroLoginType] -->
+    <policy class="Machine" displayName="$(string.iAcroLoginType_Acrobat)" explainText="$(string.iAcroLoginType_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
+      name="iAcroLoginType_Acrobat" valueName="iAcroLoginType" presentation="$(presentation.iAcroLoginType_Acrobat_enum)">
+      <parentCategory ref="CloudConnectors_AcrobatCategory"/>
+      <supportedOn ref="SupportedAcrobatReaderPolicies"/>
+      <elements>
+        <enum id="iAcroLoginType_Acrobat_enum" valueName="iAcroLoginType">
+          <item displayName="$(string.iAcroLoginType_Acrobat_opt0)">
+            <value><decimal value="5" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Federated Login Domain - [login_domain] -->
+    <policy class="Machine" displayName="$(string.login_domain_Acrobat)" explainText="$(string.login_domain_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\NGL\AuthInfo"
+      name="login_domain_Acrobat" presentation="$(presentation.login_domain_Acrobat_text)">
+      <parentCategory ref="CloudConnectors_AcrobatCategory"/>
+      <supportedOn ref="SupportedAcrobatReaderPolicies"/>
+      <elements>
+        <text id="login_domain_Acrobat_text" valueName="login_domain" maxLength="253" />
+      </elements>
+    </policy>
+
     <!-- Generative AI Technology - [bEnableGentech] -->
     <policy class="Machine" displayName="$(string.bEnableGentech_Acrobat)" explainText="$(string.bEnableGentech_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
       name="bEnableGentech_Acrobat" valueName="bEnableGentech">
@@ -282,6 +306,20 @@
       <supportedOn ref="SupportedAcrobatReaderPolicies"/>
       <enabledValue><decimal value="1" /></enabledValue>
       <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Legacy Sign-In Engine (HTTPS Calls) - [iNGLCEFWorkflowEnabled] -->
+    <policy class="Machine" displayName="$(string.iNGLCEFWorkflowEnabled_Acrobat)" explainText="$(string.iNGLCEFWorkflowEnabled_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
+      name="iNGLCEFWorkflowEnabled_Acrobat" valueName="iNGLCEFWorkflowEnabled" presentation="$(presentation.iNGLCEFWorkflowEnabled_Acrobat_enum)">
+      <parentCategory ref="CloudConnectors_AcrobatCategory"/>
+      <supportedOn ref="SupportedAcrobatReaderPolicies"/>
+      <elements>
+        <enum id="iNGLCEFWorkflowEnabled_Acrobat_enum" valueName="iNGLCEFWorkflowEnabled">
+          <item displayName="$(string.iNGLCEFWorkflowEnabled_Acrobat_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <!-- OneDrive Connector - [bOneDriveConnectorEnabled] -->

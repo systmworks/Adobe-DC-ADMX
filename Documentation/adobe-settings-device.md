@@ -6,7 +6,7 @@
 
 # Adobe DC Settings (Device)
 
-Complete list of 154 unique Adobe DC settings (156 table entries where the same `ValueName` has more than one friendly name) in the combined v3.8 ADMX templates, grouped by product applicability.
+Complete list of 157 unique Adobe DC settings (159 table entries where the same `ValueName` has more than one friendly name) in the combined v3.9 ADMX templates, grouped by product applicability.
 
 - Settings marked ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) are under **Adobe DC > Non-Policy Settings** in Group Policy or Intune, not under **Adobe DC > Acrobat & Reader DC**. Configure the sub-node that matches your installed architecture: **Acrobat & Reader DC (64-bit)** (64-bit Acrobat and unified 64-bit Reader), **Acrobat DC (32-bit)** (32-bit Acrobat), or **Reader DC (32-bit)** (32-bit Reader).
 
@@ -183,6 +183,14 @@ Complete list of 154 unique Adobe DC settings (156 table entries where the same 
 | Show Upgrade Prompts | ``bAcroSuppressUpsell`` | Disable upgrade and upsell messages (12.x+). |
 
 ## Acrobat Only
+
+### Cloud & Connectors
+
+| ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
+|---|---|---|
+| External Browser Sign-In | ``iAcroLoginType`` | Forces Acrobat to use the default system browser for sign-in instead of the embedded CEF browser. |
+| Federated Login Domain | ``login_domain`` | Sets the federated login domain so sign-in redirects to the organization's identity provider for the claimed domain. |
+| Legacy Sign-In Engine (HTTPS Calls) | ``iNGLCEFWorkflowEnabled`` | Forces Acrobat to use the legacy HTTPS calls sign-in engine instead of the embedded CEF browser. |
 
 ### Context, Tools & Search
 

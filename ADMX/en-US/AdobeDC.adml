@@ -2,10 +2,10 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.8" schemaVersion="1.0"
+  revision="3.9" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
-  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.8)</displayName>
-  <description>ADMX v3.8 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
+  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.9)</displayName>
+  <description>ADMX v3.9 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
   <resources>
     <stringTable>
       <string id="SupportedAcrobatReaderPolicies">Adobe Acrobat and Reader DC</string>
@@ -61,6 +61,11 @@
       <string id="bToggleDocumentCloud_Acrobat_Explain">Specifies whether to enable Document Cloud storage.&#10;&#10;DC storage is enabled by default. Possible values include: 0: Enable Document Cloud storage. 1: Disable Document Cloud storage.</string>
       <string id="bDropboxConnectorEnabled_Acrobat">Dropbox Cloud Connector</string>
       <string id="bDropboxConnectorEnabled_Acrobat_Explain">Specifies whether to enable connection to the Dropbox cloud when bToggleWebConnectors is set to 1.&#10;&#10;Overrides a bToggleWebConnectors value of 1. Only supported on the Continuous track. Possible values include: 0: Disable connection to Dropbox 1: Enable connection to Dropbox</string>
+      <string id="iAcroLoginType_Acrobat">External Browser Sign-In</string>
+      <string id="iAcroLoginType_Acrobat_Explain">Forces Acrobat to use the default system browser for sign-in instead of the embedded CEF browser.&#10;&#10;Applies to Acrobat DC only. Use when CEF-based sign-in fails Conditional Access or device identity checks. Selecting this value writes iAcroLoginType = 5 under FeatureLockDown. Disabled or Not Configured removes the value and restores Adobe's default CEF sign-in. Not compatible with Federated Login Domain when external browser sign-in is configured. Adobe documents this as Workaround 1 for Azure AD Conditional Access.</string>
+      <string id="iAcroLoginType_Acrobat_opt0">Use the default system browser</string>
+      <string id="login_domain_Acrobat">Federated Login Domain</string>
+      <string id="login_domain_Acrobat_Explain">Sets the federated login domain so sign-in redirects to the organization's identity provider for the claimed domain.&#10;&#10;Applies to Acrobat DC only. Requires a domain claimed in the Adobe Admin Console and Federated ID accounts. Specify the exact claimed domain (no wildcards). Not compatible with External Browser Sign-In. Adobe excludes Acrobat Reader from this feature.</string>
       <string id="bEnableGentech_Acrobat">Generative AI Technology</string>
       <string id="bEnableGentech_Acrobat_Explain">Specifies whether to enable generative AI features in Acrobat and Reader.&#10;&#10;Possible values include: 0: Disable generative AI features. 1: Enable generative AI features. Generative AI capabilities may rely on cloud services; verify organizational policies and Adobe documentation for data handling.</string>
       <string id="bGoogleDriveConnectorEnabled_Acrobat">Google Drive Connector</string>
@@ -69,6 +74,9 @@
       <string id="bToggleSendACopy_Acrobat_Explain">Specifies whether to hide the Send a Copy button from the Fill &amp; Sign tool in Acrobat and Reader.&#10;&#10;Possible values include: 0: Hide the button. 1: Show the button.</string>
       <string id="bSuppressSignOut_Acrobat">Hide Sign Out Menu Item</string>
       <string id="bSuppressSignOut_Acrobat_Explain">Specifies whether the sign-in and sign-out Help menu item should be enabled.&#10;&#10;Possible values include: 0 or null: Don't disable the menu item. 1: Disable the Help menu item.</string>
+      <string id="iNGLCEFWorkflowEnabled_Acrobat">Legacy Sign-In Engine (HTTPS Calls)</string>
+      <string id="iNGLCEFWorkflowEnabled_Acrobat_Explain">Forces Acrobat to use the legacy HTTPS calls sign-in engine instead of the embedded CEF browser.&#10;&#10;Applies to Acrobat DC only. Use when CEF-based sign-in fails and external browser sign-in is not suitable. Selecting this value writes iNGLCEFWorkflowEnabled = 0 under FeatureLockDown. Disabled or Not Configured removes the value and restores Adobe's default CEF sign-in. Adobe documents this as Workaround 2 for Azure AD Conditional Access.</string>
+      <string id="iNGLCEFWorkflowEnabled_Acrobat_opt0">Use the HTTPS calls engine</string>
       <string id="bOneDriveConnectorEnabled_Acrobat">OneDrive Connector</string>
       <string id="bOneDriveConnectorEnabled_Acrobat_Explain">Specifies whether to enable connection to the OneDrive cloud when bToggleWebConnectors is set to 1.&#10;&#10;Overrides a bToggleWebConnectors value of 1. Only supported on the Continuous track. Possible values include: 0: Disable connection to OneDrive 1: Enable connection to OneDrive</string>
       <string id="bTogglePrefsSync_Acrobat">Preferences Synchronization</string>
@@ -2076,6 +2084,15 @@
       <string id="bScanAppInstalled_User_Explain">Specifies whether to show the Adobe Scan mobile app promotion and link in the Home banner.&#10;&#10;Disable and lock both the App Center and Home banner with bToggleDCAppCenter under FeatureLockDown. Possible values include: 0: Promote the mobile app. 1: Don't promote the mobile app.</string>
     </stringTable>
     <presentationTable>
+      <presentation id="iAcroLoginType_Acrobat_enum">
+        <dropdownList defaultItem="0" refId="iAcroLoginType_Acrobat_enum">External Browser Sign-In:</dropdownList>
+      </presentation>
+      <presentation id="login_domain_Acrobat_text">
+        <textBox refId="login_domain_Acrobat_text"><label>Claimed domain:</label></textBox>
+      </presentation>
+      <presentation id="iNGLCEFWorkflowEnabled_Acrobat_enum">
+        <dropdownList defaultItem="0" refId="iNGLCEFWorkflowEnabled_Acrobat_enum">Legacy Sign-In Engine (HTTPS Calls):</dropdownList>
+      </presentation>
       <presentation id="iMIPCloud_Acrobat_enum">
         <dropdownList defaultItem="0" refId="iMIPCloud_Acrobat_enum">MIP Sovereign Cloud:</dropdownList>
       </presentation>

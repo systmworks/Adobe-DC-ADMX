@@ -1,4 +1,5 @@
 {
+  "revision": "3.9",
   "policies": [
     {
       "policyName": "bToggleFillSign_Acrobat",
@@ -71,6 +72,34 @@
       "regValDisabled": 0
     },
     {
+      "policyName": "iAcroLoginType_Acrobat",
+      "valueName": "iAcroLoginType",
+      "friendlyName": "External Browser Sign-In",
+      "category": "Cloud & Connectors",
+      "scope": "Device",
+      "product": "Acrobat",
+      "branch": "AcrobatPolicies",
+      "controlType": "Enum",
+      "summary": "Forces Acrobat to use the default system browser for sign-in instead of the embedded CEF browser.",
+      "details": "Applies to Acrobat DC only. Use when CEF-based sign-in fails Conditional Access or device identity checks. Selecting this value writes iAcroLoginType = 5 under FeatureLockDown. Disabled or Not Configured removes the value and restores Adobe's default CEF sign-in. Not compatible with Federated Login Domain when external browser sign-in is configured. Adobe documents this as Workaround 1 for Azure AD Conditional Access.",
+      "regValEnabled": null,
+      "regValDisabled": null
+    },
+    {
+      "policyName": "login_domain_Acrobat",
+      "valueName": "login_domain",
+      "friendlyName": "Federated Login Domain",
+      "category": "Cloud & Connectors",
+      "scope": "Device",
+      "product": "Acrobat",
+      "branch": "AcrobatPolicies",
+      "controlType": "Text",
+      "summary": "Sets the federated login domain so sign-in redirects to the organization's identity provider for the claimed domain.",
+      "details": "Applies to Acrobat DC only. Requires a domain claimed in the Adobe Admin Console and Federated ID accounts. Specify the exact claimed domain (no wildcards). Not compatible with External Browser Sign-In. Adobe excludes Acrobat Reader from this feature.",
+      "regValEnabled": null,
+      "regValDisabled": null
+    },
+    {
       "policyName": "bEnableGentech_Acrobat",
       "valueName": "bEnableGentech",
       "friendlyName": "Generative AI Technology",
@@ -125,6 +154,20 @@
       "details": "Possible values include: 0 or null: Don't disable the menu item. 1: Disable the Help menu item.",
       "regValEnabled": 1,
       "regValDisabled": 0
+    },
+    {
+      "policyName": "iNGLCEFWorkflowEnabled_Acrobat",
+      "valueName": "iNGLCEFWorkflowEnabled",
+      "friendlyName": "Legacy Sign-In Engine (HTTPS Calls)",
+      "category": "Cloud & Connectors",
+      "scope": "Device",
+      "product": "Acrobat",
+      "branch": "AcrobatPolicies",
+      "controlType": "Enum",
+      "summary": "Forces Acrobat to use the legacy HTTPS calls sign-in engine instead of the embedded CEF browser.",
+      "details": "Applies to Acrobat DC only. Use when CEF-based sign-in fails and external browser sign-in is not suitable. Selecting this value writes iNGLCEFWorkflowEnabled = 0 under FeatureLockDown. Disabled or Not Configured removes the value and restores Adobe's default CEF sign-in. Adobe documents this as Workaround 2 for Azure AD Conditional Access.",
+      "regValEnabled": null,
+      "regValDisabled": null
     },
     {
       "policyName": "bOneDriveConnectorEnabled_Acrobat",
@@ -11326,6 +11369,5 @@
       "regValEnabled": 0,
       "regValDisabled": 1
     }
-  ],
-  "revision": "3.8"
+  ]
 }

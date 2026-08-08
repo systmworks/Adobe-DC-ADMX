@@ -239,7 +239,7 @@ Merged into the combined `AdobeDC.admx`/ADML bundle (see [Device history](#devic
 
 ---
 
-## v1.10 - 1 Jul 2026
+## v1.10 - 1 July 2026
 
 **501 policies** - same inventory as v1.9.
 
@@ -247,7 +247,7 @@ Merged into the combined `AdobeDC.admx`/ADML bundle (see [Device history](#devic
 
 ---
 
-## v1.9 - 30 Jun 2026
+## v1.9 - 30 June 2026
 
 **501 policies** - unchanged from v1.8.
 
@@ -255,7 +255,7 @@ Merged into the combined `AdobeDC.admx`/ADML bundle (see [Device history](#devic
 
 ---
 
-## v1.8 - 30 Jun 2026
+## v1.8 - 30 June 2026
 
 **501 policies** - PR #9 user-scope additions.
 
@@ -271,7 +271,7 @@ Merged into the combined `AdobeDC.admx`/ADML bundle (see [Device history](#devic
 
 ---
 
-## v1.7 - 30 Jun 2026
+## v1.7 - 30 June 2026
 
 **495 policies** - unchanged from v1.6.
 
@@ -281,7 +281,7 @@ Merged into the combined `AdobeDC.admx`/ADML bundle (see [Device history](#devic
 
 ---
 
-## v1.6 - 28 Jun 2026
+## v1.6 - 28 June 2026
 
 **495 policies** (up from 484 in v1.5).
 
@@ -305,7 +305,7 @@ Merged into the combined `AdobeDC.admx`/ADML bundle (see [Device history](#devic
 
 ---
 
-## v1.5 - 28 Jun 2026
+## v1.5 - 28 June 2026
 
 **No new policies** (484 unchanged). ADML generation fix for Windows Server 2019 GPMC import failures.
 
