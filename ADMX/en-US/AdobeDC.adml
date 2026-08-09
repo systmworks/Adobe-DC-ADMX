@@ -2,10 +2,10 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.9" schemaVersion="1.0"
+  revision="4.0" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
-  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v3.9)</displayName>
-  <description>ADMX v3.9 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
+  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v4.0)</displayName>
+  <description>ADMX v4.0 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
   <resources>
     <stringTable>
       <string id="SupportedAcrobatReaderPolicies">Adobe Acrobat and Reader DC</string>
@@ -21,6 +21,11 @@
       <string id="NonPol_AcrobatX64">Acrobat &amp; Reader DC (64-bit)</string>
       <string id="NonPol_AcrobatX86">Acrobat DC (32-bit)</string>
       <string id="NonPol_ReaderX86">Reader DC (32-bit)</string>
+      <string id="BrowserExtensions">Browser Extensions</string>
+      <string id="BrowserExt_Chrome">Google Chrome</string>
+      <string id="BrowserExt_Edge">Microsoft Edge</string>
+      <string id="SupportedChromeExt">Adobe Acrobat extension for Google Chrome</string>
+      <string id="SupportedEdgeExt">Adobe Acrobat extension for Microsoft Edge</string>
 
       <string id="Cat_CloudConnectors">Cloud &amp; Connectors</string>
       <string id="Cat_ContextToolsSearch">Context, Tools &amp; Search</string>
@@ -811,6 +816,38 @@
       <string id="Disable_Repair_ReaderX86_Explain">Disable Help &gt; Repair for standard users on virtual installs.&#10;&#10;Restricts repair to admins on Citrix/WT servers. See DisableMaintenance. Registry: HKLM\...\Installer.&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
       <string id="bMergeMenuBar_ReaderX86">Merge Title and Menu Bar</string>
       <string id="bMergeMenuBar_ReaderX86_Explain">Specifies whether to merge the application's title bar and menu bar into a single bar.&#10;&#10;Note that &quot;Policies&quot; does not appear in the HKLM path. Possible values include: 0: Don't merge the title and menu bars 1: Merge the bars&#10;&#10;This non-Policies setting applies to 32-bit Reader DC installations and writes to HKLM\SOFTWARE\WOW6432Node\...</string>
+      <!-- Browser Extensions - Google Chrome -->
+
+      <!-- Browser Extension -->
+
+      <string id="DisableExpress_ChromeExt">Disable Express Features</string>
+      <string id="DisableExpress_ChromeExt_Explain">Disables Adobe Express features (such as Edit Image) in the extension.&#10;&#10;When Enabled, DisableExpress is set to true. Values are REG_SZ strings (true/false), not DWORD.&#10;&#10;Writes to the Google Chrome managed-storage policy path for the Adobe Acrobat extension (efaidnbmnnnibpcajpcglclefindmkaj). Values are REG_SZ strings (true/false), not DWORD. Verify in chrome://policy.</string>
+      <string id="UsageMeasurement_ChromeExt">Disable Extension Usage Analytics</string>
+      <string id="UsageMeasurement_ChromeExt_Explain">Controls whether the Adobe Acrobat browser extension collects and sends usage analytics.&#10;&#10;When Enabled, UsageMeasurement is set to false. This is separate from the desktop application's bUsageMeasurement preference. Values are REG_SZ strings (true/false), not DWORD.&#10;&#10;Writes to the Google Chrome managed-storage policy path for the Adobe Acrobat extension (efaidnbmnnnibpcajpcglclefindmkaj). Values are REG_SZ strings (true/false), not DWORD. Verify in chrome://policy.</string>
+      <string id="DisableGenAI_ChromeExt">Disable Generative AI Features</string>
+      <string id="DisableGenAI_ChromeExt_Explain">Disables generative AI features in the Adobe Acrobat browser extension.&#10;&#10;When Enabled, DisableGenAI is set to true. Values are REG_SZ strings (true/false), not DWORD.&#10;&#10;Writes to the Google Chrome managed-storage policy path for the Adobe Acrobat extension (efaidnbmnnnibpcajpcglclefindmkaj). Values are REG_SZ strings (true/false), not DWORD. Verify in chrome://policy.</string>
+      <string id="OpenHelpx_ChromeExt">Disable Help Tab on Install</string>
+      <string id="OpenHelpx_ChromeExt_Explain">Controls whether the extension opens its help or onboarding tab automatically on install.&#10;&#10;When Enabled, OpenHelpx is set to false and the help tab does not open. Values are REG_SZ strings (true/false), not DWORD.&#10;&#10;Writes to the Google Chrome managed-storage policy path for the Adobe Acrobat extension (efaidnbmnnnibpcajpcglclefindmkaj). Values are REG_SZ strings (true/false), not DWORD. Verify in chrome://policy.</string>
+      <string id="UninstallPopup_ChromeExt">Disable Uninstall Popup for Free Users</string>
+      <string id="UninstallPopup_ChromeExt_Explain">Controls whether free-plan users see an uninstall prompt popup in the extension.&#10;&#10;When Enabled, UninstallPopup is set to false. Values are REG_SZ strings (true/false), not DWORD.&#10;&#10;Writes to the Google Chrome managed-storage policy path for the Adobe Acrobat extension (efaidnbmnnnibpcajpcglclefindmkaj). Values are REG_SZ strings (true/false), not DWORD. Verify in chrome://policy.</string>
+      <string id="DisableWhatsNewAutoOpen_ChromeExt">Disable What's New Auto-Open</string>
+      <string id="DisableWhatsNewAutoOpen_ChromeExt_Explain">Stops the What's New page from automatically opening when the extension updates.&#10;&#10;When Enabled, DisableWhatsNewAutoOpen is set to true. Values are REG_SZ strings (true/false), not DWORD.&#10;&#10;Writes to the Google Chrome managed-storage policy path for the Adobe Acrobat extension (efaidnbmnnnibpcajpcglclefindmkaj). Values are REG_SZ strings (true/false), not DWORD. Verify in chrome://policy.</string>
+      <!-- Browser Extensions - Microsoft Edge -->
+
+      <!-- Browser Extension -->
+
+      <string id="DisableExpress_EdgeExt">Disable Express Features</string>
+      <string id="DisableExpress_EdgeExt_Explain">Disables Adobe Express features (such as Edit Image) in the extension.&#10;&#10;When Enabled, DisableExpress is set to true. Values are REG_SZ strings (true/false), not DWORD.&#10;&#10;Writes to the Microsoft Edge managed-storage policy path for the Adobe Acrobat extension (elhekieabhbkpmcefcoobjddigjcaadp). Values are REG_SZ strings (true/false), not DWORD. Verify in edge://policy. If Edge force-installs the extension from the Chrome Web Store, policy may instead be under extension ID efaidnbmnnnibpcajpcglclefindmkaj - not covered by this template.</string>
+      <string id="UsageMeasurement_EdgeExt">Disable Extension Usage Analytics</string>
+      <string id="UsageMeasurement_EdgeExt_Explain">Controls whether the Adobe Acrobat browser extension collects and sends usage analytics.&#10;&#10;When Enabled, UsageMeasurement is set to false. This is separate from the desktop application's bUsageMeasurement preference. Values are REG_SZ strings (true/false), not DWORD.&#10;&#10;Writes to the Microsoft Edge managed-storage policy path for the Adobe Acrobat extension (elhekieabhbkpmcefcoobjddigjcaadp). Values are REG_SZ strings (true/false), not DWORD. Verify in edge://policy. If Edge force-installs the extension from the Chrome Web Store, policy may instead be under extension ID efaidnbmnnnibpcajpcglclefindmkaj - not covered by this template.</string>
+      <string id="DisableGenAI_EdgeExt">Disable Generative AI Features</string>
+      <string id="DisableGenAI_EdgeExt_Explain">Disables generative AI features in the Adobe Acrobat browser extension.&#10;&#10;When Enabled, DisableGenAI is set to true. Values are REG_SZ strings (true/false), not DWORD.&#10;&#10;Writes to the Microsoft Edge managed-storage policy path for the Adobe Acrobat extension (elhekieabhbkpmcefcoobjddigjcaadp). Values are REG_SZ strings (true/false), not DWORD. Verify in edge://policy. If Edge force-installs the extension from the Chrome Web Store, policy may instead be under extension ID efaidnbmnnnibpcajpcglclefindmkaj - not covered by this template.</string>
+      <string id="OpenHelpx_EdgeExt">Disable Help Tab on Install</string>
+      <string id="OpenHelpx_EdgeExt_Explain">Controls whether the extension opens its help or onboarding tab automatically on install.&#10;&#10;When Enabled, OpenHelpx is set to false and the help tab does not open. Values are REG_SZ strings (true/false), not DWORD.&#10;&#10;Writes to the Microsoft Edge managed-storage policy path for the Adobe Acrobat extension (elhekieabhbkpmcefcoobjddigjcaadp). Values are REG_SZ strings (true/false), not DWORD. Verify in edge://policy. If Edge force-installs the extension from the Chrome Web Store, policy may instead be under extension ID efaidnbmnnnibpcajpcglclefindmkaj - not covered by this template.</string>
+      <string id="UninstallPopup_EdgeExt">Disable Uninstall Popup for Free Users</string>
+      <string id="UninstallPopup_EdgeExt_Explain">Controls whether free-plan users see an uninstall prompt popup in the extension.&#10;&#10;When Enabled, UninstallPopup is set to false. Values are REG_SZ strings (true/false), not DWORD.&#10;&#10;Writes to the Microsoft Edge managed-storage policy path for the Adobe Acrobat extension (elhekieabhbkpmcefcoobjddigjcaadp). Values are REG_SZ strings (true/false), not DWORD. Verify in edge://policy. If Edge force-installs the extension from the Chrome Web Store, policy may instead be under extension ID efaidnbmnnnibpcajpcglclefindmkaj - not covered by this template.</string>
+      <string id="DisableWhatsNewAutoOpen_EdgeExt">Disable What's New Auto-Open</string>
+      <string id="DisableWhatsNewAutoOpen_EdgeExt_Explain">Stops the What's New page from automatically opening when the extension updates.&#10;&#10;When Enabled, DisableWhatsNewAutoOpen is set to true. Values are REG_SZ strings (true/false), not DWORD.&#10;&#10;Writes to the Microsoft Edge managed-storage policy path for the Adobe Acrobat extension (elhekieabhbkpmcefcoobjddigjcaadp). Values are REG_SZ strings (true/false), not DWORD. Verify in edge://policy. If Edge force-installs the extension from the Chrome Web Store, policy may instead be under extension ID efaidnbmnnnibpcajpcglclefindmkaj - not covered by this template.</string>
       <!-- Adobe Acrobat DC (User) - policy strings -->
 
       <!-- Context, Tools and Search -->

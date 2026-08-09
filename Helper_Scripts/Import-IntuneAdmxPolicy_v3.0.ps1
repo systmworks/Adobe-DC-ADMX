@@ -11,7 +11,7 @@
 .PARAMETER PolicyName
     Display name for the new policy. When omitted, prompts interactively (exported name is the default).
 .NOTES
-    Version 3.0 — see CHANGELOG.md. Requires Microsoft.Graph.Authentication (Install-Module -Scope CurrentUser). Scope DeviceManagementConfiguration.ReadWrite.All (shared with Export).
+    Version 3.0 - see CHANGELOG.md. Requires Microsoft.Graph.Authentication (Install-Module -Scope CurrentUser). Scope DeviceManagementConfiguration.ReadWrite.All (shared with Export).
     Licensed CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/
 .EXAMPLE
     .\Import-IntuneAdmxPolicy_v3.0.ps1

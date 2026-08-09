@@ -1,5 +1,4 @@
 {
-  "revision": "3.9",
   "policies": [
     {
       "policyName": "bToggleFillSign_Acrobat",
@@ -4158,6 +4157,174 @@
       "details": "Note that \"Policies\" does not appear in the HKLM path. Possible values include: 0: Don't merge the title and menu bars 1: Merge the bars",
       "regValEnabled": 1,
       "regValDisabled": 0
+    },
+    {
+      "policyName": "DisableExpress_ChromeExt",
+      "valueName": "DisableExpress",
+      "friendlyName": "Disable Express Features",
+      "category": "Browser Extension",
+      "scope": "Extension",
+      "product": "Chrome",
+      "branch": "ChromeExt",
+      "controlType": "StringToggle",
+      "summary": "Disables Adobe Express features (such as Edit Image) in the extension.",
+      "details": "When Enabled, DisableExpress is set to true. Values are REG_SZ strings (true/false), not DWORD.",
+      "regValEnabled": "true",
+      "regValDisabled": "false"
+    },
+    {
+      "policyName": "UsageMeasurement_ChromeExt",
+      "valueName": "UsageMeasurement",
+      "friendlyName": "Disable Extension Usage Analytics",
+      "category": "Browser Extension",
+      "scope": "Extension",
+      "product": "Chrome",
+      "branch": "ChromeExt",
+      "controlType": "StringToggle",
+      "summary": "Controls whether the Adobe Acrobat browser extension collects and sends usage analytics.",
+      "details": "When Enabled, UsageMeasurement is set to false. This is separate from the desktop application's bUsageMeasurement preference. Values are REG_SZ strings (true/false), not DWORD.",
+      "regValEnabled": "false",
+      "regValDisabled": "true"
+    },
+    {
+      "policyName": "DisableGenAI_ChromeExt",
+      "valueName": "DisableGenAI",
+      "friendlyName": "Disable Generative AI Features",
+      "category": "Browser Extension",
+      "scope": "Extension",
+      "product": "Chrome",
+      "branch": "ChromeExt",
+      "controlType": "StringToggle",
+      "summary": "Disables generative AI features in the Adobe Acrobat browser extension.",
+      "details": "When Enabled, DisableGenAI is set to true. Values are REG_SZ strings (true/false), not DWORD.",
+      "regValEnabled": "true",
+      "regValDisabled": "false"
+    },
+    {
+      "policyName": "OpenHelpx_ChromeExt",
+      "valueName": "OpenHelpx",
+      "friendlyName": "Disable Help Tab on Install",
+      "category": "Browser Extension",
+      "scope": "Extension",
+      "product": "Chrome",
+      "branch": "ChromeExt",
+      "controlType": "StringToggle",
+      "summary": "Controls whether the extension opens its help or onboarding tab automatically on install.",
+      "details": "When Enabled, OpenHelpx is set to false and the help tab does not open. Values are REG_SZ strings (true/false), not DWORD.",
+      "regValEnabled": "false",
+      "regValDisabled": "true"
+    },
+    {
+      "policyName": "UninstallPopup_ChromeExt",
+      "valueName": "UninstallPopup",
+      "friendlyName": "Disable Uninstall Popup for Free Users",
+      "category": "Browser Extension",
+      "scope": "Extension",
+      "product": "Chrome",
+      "branch": "ChromeExt",
+      "controlType": "StringToggle",
+      "summary": "Controls whether free-plan users see an uninstall prompt popup in the extension.",
+      "details": "When Enabled, UninstallPopup is set to false. Values are REG_SZ strings (true/false), not DWORD.",
+      "regValEnabled": "false",
+      "regValDisabled": "true"
+    },
+    {
+      "policyName": "DisableWhatsNewAutoOpen_ChromeExt",
+      "valueName": "DisableWhatsNewAutoOpen",
+      "friendlyName": "Disable What's New Auto-Open",
+      "category": "Browser Extension",
+      "scope": "Extension",
+      "product": "Chrome",
+      "branch": "ChromeExt",
+      "controlType": "StringToggle",
+      "summary": "Stops the What's New page from automatically opening when the extension updates.",
+      "details": "When Enabled, DisableWhatsNewAutoOpen is set to true. Values are REG_SZ strings (true/false), not DWORD.",
+      "regValEnabled": "true",
+      "regValDisabled": "false"
+    },
+    {
+      "policyName": "DisableExpress_EdgeExt",
+      "valueName": "DisableExpress",
+      "friendlyName": "Disable Express Features",
+      "category": "Browser Extension",
+      "scope": "Extension",
+      "product": "Edge",
+      "branch": "EdgeExt",
+      "controlType": "StringToggle",
+      "summary": "Disables Adobe Express features (such as Edit Image) in the extension.",
+      "details": "When Enabled, DisableExpress is set to true. Values are REG_SZ strings (true/false), not DWORD.",
+      "regValEnabled": "true",
+      "regValDisabled": "false"
+    },
+    {
+      "policyName": "UsageMeasurement_EdgeExt",
+      "valueName": "UsageMeasurement",
+      "friendlyName": "Disable Extension Usage Analytics",
+      "category": "Browser Extension",
+      "scope": "Extension",
+      "product": "Edge",
+      "branch": "EdgeExt",
+      "controlType": "StringToggle",
+      "summary": "Controls whether the Adobe Acrobat browser extension collects and sends usage analytics.",
+      "details": "When Enabled, UsageMeasurement is set to false. This is separate from the desktop application's bUsageMeasurement preference. Values are REG_SZ strings (true/false), not DWORD.",
+      "regValEnabled": "false",
+      "regValDisabled": "true"
+    },
+    {
+      "policyName": "DisableGenAI_EdgeExt",
+      "valueName": "DisableGenAI",
+      "friendlyName": "Disable Generative AI Features",
+      "category": "Browser Extension",
+      "scope": "Extension",
+      "product": "Edge",
+      "branch": "EdgeExt",
+      "controlType": "StringToggle",
+      "summary": "Disables generative AI features in the Adobe Acrobat browser extension.",
+      "details": "When Enabled, DisableGenAI is set to true. Values are REG_SZ strings (true/false), not DWORD.",
+      "regValEnabled": "true",
+      "regValDisabled": "false"
+    },
+    {
+      "policyName": "OpenHelpx_EdgeExt",
+      "valueName": "OpenHelpx",
+      "friendlyName": "Disable Help Tab on Install",
+      "category": "Browser Extension",
+      "scope": "Extension",
+      "product": "Edge",
+      "branch": "EdgeExt",
+      "controlType": "StringToggle",
+      "summary": "Controls whether the extension opens its help or onboarding tab automatically on install.",
+      "details": "When Enabled, OpenHelpx is set to false and the help tab does not open. Values are REG_SZ strings (true/false), not DWORD.",
+      "regValEnabled": "false",
+      "regValDisabled": "true"
+    },
+    {
+      "policyName": "UninstallPopup_EdgeExt",
+      "valueName": "UninstallPopup",
+      "friendlyName": "Disable Uninstall Popup for Free Users",
+      "category": "Browser Extension",
+      "scope": "Extension",
+      "product": "Edge",
+      "branch": "EdgeExt",
+      "controlType": "StringToggle",
+      "summary": "Controls whether free-plan users see an uninstall prompt popup in the extension.",
+      "details": "When Enabled, UninstallPopup is set to false. Values are REG_SZ strings (true/false), not DWORD.",
+      "regValEnabled": "false",
+      "regValDisabled": "true"
+    },
+    {
+      "policyName": "DisableWhatsNewAutoOpen_EdgeExt",
+      "valueName": "DisableWhatsNewAutoOpen",
+      "friendlyName": "Disable What's New Auto-Open",
+      "category": "Browser Extension",
+      "scope": "Extension",
+      "product": "Edge",
+      "branch": "EdgeExt",
+      "controlType": "StringToggle",
+      "summary": "Stops the What's New page from automatically opening when the extension updates.",
+      "details": "When Enabled, DisableWhatsNewAutoOpen is set to true. Values are REG_SZ strings (true/false), not DWORD.",
+      "regValEnabled": "true",
+      "regValDisabled": "false"
     },
     {
       "policyName": "tBaseFolderNameDC_User",
@@ -11369,5 +11536,6 @@
       "regValEnabled": 0,
       "regValDisabled": 1
     }
-  ]
+  ],
+  "revision": "4.0"
 }

@@ -6,7 +6,7 @@
 
 # Adobe DC Settings (Device)
 
-Complete list of 157 unique Adobe DC settings (159 table entries where the same `ValueName` has more than one friendly name) in the combined v3.9 ADMX templates, grouped by product applicability.
+Complete list of 157 unique Adobe DC settings (159 table entries where the same `ValueName` has more than one friendly name) in the combined v4.0 ADMX templates, grouped by product applicability.
 
 - Settings marked ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) are under **Adobe DC > Non-Policy Settings** in Group Policy or Intune, not under **Adobe DC > Acrobat & Reader DC**. Configure the sub-node that matches your installed architecture: **Acrobat & Reader DC (64-bit)** (64-bit Acrobat and unified 64-bit Reader), **Acrobat DC (32-bit)** (32-bit Acrobat), or **Reader DC (32-bit)** (32-bit Reader).
 

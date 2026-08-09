@@ -14,6 +14,7 @@ If you spot something wrong or missing, please open an issue or a pull request. 
 
 | Date | Contributor | Contribution |
 |---|---|---|
+| 9 August 2026 | [virtitnerd](https://github.com/virtitnerd) | [PR #9](https://github.com/systmworks/Adobe-DC-ADMX/pull/9) - browser extension managed-storage policies for Chrome and Edge (v4.0) |
 | 8 August 2026 | [korzynski](https://github.com/korzynski) | [PR #14](https://github.com/systmworks/Adobe-DC-ADMX/pull/14) - external browser sign-in and federated login domain (v3.9) |
 | 4 August 2026 | [wauifsafis](https://github.com/wauifsafis) | Issue #13 - Protected View missing for Reader (v3.7) |
 | 22 July 2026 | [robertRuncak](https://github.com/robertRuncak) | Issues #11 and #12 - Non-Policy badge and legend on the curated guides (v3.6) |

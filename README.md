@@ -12,6 +12,7 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 |------|-------------|
 | [Adobe DC Settings (Device)](Documentation/adobe-settings-device.md) | Machine-scope Acrobat + Reader policies |
 | [Adobe DC Settings (User)](Documentation/adobe-settings-user.md) | User-scope Acrobat + Reader policies |
+| [Browser Extension Settings](Documentation/browser-extension.md) | Chrome and Edge extension managed-storage policies |
 | [Suppress Nags & Upsells](Documentation/reduce-nags.md) | Nag and upsell controls (Device and User) |
 | [Security Hardening](Documentation/security-hardening.md) | Recommended security configurations (Device and User) |
 | [Screenshots](Documentation/screenshots.md) | GPMC and Intune screenshots |
@@ -19,11 +20,11 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 | [Changelog (Retired)](Documentation/changelog-retired.md) | Legacy device-only and user-only ADMX version history |
 | [Contributors](Documentation/contributors.md) | Community contributors and acknowledgements |
 
-These ADMX/ADML templates (v3.9) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
+These ADMX/ADML templates (v4.0) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
 
 | ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
 |------|-------|----------|
-| `AdobeDC.admx` + ADML | **Adobe DC** (Computer + User) | 812 (297 machine + 515 user) |
+| `AdobeDC.admx` + ADML | **Adobe DC** (Computer + User) | 824 (309 machine + 515 user) |
 
 ### Configuration tree
 
@@ -35,13 +36,14 @@ flowchart TD
     Computer --> AR["Acrobat & Reader DC<br/>Policies\\Adobe\\Adobe Acrobat\\DC (Acrobat x86/x64 + modern x64 Reader)"]
     Computer --> R32["Reader DC (32-bit)<br/>Policies\\Adobe\\Acrobat Reader\\DC (legacy 32-bit Reader)"]
     Computer --> NP["Non-Policy Settings<br/>architecture-specific non-Policies paths"]
+    Computer --> BE["Browser Extensions<br/>Chrome + Edge 3rdparty extension policy paths"]
     User --> UA["Acrobat DC (User)"]
     User --> UR["Reader DC (User)<br/>HKCU prefs; leaf names carry the (User) suffix"]
 ```
 
 ## Category Overview (Device)
 
-> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product, so Reader + Acrobat column totals are higher than the number of unique settings. The ADMX contains **297** machine policy entries (**157** unique machine settings after removing non-ADMX `tBuiltInPermList`; architecture-specific non-policy settings are emitted separately for x64 and x86). Overall template: **297** machine + **515** user = **812** policy entries.
+> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product, so Reader + Acrobat column totals are higher than the number of unique settings. The ADMX contains **309** machine policy entries (**157** unique Adobe machine settings after removing non-ADMX `tBuiltInPermList`; architecture-specific non-policy settings are emitted separately for x64 and x86; plus **12** browser extension entries). Overall template: **309** machine + **515** user = **824** policy entries.
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![Overview](https://img.shields.io/badge/Overview-316dca?style=flat-square) | ![Reader](https://img.shields.io/badge/Reader-316dca?style=flat-square) | ![Acrobat](https://img.shields.io/badge/Acrobat-316dca?style=flat-square) |
 |----------|----------|:------:|:-------:|
@@ -77,16 +79,17 @@ flowchart TD
 ## Migration and important notes
 
 > [!WARNING]
-> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v3.9**.
+> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v4.0**.
 >
 > Convert them first with [`Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1), then re-import.
 >
-> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1/v3.2/v3.3/v3.4/v3.5 to v3.9 keeps the same namespace and policy names for existing settings. **v3.4+ releases are additive-only** except where a changelog entry documents a one-time control-type correction - re-upload preserves existing Intune/GPO bindings for all other settings.
+> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1/v3.2/v3.3/v3.4/v3.5 to v4.0 keeps the same namespace and policy names for existing settings. **v3.4+ releases are additive-only** except where a changelog entry documents a one-time control-type correction - re-upload preserves existing Intune/GPO bindings for all other settings.
 
 | ![Note](https://img.shields.io/badge/Note-316dca?style=flat-square) |
 |------|
 | x64 Reader (Unified Installer) is configured under **Acrobat & Reader DC** (Acrobat hive), not the Reader hive. Configure legacy 32-bit Reader under **Reader DC (32-bit)**. |
 | Some machine settings write outside `HKLM\SOFTWARE\Policies` and appear under **Adobe DC > Non-Policy Settings** with architecture-specific sub-nodes (**Acrobat & Reader DC (64-bit)**, **Acrobat DC (32-bit)**, **Reader DC (32-bit)**). See curated guides for marked entries. |
+| Browser extension settings write to each browser's 3rdparty extension policy path under **Adobe DC > Browser Extensions** (Google Chrome / Microsoft Edge). Values are REG_SZ strings, not DWORD. See [Browser Extension Settings](Documentation/browser-extension.md). |
 | Several ``bToggle*`` policies use inverted registry values (DWORD 0 = feature ON, DWORD 1 = feature OFF). |
 
 **Sharing & responsibility** - Built for the community, shared with good intentions. Use at your own risk. The author accepts no responsibility for any outcomes resulting from the use of these files. Always verify registry paths and values, and test in a safe environment first. If you find an issue or have a suggestion, contributions are welcome.

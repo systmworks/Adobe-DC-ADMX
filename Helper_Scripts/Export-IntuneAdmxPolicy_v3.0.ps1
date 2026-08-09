@@ -9,7 +9,7 @@
 .PARAMETER PolicyName
     Policy display name or partial match. When omitted, prompts from the numbered list.
 .NOTES
-    Version 3.0 — see CHANGELOG.md. Requires Microsoft.Graph.Authentication (Install-Module -Scope CurrentUser). Scope DeviceManagementConfiguration.ReadWrite.All (shared with Import).
+    Version 3.0 - see CHANGELOG.md. Requires Microsoft.Graph.Authentication (Install-Module -Scope CurrentUser). Scope DeviceManagementConfiguration.ReadWrite.All (shared with Import).
     Licensed CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/
 .EXAMPLE
     .\Export-IntuneAdmxPolicy_v3.0.ps1

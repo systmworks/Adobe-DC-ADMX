@@ -10,6 +10,22 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 
 ---
 
+## v4.0 - 9 August 2026
+
+**824 policies** (309 machine + 515 user) - Browser Extensions leaf for Chrome and Edge.
+
+- Added **Browser Extensions** computer branch with **Google Chrome** and **Microsoft Edge** sub-nodes (12 new machine policies).
+- Six managed-storage settings from the Adobe Acrobat extension `schema.json` (Chrome 26.8.1.5 / Edge 26.7.1.0): `OpenHelpx`, `UsageMeasurement`, `UninstallPopup`, `DisableGenAI`, `DisableWhatsNewAutoOpen`, `DisableExpress`.
+- New `StringToggle` control type writes REG_SZ `true`/`false` via ADMX `<string>` enabled/disabled values (per-row polarity: three settings harden with `false`, three with `true`).
+- Registry paths: `HKLM\SOFTWARE\Policies\Google\Chrome\3rdparty\extensions\efaidnbmnnnibpcajpcglclefindmkaj\policy` and `HKLM\SOFTWARE\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy`.
+- Documentation: new [Browser Extension Settings](browser-extension.md) page.
+
+*Thanks to **[@virtitnerd](https://github.com/virtitnerd)** for proposing browser extension managed-storage coverage in [PR #9](https://github.com/systmworks/Adobe-DC-ADMX/pull/9).*
+
+**Upgrade:** Re-upload ADMX + ADML. Additive only; all v3.9 bindings are preserved.
+
+---
+
 ## v3.9 - 8 August 2026
 
 **812 policies** (297 machine + 515 user) - Acrobat sign-in and federated login domain.

@@ -2,12 +2,12 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="3.9" schemaVersion="1.0"
+  revision="4.0" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="3.9" />
+  <resources minRequiredRevision="4.0" />
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SupportedAcrobatReaderPolicies)" name="SupportedAcrobatReaderPolicies"/>
@@ -15,6 +15,8 @@
       <definition displayName="$(string.SupportedAcrobatX64)" name="SupportedAcrobatX64"/>
       <definition displayName="$(string.SupportedAcrobatX86)" name="SupportedAcrobatX86"/>
       <definition displayName="$(string.SupportedReaderX86)" name="SupportedReaderX86"/>
+      <definition displayName="$(string.SupportedChromeExt)" name="SupportedChromeExt"/>
+      <definition displayName="$(string.SupportedEdgeExt)" name="SupportedEdgeExt"/>
       <definition displayName="$(string.SupportedAcrobatDC_User)" name="SupportedAcrobatDC_User"/>
       <definition displayName="$(string.SupportedReaderDC_User)" name="SupportedReaderDC_User"/>
     </definitions>
@@ -39,6 +41,15 @@
     </category>
     <category displayName="$(string.NonPol_ReaderX86)" name="NonPol_ReaderX86">
       <parentCategory ref="NonPolicySettings"/>
+    </category>
+    <category displayName="$(string.BrowserExtensions)" name="BrowserExtensions">
+      <parentCategory ref="AdobeCategory"/>
+    </category>
+    <category displayName="$(string.BrowserExt_Chrome)" name="BrowserExt_Chrome">
+      <parentCategory ref="BrowserExtensions"/>
+    </category>
+    <category displayName="$(string.BrowserExt_Edge)" name="BrowserExt_Edge">
+      <parentCategory ref="BrowserExtensions"/>
     </category>
     <category displayName="$(string.Cat_CloudConnectors)" name="CloudConnectors_AcrobatCategory">
       <parentCategory ref="AcrobatReaderPolicies"/>
@@ -3194,6 +3205,122 @@
       <supportedOn ref="SupportedReaderX86"/>
       <enabledValue><decimal value="1" /></enabledValue>
       <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Browser Extensions - Google Chrome -->
+
+    <!-- Browser Extension -->
+
+    <!-- Disable Express Features - [DisableExpress] -->
+    <policy class="Machine" displayName="$(string.DisableExpress_ChromeExt)" explainText="$(string.DisableExpress_ChromeExt_Explain)" key="SOFTWARE\Policies\Google\Chrome\3rdparty\extensions\efaidnbmnnnibpcajpcglclefindmkaj\policy"
+      name="DisableExpress_ChromeExt" valueName="DisableExpress">
+      <parentCategory ref="BrowserExt_Chrome"/>
+      <supportedOn ref="SupportedChromeExt"/>
+      <enabledValue><string>true</string></enabledValue>
+      <disabledValue><string>false</string></disabledValue>
+    </policy>
+
+    <!-- Disable Extension Usage Analytics - [UsageMeasurement] -->
+    <policy class="Machine" displayName="$(string.UsageMeasurement_ChromeExt)" explainText="$(string.UsageMeasurement_ChromeExt_Explain)" key="SOFTWARE\Policies\Google\Chrome\3rdparty\extensions\efaidnbmnnnibpcajpcglclefindmkaj\policy"
+      name="UsageMeasurement_ChromeExt" valueName="UsageMeasurement">
+      <parentCategory ref="BrowserExt_Chrome"/>
+      <supportedOn ref="SupportedChromeExt"/>
+      <enabledValue><string>false</string></enabledValue>
+      <disabledValue><string>true</string></disabledValue>
+    </policy>
+
+    <!-- Disable Generative AI Features - [DisableGenAI] -->
+    <policy class="Machine" displayName="$(string.DisableGenAI_ChromeExt)" explainText="$(string.DisableGenAI_ChromeExt_Explain)" key="SOFTWARE\Policies\Google\Chrome\3rdparty\extensions\efaidnbmnnnibpcajpcglclefindmkaj\policy"
+      name="DisableGenAI_ChromeExt" valueName="DisableGenAI">
+      <parentCategory ref="BrowserExt_Chrome"/>
+      <supportedOn ref="SupportedChromeExt"/>
+      <enabledValue><string>true</string></enabledValue>
+      <disabledValue><string>false</string></disabledValue>
+    </policy>
+
+    <!-- Disable Help Tab on Install - [OpenHelpx] -->
+    <policy class="Machine" displayName="$(string.OpenHelpx_ChromeExt)" explainText="$(string.OpenHelpx_ChromeExt_Explain)" key="SOFTWARE\Policies\Google\Chrome\3rdparty\extensions\efaidnbmnnnibpcajpcglclefindmkaj\policy"
+      name="OpenHelpx_ChromeExt" valueName="OpenHelpx">
+      <parentCategory ref="BrowserExt_Chrome"/>
+      <supportedOn ref="SupportedChromeExt"/>
+      <enabledValue><string>false</string></enabledValue>
+      <disabledValue><string>true</string></disabledValue>
+    </policy>
+
+    <!-- Disable Uninstall Popup for Free Users - [UninstallPopup] -->
+    <policy class="Machine" displayName="$(string.UninstallPopup_ChromeExt)" explainText="$(string.UninstallPopup_ChromeExt_Explain)" key="SOFTWARE\Policies\Google\Chrome\3rdparty\extensions\efaidnbmnnnibpcajpcglclefindmkaj\policy"
+      name="UninstallPopup_ChromeExt" valueName="UninstallPopup">
+      <parentCategory ref="BrowserExt_Chrome"/>
+      <supportedOn ref="SupportedChromeExt"/>
+      <enabledValue><string>false</string></enabledValue>
+      <disabledValue><string>true</string></disabledValue>
+    </policy>
+
+    <!-- Disable What's New Auto-Open - [DisableWhatsNewAutoOpen] -->
+    <policy class="Machine" displayName="$(string.DisableWhatsNewAutoOpen_ChromeExt)" explainText="$(string.DisableWhatsNewAutoOpen_ChromeExt_Explain)" key="SOFTWARE\Policies\Google\Chrome\3rdparty\extensions\efaidnbmnnnibpcajpcglclefindmkaj\policy"
+      name="DisableWhatsNewAutoOpen_ChromeExt" valueName="DisableWhatsNewAutoOpen">
+      <parentCategory ref="BrowserExt_Chrome"/>
+      <supportedOn ref="SupportedChromeExt"/>
+      <enabledValue><string>true</string></enabledValue>
+      <disabledValue><string>false</string></disabledValue>
+    </policy>
+
+    <!-- Browser Extensions - Microsoft Edge -->
+
+    <!-- Browser Extension -->
+
+    <!-- Disable Express Features - [DisableExpress] -->
+    <policy class="Machine" displayName="$(string.DisableExpress_EdgeExt)" explainText="$(string.DisableExpress_EdgeExt_Explain)" key="SOFTWARE\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy"
+      name="DisableExpress_EdgeExt" valueName="DisableExpress">
+      <parentCategory ref="BrowserExt_Edge"/>
+      <supportedOn ref="SupportedEdgeExt"/>
+      <enabledValue><string>true</string></enabledValue>
+      <disabledValue><string>false</string></disabledValue>
+    </policy>
+
+    <!-- Disable Extension Usage Analytics - [UsageMeasurement] -->
+    <policy class="Machine" displayName="$(string.UsageMeasurement_EdgeExt)" explainText="$(string.UsageMeasurement_EdgeExt_Explain)" key="SOFTWARE\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy"
+      name="UsageMeasurement_EdgeExt" valueName="UsageMeasurement">
+      <parentCategory ref="BrowserExt_Edge"/>
+      <supportedOn ref="SupportedEdgeExt"/>
+      <enabledValue><string>false</string></enabledValue>
+      <disabledValue><string>true</string></disabledValue>
+    </policy>
+
+    <!-- Disable Generative AI Features - [DisableGenAI] -->
+    <policy class="Machine" displayName="$(string.DisableGenAI_EdgeExt)" explainText="$(string.DisableGenAI_EdgeExt_Explain)" key="SOFTWARE\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy"
+      name="DisableGenAI_EdgeExt" valueName="DisableGenAI">
+      <parentCategory ref="BrowserExt_Edge"/>
+      <supportedOn ref="SupportedEdgeExt"/>
+      <enabledValue><string>true</string></enabledValue>
+      <disabledValue><string>false</string></disabledValue>
+    </policy>
+
+    <!-- Disable Help Tab on Install - [OpenHelpx] -->
+    <policy class="Machine" displayName="$(string.OpenHelpx_EdgeExt)" explainText="$(string.OpenHelpx_EdgeExt_Explain)" key="SOFTWARE\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy"
+      name="OpenHelpx_EdgeExt" valueName="OpenHelpx">
+      <parentCategory ref="BrowserExt_Edge"/>
+      <supportedOn ref="SupportedEdgeExt"/>
+      <enabledValue><string>false</string></enabledValue>
+      <disabledValue><string>true</string></disabledValue>
+    </policy>
+
+    <!-- Disable Uninstall Popup for Free Users - [UninstallPopup] -->
+    <policy class="Machine" displayName="$(string.UninstallPopup_EdgeExt)" explainText="$(string.UninstallPopup_EdgeExt_Explain)" key="SOFTWARE\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy"
+      name="UninstallPopup_EdgeExt" valueName="UninstallPopup">
+      <parentCategory ref="BrowserExt_Edge"/>
+      <supportedOn ref="SupportedEdgeExt"/>
+      <enabledValue><string>false</string></enabledValue>
+      <disabledValue><string>true</string></disabledValue>
+    </policy>
+
+    <!-- Disable What's New Auto-Open - [DisableWhatsNewAutoOpen] -->
+    <policy class="Machine" displayName="$(string.DisableWhatsNewAutoOpen_EdgeExt)" explainText="$(string.DisableWhatsNewAutoOpen_EdgeExt_Explain)" key="SOFTWARE\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy"
+      name="DisableWhatsNewAutoOpen_EdgeExt" valueName="DisableWhatsNewAutoOpen">
+      <parentCategory ref="BrowserExt_Edge"/>
+      <supportedOn ref="SupportedEdgeExt"/>
+      <enabledValue><string>true</string></enabledValue>
+      <disabledValue><string>false</string></disabledValue>
     </policy>
 
     <!-- Adobe Acrobat DC (User) - policies -->
