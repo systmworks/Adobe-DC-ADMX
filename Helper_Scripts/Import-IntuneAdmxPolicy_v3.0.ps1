@@ -4,42 +4,19 @@
 .SYNOPSIS
     Imports an Intune Administrative Template (ADMX-backed) policy from JSON.
 .DESCRIPTION
-    Re-creates an Administrative Template policy that was previously exported
-    by Export-IntuneAdmxPolicy_v2.0.ps1.  Uses stable identifiers (categoryPath,
-    displayName, classType) to look up the correct definition GUIDs in the
-    current tenant, so the import works even after the ADMX has been deleted
-    and re-uploaded with new GUIDs.
-
-    On launch the script opens a file-browse dialog (or falls back to a
-    paste prompt) so you can select the JSON file interactively.  You are
-    then prompted for the new policy display name (the exported name is
-    offered as the default).  Pass -PolicyName to skip the prompt, e.g. in
-    pipelines or automated runs.
-
-    No command-line parameters are required for interactive use in VS Code;
-    just Run/Debug with the default configuration.
+    Re-creates a policy exported by Export-IntuneAdmxPolicy_v3.0.ps1 (or v2.0). Resolves definition GUIDs via categoryPath, displayName, and classType so import works after ADMX re-upload.
+    File-browse dialog (or paste prompt) and policy-name prompt by default; pass -FilePath and/or -PolicyName for non-interactive use. Optional -SettingDelayMs if Graph throttles large imports.
 .PARAMETER FilePath
-    Path to the exported JSON file.  When omitted, a file-browse dialog
-    (or paste prompt) is shown.
+    Path to exported JSON. When omitted, file-browse dialog or paste prompt.
 .PARAMETER PolicyName
-    Display name for the imported policy.  When omitted, the script prompts
-    interactively (showing the exported name as the default).  Supply this
-    parameter to skip the prompt for non-interactive / automated runs.
-.PARAMETER SettingDelayMs
-    Milliseconds to wait between each setting POST (default 300).  Helps avoid
-    Graph throttling and MSAL interactive re-auth popups on large imports.
+    Display name for the new policy. When omitted, prompts interactively (exported name is the default).
 .NOTES
-    Requires the Microsoft.Graph.Authentication module:
-      Install-Module Microsoft.Graph.Authentication -Scope CurrentUser
-
-    Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
-    https://creativecommons.org/licenses/by-sa/4.0/
+    Version 3.0 — see CHANGELOG.md. Requires Microsoft.Graph.Authentication (Install-Module -Scope CurrentUser). Scope DeviceManagementConfiguration.ReadWrite.All (shared with Export).
+    Licensed CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/
 .EXAMPLE
-    .\Import-IntuneAdmxPolicy_v2.0.ps1
-    Interactive run - prompts for file and policy name.
+    .\Import-IntuneAdmxPolicy_v3.0.ps1
 .EXAMPLE
-    .\Import-IntuneAdmxPolicy_v2.0.ps1 -PolicyName 'Firefox Hardening - TEST'
-    Skips the name prompt and creates the policy with the given name.
+    .\Import-IntuneAdmxPolicy_v3.0.ps1 -FilePath '.\Exports\policy.json' -PolicyName 'Test Import'
 #>
 [CmdletBinding()]
 param(
@@ -50,7 +27,7 @@ param(
     [string]$PolicyName,
 
     [Parameter(Mandatory = $false)]
-    [int]$SettingDelayMs = 300
+    [int]$SettingDelayMs = 0
 )
 
 Set-StrictMode -Version Latest
@@ -58,83 +35,93 @@ $ErrorActionPreference = 'Stop'
 $InformationPreference = 'Continue'
 Clear-Host
 
-# Full base URL for odata.bind values in POST bodies (import expects canonical https URLs).
+# Absolute HTTPS base for odata.bind values in POST bodies (Graph expects canonical URLs).
 $graphJsonBase = 'https://graph.microsoft.com/beta'
-# Relative API root for Invoke-MgGraphRequest GETs (avoids "Invalid URI" with some SDK builds).
+# Relative API root for Invoke-MgGraphRequest URIs (required for Set-MgRequestContext retry handling).
 $graphApiRoot = '/beta'
+
+# Cap silent token refresh attempts per run (403 is never retried).
+$script:AuthRefreshCount = 0
+$script:MaxAuthRefresh = 3
+$script:FullCatalogLoaded = $false
 
 # ── Connect to Microsoft Graph ───────────────────────────────────────────────
 
-$requiredScopes = @('DeviceManagementConfiguration.ReadWrite.All')
+$script:requiredScopes = @('DeviceManagementConfiguration.ReadWrite.All')
+
+function Test-GraphSession([string[]]$Scopes) {
+    $ctx = Get-MgContext -ErrorAction SilentlyContinue
+    if ($null -eq $ctx) { return $false }
+    foreach ($scope in $Scopes) {
+        if ($ctx.Scopes -notcontains $scope) { return $false }
+    }
+    return $true
+}
 
 function Connect-WithFallback([string[]]$Scopes) {
     try {
-        Connect-MgGraph -Scopes $Scopes -NoWelcome -ContextScope Process -ErrorAction Stop
+        # CurrentUser scope persists the MSAL cache so repeat runs and mid-import refresh stay silent.
+        Connect-MgGraph -Scopes $Scopes -NoWelcome -ErrorAction Stop
+        return
     } catch {
-        Write-Information 'Browser popup failed, trying with WAM disabled...'
-        $env:MSAL_INTERACTIVE_BROWSER_DISABLE_WAM = '1'
-        try {
-            Connect-MgGraph -Scopes $Scopes -NoWelcome -ContextScope Process -ErrorAction Stop
-        } catch {
-            Write-Information 'Browser still unavailable, falling back to device-code flow...'
-            Write-Information '  (You will need to open a browser and enter a code)'
-            Connect-MgGraph -Scopes $Scopes -NoWelcome -UseDeviceCode -ContextScope Process
+        Write-Information "Sign-in attempt failed: $($_.Exception.Message)"
+    }
+
+    # The SDK can give up while a browser or WAM prompt is still on screen, so a failure does
+    # not prove no session was established. Re-check before discarding it and prompting again.
+    Write-Information '  Checking for up to 10s in case the sign-in completes...'
+    for ($i = 0; $i -lt 5; $i++) {
+        Start-Sleep -Seconds 2
+        if (Test-GraphSession $Scopes) {
+            Write-Information '  Sign-in completed; keeping the established session.'
+            return
         }
     }
+
+    Write-Information '  Retrying with WAM disabled...'
+    $env:MSAL_INTERACTIVE_BROWSER_DISABLE_WAM = '1'
+    try {
+        Connect-MgGraph -Scopes $Scopes -NoWelcome -ErrorAction Stop
+        return
+    } catch {
+        Write-Information "  Retry failed: $($_.Exception.Message)"
+    }
+
+    Write-Information '  Browser unavailable, falling back to device-code flow...'
+    Write-Information '  (You will need to open a browser and enter a code)'
+    # Device-code flow keeps process scope so the token is not persisted to disk.
+    Connect-MgGraph -Scopes $Scopes -NoWelcome -UseDeviceCode -ContextScope Process
 }
 
 function Get-TenantDisplayName {
     try {
-        $org = Invoke-MgGraphRequest -Method GET -Uri 'https://graph.microsoft.com/v1.0/organization' -ErrorAction Stop
+        $org = Invoke-MgGraphRequest -Method GET -Uri '/v1.0/organization' -OutputType PSObject -ErrorAction Stop
         if ($org.value -and $org.value.Count -gt 0) { return $org.value[0].displayName }
-    } catch { }
+    } catch {
+        # Best effort only; the caller falls back to showing the tenant GUID.
+        Write-Verbose "Tenant name lookup failed: $($_.Exception.Message)"
+    }
     return $null
 }
 
 function Get-SafeProperty($obj, [string]$name, $default = $null) {
     if ($null -eq $obj) { return $default }
-    if ($obj -is [System.Collections.IDictionary]) {
-        if ($obj.Contains($name)) { return $obj[$name] }
-        return $default
-    }
     $prop = $obj.PSObject.Properties[$name]
     if ($prop) { return $prop.Value }
     return $default
-}
-
-function Expand-ODataValue([object]$values) {
-    $out = [System.Collections.Generic.List[object]]::new()
-    if ($null -eq $values) { return $out }
-    if ($values -is [string]) { $out.Add($values); return $out }
-    if ($values -is [System.Array]) {
-        foreach ($item in $values) { if ($null -ne $item) { $out.Add($item) } }
-        return $out
-    }
-    # Invoke-MgGraphRequest may return Newtonsoft JObject, JsonElement, etc. Some implement IList
-    # with one entry per JSON property (e.g. 5 keys -> 5 bogus "rows"). JSON round-trip yields
-    # normal PSCustomObject or Object[] that enumerate correctly.
-    try {
-        $json = $values | ConvertTo-Json -Depth 100 -Compress -ErrorAction Stop
-        $round = $json | ConvertFrom-Json -ErrorAction Stop
-        if ($round -is [System.Array]) {
-            foreach ($item in $round) { if ($null -ne $item) { $out.Add($item) } }
-        } else {
-            $out.Add($round)
-        }
-    } catch {
-        $out.Add($values)
-    }
-    return $out
 }
 
 function Show-TenantAndConfirm([string[]]$Scopes) {
     $ctx = Get-MgContext -ErrorAction SilentlyContinue
     $tenantName = Get-TenantDisplayName
     $tenantLabel = if ($tenantName) { $tenantName } else { $ctx.TenantId }
+    $dmScopes = @($ctx.Scopes | Where-Object { $_ -like 'DeviceManagementConfiguration.*' })
+    $scopeLabel = if ($dmScopes.Count -gt 0) { $dmScopes -join ', ' } else { '(none listed)' }
     Write-Host ''
     Write-Host '  Connected to Microsoft Graph' -ForegroundColor Cyan
     Write-Host "  Account: $($ctx.Account)" -ForegroundColor White
     Write-Host "  Tenant:  $tenantLabel" -ForegroundColor White
+    Write-Host "  Consented scopes (all-time): $scopeLabel" -ForegroundColor White
     Write-Host ''
     Write-Host '  [1] Continue with this tenant' -ForegroundColor White
     Write-Host '  [2] Switch to a different tenant (disconnect & re-auth)' -ForegroundColor White
@@ -147,32 +134,44 @@ function Show-TenantAndConfirm([string[]]$Scopes) {
     }
 }
 
+function Write-GraphForbiddenHelp {
+    Write-Host ''
+    Write-Host '  Graph returned 403 Forbidden on a write operation.' -ForegroundColor Red
+    Write-Host '  Reads succeeded, so Intune refused the write; this is not a sign-in problem.' -ForegroundColor Yellow
+    Write-Host '  Common causes:' -ForegroundColor Yellow
+    Write-Host '    - Account lacks Intune Administrator / Intune Policy Administrator in this tenant' -ForegroundColor Yellow
+    Write-Host '    - PIM role not activated' -ForegroundColor Yellow
+    Write-Host '    - Wrong tenant selected at the prompt above' -ForegroundColor Yellow
+    Write-Host '    - Intune RBAC scope tags exclude this policy type' -ForegroundColor Yellow
+    Write-Host '  A role activated in PIM after sign-in is not in the cached token. Activate the role,' -ForegroundColor Yellow
+    Write-Host '  then choose [2] on the tenant prompt to get a new token, then retry.' -ForegroundColor Yellow
+    Write-Host ''
+}
+
+# Reuse an existing Graph session when present. Never disconnect here: Disconnect-MgGraph
+# clears the persisted MSAL cache, which forces a fresh sign-in for every later run.
 $ctx = Get-MgContext -ErrorAction SilentlyContinue
 if ($null -eq $ctx) {
     Write-Information 'Connecting to Microsoft Graph...'
-    Connect-WithFallback $requiredScopes
+    Connect-WithFallback $script:requiredScopes
 } else {
-    $missing = $requiredScopes | Where-Object { $ctx.Scopes -notcontains $_ }
+    $missing = $script:requiredScopes | Where-Object { $ctx.Scopes -notcontains $_ }
     if ($missing) {
         Write-Information 'Re-connecting with required scopes...'
-        Connect-WithFallback $requiredScopes
+        Connect-WithFallback $script:requiredScopes
     }
 }
-Show-TenantAndConfirm $requiredScopes
+Show-TenantAndConfirm $script:requiredScopes
 
-function Test-IsLikelyGraphThrottleError([System.Management.Automation.ErrorRecord]$err) {
-    $text = $err.Exception.Message
-    $inner = $err.Exception.InnerException
-    if ($inner) { $text += ' ' + $inner.Message }
-    if ($text -match 'TooManyRequests|429|Throttled|ThrottledByInfra|too many retries') { return $true }
-    return $false
-}
+Set-MgRequestContext -MaxRetry 10 -RetryDelay 5 | Out-Null
 
 function Test-IsLikelyGraphAuthError([System.Management.Automation.ErrorRecord]$err) {
     $text = $err.Exception.Message
     $inner = $err.Exception.InnerException
     if ($inner) { $text += ' ' + $inner.Message }
-    if ($text -match '401|403|Unauthorized|Authentication|InvalidAuthenticationToken|token has expired|Lifetime validation failed') { return $true }
+    # 403 is permissions denied, not an expired token.
+    if ($text -match '\b403\b|Forbidden') { return $false }
+    if ($text -match '401|Unauthorized|Authentication|InvalidAuthenticationToken|token has expired|Lifetime validation failed') { return $true }
     return $false
 }
 
@@ -195,33 +194,6 @@ function ConvertTo-GraphRequestUri([string]$UriOrUrl) {
     return $s
 }
 
-function Get-GraphRetryAfterSeconds([System.Management.Automation.ErrorRecord]$err) {
-    $defaultSec = 60
-    $ex = $err.Exception
-    while ($null -ne $ex) {
-        try {
-            $respProp = $ex.GetType().GetProperty('Response')
-            if ($respProp) {
-                $resp = $respProp.GetValue($ex)
-                if ($null -ne $resp -and $resp.Headers) {
-                    $ra = $resp.Headers.RetryAfter
-                    if ($null -ne $ra -and $null -ne $ra.Delta) {
-                        $s = [int][math]::Ceiling($ra.Delta.TotalSeconds)
-                        if ($s -gt 0 -and $s -le 600) { return $s }
-                    }
-                }
-            }
-        } catch { }
-        $ex = $ex.InnerException
-    }
-    $msg = $err.Exception.Message
-    if ($msg -match 'Retry-After[:\s"]+(\d+)') {
-        $s = [int]$Matches[1]
-        if ($s -gt 0 -and $s -le 600) { return $s }
-    }
-    return $defaultSec
-}
-
 function Invoke-GraphRequestWithRecovery {
     param(
         [Parameter(Mandatory = $true)]
@@ -236,47 +208,30 @@ function Invoke-GraphRequestWithRecovery {
         [string]$Body,
 
         [Parameter(Mandatory = $false)]
-        [string]$ContentType = 'application/json',
-
-        [Parameter(Mandatory = $false)]
-        [int]$MaxOuterAttempts = 4
+        [string]$ContentType = 'application/json'
     )
-    $reqUri = if ($Method -eq 'GET') { ConvertTo-GraphRequestUri $RequestUri } else { $RequestUri }
-    $attempt = 0
-    $authRetried = $false
+    $reqUri = ConvertTo-GraphRequestUri $RequestUri
     while ($true) {
-        $attempt++
         try {
             if ($Method -eq 'GET') {
-                return Invoke-MgGraphRequest -Method GET -Uri $reqUri -ErrorAction Stop
+                return Invoke-MgGraphRequest -Method GET -Uri $reqUri -OutputType PSObject -ErrorAction Stop
             }
-            return Invoke-MgGraphRequest -Method POST -Uri $reqUri -Body $Body -ContentType $ContentType -ErrorAction Stop
+            return Invoke-MgGraphRequest -Method POST -Uri $reqUri -Body $Body -ContentType $ContentType -OutputType PSObject -ErrorAction Stop
         } catch {
-            if ((Test-IsLikelyGraphAuthError $_) -and -not $authRetried) {
-                $authRetried = $true
-                Write-Information '  Graph token may have expired; refreshing session silently...'
-                try {
-                    Connect-MgGraph -Scopes $script:requiredScopes -NoWelcome -ContextScope Process -ErrorAction Stop
-                    $attempt = 0
-                    continue
-                } catch {
-                    throw
-                }
+            if ((Test-IsLikelyGraphAuthError $_) -and $script:AuthRefreshCount -lt $script:MaxAuthRefresh) {
+                $script:AuthRefreshCount++
+                Write-Information "  Graph token may have expired; silent refresh ($script:AuthRefreshCount/$script:MaxAuthRefresh)..."
+                Connect-MgGraph -Scopes $script:requiredScopes -NoWelcome -ErrorAction Stop
+                continue
             }
-            if (-not (Test-IsLikelyGraphThrottleError $_)) { throw }
-            if ($attempt -ge $MaxOuterAttempts) { throw }
-            $sec = Get-GraphRetryAfterSeconds $_
-            Write-Information "  Graph throttled; waiting ${sec}s before retry (attempt $attempt/$MaxOuterAttempts)..."
-            Start-Sleep -Seconds $sec
+            throw
         }
     }
 }
 
-# ── Helper: paginated GET ────────────────────────────────────────────────────
-
 function Invoke-GraphGetAll([string]$Uri, [string]$ProgressActivity) {
     $results = [System.Collections.Generic.List[object]]::new()
-    $url = [string]$Uri
+    $url = ConvertTo-GraphRequestUri $Uri
     if ([string]::IsNullOrWhiteSpace($url)) {
         throw 'Invoke-GraphGetAll: Uri parameter is empty.'
     }
@@ -287,10 +242,10 @@ function Invoke-GraphGetAll([string]$Uri, [string]$ProgressActivity) {
         $resp = Invoke-GraphRequestWithRecovery -Method GET -RequestUri $url
         $values = Get-SafeProperty $resp 'value'
         if ($values) {
-            foreach ($item in (Expand-ODataValue $values)) { $results.Add($item) }
+            foreach ($item in @($values)) { $results.Add($item) }
         }
         $nextLink = Get-SafeProperty $resp '@odata.nextLink'
-        $url = if ($nextLink) { $nextLink } else { $null }
+        $url = if ($nextLink) { ConvertTo-GraphRequestUri ([string]$nextLink) } else { $null }
 
         if ($ProgressActivity) {
             $status = "$($results.Count) items loaded (page $pageNum, $([math]::Round($sw.Elapsed.TotalSeconds))s)"
@@ -302,9 +257,43 @@ function Invoke-GraphGetAll([string]$Uri, [string]$ProgressActivity) {
     return $results
 }
 
+function Add-DefinitionsToLookup([System.Collections.IDictionary]$Lookup, [object[]]$Definitions) {
+    foreach ($d in $Definitions) {
+        $key = "$($d.categoryPath)|$($d.displayName)|$($d.classType)"
+        if (-not $Lookup.ContainsKey($key)) {
+            $Lookup[$key] = $d
+        }
+    }
+}
+
+function Initialize-FullDefinitionCatalog([System.Collections.IDictionary]$Lookup) {
+    if ($script:FullCatalogLoaded) { return }
+    Write-Information 'Loading full group policy definition catalog (fallback for built-in or unmatched settings)...'
+    $allDefs = Invoke-GraphGetAll "$graphApiRoot/deviceManagement/groupPolicyDefinitions" `
+        -ProgressActivity 'Loading group policy definitions from tenant'
+    Add-DefinitionsToLookup -Lookup $Lookup -Definitions @($allDefs)
+    $script:FullCatalogLoaded = $true
+    Write-Information "  Catalog merged; lookup now has $($Lookup.Count) definitions"
+}
+
+function Resolve-DefinitionForSetting {
+    param(
+        $Setting,
+        [System.Collections.IDictionary]$Lookup
+    )
+    $lookupKey = "$($Setting.definitionCategoryPath)|$($Setting.definitionDisplayName)|$($Setting.definitionClassType)"
+    if ($Lookup.ContainsKey($lookupKey)) {
+        return $Lookup[$lookupKey]
+    }
+    # Lazy fallback: one full catalog fetch covers built-in templates and custom ADMX edge cases.
+    Initialize-FullDefinitionCatalog $Lookup
+    return $Lookup[$lookupKey]
+}
+
 # ── Select JSON file ────────────────────────────────────────────────────────
 
 function Select-JsonFile {
+    # Prefer Windows file dialog; fall back to pasted path for headless or remote sessions.
     $filePath = $null
     try {
         Add-Type -AssemblyName System.Windows.Forms
@@ -344,19 +333,22 @@ Write-Information "Loading: $jsonPath"
 
 $raw = Get-Content -LiteralPath $jsonPath -Raw -Encoding utf8 | ConvertFrom-Json
 
-if (-not $raw.policyDisplayName -or -not $raw.settings) {
+$rawPolicyName = Get-SafeProperty $raw 'policyDisplayName'
+$rawSettings   = Get-SafeProperty $raw 'settings'
+
+if (-not $rawPolicyName -or -not $rawSettings) {
     Write-Error 'Invalid export file - missing policyDisplayName or settings array.'
     exit 1
 }
 
-$policyDesc = if ($raw.policyDescription) { $raw.policyDescription } else { '' }
-$settings   = @($raw.settings)
+$policyDesc = [string](Get-SafeProperty $raw 'policyDescription' '')
+$settings   = @($rawSettings)
 
 if ($PSBoundParameters.ContainsKey('PolicyName') -and $PolicyName) {
     $policyName = $PolicyName
     Write-Information "Using policy name from parameter: $policyName"
 } else {
-    $defaultName = $raw.policyDisplayName
+    $defaultName = $rawPolicyName
     Write-Host ''
     Write-Host '  Enter a display name for the imported policy.' -ForegroundColor Cyan
     Write-Host "  Default (press Enter): $defaultName" -ForegroundColor Gray
@@ -367,55 +359,30 @@ Write-Information "Policy: $policyName  ($($settings.Count) settings)"
 
 $importStopwatch = [System.Diagnostics.Stopwatch]::StartNew()
 
-# ── Build definition lookup from tenant ──────────────────────────────────────
-#    Index by "categoryPath|displayName|classType" -> definition object.
-#    Tries a scoped fetch first (only the category-path prefixes present in
-#    the export) to avoid enumerating the entire tenant catalog.  Falls back
-#    to a full fetch when the Graph endpoint rejects the $filter.
-
-$categoryPrefixes = @($settings | ForEach-Object {
-    $segments = $_.definitionCategoryPath -split '\\'
-    if ($segments.Count -ge 3) { "\$($segments[1])\$($segments[2])" }
-    elseif ($segments.Count -ge 2) { "\$($segments[1])" }
-} | Sort-Object -Unique)
-
-$allDefs = $null
-if ($categoryPrefixes.Count -gt 0 -and $categoryPrefixes.Count -le 10) {
-    Write-Information "Attempting scoped definition fetch for $($categoryPrefixes.Count) category prefix(es)..."
-    try {
-        $allDefs = [System.Collections.Generic.List[object]]::new()
-        foreach ($prefix in $categoryPrefixes) {
-            $escaped = $prefix.Replace("'", "''")
-            $filterExpr = "startswith(categoryPath,'$escaped')"
-            $encodedFilter = [Uri]::EscapeDataString($filterExpr)
-            $filterUri = "$graphApiRoot/deviceManagement/groupPolicyDefinitions?`$filter=$encodedFilter"
-            $batch = Invoke-GraphGetAll $filterUri -ProgressActivity "Loading definitions for $prefix"
-            $batch | ForEach-Object { $allDefs.Add($_) }
-        }
-        Write-Information "  Scoped fetch returned $($allDefs.Count) definitions"
-    } catch {
-        Write-Information "  Scoped fetch not supported by this tenant ($($_.Exception.Message)). Falling back to full fetch..."
-        $allDefs = $null
-    }
-}
-
-if ($null -eq $allDefs) {
-    Write-Information 'Building full definition lookup (this may take a moment for large tenants)...'
-    $allDefs = Invoke-GraphGetAll "$graphApiRoot/deviceManagement/groupPolicyDefinitions" -ProgressActivity 'Loading group policy definitions from tenant'
-}
-Write-Information "  Loaded $($allDefs.Count) definitions from tenant"
+# ── Build definition lookup from tenant (custom ADMX first) ─────────────────
 
 $defLookup = @{}
-foreach ($d in $allDefs) {
-    $key = "$($d.categoryPath)|$($d.displayName)|$($d.classType)"
-    $defLookup[$key] = $d
+$customUri = "$graphApiRoot/deviceManagement/groupPolicyCategories" +
+    "?`$expand=definitions(`$select=id,displayName,categoryPath,classType)" +
+    "&`$select=id,displayName" +
+    "&`$filter=ingestionSource eq 'custom'"
+
+Write-Information 'Loading custom ADMX definitions from tenant...'
+try {
+    $customCategories = Invoke-GraphGetAll $customUri -ProgressActivity 'Loading custom ADMX definitions'
+    foreach ($cat in $customCategories) {
+        $catDefs = Get-SafeProperty $cat 'definitions'
+        if ($catDefs) {
+            Add-DefinitionsToLookup -Lookup $defLookup -Definitions @($catDefs)
+        }
+    }
+    Write-Information "  Loaded $($defLookup.Count) custom definition(s)"
+} catch {
+    Write-Information "  Custom definition fetch failed ($($_.Exception.Message)); full catalog will load on first miss."
 }
 
 # ── Build presentation lookup per definition ─────────────────────────────────
-#    Only fetches presentations for definitions we actually need.
-#    Some ADMX (e.g. Firefox) expose empty presentation labels; a hashtable keyed
-#    by label cannot hold multiple ''. We also keep a stable ordered list for
-#    positional matching (export order <-> same index in sorted tenant list).
+#    Label match first, then positional index (handles blank labels e.g. Firefox).
 
 $script:PresentationCache = @{}
 
@@ -431,7 +398,6 @@ function Get-PresentationLookup([string]$definitionId) {
             $byLabel[$lbl] = $p
         }
     }
-    # Preserve Graph API order (same logical order as export) - do not sort by id; GUID order can differ across tenants.
     $ordered = @($presentations)
     $info = [pscustomobject]@{
         ByLabel = $byLabel
@@ -441,7 +407,7 @@ function Get-PresentationLookup([string]$definitionId) {
     return $info
 }
 
-# ── Create the new policy shell ──────────────────────────────────────────────
+# ── Create policy and POST each definitionValue ───────────────────────────────
 
 Write-Host ''
 Write-Host "  Creating policy: $policyName" -ForegroundColor Cyan
@@ -451,25 +417,33 @@ $policyBody = @{
     description = $policyDesc
 } | ConvertTo-Json
 
-$newPolicy = Invoke-GraphRequestWithRecovery -Method POST `
-    -RequestUri "$graphJsonBase/deviceManagement/groupPolicyConfigurations" `
-    -Body $policyBody -ContentType 'application/json'
+$newPolicyId = $null
 
-$newPolicyId = $newPolicy.id
-Write-Information "  Policy created: $newPolicyId"
-
-# ── Import each setting ──────────────────────────────────────────────────────
+try {
+    $newPolicy = Invoke-GraphRequestWithRecovery -Method POST `
+        -RequestUri "$graphApiRoot/deviceManagement/groupPolicyConfigurations" `
+        -Body $policyBody -ContentType 'application/json'
+    $newPolicyId = $newPolicy.id
+    Write-Information "  Policy created: $newPolicyId"
+} catch {
+    if ($_.Exception.Message -match '\b403\b|Forbidden') {
+        Write-GraphForbiddenHelp
+    }
+    throw
+}
 
 $successCount = 0
 $skipCount    = 0
+$partialCount = 0
 $warnings     = [System.Collections.Generic.List[string]]::new()
+$postElapsedMs = 0L
 
 for ($i = 0; $i -lt $settings.Count; $i++) {
     $s = $settings[$i]
     $settingLabel = "$($s.definitionCategoryPath) > $($s.definitionDisplayName)"
+    $presentationsDropped = $false
 
-    $lookupKey = "$($s.definitionCategoryPath)|$($s.definitionDisplayName)|$($s.definitionClassType)"
-    $newDef = $defLookup[$lookupKey]
+    $newDef = Resolve-DefinitionForSetting -Setting $s -Lookup $defLookup
 
     if (-not $newDef) {
         $msg = "SKIPPED: $settingLabel - definition not found in tenant (removed in new ADMX version?)"
@@ -502,10 +476,6 @@ for ($i = 0; $i -lt $settings.Count; $i++) {
                 $matchedPres = $presByLabel[$presLabel]
             }
 
-            if (-not $matchedPres -and $presOrdered.Count -eq 1) {
-                $matchedPres = $presOrdered[0]
-            }
-
             if (-not $matchedPres -and $pvIndex -lt $presOrdered.Count) {
                 $matchedPres = $presOrdered[$pvIndex]
             }
@@ -535,6 +505,8 @@ for ($i = 0; $i -lt $settings.Count; $i++) {
 
         if ($newPresValues.Count -gt 0) {
             $dvBody['presentationValues'] = @($newPresValues)
+        } else {
+            $presentationsDropped = $true
         }
     }
 
@@ -542,14 +514,24 @@ for ($i = 0; $i -lt $settings.Count; $i++) {
         if ($SettingDelayMs -gt 0 -and $successCount -gt 0) {
             Start-Sleep -Milliseconds $SettingDelayMs
         }
+        $postSw = [System.Diagnostics.Stopwatch]::StartNew()
         $null = Invoke-GraphRequestWithRecovery -Method POST `
-            -RequestUri "$graphJsonBase/deviceManagement/groupPolicyConfigurations/$newPolicyId/definitionValues" `
+            -RequestUri "$graphApiRoot/deviceManagement/groupPolicyConfigurations/$newPolicyId/definitionValues" `
             -Body ($dvBody | ConvertTo-Json -Depth 20) -ContentType 'application/json'
+        $postSw.Stop()
+        $postElapsedMs += $postSw.ElapsedMilliseconds
 
-        Write-Host "  [$($i+1)/$($settings.Count)] $settingLabel" -ForegroundColor Gray
+        if ($presentationsDropped) {
+            $msg = "PARTIAL: $settingLabel - created WITHOUT its configured values (no presentation matched in this tenant)"
+            Write-Host "  [$($i+1)/$($settings.Count)] $msg" -ForegroundColor Yellow
+            $warnings.Add($msg)
+            $partialCount++
+        } else {
+            Write-Host "  [$($i+1)/$($settings.Count)] $settingLabel" -ForegroundColor Gray
+        }
         $successCount++
     } catch {
-        $msg = "FAILED: $settingLabel - $($_.Exception.Message)"
+        $msg = "FAILED: $settingLabel ($($s.definitionCategoryPath) / $($s.definitionDisplayName)) - $($_.Exception.Message)"
         Write-Host "  [$($i+1)/$($settings.Count)] $msg" -ForegroundColor Red
         $warnings.Add($msg)
         $skipCount++
@@ -560,13 +542,24 @@ for ($i = 0; $i -lt $settings.Count; $i++) {
 
 $importStopwatch.Stop()
 $settingsPhaseSec = [math]::Round($importStopwatch.Elapsed.TotalSeconds, 1)
+$postPhaseSec = [math]::Round($postElapsedMs / 1000.0, 1)
+$avgPostMs = if ($successCount -gt 0) {
+    [math]::Round($postElapsedMs / $successCount, 0)
+} else {
+    0
+}
 
 Write-Host ''
 Write-Host '  Import Summary' -ForegroundColor Cyan
 Write-Host '  ==============' -ForegroundColor Cyan
 Write-Host "  Policy:    $policyName" -ForegroundColor White
+Write-Host "  Policy Id: $newPolicyId" -ForegroundColor DarkGray
 Write-Host "  Time (policy name set -> last setting): ${settingsPhaseSec}s" -ForegroundColor DarkGray
+Write-Host "  POST phase: ${postPhaseSec}s ($successCount settings, ~${avgPostMs}ms per successful POST)" -ForegroundColor DarkGray
 Write-Host "  Imported:  $successCount settings" -ForegroundColor Green
+if ($partialCount -gt 0) {
+    Write-Host "  Partial:   $partialCount setting(s) created WITHOUT their configured values - verify in Intune" -ForegroundColor Yellow
+}
 if ($skipCount -gt 0) {
     Write-Host "  Skipped:   $skipCount settings" -ForegroundColor Yellow
 }
