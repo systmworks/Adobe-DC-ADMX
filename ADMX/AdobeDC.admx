@@ -2,12 +2,12 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="4.0" schemaVersion="1.0"
+  revision="4.1" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="4.0" />
+  <resources minRequiredRevision="4.1" />
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SupportedAcrobatReaderPolicies)" name="SupportedAcrobatReaderPolicies"/>
@@ -5751,6 +5751,33 @@
     <!-- App Launched (User) - [bLaunched] -->
     <policy class="User" displayName="$(string.bLaunchedDC_User)" explainText="$(string.bLaunchedDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AdobeViewer"
       name="bLaunchedDC_User" valueName="bLaunched">
+      <parentCategory ref="StartupExperienceCategoryDC_User"/>
+      <supportedOn ref="SupportedAcrobatDC_User"/>
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Auto-Open Downloaded PDFs (User) - [bIsAutoDocOpenFeatureEnabled] -->
+    <policy class="User" displayName="$(string.bIsAutoDocOpenFeatureEnabledDC_User)" explainText="$(string.bIsAutoDocOpenFeatureEnabledDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AutoDocOpen"
+      name="bIsAutoDocOpenFeatureEnabledDC_User" valueName="bIsAutoDocOpenFeatureEnabled">
+      <parentCategory ref="StartupExperienceCategoryDC_User"/>
+      <supportedOn ref="SupportedAcrobatDC_User"/>
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Auto-Open From All Browsers (User) - [bAutoOpenFromAllBrowsers] -->
+    <policy class="User" displayName="$(string.bAutoOpenFromAllBrowsersDC_User)" explainText="$(string.bAutoOpenFromAllBrowsersDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AutoDocOpen"
+      name="bAutoOpenFromAllBrowsersDC_User" valueName="bAutoOpenFromAllBrowsers">
+      <parentCategory ref="StartupExperienceCategoryDC_User"/>
+      <supportedOn ref="SupportedAcrobatDC_User"/>
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Auto-Open From Edge (User) - [bIsAutoDocOpenEnabledForEdge] -->
+    <policy class="User" displayName="$(string.bIsAutoDocOpenEnabledForEdgeDC_User)" explainText="$(string.bIsAutoDocOpenEnabledForEdgeDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\AutoDocOpen"
+      name="bIsAutoDocOpenEnabledForEdgeDC_User" valueName="bIsAutoDocOpenEnabledForEdge">
       <parentCategory ref="StartupExperienceCategoryDC_User"/>
       <supportedOn ref="SupportedAcrobatDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>

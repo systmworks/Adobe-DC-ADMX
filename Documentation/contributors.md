@@ -14,6 +14,7 @@ If you spot something wrong or missing, please open an issue or a pull request. 
 
 | Date | Contributor | Contribution |
 |---|---|---|
+| 18 August 2026 | [nynsen](https://github.com/nynsen) | Issue #15 - Auto Document Open user policies for browser-downloaded PDFs (v4.1) |
 | 9 August 2026 | [virtitnerd](https://github.com/virtitnerd) | [PR #9](https://github.com/systmworks/Adobe-DC-ADMX/pull/9) - browser extension managed-storage policies for Chrome and Edge (v4.0) |
 | 8 August 2026 | [korzynski](https://github.com/korzynski) | [PR #14](https://github.com/systmworks/Adobe-DC-ADMX/pull/14) - external browser sign-in and federated login domain (v3.9) |
 | 4 August 2026 | [wauifsafis](https://github.com/wauifsafis) | Issue #13 - Protected View missing for Reader (v3.7) |

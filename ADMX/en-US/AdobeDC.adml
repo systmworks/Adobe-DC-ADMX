@@ -2,10 +2,10 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="4.0" schemaVersion="1.0"
+  revision="4.1" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
-  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v4.0)</displayName>
-  <description>ADMX v4.0 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
+  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v4.1)</displayName>
+  <description>ADMX v4.1 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
   <resources>
     <stringTable>
       <string id="SupportedAcrobatReaderPolicies">Adobe Acrobat and Reader DC</string>
@@ -1417,6 +1417,12 @@
       <string id="bAppInitializedDC_User_Explain">Records whether the application has been initialized after installation.&#10;&#10;Possible values include: 0: Not initialized 1: Initialized</string>
       <string id="bLaunchedDC_User">App Launched (User)</string>
       <string id="bLaunchedDC_User_Explain">Caches whether or not the application has ever been launched.&#10;&#10;Application behavior may vary across versions depending on whether the application has been launched. Possible values include: 0: The application has not been launched. 1: The application has been launched.</string>
+      <string id="bIsAutoDocOpenFeatureEnabledDC_User">Auto-Open Downloaded PDFs (User)</string>
+      <string id="bIsAutoDocOpenFeatureEnabledDC_User_Explain">Controls whether PDFs downloaded in Chrome or Edge automatically open in Acrobat or Reader.&#10;&#10;Maps to Preferences &gt; General &gt; Always open PDFs downloaded from the web. Not a FeatureLockDown setting; users may be able to change it in the UI. Unified 64-bit Reader uses the Acrobat user hive, not Reader DC (User). Separate from the browser extension Open in Acrobat setting. Possible values include: 0: Do not auto-open downloaded PDFs. 1: Auto-open downloaded PDFs.</string>
+      <string id="bAutoOpenFromAllBrowsersDC_User">Auto-Open From All Browsers (User)</string>
+      <string id="bAutoOpenFromAllBrowsersDC_User_Explain">Controls whether auto-open applies for PDFs downloaded from all supported browsers.&#10;&#10;Companion to bIsAutoDocOpenFeatureEnabled under AutoDocOpen. Not a FeatureLockDown setting. Possible values include: 0: Do not auto-open from all supported browsers. 1: Auto-open from all supported browsers.</string>
+      <string id="bIsAutoDocOpenEnabledForEdgeDC_User">Auto-Open From Edge (User)</string>
+      <string id="bIsAutoDocOpenEnabledForEdgeDC_User_Explain">Controls whether PDFs downloaded in Microsoft Edge automatically open in Acrobat or Reader.&#10;&#10;Companion to bIsAutoDocOpenFeatureEnabled under AutoDocOpen. Not a FeatureLockDown setting. Possible values include: 0: Do not auto-open PDFs downloaded in Edge. 1: Auto-open PDFs downloaded in Edge.</string>
       <string id="EULAAcceptedForBrowserDC_User">Browser EULA Accepted (User)</string>
       <string id="EULAAcceptedForBrowserDC_User_Explain">For Acrobat's browser plugin, caches whether the browser-based EULA has been accepted.&#10;&#10;On Macintosh, this preference can not be set in the plist. Use the Mac Wizard or the PRTK tool. Reader uses the key EULA. If the EULA is not accepted, the application stops running after a set period of time. Possible values include: 0: Show the EULA because it has not been accepted. 1: Don't show the EULA.</string>
       <string id="bChooseLangAtStartupDC_User">Choose Language Startup (User)</string>

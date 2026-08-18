@@ -4,7 +4,7 @@
 
 # AdobeDC ADMX - Combined Machine + User
 
-**Current version: v4.0** (9 August 2026). Full version history: [Changelog (Combined)](../Documentation/changelog.md).
+**Current version: v4.1** (18 August 2026). Full version history: [Changelog (Combined)](../Documentation/changelog.md).
 
 **Current production release.** Supersedes the separate machine template (v2.21) and user template ([Adobe-DC-User-ADMX v1.10](https://github.com/systmworks/Adobe-DC-User-ADMX)) for new Group Policy and Intune deployments.
 
@@ -25,14 +25,14 @@
 | Area | Detail |
 |------|--------|
 | **Packaging** | Single `AdobeDC.admx`/ADML pair for **Computer + User** configuration under one namespace |
-| **Policy inventory** | **<!--COUNT:total-->824<!--/COUNT:total-->** policies - **<!--COUNT:machine-->309<!--/COUNT:machine-->** machine + **<!--COUNT:user-->515<!--/COUNT:user-->** user (ADMX `<policy>` entries; see note below) |
+| **Policy inventory** | **<!--COUNT:total-->827<!--/COUNT:total-->** policies - **<!--COUNT:machine-->309<!--/COUNT:machine-->** machine + **<!--COUNT:user-->518<!--/COUNT:user-->** user (ADMX `<policy>` entries; see note below) |
 | **Namespace** | `Adobe.Policies.AdobeDC` (replaces separate `Adobe.Policies.Adobe_User` user namespace) |
 | **Computer tree** | **Adobe DC** -> **Acrobat & Reader DC** / **Reader DC (32-bit)** / **Non-Policy Settings** / **Browser Extensions** |
 | **User tree** | **Adobe DC** -> **Acrobat DC** / **Reader DC** - leaf display names retain ` (User)` suffix |
 | **De-duplication** | `HKLM\SOFTWARE\Policies` settings emit once per product hive (no redundant `WOW6432Node\Policies` copies) |
 | **Sources** | Device v2.21 + User v1.10 |
 
-**Policy count note:** **<!--COUNT:total-->824<!--/COUNT:total-->** is the number of configurable policy entries in the ADMX (what Intune and GPMC show). **<!--COUNT:machine-->309<!--/COUNT:machine-->** machine includes **12** browser extension entries (6 Chrome + 6 Edge) plus architecture-specific non-policy settings emitted separately for x64 and x86. There are **<!--COUNT:machineUnique-->157<!--/COUNT:machineUnique-->** unique Adobe machine settings in the source reference (<!--COUNT:machineShared-->118<!--/COUNT:machineShared--> apply to both Reader and Acrobat; `tBuiltInPermList` is excluded as REG_BINARY), plus **6** unique browser extension settings (12 ADMX entries). Product-scoped tables in [Documentation](../README.md) list user and machine settings because shared settings appear under each product. Browser extension settings are documented separately in [Browser Extension Settings](../Documentation/browser-extension.md).
+**Policy count note:** **<!--COUNT:total-->827<!--/COUNT:total-->** is the number of configurable policy entries in the ADMX (what Intune and GPMC show). **<!--COUNT:machine-->309<!--/COUNT:machine-->** machine includes **12** browser extension entries (6 Chrome + 6 Edge) plus architecture-specific non-policy settings emitted separately for x64 and x86. There are **<!--COUNT:machineUnique-->157<!--/COUNT:machineUnique-->** unique Adobe machine settings in the source reference (<!--COUNT:machineShared-->118<!--/COUNT:machineShared--> apply to both Reader and Acrobat; `tBuiltInPermList` is excluded as REG_BINARY), plus **6** unique browser extension settings (12 ADMX entries). Product-scoped tables in [Documentation](../README.md) list user and machine settings because shared settings appear under each product. Browser extension settings are documented separately in [Browser Extension Settings](../Documentation/browser-extension.md).
 
 ### Non-Policy Settings branch
 
@@ -75,7 +75,7 @@ If you migrated Intune exports from v2.19, Reader-only x64 upsell settings alrea
 
 | File | Scope | Policies |
 |------|-------|----------|
-| `AdobeDC.admx` + `en-US/AdobeDC.adml` | Machine + User | <!--COUNT:total-->824<!--/COUNT:total--> (<!--COUNT:machine-->309<!--/COUNT:machine--> machine + <!--COUNT:user-->515<!--/COUNT:user--> user) |
+| `AdobeDC.admx` + `en-US/AdobeDC.adml` | Machine + User | <!--COUNT:total-->827<!--/COUNT:total--> (<!--COUNT:machine-->309<!--/COUNT:machine--> machine + <!--COUNT:user-->518<!--/COUNT:user--> user) |
 
 *<!--COUNT:machine-->309<!--/COUNT:machine--> machine = ADMX policy entries; <!--COUNT:machineUnique-->157<!--/COUNT:machineUnique--> unique machine settings; product-scoped reference tables total <!--COUNT:readerDevice-->125<!--/COUNT:readerDevice--> Reader + <!--COUNT:acrobatDevice-->172<!--/COUNT:acrobatDevice--> Acrobat.*
 

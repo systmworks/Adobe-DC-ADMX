@@ -10,6 +10,20 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 
 ---
 
+## v4.1 - 18 August 2026
+
+**827 policies** (309 machine + 518 user) - Auto Document Open user preferences.
+
+- Added three **User Configuration** policies under **Acrobat DC (User)** > Startup & Experience for the Auto Document Open feature: `bIsAutoDocOpenFeatureEnabled`, `bAutoOpenFromAllBrowsers`, and `bIsAutoDocOpenEnabledForEdge`.
+- Registry path: `HKCU\Software\Adobe\Adobe Acrobat\DC\AutoDocOpen`. Covers Acrobat DC and Unified 64-bit Reader (Acrobat hive). Not FeatureLockDown; users may still change the preference in the UI.
+- Adobe documents the UI in [Open PDFs automatically](https://helpx.adobe.com/acrobat/using/auto-open-pdfs.html); registry value names are from enterprise observation (Issue #15).
+
+*Thanks to **[@nynsen](https://github.com/nynsen)** for [Issue #15](https://github.com/systmworks/Adobe-DC-ADMX/issues/15).*
+
+**Upgrade:** Re-upload ADMX + ADML. Additive only; all v4.0 bindings are preserved.
+
+---
+
 ## v4.0 - 9 August 2026
 
 **824 policies** (309 machine + 515 user) - Browser Extensions leaf for Chrome and Edge.

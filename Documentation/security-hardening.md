@@ -6,7 +6,7 @@
 
 # Security Hardening
 
-Recommended and optional security settings for the combined v4.0 ADMX templates.
+Recommended and optional security settings for the combined v4.1 ADMX templates.
 
 - ![Recommended](https://img.shields.io/badge/Recommended-238636?style=flat-square) settings most organisations should apply.
 - ![Optional](https://img.shields.io/badge/Optional-1f6feb?style=flat-square) stronger hardening that may affect workflows.

@@ -7519,6 +7519,48 @@
       "regValDisabled": 0
     },
     {
+      "policyName": "bIsAutoDocOpenFeatureEnabledDC_User",
+      "valueName": "bIsAutoDocOpenFeatureEnabled",
+      "friendlyName": "Auto-Open Downloaded PDFs",
+      "category": "Startup & Experience",
+      "scope": "User",
+      "product": "Acrobat",
+      "branch": null,
+      "controlType": "Toggle",
+      "summary": "Controls whether PDFs downloaded in Chrome or Edge automatically open in Acrobat or Reader.",
+      "details": "Maps to Preferences > General > Always open PDFs downloaded from the web. Not a FeatureLockDown setting; users may be able to change it in the UI. Unified 64-bit Reader uses the Acrobat user hive, not Reader DC (User). Separate from the browser extension Open in Acrobat setting. Possible values include: 0: Do not auto-open downloaded PDFs. 1: Auto-open downloaded PDFs.",
+      "regValEnabled": 1,
+      "regValDisabled": 0
+    },
+    {
+      "policyName": "bAutoOpenFromAllBrowsersDC_User",
+      "valueName": "bAutoOpenFromAllBrowsers",
+      "friendlyName": "Auto-Open From All Browsers",
+      "category": "Startup & Experience",
+      "scope": "User",
+      "product": "Acrobat",
+      "branch": null,
+      "controlType": "Toggle",
+      "summary": "Controls whether auto-open applies for PDFs downloaded from all supported browsers.",
+      "details": "Companion to bIsAutoDocOpenFeatureEnabled under AutoDocOpen. Not a FeatureLockDown setting. Possible values include: 0: Do not auto-open from all supported browsers. 1: Auto-open from all supported browsers.",
+      "regValEnabled": 1,
+      "regValDisabled": 0
+    },
+    {
+      "policyName": "bIsAutoDocOpenEnabledForEdgeDC_User",
+      "valueName": "bIsAutoDocOpenEnabledForEdge",
+      "friendlyName": "Auto-Open From Edge",
+      "category": "Startup & Experience",
+      "scope": "User",
+      "product": "Acrobat",
+      "branch": null,
+      "controlType": "Toggle",
+      "summary": "Controls whether PDFs downloaded in Microsoft Edge automatically open in Acrobat or Reader.",
+      "details": "Companion to bIsAutoDocOpenFeatureEnabled under AutoDocOpen. Not a FeatureLockDown setting. Possible values include: 0: Do not auto-open PDFs downloaded in Edge. 1: Auto-open PDFs downloaded in Edge.",
+      "regValEnabled": 1,
+      "regValDisabled": 0
+    },
+    {
       "policyName": "EULAAcceptedForBrowserDC_User",
       "valueName": "EULAAcceptedForBrowser",
       "friendlyName": "Browser EULA Accepted",
@@ -11537,5 +11579,5 @@
       "regValDisabled": 1
     }
   ],
-  "revision": "4.0"
+  "revision": "4.1"
 }

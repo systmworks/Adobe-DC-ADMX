@@ -6,7 +6,7 @@
 
 # Adobe DC Settings (User)
 
-Complete list of 267 unique Adobe DC settings (268 table entries where the same `ValueName` has more than one friendly name) in the combined v4.0 ADMX templates, grouped by product applicability.
+Complete list of 270 unique Adobe DC settings (271 table entries where the same `ValueName` has more than one friendly name) in the combined v4.1 ADMX templates, grouped by product applicability.
 
 ## Common to Acrobat & Reader
 
@@ -350,6 +350,9 @@ Complete list of 267 unique Adobe DC settings (268 table entries where the same 
 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
+| Auto-Open Downloaded PDFs | ``bIsAutoDocOpenFeatureEnabled`` | Controls whether PDFs downloaded in Chrome or Edge automatically open in Acrobat or Reader. |
+| Auto-Open From All Browsers | ``bAutoOpenFromAllBrowsers`` | Controls whether auto-open applies for PDFs downloaded from all supported browsers. |
+| Auto-Open From Edge | ``bIsAutoDocOpenEnabledForEdge`` | Controls whether PDFs downloaded in Microsoft Edge automatically open in Acrobat or Reader. |
 | Browser EULA Accepted | ``EULAAcceptedForBrowser`` | For Acrobat's browser plugin, caches whether the browser-based EULA has been accepted. |
 
 ### Upsell
