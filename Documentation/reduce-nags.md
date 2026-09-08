@@ -59,10 +59,13 @@ Settings to suppress unwanted messages, popups, and promotions, plus the toolbar
 | Sharing & Features | Share and Review Reminder Tip | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Startup & Experience | Reader mode on Acrobat (Unified x64) | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Updates & Desktop Integration | Crash Reporter Dialog | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+| Updates & Desktop Integration | Disable Adobe Express Photos Install | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Updates & Desktop Integration | Disable Major Version Upgrade Prompt (32-bit Updater) ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Upsell | Disable Billing Issue Call to Action | Set to ![Enabled](https://img.shields.io/badge/Enabled-238636?style=flat-square) |
 | Upsell | Express Templates in Create PDF | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
 | Upsell | Trial Purchase Prompt | Set to ![Disabled](https://img.shields.io/badge/Disabled-f85149?style=flat-square) |
+
+- **Disable Adobe Express Photos Install** - Does not uninstall Adobe Express Photos if it is already present. Uninstall that app first, then enable this policy to block reinstall.
 
 ### Reader Only
 

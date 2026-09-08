@@ -20,11 +20,11 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 | [Changelog (Retired)](Documentation/changelog-retired.md) | Legacy device-only and user-only ADMX version history |
 | [Contributors](Documentation/contributors.md) | Community contributors and acknowledgements |
 
-These ADMX/ADML templates (v4.1) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
+These ADMX/ADML templates (v4.2) provide Group Policy and Intune management of Adobe Acrobat DC and Adobe Reader DC on Windows. A single `AdobeDC.admx`/ADML pair covers machine-level (`HKLM`) and user-level (`HKCU`) policies.
 
 | ![File](https://img.shields.io/badge/File-316dca?style=flat-square) | ![Scope](https://img.shields.io/badge/Scope-316dca?style=flat-square) | ![Policies](https://img.shields.io/badge/Policies-316dca?style=flat-square) |
 |------|-------|----------|
-| `AdobeDC.admx` + ADML | **Adobe DC** (Computer + User) | 827 (309 machine + 518 user) |
+| `AdobeDC.admx` + ADML | **Adobe DC** (Computer + User) | 828 (310 machine + 518 user) |
 
 ### Configuration tree
 
@@ -43,7 +43,7 @@ flowchart TD
 
 ## Category Overview (Device)
 
-> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product, so Reader + Acrobat column totals are higher than the number of unique settings. The ADMX contains **309** machine policy entries (**157** unique Adobe machine settings after removing non-ADMX `tBuiltInPermList`; architecture-specific non-policy settings are emitted separately for x64 and x86; plus **12** browser extension entries). Overall template: **309** machine + **518** user = **827** policy entries.
+> Counts are product-scoped: settings that apply to both Reader and Acrobat are listed under each product, so Reader + Acrobat column totals are higher than the number of unique settings. The ADMX contains **310** machine policy entries (**158** unique Adobe machine settings after removing non-ADMX `tBuiltInPermList`; architecture-specific non-policy settings are emitted separately for x64 and x86; plus **12** browser extension entries). Overall template: **310** machine + **518** user = **828** policy entries.
 
 | ![Category](https://img.shields.io/badge/Category-316dca?style=flat-square) | ![Overview](https://img.shields.io/badge/Overview-316dca?style=flat-square) | ![Reader](https://img.shields.io/badge/Reader-316dca?style=flat-square) | ![Acrobat](https://img.shields.io/badge/Acrobat-316dca?style=flat-square) |
 |----------|----------|:------:|:-------:|
@@ -55,9 +55,9 @@ flowchart TD
 | Security: Trust & Permissions | Digital signatures, trusted locations, certificate trust, security handlers, and URL access policies. | 19 | 21 |
 | Sharing & Features | Adobe Sign, Send & Track, shared reviews, SharePoint/Office 365 integration, WebMail configuration, and cloud signature storage. | 18 | 20 |
 | Startup & Experience | Launch messages, notifications, First Time Experience, What's New, Home screen widgets, and feedback prompts. | 15 | 16 |
-| Updates & Desktop Integration | Product updater, Chrome extension, Explorer thumbnails, repair options, desktop UI, and deployment settings. | 16 | 26 |
+| Updates & Desktop Integration | Product updater, Chrome extension, Explorer thumbnails, repair options, desktop UI, and deployment settings. | 16 | 27 |
 | Upsell | Upgrade prompts, trial purchase dialogs, promotional campaigns, App Center, and purchasable tool visibility. | 6 | 7 |
-| **Total** | | **125** | **172** |
+| **Total** | | **125** | **173** |
 
 ## Category Overview (User)
 
@@ -79,11 +79,11 @@ flowchart TD
 ## Migration and important notes
 
 > [!WARNING]
-> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v4.1**.
+> **Migrating from v2.x or User ADMX v1.x is a breaking change.** The combined namespace and re-organised tree mean **Intune ADMX backups/exports from those versions will not import into v4.2**.
 >
 > Convert them first with [`Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1`](Helper_Scripts/Convert-AdobeDcIntuneExportToCombinedV3.ps1), then re-import.
 >
-> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1/v3.2/v3.3/v3.4/v3.5 to v4.1 keeps the same namespace and policy names for existing settings. **v3.4+ releases are additive-only** except where a changelog entry documents a one-time control-type correction - re-upload preserves existing Intune/GPO bindings for all other settings.
+> See the [ADMX install guide](ADMX/readme.md) for migration steps. Upgrading from combined v3.0/v3.1/v3.2/v3.3/v3.4/v3.5 to v4.2 keeps the same namespace and policy names for existing settings. **v3.4+ releases are additive-only** except where a changelog entry documents a one-time control-type correction - re-upload preserves existing Intune/GPO bindings for all other settings.
 
 | ![Note](https://img.shields.io/badge/Note-316dca?style=flat-square) |
 |------|

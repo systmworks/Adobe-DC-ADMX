@@ -6,7 +6,7 @@
 
 # Browser Extension Settings
 
-Complete list of 6 unique Adobe Acrobat browser extension managed-storage settings in the combined v4.1 ADMX templates (12 policy entries: 6 per browser).
+Complete list of 6 unique Adobe Acrobat browser extension managed-storage settings in the combined v4.2 ADMX templates (12 policy entries: 6 per browser).
 
 | ![Note](https://img.shields.io/badge/Note-316dca?style=flat-square) |
 |------|

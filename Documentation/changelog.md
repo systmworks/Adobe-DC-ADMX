@@ -10,6 +10,21 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 
 ---
 
+## v4.2 - 8 September 2026
+
+**828 policies** (310 machine + 518 user) - Disable Adobe Express Photos install.
+
+- Added **Disable Adobe Express Photos Install** (`bDisableHarmonyInstallationFeature`) for Acrobat DC under Updates & Desktop Integration. Machine FeatureLockDown toggle: Enabled writes DWORD `1` (block install), Disabled writes DWORD `0` (Adobe default: allow install).
+- Registry path: `HKLM\SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown`. Acrobat Continuous track (Windows). Unified 64-bit Reader uses the Acrobat hive, so configure this under **Acrobat & Reader DC**, not Reader DC (32-bit).
+- Adobe PrefRef documents the preference (default 0; 1 disables install on Acrobat launch). Adobe's June 2026 community announcement uses the same value as the opt-out for auto-update install of Adobe Express Photos. This policy does not uninstall an already-installed copy.
+- Documentation: [Suppress Nags and Upsells](reduce-nags.md) lists this setting under Acrobat Only. Install guide Namespace table now matches the ADMX `revision`. Wiki includes [Browser Extension Settings](browser-extension.md) as a first-class wiki page.
+
+*Thanks to **[@grimson73](https://github.com/grimson73)** for [Issue #16](https://github.com/systmworks/Adobe-DC-ADMX/issues/16).*
+
+**Upgrade:** Re-upload ADMX + ADML. Additive only; all v4.1 bindings are preserved.
+
+---
+
 ## v4.1 - 18 August 2026
 
 **827 policies** (309 machine + 518 user) - Auto Document Open user preferences.

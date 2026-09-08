@@ -150,6 +150,12 @@
     "recommendedDword": 0
   },
   {
+    "valueName": "bDisableHarmonyInstallationFeature",
+    "scope": "Acrobat",
+    "recommendedDword": 1,
+    "note": "Does not uninstall Adobe Express Photos if it is already present. Uninstall that app first, then enable this policy to block reinstall."
+  },
+  {
     "valueName": "bUpdater",
     "friendlyName": "Product Updater",
     "scope": "Both",

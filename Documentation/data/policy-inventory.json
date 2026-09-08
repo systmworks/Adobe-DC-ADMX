@@ -1639,6 +1639,20 @@
       "regValDisabled": 0
     },
     {
+      "policyName": "bDisableHarmonyInstallationFeature_Acrobat",
+      "valueName": "bDisableHarmonyInstallationFeature",
+      "friendlyName": "Disable Adobe Express Photos Install",
+      "category": "Updates & Desktop Integration",
+      "scope": "Device",
+      "product": "Acrobat",
+      "branch": "AcrobatPolicies",
+      "controlType": "Toggle",
+      "summary": "Specifies whether Acrobat can install the Adobe Express Photos app for eligible users.",
+      "details": "Possible values include: 0: Install Adobe Express Photos for eligible users on Acrobat launch. 1: Disable installation of Adobe Express Photos for eligible users on Acrobat launch. Adobe also documents this as the opt-out for Acrobat auto-update install of Adobe Express Photos (June 2026). Windows and Acrobat Continuous track only. Unified 64-bit Reader uses the Acrobat hive.",
+      "regValEnabled": 1,
+      "regValDisabled": 0
+    },
+    {
       "policyName": "bAcroSuppressOpenInReader_Acrobat",
       "valueName": "bAcroSuppressOpenInReader",
       "friendlyName": "Disable Chrome PDF Extension",
@@ -11579,5 +11593,5 @@
       "regValDisabled": 1
     }
   ],
-  "revision": "4.1"
+  "revision": "4.2"
 }

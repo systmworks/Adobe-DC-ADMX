@@ -6,7 +6,7 @@
 
 # Adobe DC Settings (Device)
 
-Complete list of 157 unique Adobe DC settings (159 table entries where the same `ValueName` has more than one friendly name) in the combined v4.1 ADMX templates, grouped by product applicability.
+Complete list of 158 unique Adobe DC settings (160 table entries where the same `ValueName` has more than one friendly name) in the combined v4.2 ADMX templates, grouped by product applicability.
 
 - Settings marked ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) are under **Adobe DC > Non-Policy Settings** in Group Policy or Intune, not under **Adobe DC > Acrobat & Reader DC**. Configure the sub-node that matches your installed architecture: **Acrobat & Reader DC (64-bit)** (64-bit Acrobat and unified 64-bit Reader), **Acrobat DC (32-bit)** (32-bit Acrobat), or **Reader DC (32-bit)** (32-bit Reader).
 
@@ -244,6 +244,7 @@ Complete list of 157 unique Adobe DC settings (159 table entries where the same 
 | ![FriendlyName](https://img.shields.io/badge/FriendlyName-316dca?style=flat-square) | ![ValueName](https://img.shields.io/badge/ValueName-316dca?style=flat-square) | ![Summary](https://img.shields.io/badge/Summary-316dca?style=flat-square) |
 |---|---|---|
 | Crash Reporter Dialog | ``bCrashReporterEnabled`` | Show the crash reporter dialog on application crash (Windows only). |
+| Disable Adobe Express Photos Install | ``bDisableHarmonyInstallationFeature`` | Specifies whether Acrobat can install the Adobe Express Photos app for eligible users. |
 | Disable Major Version Upgrade Prompt (32-bit Updater) ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``iDisablePromptForUpgrade`` | Suppress major-version upgrade prompt. |
 | Enforce AMT for AppV Deployment ![Non-Policy](https://img.shields.io/badge/Non--Policy-8250df?style=flat-square) | ``IsAMTEnforced`` | Allows deployment of Acrobat on AppV for December, 2018 and later products. |
 | Split by Size Maximum (MB) | ``dSplitBySizeMaxSize`` | Maximum MB per split file. |

@@ -2,12 +2,12 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="4.1" schemaVersion="1.0"
+  revision="4.2" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="4.1" />
+  <resources minRequiredRevision="4.2" />
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SupportedAcrobatReaderPolicies)" name="SupportedAcrobatReaderPolicies"/>
@@ -1388,6 +1388,15 @@
     <!-- Crash Reporter Dialog - [bCrashReporterEnabled] -->
     <policy class="Machine" displayName="$(string.bCrashReporterEnabled_Acrobat)" explainText="$(string.bCrashReporterEnabled_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
       name="bCrashReporterEnabled_Acrobat" valueName="bCrashReporterEnabled">
+      <parentCategory ref="UpdatesDesktop_AcrobatCategory"/>
+      <supportedOn ref="SupportedAcrobatReaderPolicies"/>
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Disable Adobe Express Photos Install - [bDisableHarmonyInstallationFeature] -->
+    <policy class="Machine" displayName="$(string.bDisableHarmonyInstallationFeature_Acrobat)" explainText="$(string.bDisableHarmonyInstallationFeature_Acrobat_Explain)" key="SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown"
+      name="bDisableHarmonyInstallationFeature_Acrobat" valueName="bDisableHarmonyInstallationFeature">
       <parentCategory ref="UpdatesDesktop_AcrobatCategory"/>
       <supportedOn ref="SupportedAcrobatReaderPolicies"/>
       <enabledValue><decimal value="1" /></enabledValue>

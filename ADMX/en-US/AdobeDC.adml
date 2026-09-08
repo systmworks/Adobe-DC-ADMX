@@ -2,10 +2,10 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="4.1" schemaVersion="1.0"
+  revision="4.2" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
-  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v4.1)</displayName>
-  <description>ADMX v4.1 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
+  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v4.2)</displayName>
+  <description>ADMX v4.2 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
   <resources>
     <stringTable>
       <string id="SupportedAcrobatReaderPolicies">Adobe Acrobat and Reader DC</string>
@@ -344,6 +344,8 @@
       <string id="bHasAcrobatConsent_Acrobat_Explain">Specifies whether the Reader process should automatically open Acrobat for the current file.&#10;&#10;PDF ownership does not change. Reader will continue as the default PDF viewer on this machine. Possible values include: 0: Don't automatically use Acrobat. 1: Use Acrobat</string>
       <string id="bCrashReporterEnabled_Acrobat">Crash Reporter Dialog</string>
       <string id="bCrashReporterEnabled_Acrobat_Explain">Specifies whether to show the crash reporter dialog on application crash (Windows only).&#10;&#10;This feature is part of the CrashReporter integration on Windows. The dialog allows users to send crash logs to the CrashReporter team. Possible values include: 0: Don't show the dialog. 1: Show the dialog</string>
+      <string id="bDisableHarmonyInstallationFeature_Acrobat">Disable Adobe Express Photos Install</string>
+      <string id="bDisableHarmonyInstallationFeature_Acrobat_Explain">Specifies whether Acrobat can install the Adobe Express Photos app for eligible users.&#10;&#10;Possible values include: 0: Install Adobe Express Photos for eligible users on Acrobat launch. 1: Disable installation of Adobe Express Photos for eligible users on Acrobat launch. Adobe also documents this as the opt-out for Acrobat auto-update install of Adobe Express Photos (June 2026). Windows and Acrobat Continuous track only. Unified 64-bit Reader uses the Acrobat hive.</string>
       <string id="bAcroSuppressOpenInReader_Acrobat">Disable Chrome PDF Extension</string>
       <string id="bAcroSuppressOpenInReader_Acrobat_Explain">Specifies whether to disable and lock the PDF viewer Chrome extension.&#10;&#10;See also ENABLE_CHROMEEXT . Possible values include: 0 or null: Extension is enabled; users can open PDFs in a browser with Acrobat Reader 1: Disable the browser-based PDF viewer. A tooltip says &quot;The Acrobat Reader extension is currently disabled. Please contact your IT admin.&quot;</string>
       <string id="bSuppressMessageBar_Acrobat">Hide Document Message Bar</string>
