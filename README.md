@@ -16,6 +16,7 @@ Detailed policy reference pages, changelogs, and curated guides live under [Docu
 | [Suppress Nags & Upsells](Documentation/reduce-nags.md) | Nag and upsell controls (Device and User) |
 | [Security Hardening](Documentation/security-hardening.md) | Recommended security configurations (Device and User) |
 | [Screenshots](Documentation/screenshots.md) | GPMC and Intune screenshots |
+| [ADMX Upgrade](Documentation/admx-upgrade.md) | Replace an imported ADMX in Intune (backup, delete, re-upload) |
 | [Changelog (Combined)](Documentation/changelog.md) | Combined device + user version history |
 | [Changelog (Retired)](Documentation/changelog-retired.md) | Legacy device-only and user-only ADMX version history |
 | [Contributors](Documentation/contributors.md) | Community contributors and acknowledgements |
