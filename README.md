@@ -2,6 +2,11 @@
 
 > I have spent many, many hours creating and testing this ADMX. If it helps you please consider buying me a Coffee :)
 
+> [!TIP]
+> **Coming soon: ADMX Pro.** Ready-to-import Intune & GPO profiles (Security Hardened · STIG-aligned · No Nags & Upsells),
+> re-tested against every vendor release, plus an email alert when a vendor changes or breaks a setting.
+> **[Join the waitlist →](https://tally.so/r/7RGrVR)** (free, no spam, one email when it launches)
+
 # Adobe DC ADMX/ADML Documentation
 
 Detailed policy reference pages, changelogs, and curated guides live under [Documentation/](Documentation/).
