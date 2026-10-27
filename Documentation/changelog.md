@@ -10,6 +10,19 @@ Version history for the combined `AdobeDC.admx`/ADML template. Legacy per-scope 
 
 ---
 
+## v4.3 - 27 October 2026
+
+**830 policies** (310 machine + 520 user) - Enable Acrobat JavaScript user preference.
+
+- Added **Enable Acrobat JavaScript** (`bEnableJS`) for Acrobat DC and Reader DC under **User Configuration** > Security: Execution & Protection. Toggle writes DWORD `1` when Enabled (JavaScript on) and DWORD `0` when Disabled (JavaScript off). Registry path: `HKCU\Software\Adobe\Adobe Acrobat\DC\JSPrefs` and `HKCU\Software\Adobe\Acrobat Reader\DC\JSPrefs`. Maps to Preferences > JavaScript > Enable Acrobat JavaScript ([Adobe JSPrefs](https://www.adobe.com/devnet-docs/acrobatetk/tools/PrefRef/Windows/JSPrefs.html)).
+- **Interaction with machine policy:** User **Enable Acrobat JavaScript** does not override machine **Block JavaScript Execution** (`bDisableJavaScript`). When the machine lock is Enabled (DWORD `1`), JavaScript stays disabled and locked regardless of `bEnableJS`. See [Adobe DC Settings (Device)](adobe-settings-device.md) and [Security Hardening](security-hardening.md).
+
+*Thanks to **[@edr1986](https://github.com/edr1986)** for [Issue #18](https://github.com/systmworks/Adobe-DC-ADMX/issues/18).*
+
+**Upgrade:** Re-upload ADMX + ADML. Additive only; all v4.2 bindings are preserved.
+
+---
+
 ## v4.2 - 8 September 2026
 
 **828 policies** (310 machine + 518 user) - Disable Adobe Express Photos install.

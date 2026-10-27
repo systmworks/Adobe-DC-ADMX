@@ -6,7 +6,7 @@
 
 # Adobe DC Settings (User)
 
-Complete list of 270 unique Adobe DC settings (271 table entries where the same `ValueName` has more than one friendly name) in the combined v4.2 ADMX templates, grouped by product applicability.
+Complete list of 271 unique Adobe DC settings (272 table entries where the same `ValueName` has more than one friendly name) in the combined v4.3 ADMX templates, grouped by product applicability.
 
 ## Common to Acrobat & Reader
 
@@ -135,6 +135,7 @@ Complete list of 270 unique Adobe DC settings (271 table entries where the same 
 |---|---|---|
 | 3D Content Trust | ``b3DEnableContent`` | Trust and render 3D content. |
 | Cross-Domain Logging | ``bCrossDomainLogging`` | Enable cross-domain logging for non-same-origin server communication. |
+| Enable Acrobat JavaScript | ``bEnableJS`` | Toggles JavaScript execution on and off globally; when off, the PDF cannot execute JavaScript. |
 | Enable JS Debugger | ``bEnableDebugger`` | Enables the debugger. |
 | FIPS Mode | ``bFIPSMode`` | Turns FIPS mode on and off thereby requiring stronger encryption algorithm and limiting certain application behavior. |
 | JS Global Security | ``bEnableGlobalSecurity`` | Controls whether or not a script in one sandbox can access a script object in another sandbox. |
@@ -197,9 +198,9 @@ Complete list of 270 unique Adobe DC settings (271 table entries where the same 
 | Return Rev Info to JS | ``bReturnRevInfoToUser`` | If true, the revocation information is maintained within the SignatureInfo object and can be retrieved through JavaScript. |
 | Revocation Checker | ``iRevocationChecker`` | Specifies a provider for revocation checking. |
 | Revoke Check Trust | ``bRevCheckTrust`` | Revocation-check intermediate (non-root) trust anchors. |
+| RSAPSS Hash Algorithm | ``aRSAPSSHashAlgorithm`` | Specifies the hash algorithm used for RSA-PSS signing. |
 | RSA-PSS Salt Length | ``iRSAPSSSaltLength`` | Specifies the Salt Length the RSA-PSS algorithm uses. |
 | RSA-PSS Signing | ``bEnableRSAPSSSigning`` | Specifies whether a signature should be created with the RSA-PSS algorithm. |
-| RSAPSS Hash Algorithm | ``aRSAPSSHashAlgorithm`` | Specifies the hash algorithm used for RSA-PSS signing. |
 | SAML Auth Server URL | ``tSAML_Assertion_Source`` | Holds the URL of the authentication server from which the SAML assertion stored in cSAML_Assertion was obtained. |
 | SAML Name Format | ``tSAML_Name_Format`` | SAML_NAME_<Value, Format, Qualifier> comprise the subject name identifier taken from the SAML assertion received during the account's last user authentication. |
 | SAML Name Qualifier | ``tSAML_Name_Qualifier`` | SAML_NAME_<Value, Format, Qualifier> comprise the subject name identifier taken from the SAML assertion received during the account's last user authentication. |

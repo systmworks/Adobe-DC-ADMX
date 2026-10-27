@@ -2,10 +2,10 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="4.2" schemaVersion="1.0"
+  revision="4.3" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
-  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v4.2)</displayName>
-  <description>ADMX v4.2 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
+  <displayName>Adobe Acrobat DC / Reader DC (Machine + User v4.3)</displayName>
+  <description>ADMX v4.3 - Combined machine (HKLM) and user (HKCU) policies for Acrobat and Reader DC.</description>
   <resources>
     <stringTable>
       <string id="SupportedAcrobatReaderPolicies">Adobe Acrobat and Reader DC</string>
@@ -1136,6 +1136,8 @@
       <string id="tEditorFontSizeDC_User_Explain">Specifies the font size for the script editor.</string>
       <string id="tEditorPathDC_User">Editor Path (User)</string>
       <string id="tEditorPathDC_User_Explain">Provides a path to an external editor.&#10;&#10;The field becomes active when bChooseDialog is set to 1.</string>
+      <string id="bEnableJSDC_User">Enable Acrobat JavaScript (User)</string>
+      <string id="bEnableJSDC_User_Explain">Toggles JavaScript execution on and off globally; when off, the PDF cannot execute JavaScript.&#10;&#10;Maps to Preferences &gt; JavaScript &gt; Enable Acrobat JavaScript. Default is 1 (enabled). If machine policy Block JavaScript Execution (bDisableJavaScript) is Enabled, it overrides this setting and locks JavaScript off; users cannot re-enable JavaScript via the Yellow Message Bar or Trusted Locations while that lock is in place.</string>
       <string id="bEnableDebuggerDC_User">Enable JS Debugger (User)</string>
       <string id="bEnableDebuggerDC_User_Explain">Enables the debugger.&#10;&#10;Requires an application restart.</string>
       <string id="bChooseDialogDC_User">External JS Editor (User)</string>
@@ -1293,12 +1295,12 @@
       <string id="iRevocationCheckerDC_User_opt2">Use all registered providers</string>
       <string id="bRevCheckTrustDC_User">Revoke Check Trust (User)</string>
       <string id="bRevCheckTrustDC_User_Explain">Revocation-check intermediate (non-root) trust anchors.&#10;&#10;Detects compromise of third-party trust anchors. Root and self-signed certs are exempt. Values: 0 = no check; 1 = check.</string>
+      <string id="aRSAPSSHashAlgorithmDC_User">RSAPSS Hash Algorithm (User)</string>
+      <string id="aRSAPSSHashAlgorithmDC_User_Explain">Specifies the hash algorithm used for RSA-PSS signing.&#10;&#10;If bEnableRSAPSSSigning is enabled, this preference specifies the hash algorithm. If this preference is not present or has a null value, then the value specified by aSignHash is used. If aSignHash is not specified, then SHA256 is used. Possible values include: SHA1 SHA224 SHA256 SHA384 SHA512</string>
       <string id="iRSAPSSSaltLengthDC_User">RSA-PSS Salt Length (User)</string>
       <string id="iRSAPSSSaltLengthDC_User_Explain">Specifies the Salt Length the RSA-PSS algorithm uses.&#10;&#10;When setting the salt length, you must assure the default base is hexadecimal. Either change the base to decimal or input its hex value. For example, if the salt length decimal value is 32, then set the hex value to 20.</string>
       <string id="bEnableRSAPSSSigningDC_User">RSA-PSS Signing (User)</string>
       <string id="bEnableRSAPSSSigningDC_User_Explain">Specifies whether a signature should be created with the RSA-PSS algorithm.&#10;&#10;Possible values include: 0: Do not sign with the RSA-PSS algorithm. 1: Use the RSA-PSS algorithm.</string>
-      <string id="aRSAPSSHashAlgorithmDC_User">RSAPSS Hash Algorithm (User)</string>
-      <string id="aRSAPSSHashAlgorithmDC_User_Explain">Specifies the hash algorithm used for RSA-PSS signing.&#10;&#10;If bEnableRSAPSSSigning is enabled, this preference specifies the hash algorithm. If this preference is not present or has a null value, then the value specified by aSignHash is used. If aSignHash is not specified, then SHA256 is used. Possible values include: SHA1 SHA224 SHA256 SHA384 SHA512</string>
       <string id="tSAML_Assertion_SourceDC_User">SAML Auth Server URL (User)</string>
       <string id="tSAML_Assertion_SourceDC_User_Explain">Holds the URL of the authentication server from which the SAML assertion stored in cSAML_Assertion was obtained.</string>
       <string id="tSAML_Name_FormatDC_User">SAML Name Format (User)</string>
@@ -1780,6 +1782,8 @@
       <string id="tBrokerLogfilePath_User_Explain">Specifies the path and log file name for the Protected Mode log.&#10;&#10;The value should be path + log filename. Logging is available for users who need to troubleshoot problems where a workflow or plugin does not work when Protected Mode is enabled. The log may provide guidance as to whether a custom policy file should be used to re-enable broken workflows or plugins. Any valid path.</string>
       <string id="bCrossDomainLogging_User">Cross-Domain Logging (User)</string>
       <string id="bCrossDomainLogging_User_Explain">Enable cross-domain logging for non-same-origin server communication.&#10;&#10;Create an empty AcrobatCrossDomain.log in the user Application Data Adobe product folder.</string>
+      <string id="bEnableJS_User">Enable Acrobat JavaScript (User)</string>
+      <string id="bEnableJS_User_Explain">Toggles JavaScript execution on and off globally; when off, the PDF cannot execute JavaScript.&#10;&#10;Maps to Preferences &gt; JavaScript &gt; Enable Acrobat JavaScript. Default is 1 (enabled). If machine policy Block JavaScript Execution (bDisableJavaScript) is Enabled, it overrides this setting and locks JavaScript off; users cannot re-enable JavaScript via the Yellow Message Bar or Trusted Locations while that lock is in place.</string>
       <string id="bEnableDebugger_User">Enable JS Debugger (User)</string>
       <string id="bEnableDebugger_User_Explain">Enables the debugger.&#10;&#10;Requires an application restart.</string>
       <string id="bFIPSMode_User">FIPS Mode (User)</string>
@@ -1922,12 +1926,12 @@
       <string id="iRevocationChecker_User_opt2">Use all registered providers</string>
       <string id="bRevCheckTrust_User">Revoke Check Trust (User)</string>
       <string id="bRevCheckTrust_User_Explain">Revocation-check intermediate (non-root) trust anchors.&#10;&#10;Detects compromise of third-party trust anchors. Root and self-signed certs are exempt. Values: 0 = no check; 1 = check.</string>
+      <string id="aRSAPSSHashAlgorithm_User">RSAPSS Hash Algorithm (User)</string>
+      <string id="aRSAPSSHashAlgorithm_User_Explain">Specifies the hash algorithm used for RSA-PSS signing.&#10;&#10;If bEnableRSAPSSSigning is enabled, this preference specifies the hash algorithm. If this preference is not present or has a null value, then the value specified by aSignHash is used. If aSignHash is not specified, then SHA256 is used. Possible values include: SHA1 SHA224 SHA256 SHA384 SHA512</string>
       <string id="iRSAPSSSaltLength_User">RSA-PSS Salt Length (User)</string>
       <string id="iRSAPSSSaltLength_User_Explain">Specifies the Salt Length the RSA-PSS algorithm uses.&#10;&#10;When setting the salt length, you must assure the default base is hexadecimal. Either change the base to decimal or input its hex value. For example, if the salt length decimal value is 32, then set the hex value to 20.</string>
       <string id="bEnableRSAPSSSigning_User">RSA-PSS Signing (User)</string>
       <string id="bEnableRSAPSSSigning_User_Explain">Specifies whether a signature should be created with the RSA-PSS algorithm.&#10;&#10;Possible values include: 0: Do not sign with the RSA-PSS algorithm. 1: Use the RSA-PSS algorithm.</string>
-      <string id="aRSAPSSHashAlgorithm_User">RSAPSS Hash Algorithm (User)</string>
-      <string id="aRSAPSSHashAlgorithm_User_Explain">Specifies the hash algorithm used for RSA-PSS signing.&#10;&#10;If bEnableRSAPSSSigning is enabled, this preference specifies the hash algorithm. If this preference is not present or has a null value, then the value specified by aSignHash is used. If aSignHash is not specified, then SHA256 is used. Possible values include: SHA1 SHA224 SHA256 SHA384 SHA512</string>
       <string id="tSAML_Assertion_Source_User">SAML Auth Server URL (User)</string>
       <string id="tSAML_Assertion_Source_User_Explain">Holds the URL of the authentication server from which the SAML assertion stored in cSAML_Assertion was obtained.</string>
       <string id="tSAML_Name_Format_User">SAML Name Format (User)</string>
@@ -2327,11 +2331,11 @@
       <presentation id="iRevocationCheckerDC_User_enum">
         <dropdownList defaultItem="0" refId="iRevocationCheckerDC_User_enum">Revocation Checker (User):</dropdownList>
       </presentation>
-      <presentation id="iRSAPSSSaltLengthDC_User_num">
-        <decimalTextBox refId="iRSAPSSSaltLengthDC_User_num" defaultValue="32">RSA-PSS salt length (bytes):</decimalTextBox>
-      </presentation>
       <presentation id="aRSAPSSHashAlgorithmDC_User_text">
         <textBox refId="aRSAPSSHashAlgorithmDC_User_text"><label>RSAPSS hash algorithm:</label></textBox>
+      </presentation>
+      <presentation id="iRSAPSSSaltLengthDC_User_num">
+        <decimalTextBox refId="iRSAPSSSaltLengthDC_User_num" defaultValue="32">RSA-PSS salt length (bytes):</decimalTextBox>
       </presentation>
       <presentation id="tSAML_Assertion_SourceDC_User_text">
         <textBox refId="tSAML_Assertion_SourceDC_User_text"><label>SAML assertion source:</label></textBox>
@@ -2519,11 +2523,11 @@
       <presentation id="iRevocationChecker_User_enum">
         <dropdownList defaultItem="0" refId="iRevocationChecker_User_enum">Revocation Checker (User):</dropdownList>
       </presentation>
-      <presentation id="iRSAPSSSaltLength_User_num">
-        <decimalTextBox refId="iRSAPSSSaltLength_User_num" defaultValue="32">RSA-PSS salt length (bytes):</decimalTextBox>
-      </presentation>
       <presentation id="aRSAPSSHashAlgorithm_User_text">
         <textBox refId="aRSAPSSHashAlgorithm_User_text"><label>RSAPSS hash algorithm:</label></textBox>
+      </presentation>
+      <presentation id="iRSAPSSSaltLength_User_num">
+        <decimalTextBox refId="iRSAPSSSaltLength_User_num" defaultValue="32">RSA-PSS salt length (bytes):</decimalTextBox>
       </presentation>
       <presentation id="tSAML_Assertion_Source_User_text">
         <textBox refId="tSAML_Assertion_Source_User_text"><label>SAML assertion source:</label></textBox>

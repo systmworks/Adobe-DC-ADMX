@@ -2,12 +2,12 @@
 <!-- ADMX templates created by systmworks - https://github.com/systmworks/Adobe-DC-ADMX/ - License CC BY-SA 4.0 -->
 
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  revision="4.2" schemaVersion="1.0"
+  revision="4.3" schemaVersion="1.0"
   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
     <target prefix="AdobeDC" namespace="Adobe.Policies.AdobeDC" />
   </policyNamespaces>
-  <resources minRequiredRevision="4.2" />
+  <resources minRequiredRevision="4.3" />
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SupportedAcrobatReaderPolicies)" name="SupportedAcrobatReaderPolicies"/>
@@ -4545,6 +4545,15 @@
       </elements>
     </policy>
 
+    <!-- Enable Acrobat JavaScript (User) - [bEnableJS] -->
+    <policy class="User" displayName="$(string.bEnableJSDC_User)" explainText="$(string.bEnableJSDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\JSPrefs"
+      name="bEnableJSDC_User" valueName="bEnableJS">
+      <parentCategory ref="SecurityExecCategoryDC_User"/>
+      <supportedOn ref="SupportedAcrobatDC_User"/>
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
     <!-- Enable JS Debugger (User) - [bEnableDebugger] -->
     <policy class="User" displayName="$(string.bEnableDebuggerDC_User)" explainText="$(string.bEnableDebuggerDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\JSPrefs"
       name="bEnableDebuggerDC_User" valueName="bEnableDebugger">
@@ -5225,6 +5234,16 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
+    <!-- RSAPSS Hash Algorithm (User) - [aRSAPSSHashAlgorithm] -->
+    <policy class="User" displayName="$(string.aRSAPSSHashAlgorithmDC_User)" explainText="$(string.aRSAPSSHashAlgorithmDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cPubSec\cRSAPSSSigning"
+      name="aRSAPSSHashAlgorithmDC_User" presentation="$(presentation.aRSAPSSHashAlgorithmDC_User_text)">
+      <parentCategory ref="SecurityTrustCategoryDC_User"/>
+      <supportedOn ref="SupportedAcrobatDC_User"/>
+      <elements>
+        <text id="aRSAPSSHashAlgorithmDC_User_text" valueName="aRSAPSSHashAlgorithm" maxLength="2048" />
+      </elements>
+    </policy>
+
     <!-- RSA-PSS Salt Length (User) - [iRSAPSSSaltLength] -->
     <policy class="User" displayName="$(string.iRSAPSSSaltLengthDC_User)" explainText="$(string.iRSAPSSSaltLengthDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cPubSec\cRSAPSSSigning"
       name="iRSAPSSSaltLengthDC_User" presentation="$(presentation.iRSAPSSSaltLengthDC_User_num)">
@@ -5242,16 +5261,6 @@
       <supportedOn ref="SupportedAcrobatDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
       <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- RSAPSS Hash Algorithm (User) - [aRSAPSSHashAlgorithm] -->
-    <policy class="User" displayName="$(string.aRSAPSSHashAlgorithmDC_User)" explainText="$(string.aRSAPSSHashAlgorithmDC_User_Explain)" key="Software\Adobe\Adobe Acrobat\DC\Security\cPubSec\cRSAPSSSigning"
-      name="aRSAPSSHashAlgorithmDC_User" presentation="$(presentation.aRSAPSSHashAlgorithmDC_User_text)">
-      <parentCategory ref="SecurityTrustCategoryDC_User"/>
-      <supportedOn ref="SupportedAcrobatDC_User"/>
-      <elements>
-        <text id="aRSAPSSHashAlgorithmDC_User_text" valueName="aRSAPSSHashAlgorithm" maxLength="2048" />
-      </elements>
     </policy>
 
     <!-- SAML Auth Server URL (User) - [tSAML_Assertion_Source] -->
@@ -7291,6 +7300,15 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
+    <!-- Enable Acrobat JavaScript (User) - [bEnableJS] -->
+    <policy class="User" displayName="$(string.bEnableJS_User)" explainText="$(string.bEnableJS_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\JSPrefs"
+      name="bEnableJS_User" valueName="bEnableJS">
+      <parentCategory ref="SecurityExecCategory_User"/>
+      <supportedOn ref="SupportedReaderDC_User"/>
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
     <!-- Enable JS Debugger (User) - [bEnableDebugger] -->
     <policy class="User" displayName="$(string.bEnableDebugger_User)" explainText="$(string.bEnableDebugger_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\JSPrefs"
       name="bEnableDebugger_User" valueName="bEnableDebugger">
@@ -7906,6 +7924,16 @@
       <disabledValue><decimal value="0" /></disabledValue>
     </policy>
 
+    <!-- RSAPSS Hash Algorithm (User) - [aRSAPSSHashAlgorithm] -->
+    <policy class="User" displayName="$(string.aRSAPSSHashAlgorithm_User)" explainText="$(string.aRSAPSSHashAlgorithm_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cPubSec\cRSAPSSSigning"
+      name="aRSAPSSHashAlgorithm_User" presentation="$(presentation.aRSAPSSHashAlgorithm_User_text)">
+      <parentCategory ref="SecurityTrustCategory_User"/>
+      <supportedOn ref="SupportedReaderDC_User"/>
+      <elements>
+        <text id="aRSAPSSHashAlgorithm_User_text" valueName="aRSAPSSHashAlgorithm" maxLength="2048" />
+      </elements>
+    </policy>
+
     <!-- RSA-PSS Salt Length (User) - [iRSAPSSSaltLength] -->
     <policy class="User" displayName="$(string.iRSAPSSSaltLength_User)" explainText="$(string.iRSAPSSSaltLength_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cPubSec\cRSAPSSSigning"
       name="iRSAPSSSaltLength_User" presentation="$(presentation.iRSAPSSSaltLength_User_num)">
@@ -7923,16 +7951,6 @@
       <supportedOn ref="SupportedReaderDC_User"/>
       <enabledValue><decimal value="1" /></enabledValue>
       <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-
-    <!-- RSAPSS Hash Algorithm (User) - [aRSAPSSHashAlgorithm] -->
-    <policy class="User" displayName="$(string.aRSAPSSHashAlgorithm_User)" explainText="$(string.aRSAPSSHashAlgorithm_User_Explain)" key="Software\Adobe\Acrobat Reader\DC\Security\cPubSec\cRSAPSSSigning"
-      name="aRSAPSSHashAlgorithm_User" presentation="$(presentation.aRSAPSSHashAlgorithm_User_text)">
-      <parentCategory ref="SecurityTrustCategory_User"/>
-      <supportedOn ref="SupportedReaderDC_User"/>
-      <elements>
-        <text id="aRSAPSSHashAlgorithm_User_text" valueName="aRSAPSSHashAlgorithm" maxLength="2048" />
-      </elements>
     </policy>
 
     <!-- SAML Auth Server URL (User) - [tSAML_Assertion_Source] -->

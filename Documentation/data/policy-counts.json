@@ -1,15 +1,15 @@
 {
-  "readerDevice": 125,
-  "machineShared": 118,
-  "readerUser": 249,
-  "acrobatDevice": 173,
-  "total": 828.0,
-  "user": 518,
-  "extensionUnique": 6,
-  "acrobatUser": 269,
-  "machineUnique": 158,
-  "extension": 12,
-  "userText": 44,
-  "machine": 310.0,
-  "revision": "4.2"
+    "extensionUnique":  6,
+    "machine":  310,
+    "readerDevice":  125,
+    "acrobatDevice":  173,
+    "machineShared":  118,
+    "revision":  "4.3",
+    "user":  520,
+    "acrobatUser":  270,
+    "userText":  44,
+    "readerUser":  250,
+    "total":  830,
+    "machineUnique":  158,
+    "extension":  12
 }
